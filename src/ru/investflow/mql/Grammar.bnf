@@ -1,0 +1,60 @@
+{
+  parserClass="ru.investflow.mql.parser.MQL4Parser"
+  parserUtilClass="ru.investflow.mql.parser.MQL4ParserUtil"
+
+  implements="ru.investflow.mql.psi.MQL4CompositeElement"
+  extends="ru.investflow.mql.psi.impl.MQL4CompositeElementImpl"
+
+  elementTypeHolderClass="ru.investflow.mql.psi.MQL4TokenTypes"
+  elementTypeClass="ru.investflow.mql.psi.MQL4ElementType"
+  tokenTypeClass="ru.investflow.mql.psi.MQL4TokenType"
+
+  psiClassPrefix="MQL4"
+  psiImplClassSuffix="Impl"
+  psiPackage="ru.investflow.mql.psi"
+  psiImplPackage="ru.investflow.mql.psi.impl"
+  psiImplUtilClass="ru.investflow.mql.psi.impl.MQL4PsiImplUtil"
+
+  // used to implement MQL4NamedElement in the generated interfaces
+  implements("Identifier")="ru.investflow.mql.psi.MQL4NamedElement"
+  extends("Identifier")="ru.investflow.mql.psi.impl.MQL4NamedStubbedPsiElementBase<?>"
+  elementTypeFactory("Identifier")="ru.investflow.mql.psi.impl.MQL4ElementTypeFactory.factory"
+
+
+}
+root ::= item_*
+private item_ ::= (Comment | Expression | WHITE_SPACE)
+
+Comment ::= (BLOCK_COMMENT|LINE_COMMENT)
+
+Expression ::= VarDeclaration [VarDeclaration]
+
+VarDeclaration ::= BasicType IdentifierAndInitializer [CommaAndIdentifierAndInitializerList] OP_SCOLON
+CommaAndIdentifierAndInitializerList ::= OP_COMMA IdentifierAndInitializer [CommaAndIdentifierAndInitializerList]
+//IdentifierAndInitializer ::= Identifier
+IdentifierAndInitializer ::= Identifier (Initializer)?
+Initializer ::= OP_EQ (Identifier | LIT_CHAR | LIT_STRING | LIT_INTEGER  | LIT_FLOAT)
+
+Identifier ::= ID {
+    methods=[getName setName getNameIdentifier]
+    stubClass="ru.investflow.mql.stub.MQL4IdentifierStub"
+}
+
+
+
+BasicType ::= KW_BOOL | KW_CHAR | KW_CLASS | KW_COLOR | KW_DATETIME | KW_DOUBLE |
+                KW_ENUM | KW_FLOAT | KW_INT | KW_LONG | KW_SHORT | KW_STRING |
+                KW_STRUCT | KW_UCHAR | KW_UINT | KW_ULONG | KW_USHORT | KW_VOID
+
+//TODO:
+Unused ::= KW_CONST | KW_PUBLIC | KW_PRIVATE | KW_VIRTUAL | KW_PROTECTED |
+            KW_EXTERN | KW_INPUT | KW_STATIC |
+            KW_BREAK | KW_CASE | KW_CONTINUE | KW_DEFAULT | KW_DELETE |
+            KW_DO | KW_ELSE | KW_FOR | KW_IF | KW_NEW |
+            KW_OPERATOR | KW_RETURN | KW_SIZEOF | KW_SWITCH | KW_WHILE |
+            KW_FALSE | KW_THIS | KW_TRUE | KW_STRICT
+            OP_EQ | OP_PLUS_EQ | OP_MINUS_EQ | OP_MUL_EQ | OP_DIV_EQ | OP_MOD_EQ | OP_AND_EQ | OP_OR_EQ | OP_XOR_EQ | OP_TILDA_EQ | OP_SH_LEFT_EQ | OP_SH_RIGHT_EQ | OP_USH_RIGHT_EQ | OP_POW_EQ
+            (OP_AND | OP_PLUS_PLUS | OP_OR | OP_POW | OP_MINUS_MINUS | OP_MUL | OP_MINUS | OP_PLUS | OP_NOT | OP_TILDA)
+            OP_QUESTION | OP_COLON | OP_BOOL_OR | OP_BOOL_AND | OP_XOR | OP_AND  | OP_MUL | OP_DIV | OP_MOD
+            | (OP_SH_LEFT | OP_SH_RIGHT | OP_USH_RIGHT) | (OP_PLUS | OP_MINUS | OP_TILDA) | (OP_EQ_EQ | OP_NOT_EQ)
+             (OP_LESS | OP_LESS_EQ | OP_GT | OP_GT_EQ | OP_NOT_EQ) | OP_EQ

@@ -1,0 +1,32 @@
+<idea-plugin version="2">
+    <id>ru.investflow.mql</id>
+    <name>MQL Idea!</name>
+    <version>0.0.1</version>
+    <vendor email="mike.fursov@gmail.com" url="http://investflow.ru/dev">Investflow.Ru</vendor>
+
+    <description><![CDATA[
+      Plugin enables MQL4 language support in JetBrains products
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Early and untested.
+    ]]>
+    </change-notes>
+
+    <idea-version since-build="141.0"/>
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <actions>
+        <action id="NewMQL4File" class="ru.investflow.mql.CreateMQL4FileAction">
+            <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
+        </action>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileTypeFactory implementation="ru.investflow.mql.MQL4FileTypeFactory"/>
+        <lang.parserDefinition language="MQL4" implementationClass="ru.investflow.mql.MQL4ParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="MQL4" implementationClass="ru.investflow.mql.MQL4SyntaxHighlighterFactory"/>
+        <lang.commenter language="MQL4" implementationClass="ru.investflow.mql.MQL4Commenter"/>
+    </extensions>
+</idea-plugin>
