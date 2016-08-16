@@ -43,13 +43,10 @@ hexadecimal_integer = 0[xX] [0-9a-fA-F] [0-9a-fA-F_]*
 
 
 float_literal = {decimal_float}
-decimal_float = ( {decimal_float_simple} | {decimal_float_exponent} | {decimal_float_first_dot}
-                | {decimal_float_first_dot_exponent} | {decimal_float_no_dot_exponent} )
-decimal_float_simple = [0-9] [0-9_]* \. ([0] | [1-9_] [0-9_]*)
-decimal_float_exponent = [0-9_]+ \. [0-9_]+ {decimal_exponent}
-decimal_float_first_dot = \. ([0] | [1-9_] [0-9_]*)
-decimal_float_first_dot_exponent = \. ([0] | [1-9] [0-9]*) {decimal_exponent}
-decimal_float_no_dot_exponent = [0-9] [0-9_]* {decimal_exponent}
+decimal_float = ( {decimal_float_simple} | {decimal_float_exponent} | {decimal_float_no_dot_exponent} )
+decimal_float_simple = [0-9]* \. ([0-9]*)
+decimal_float_exponent = [0-9]* \. [0-9_]+ {decimal_exponent}
+decimal_float_no_dot_exponent = [0-9]+ {decimal_exponent}
 decimal_exponent = [eE][\+\-]? [0-9_]+
 
 /*End of rules*/
@@ -133,7 +130,7 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 //<YYINITIAL> "#import"   { return MQL4TokenTypes.KW_XIMPORT; }
 //<YYINITIAL> "#include"  { return MQL4TokenTypes.KW_XINCLUDE; }
 
-//<YYINITIAL> "#property" { return MQL4TokenTypes.KW_XPROPERTY; }
+<YYINITIAL> "#property" { return MQL4TokenTypes.KW_XPROPERTY; }
 //<YYINITIAL> "template"  { return MQL4TokenTypes.KW_TEMPLATE; }
 //<YYINITIAL> "typename"  { return MQL4TokenTypes.KW_TYPENAME; }
 

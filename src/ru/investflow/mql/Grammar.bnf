@@ -23,17 +23,22 @@
 
 }
 root ::= item_*
-private item_ ::= (Comment | Expression | WHITE_SPACE)
+private item_ ::= Comment | TopLevelElement | WHITE_SPACE
 
-Comment ::= (BLOCK_COMMENT|LINE_COMMENT)
+Comment ::= BLOCK_COMMENT | LINE_COMMENT
 
-Expression ::= VarDeclaration [VarDeclaration]
+TopLevelElement ::= VarDeclarationList | PreprocessorBlock
 
-VarDeclaration ::= BasicType IdentifierAndInitializer [CommaAndIdentifierAndInitializerList] OP_SCOLON
+VarDeclarationList ::= VarDeclaration [VarDeclaration]
+
+PreprocessorBlock ::= PreprocessorPropertyBlock
+PreprocessorPropertyBlock ::= KW_XPROPERTY Identifier [LIT_CHAR | LIT_STRING | LIT_INTEGER  | LIT_FLOAT]
+
+VarDeclaration ::= [KW_EXTERN] BasicType IdentifierAndInitializer [CommaAndIdentifierAndInitializerList] OP_SCOLON
 CommaAndIdentifierAndInitializerList ::= OP_COMMA IdentifierAndInitializer [CommaAndIdentifierAndInitializerList]
 //IdentifierAndInitializer ::= Identifier
 IdentifierAndInitializer ::= Identifier (Initializer)?
-Initializer ::= OP_EQ (Identifier | LIT_CHAR | LIT_STRING | LIT_INTEGER  | LIT_FLOAT)
+Initializer ::= OP_EQ (Identifier | LIT_CHAR | LIT_STRING | LIT_INTEGER  | LIT_FLOAT | KW_TRUE | KW_FALSE)
 
 Identifier ::= ID {
     methods=[getName setName getNameIdentifier]
