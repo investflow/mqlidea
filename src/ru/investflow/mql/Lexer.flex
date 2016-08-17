@@ -183,12 +183,12 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 <YYINITIAL> "\<"      { return MQL4TokenTypes.OP_LESS; }
 <YYINITIAL> "\>"      { return MQL4TokenTypes.OP_GT; }
 
-//<YYINITIAL> "\("      { return MQL4TokenTypes.OP_PAR_LEFT; }
-//<YYINITIAL> "\)"      { return MQL4TokenTypes.OP_PAR_RIGHT; }
+<YYINITIAL> "\("      { return MQL4TokenTypes.OP_PAR_LEFT; }
+<YYINITIAL> "\)"      { return MQL4TokenTypes.OP_PAR_RIGHT; }
 //<YYINITIAL> "\["      { return MQL4TokenTypes.OP_BRACKET_LEFT; }
 //<YYINITIAL> "\]"      { return MQL4TokenTypes.OP_BRACKET_RIGHT; }
-//<YYINITIAL> "\{"      { return MQL4TokenTypes.OP_BRACES_LEFT; }
-//<YYINITIAL> "\}"      { return MQL4TokenTypes.OP_BRACES_RIGHT; }
+<YYINITIAL> "\{"      { return MQL4TokenTypes.OP_BRACES_LEFT; }
+<YYINITIAL> "\}"      { return MQL4TokenTypes.OP_BRACES_RIGHT; }
 <YYINITIAL> {identifier}        { return MQL4TokenTypes.ID; }
 
 . { return TokenType.BAD_CHARACTER; }

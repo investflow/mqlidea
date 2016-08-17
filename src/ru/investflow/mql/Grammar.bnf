@@ -27,18 +27,24 @@ private item_ ::= Comment | TopLevelElement | WHITE_SPACE
 
 Comment ::= BLOCK_COMMENT | LINE_COMMENT
 
-TopLevelElement ::= VarDeclarationList | PreprocessorBlock
-
-VarDeclarationList ::= VarDeclaration [VarDeclaration]
+TopLevelElement ::= TopLevelVarDeclaration | PreprocessorBlock | FunctionDefinition
 
 PreprocessorBlock ::= PreprocessorPropertyBlock
 PreprocessorPropertyBlock ::= KW_XPROPERTY Identifier [LIT_CHAR | LIT_STRING | LIT_INTEGER  | LIT_FLOAT]
 
-VarDeclaration ::= [KW_EXTERN] BasicType IdentifierAndInitializer [CommaAndIdentifierAndInitializerList] OP_SCOLON
+FunctionDefinition ::= BasicType Identifier OP_PAR_LEFT ParametersDeclarationList? OP_PAR_RIGHT BlockStatement
+ParametersDeclarationList ::= ParameterDeclaration [OP_COMMA ParameterDeclaration]
+ParameterDeclaration ::= BasicType Identifier
+
+BlockStatement ::= OP_BRACES_LEFT Statement?  [OP_SCOLON Statement] OP_BRACES_RIGHT
+
+TopLevelVarDeclaration ::= KW_EXTERN? DeclarationStatement
+DeclarationStatement ::= BasicType IdentifierAndInitializer [CommaAndIdentifierAndInitializerList] OP_SCOLON
 CommaAndIdentifierAndInitializerList ::= OP_COMMA IdentifierAndInitializer [CommaAndIdentifierAndInitializerList]
-//IdentifierAndInitializer ::= Identifier
-IdentifierAndInitializer ::= Identifier (Initializer)?
+IdentifierAndInitializer ::= Identifier Initializer?
 Initializer ::= OP_EQ (Identifier | LIT_CHAR | LIT_STRING | LIT_INTEGER  | LIT_FLOAT | KW_TRUE | KW_FALSE)
+
+Statement ::= OP_SCOLON | DeclarationStatement | BlockStatement
 
 Identifier ::= ID {
     methods=[getName setName getNameIdentifier]
