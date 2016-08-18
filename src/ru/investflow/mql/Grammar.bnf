@@ -32,19 +32,23 @@ TopLevelElement ::= TopLevelVarDeclaration | PreprocessorBlock | FunctionDefinit
 PreprocessorBlock ::= PreprocessorPropertyBlock
 PreprocessorPropertyBlock ::= KW_XPROPERTY Identifier [LIT_CHAR | LIT_STRING | LIT_INTEGER  | LIT_FLOAT]
 
-FunctionDefinition ::= BasicType Identifier OP_PAR_LEFT ParametersDeclarationList? OP_PAR_RIGHT BlockStatement
+FunctionDefinition ::= BasicType Identifier OP_PAR_LEFT ParametersDeclarationList? OP_PAR_RIGHT CodeBlock
 ParametersDeclarationList ::= ParameterDeclaration [OP_COMMA ParameterDeclaration]
 ParameterDeclaration ::= BasicType Identifier
 
-BlockStatement ::= OP_BRACES_LEFT Statement?  [OP_SCOLON Statement] OP_BRACES_RIGHT
+CodeBlock ::= OP_BRACES_LEFT (Statement)* OP_BRACES_RIGHT
 
 TopLevelVarDeclaration ::= KW_EXTERN? DeclarationStatement
 DeclarationStatement ::= BasicType IdentifierAndInitializer [CommaAndIdentifierAndInitializerList] OP_SCOLON
 CommaAndIdentifierAndInitializerList ::= OP_COMMA IdentifierAndInitializer [CommaAndIdentifierAndInitializerList]
 IdentifierAndInitializer ::= Identifier Initializer?
-Initializer ::= OP_EQ (Identifier | LIT_CHAR | LIT_STRING | LIT_INTEGER  | LIT_FLOAT | KW_TRUE | KW_FALSE)
+Initializer ::= OP_EQ (LIT_CHAR | LIT_STRING | ([OP_MINUS | OP_PLUS] (LIT_INTEGER  | LIT_FLOAT | Identifier)) | ([OP_NOT] (KW_TRUE | KW_FALSE | Identifier)))
+Statement ::= OP_SCOLON | Comment | CodeBlock | DeclarationStatement | SwitchStatement
 
-Statement ::= OP_SCOLON | DeclarationStatement | BlockStatement
+SwitchStatement ::= KW_SWITCH OP_PAR_LEFT Identifier OP_PAR_RIGHT SwitchCaseBlock
+SwitchCaseBlock ::= OP_BRACES_LEFT (CaseOrDefaultStatement)+ OP_BRACES_RIGHT
+CaseOrDefaultStatement ::= ((KW_CASE CaseOperand) | KW_DEFAULT) OP_COLON Statement?
+CaseOperand ::= Identifier | LIT_INTEGER | LIT_CHAR | LIT_STRING
 
 Identifier ::= ID {
     methods=[getName setName getNameIdentifier]
