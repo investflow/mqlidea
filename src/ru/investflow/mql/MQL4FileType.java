@@ -10,7 +10,7 @@ import com.intellij.openapi.fileTypes.LanguageFileType;
 /* Each file in IDEA has type. This is type for MQL4 Language sources. */
 public class MQL4FileType extends LanguageFileType {
     public static final MQL4FileType INSTANCE = new MQL4FileType();
-    public static final String DEFAULT_EXTENSION = "mql4";
+    public static final String DEFAULT_EXTENSION = "mq4";
 
     private MQL4FileType() {
         super(MQL4Language.INSTANCE);

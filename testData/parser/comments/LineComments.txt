@@ -1,0 +1,3 @@
+MQL4 File
+  PsiComment(MQL4ElementType.LINE_COMMENT)('// line comment 1\n')
+  PsiComment(MQL4ElementType.LINE_COMMENT)('// line comment 2')

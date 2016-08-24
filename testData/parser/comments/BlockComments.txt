@@ -1,0 +1,5 @@
+MQL4 File
+  PsiComment(MQL4ElementType.BLOCK_COMMENT)('/** one line comment */')
+  PsiComment(MQL4ElementType.BLOCK_COMMENT)('/*\nmulti-line comment 1\n*/')
+  PsiComment(MQL4ElementType.BLOCK_COMMENT)('/*\nmulti-line comment 1\nmulti-line comment 2\n*/')
+  PsiComment(MQL4ElementType.BLOCK_COMMENT)('/*****************\ndocs style comment\n*****************/\n\n/***************\n/* nested block comment start\n*****************/\n\n/***************\n// nested line comment\n*****************/')
