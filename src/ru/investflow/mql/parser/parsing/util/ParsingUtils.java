@@ -15,6 +15,10 @@ import static ru.investflow.mql.psi.MQL4TokenTypes.RECOVERY_LINE_TERMINATOR;
 public class ParsingUtils {
     public static final ITokenTypeRemapper NEW_LINE_REMAPPER = (source, start, end, text) -> source == LINE_TERMINATOR ? RECOVERY_LINE_TERMINATOR : source;
 
+    public static boolean containsEndOfLine(@Nullable String text) {
+        return text != null && text.contains("\n");
+    }
+
     public enum NewLineAdvanceMode {
         DEFAULT,
         STOP_IF_FIRST_TOKEN_IS_NOT_NEW_LINE

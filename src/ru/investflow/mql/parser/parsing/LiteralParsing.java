@@ -9,9 +9,13 @@ import static ru.investflow.mql.psi.MQL4TokenTypeSets.LITERALS;
 
 public class LiteralParsing {
 
-    public static boolean advanceIfLiteral(@NotNull PsiBuilder b) {
+    public static boolean checkAdvanceIfLiteral(@NotNull PsiBuilder b) {
         IElementType t = b.getTokenType();
-        if (LITERALS.contains(t)) {
+        return LITERALS.contains(t);
+    }
+
+    public static boolean advanceIfLiteral(@NotNull PsiBuilder b) {
+        if (checkAdvanceIfLiteral(b)) {
             b.advanceLexer();
             return true;
         }
