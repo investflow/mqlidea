@@ -38,7 +38,7 @@ public class MQL4Parser implements PsiParser {
     /* ********************************************************** */
 
     static boolean parseFile(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "File")) {
+        if (!recursion_guard_(b, l, "parseFile")) {
             return false;
         }
         while (!b.eof()) {
@@ -46,7 +46,7 @@ public class MQL4Parser implements PsiParser {
             r = r || CommentParsing.parseComment(b, l);
             if (!r) {
                 // Show first error per line only. Skip other errors.
-                error(b, "Unexpected top level statement!");
+                error(b, "Unexpected top level statement");
                 ParsingUtils.advanceLexerUntilNewLine(b);
             }
         }
@@ -54,7 +54,7 @@ public class MQL4Parser implements PsiParser {
     }
 
     public static boolean parseTopLevelDeclaration(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "TopLevelDeclaration")) {
+        if (!recursion_guard_(b, l, "parseTopLevelDeclaration")) {
             return false;
         }
 

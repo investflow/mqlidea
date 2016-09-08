@@ -1,4 +1,3 @@
-// This is a generated file. Not intended for manual editing.
 package ru.investflow.mql.psi.impl;
 
 import org.jetbrains.annotations.NotNull;

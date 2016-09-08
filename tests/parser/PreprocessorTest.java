@@ -15,4 +15,8 @@ public class PreprocessorTest extends MQL4ParserTestBase {
         doTest(false);
     }
 
+    public void testUndef() {
+        doTest(false);
+    }
+
 }

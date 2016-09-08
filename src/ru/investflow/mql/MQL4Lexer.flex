@@ -121,7 +121,8 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 //<YYINITIAL> "true"      { return MQL4TokenTypes.KW_TRUE; }
 //<YYINITIAL> "strict"    { return MQL4TokenTypes.KW_STRICT; }
 
-//<YYINITIAL> "#define"   { return MQL4TokenTypes.KW_XDEFINE; }
+<YYINITIAL> "#define"   { return MQL4TokenTypes.DEFINE_KEYWORD; }
+<YYINITIAL> "#undef"   { return MQL4TokenTypes.UNDEF_KEYWORD; }
 //<YYINITIAL> "#import"   { return MQL4TokenTypes.KW_XIMPORT; }
 //<YYINITIAL> "#include"  { return MQL4TokenTypes.KW_XINCLUDE; }
 

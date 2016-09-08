@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.util.containers.hash.HashMap;
-import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4TokenTypes;
 
 import static com.intellij.lang.java.parser.JavaParserUtil.error;
@@ -15,8 +14,8 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.LiteralParsing.advanceIfLiteral;
-import static ru.investflow.mql.parser.parsing.LiteralParsing.checkAdvanceIfLiteral;
+import static ru.investflow.mql.parser.parsing.LiteralParsing.isLiteral;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
 import static ru.investflow.mql.psi.MQL4TokenTypeSets.LITERALS;
 import static ru.investflow.mql.psi.MQL4TokenTypes.INTEGER_LITERAL;
 import static ru.investflow.mql.psi.MQL4TokenTypes.PREPROCESSOR_PROPERTY_BLOCK;
@@ -26,7 +25,7 @@ import static ru.investflow.mql.psi.MQL4TokenTypes.STRING_LITERAL;
 public class PreprocessorPropertyParsing {
 
     public static boolean parsePropertyBlock(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "PreprocessorPropertyBlock")) {
+        if (!recursion_guard_(b, l, "parsePropertyBlock")) {
             return false;
         }
         if (!nextTokenIs(b, PROPERTY_KEYWORD)) {
@@ -36,39 +35,30 @@ public class PreprocessorPropertyParsing {
         int startOffset = b.getCurrentOffset();
         b.advanceLexer(); // #property
         try {
-            IElementType id = b.getTokenType();
-            if (id != MQL4TokenTypes.IDENTIFIER) {
+            if (b.getTokenType() != MQL4TokenTypes.IDENTIFIER) {
                 error(b, "Identifier expected");
                 return true;
             }
-            assertNoLineBreaksInRange(b, startOffset);
+            assertNoLineBreaksInRange(b, startOffset, "Line break is not allowed inside #property block");
             startOffset = b.getCurrentOffset();
 
             String propertyName = b.getTokenText();
             PropertyValueValidator valueValidator = VALIDATORS_BY_NAME.get(propertyName);
             if (valueValidator == null) {
-                b.error("Unknown property");
+                b.error("Unknown property: " + propertyName);
             }
             b.advanceLexer();
             if (valueValidator != null) {
                 valueValidator.validateValue(b);
             }
-            if (checkAdvanceIfLiteral(b)) {
-                assertNoLineBreaksInRange(b, startOffset);
-                advanceIfLiteral(b);
+            if (isLiteral(b)) {
+                assertNoLineBreaksInRange(b, startOffset, "Line break is not allowed inside #property block");
+                b.advanceLexer();
             }
         } finally {
             exit_section_(b, m, PREPROCESSOR_PROPERTY_BLOCK, true);
         }
         return true;
-    }
-
-    private static void assertNoLineBreaksInRange(PsiBuilder b, int startOffset) {
-        String text = b.getOriginalText().subSequence(startOffset, b.getCurrentOffset()).toString();
-        boolean hasEol = ParsingUtils.containsEndOfLine(text);
-        if (hasEol) {
-            b.error("Line break is not allowed inside #property block");
-        }
     }
 
 
@@ -131,7 +121,7 @@ public class PreprocessorPropertyParsing {
         @Override
         public void validateValue(PsiBuilder b) {
             if (!LITERALS.contains(b.getTokenType())) {
-                b.error("Literal expected!");
+                b.error("Literal expected");
             }
         }
     }
@@ -141,7 +131,7 @@ public class PreprocessorPropertyParsing {
         public void validateValue(PsiBuilder b) {
             IElementType t = b.getTokenType();
             if (t != MQL4TokenTypes.INTEGER_LITERAL && t != MQL4TokenTypes.DOUBLE_LITERAL) {
-                b.error("Numeric literal expected!");
+                b.error("Numeric literal expected");
             }
         }
     }

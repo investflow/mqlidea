@@ -34,7 +34,7 @@ public class CommentParsing {
     }
 
     public static boolean parseBlockComment(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "rg-block-comment")) {
+        if (!recursion_guard_(b, l, "parseBlockComment")) {
             return false;
         }
         if (!nextTokenIs(b, "<block-comment>", BLOCK_COMMENT)) {

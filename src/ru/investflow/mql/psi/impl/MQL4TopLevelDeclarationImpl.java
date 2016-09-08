@@ -1,4 +1,3 @@
-// This is a generated file. Not intended for manual editing.
 package ru.investflow.mql.psi.impl;
 
 import org.jetbrains.annotations.NotNull;
@@ -19,12 +18,6 @@ public class MQL4TopLevelDeclarationImpl extends ASTWrapperPsiElement implements
   public void accept(@NotNull PsiElementVisitor visitor) {
     if (visitor instanceof MQL4Visitor) ((MQL4Visitor)visitor).visitTopLevelDeclaration(this);
     else super.accept(visitor);
-  }
-
-  @Override
-  @NotNull
-  public MQL4PreprocessorBlock getPreprocessorBlock() {
-    return findNotNullChildByClass(MQL4PreprocessorBlock.class);
   }
 
 }
