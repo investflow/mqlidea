@@ -15,15 +15,16 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
 import ru.investflow.mql.parser.MQL4Parser;
+import ru.investflow.mql.psi.MQL4ElementFactory;
 import ru.investflow.mql.psi.MQL4File;
-import ru.investflow.mql.psi.MQL4TokenTypes;
+import ru.investflow.mql.psi.MQL4Tokens;
 
 /* Parser definition used by IntelliJ Platform to parse MQL4 Language sources. */
-public class MQL4ParserDefinition implements ParserDefinition {
+public class MQL4ParserDefinition implements ParserDefinition, MQL4Tokens {
 
-    public static final TokenSet WHITE_SPACES = TokenSet.create(MQL4TokenTypes.WHITE_SPACE, MQL4TokenTypes.LINE_TERMINATOR);
+    public static final TokenSet WHITE_SPACES = TokenSet.create(WHITE_SPACE, LINE_TERMINATOR);
 
-    public static final TokenSet COMMENTS = TokenSet.create(MQL4TokenTypes.BLOCK_COMMENT, MQL4TokenTypes.LINE_COMMENT);
+    public static final TokenSet COMMENTS = TokenSet.create(BLOCK_COMMENT, LINE_COMMENT);
 
     public static final IFileElementType FILE = new IFileElementType(Language.findInstance(MQL4Language.class));
 
@@ -78,6 +79,6 @@ public class MQL4ParserDefinition implements ParserDefinition {
     @NotNull
     @Override
     public PsiElement createElement(ASTNode node) {
-        return MQL4TokenTypes.Factory.createElement(node);
+        return MQL4ElementFactory.createElement(node);
     }
 }

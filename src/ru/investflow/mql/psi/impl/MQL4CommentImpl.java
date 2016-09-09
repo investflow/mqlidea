@@ -10,13 +10,16 @@ import ru.investflow.mql.psi.MQL4Visitor;
 
 public class MQL4CommentImpl extends ASTWrapperPsiElement implements MQL4Comment {
 
-  public MQL4CommentImpl(ASTNode node) {
-    super(node);
-  }
+    public MQL4CommentImpl(ASTNode node) {
+        super(node);
+    }
 
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    if (visitor instanceof MQL4Visitor) ((MQL4Visitor)visitor).visitComment(this);
-    else super.accept(visitor);
-  }
+    public void accept(@NotNull PsiElementVisitor visitor) {
+        if (visitor instanceof MQL4Visitor) {
+            ((MQL4Visitor) visitor).visitComment(this);
+        } else {
+            super.accept(visitor);
+        }
+    }
 
 }

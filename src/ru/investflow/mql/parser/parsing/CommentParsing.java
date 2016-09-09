@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
+import ru.investflow.mql.psi.MQL4Tokens;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase._NONE_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.consumeToken;
@@ -11,10 +12,8 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.psi.MQL4TokenTypes.BLOCK_COMMENT;
-import static ru.investflow.mql.psi.MQL4TokenTypes.LINE_COMMENT;
 
-public class CommentParsing {
+public class CommentParsing implements MQL4Tokens {
 
     public static boolean parseComment(PsiBuilder b, int l) {
         return parseLineComment(b, l) || parseBlockComment(b, l);

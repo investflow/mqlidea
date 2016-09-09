@@ -8,13 +8,11 @@ import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import ru.investflow.mql.psi.MQL4Literal;
+import ru.investflow.mql.psi.MQL4Tokens;
 import ru.investflow.mql.psi.MQL4Visitor;
 
-import static ru.investflow.mql.psi.MQL4TokenTypes.INTEGER_LITERAL;
-import static ru.investflow.mql.psi.MQL4TokenTypes.STRING_LITERAL;
 
-
-public class MQL4LiteralImpl extends ASTWrapperPsiElement implements MQL4Literal {
+public class MQL4LiteralImpl extends ASTWrapperPsiElement implements MQL4Literal, MQL4Tokens {
 
     public MQL4LiteralImpl(ASTNode node) {
         super(node);

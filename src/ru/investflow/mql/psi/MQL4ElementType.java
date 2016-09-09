@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.MQL4Language;
 
 public class MQL4ElementType extends IElementType {
+
     public MQL4ElementType(@NotNull @NonNls String debugName) {
         super(debugName, MQL4Language.INSTANCE);
     }

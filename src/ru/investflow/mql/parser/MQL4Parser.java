@@ -18,7 +18,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.parsePreprocessorBlock;
-import static ru.investflow.mql.psi.MQL4TokenTypes.TOP_LEVEL_DECLARATION;
+import static ru.investflow.mql.psi.MQL4Elements.TOP_LEVEL_DECLARATION;
 
 @SuppressWarnings("SimplifiableIfStatement")
 public class MQL4Parser implements PsiParser {

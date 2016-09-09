@@ -2,7 +2,7 @@ package ru.investflow.mql.psi;
 
 import com.intellij.psi.tree.TokenSet;
 
-public class MQL4TokenTypeSets implements MQL4TokenTypes {
+public class MQL4TokenSets implements MQL4Tokens {
 
     public static final TokenSet COMMENTS = TokenSet.create(LINE_COMMENT, BLOCK_COMMENT);
 

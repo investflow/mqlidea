@@ -7,7 +7,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.util.containers.hash.HashMap;
-import ru.investflow.mql.psi.MQL4TokenTypes;
+import ru.investflow.mql.psi.MQL4Elements;
+import ru.investflow.mql.psi.MQL4Tokens;
 
 import static com.intellij.lang.java.parser.JavaParserUtil.error;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
@@ -16,13 +17,9 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.LiteralParsing.isLiteral;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
-import static ru.investflow.mql.psi.MQL4TokenTypeSets.LITERALS;
-import static ru.investflow.mql.psi.MQL4TokenTypes.INTEGER_LITERAL;
-import static ru.investflow.mql.psi.MQL4TokenTypes.PREPROCESSOR_PROPERTY_BLOCK;
-import static ru.investflow.mql.psi.MQL4TokenTypes.PROPERTY_KEYWORD;
-import static ru.investflow.mql.psi.MQL4TokenTypes.STRING_LITERAL;
+import static ru.investflow.mql.psi.MQL4TokenSets.LITERALS;
 
-public class PreprocessorPropertyParsing {
+public class PreprocessorPropertyParsing implements MQL4Tokens {
 
     public static boolean parsePropertyBlock(PsiBuilder b, int l) {
         if (!recursion_guard_(b, l, "parsePropertyBlock")) {
@@ -35,7 +32,7 @@ public class PreprocessorPropertyParsing {
         int startOffset = b.getCurrentOffset();
         b.advanceLexer(); // #property
         try {
-            if (b.getTokenType() != MQL4TokenTypes.IDENTIFIER) {
+            if (b.getTokenType() != IDENTIFIER) {
                 error(b, "Identifier expected");
                 return true;
             }
@@ -56,7 +53,7 @@ public class PreprocessorPropertyParsing {
                 b.advanceLexer();
             }
         } finally {
-            exit_section_(b, m, PREPROCESSOR_PROPERTY_BLOCK, true);
+            exit_section_(b, m, MQL4Elements.PREPROCESSOR_PROPERTY_BLOCK, true);
         }
         return true;
     }
@@ -130,7 +127,7 @@ public class PreprocessorPropertyParsing {
         @Override
         public void validateValue(PsiBuilder b) {
             IElementType t = b.getTokenType();
-            if (t != MQL4TokenTypes.INTEGER_LITERAL && t != MQL4TokenTypes.DOUBLE_LITERAL) {
+            if (t != INTEGER_LITERAL && t != DOUBLE_LITERAL) {
                 b.error("Numeric literal expected");
             }
         }

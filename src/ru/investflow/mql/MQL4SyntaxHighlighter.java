@@ -1,5 +1,7 @@
 package ru.investflow.mql;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.intellij.lexer.FlexAdapter;
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
@@ -8,9 +10,8 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
 import com.intellij.psi.TokenType;
 import com.intellij.psi.tree.IElementType;
-import org.jetbrains.annotations.NotNull;
-import ru.investflow.mql.psi.MQL4TokenTypeSets;
-import ru.investflow.mql.psi.MQL4TokenTypes;
+import ru.investflow.mql.psi.MQL4TokenSets;
+import ru.investflow.mql.psi.MQL4Tokens;
 
 import static com.intellij.openapi.editor.colors.TextAttributesKey.createTextAttributesKey;
 
@@ -46,19 +47,19 @@ public class MQL4SyntaxHighlighter extends SyntaxHighlighterBase {
     @NotNull
     @Override
     public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
-        if (MQL4TokenTypeSets.COMMENTS.contains(tokenType)) {
+        if (MQL4TokenSets.COMMENTS.contains(tokenType)) {
             return COMMENT_KEYS;
         } else if (tokenType.equals(TokenType.BAD_CHARACTER)) {
             return BAD_CHAR_KEYS;
-        } else if (tokenType.equals(MQL4TokenTypes.IDENTIFIER)) {
+        } else if (tokenType.equals(MQL4Tokens.IDENTIFIER)) {
             return IDENTIFIER_KEYS;
-        } else if (MQL4TokenTypeSets.STRINGS_AND_CHARS.contains(tokenType)) {
+        } else if (MQL4TokenSets.STRINGS_AND_CHARS.contains(tokenType)) {
             return STRING_KEYS;
-        } else if (MQL4TokenTypeSets.NUMBERS.contains(tokenType)) {
+        } else if (MQL4TokenSets.NUMBERS.contains(tokenType)) {
             return NUMBER_KEYS;
-        } else if (MQL4TokenTypeSets.KEYWORDS.contains(tokenType)) {
+        } else if (MQL4TokenSets.KEYWORDS.contains(tokenType)) {
             return KEYWORD_KEYS;
-        } else if (MQL4TokenTypeSets.OPERATORS.contains(tokenType)) {
+        } else if (MQL4TokenSets.OPERATORS.contains(tokenType)) {
             return OPERATOR_KEYS;
         }
         return EMPTY_KEYS;

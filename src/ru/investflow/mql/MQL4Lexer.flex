@@ -2,8 +2,7 @@ package ru.investflow.mql;
 
 import com.intellij.lexer.FlexLexer;
 import com.intellij.psi.tree.IElementType;
-import ru.investflow.mql.psi.MQL4TokenTypes;
-import com.intellij.psi.TokenType;
+import ru.investflow.mql.psi.MQL4Tokens;
 
 @SuppressWarnings({"ALL"})
 %%
@@ -52,146 +51,146 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 /*End of rules*/
 
 %%
+<YYINITIAL> {
 
-<YYINITIAL> {line_terminator}+  { return MQL4TokenTypes.LINE_TERMINATOR; }
-<YYINITIAL> {white_space_char}+ { return MQL4TokenTypes.WHITE_SPACE; }
+{line_terminator}+  { return MQL4Tokens.LINE_TERMINATOR; }
+{white_space_char}+ { return MQL4Tokens.WHITE_SPACE; }
 
-<YYINITIAL> {block_comment}     { return MQL4TokenTypes.BLOCK_COMMENT; }
-<YYINITIAL> {line_comment}      { return MQL4TokenTypes.LINE_COMMENT; }
+{block_comment}     { return MQL4Tokens.BLOCK_COMMENT; }
+{line_comment}      { return MQL4Tokens.LINE_COMMENT; }
 
 
 // https://docs.mql4.com/basis/syntax/reserved
 
 // Data types
-//<YYINITIAL> "bool"      { return MQL4TokenTypes.KW_BOOL; }
-//<YYINITIAL> "char"      { return MQL4TokenTypes.KW_CHAR; }
-//<YYINITIAL> "class"     { return MQL4TokenTypes.KW_CLASS; }
-//<YYINITIAL> "color"     { return MQL4TokenTypes.KW_COLOR; }
-//<YYINITIAL> "datetime"  { return MQL4TokenTypes.KW_DATETIME; }
-//<YYINITIAL> "double"    { return MQL4TokenTypes.KW_DOUBLE; }
-
-//<YYINITIAL> "enum"      { return MQL4TokenTypes.KW_ENUM; }
-//<YYINITIAL> "float"     { return MQL4TokenTypes.KW_FLOAT; }
-//<YYINITIAL> "int"       { return MQL4TokenTypes.KW_INT; }
-//<YYINITIAL> "long"      { return MQL4TokenTypes.KW_LONG; }
-//<YYINITIAL> "short"     { return MQL4TokenTypes.KW_SHORT; }
-//<YYINITIAL> "string"    { return MQL4TokenTypes.KW_STRING; }
-//
-//<YYINITIAL> "struct"    { return MQL4TokenTypes.KW_STRUCT; }
-//<YYINITIAL> "uchar"     { return MQL4TokenTypes.KW_UCHAR; }
-//<YYINITIAL> "uint"      { return MQL4TokenTypes.KW_UINT; }
-//<YYINITIAL> "ulong"     { return MQL4TokenTypes.KW_ULONG; }
-//<YYINITIAL> "ushort"    { return MQL4TokenTypes.KW_USHORT; }
-//<YYINITIAL> "void"      { return MQL4TokenTypes.KW_VOID; }
+//"bool"      { return MQL4Tokens.KW_BOOL; }
+//"char"      { return MQL4Tokens.KW_CHAR; }
+//"class"     { return MQL4Tokens.KW_CLASS; }
+//"color"     { return MQL4Tokens.KW_COLOR; }
+//"datetime"  { return MQL4Tokens.KW_DATETIME; }
+//"double"    { return MQL4Tokens.KW_DOUBLE; }
+  //"enum"      { return MQL4Tokens.KW_ENUM; }
+//"float"     { return MQL4Tokens.KW_FLOAT; }
+//"int"       { return MQL4Tokens.KW_INT; }
+//"long"      { return MQL4Tokens.KW_LONG; }
+//"short"     { return MQL4Tokens.KW_SHORT; }
+//"string"    { return MQL4Tokens.KW_STRING; }
+////"struct"    { return MQL4Tokens.KW_STRUCT; }
+//"uchar"     { return MQL4Tokens.KW_UCHAR; }
+//"uint"      { return MQL4Tokens.KW_UINT; }
+//"ulong"     { return MQL4Tokens.KW_ULONG; }
+//"ushort"    { return MQL4Tokens.KW_USHORT; }
+//"void"      { return MQL4Tokens.KW_VOID; }
 //
 // Access specificators
-//<YYINITIAL> "const"     { return MQL4TokenTypes.KW_CONST; }
-//<YYINITIAL> "public"    { return MQL4TokenTypes.KW_PUBLIC; }
-//<YYINITIAL> "private"   { return MQL4TokenTypes.KW_PRIVATE; }
-//<YYINITIAL> "virtual"   { return MQL4TokenTypes.KW_VIRTUAL; }
-//<YYINITIAL> "protected" { return MQL4TokenTypes.KW_PROTECTED; }
+//"const"     { return MQL4Tokens.KW_CONST; }
+//"public"    { return MQL4Tokens.KW_PUBLIC; }
+//"private"   { return MQL4Tokens.KW_PRIVATE; }
+//"virtual"   { return MQL4Tokens.KW_VIRTUAL; }
+//"protected" { return MQL4Tokens.KW_PROTECTED; }
 //
 // Memory classes
-//<YYINITIAL> "extern"    { return MQL4TokenTypes.KW_EXTERN; }
-//<YYINITIAL> "input"     { return MQL4TokenTypes.KW_INPUT; }
-//<YYINITIAL> "static"    { return MQL4TokenTypes.KW_STATIC; }
+//"extern"    { return MQL4Tokens.KW_EXTERN; }
+//"input"     { return MQL4Tokens.KW_INPUT; }
+//"static"    { return MQL4Tokens.KW_STATIC; }
 //
 // Operators
-//<YYINITIAL> "break"     { return MQL4TokenTypes.KW_BREAK; }
-//<YYINITIAL> "case"      { return MQL4TokenTypes.KW_CASE; }
-//<YYINITIAL> "continue"  { return MQL4TokenTypes.KW_CONTINUE; }
-//<YYINITIAL> "default"   { return MQL4TokenTypes.KW_DEFAULT; }
-//<YYINITIAL> "delete"    { return MQL4TokenTypes.KW_DELETE; }
+//"break"     { return MQL4Tokens.KW_BREAK; }
+//"case"      { return MQL4Tokens.KW_CASE; }
+//"continue"  { return MQL4Tokens.KW_CONTINUE; }
+//"default"   { return MQL4Tokens.KW_DEFAULT; }
+//"delete"    { return MQL4Tokens.KW_DELETE; }
 //
-//<YYINITIAL> "do"        { return MQL4TokenTypes.KW_DO; }
-//<YYINITIAL> "else"      { return MQL4TokenTypes.KW_ELSE; }
-//<YYINITIAL> "for"       { return MQL4TokenTypes.KW_FOR; }
-//<YYINITIAL> "if"        { return MQL4TokenTypes.KW_IF; }
-//<YYINITIAL> "new"       { return MQL4TokenTypes.KW_NEW; }
+//"do"        { return MQL4Tokens.KW_DO; }
+//"else"      { return MQL4Tokens.KW_ELSE; }
+//"for"       { return MQL4Tokens.KW_FOR; }
+//"if"        { return MQL4Tokens.KW_IF; }
+//"new"       { return MQL4Tokens.KW_NEW; }
 //
-//<YYINITIAL> "operator"  { return MQL4TokenTypes.KW_OPERATOR; }
-//<YYINITIAL> "return"    { return MQL4TokenTypes.KW_RETURN; }
-//<YYINITIAL> "sizeof"    { return MQL4TokenTypes.KW_SIZEOF; }
-//<YYINITIAL> "switch"    { return MQL4TokenTypes.KW_SWITCH; }
-//<YYINITIAL> "while"     { return MQL4TokenTypes.KW_WHILE; }
+//"operator"  { return MQL4Tokens.KW_OPERATOR; }
+//"return"    { return MQL4Tokens.KW_RETURN; }
+//"sizeof"    { return MQL4Tokens.KW_SIZEOF; }
+//"switch"    { return MQL4Tokens.KW_SWITCH; }
+//"while"     { return MQL4Tokens.KW_WHILE; }
 //
 // Other
-//<YYINITIAL> "false"     { return MQL4TokenTypes.KW_FALSE; }
-//<YYINITIAL> "this"      { return MQL4TokenTypes.KW_THIS; }
-//<YYINITIAL> "true"      { return MQL4TokenTypes.KW_TRUE; }
-//<YYINITIAL> "strict"    { return MQL4TokenTypes.KW_STRICT; }
+//"false"     { return MQL4Tokens.KW_FALSE; }
+//"this"      { return MQL4Tokens.KW_THIS; }
+//"true"      { return MQL4Tokens.KW_TRUE; }
+//"strict"    { return MQL4Tokens.KW_STRICT; }
 
-<YYINITIAL> "#define"   { return MQL4TokenTypes.DEFINE_KEYWORD; }
-<YYINITIAL> "#undef"   { return MQL4TokenTypes.UNDEF_KEYWORD; }
-//<YYINITIAL> "#import"   { return MQL4TokenTypes.KW_XIMPORT; }
-//<YYINITIAL> "#include"  { return MQL4TokenTypes.KW_XINCLUDE; }
+"#define"   { return MQL4Tokens.DEFINE_KEYWORD; }
+"#undef"   { return MQL4Tokens.UNDEF_KEYWORD; }
+//"#import"   { return MQL4Tokens.KW_XIMPORT; }
+//"#include"  { return MQL4Tokens.KW_XINCLUDE; }
 
-<YYINITIAL> "#property" { return MQL4TokenTypes.PROPERTY_KEYWORD; }
-//<YYINITIAL> "template"  { return MQL4TokenTypes.KW_TEMPLATE; }
-//<YYINITIAL> "typename"  { return MQL4TokenTypes.KW_TYPENAME; }
+"#property" { return MQL4Tokens.PROPERTY_KEYWORD; }
+//"template"  { return MQL4Tokens.KW_TEMPLATE; }
+//"typename"  { return MQL4Tokens.KW_TYPENAME; }
 
-//<YYINITIAL> "\.\.\."  { return MQL4TokenTypes.OP_TRIPLEDOT; }
-//<YYINITIAL> "\.\."    { return MQL4TokenTypes.OP_DDOT; }
-//<YYINITIAL> \.        { return MQL4TokenTypes.OP_DOT; }
-//<YYINITIAL> ";"       { return MQL4TokenTypes.OP_SCOLON; }
-//<YYINITIAL> ":"       { return MQL4TokenTypes.OP_COLON; }
-//<YYINITIAL> ","       { return MQL4TokenTypes.OP_COMMA; }
+//"\.\.\."  { return MQL4Tokens.OP_TRIPLEDOT; }
+//"\.\."    { return MQL4Tokens.OP_DDOT; }
+//\.        { return MQL4Tokens.OP_DOT; }
+//";"       { return MQL4Tokens.OP_SCOLON; }
+//":"       { return MQL4Tokens.OP_COLON; }
+//","       { return MQL4Tokens.OP_COMMA; }
 //
-//<YYINITIAL> "\+="     { return MQL4TokenTypes.OP_PLUS_EQ; }
-//<YYINITIAL> "\-="     { return MQL4TokenTypes.OP_MINUS_EQ; }
-//<YYINITIAL> "\*="     { return MQL4TokenTypes.OP_MUL_EQ; }
-//<YYINITIAL> "\/="     { return MQL4TokenTypes.OP_DIV_EQ; }
-//<YYINITIAL> "\%="     { return MQL4TokenTypes.OP_MOD_EQ; }
-//<YYINITIAL> "\&="     { return MQL4TokenTypes.OP_AND_EQ; }
-//<YYINITIAL> "\|="     { return MQL4TokenTypes.OP_OR_EQ; }
-//<YYINITIAL> "\^="     { return MQL4TokenTypes.OP_XOR_EQ; }
-//<YYINITIAL> "\~="     { return MQL4TokenTypes.OP_TILDA_EQ; }
-//<YYINITIAL> "\<\<="   { return MQL4TokenTypes.OP_SH_LEFT_EQ; }
-//<YYINITIAL> "\>\>="   { return MQL4TokenTypes.OP_SH_RIGHT_EQ; }
-//<YYINITIAL> "\>\>\>=" { return MQL4TokenTypes.OP_USH_RIGHT_EQ; }
-//<YYINITIAL> "\^\^="   { return MQL4TokenTypes.OP_POW_EQ; }
+//"\+="     { return MQL4Tokens.OP_PLUS_EQ; }
+//"\-="     { return MQL4Tokens.OP_MINUS_EQ; }
+//"\*="     { return MQL4Tokens.OP_MUL_EQ; }
+//"\/="     { return MQL4Tokens.OP_DIV_EQ; }
+//"\%="     { return MQL4Tokens.OP_MOD_EQ; }
+//"\&="     { return MQL4Tokens.OP_AND_EQ; }
+//"\|="     { return MQL4Tokens.OP_OR_EQ; }
+//"\^="     { return MQL4Tokens.OP_XOR_EQ; }
+//"\~="     { return MQL4Tokens.OP_TILDA_EQ; }
+//"\<\<="   { return MQL4Tokens.OP_SH_LEFT_EQ; }
+//"\>\>="   { return MQL4Tokens.OP_SH_RIGHT_EQ; }
+//"\>\>\>=" { return MQL4Tokens.OP_USH_RIGHT_EQ; }
+//"\^\^="   { return MQL4Tokens.OP_POW_EQ; }
 
-//<YYINITIAL> "\+\+"    { return MQL4TokenTypes.OP_PLUS_PLUS; }
-//<YYINITIAL> "\-\-"    { return MQL4TokenTypes.OP_MINUS_MINUS; }
-//<YYINITIAL> "\|\|"    { return MQL4TokenTypes.OP_BOOL_OR; }
-//<YYINITIAL> "\&\&"    { return MQL4TokenTypes.OP_BOOL_AND; }
-//<YYINITIAL> "\>\>\>"  { return MQL4TokenTypes.OP_USH_RIGHT; }
-//<YYINITIAL> "\>\>"    { return MQL4TokenTypes.OP_SH_RIGHT; }
-//<YYINITIAL> "\<\<"    { return MQL4TokenTypes.OP_SH_LEFT; }
-//<YYINITIAL> "\^\^"    { return MQL4TokenTypes.OP_POW; }
-//<YYINITIAL> "=="      { return MQL4TokenTypes.OP_EQ_EQ; }
-//<YYINITIAL> "="       { return MQL4TokenTypes.OP_EQ; }
-//<YYINITIAL> "\<="     { return MQL4TokenTypes.OP_LESS_EQ; }
-//<YYINITIAL> "\>="     { return MQL4TokenTypes.OP_GT_EQ; }
-//<YYINITIAL> "\!="     { return MQL4TokenTypes.OP_NOT_EQ; }
+//"\+\+"    { return MQL4Tokens.OP_PLUS_PLUS; }
+//"\-\-"    { return MQL4Tokens.OP_MINUS_MINUS; }
+//"\|\|"    { return MQL4Tokens.OP_BOOL_OR; }
+//"\&\&"    { return MQL4Tokens.OP_BOOL_AND; }
+//"\>\>\>"  { return MQL4Tokens.OP_USH_RIGHT; }
+//"\>\>"    { return MQL4Tokens.OP_SH_RIGHT; }
+//"\<\<"    { return MQL4Tokens.OP_SH_LEFT; }
+//"\^\^"    { return MQL4Tokens.OP_POW; }
+//"=="      { return MQL4Tokens.OP_EQ_EQ; }
+//"="       { return MQL4Tokens.OP_EQ; }
+//"\<="     { return MQL4Tokens.OP_LESS_EQ; }
+//"\>="     { return MQL4Tokens.OP_GT_EQ; }
+//"\!="     { return MQL4Tokens.OP_NOT_EQ; }
 
-//<YYINITIAL> "\|"      { return MQL4TokenTypes.OP_OR; }
-//<YYINITIAL> "\^"      { return MQL4TokenTypes.OP_XOR; }
-//<YYINITIAL> "\+"      { return MQL4TokenTypes.OP_PLUS; }
-//<YYINITIAL> "\-"      { return MQL4TokenTypes.OP_MINUS; }
-//<YYINITIAL> "\*"      { return MQL4TokenTypes.OP_MUL; }
-//<YYINITIAL> "\~"      { return MQL4TokenTypes.OP_TILDA; }
-//<YYINITIAL> "\/"      { return MQL4TokenTypes.OP_DIV; }
-//<YYINITIAL> "\%"      { return MQL4TokenTypes.OP_MOD; }
-//<YYINITIAL> "\&"      { return MQL4TokenTypes.OP_AND; }
-//<YYINITIAL> "\!"      { return MQL4TokenTypes.OP_NOT; }
-//<YYINITIAL> "\?"      { return MQL4TokenTypes.OP_QUESTION; }
-//<YYINITIAL> "\<"      { return MQL4TokenTypes.OP_LESS; }
-//<YYINITIAL> "\>"      { return MQL4TokenTypes.OP_GT; }
+//"\|"      { return MQL4Tokens.OP_OR; }
+//"\^"      { return MQL4Tokens.OP_XOR; }
+//"\+"      { return MQL4Tokens.OP_PLUS; }
+//"\-"      { return MQL4Tokens.OP_MINUS; }
+//"\*"      { return MQL4Tokens.OP_MUL; }
+//"\~"      { return MQL4Tokens.OP_TILDA; }
+//"\/"      { return MQL4Tokens.OP_DIV; }
+//"\%"      { return MQL4Tokens.OP_MOD; }
+//"\&"      { return MQL4Tokens.OP_AND; }
+//"\!"      { return MQL4Tokens.OP_NOT; }
+//"\?"      { return MQL4Tokens.OP_QUESTION; }
+//"\<"      { return MQL4Tokens.OP_LESS; }
+//"\>"      { return MQL4Tokens.OP_GT; }
 //
-//<YYINITIAL> "\("      { return MQL4TokenTypes.OP_PAR_LEFT; }
-//<YYINITIAL> "\)"      { return MQL4TokenTypes.OP_PAR_RIGHT; }
-//<YYINITIAL> "\["      { return MQL4TokenTypes.OP_BRACKET_LEFT; }
-//<YYINITIAL> "\]"      { return MQL4TokenTypes.OP_BRACKET_RIGHT; }
-//<YYINITIAL> "\{"      { return MQL4TokenTypes.OP_BRACES_LEFT; }
-//<YYINITIAL> "\}"      { return MQL4TokenTypes.OP_BRACES_RIGHT; }
+"("   { return MQL4Tokens.LPARENTH; }
+")"   { return MQL4Tokens.RPARENTH; }
+  //"\["      { return MQL4Tokens.OP_BRACKET_LEFT; }
+//"\]"      { return MQL4Tokens.OP_BRACKET_RIGHT; }
+//"\{"      { return MQL4Tokens.OP_BRACES_LEFT; }
+//"\}"      { return MQL4Tokens.OP_BRACES_RIGHT; }
 
 
-<YYINITIAL> {char_literal} { return MQL4TokenTypes.CHAR_LITERAL; }
-<YYINITIAL> {integer_literal} { return MQL4TokenTypes.INTEGER_LITERAL; }
-<YYINITIAL> {float_literal} { return MQL4TokenTypes.DOUBLE_LITERAL; }
-<YYINITIAL> {double_quoted_string} { return MQL4TokenTypes.STRING_LITERAL; }
+{char_literal} { return MQL4Tokens.CHAR_LITERAL; }
+{integer_literal} { return MQL4Tokens.INTEGER_LITERAL; }
+{float_literal} { return MQL4Tokens.DOUBLE_LITERAL; }
+{double_quoted_string} { return MQL4Tokens.STRING_LITERAL; }
 
-<YYINITIAL> {identifier}        { return MQL4TokenTypes.IDENTIFIER; }
+{identifier}        { return MQL4Tokens.IDENTIFIER; }
+}
 
-. { return TokenType.BAD_CHARACTER; }
+[^] { return MQL4Tokens.BAD_CHARACTER; }

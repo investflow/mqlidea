@@ -8,13 +8,13 @@ import java.lang.ref.Reference;
 import java.lang.ref.SoftReference;
 import java.util.ResourceBundle;
 
-public class MQL4Bundle {
+public class MQL4PluginResources {
     private static Reference<ResourceBundle> MQL4_BUNDLE;
 
     @NonNls
     private static final String BUNDLE_ID = "messages.plugin";
 
-    private MQL4Bundle() {
+    private MQL4PluginResources() {
     }
 
     public static String message(@PropertyKey(resourceBundle = BUNDLE_ID) String key, Object... params) {

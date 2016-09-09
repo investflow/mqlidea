@@ -3,72 +3,72 @@ MQL4 File
   MQL4TopLevelDeclarationImpl(MQL4ElementType.TOP_LEVEL_DECLARATION)
     MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_BLOCK)
       MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_UNDEF_BLOCK)
-        PsiElement(MQL4TokenType.UNDEF_KEYWORD)('#undef')
-        PsiElement(MQL4TokenType.IDENTIFIER)('A')
+        PsiElement(MQL4ElementType.UNDEF_KEYWORD)('#undef')
+        PsiElement(MQL4ElementType.IDENTIFIER)('A')
   PsiComment(MQL4ElementType.LINE_COMMENT)('// error: parameter is required\n')
   MQL4TopLevelDeclarationImpl(MQL4ElementType.TOP_LEVEL_DECLARATION)
     MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_BLOCK)
       MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_UNDEF_BLOCK)
-        PsiElement(MQL4TokenType.UNDEF_KEYWORD)('#undef')
+        PsiElement(MQL4ElementType.UNDEF_KEYWORD)('#undef')
         PsiErrorElement:Identifier expected
           <empty list>
   MQL4TopLevelDeclarationImpl(MQL4ElementType.TOP_LEVEL_DECLARATION)
     MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_BLOCK)
       MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_UNDEF_BLOCK)
-        PsiElement(MQL4TokenType.UNDEF_KEYWORD)('#undef')
+        PsiElement(MQL4ElementType.UNDEF_KEYWORD)('#undef')
         PsiErrorElement:Identifier expected
           <empty list>
   PsiErrorElement:Unexpected top level statement
     <empty list>
-  PsiElement(MQL4TokenType.IDENTIFIER)('B')
+  PsiElement(MQL4ElementType.IDENTIFIER)('B')
   PsiComment(MQL4ElementType.LINE_COMMENT)('// multiple statements on the same line\n')
   MQL4TopLevelDeclarationImpl(MQL4ElementType.TOP_LEVEL_DECLARATION)
     MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_BLOCK)
       MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_UNDEF_BLOCK)
-        PsiElement(MQL4TokenType.UNDEF_KEYWORD)('#undef')
-        PsiElement(MQL4TokenType.IDENTIFIER)('X')
+        PsiElement(MQL4ElementType.UNDEF_KEYWORD)('#undef')
+        PsiElement(MQL4ElementType.IDENTIFIER)('X')
   MQL4TopLevelDeclarationImpl(MQL4ElementType.TOP_LEVEL_DECLARATION)
     MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_BLOCK)
       MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_UNDEF_BLOCK)
-        PsiElement(MQL4TokenType.UNDEF_KEYWORD)('#undef')
-        PsiElement(MQL4TokenType.IDENTIFIER)('Y')
+        PsiElement(MQL4ElementType.UNDEF_KEYWORD)('#undef')
+        PsiElement(MQL4ElementType.IDENTIFIER)('Y')
   PsiComment(MQL4ElementType.LINE_COMMENT)('// error: parameter must be an identifier\n')
   MQL4TopLevelDeclarationImpl(MQL4ElementType.TOP_LEVEL_DECLARATION)
     MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_BLOCK)
       MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_UNDEF_BLOCK)
-        PsiElement(MQL4TokenType.UNDEF_KEYWORD)('#undef')
+        PsiElement(MQL4ElementType.UNDEF_KEYWORD)('#undef')
         PsiErrorElement:Identifier expected
           <empty list>
         PsiElement(MQL4ElementType.INTEGER_LITERAL)('1')
   MQL4TopLevelDeclarationImpl(MQL4ElementType.TOP_LEVEL_DECLARATION)
     MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_BLOCK)
       MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_UNDEF_BLOCK)
-        PsiElement(MQL4TokenType.UNDEF_KEYWORD)('#undef')
+        PsiElement(MQL4ElementType.UNDEF_KEYWORD)('#undef')
         PsiErrorElement:Identifier expected
           <empty list>
         PsiElement(MQL4ElementType.CHAR_LITERAL)(''A'')
   MQL4TopLevelDeclarationImpl(MQL4ElementType.TOP_LEVEL_DECLARATION)
     MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_BLOCK)
       MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_UNDEF_BLOCK)
-        PsiElement(MQL4TokenType.UNDEF_KEYWORD)('#undef')
+        PsiElement(MQL4ElementType.UNDEF_KEYWORD)('#undef')
         PsiErrorElement:Identifier expected
           <empty list>
         PsiElement(MQL4ElementType.STRING_LITERAL)('"B"')
   MQL4TopLevelDeclarationImpl(MQL4ElementType.TOP_LEVEL_DECLARATION)
     MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_BLOCK)
       MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_UNDEF_BLOCK)
-        PsiElement(MQL4TokenType.UNDEF_KEYWORD)('#undef')
+        PsiElement(MQL4ElementType.UNDEF_KEYWORD)('#undef')
         PsiErrorElement:Identifier expected
           <empty list>
   MQL4TopLevelDeclarationImpl(MQL4ElementType.TOP_LEVEL_DECLARATION)
     MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_BLOCK)
       MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_UNDEF_BLOCK)
-        PsiElement(MQL4TokenType.UNDEF_KEYWORD)('#undef')
+        PsiElement(MQL4ElementType.UNDEF_KEYWORD)('#undef')
         PsiErrorElement:Identifier expected
           <empty list>
   PsiComment(MQL4ElementType.LINE_COMMENT)('// check that parsing is restored\n')
   MQL4TopLevelDeclarationImpl(MQL4ElementType.TOP_LEVEL_DECLARATION)
     MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_BLOCK)
       MQL4PreprocessorBlockImpl(MQL4ElementType.PREPROCESSOR_UNDEF_BLOCK)
-        PsiElement(MQL4TokenType.UNDEF_KEYWORD)('#undef')
-        PsiElement(MQL4TokenType.IDENTIFIER)('B')
+        PsiElement(MQL4ElementType.UNDEF_KEYWORD)('#undef')
+        PsiElement(MQL4ElementType.IDENTIFIER)('B')

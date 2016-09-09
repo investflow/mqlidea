@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 import com.intellij.lang.PsiBuilder;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
+import ru.investflow.mql.psi.MQL4Elements;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
@@ -12,7 +13,6 @@ import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefPar
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseIfDef;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseUndef;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorPropertyParsing.parsePropertyBlock;
-import static ru.investflow.mql.psi.MQL4TokenTypes.PREPROCESSOR_BLOCK;
 
 public class PreprocessorParsing {
 
@@ -32,7 +32,7 @@ public class PreprocessorParsing {
                 }
             }
         }
-        exit_section_(b, m, PREPROCESSOR_BLOCK, r);
+        exit_section_(b, m, MQL4Elements.PREPROCESSOR_BLOCK, r);
         return r;
     }
 

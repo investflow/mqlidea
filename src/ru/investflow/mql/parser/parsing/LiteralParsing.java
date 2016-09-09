@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 
-import static ru.investflow.mql.psi.MQL4TokenTypeSets.LITERALS;
+import static ru.investflow.mql.psi.MQL4TokenSets.LITERALS;
 
 public class LiteralParsing {
 
