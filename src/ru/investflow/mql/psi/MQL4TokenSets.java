@@ -6,9 +6,17 @@ public class MQL4TokenSets implements MQL4Tokens {
 
     public static final TokenSet COMMENTS = TokenSet.create(LINE_COMMENT, BLOCK_COMMENT);
 
-    public static final TokenSet LITERALS = TokenSet.create(STRING_LITERAL, CHAR_LITERAL, INTEGER_LITERAL, DOUBLE_LITERAL);
+    public static final TokenSet PREPROCESSOR = TokenSet.create(
+            DEFINE_KEYWORD,
+            IMPORT_KEYWORD,
+            INCLUDE_KEYWORD,
+            PROPERTY_KEYWORD,
+            UNDEF_KEYWORD
+    );
 
-    public static final TokenSet STRINGS_AND_CHARS = TokenSet.create(STRING_LITERAL, CHAR_LITERAL);
+    public static final TokenSet LITERALS = TokenSet.create(STRING_LITERAL, CHAR_LITERAL, INTEGER_LITERAL, DOUBLE_LITERAL, INCLUDE_STRING_LITERAL);
+
+    public static final TokenSet STRINGS_AND_CHARS = TokenSet.create(STRING_LITERAL, CHAR_LITERAL, INCLUDE_STRING_LITERAL);
 
     public static final TokenSet NUMBERS = TokenSet.create(INTEGER_LITERAL, DOUBLE_LITERAL);
 

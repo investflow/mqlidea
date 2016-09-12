@@ -21,8 +21,8 @@ import static ru.investflow.mql.psi.MQL4TokenSets.LITERALS;
 
 public class PreprocessorPropertyParsing implements MQL4Tokens {
 
-    public static boolean parsePropertyBlock(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "parsePropertyBlock")) {
+    public static boolean parseProperty(PsiBuilder b, int l) {
+        if (!recursion_guard_(b, l, "parseProperty")) {
             return false;
         }
         if (!nextTokenIs(b, PROPERTY_KEYWORD)) {

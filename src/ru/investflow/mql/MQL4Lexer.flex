@@ -20,6 +20,7 @@ white_space_char = [ \t\f]
 
 letter = [:letter:]
 digit = [:digit:]
+
 identifier = (_|{letter}) (_|{digit}|{letter})*
 
 block_comment = "/*" {block_comment_content} "*/"
@@ -28,6 +29,7 @@ line_comment = "/""/"[^\r\n]* {line_terminator}?
 
 double_quoted_string = \" ( [^\\\"] |{escape_sequence})* \" {string_postfix}?
 string_postfix = [cwd]
+include_quoted_string = "<" ({letter} | {digit} | "." | "/" | "\\" | "-" | "_" | "$")* ">"
 
 escape_sequence = {escape_sequence_spec_char}
 escape_sequence_spec_char = "\\\'" | "\\\"" | "\\\?" | "\\\\" | "\\0" | "\\a"
@@ -59,6 +61,15 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 {block_comment}     { return MQL4Tokens.BLOCK_COMMENT; }
 {line_comment}      { return MQL4Tokens.LINE_COMMENT; }
 
+
+{char_literal} { return MQL4Tokens.CHAR_LITERAL; }
+{integer_literal} { return MQL4Tokens.INTEGER_LITERAL; }
+{float_literal} { return MQL4Tokens.DOUBLE_LITERAL; }
+{double_quoted_string} { return MQL4Tokens.STRING_LITERAL; }
+{include_quoted_string} { return MQL4Tokens.INCLUDE_STRING_LITERAL; }
+
+
+// Keywords
 
 // https://docs.mql4.com/basis/syntax/reserved
 
@@ -121,12 +132,18 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 
 "#define"   { return MQL4Tokens.DEFINE_KEYWORD; }
 "#undef"   { return MQL4Tokens.UNDEF_KEYWORD; }
-//"#import"   { return MQL4Tokens.KW_XIMPORT; }
-//"#include"  { return MQL4Tokens.KW_XINCLUDE; }
-
+"#import"   { return MQL4Tokens.IMPORT_KEYWORD; }
+"#include"  { return MQL4Tokens.INCLUDE_KEYWORD; }
 "#property" { return MQL4Tokens.PROPERTY_KEYWORD; }
+
 //"template"  { return MQL4Tokens.KW_TEMPLATE; }
 //"typename"  { return MQL4Tokens.KW_TYPENAME; }
+
+
+{identifier}        { return MQL4Tokens.IDENTIFIER; }
+
+
+// Operators & special characters
 
 //"\.\.\."  { return MQL4Tokens.OP_TRIPLEDOT; }
 //"\.\."    { return MQL4Tokens.OP_DDOT; }
@@ -174,23 +191,14 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 //"\&"      { return MQL4Tokens.OP_AND; }
 //"\!"      { return MQL4Tokens.OP_NOT; }
 //"\?"      { return MQL4Tokens.OP_QUESTION; }
-//"\<"      { return MQL4Tokens.OP_LESS; }
-//"\>"      { return MQL4Tokens.OP_GT; }
-//
+"<"      { return MQL4Tokens.LT; }
+">"      { return MQL4Tokens.GT; }
 "("   { return MQL4Tokens.LPARENTH; }
 ")"   { return MQL4Tokens.RPARENTH; }
   //"\["      { return MQL4Tokens.OP_BRACKET_LEFT; }
 //"\]"      { return MQL4Tokens.OP_BRACKET_RIGHT; }
 //"\{"      { return MQL4Tokens.OP_BRACES_LEFT; }
 //"\}"      { return MQL4Tokens.OP_BRACES_RIGHT; }
-
-
-{char_literal} { return MQL4Tokens.CHAR_LITERAL; }
-{integer_literal} { return MQL4Tokens.INTEGER_LITERAL; }
-{float_literal} { return MQL4Tokens.DOUBLE_LITERAL; }
-{double_quoted_string} { return MQL4Tokens.STRING_LITERAL; }
-
-{identifier}        { return MQL4Tokens.IDENTIFIER; }
 }
 
 [^] { return MQL4Tokens.BAD_CHARACTER; }

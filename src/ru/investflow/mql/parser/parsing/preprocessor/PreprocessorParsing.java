@@ -12,7 +12,9 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseDefine;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseIfDef;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseUndef;
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorPropertyParsing.parsePropertyBlock;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIncludeImportParsing.parseImport;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIncludeImportParsing.parseInclude;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorPropertyParsing.parseProperty;
 
 public class PreprocessorParsing {
 
@@ -22,19 +24,18 @@ public class PreprocessorParsing {
         }
 
         PsiBuilder.Marker m = enter_section_(b);
-        boolean r = parsePropertyBlock(b, l + 1);
-        if (!r) {
-            r = parseDefine(b, l + 1);
-            if (!r) {
-                r = parseUndef(b, l + 1);
-                if (!r) {
-                    r = parseIfDef(b, l + 1);
-                }
-            }
-        }
+
+        boolean r = parseProperty(b, l + 1) ||
+                parseDefine(b, l + 1) ||
+                parseUndef(b, l + 1) ||
+                parseIfDef(b, l + 1) ||
+                parseInclude(b, l + 1) ||
+                parseImport(b, l + 1);
+
         exit_section_(b, m, MQL4Elements.PREPROCESSOR_BLOCK, r);
         return r;
     }
+
 
     public static boolean assertNoLineBreaksInRange(PsiBuilder b, int startOffset, @NotNull String errorMessage) {
         return assertNoLineBreaksInRange(b, startOffset, b.getCurrentOffset(), errorMessage);
@@ -49,4 +50,5 @@ public class PreprocessorParsing {
         }
         return true;
     }
+
 }

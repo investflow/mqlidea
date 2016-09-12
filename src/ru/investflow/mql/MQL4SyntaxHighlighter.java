@@ -25,11 +25,13 @@ public class MQL4SyntaxHighlighter extends SyntaxHighlighterBase {
     public static final TextAttributesKey BLOCK_COMMENT = createTextAttributesKey("MQL_BLOCK_COMMENT", DefaultLanguageHighlighterColors.BLOCK_COMMENT);
     public static final TextAttributesKey INTEGER = createTextAttributesKey("MQL_INTEGER", DefaultLanguageHighlighterColors.NUMBER);
     public static final TextAttributesKey FLOAT = createTextAttributesKey("MQL_FLOAT", DefaultLanguageHighlighterColors.NUMBER);
+    public static final TextAttributesKey PREPROCESSOR_KEYWORD = createTextAttributesKey("PREPROCESSOR_KEYWORD", DefaultLanguageHighlighterColors.METADATA);
     public static final TextAttributesKey KEYWORD = createTextAttributesKey("MQL_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD);
     public static final TextAttributesKey OPERATOR = createTextAttributesKey("MQL_OPERATOR", DefaultLanguageHighlighterColors.OPERATION_SIGN);
     public static final TextAttributesKey BAD_CHARACTER = TextAttributesKey.createTextAttributesKey("MQL_BAD_CHARACTER", HighlighterColors.BAD_CHARACTER);
 
     private static final TextAttributesKey[] BAD_CHAR_KEYS = new TextAttributesKey[]{BAD_CHARACTER};
+    private static final TextAttributesKey[] PREPROCESSOR_KEYS = new TextAttributesKey[]{PREPROCESSOR_KEYWORD};
     private static final TextAttributesKey[] COMMENT_KEYS = new TextAttributesKey[]{LINE_COMMENT, BLOCK_COMMENT};
     private static final TextAttributesKey[] IDENTIFIER_KEYS = new TextAttributesKey[]{IDENTIFIER};
     private static final TextAttributesKey[] STRING_KEYS = new TextAttributesKey[]{STRING};
@@ -49,6 +51,8 @@ public class MQL4SyntaxHighlighter extends SyntaxHighlighterBase {
     public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
         if (MQL4TokenSets.COMMENTS.contains(tokenType)) {
             return COMMENT_KEYS;
+        } else if (MQL4TokenSets.PREPROCESSOR.contains(tokenType)) {
+            return PREPROCESSOR_KEYS;
         } else if (tokenType.equals(TokenType.BAD_CHARACTER)) {
             return BAD_CHAR_KEYS;
         } else if (tokenType.equals(MQL4Tokens.IDENTIFIER)) {
@@ -64,4 +68,5 @@ public class MQL4SyntaxHighlighter extends SyntaxHighlighterBase {
         }
         return EMPTY_KEYS;
     }
+
 }

@@ -14,7 +14,7 @@ public class MQL4ElementFactory implements MQL4Tokens, MQL4Elements {
         IElementType type = node.getElementType();
         if (type == LINE_COMMENT || type == BLOCK_COMMENT) {
             return new MQL4CommentImpl(node);
-        } else if (type == INTEGER_LITERAL || type == CHAR_LITERAL || type == STRING_LITERAL || type == DOUBLE_LITERAL) {
+        } else if (type == INTEGER_LITERAL || type == CHAR_LITERAL || type == STRING_LITERAL || type == DOUBLE_LITERAL || type == INCLUDE_STRING_LITERAL) {
             return new MQL4LiteralImpl(node);
         } else if (type == PREPROCESSOR_BLOCK) {
             return new MQL4PreprocessorBlockImpl(node);
@@ -23,6 +23,10 @@ public class MQL4ElementFactory implements MQL4Tokens, MQL4Elements {
         } else if (type == PREPROCESSOR_DEFINE_BLOCK) {
             return new MQL4PreprocessorBlockImpl(node);
         } else if (type == PREPROCESSOR_UNDEF_BLOCK) {
+            return new MQL4PreprocessorBlockImpl(node);
+        } else if (type == PREPROCESSOR_INCLUDE_BLOCK) {
+            return new MQL4PreprocessorBlockImpl(node);
+        } else if (type == PREPROCESSOR_IMPORT_BLOCK) {
             return new MQL4PreprocessorBlockImpl(node);
         } else if (type == TOP_LEVEL_DECLARATION) {
             return new MQL4TopLevelDeclarationImpl(node);
