@@ -30,6 +30,8 @@ public class MQL4ElementFactory implements MQL4Tokens, MQL4Elements {
             return new MQL4PreprocessorBlockImpl(node);
         } else if (type == TOP_LEVEL_DECLARATION) {
             return new MQL4TopLevelDeclarationImpl(node);
+        } else if (type == FUNCTION_DECLARATION_BLOCK) {
+            return new MQL4TopLevelDeclarationImpl(node); //todo: customize
         }
         throw new AssertionError("Unknown element type: " + type);
     }

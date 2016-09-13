@@ -17,6 +17,11 @@ public class ParsingUtils implements MQL4Tokens {
         return text != null && text.contains("\n");
     }
 
+    public static boolean containsEndOfLine(@NotNull PsiBuilder b, int startPos) {
+        String text = b.getOriginalText().subSequence(startPos, b.getCurrentOffset()).toString();
+        return containsEndOfLine(text);
+    }
+
     public enum NewLineAdvanceMode {
         DEFAULT,
         STOP_IF_FIRST_TOKEN_IS_NOT_NEW_LINE

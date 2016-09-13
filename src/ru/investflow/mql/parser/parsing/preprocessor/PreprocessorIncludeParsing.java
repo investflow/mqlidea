@@ -11,7 +11,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
 
-public class PreprocessorIncludeImportParsing implements MQL4Tokens {
+public class PreprocessorIncludeParsing implements MQL4Tokens {
 
     public static boolean parseInclude(PsiBuilder b, int l) {
         if (!recursion_guard_(b, l, "parseInclude")) {
@@ -41,16 +41,4 @@ public class PreprocessorIncludeImportParsing implements MQL4Tokens {
         return true;
     }
 
-    public static boolean parseImport(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "parseImport")) {
-            return false;
-        }
-        if (!nextTokenIs(b, IMPORT_KEYWORD)) {
-            return false;
-        }
-        PsiBuilder.Marker m = enter_section_(b);
-        b.advanceLexer();
-        exit_section_(b, m, MQL4Elements.PREPROCESSOR_IMPORT_BLOCK, true);
-        return true;
-    }
 }

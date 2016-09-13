@@ -12,8 +12,8 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseDefine;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseIfDef;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseUndef;
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIncludeImportParsing.parseImport;
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIncludeImportParsing.parseInclude;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorImportParsing.parseImport;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIncludeParsing.parseInclude;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorPropertyParsing.parseProperty;
 
 public class PreprocessorParsing {

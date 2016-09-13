@@ -12,4 +12,6 @@ public interface MQL4Elements {
     IElementType PREPROCESSOR_UNDEF_BLOCK = new MQL4ElementType("PREPROCESSOR_UNDEF_BLOCK");
 
     IElementType TOP_LEVEL_DECLARATION = new MQL4ElementType("TOP_LEVEL_DECLARATION");
+
+    IElementType FUNCTION_DECLARATION_BLOCK = new MQL4ElementType("FUNCTION_DECLARATION_BLOCK");
 }
