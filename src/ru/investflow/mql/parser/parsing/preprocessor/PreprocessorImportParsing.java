@@ -11,7 +11,6 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
 
 public class PreprocessorImportParsing implements MQL4Tokens {
 
@@ -34,7 +33,7 @@ public class PreprocessorImportParsing implements MQL4Tokens {
             IElementType tt = b.getTokenType();
             if (tt != STRING_LITERAL) {
                 b.error("String literal is expected!");
-                ParsingUtils.advanceLexerUntilNewLine(b);
+                ParsingUtils.advanceLexerUntil(b, LINE_TERMINATOR);
                 return true;
             }
             b.advanceLexer();
@@ -42,7 +41,7 @@ public class PreprocessorImportParsing implements MQL4Tokens {
             // check that there are no other tokens till the eol
             if (!ParsingUtils.containsEndOfLine(b, literalOffset)) {
                 b.error("New line is expected!");
-                ParsingUtils.advanceLexerUntilNewLine(b);
+                ParsingUtils.advanceLexerUntil(b, LINE_TERMINATOR);
                 return true;
             }
             // now parse functions declaration until the next import block

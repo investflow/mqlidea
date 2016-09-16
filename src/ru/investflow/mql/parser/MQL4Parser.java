@@ -9,6 +9,7 @@ import com.intellij.lang.PsiParser;
 import com.intellij.psi.tree.IElementType;
 import ru.investflow.mql.parser.parsing.CommentParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
+import ru.investflow.mql.psi.MQL4Tokens;
 
 import static com.intellij.lang.java.parser.JavaParserUtil.error;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.TRUE_CONDITION;
@@ -47,7 +48,7 @@ public class MQL4Parser implements PsiParser {
             if (!r) {
                 // Show first error per line only. Skip other errors.
                 error(b, "Unexpected top level statement");
-                ParsingUtils.advanceLexerUntilNewLine(b);
+                ParsingUtils.advanceLexerUntil(b, MQL4Tokens.LINE_TERMINATOR);
             }
         }
         return true;

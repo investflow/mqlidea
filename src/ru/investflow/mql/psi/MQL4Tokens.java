@@ -13,6 +13,9 @@ public interface MQL4Tokens extends TokenType {
 
     // Line terminators
     IElementType LINE_TERMINATOR = new MQL4ElementType("LINE_TERMINATOR");
+
+    // review if this type is really needed after parser is finished.
+    @Deprecated
     IElementType RECOVERY_LINE_TERMINATOR = new MQL4ElementType("RECOVERY_LINE_TERMINATOR");
 
     // Literals
@@ -41,4 +44,29 @@ public interface MQL4Tokens extends TokenType {
     IElementType INCLUDE_KEYWORD = new MQL4ElementType("INCLUDE_KEYWORD");
     IElementType PROPERTY_KEYWORD = new MQL4ElementType("PROPERTY_KEYWORD");
     IElementType UNDEF_KEYWORD = new MQL4ElementType("UNDEF_KEYWORD");
+
+    // Data types
+    IElementType BOOL_KEYWORD = new MQL4ElementType("BOOL_KEYWORD");
+    IElementType CHAR_KEYWORD = new MQL4ElementType("CHAR_KEYWORD");
+    IElementType CLASS_KEYWORD = new MQL4ElementType("CLASS_KEYWORD");
+    IElementType COLOR_KEYWORD = new MQL4ElementType("COLOR_KEYWORD");
+    IElementType DATETIME_KEYWORD = new MQL4ElementType("DATETIME_KEYWORD");
+    IElementType DOUBLE_KEYWORD = new MQL4ElementType("DOUBLE_KEYWORD");
+    IElementType ENUM_KEYWORD = new MQL4ElementType("ENUM_KEYWORD");
+    IElementType FLOAT_KEYWORD = new MQL4ElementType("FLOAT_KEYWORD");
+    IElementType INT_KEYWORD = new MQL4ElementType("INT_KEYWORD");
+    IElementType LONG_KEYWORD = new MQL4ElementType("LONG_KEYWORD");
+    IElementType SHORT_KEYWORD = new MQL4ElementType("SHORT_KEYWORD");
+    IElementType STRING_KEYWORD = new MQL4ElementType("STRING_KEYWORD");
+    IElementType STRUCT_KEYWORD = new MQL4ElementType("STRUCT_KEYWORD");
+    IElementType UCHAR_KEYWORD = new MQL4ElementType("UCHAR_KEYWORD");
+    IElementType UINT_KEYWORD = new MQL4ElementType("UINT_KEYWORD");
+    IElementType ULONG_KEYWORD = new MQL4ElementType("ULONG_KEYWORD");
+    IElementType USHORT_KEYWORD = new MQL4ElementType("USHORT_KEYWORD");
+    IElementType VOID_KEYWORD = new MQL4ElementType("VOID_KEYWORD");
+
+    /**
+     * Special marker. Used only during parsing and never appear in the final PSI model.
+     */
+    IElementType PARSING_MARKER = new MQL4ElementType("PARSING_MARKER");
 }

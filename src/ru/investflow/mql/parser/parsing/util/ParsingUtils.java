@@ -1,17 +1,16 @@
 package ru.investflow.mql.parser.parsing.util;
 
+import java.util.List;
+
 import org.jetbrains.annotations.NotNull;
 
-import com.intellij.lang.ITokenTypeRemapper;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
+import com.intellij.util.containers.Predicate;
 import com.sun.istack.internal.Nullable;
 import ru.investflow.mql.psi.MQL4Tokens;
 
-import static ru.investflow.mql.parser.parsing.util.ParsingUtils.NewLineAdvanceMode.DEFAULT;
-
 public class ParsingUtils implements MQL4Tokens {
-    public static final ITokenTypeRemapper NEW_LINE_REMAPPER = (source, start, end, text) -> source == LINE_TERMINATOR ? RECOVERY_LINE_TERMINATOR : source;
 
     public static boolean containsEndOfLine(@Nullable String text) {
         return text != null && text.contains("\n");
@@ -22,29 +21,17 @@ public class ParsingUtils implements MQL4Tokens {
         return containsEndOfLine(text);
     }
 
-    public enum NewLineAdvanceMode {
-        DEFAULT,
-        STOP_IF_FIRST_TOKEN_IS_NOT_NEW_LINE
-    }
-
-    public static void advanceLexerUntilNewLine(@NotNull PsiBuilder b) {
-        tryAdvanceLexerUntilNewLine(b, DEFAULT);
-    }
-
     @Nullable
-    public static IElementType tryAdvanceLexerUntilNewLine(@NotNull PsiBuilder b, NewLineAdvanceMode mode) {
-        b.setTokenTypeRemapper(NEW_LINE_REMAPPER);
+    public static IElementType advanceLexerUntil(@NotNull PsiBuilder b, @NotNull IElementType type) {
+        b.setTokenTypeRemapper((source, start, end, text) -> source == type ? PARSING_MARKER : source);
         IElementType token = null;
         try {
             while (!b.eof()) {
                 token = b.getTokenType();
-                boolean foundNewLine = token == RECOVERY_LINE_TERMINATOR;
-                if (foundNewLine) { // restore original new line token, remove artificial one.
-                    b.remapCurrentToken(LINE_TERMINATOR);
+                boolean found = token == PARSING_MARKER;
+                if (found) { // restore original token, remove artificial one.
+                    b.remapCurrentToken(type);
                     return LINE_TERMINATOR;
-                }
-                if (mode == NewLineAdvanceMode.STOP_IF_FIRST_TOKEN_IS_NOT_NEW_LINE) {
-                    return token;
                 }
                 b.advanceLexer();
             }
@@ -54,4 +41,15 @@ public class ParsingUtils implements MQL4Tokens {
         return token;
     }
 
+    @SuppressWarnings("unchecked")
+    public static boolean matchSequence(@NotNull PsiBuilder b, @NotNull List<Predicate<IElementType>> predicates) {
+        for (int i = 0; i < predicates.size(); i++) {
+            Predicate<IElementType> p = predicates.get(i);
+            IElementType t = b.lookAhead(i);
+            if (!p.apply(t)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

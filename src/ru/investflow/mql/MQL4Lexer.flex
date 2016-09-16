@@ -74,24 +74,25 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 // https://docs.mql4.com/basis/syntax/reserved
 
 // Data types
-//"bool"      { return MQL4Tokens.KW_BOOL; }
-//"char"      { return MQL4Tokens.KW_CHAR; }
-//"class"     { return MQL4Tokens.KW_CLASS; }
-//"color"     { return MQL4Tokens.KW_COLOR; }
-//"datetime"  { return MQL4Tokens.KW_DATETIME; }
-//"double"    { return MQL4Tokens.KW_DOUBLE; }
-  //"enum"      { return MQL4Tokens.KW_ENUM; }
-//"float"     { return MQL4Tokens.KW_FLOAT; }
-//"int"       { return MQL4Tokens.KW_INT; }
-//"long"      { return MQL4Tokens.KW_LONG; }
-//"short"     { return MQL4Tokens.KW_SHORT; }
-//"string"    { return MQL4Tokens.KW_STRING; }
-////"struct"    { return MQL4Tokens.KW_STRUCT; }
-//"uchar"     { return MQL4Tokens.KW_UCHAR; }
-//"uint"      { return MQL4Tokens.KW_UINT; }
-//"ulong"     { return MQL4Tokens.KW_ULONG; }
-//"ushort"    { return MQL4Tokens.KW_USHORT; }
-//"void"      { return MQL4Tokens.KW_VOID; }
+"bool"      { return MQL4Tokens.BOOL_KEYWORD; }
+"char"      { return MQL4Tokens.CHAR_KEYWORD; }
+"class"     { return MQL4Tokens.CLASS_KEYWORD; }
+"color"     { return MQL4Tokens.COLOR_KEYWORD; }
+"datetime"  { return MQL4Tokens.DATETIME_KEYWORD; }
+"double"    { return MQL4Tokens.DOUBLE_KEYWORD; }
+"enum"      { return MQL4Tokens.ENUM_KEYWORD; }
+"float"     { return MQL4Tokens.FLOAT_KEYWORD; }
+"int"       { return MQL4Tokens.INT_KEYWORD; }
+"long"      { return MQL4Tokens.LONG_KEYWORD; }
+"short"     { return MQL4Tokens.SHORT_KEYWORD; }
+"string"    { return MQL4Tokens.STRING_KEYWORD; }
+"struct"    { return MQL4Tokens.STRUCT_KEYWORD; }
+"uchar"     { return MQL4Tokens.UCHAR_KEYWORD; }
+"uint"      { return MQL4Tokens.UINT_KEYWORD; }
+"ulong"     { return MQL4Tokens.ULONG_KEYWORD; }
+"ushort"    { return MQL4Tokens.USHORT_KEYWORD; }
+"void"      { return MQL4Tokens.VOID_KEYWORD; }
+
 //
 // Access specificators
 //"const"     { return MQL4Tokens.KW_CONST; }

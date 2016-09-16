@@ -28,4 +28,41 @@ public class MQL4TokenSets implements MQL4Tokens {
             //TODO:
     );
 
+    public static final TokenSet DATA_TYPES = TokenSet.create(
+            BOOL_KEYWORD,
+            CHAR_KEYWORD,
+            CLASS_KEYWORD,
+            COLOR_KEYWORD,
+            DATETIME_KEYWORD,
+            DOUBLE_KEYWORD,
+            ENUM_KEYWORD,
+            FLOAT_KEYWORD,
+            INT_KEYWORD,
+            LONG_KEYWORD,
+            SHORT_KEYWORD,
+            STRING_KEYWORD,
+            STRUCT_KEYWORD,
+            UCHAR_KEYWORD,
+            UINT_KEYWORD,
+            ULONG_KEYWORD,
+            USHORT_KEYWORD,
+            VOID_KEYWORD
+    );
+
+    public static final TokenSet VALID_IMPORT_DATA_TYPES = TokenSet.create(
+            BOOL_KEYWORD,
+            CHAR_KEYWORD,
+            DOUBLE_KEYWORD,
+            FLOAT_KEYWORD,
+            INT_KEYWORD,
+            LONG_KEYWORD,
+            SHORT_KEYWORD,
+            STRING_KEYWORD,
+            UCHAR_KEYWORD,
+            UINT_KEYWORD,
+            ULONG_KEYWORD,
+            USHORT_KEYWORD,
+            VOID_KEYWORD
+    );
+
 }
