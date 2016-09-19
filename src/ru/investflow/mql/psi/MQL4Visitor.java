@@ -22,6 +22,9 @@ public class MQL4Visitor extends PsiElementVisitor {
     public void visitTopLevelDeclaration(@NotNull MQL4TopLevelDeclaration o) {
         visitPsiElement(o);
     }
+    public void visitSimplePsiElement(@NotNull MQL4SimplePsiElement o) {
+        visitPsiElement(o);
+    }
 
     public void visitPsiElement(@NotNull PsiElement o) {
         visitElement(o);

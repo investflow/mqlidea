@@ -1,13 +1,14 @@
 package ru.investflow.mql.psi;
 
+import javax.swing.Icon;
+
+import org.jetbrains.annotations.NotNull;
+
 import com.intellij.extapi.psi.PsiFileBase;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.psi.FileViewProvider;
 import ru.investflow.mql.MQL4FileType;
 import ru.investflow.mql.MQL4Language;
-import org.jetbrains.annotations.NotNull;
-
-import javax.swing.*;
 
 public class MQL4File extends PsiFileBase {
     public MQL4File(@NotNull FileViewProvider viewProvider) {

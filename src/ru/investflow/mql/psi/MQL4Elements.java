@@ -14,4 +14,7 @@ public interface MQL4Elements {
     IElementType TOP_LEVEL_DECLARATION = new MQL4ElementType("TOP_LEVEL_DECLARATION");
 
     IElementType FUNCTION_DECLARATION_BLOCK = new MQL4ElementType("FUNCTION_DECLARATION_BLOCK");
+    IElementType FUNCTION_BLOCK = new MQL4ElementType("FUNCTION_BLOCK");
+    IElementType ARGUMENTS_LIST = new MQL4ElementType("ARGUMENTS_LIST");
+    IElementType ARGUMENT = new MQL4ElementType("ARGUMENT");
 }

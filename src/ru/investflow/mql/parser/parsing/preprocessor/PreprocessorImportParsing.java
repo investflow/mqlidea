@@ -11,6 +11,9 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
+import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Declaration;
+import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.parseFunction;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 
 public class PreprocessorImportParsing implements MQL4Tokens {
 
@@ -46,11 +49,23 @@ public class PreprocessorImportParsing implements MQL4Tokens {
             }
             // now parse functions declaration until the next import block
             while (!nextTokenIs(b, IMPORT_KEYWORD)) {
-                FunctionsParsing.forceParseDeclaration(b, l + 1);
+                forceParseDeclaration(b, l + 1);
             }
         } finally {
             exit_section_(b, m, MQL4Elements.PREPROCESSOR_IMPORT_BLOCK, true);
         }
         return true;
     }
+
+    public static boolean forceParseDeclaration(PsiBuilder b, int l) {
+        if (parseFunction(b, l, Declaration) == Declaration) {
+            return true;
+        }
+        PsiBuilder.Marker m = enter_section_(b);
+        b.error("Function declaration expected!");
+        advanceLexerUntil(b, SEMICOLON);
+        exit_section_(b, m, MQL4Elements.FUNCTION_DECLARATION_BLOCK, true);
+        return false;
+    }
+
 }

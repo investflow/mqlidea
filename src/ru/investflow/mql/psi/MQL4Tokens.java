@@ -34,6 +34,7 @@ public interface MQL4Tokens extends TokenType {
     IElementType RBRACE = new MQL4ElementType("RBRACE");
     IElementType RBRACKET = new MQL4ElementType("RBRACKET");
     IElementType RPARENTH = new MQL4ElementType("RPARENTH");
+    IElementType COLON = new MQL4ElementType("COLON");
     IElementType SEMICOLON = new MQL4ElementType("SEMICOLON");
     IElementType LT = new MQL4ElementType("LT");
     IElementType GT = new MQL4ElementType("GT");

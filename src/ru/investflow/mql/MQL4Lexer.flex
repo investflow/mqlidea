@@ -32,8 +32,7 @@ string_postfix = [cwd]
 include_quoted_string = "<" ({letter} | {digit} | "." | "/" | "\\" | "-" | "_" | "$")* ">"
 
 escape_sequence = {escape_sequence_spec_char}
-escape_sequence_spec_char = "\\\'" | "\\\"" | "\\\?" | "\\\\" | "\\0" | "\\a"
-                          | "\\b"  | "\\f"  | "\\n"  | "\\r"  | "\\t" | "\\v"
+escape_sequence_spec_char = "\\\'" | "\\\"" | "\\\?" | "\\\\" | "\\0" | "\\a" | "\\b"  | "\\f"  | "\\n"  | "\\r"  | "\\t" | "\\v"
 
 char_literal = \' ( [^\r\n\t\f\\] | {escape_sequence} ) \'
 integer_literal = ({decimal_integer} | {hexadecimal_integer}) {integer_suffix}?
@@ -42,10 +41,9 @@ integer_suffix =  L | u | U | Lu | LU | uL | UL
 decimal_integer = 0 | ([1-9] [0-9_]*)
 hexadecimal_integer = 0[xX] [0-9a-fA-F] [0-9a-fA-F_]*
 
-
 float_literal = {decimal_float}
 decimal_float = ( {decimal_float_simple} | {decimal_float_exponent} | {decimal_float_no_dot_exponent} )
-decimal_float_simple = [0-9]* \. ([0-9]*)
+decimal_float_simple = [0-9]* \. ([0-9]+)
 decimal_float_exponent = [0-9]* \. [0-9_]+ {decimal_exponent}
 decimal_float_no_dot_exponent = [0-9]+ {decimal_exponent}
 decimal_exponent = [eE][\+\-]? [0-9_]+
@@ -149,9 +147,6 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 //"\.\.\."  { return MQL4Tokens.OP_TRIPLEDOT; }
 //"\.\."    { return MQL4Tokens.OP_DDOT; }
 //\.        { return MQL4Tokens.OP_DOT; }
-//";"       { return MQL4Tokens.OP_SCOLON; }
-//":"       { return MQL4Tokens.OP_COLON; }
-//","       { return MQL4Tokens.OP_COMMA; }
 //
 //"\+="     { return MQL4Tokens.OP_PLUS_EQ; }
 //"\-="     { return MQL4Tokens.OP_MINUS_EQ; }
@@ -192,10 +187,20 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 //"\&"      { return MQL4Tokens.OP_AND; }
 //"\!"      { return MQL4Tokens.OP_NOT; }
 //"\?"      { return MQL4Tokens.OP_QUESTION; }
-"<"      { return MQL4Tokens.LT; }
-">"      { return MQL4Tokens.GT; }
+
+"<"   { return MQL4Tokens.LT; }
+">"   { return MQL4Tokens.GT; }
 "("   { return MQL4Tokens.LPARENTH; }
 ")"   { return MQL4Tokens.RPARENTH; }
+"{"   { return MQL4Tokens.LBRACE; }
+"}"   { return MQL4Tokens.RBRACE; }
+"["   { return MQL4Tokens.LBRACKET; }
+"]"   { return MQL4Tokens.RBRACKET; }
+";"   { return MQL4Tokens.SEMICOLON; }
+":"   { return MQL4Tokens.COLON; }
+","   { return MQL4Tokens.COMMA; }
+"."   { return MQL4Tokens.DOT; }
+
   //"\["      { return MQL4Tokens.OP_BRACKET_LEFT; }
 //"\]"      { return MQL4Tokens.OP_BRACKET_RIGHT; }
 //"\{"      { return MQL4Tokens.OP_BRACES_LEFT; }

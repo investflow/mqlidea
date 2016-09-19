@@ -6,6 +6,7 @@ import com.intellij.psi.tree.IElementType;
 import ru.investflow.mql.psi.impl.MQL4CommentImpl;
 import ru.investflow.mql.psi.impl.MQL4LiteralImpl;
 import ru.investflow.mql.psi.impl.MQL4PreprocessorBlockImpl;
+import ru.investflow.mql.psi.impl.MQL4SimplePsiElementImpl;
 import ru.investflow.mql.psi.impl.MQL4TopLevelDeclarationImpl;
 
 public class MQL4ElementFactory implements MQL4Tokens, MQL4Elements {
@@ -30,8 +31,10 @@ public class MQL4ElementFactory implements MQL4Tokens, MQL4Elements {
             return new MQL4PreprocessorBlockImpl(node);
         } else if (type == TOP_LEVEL_DECLARATION) {
             return new MQL4TopLevelDeclarationImpl(node);
-        } else if (type == FUNCTION_DECLARATION_BLOCK) {
+        } else if (type == FUNCTION_DECLARATION_BLOCK || type == FUNCTION_BLOCK) {
             return new MQL4TopLevelDeclarationImpl(node); //todo: customize
+        } else if (type == ARGUMENTS_LIST || type == ARGUMENT) {
+            return new MQL4SimplePsiElementImpl(node);
         }
         throw new AssertionError("Unknown element type: " + type);
     }

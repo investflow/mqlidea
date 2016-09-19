@@ -18,6 +18,8 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.adapt_builder_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
+import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Failed;
+import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.parseFunction;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.parsePreprocessorBlock;
 import static ru.investflow.mql.psi.MQL4Elements.TOP_LEVEL_DECLARATION;
 
@@ -60,7 +62,7 @@ public class MQL4Parser implements PsiParser {
         }
 
         Marker m = enter_section_(b);
-        boolean r = parsePreprocessorBlock(b, l + 1);
+        boolean r = parsePreprocessorBlock(b, l + 1) || parseFunction(b, l + 1, null) != Failed;
         exit_section_(b, m, TOP_LEVEL_DECLARATION, r);
         return r;
     }
