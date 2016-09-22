@@ -6,7 +6,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import com.intellij.lang.PsiBuilder;
+import com.intellij.psi.tree.TokenSet;
 import ru.investflow.mql.parser.parsing.CodeBlockParsing;
+import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 import ru.investflow.mql.psi.MQL4Tokens;
@@ -17,6 +19,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Declaration;
 import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Definition;
 import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Failed;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.StopTokenAdvanceMode.ADVANCE_STOP_TOKENS;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.matchSequence;
 
 public class FunctionsParsing implements MQL4Tokens {
@@ -25,6 +28,8 @@ public class FunctionsParsing implements MQL4Tokens {
         Declaration,
         Definition
     }
+
+    public static final TokenSet STOP_TOKENS = TokenSet.create(SEMICOLON, RPARENTH);
 
     /**
      * Form: TYPE IDENTIFIER ( ARG* ) (; |  {})
@@ -48,13 +53,14 @@ public class FunctionsParsing implements MQL4Tokens {
             b.advanceLexer(); // identifier
             b.advanceLexer(); // '('
 
-            boolean r = parseArgumentsList(b, l + 1);
-            if (!r) {
+            boolean argsParsed = parseArgumentsList(b, l + 1);
+            if (!argsParsed) {
+                ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE_STOP_TOKENS);
                 return result;
             }
-
             if (b.getTokenType() != RPARENTH) {
                 b.error("Right brace expected");
+                ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE_STOP_TOKENS);
                 return result;
             }
             b.advanceLexer(); // ')'
@@ -62,7 +68,6 @@ public class FunctionsParsing implements MQL4Tokens {
             if (b.getTokenType() == SEMICOLON) {
                 b.advanceLexer();
                 result = Declaration;
-                return result;
             } else if (b.getTokenType() == LBRACE) {
                 CodeBlockParsing.parseBlock(b, l + 1);
             } else {
@@ -73,7 +78,6 @@ public class FunctionsParsing implements MQL4Tokens {
                 } else {
                     b.error("Function body or semicolon expected");
                 }
-                return result;
             }
         } finally {
             exit_section_(b, m, result == Declaration ? MQL4Elements.FUNCTION_DECLARATION_BLOCK : MQL4Elements.FUNCTION_BLOCK, true);
@@ -89,7 +93,6 @@ public class FunctionsParsing implements MQL4Tokens {
         try {
             while (b.getTokenType() != RPARENTH) {
                 PsiBuilder.Marker m2 = enter_section_(b);
-                boolean m2Res = false;
                 try {
                     if (!MQL4TokenSets.DATA_TYPES.contains(b.getTokenType())) {
                         b.error("Argument type or right brace is expected");
@@ -108,9 +111,8 @@ public class FunctionsParsing implements MQL4Tokens {
                     if (b.getTokenType() == COMMA) {
                         b.advanceLexer();
                     }
-                    m2Res = true;
                 } finally {
-                    exit_section_(b, m2, MQL4Elements.ARGUMENT, m2Res);
+                    exit_section_(b, m2, MQL4Elements.ARGUMENT, true);
                 }
             }
         } finally {

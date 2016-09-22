@@ -3,11 +3,12 @@ package ru.investflow.mql.parser.parsing.util;
 import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
+import com.intellij.psi.tree.TokenSet;
 import com.intellij.util.containers.Predicate;
-import com.sun.istack.internal.Nullable;
 import ru.investflow.mql.psi.MQL4Tokens;
 
 public class ParsingUtils implements MQL4Tokens {
@@ -21,17 +22,31 @@ public class ParsingUtils implements MQL4Tokens {
         return containsEndOfLine(text);
     }
 
+    public enum StopTokenAdvanceMode {
+        ADVANCE_STOP_TOKENS,
+        STOP_AND_RETURN_STOP_TOKEN
+    }
+
+    /**
+     * TODO: document me!
+     */
     @Nullable
-    public static IElementType advanceLexerUntil(@NotNull PsiBuilder b, @NotNull IElementType type) {
-        b.setTokenTypeRemapper((source, start, end, text) -> source == type ? PARSING_MARKER : source);
+    public static IElementType advanceLexerUntil(@NotNull PsiBuilder b, @NotNull TokenSet stopTypes, StopTokenAdvanceMode stopMode) {
+        b.setTokenTypeRemapper((source, start, end, text) -> stopTypes.contains(source) ? new ParsingMarker(source) : source);
         IElementType token = null;
+        boolean advancingStops = false;
         try {
             while (!b.eof()) {
                 token = b.getTokenType();
-                boolean found = token == PARSING_MARKER;
-                if (found) { // restore original token, remove artificial one.
-                    b.remapCurrentToken(type);
-                    return LINE_TERMINATOR;
+                if (token instanceof ParsingMarker) { // restore original token, remove artificial one.
+                    ParsingMarker m = (ParsingMarker) token;
+                    b.remapCurrentToken(m.originalToken);
+                    if (stopMode == StopTokenAdvanceMode.STOP_AND_RETURN_STOP_TOKEN) {
+                        return m.originalToken;
+                    }
+                    advancingStops = true;
+                } else if (advancingStops) {
+                    return null;
                 }
                 b.advanceLexer();
             }
@@ -39,6 +54,11 @@ public class ParsingUtils implements MQL4Tokens {
             b.setTokenTypeRemapper(null);
         }
         return token;
+    }
+
+    @Nullable
+    public static IElementType advanceLexerUntil(@NotNull PsiBuilder b, @NotNull IElementType type) {
+        return advanceLexerUntil(b, TokenSet.create(type), StopTokenAdvanceMode.STOP_AND_RETURN_STOP_TOKEN);
     }
 
     @SuppressWarnings("unchecked")

@@ -24,10 +24,6 @@ public class MQL4TokenSets implements MQL4Tokens {
 //            OP_EQ
     );
 
-    public static final TokenSet KEYWORDS = TokenSet.create(
-            //TODO:
-    );
-
     public static final TokenSet DATA_TYPES = TokenSet.create(
             BOOL_KEYWORD,
             CHAR_KEYWORD,
@@ -64,5 +60,7 @@ public class MQL4TokenSets implements MQL4Tokens {
             USHORT_KEYWORD,
             VOID_KEYWORD
     );
+
+    public static final TokenSet KEYWORDS = DATA_TYPES;
 
 }

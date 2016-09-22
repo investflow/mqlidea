@@ -18,6 +18,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.adapt_builder_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
+import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Definition;
 import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Failed;
 import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.parseFunction;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.parsePreprocessorBlock;
@@ -45,8 +46,8 @@ public class MQL4Parser implements PsiParser {
             return false;
         }
         while (!b.eof()) {
-            boolean r = parseTopLevelDeclaration(b, l);
-            r = r || CommentParsing.parseComment(b, l);
+            boolean r = parseTopLevelDeclaration(b, l)
+                    || CommentParsing.parseComment(b, l);
             if (!r) {
                 // Show first error per line only. Skip other errors.
                 error(b, "Unexpected top level statement");
@@ -62,7 +63,10 @@ public class MQL4Parser implements PsiParser {
         }
 
         Marker m = enter_section_(b);
-        boolean r = parsePreprocessorBlock(b, l + 1) || parseFunction(b, l + 1, null) != Failed;
+
+        boolean r = parsePreprocessorBlock(b, l + 1)
+                || parseFunction(b, l + 1, Definition) != Failed;
+
         exit_section_(b, m, TOP_LEVEL_DECLARATION, r);
         return r;
     }
