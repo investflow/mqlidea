@@ -80,7 +80,7 @@ public class FunctionsParsing implements MQL4Tokens {
                 }
             }
         } finally {
-            exit_section_(b, m, result == Declaration ? MQL4Elements.FUNCTION_DECLARATION_BLOCK : MQL4Elements.FUNCTION_BLOCK, true);
+            exit_section_(b, m, result == Declaration ? MQL4Elements.FUNCTION_DECLARATION : MQL4Elements.FUNCTION_DEFINITION, true);
         }
         return result;
     }

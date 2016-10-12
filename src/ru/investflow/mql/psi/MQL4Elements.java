@@ -13,8 +13,13 @@ public interface MQL4Elements {
 
     IElementType TOP_LEVEL_DECLARATION = new MQL4ElementType("TOP_LEVEL_DECLARATION");
 
-    IElementType FUNCTION_DECLARATION_BLOCK = new MQL4ElementType("FUNCTION_DECLARATION_BLOCK");
-    IElementType FUNCTION_BLOCK = new MQL4ElementType("FUNCTION_BLOCK");
+    IElementType FUNCTION_DECLARATION = new MQL4ElementType("FUNCTION_DECLARATION");
+    IElementType FUNCTION_DEFINITION = new MQL4ElementType("FUNCTION_DEFINITION");
     IElementType ARGUMENTS_LIST = new MQL4ElementType("ARGUMENTS_LIST");
     IElementType ARGUMENT = new MQL4ElementType("ARGUMENT");
+
+    IElementType CODE_BLOCK = new MQL4ElementType("CODE_BLOCK");
+
+    IElementType EMPTY_STATEMENT = new MQL4ElementType("EMPTY_STATEMENT");
+
 }

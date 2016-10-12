@@ -2,7 +2,6 @@ package ru.investflow.mql.parser.parsing.preprocessor;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
-import ru.investflow.mql.parser.parsing.functions.FunctionsParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4Tokens;
@@ -64,7 +63,7 @@ public class PreprocessorImportParsing implements MQL4Tokens {
         PsiBuilder.Marker m = enter_section_(b);
         b.error("Function declaration expected!");
         advanceLexerUntil(b, SEMICOLON);
-        exit_section_(b, m, MQL4Elements.FUNCTION_DECLARATION_BLOCK, true);
+        exit_section_(b, m, MQL4Elements.FUNCTION_DECLARATION, true);
         return false;
     }
 
