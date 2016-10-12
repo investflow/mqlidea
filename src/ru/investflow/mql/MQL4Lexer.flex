@@ -93,16 +93,16 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 
 //
 // Access specificators
-//"const"     { return MQL4Tokens.KW_CONST; }
+"const"     { return MQL4Tokens.CONST_KEYWORD; }
 //"public"    { return MQL4Tokens.KW_PUBLIC; }
 //"private"   { return MQL4Tokens.KW_PRIVATE; }
 //"virtual"   { return MQL4Tokens.KW_VIRTUAL; }
 //"protected" { return MQL4Tokens.KW_PROTECTED; }
 //
 // Memory classes
-//"extern"    { return MQL4Tokens.KW_EXTERN; }
-//"input"     { return MQL4Tokens.KW_INPUT; }
-//"static"    { return MQL4Tokens.KW_STATIC; }
+"extern"    { return MQL4Tokens.EXTERN_KEYWORD; }
+"input"     { return MQL4Tokens.INPUT_KEYWORD; }
+"static"    { return MQL4Tokens.STATIC_KEYWORD; }
 //
 // Operators
 //"break"     { return MQL4Tokens.KW_BREAK; }
@@ -171,7 +171,7 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 //"\<\<"    { return MQL4Tokens.OP_SH_LEFT; }
 //"\^\^"    { return MQL4Tokens.OP_POW; }
 //"=="      { return MQL4Tokens.OP_EQ_EQ; }
-//"="       { return MQL4Tokens.OP_EQ; }
+"="       { return MQL4Tokens.EQ; }
 //"\<="     { return MQL4Tokens.OP_LESS_EQ; }
 //"\>="     { return MQL4Tokens.OP_GT_EQ; }
 //"\!="     { return MQL4Tokens.OP_NOT_EQ; }

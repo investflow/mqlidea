@@ -8,6 +8,7 @@ import com.intellij.lang.PsiBuilder.Marker;
 import com.intellij.lang.PsiParser;
 import com.intellij.psi.tree.IElementType;
 import ru.investflow.mql.parser.parsing.CommentParsing;
+import ru.investflow.mql.parser.parsing.statement.StatementParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Tokens;
 
@@ -18,11 +19,6 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.adapt_builder_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Definition;
-import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Failed;
-import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.parseFunction;
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.parsePreprocessorBlock;
-import static ru.investflow.mql.psi.MQL4Elements.TOP_LEVEL_DECLARATION;
 
 @SuppressWarnings("SimplifiableIfStatement")
 public class MQL4Parser implements PsiParser {
@@ -46,7 +42,7 @@ public class MQL4Parser implements PsiParser {
             return false;
         }
         while (!b.eof()) {
-            boolean r = parseTopLevelDeclaration(b, l)
+            boolean r = StatementParsing.parseTopLevelStatement(b, l)
                     || CommentParsing.parseComment(b, l);
             if (!r) {
                 // Show first error per line only. Skip other errors.
@@ -55,20 +51,6 @@ public class MQL4Parser implements PsiParser {
             }
         }
         return true;
-    }
-
-    public static boolean parseTopLevelDeclaration(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "parseTopLevelDeclaration")) {
-            return false;
-        }
-
-        Marker m = enter_section_(b);
-
-        boolean r = parsePreprocessorBlock(b, l + 1)
-                || parseFunction(b, l + 1, Definition) != Failed;
-
-        exit_section_(b, m, TOP_LEVEL_DECLARATION, r);
-        return r;
     }
 
 }

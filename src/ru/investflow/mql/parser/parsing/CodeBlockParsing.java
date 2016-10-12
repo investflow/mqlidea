@@ -8,15 +8,15 @@ import ru.investflow.mql.psi.MQL4Tokens;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.StatementParsing.parseStatement;
+import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseStatement;
 
 public class CodeBlockParsing {
 
-    public static boolean parseBlock(PsiBuilder b, int l) {
+    public static boolean parseCodeBlock(PsiBuilder b, int l) {
         if (b.getTokenType() != MQL4Tokens.LBRACE) {
             return false;
         }
-        if (!recursion_guard_(b, l, "code-block")) {
+        if (!recursion_guard_(b, l, "parseCodeBlock")) {
             return false;
         }
         PsiBuilder.Marker m = enter_section_(b);
@@ -29,7 +29,7 @@ public class CodeBlockParsing {
                 b.advanceLexer();
                 break;
             }
-            res = parseBlock(b, l + 1) || parseStatement(b, l + 1);
+            res = parseCodeBlock(b, l + 1) || parseStatement(b, l + 1);
         } while (res);
 
         exit_section_(b, m, MQL4Elements.CODE_BLOCK, true);

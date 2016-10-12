@@ -9,7 +9,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.ExpressionParsing.parseExpression;
+import static ru.investflow.mql.parser.parsing.ExpressionParsing.parseExpressionOrFail;
 import static ru.investflow.mql.parser.parsing.LiteralParsing.isLiteral;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
 
@@ -31,13 +31,8 @@ public class PreprocessorIfDefParsing implements MQL4Tokens {
             if (!parseRequiredIdentifier(b)) {
                 return true;
             }
-
             parseDefineParams(b);
-
-            boolean r = parseExpression(b, l + 1);
-            if (!r) {
-                b.error("Expression expected");
-            }
+            parseExpressionOrFail(b, l + 1);
         } finally {
             exit_section_(b, m, MQL4Elements.PREPROCESSOR_DEFINE_BLOCK, true);
         }

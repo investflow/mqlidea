@@ -1,4 +1,4 @@
-package ru.investflow.mql.parser.parsing.functions;
+package ru.investflow.mql.parser.parsing.function;
 
 import java.util.Arrays;
 
@@ -16,9 +16,9 @@ import ru.investflow.mql.psi.MQL4Tokens;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Declaration;
-import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Definition;
-import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Failed;
+import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Declaration;
+import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Definition;
+import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Failed;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.StopTokenAdvanceMode.ADVANCE_STOP_TOKENS;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.matchSequence;
 
@@ -69,7 +69,7 @@ public class FunctionsParsing implements MQL4Tokens {
                 b.advanceLexer();
                 result = Declaration;
             } else if (b.getTokenType() == LBRACE) {
-                CodeBlockParsing.parseBlock(b, l + 1);
+                CodeBlockParsing.parseCodeBlock(b, l + 1);
             } else {
                 if (expectedResult == Declaration) {
                     b.error("Semicolon expected");

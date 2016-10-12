@@ -66,6 +66,19 @@ public interface MQL4Tokens extends TokenType {
     IElementType USHORT_KEYWORD = new MQL4ElementType("USHORT_KEYWORD");
     IElementType VOID_KEYWORD = new MQL4ElementType("VOID_KEYWORD");
 
+    // Memory classes
+    IElementType EXTERN_KEYWORD = new MQL4ElementType("EXTERN_KEYWORD");
+    IElementType INPUT_KEYWORD = new MQL4ElementType("INPUT_KEYWORD");
+    IElementType STATIC_KEYWORD = new MQL4ElementType("STATIC_KEYWORD");
+
+    // Access specificators
+    IElementType CONST_KEYWORD = new MQL4ElementType("CONST_KEYWORD");
+
+
+    // Operators
+    IElementType EQ = new MQL4ElementType("EQ");
+
+
     /**
      * Special marker. Used only during parsing and never appear in the final PSI model.
      */

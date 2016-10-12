@@ -8,4 +8,12 @@ public class ExpressionParsing {
         //todo:
         return LiteralParsing.parseLiteral(b);
     }
+
+    public static boolean parseExpressionOrFail(PsiBuilder b, int l) {
+        boolean ok = parseExpression(b, l);
+        if (!ok) {
+            b.error("Expression expected");
+        }
+        return ok;
+    }
 }

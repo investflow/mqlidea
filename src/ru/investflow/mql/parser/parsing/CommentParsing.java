@@ -20,7 +20,7 @@ public class CommentParsing implements MQL4Tokens {
     }
 
     public static boolean parseLineComment(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "rg-line-comment")) {
+        if (!recursion_guard_(b, l, "parseLineComment")) {
             return false;
         }
         if (!nextTokenIs(b, "<line-comment>", LINE_COMMENT)) {

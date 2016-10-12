@@ -10,8 +10,8 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.FunctionParsingResult.Declaration;
-import static ru.investflow.mql.parser.parsing.functions.FunctionsParsing.parseFunction;
+import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Declaration;
+import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.parseFunction;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 
 public class PreprocessorImportParsing implements MQL4Tokens {
@@ -46,7 +46,7 @@ public class PreprocessorImportParsing implements MQL4Tokens {
                 ParsingUtils.advanceLexerUntil(b, LINE_TERMINATOR);
                 return true;
             }
-            // now parse functions declaration until the next import block
+            // now parse function declaration until the next import block
             while (!nextTokenIs(b, IMPORT_KEYWORD)) {
                 forceParseDeclaration(b, l + 1);
             }
