@@ -12,7 +12,7 @@ public class MQL4ElementFactory implements MQL4Tokens, MQL4Elements {
 
     public static PsiElement createElement(ASTNode node) {
         IElementType type = node.getElementType();
-        if (type == LINE_COMMENT || type == BLOCK_COMMENT) {
+        if (type == COMMENT) {
             return new MQL4CommentImpl(node);
         } else if (type == INTEGER_LITERAL || type == CHAR_LITERAL || type == STRING_LITERAL || type == DOUBLE_LITERAL || type == INCLUDE_STRING_LITERAL) {
             return new MQL4LiteralImpl(node);

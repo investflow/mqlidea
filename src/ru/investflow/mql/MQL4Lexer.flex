@@ -105,9 +105,9 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 "static"    { return MQL4Tokens.STATIC_KEYWORD; }
 //
 // Operators
-//"break"     { return MQL4Tokens.KW_BREAK; }
+"break"     { return MQL4Tokens.BREAK_KEYWORD; }
 //"case"      { return MQL4Tokens.KW_CASE; }
-//"continue"  { return MQL4Tokens.KW_CONTINUE; }
+"continue"  { return MQL4Tokens.CONTINUE_KEYWORD; }
 //"default"   { return MQL4Tokens.KW_DEFAULT; }
 //"delete"    { return MQL4Tokens.KW_DELETE; }
 //
@@ -200,11 +200,6 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 ":"   { return MQL4Tokens.COLON; }
 ","   { return MQL4Tokens.COMMA; }
 "."   { return MQL4Tokens.DOT; }
-
-  //"\["      { return MQL4Tokens.OP_BRACKET_LEFT; }
-//"\]"      { return MQL4Tokens.OP_BRACKET_RIGHT; }
-//"\{"      { return MQL4Tokens.OP_BRACES_LEFT; }
-//"\}"      { return MQL4Tokens.OP_BRACES_RIGHT; }
 }
 
 [^] { return MQL4Tokens.BAD_CHARACTER; }

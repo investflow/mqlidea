@@ -22,43 +22,43 @@ public class ParsingUtils implements MQL4Tokens {
         return containsEndOfLine(text);
     }
 
-    public enum StopTokenAdvanceMode {
-        ADVANCE_STOP_TOKENS,
-        STOP_AND_RETURN_STOP_TOKEN
-    }
-
     /**
-     * TODO: document me!
+     * Safe to use with any kind of tokens that are hidden by PSI-Builder by default (like whitespaces)
+     *
+     * @return returns true if stopToken was found.
      */
-    @Nullable
-    public static IElementType advanceLexerUntil(@NotNull PsiBuilder b, @NotNull TokenSet stopTypes, StopTokenAdvanceMode stopMode) {
+    public static boolean advanceLexerUntil(@NotNull PsiBuilder b, @NotNull TokenSet stopTypes, TokenAdvanceMode advanceMode) {
         b.setTokenTypeRemapper((source, start, end, text) -> stopTypes.contains(source) ? new ParsingMarker(source) : source);
-        IElementType token = null;
-        boolean advancingStops = false;
         try {
-            while (!b.eof()) {
-                token = b.getTokenType();
-                if (token instanceof ParsingMarker) { // restore original token, remove artificial one.
-                    ParsingMarker m = (ParsingMarker) token;
-                    b.remapCurrentToken(m.originalToken);
-                    if (stopMode == StopTokenAdvanceMode.STOP_AND_RETURN_STOP_TOKEN) {
-                        return m.originalToken;
-                    }
-                    advancingStops = true;
-                } else if (advancingStops) {
-                    return null;
+            // find the token
+            while (!(b.getTokenType() instanceof ParsingMarker)) {
+                b.advanceLexer();
+                if (b.eof()) {
+                    return false;
+                }
+            }
+            // restore original token, remove marker and advance if needed.
+            do {
+                ParsingMarker m = (ParsingMarker) b.getTokenType();
+                b.remapCurrentToken(m.originalToken);
+                if (advanceMode == TokenAdvanceMode.DO_NOT_ADVANCE) {
+                    break;
                 }
                 b.advanceLexer();
-            }
+            } while (!b.eof() && b.getTokenType() instanceof ParsingMarker);
+            return true;
         } finally {
             b.setTokenTypeRemapper(null);
         }
-        return token;
     }
 
-    @Nullable
-    public static IElementType advanceLexerUntil(@NotNull PsiBuilder b, @NotNull IElementType type) {
-        return advanceLexerUntil(b, TokenSet.create(type), StopTokenAdvanceMode.STOP_AND_RETURN_STOP_TOKEN);
+    /**
+     * Safe to use with any kind of tokens that are hidden by PSI-Builder by default (like whitespaces)
+     *
+     * @return returns true if stopToken was found.
+     */
+    public static boolean advanceLexerUntil(@NotNull PsiBuilder b, @NotNull IElementType type, @NotNull TokenAdvanceMode mode) {
+        return advanceLexerUntil(b, TokenSet.create(type), mode);
     }
 
     @SuppressWarnings("unchecked")

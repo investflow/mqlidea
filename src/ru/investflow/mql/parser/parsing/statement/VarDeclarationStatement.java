@@ -3,6 +3,7 @@ package ru.investflow.mql.parser.parsing.statement;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.TokenSet;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
+import ru.investflow.mql.parser.parsing.util.TokenAdvanceMode;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 import ru.investflow.mql.psi.MQL4Tokens;
@@ -35,7 +36,7 @@ public class VarDeclarationStatement implements MQL4Tokens {
         b.advanceLexer(); // type
         boolean ok = parseVarDefinitionList(b, l + 1);
         if (!ok) {
-            ParsingUtils.advanceLexerUntil(b, SEMICOLON);
+            ParsingUtils.advanceLexerUntil(b, SEMICOLON, TokenAdvanceMode.ADVANCE);
         }
         exit_section_(b, m, MQL4Elements.VAR_DECLARATION_STATEMENT, true);
         return true;
@@ -43,27 +44,38 @@ public class VarDeclarationStatement implements MQL4Tokens {
 
     private static boolean parseVarDefinitionList(PsiBuilder b, int l) {
         assert b.getTokenType() == IDENTIFIER;
-        boolean ok = true;
         PsiBuilder.Marker m0 = enter_section_(b);
-        do {
-            PsiBuilder.Marker m1 = enter_section_(b);
-            b.advanceLexer();
-            try {
-                if (b.getTokenType() == SEMICOLON) {
-                    break;
-                }
-                if (b.getTokenType() == COMMA) {
-                    continue;
-                }
-                if (b.getTokenType() == EQ) {
+        try {
+            boolean ok = true;
+            do {
+                PsiBuilder.Marker m1 = enter_section_(b);
+                try {
                     b.advanceLexer();
-                    ok = parseExpressionOrFail(b, l + 1);
+                    if (b.getTokenType() == SEMICOLON) {
+                        b.advanceLexer();
+                        break;
+                    }
+                    if (b.getTokenType() == COMMA) {
+                        continue;
+                    }
+                    if (b.getTokenType() == EQ) {
+                        b.advanceLexer();
+                        ok = parseExpressionOrFail(b, l + 1);
+                        if (ok && b.getTokenType() == SEMICOLON) {
+                            b.advanceLexer();
+                            break;
+                        }
+                    } else {
+                        b.error("Unexpected token");
+                        ok = false;
+                    }
+                } finally {
+                    exit_section_(b, m1, MQL4Elements.VAR_DEFINITION, true);
                 }
-            } finally {
-                exit_section_(b, m1, MQL4Elements.VAR_DEFINITION, true);
-            }
-        } while (ok && b.getTokenType() == IDENTIFIER);
-        exit_section_(b, m0, MQL4Elements.VAR_DEFINITION_LIST, true);
-        return ok;
+            } while (ok && b.getTokenType() == IDENTIFIER);
+            return ok;
+        } finally {
+            exit_section_(b, m0, MQL4Elements.VAR_DEFINITION_LIST, true);
+        }
     }
 }

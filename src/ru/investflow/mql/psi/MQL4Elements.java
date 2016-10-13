@@ -4,6 +4,8 @@ import com.intellij.psi.tree.IElementType;
 
 public interface MQL4Elements {
 
+    IElementType COMMENT = new MQL4ElementType("COMMENT");
+
     IElementType PREPROCESSOR_BLOCK = new MQL4ElementType("PREPROCESSOR_BLOCK");
     IElementType PREPROCESSOR_DEFINE_BLOCK = new MQL4ElementType("PREPROCESSOR_DEFINE_BLOCK");
     IElementType PREPROCESSOR_IMPORT_BLOCK = new MQL4ElementType("PREPROCESSOR_IMPORT_BLOCK");
@@ -21,6 +23,7 @@ public interface MQL4Elements {
     IElementType CODE_BLOCK = new MQL4ElementType("CODE_BLOCK");
 
     IElementType EMPTY_STATEMENT = new MQL4ElementType("EMPTY_STATEMENT");
+    IElementType SINGLE_WORD_STATEMENT = new MQL4ElementType("SINGLE_WORD_STATEMENT");
     IElementType VAR_DECLARATION_STATEMENT = new MQL4ElementType("VAR_DECLARATION_STATEMENT");
     IElementType VAR_DEFINITION_LIST = new MQL4ElementType("VAR_DEFINITION_LIST");
     IElementType VAR_DEFINITION = new MQL4ElementType("VAR_DEFINITION");

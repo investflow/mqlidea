@@ -78,6 +78,9 @@ public interface MQL4Tokens extends TokenType {
     // Operators
     IElementType EQ = new MQL4ElementType("EQ");
 
+    // Keywords
+    IElementType BREAK_KEYWORD = new MQL4ElementType("BREAK_KEYWORD");
+    IElementType CONTINUE_KEYWORD = new MQL4ElementType("CONTINUE_KEYWORD");
 
     /**
      * Special marker. Used only during parsing and never appear in the final PSI model.

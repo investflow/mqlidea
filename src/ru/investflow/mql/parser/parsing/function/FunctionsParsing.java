@@ -19,7 +19,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Declaration;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Definition;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Failed;
-import static ru.investflow.mql.parser.parsing.util.ParsingUtils.StopTokenAdvanceMode.ADVANCE_STOP_TOKENS;
+import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.matchSequence;
 
 public class FunctionsParsing implements MQL4Tokens {
@@ -55,12 +55,12 @@ public class FunctionsParsing implements MQL4Tokens {
 
             boolean argsParsed = parseArgumentsList(b, l + 1);
             if (!argsParsed) {
-                ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE_STOP_TOKENS);
+                ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE);
                 return result;
             }
             if (b.getTokenType() != RPARENTH) {
                 b.error("Right brace expected");
-                ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE_STOP_TOKENS);
+                ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE);
                 return result;
             }
             b.advanceLexer(); // ')'

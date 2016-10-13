@@ -12,13 +12,13 @@ import ru.investflow.mql.parser.parsing.statement.StatementParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Tokens;
 
-import static com.intellij.lang.java.parser.JavaParserUtil.error;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.TRUE_CONDITION;
 import static com.intellij.lang.parser.GeneratedParserUtilBase._COLLAPSE_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.adapt_builder_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
+import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 
 @SuppressWarnings("SimplifiableIfStatement")
 public class MQL4Parser implements PsiParser {
@@ -45,9 +45,10 @@ public class MQL4Parser implements PsiParser {
             boolean r = StatementParsing.parseTopLevelStatement(b, l)
                     || CommentParsing.parseComment(b, l);
             if (!r) {
-                // Show first error per line only. Skip other errors.
-                error(b, "Unexpected top level statement");
-                ParsingUtils.advanceLexerUntil(b, MQL4Tokens.LINE_TERMINATOR);
+                // Show one error per line positioned on the first token only. Skip other errors until the end of line.
+                b.advanceLexer();
+                b.error("Unexpected top level statement");
+                ParsingUtils.advanceLexerUntil(b, MQL4Tokens.LINE_TERMINATOR, ADVANCE);
             }
         }
         return true;

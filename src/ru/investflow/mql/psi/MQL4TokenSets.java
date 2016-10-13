@@ -61,6 +61,9 @@ public class MQL4TokenSets implements MQL4Tokens {
             VOID_KEYWORD
     );
 
-    public static final TokenSet KEYWORDS = DATA_TYPES;
+    public static final TokenSet KEYWORDS = TokenSet.orSet(DATA_TYPES, TokenSet.create(
+            CONTINUE_KEYWORD,
+            BREAK_KEYWORD
+    ));
 
 }

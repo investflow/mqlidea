@@ -3,6 +3,7 @@ package ru.investflow.mql.parser.parsing.preprocessor;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
+import ru.investflow.mql.parser.parsing.util.TokenAdvanceMode;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4Tokens;
 
@@ -12,6 +13,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Declaration;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.parseFunction;
+import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 
 public class PreprocessorImportParsing implements MQL4Tokens {
@@ -35,7 +37,7 @@ public class PreprocessorImportParsing implements MQL4Tokens {
             IElementType tt = b.getTokenType();
             if (tt != STRING_LITERAL) {
                 b.error("String literal is expected!");
-                ParsingUtils.advanceLexerUntil(b, LINE_TERMINATOR);
+                advanceLexerUntil(b, LINE_TERMINATOR, TokenAdvanceMode.DO_NOT_ADVANCE);
                 return true;
             }
             b.advanceLexer();
@@ -43,7 +45,7 @@ public class PreprocessorImportParsing implements MQL4Tokens {
             // check that there are no other tokens till the eol
             if (!ParsingUtils.containsEndOfLine(b, literalOffset)) {
                 b.error("New line is expected!");
-                ParsingUtils.advanceLexerUntil(b, LINE_TERMINATOR);
+                advanceLexerUntil(b, LINE_TERMINATOR, TokenAdvanceMode.DO_NOT_ADVANCE);
                 return true;
             }
             // now parse function declaration until the next import block
@@ -62,7 +64,7 @@ public class PreprocessorImportParsing implements MQL4Tokens {
         }
         PsiBuilder.Marker m = enter_section_(b);
         b.error("Function declaration expected!");
-        advanceLexerUntil(b, SEMICOLON);
+        advanceLexerUntil(b, SEMICOLON, ADVANCE);
         exit_section_(b, m, MQL4Elements.FUNCTION_DECLARATION, true);
         return false;
     }
