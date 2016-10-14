@@ -16,7 +16,7 @@ import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorImportPa
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIncludeParsing.parseInclude;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorPropertyParsing.parseProperty;
 
-public class PreprocessorParsing {
+public class PreprocessorParsing implements MQL4Elements {
 
     public static boolean parsePreprocessorBlock(PsiBuilder b, int l) {
         if (!recursion_guard_(b, l, "PreprocessorBlock")) {
@@ -32,7 +32,7 @@ public class PreprocessorParsing {
                 parseInclude(b, l + 1) ||
                 parseImport(b, l + 1);
 
-        exit_section_(b, m, MQL4Elements.PREPROCESSOR_BLOCK, r);
+        exit_section_(b, m, PREPROCESSOR_BLOCK, r);
         return r;
     }
 

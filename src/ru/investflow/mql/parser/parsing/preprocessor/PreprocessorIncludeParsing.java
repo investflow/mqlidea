@@ -3,7 +3,6 @@ package ru.investflow.mql.parser.parsing.preprocessor;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import ru.investflow.mql.psi.MQL4Elements;
-import ru.investflow.mql.psi.MQL4Tokens;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
@@ -11,7 +10,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
 
-public class PreprocessorIncludeParsing implements MQL4Tokens {
+public class PreprocessorIncludeParsing implements MQL4Elements {
 
     public static boolean parseInclude(PsiBuilder b, int l) {
         if (!recursion_guard_(b, l, "parseInclude")) {
@@ -35,7 +34,7 @@ public class PreprocessorIncludeParsing implements MQL4Tokens {
                 b.error("#include argument is expected");
             }
         } finally {
-            exit_section_(b, m, MQL4Elements.PREPROCESSOR_INCLUDE_BLOCK, true);
+            exit_section_(b, m, PREPROCESSOR_INCLUDE_BLOCK, true);
         }
 
         return true;

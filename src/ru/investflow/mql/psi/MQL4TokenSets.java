@@ -2,7 +2,7 @@ package ru.investflow.mql.psi;
 
 import com.intellij.psi.tree.TokenSet;
 
-public class MQL4TokenSets implements MQL4Tokens {
+public class MQL4TokenSets implements MQL4Elements {
 
     public static final TokenSet COMMENTS = TokenSet.create(LINE_COMMENT, BLOCK_COMMENT);
 
@@ -60,10 +60,5 @@ public class MQL4TokenSets implements MQL4Tokens {
             USHORT_KEYWORD,
             VOID_KEYWORD
     );
-
-    public static final TokenSet KEYWORDS = TokenSet.orSet(DATA_TYPES, TokenSet.create(
-            CONTINUE_KEYWORD,
-            BREAK_KEYWORD
-    ));
 
 }

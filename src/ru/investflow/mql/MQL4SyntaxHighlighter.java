@@ -8,10 +8,9 @@ import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 import com.intellij.openapi.editor.HighlighterColors;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
-import com.intellij.psi.TokenType;
 import com.intellij.psi.tree.IElementType;
+import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
-import ru.investflow.mql.psi.MQL4Tokens;
 
 import static com.intellij.openapi.editor.colors.TextAttributesKey.createTextAttributesKey;
 
@@ -53,18 +52,18 @@ public class MQL4SyntaxHighlighter extends SyntaxHighlighterBase {
             return COMMENT_KEYS;
         } else if (MQL4TokenSets.PREPROCESSOR.contains(tokenType)) {
             return PREPROCESSOR_KEYS;
-        } else if (tokenType.equals(TokenType.BAD_CHARACTER)) {
+        } else if (tokenType.equals(MQL4Elements.BAD_CHARACTER)) {
             return BAD_CHAR_KEYS;
-        } else if (tokenType.equals(MQL4Tokens.IDENTIFIER)) {
+        } else if (tokenType.equals(MQL4Elements.IDENTIFIER)) {
             return IDENTIFIER_KEYS;
         } else if (MQL4TokenSets.STRINGS_AND_CHARS.contains(tokenType)) {
             return STRING_KEYS;
         } else if (MQL4TokenSets.NUMBERS.contains(tokenType)) {
             return NUMBER_KEYS;
-        } else if (MQL4TokenSets.KEYWORDS.contains(tokenType)) {
-            return KEYWORD_KEYS;
         } else if (MQL4TokenSets.OPERATORS.contains(tokenType)) {
             return OPERATOR_KEYS;
+        } else if (tokenType.toString().endsWith("_KEYWORD")) {
+            return KEYWORD_KEYS;
         }
         return EMPTY_KEYS;
     }

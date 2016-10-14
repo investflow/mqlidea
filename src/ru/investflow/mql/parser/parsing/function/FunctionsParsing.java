@@ -11,7 +11,6 @@ import ru.investflow.mql.parser.parsing.CodeBlockParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
-import ru.investflow.mql.psi.MQL4Tokens;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
@@ -19,10 +18,11 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Declaration;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Definition;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Failed;
-import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.matchSequence;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.parseTokenOrFail;
+import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 
-public class FunctionsParsing implements MQL4Tokens {
+public class FunctionsParsing implements MQL4Elements {
     public enum FunctionParsingResult {
         Failed,
         Declaration,
@@ -58,12 +58,10 @@ public class FunctionsParsing implements MQL4Tokens {
                 ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE);
                 return result;
             }
-            if (b.getTokenType() != RPARENTH) {
-                b.error("Right brace expected");
+            if (!parseTokenOrFail(b, RPARENTH)) { // ')'
                 ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE);
                 return result;
             }
-            b.advanceLexer(); // ')'
 
             if (b.getTokenType() == SEMICOLON) {
                 b.advanceLexer();
@@ -80,7 +78,7 @@ public class FunctionsParsing implements MQL4Tokens {
                 }
             }
         } finally {
-            exit_section_(b, m, result == Declaration ? MQL4Elements.FUNCTION_DECLARATION : MQL4Elements.FUNCTION_DEFINITION, true);
+            exit_section_(b, m, result == Declaration ? FUNCTION_DECLARATION : FUNCTION_DEFINITION, true);
         }
         return result;
     }
@@ -112,11 +110,11 @@ public class FunctionsParsing implements MQL4Tokens {
                         b.advanceLexer();
                     }
                 } finally {
-                    exit_section_(b, m2, MQL4Elements.ARGUMENT, true);
+                    exit_section_(b, m2, FUNCTION_PARAMETER, true);
                 }
             }
         } finally {
-            exit_section_(b, m, MQL4Elements.ARGUMENTS_LIST, true);
+            exit_section_(b, m, FUNCTION_PARAMETERS_LIST, true);
         }
         return true;
     }

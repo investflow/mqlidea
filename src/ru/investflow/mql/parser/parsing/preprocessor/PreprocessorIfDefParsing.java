@@ -2,7 +2,6 @@ package ru.investflow.mql.parser.parsing.preprocessor;
 
 import com.intellij.lang.PsiBuilder;
 import ru.investflow.mql.psi.MQL4Elements;
-import ru.investflow.mql.psi.MQL4Tokens;
 
 import static com.intellij.lang.java.parser.JavaParserUtil.error;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
@@ -13,7 +12,7 @@ import static ru.investflow.mql.parser.parsing.ExpressionParsing.parseExpression
 import static ru.investflow.mql.parser.parsing.LiteralParsing.isLiteral;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
 
-public class PreprocessorIfDefParsing implements MQL4Tokens {
+public class PreprocessorIfDefParsing implements MQL4Elements {
     // #define identifier expression                   // parameter-free form
     // #define identifier(par1,... par8) expression    // parametric form
     //TODO: line breaks?
@@ -34,7 +33,7 @@ public class PreprocessorIfDefParsing implements MQL4Tokens {
             parseDefineParams(b);
             parseExpressionOrFail(b, l + 1);
         } finally {
-            exit_section_(b, m, MQL4Elements.PREPROCESSOR_DEFINE_BLOCK, true);
+            exit_section_(b, m, PREPROCESSOR_DEFINE_BLOCK, true);
         }
         return true;
     }
@@ -58,7 +57,7 @@ public class PreprocessorIfDefParsing implements MQL4Tokens {
                 return true;
             }
         } finally {
-            exit_section_(b, m, MQL4Elements.PREPROCESSOR_UNDEF_BLOCK, true);
+            exit_section_(b, m, PREPROCESSOR_UNDEF_BLOCK, true);
         }
         return true;
     }

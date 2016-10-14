@@ -1,29 +1,18 @@
 package ru.investflow.mql.psi.impl;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiElementVisitor;
+import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4Literal;
-import ru.investflow.mql.psi.MQL4Tokens;
-import ru.investflow.mql.psi.MQL4Visitor;
 
 
-public class MQL4LiteralImpl extends ASTWrapperPsiElement implements MQL4Literal, MQL4Tokens {
+public class MQL4LiteralImpl extends ASTWrapperPsiElement implements MQL4Literal,MQL4Elements {
 
     public MQL4LiteralImpl(ASTNode node) {
         super(node);
-    }
-
-    public void accept(@NotNull PsiElementVisitor visitor) {
-        if (visitor instanceof MQL4Visitor) {
-            ((MQL4Visitor) visitor).visitLiteral(this);
-        } else {
-            super.accept(visitor);
-        }
     }
 
     @Override

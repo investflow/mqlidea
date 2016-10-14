@@ -8,7 +8,6 @@ import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.util.containers.hash.HashMap;
 import ru.investflow.mql.psi.MQL4Elements;
-import ru.investflow.mql.psi.MQL4Tokens;
 
 import static com.intellij.lang.java.parser.JavaParserUtil.error;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
@@ -19,7 +18,7 @@ import static ru.investflow.mql.parser.parsing.LiteralParsing.isLiteral;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
 import static ru.investflow.mql.psi.MQL4TokenSets.LITERALS;
 
-public class PreprocessorPropertyParsing implements MQL4Tokens {
+public class PreprocessorPropertyParsing implements MQL4Elements {
 
     public static boolean parseProperty(PsiBuilder b, int l) {
         if (!recursion_guard_(b, l, "parseProperty")) {
@@ -53,7 +52,7 @@ public class PreprocessorPropertyParsing implements MQL4Tokens {
                 b.advanceLexer();
             }
         } finally {
-            exit_section_(b, m, MQL4Elements.PREPROCESSOR_PROPERTY_BLOCK, true);
+            exit_section_(b, m, PREPROCESSOR_PROPERTY_BLOCK, true);
         }
         return true;
     }

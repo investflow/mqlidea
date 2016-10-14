@@ -16,11 +16,11 @@ import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
 import ru.investflow.mql.parser.MQL4Parser;
 import ru.investflow.mql.psi.MQL4ElementFactory;
+import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4File;
-import ru.investflow.mql.psi.MQL4Tokens;
 
 /* Parser definition used by IntelliJ Platform to parse MQL4 Language sources. */
-public class MQL4ParserDefinition implements ParserDefinition, MQL4Tokens {
+public class MQL4ParserDefinition implements ParserDefinition, MQL4Elements {
 
     public static final TokenSet WHITE_SPACES = TokenSet.create(WHITE_SPACE, LINE_TERMINATOR);
 

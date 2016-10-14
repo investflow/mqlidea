@@ -9,9 +9,11 @@ import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
 import com.intellij.util.containers.Predicate;
-import ru.investflow.mql.psi.MQL4Tokens;
+import ru.investflow.mql.psi.MQL4Elements;
 
-public class ParsingUtils implements MQL4Tokens {
+public class ParsingUtils implements MQL4Elements {
+
+    public static TokenSet STATEMENT_TERMINATORS = TokenSet.create(SEMICOLON, RBRACE, RPARENTH);
 
     public static boolean containsEndOfLine(@Nullable String text) {
         return text != null && text.contains("\n");
@@ -27,7 +29,7 @@ public class ParsingUtils implements MQL4Tokens {
      *
      * @return returns true if stopToken was found.
      */
-    public static boolean advanceLexerUntil(@NotNull PsiBuilder b, @NotNull TokenSet stopTypes, TokenAdvanceMode advanceMode) {
+    public static boolean advanceLexerUntil(@NotNull PsiBuilder b, @NotNull TokenSet stopTypes, TokenAdvanceMode advanceStopTokens) {
         b.setTokenTypeRemapper((source, start, end, text) -> stopTypes.contains(source) ? new ParsingMarker(source) : source);
         try {
             // find the token
@@ -41,7 +43,7 @@ public class ParsingUtils implements MQL4Tokens {
             do {
                 ParsingMarker m = (ParsingMarker) b.getTokenType();
                 b.remapCurrentToken(m.originalToken);
-                if (advanceMode == TokenAdvanceMode.DO_NOT_ADVANCE) {
+                if (advanceStopTokens == TokenAdvanceMode.DO_NOT_ADVANCE) {
                     break;
                 }
                 b.advanceLexer();
@@ -71,5 +73,31 @@ public class ParsingUtils implements MQL4Tokens {
             }
         }
         return true;
+    }
+
+    public static boolean parseTokenOrFail(@NotNull PsiBuilder b, @NotNull IElementType type) {
+        if (b.getTokenType() == type) {
+            b.advanceLexer();
+            return true;
+        }
+        String error = "Expected: " + type;
+        if (type == LPARENTH) {
+            error = "Left brace expected";
+        } else if (type == RPARENTH) {
+            error = "Right brace expected";
+        } else if (type == SEMICOLON) {
+            error = "Semicolon expected";
+        }
+        b.error(error);
+        return false;
+    }
+
+    public static boolean parseKeywordOrFail(@NotNull PsiBuilder b, @NotNull IElementType type) {
+        if (b.getTokenType() == type) {
+            b.advanceLexer();
+            return true;
+        }
+        b.error("'" + type.toString().replace("_KEYWORD", "").toLowerCase() + "' expected");
+        return false;
     }
 }

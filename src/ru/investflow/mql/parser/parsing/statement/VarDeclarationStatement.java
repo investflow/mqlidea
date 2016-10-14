@@ -6,14 +6,13 @@ import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.parser.parsing.util.TokenAdvanceMode;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
-import ru.investflow.mql.psi.MQL4Tokens;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.ExpressionParsing.parseExpressionOrFail;
 
-public class VarDeclarationStatement implements MQL4Tokens {
+public class VarDeclarationStatement implements MQL4Elements {
 
     private static final TokenSet PRE_TYPES = TokenSet.create(CONST_KEYWORD, EXTERN_KEYWORD, INPUT_KEYWORD, STATIC_KEYWORD);
 
@@ -38,7 +37,7 @@ public class VarDeclarationStatement implements MQL4Tokens {
         if (!ok) {
             ParsingUtils.advanceLexerUntil(b, SEMICOLON, TokenAdvanceMode.ADVANCE);
         }
-        exit_section_(b, m, MQL4Elements.VAR_DECLARATION_STATEMENT, true);
+        exit_section_(b, m, VAR_DECLARATION_STATEMENT, true);
         return true;
     }
 
@@ -70,12 +69,12 @@ public class VarDeclarationStatement implements MQL4Tokens {
                         ok = false;
                     }
                 } finally {
-                    exit_section_(b, m1, MQL4Elements.VAR_DEFINITION, true);
+                    exit_section_(b, m1, VAR_DEFINITION, true);
                 }
             } while (ok && b.getTokenType() == IDENTIFIER);
             return ok;
         } finally {
-            exit_section_(b, m0, MQL4Elements.VAR_DEFINITION_LIST, true);
+            exit_section_(b, m0, VAR_DEFINITION_LIST, true);
         }
     }
 }

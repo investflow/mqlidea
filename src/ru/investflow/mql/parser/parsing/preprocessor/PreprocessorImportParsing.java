@@ -5,7 +5,6 @@ import com.intellij.psi.tree.IElementType;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.parser.parsing.util.TokenAdvanceMode;
 import ru.investflow.mql.psi.MQL4Elements;
-import ru.investflow.mql.psi.MQL4Tokens;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
@@ -16,7 +15,7 @@ import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.parseFu
 import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 
-public class PreprocessorImportParsing implements MQL4Tokens {
+public class PreprocessorImportParsing implements MQL4Elements {
 
     public static boolean parseImport(PsiBuilder b, int l) {
         if (!recursion_guard_(b, l, "parseImport")) {
@@ -53,7 +52,7 @@ public class PreprocessorImportParsing implements MQL4Tokens {
                 forceParseDeclaration(b, l + 1);
             }
         } finally {
-            exit_section_(b, m, MQL4Elements.PREPROCESSOR_IMPORT_BLOCK, true);
+            exit_section_(b, m, PREPROCESSOR_IMPORT_BLOCK, true);
         }
         return true;
     }
@@ -65,7 +64,7 @@ public class PreprocessorImportParsing implements MQL4Tokens {
         PsiBuilder.Marker m = enter_section_(b);
         b.error("Function declaration expected!");
         advanceLexerUntil(b, SEMICOLON, ADVANCE);
-        exit_section_(b, m, MQL4Elements.FUNCTION_DECLARATION, true);
+        exit_section_(b, m, FUNCTION_DECLARATION, true);
         return false;
     }
 
