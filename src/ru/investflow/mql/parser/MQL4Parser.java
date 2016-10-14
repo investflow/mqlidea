@@ -63,4 +63,11 @@ public class MQL4Parser implements PsiParser, MQL4Elements {
         return true;
     }
 
+    public static boolean parseIdentifier(@NotNull PsiBuilder b) {
+        if (b.getTokenType() != MQL4Elements.IDENTIFIER) {
+            return false;
+        }
+        b.advanceLexer();
+        return true;
+    }
 }

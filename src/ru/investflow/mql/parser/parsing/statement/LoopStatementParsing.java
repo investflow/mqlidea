@@ -39,8 +39,7 @@ public class LoopStatementParsing implements MQL4Elements {
             boolean ok = parseTokenOrFail(b, LPARENTH) // '('
                     && parseExpressionOrFail(b, l + 1)
                     && parseTokenOrFail(b, RPARENTH) // ')'
-                    && (parseCodeBlock(b, l + 1) || parseStatementOrFail(b, l + 1)) // '{}'
-                    && parseTokenOrFail(b, SEMICOLON);
+                    && (parseCodeBlock(b, l + 1) || parseStatementOrFail(b, l + 1)); // '{}'
 
             if (!ok) {
                 ParsingUtils.advanceLexerUntil(b, STATEMENT_TERMINATORS, TokenAdvanceMode.ADVANCE);
