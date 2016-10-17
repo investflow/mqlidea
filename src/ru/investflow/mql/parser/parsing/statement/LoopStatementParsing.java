@@ -12,6 +12,8 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.CodeBlockParsing.parseCodeBlock;
 import static ru.investflow.mql.parser.parsing.ExpressionParsing.parseExpressionOrFail;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseStatementOrFail;
+import static ru.investflow.mql.parser.parsing.statement.VarDeclarationStatement.parseEmbeddedVarAssignmentsListOrFail;
+import static ru.investflow.mql.parser.parsing.statement.VarDeclarationStatement.parseEmbeddedVarDeclarationOrAssignmentOrFail;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.STATEMENT_TERMINATORS;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.parseKeywordOrFail;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.parseTokenOrFail;
@@ -25,8 +27,28 @@ public class LoopStatementParsing implements MQL4Elements {
 
 
     private static boolean parseForLoop(PsiBuilder b, int l) {
-        //todo:
-        return false;
+        if (b.getTokenType() != FOR_KEYWORD) {
+            return false;
+        }
+        PsiBuilder.Marker m = enter_section_(b);
+        b.advanceLexer(); // 'for'
+        try {
+            boolean ok = parseTokenOrFail(b, LPARENTH) // '('
+                    && parseEmbeddedVarDeclarationOrAssignmentOrFail(b, l + 1, FOR_LOOP_SECTION_1, VAR_ASSIGNMENT_LIST)
+                    && parseTokenOrFail(b, SEMICOLON) // ';'
+                    && parseExpressionOrFail(b, l + 1, true)
+                    && parseTokenOrFail(b, SEMICOLON) // ';'
+                    && parseEmbeddedVarAssignmentsListOrFail(b, l + 1, VAR_ASSIGNMENT_LIST, RPARENTH)
+                    && parseTokenOrFail(b, RPARENTH) // ')'
+                    && (parseCodeBlock(b, l + 1) || parseStatementOrFail(b, l + 1)); // '{}'
+
+            if (!ok) {
+                ParsingUtils.advanceLexerUntil(b, STATEMENT_TERMINATORS, TokenAdvanceMode.ADVANCE);
+            }
+            return true;
+        } finally {
+            exit_section_(b, m, FOR_LOOP, true);
+        }
     }
 
     private static boolean parseWhileLoop(PsiBuilder b, int l) {

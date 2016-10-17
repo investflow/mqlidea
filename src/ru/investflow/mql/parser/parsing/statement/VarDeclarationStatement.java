@@ -1,6 +1,9 @@
 package ru.investflow.mql.parser.parsing.statement;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.intellij.lang.PsiBuilder;
+import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.parser.parsing.util.TokenAdvanceMode;
@@ -11,6 +14,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.ExpressionParsing.parseExpressionOrFail;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.checkTokenOrFail;
 
 public class VarDeclarationStatement implements MQL4Elements {
 
@@ -41,7 +45,7 @@ public class VarDeclarationStatement implements MQL4Elements {
         return true;
     }
 
-    private static boolean parseVarDefinitionList(PsiBuilder b, int l) {
+    public static boolean parseVarDefinitionList(PsiBuilder b, int l) {
         assert b.getTokenType() == IDENTIFIER;
         PsiBuilder.Marker m0 = enter_section_(b);
         try {
@@ -77,4 +81,57 @@ public class VarDeclarationStatement implements MQL4Elements {
             exit_section_(b, m0, VAR_DEFINITION_LIST, true);
         }
     }
+
+    /**
+     * Var declaration inside another block. Like 1 section if for loop. Does not allow empty vars or pre-types
+     */
+    public static boolean parseEmbeddedVarDeclarationOrAssignmentOrFail(PsiBuilder b, int l, @NotNull IElementType sectionType, @NotNull IElementType assignmentSectionType) {
+        if (!recursion_guard_(b, l, "parseEmbeddedVarDeclarationOrAssignment")) {
+            return false;
+        }
+        boolean firstIsType = MQL4TokenSets.DATA_TYPES.contains(b.getTokenType());
+        PsiBuilder.Marker m = enter_section_(b);
+        try {
+            if (firstIsType) {
+                b.advanceLexer();
+            }
+            //noinspection SimplifiableIfStatement
+            if (firstIsType && !checkTokenOrFail(b, IDENTIFIER)) {
+                return false;
+            }
+            return parseEmbeddedVarAssignmentsListOrFail(b, l + 1, assignmentSectionType, SEMICOLON);
+        } finally {
+            exit_section_(b, m, sectionType, true);
+        }
+    }
+
+    public static boolean parseEmbeddedVarAssignmentsListOrFail(PsiBuilder b, int l, @NotNull IElementType sectionType, @NotNull IElementType stopToken) {
+        if (!recursion_guard_(b, l, "parseEmbeddedVarAssignmentsList")) {
+            return false;
+        }
+        PsiBuilder.Marker m = enter_section_(b);
+        try {
+            if (b.getTokenType() == stopToken) {
+                return true;
+            }
+            while (true) {
+                boolean ok = ParsingUtils.parseTokenOrFail(b, IDENTIFIER)
+                        && ParsingUtils.parseTokenOrFail(b, EQ)
+                        && parseExpressionOrFail(b, l + 1);
+                if (!ok) {
+                    return false;
+                }
+                if (b.getTokenType() == stopToken) {
+                    return true;
+                }
+                if (!ParsingUtils.parseTokenOrFail(b, COMMA)) {
+                    return false;
+                }
+            }
+        } finally {
+            exit_section_(b, m, sectionType, true);
+        }
+
+    }
+
 }

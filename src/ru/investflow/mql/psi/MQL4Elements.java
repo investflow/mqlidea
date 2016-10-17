@@ -116,9 +116,13 @@ public interface MQL4Elements {
 
     IElementType VAR_DECLARATION_STATEMENT = new MQL4ElementType("VAR_DECLARATION_STATEMENT");
     IElementType VAR_DEFINITION_LIST = new MQL4ElementType("VAR_DEFINITION_LIST");
+    IElementType VAR_ASSIGNMENT_LIST = new MQL4ElementType("VAR_ASSIGNMENT_LIST");
     IElementType VAR_DEFINITION = new MQL4ElementType("VAR_DEFINITION");
 
     IElementType FOR_LOOP = new MQL4ElementType("FOR_LOOP");
     IElementType DO_LOOP = new MQL4ElementType("WHILE_LOOP");
     IElementType WHILE_LOOP = new MQL4ElementType("WHILE_LOOP");
+
+    IElementType FOR_LOOP_SECTION_1 = new MQL4ElementType("FOR_LOOP_SECTION_1");
+
 }

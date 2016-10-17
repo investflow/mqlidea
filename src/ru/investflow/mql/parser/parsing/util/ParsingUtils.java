@@ -75,13 +75,25 @@ public class ParsingUtils implements MQL4Elements {
         return true;
     }
 
+    public static boolean checkTokenOrFail(@NotNull PsiBuilder b, @NotNull IElementType type) {
+        return parseTokenOrFail(b, type, false);
+    }
+
     public static boolean parseTokenOrFail(@NotNull PsiBuilder b, @NotNull IElementType type) {
+        return parseTokenOrFail(b, type, true);
+    }
+
+    public static boolean parseTokenOrFail(@NotNull PsiBuilder b, @NotNull IElementType type, boolean advanceOnSuccess) {
         if (b.getTokenType() == type) {
-            b.advanceLexer();
+            if (advanceOnSuccess) {
+                b.advanceLexer();
+            }
             return true;
         }
         String error = "Expected: " + type;
-        if (type == LPARENTH) {
+        if (type == IDENTIFIER) {
+            error = "Identifier expected";
+        } else if (type == LPARENTH) {
             error = "Left brace expected";
         } else if (type == RPARENTH) {
             error = "Right brace expected";
