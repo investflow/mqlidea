@@ -93,6 +93,8 @@ public interface MQL4Elements {
     IElementType WHILE_KEYWORD = new MQL4ElementType("WHILE_KEYWORD");
     IElementType IF_KEYWORD = new MQL4ElementType("IF_KEYWORD");
     IElementType ELSE_KEYWORD = new MQL4ElementType("ELSE_KEYWORD");
+    IElementType FALSE_KEYWORD = new MQL4ElementType("FALSE_KEYWORD");
+    IElementType TRUE_KEYWORD = new MQL4ElementType("TRUE_KEYWORD");
 
 
     /**

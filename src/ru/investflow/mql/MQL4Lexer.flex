@@ -125,9 +125,9 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 //"switch"    { return MQL4Elements.KW_SWITCH; }
 //
 // Other
-//"false"     { return MQL4Elements.KW_FALSE; }
+"false"     { return MQL4Elements.FALSE_KEYWORD; }
 //"this"      { return MQL4Elements.KW_THIS; }
-//"true"      { return MQL4Elements.KW_TRUE; }
+"true"      { return MQL4Elements.TRUE_KEYWORD; }
 //"strict"    { return MQL4Elements.KW_STRICT; }
 
 "#define"   { return MQL4Elements.DEFINE_KEYWORD; }

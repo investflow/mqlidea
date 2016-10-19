@@ -14,7 +14,7 @@ public class MQL4TokenSets implements MQL4Elements {
             UNDEF_KEYWORD
     );
 
-    public static final TokenSet LITERALS = TokenSet.create(STRING_LITERAL, CHAR_LITERAL, INTEGER_LITERAL, DOUBLE_LITERAL, INCLUDE_STRING_LITERAL);
+    public static final TokenSet LITERALS = TokenSet.create(STRING_LITERAL, CHAR_LITERAL, INTEGER_LITERAL, DOUBLE_LITERAL, INCLUDE_STRING_LITERAL, FALSE_KEYWORD, TRUE_KEYWORD);
 
     public static final TokenSet STRINGS_AND_CHARS = TokenSet.create(STRING_LITERAL, CHAR_LITERAL, INCLUDE_STRING_LITERAL);
 
