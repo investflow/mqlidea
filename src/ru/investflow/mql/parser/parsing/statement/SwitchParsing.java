@@ -3,6 +3,7 @@ package ru.investflow.mql.parser.parsing.statement;
 import org.jetbrains.annotations.NotNull;
 
 import com.intellij.lang.PsiBuilder;
+import com.intellij.psi.tree.TokenSet;
 import ru.investflow.mql.parser.parsing.ExpressionParsing;
 import ru.investflow.mql.psi.MQL4Elements;
 
@@ -23,17 +24,19 @@ public class SwitchParsing implements MQL4Elements {
         try {
             b.advanceLexer(); // 'switch'
             //noinspection unused
-            boolean ok = parseTokenOrFail(b, LBRACE) // '('
+            boolean ok = parseTokenOrFail(b, LPARENTH) // '('
                     && ExpressionParsing.parseExpressionOrFail(b, l, false) // expression
-                    && parseTokenOrFail(b, RBRACE) // ')'
-                    && parseTokenOrFail(b, LBRACKET) // '{'
+                    && parseTokenOrFail(b, RPARENTH) // ')'
+                    && parseTokenOrFail(b, LBRACE) // '{'
                     && parseSwitchCaseBlock(b, l + 1)
-                    && parseTokenOrFail(b, RBRACKET); // '}'
+                    && parseTokenOrFail(b, RBRACE); // '}'
             return true;
         } finally {
             exit_section_(b, m, SWITCH_BLOCK, true);
         }
     }
+
+    private static TokenSet CASE_BLOCK_TERMINATORS = TokenSet.create(CASE_KEYWORD, DEFAULT_KEYWORD, RBRACE);
 
     private static boolean parseSwitchCaseBlock(@NotNull PsiBuilder b, int l) {
         PsiBuilder.Marker m = enter_section_(b);
@@ -43,7 +46,7 @@ public class SwitchParsing implements MQL4Elements {
                 b.advanceLexer();
                 boolean ok = (defaultBranch || parseCaseLiteralOrFail(b))
                         && parseTokenOrFail(b, COLON)
-                        && (parseCodeBlock(b, l + 1) || parseStatementOrFail(b, l + 1)); // '{}'
+                        && (CASE_BLOCK_TERMINATORS.contains(b.getTokenType()) || parseCodeBlock(b, l + 1) || parseStatementOrFail(b, l + 1)); // '{}' or empty
                 if (!ok) {
                     return false;
                 }

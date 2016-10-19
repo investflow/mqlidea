@@ -18,7 +18,7 @@ public class PreprocessorIfDefParsing implements MQL4Elements {
     //TODO: line breaks?
 
     public static boolean parseDefine(PsiBuilder b, int l) {
-        if (!ParsingUtils.nextTokenIs(b, l, "parseDefine", DEFAULT_KEYWORD)) {
+        if (!ParsingUtils.nextTokenIs(b, l, "parseDefine", DEFINE_KEYWORD)) {
             return false;
         }
         PsiBuilder.Marker m = enter_section_(b);
