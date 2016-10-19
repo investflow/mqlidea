@@ -110,12 +110,13 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 "continue"  { return MQL4Elements.CONTINUE_KEYWORD; }
 //"default"   { return MQL4Elements.KW_DEFAULT; }
 //"delete"    { return MQL4Elements.KW_DELETE; }
-//
+
+"if"        { return MQL4Elements.IF_KEYWORD; }
+"else"      { return MQL4Elements.ELSE_KEYWORD; }
+
 "do"        { return MQL4Elements.DO_KEYWORD; }
 "while"     { return MQL4Elements.WHILE_KEYWORD; }
 "for"       { return MQL4Elements.FOR_KEYWORD; }
-//"else"      { return MQL4Elements.KW_ELSE; }
-//"if"        { return MQL4Elements.KW_IF; }
 //"new"       { return MQL4Elements.KW_NEW; }
 //
 //"operator"  { return MQL4Elements.KW_OPERATOR; }

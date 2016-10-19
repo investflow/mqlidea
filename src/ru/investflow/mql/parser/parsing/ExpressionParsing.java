@@ -15,6 +15,7 @@ public class ExpressionParsing implements MQL4Elements {
         return parseExpressionOrFail(b, l, false);
     }
 
+    //TODO: review all callers that fail on empty expressions during parsing
     public static boolean parseExpressionOrFail(PsiBuilder b, int l, boolean allowEmpty) {
         if (allowEmpty && b.getTokenType() == SEMICOLON) {
             return true;

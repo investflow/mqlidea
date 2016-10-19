@@ -91,6 +91,8 @@ public interface MQL4Elements {
     IElementType FOR_KEYWORD = new MQL4ElementType("FOR_KEYWORD");
     IElementType DO_KEYWORD = new MQL4ElementType("DO_KEYWORD");
     IElementType WHILE_KEYWORD = new MQL4ElementType("WHILE_KEYWORD");
+    IElementType IF_KEYWORD = new MQL4ElementType("IF_KEYWORD");
+    IElementType ELSE_KEYWORD = new MQL4ElementType("ELSE_KEYWORD");
 
 
     /**
@@ -122,7 +124,8 @@ public interface MQL4Elements {
     IElementType FOR_LOOP = new MQL4ElementType("FOR_LOOP");
     IElementType DO_LOOP = new MQL4ElementType("WHILE_LOOP");
     IElementType WHILE_LOOP = new MQL4ElementType("WHILE_LOOP");
-
     IElementType FOR_LOOP_SECTION_1 = new MQL4ElementType("FOR_LOOP_SECTION_1");
+
+    IElementType IF_ELSE_BLOCK = new MQL4ElementType("IF_ELSE_BLOCK");
 
 }
