@@ -11,6 +11,8 @@ import com.intellij.psi.tree.TokenSet;
 import com.intellij.util.containers.Predicate;
 import ru.investflow.mql.psi.MQL4Elements;
 
+import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
+
 public class ParsingUtils implements MQL4Elements {
 
     public static TokenSet STATEMENT_TERMINATORS = TokenSet.create(SEMICOLON, RBRACE, RPARENTH);
@@ -111,5 +113,9 @@ public class ParsingUtils implements MQL4Elements {
         }
         b.error("'" + type.toString().replace("_KEYWORD", "").toLowerCase() + "' expected");
         return false;
+    }
+
+    public static boolean nextTokenIs(@NotNull PsiBuilder b, int l, @NotNull String recursionGuard, @NotNull IElementType type) {
+        return recursion_guard_(b, l, recursionGuard) && b.getTokenType() == type;
     }
 }

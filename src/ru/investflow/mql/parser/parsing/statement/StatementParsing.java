@@ -12,6 +12,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.statement.IfElseParsing.parseIfElse;
 import static ru.investflow.mql.parser.parsing.statement.LoopStatementParsing.parseLoop;
+import static ru.investflow.mql.parser.parsing.statement.SwitchParsing.parseSwitch;
 import static ru.investflow.mql.parser.parsing.statement.VarDeclarationStatement.parseVarDeclaration;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.parseTokenOrFail;
 
@@ -39,6 +40,7 @@ public class StatementParsing implements MQL4Elements {
         return parseEmptyStatement(b)
                 || parseVarDeclaration(b, l)
                 || parseIfElse(b, l)
+                || parseSwitch(b, l)
                 || parseSingleWordStatement(b)
                 || parseLoop(b, l);
     }

@@ -1,12 +1,12 @@
 package ru.investflow.mql.parser.parsing.preprocessor;
 
 import com.intellij.lang.PsiBuilder;
+import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 
 import static com.intellij.lang.java.parser.JavaParserUtil.error;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.ExpressionParsing.parseExpressionOrFail;
 import static ru.investflow.mql.parser.parsing.LiteralParsing.isLiteral;
@@ -18,10 +18,7 @@ public class PreprocessorIfDefParsing implements MQL4Elements {
     //TODO: line breaks?
 
     public static boolean parseDefine(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "parseDefine")) {
-            return false;
-        }
-        if (!nextTokenIs(b, DEFINE_KEYWORD)) {
+        if (!ParsingUtils.nextTokenIs(b, l, "parseDefine", DEFAULT_KEYWORD)) {
             return false;
         }
         PsiBuilder.Marker m = enter_section_(b);
@@ -40,10 +37,7 @@ public class PreprocessorIfDefParsing implements MQL4Elements {
 
 
     public static boolean parseUndef(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "parseUndef")) {
-            return false;
-        }
-        if (!nextTokenIs(b, UNDEF_KEYWORD)) {
+        if (!ParsingUtils.nextTokenIs(b, l, "parseUndef", UNDEF_KEYWORD)) {
             return false;
         }
         PsiBuilder.Marker m = enter_section_(b);

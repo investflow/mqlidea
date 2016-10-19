@@ -5,19 +5,16 @@ import ru.investflow.mql.psi.MQL4Elements;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.CodeBlockParsing.parseCodeBlock;
 import static ru.investflow.mql.parser.parsing.ExpressionParsing.parseExpressionOrFail;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseStatementOrFail;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.nextTokenIs;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.parseTokenOrFail;
 
 public class IfElseParsing implements MQL4Elements {
 
     public static boolean parseIfElse(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "parseIfElse")) {
-            return false;
-        }
-        if (b.getTokenType() != IF_KEYWORD) {
+        if (!nextTokenIs(b, l, "parseIfElse", IF_KEYWORD)) {
             return false;
         }
         PsiBuilder.Marker m = enter_section_(b);

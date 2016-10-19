@@ -8,7 +8,6 @@ import ru.investflow.mql.psi.MQL4Elements;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseStatement;
 
 public class CodeBlockParsing implements MQL4Elements {
@@ -22,7 +21,7 @@ public class CodeBlockParsing implements MQL4Elements {
     }
 
     public static boolean parseCodeBlock(PsiBuilder b, int l) {
-        if (b.getTokenType() != LBRACE || !recursion_guard_(b, l, "parseCodeBlock")) {
+        if (!ParsingUtils.nextTokenIs(b, l, "parseCodeBlock", LBRACE)) {
             return false;
         }
         PsiBuilder.Marker m = enter_section_(b);

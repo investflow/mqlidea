@@ -9,19 +9,15 @@ import ru.investflow.mql.psi.MQL4Elements;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Declaration;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.parseFunction;
-import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
+import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 
 public class PreprocessorImportParsing implements MQL4Elements {
 
     public static boolean parseImport(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "parseImport")) {
-            return false;
-        }
-        if (!nextTokenIs(b, IMPORT_KEYWORD)) {
+        if (!ParsingUtils.nextTokenIs(b, l, "parseImport", IMPORT_KEYWORD)) {
             return false;
         }
         PsiBuilder.Marker m = enter_section_(b);

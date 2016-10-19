@@ -12,19 +12,15 @@ import ru.investflow.mql.psi.MQL4Elements;
 import static com.intellij.lang.java.parser.JavaParserUtil.error;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.LiteralParsing.isLiteral;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.nextTokenIs;
 import static ru.investflow.mql.psi.MQL4TokenSets.LITERALS;
 
 public class PreprocessorPropertyParsing implements MQL4Elements {
 
     public static boolean parseProperty(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "parseProperty")) {
-            return false;
-        }
-        if (!nextTokenIs(b, PROPERTY_KEYWORD)) {
+        if (!nextTokenIs(b, l, "parseProperty", PROPERTY_KEYWORD)) {
             return false;
         }
         PsiBuilder.Marker m = enter_section_(b);

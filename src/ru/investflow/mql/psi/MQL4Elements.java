@@ -93,6 +93,9 @@ public interface MQL4Elements {
     IElementType WHILE_KEYWORD = new MQL4ElementType("WHILE_KEYWORD");
     IElementType IF_KEYWORD = new MQL4ElementType("IF_KEYWORD");
     IElementType ELSE_KEYWORD = new MQL4ElementType("ELSE_KEYWORD");
+    IElementType SWITCH_KEYWORD = new MQL4ElementType("SWITCH_KEYWORD");
+    IElementType CASE_KEYWORD = new MQL4ElementType("CASE_KEYWORD");
+    IElementType DEFAULT_KEYWORD = new MQL4ElementType("DEFAULT_KEYWORD");
     IElementType FALSE_KEYWORD = new MQL4ElementType("FALSE_KEYWORD");
     IElementType TRUE_KEYWORD = new MQL4ElementType("TRUE_KEYWORD");
 
@@ -129,5 +132,8 @@ public interface MQL4Elements {
     IElementType FOR_LOOP_SECTION_1 = new MQL4ElementType("FOR_LOOP_SECTION_1");
 
     IElementType IF_ELSE_BLOCK = new MQL4ElementType("IF_ELSE_BLOCK");
+
+    IElementType SWITCH_BLOCK = new MQL4ElementType("SWITCH_BLOCK");
+    IElementType SWITCH_CASE_BLOCK = new MQL4ElementType("SWITCH_CASE_BLOCK");
 
 }
