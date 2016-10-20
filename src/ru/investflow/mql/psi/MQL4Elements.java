@@ -98,6 +98,7 @@ public interface MQL4Elements {
     IElementType DEFAULT_KEYWORD = new MQL4ElementType("DEFAULT_KEYWORD");
     IElementType FALSE_KEYWORD = new MQL4ElementType("FALSE_KEYWORD");
     IElementType TRUE_KEYWORD = new MQL4ElementType("TRUE_KEYWORD");
+    IElementType SIZEOF_KEYWORD = new MQL4ElementType("TRUE_KEYWORD");
 
 
     /**

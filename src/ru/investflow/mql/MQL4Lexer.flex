@@ -106,7 +106,6 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 //
 // Operators
 "break"     { return MQL4Elements.BREAK_KEYWORD; }
-//"case"      { return MQL4Elements.KW_CASE; }
 "continue"  { return MQL4Elements.CONTINUE_KEYWORD; }
 //"delete"    { return MQL4Elements.KW_DELETE; }
 
@@ -126,7 +125,7 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 //
 //"operator"  { return MQL4Elements.KW_OPERATOR; }
 //"return"    { return MQL4Elements.KW_RETURN; }
-//"sizeof"    { return MQL4Elements.KW_SIZEOF; }
+"sizeof"    { return MQL4Elements.SIZEOF_KEYWORD; }
 //
 // Other
 "false"     { return MQL4Elements.FALSE_KEYWORD; }
