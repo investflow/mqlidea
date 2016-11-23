@@ -6,6 +6,6 @@
 out/
 gen
 idea-flex.skeleton
-jflex*.jar
+/*.jar
 docs/
 local

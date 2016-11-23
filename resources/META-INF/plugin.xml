@@ -1,6 +1,6 @@
 <idea-plugin version="2">
     <id>ru.investflow.mql</id>
-    <name>MQL Idea!</name>
+    <name>MQL IDEA</name>
     <version>0.0.1</version>
     <vendor email="mike.fursov@gmail.com" url="http://investflow.ru/dev">Investflow.Ru</vendor>
 

@@ -84,6 +84,42 @@ public interface MQL4Elements {
 
     // Operators
     IElementType EQ = new MQL4ElementType("EQ");
+    IElementType EQ_EQ = new MQL4ElementType("EQ_EQ");
+    IElementType PLUS_EQ = new MQL4ElementType("PLUS_EQ");
+    IElementType MINUS_EQ = new MQL4ElementType("MINUS_EQ");
+    IElementType MUL_EQ = new MQL4ElementType("MUL_EQ");
+    IElementType DIV_EQ = new MQL4ElementType("DIV_EQ");
+    IElementType MOD_EQ = new MQL4ElementType("MOD_EQ");
+    IElementType AND_EQ = new MQL4ElementType("AND_EQ");
+    IElementType OR_EQ = new MQL4ElementType("OR_EQ");
+    IElementType XOR_EQ = new MQL4ElementType("XOR_EQ");
+    IElementType TILDA_EQ = new MQL4ElementType("TILDA_EQ");
+    IElementType SH_LEFT_EQ = new MQL4ElementType("SH_LEFT_EQ");
+    IElementType SH_RIGHT_EQ = new MQL4ElementType("SH_RIGHT_EQ");
+    IElementType USH_RIGHT_EQ = new MQL4ElementType("USH_RIGHT_EQ");
+    IElementType POW_EQ = new MQL4ElementType("POW_EQ");
+    IElementType PLUS_PLUS = new MQL4ElementType("PLUS_PLUS");
+    IElementType MINUS_MINUS = new MQL4ElementType("MINUS_MINUS");
+    IElementType BOOL_OR = new MQL4ElementType("BOOL_OR");
+    IElementType BOOL_AND = new MQL4ElementType("BOOL_AND");
+    IElementType USH_RIGHT = new MQL4ElementType("USH_RIGHT");
+    IElementType SH_RIGHT = new MQL4ElementType("SH_RIGHT");
+    IElementType SH_LEFT = new MQL4ElementType("SH_LEFT");
+    IElementType POW = new MQL4ElementType("POW");
+    IElementType LESS_EQ = new MQL4ElementType("LESS_EQ");
+    IElementType GT_EQ = new MQL4ElementType("GT_EQ");
+    IElementType NOT_EQ = new MQL4ElementType("NOT_EQ");
+    IElementType OR = new MQL4ElementType("OR");
+    IElementType XOR = new MQL4ElementType("XOR");
+    IElementType PLUS = new MQL4ElementType("PLUS");
+    IElementType MINUS = new MQL4ElementType("MINUS");
+    IElementType MUL = new MQL4ElementType("MUL");
+    IElementType TILDA = new MQL4ElementType("TILDA");
+    IElementType DIV = new MQL4ElementType("DIV");
+    IElementType MOD = new MQL4ElementType("MOD");
+    IElementType AND = new MQL4ElementType("AND");
+    IElementType NOT = new MQL4ElementType("NOT");
+    IElementType QUESTION = new MQL4ElementType("QUESTION");
 
     // Keywords
     IElementType BREAK_KEYWORD = new MQL4ElementType("BREAK_KEYWORD");
