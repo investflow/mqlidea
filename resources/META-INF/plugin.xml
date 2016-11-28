@@ -2,14 +2,14 @@
     <id>ru.investflow.mql</id>
     <name>MQL IDEA</name>
     <version>0.1</version>
-    <vendor email="mike.fursov@gmail.com" url="http://investflow.ru/dev">Investflow.Ru</vendor>
+    <vendor email="mike.fursov@gmail.com" url="http://investflow.ru/mqlidea">Investflow.Ru</vendor>
 
     <description><![CDATA[
       Plugin enables MQL4 language support in JetBrains products
     ]]></description>
 
     <change-notes><![CDATA[
-      Initial version (unstable)
+      Development version. Public preview.
     ]]>
     </change-notes>
 
