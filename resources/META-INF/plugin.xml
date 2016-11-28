@@ -1,15 +1,15 @@
 <idea-plugin version="2">
     <id>ru.investflow.mql</id>
-    <name>MQL IDEA</name>
-    <version>0.1</version>
+    <name>MQL Idea</name>
+    <version>0.10</version>
     <vendor email="mike.fursov@gmail.com" url="http://investflow.ru/mqlidea">Investflow.Ru</vendor>
 
     <description><![CDATA[
-      Plugin enables MQL4 language support in JetBrains products
+      MQL4 language support.
     ]]></description>
 
     <change-notes><![CDATA[
-      Development version. Public preview.
+      Development preview.
     ]]>
     </change-notes>
 
