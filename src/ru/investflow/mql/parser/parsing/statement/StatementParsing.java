@@ -7,8 +7,6 @@ import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.parser.parsing.util.TokenAdvanceMode;
 import ru.investflow.mql.psi.MQL4Elements;
 
-import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.statement.IfElseParsing.parseIfElse;
 import static ru.investflow.mql.parser.parsing.statement.LoopStatementParsing.parseLoop;
@@ -50,12 +48,12 @@ public class StatementParsing implements MQL4Elements {
         if (!SINGLE_WORD_STATEMENTS.contains(t)) {
             return false;
         }
-        PsiBuilder.Marker m = enter_section_(b);
+        PsiBuilder.Marker m = b.mark();
         b.advanceLexer();
         if (!parseTokenOrFail(b, SEMICOLON)) {
             ParsingUtils.advanceLexerUntil(b, SEMICOLON, TokenAdvanceMode.ADVANCE);
         }
-        exit_section_(b, m, SINGLE_WORD_STATEMENT, true);
+        m.done(SINGLE_WORD_STATEMENT);
         return true;
     }
 
@@ -64,9 +62,9 @@ public class StatementParsing implements MQL4Elements {
         if (t != SEMICOLON) {
             return false;
         }
-        PsiBuilder.Marker m = enter_section_(b);
+        PsiBuilder.Marker m = b.mark();
         b.advanceLexer();
-        exit_section_(b, m, EMPTY_STATEMENT, true);
+        m.done(EMPTY_STATEMENT);
         return true;
     }
 

@@ -1,0 +1,4887 @@
+[
+  [
+    "__DATE__",
+    "Дата компиляции файла без времени (часы, минуты и секунды равны 0)",
+    "/ru/constants/namedconstants/compilemacros"
+  ],
+  [
+    "__DATETIME__",
+    "Дата и время компиляции файла",
+    "/ru/constants/namedconstants/compilemacros"
+  ],
+  [
+    "__FILE__",
+    "Имя текущего компилируемого файла",
+    "/ru/constants/namedconstants/compilemacros"
+  ],
+  [
+    "__FUNCSIG__",
+    "Сигнатура функции, в теле которой расположен макрос. Вывод в лог полного описания функции с типами параметров может пригодиться при идентификации перегруженных функций",
+    "/ru/constants/namedconstants/compilemacros"
+  ],
+  [
+    "__FUNCTION__",
+    "Имя функции, в теле которой расположен макрос",
+    "/ru/constants/namedconstants/compilemacros"
+  ],
+  [
+    "__LINE__",
+    "Номер строки в исходном коде, на которой расположен данный макрос",
+    "/ru/constants/namedconstants/compilemacros"
+  ],
+  [
+    "__MQLBUILD__, __MQL4BUILD__",
+    "Номер билда компилятора",
+    "/ru/constants/namedconstants/compilemacros"
+  ],
+  [
+    "__PATH__",
+    "Абсолютный путь к текущему компилируемому файлу",
+    "/ru/constants/namedconstants/compilemacros"
+  ],
+  [
+    "ACCOUNT_BALANCE",
+    "Баланс счета в валюте депозита",
+    "/ru/account/accountinfodouble"
+  ],
+  [
+    "ACCOUNT_COMPANY",
+    "Имя компании, обслуживающей счет",
+    "/ru/account/accountinfostring"
+  ],
+  [
+    "ACCOUNT_CREDIT",
+    "Размер предоставленного кредита в валюте депозита",
+    "/ru/account/accountinfodouble"
+  ],
+  [
+    "ACCOUNT_CURRENCY",
+    "Валюта депозита",
+    "/ru/account/accountinfostring"
+  ],
+  [
+    "ACCOUNT_EQUITY",
+    "Значение собственных средств на счете в валюте депозита",
+    "/ru/account/accountinfodouble"
+  ],
+  [
+    "ACCOUNT_MARGIN_FREE",
+    "Размер свободных средств на счете  в валюте депозита, доступных для открытия ордера",
+    "/ru/account/accountinfodouble"
+  ],
+  [
+    "ACCOUNT_LEVERAGE",
+    "Размер предоставленного плеча",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ACCOUNT_LIMIT_ORDERS",
+    "Максимально допустимое количество действующих отложенных ордеров (0-ограничений нет)",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ACCOUNT_LOGIN",
+    "Номер счета",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ACCOUNT_MARGIN",
+    "Размер зарезервированных залоговых средств на счете  в валюте депозита",
+    "/ru/account/accountinfodouble"
+  ],
+  [
+    "ACCOUNT_MARGIN_LEVEL",
+    "Уровень залоговых средств на счете в процентах",
+    "/ru/account/accountinfodouble"
+  ],
+  [
+    "ACCOUNT_MARGIN_SO_CALL",
+    "Уровень залоговых средств, при котором требуется пополнение счета (Margin Call). В зависимости от установленного ACCOUNT_MARGIN_SO_MODE выражается в процентах либо в валюте депозита",
+    "/ru/account/accountinfodouble"
+  ],
+  [
+    "ACCOUNT_MARGIN_SO_MODE",
+    "Режим задания минимально допустимого уровня залоговых средств",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ACCOUNT_MARGIN_SO_SO",
+    "Уровень залоговых средств, при достижении которого происходит принудительное закрытие самой убыточного ордера (Stop Out). В зависимости от установленного ACCOUNT_MARGIN_SO_MODE выражается в процентах либо в валюте депозита",
+    "/ru/account/accountinfodouble"
+  ],
+  [
+    "ACCOUNT_NAME",
+    "Имя клиента",
+    "/ru/account/accountinfostring"
+  ],
+  [
+    "ACCOUNT_PROFIT",
+    "Размер текущей прибыли на счете в валюте депозита",
+    "/ru/account/accountinfodouble"
+  ],
+  [
+    "ACCOUNT_SERVER",
+    "Имя торгового сервера",
+    "/ru/account/accountinfostring"
+  ],
+  [
+    "ACCOUNT_STOPOUT_MODE_MONEY",
+    "Уровень задается в деньгах",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ACCOUNT_STOPOUT_MODE_PERCENT",
+    "Уровень задается в процентах",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ACCOUNT_TRADE_ALLOWED",
+    "Разрешенность торговли для текущего счета",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ACCOUNT_TRADE_EXPERT",
+    "Разрешенность торговли для эксперта",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ACCOUNT_TRADE_MODE",
+    "Тип торгового счета",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ACCOUNT_TRADE_MODE_CONTEST",
+    "Конкурсный торговый счет",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ACCOUNT_TRADE_MODE_DEMO",
+    "Демонстрационный торговый счет",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ACCOUNT_TRADE_MODE_REAL",
+    "Реальный торговый счет",
+    "/ru/account/accountinfointeger"
+  ],
+  [
+    "ALIGN_CENTER",
+    "Выравнивание по центру (только для объекта \"Поле ввода\")",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ALIGN_LEFT",
+    "Выравнивание по левой границе",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ALIGN_RIGHT",
+    "Выравнивание по правой границе",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ANCHOR_BOTTOM",
+    "Точка привязки для стрелки находится внизу",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ANCHOR_CENTER",
+    "Точка привязки строго по центру объекта",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ANCHOR_LEFT",
+    "Точка привязки слева по центру",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ANCHOR_LEFT_LOWER",
+    "Точка привязки в левом нижнем углу",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ANCHOR_LEFT_UPPER",
+    "Точка привязки в левом верхнем углу",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ANCHOR_LOWER",
+    "Точка привязки снизу по центру",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ANCHOR_RIGHT",
+    "Точка привязки справа по центру",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ANCHOR_RIGHT_LOWER",
+    "Точка привязки в правом нижнем углу",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ANCHOR_RIGHT_UPPER",
+    "Точка привязки в правом верхнем углу",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ANCHOR_TOP",
+    "Точка привязки для стрелки находится сверху",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "ANCHOR_UPPER",
+    "Точка привязки сверху по центру",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "BORDER_FLAT",
+    "Плоский вид",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "BORDER_RAISED",
+    "Выпуклый вид",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "BORDER_SUNKEN",
+    "Вогнутый вид",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "CHAR_MAX",
+    "Максимальное значение, которое может быть представлено типом char",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "CHAR_MIN",
+    "Минимальное значение, которое может быть представлено типом char",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "CHART_AUTOSCROLL",
+    "Режим автоматического перехода к правому краю графика",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_BARS",
+    "Отображение в виде баров",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_BEGIN",
+    "Начало графика (самые старые цены)",
+    "/ru/chart_operations/chartnavigate"
+  ],
+  [
+    "CHART_BRING_TO_TOP",
+    "Показ графика поверх всех других",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_CANDLES",
+    "Отображение в виде японских свечей",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_ASK",
+    "Цвет линии Ask-цены",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_BACKGROUND",
+    "Цвет фона графика",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_BID",
+    "Цвет линии Bid-цены",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_CANDLE_BEAR",
+    "Цвет тела медвежьей свечи",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_CANDLE_BULL",
+    "Цвет тела бычьей свечи",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_CHART_DOWN",
+    "Цвет бара вниз, тени и окантовки тела медвежьей свечи",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_CHART_LINE",
+    "Цвет линии графика и японских свечей \"Доджи\"",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_CHART_UP",
+    "Цвет бара вверх, тени и окантовки тела бычьей свечи",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_FOREGROUND",
+    "Цвет осей, шкалы и строки OHLC",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_GRID",
+    "Цвет сетки",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_LAST",
+    "Цвет линии цены последней совершенной сделки (Last)",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_STOP_LEVEL",
+    "Цвет уровней стоп-ордеров (Stop Loss и Take Profit)",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COLOR_VOLUME",
+    "Цвет объемов и уровней открытия ордеров",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_COMMENT",
+    "Текст комментария на графике",
+    "/ru/chart_operations/chartsetstring"
+  ],
+  [
+    "CHART_CURRENT_POS",
+    "Текущая позиция",
+    "/ru/chart_operations/chartnavigate"
+  ],
+  [
+    "CHART_DRAG_TRADE_LEVELS",
+    "Разрешение на перетаскивание торговых уровней на графике с помощью мышки. По умолчанию режим перетаскивания включен (значение true)",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_END",
+    "Конец графика (самые свежие цены)",
+    "/ru/chart_operations/chartnavigate"
+  ],
+  [
+    "CHART_EVENT_MOUSE_MOVE",
+    "Отправка всем mql4-программам на графике сообщений о событиях перемещения и нажатия кнопок мыши (CHARTEVENT_MOUSE_MOVE)",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_EVENT_OBJECT_CREATE",
+    "Отправка всем mql4-программам на графике сообщений о событии создания графического объекта (CHARTEVENT_OBJECT_CREATE)",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_EVENT_OBJECT_DELETE",
+    "Отправка всем mql4-программам на графике сообщений о событии уничтожения графического объекта (CHARTEVENT_OBJECT_DELETE)",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_FIRST_VISIBLE_BAR",
+    "Номер первого видимого бара на графике. Индексация баров соответствует таймсерии.",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_FIXED_MAX",
+    "Фиксированный максимум графика",
+    "/ru/chart_operations/chartsetdouble"
+  ],
+  [
+    "CHART_FIXED_MIN",
+    "Фиксированный минимум графика",
+    "/ru/chart_operations/chartsetdouble"
+  ],
+  [
+    "CHART_FIXED_POSITION",
+    "Положение фиксированной позиции графика от левого края в процентах. Фиксированная позиция графика обозначена маленьким серым треугольником на горизонтальной оси времени и показывается только в том случае, если отключена автоматическая прокрутка к правому краю при поступлении нового тика (смотри свойство CHART_AUTOSCROLL). Бар, который находится на фиксированной позиции, остаётся на том же месте при увеличении и уменьшении масштаба.",
+    "/ru/chart_operations/chartsetdouble"
+  ],
+  [
+    "CHART_FOREGROUND",
+    "Ценовой график на переднем плане",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_HEIGHT_IN_PIXELS",
+    "Высота графика в пикселях",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_IS_OFFLINE",
+    "Признак, определяющий, является ли график автономным",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_LINE",
+    "Отображение в виде линии, проведенной по ценам Close",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_MODE",
+    "Тип графика (свечи, бары или линия)",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_MOUSE_SCROLL",
+    "Прокрутка графика левой кнопкой мышки по горизонтали. Прокрутка по вертикали также будет доступна, если установлено в true значение любого из трех свойств: CHART_SCALEFIX, CHART_SCALEFIX_11 или CHART_SCALE_PT_PER_BAR",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_POINTS_PER_BAR",
+    "Значение масштаба в пунктах на бар",
+    "/ru/chart_operations/chartsetdouble"
+  ],
+  [
+    "CHART_PRICE_MAX",
+    "Максимум графика",
+    "/ru/chart_operations/chartsetdouble"
+  ],
+  [
+    "CHART_PRICE_MIN",
+    "Минимум графика",
+    "/ru/chart_operations/chartsetdouble"
+  ],
+  [
+    "CHART_SCALE",
+    "Масштаб",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SCALE_PT_PER_BAR",
+    "Режим указания масштаба в пунктах на бар",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SCALEFIX",
+    "Режим фиксированного масштаба",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SCALEFIX_11",
+    "Режим масштаба 1:1",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHIFT",
+    "Режим отступа ценового графика от правого края",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHIFT_SIZE",
+    "Размер отступа нулевого бара от правого края в процентах",
+    "/ru/chart_operations/chartsetdouble"
+  ],
+  [
+    "CHART_SHOW_ASK_LINE",
+    "Отображение значения Ask горизонтальной линией на графике",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHOW_BID_LINE",
+    "Отображение значения Bid горизонтальной линией на графике",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHOW_DATE_SCALE",
+    "Отображение на графике шкалы времени",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHOW_GRID",
+    "Отображение сетки на графике",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHOW_LAST_LINE",
+    "Отображение значения Last горизонтальной линией на графике",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHOW_OBJECT_DESCR",
+    "Всплывающие описания графических объектов",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHOW_OHLC",
+    "Отображение в левом верхнем углу значений OHLC",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHOW_PERIOD_SEP",
+    "Отображение вертикальных разделителей между соседними периодами",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHOW_PRICE_SCALE",
+    "Отображение на графике ценовой шкалы",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHOW_TRADE_LEVELS",
+    "Отображение на графике торговых уровней (уровни открытых ордеров, Stop Loss, Take Profit и отложенных ордеров)",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_SHOW_VOLUMES",
+    "Отображение объемов на графике",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_VISIBLE_BARS",
+    "Количество баров на графике, доступных для отображения",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_VOLUME_HIDE",
+    "Объемы не показаны",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_VOLUME_TICK",
+    "Тиковые объемы",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_WIDTH_IN_BARS",
+    "Ширина графика в барах",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_WIDTH_IN_PIXELS",
+    "Ширина графика в пикселях",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_WINDOW_HANDLE",
+    "Хэндл графика (HWND)",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_WINDOW_IS_VISIBLE",
+    "Видимость подокон",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_WINDOW_YDISTANCE",
+    "Дистанция в пикселях по вертикальной оси Y между верхней рамкой подокна индикатора и верхней рамкой главного окна графика. При наступлении событий мыши координаты курсора передаются в координатах главного окна графика, в то время как координаты графических объектов в подокне индикатора задаются относительно верхнего левого угла подокна. Значение требуется для перевода абсолютных координат главного графика в локальные координаты подокна для корректной работы с графическими объектами, у которых координаты задаются относительно верхнего левого угла рамки подокна.",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHART_WINDOWS_TOTAL",
+    "Общее количество окон графика, включая подокна индикаторов",
+    "/ru/chart_operations/chartsetinteger"
+  ],
+  [
+    "CHARTEVENT_CHART_CHANGE",
+    "Изменение размеров графика или изменение свойств графика через диалог свойств",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTEVENT_CLICK",
+    "Нажатие мышки на графике",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTEVENT_CUSTOM",
+    "Начальный номер события из диапазона пользовательских событий",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTEVENT_CUSTOM_LAST",
+    "Конечный номер события из диапазона пользовательских событий",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTEVENT_KEYDOWN",
+    "Нажатие клавиатуры",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTEVENT_MOUSE_MOVE",
+    "Перемещение мыши и нажатие кнопок мыши (если для графика установлено свойство CHART_EVENT_MOUSE_MOVE=true)",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTEVENT_OBJECT_CHANGE",
+    "Изменение свойств графического объекта через диалог свойств",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTEVENT_OBJECT_CLICK",
+    "Нажатие мышки на графическом объекте",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTEVENT_OBJECT_CREATE",
+    "Создание графического объекта (если для графика установлено свойство CHART_EVENT_OBJECT_CREATE=true)",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTEVENT_OBJECT_DELETE",
+    "Удаление графического объекта (если для графика установлено свойство CHART_EVENT_OBJECT_DELETE=true)",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTEVENT_OBJECT_DRAG",
+    "Перетаскивание графического объекта",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTEVENT_OBJECT_ENDEDIT",
+    "Окончание редактирования текста в графическом объекте Edit",
+    "/ru/basis/function/events#onchartevent"
+  ],
+  [
+    "CHARTS_MAX",
+    "Максимально возможное количество одновременно открытых графиков в терминале",
+    "/ru/constants/namedconstants/otherconstants"
+  ],
+  [
+    "CLR_NONE, clrNONE",
+    "Отсутствие цвета. Значение по умолчанию, указатель пустого значения. Используется в пользовательских индикаторах",
+    "/ru/constants/namedconstants/otherconstants"
+  ],
+  [
+    "clrAliceBlue",
+    "Alice Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrAntiqueWhite",
+    "Antique White",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrAqua",
+    "Aqua",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrAquamarine",
+    "Aquamarine",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrBeige",
+    "Beige",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrBisque",
+    "Bisque",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrBlack",
+    "Black",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrBlanchedAlmond",
+    "Blanched Almond",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrBlue",
+    "Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrBlueViolet",
+    "Blue Violet",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrBrown",
+    "Brown",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrBurlyWood",
+    "Burly Wood",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrCadetBlue",
+    "Cadet Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrChartreuse",
+    "Chartreuse",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrChocolate",
+    "Chocolate",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrCoral",
+    "Coral",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrCornflowerBlue",
+    "Cornflower Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrCornsilk",
+    "Cornsilk",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrCrimson",
+    "Crimson",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkBlue",
+    "Dark Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkGoldenrod",
+    "Dark Goldenrod",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkGray",
+    "Dark Gray",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkGreen",
+    "Dark Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkKhaki",
+    "Dark Khaki",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkOliveGreen",
+    "Dark Olive Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkOrange",
+    "Dark Orange",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkOrchid",
+    "Dark Orchid",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkSalmon",
+    "Dark Salmon",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkSeaGreen",
+    "Dark Sea Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkSlateBlue",
+    "Dark Slate Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkSlateGray",
+    "Dark Slate Gray",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkTurquoise",
+    "Dark Turquoise",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDarkViolet",
+    "Dark Violet",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDeepPink",
+    "Deep Pink",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDeepSkyBlue",
+    "Deep Sky Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDimGray",
+    "Dim Gray",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrDodgerBlue",
+    "Dodger Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrFireBrick",
+    "Fire Brick",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrForestGreen",
+    "Forest Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrGainsboro",
+    "Gainsboro",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrGold",
+    "Gold",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrGoldenrod",
+    "Goldenrod",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrGray",
+    "Gray",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrGreen",
+    "Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrGreenYellow",
+    "Green Yellow",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrHoneydew",
+    "Honeydew",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrHotPink",
+    "Hot Pink",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrIndianRed",
+    "Indian Red",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrIndigo",
+    "Indigo",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrIvory",
+    "Ivory",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrKhaki",
+    "Khaki",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLavender",
+    "Lavender",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLavenderBlush",
+    "Lavender Blush",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLawnGreen",
+    "Lawn Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLemonChiffon",
+    "Lemon Chiffon",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightBlue",
+    "Light Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightCoral",
+    "Light Coral",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightCyan",
+    "Light Cyan",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightGoldenrod",
+    "Light Goldenrod",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightGray",
+    "Light Gray",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightGreen",
+    "Light Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightPink",
+    "Light Pink",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightSalmon",
+    "Light Salmon",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightSeaGreen",
+    "Light Sea Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightSkyBlue",
+    "Light Sky Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightSlateGray",
+    "Light Slate Gray",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightSteelBlue",
+    "Light Steel Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLightYellow",
+    "Light Yellow",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLime",
+    "Lime",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLimeGreen",
+    "Lime Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrLinen",
+    "Linen",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMagenta",
+    "Magenta",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMaroon",
+    "Maroon",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMediumAquamarine",
+    "Medium Aquamarine",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMediumBlue",
+    "Medium Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMediumOrchid",
+    "Medium Orchid",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMediumPurple",
+    "Medium Purple",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMediumSeaGreen",
+    "Medium Sea Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMediumSlateBlue",
+    "Medium Slate Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMediumSpringGreen",
+    "Medium Spring Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMediumTurquoise",
+    "Medium Turquoise",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMediumVioletRed",
+    "Medium Violet Red",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMidnightBlue",
+    "Midnight Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMintCream",
+    "Mint Cream",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMistyRose",
+    "Misty Rose",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrMoccasin",
+    "Moccasin",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrNavajoWhite",
+    "Navajo White",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrNavy",
+    "Navy",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrOldLace",
+    "Old Lace",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrOlive",
+    "Olive",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrOliveDrab",
+    "Olive Drab",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrOrange",
+    "Orange",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrOrangeRed",
+    "Orange Red",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrOrchid",
+    "Orchid",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrPaleGoldenrod",
+    "Pale Goldenrod",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrPaleGreen",
+    "Pale Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrPaleTurquoise",
+    "Pale Turquoise",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrPaleVioletRed",
+    "Pale Violet Red",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrPapayaWhip",
+    "Papaya Whip",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrPeachPuff",
+    "Peach Puff",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrPeru",
+    "Peru",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrPink",
+    "Pink",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrPlum",
+    "Plum",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrPowderBlue",
+    "Powder Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrPurple",
+    "Purple",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrRed",
+    "Red",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrRosyBrown",
+    "Rosy Brown",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrRoyalBlue",
+    "Royal Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSaddleBrown",
+    "Saddle Brown",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSalmon",
+    "Salmon",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSandyBrown",
+    "Sandy Brown",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSeaGreen",
+    "Sea Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSeashell",
+    "Seashell",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSienna",
+    "Sienna",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSilver",
+    "Silver",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSkyBlue",
+    "Sky Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSlateBlue",
+    "Slate Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSlateGray",
+    "Slate Gray",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSnow",
+    "Snow",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSpringGreen",
+    "Spring Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrSteelBlue",
+    "Steel Blue",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrTan",
+    "Tan",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrTeal",
+    "Teal",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrThistle",
+    "Thistle",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrTomato",
+    "Tomato",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrTurquoise",
+    "Turquoise",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrViolet",
+    "Violet",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrWheat",
+    "Wheat",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrWhite",
+    "White",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrWhiteSmoke",
+    "White Smoke",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrYellow",
+    "Yellow",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "clrYellowGreen",
+    "Yellow Green",
+    "/ru/constants/objectconstants/webcolors"
+  ],
+  [
+    "CORNER_LEFT_LOWER",
+    "Центр координат в левом нижнем углу графика",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "CORNER_LEFT_UPPER",
+    "Центр координат в левом верхнем углу графика",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "CORNER_RIGHT_LOWER",
+    "Центр координат в правом нижнем углу графика",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "CORNER_RIGHT_UPPER",
+    "Центр координат в правом верхнем углу графика",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "CP_ACP",
+    "Текущая кодовая страница ANSI кодировка в операционной системе Windows",
+    "/ru/convert/chararraytostring"
+  ],
+  [
+    "CP_MACCP",
+    "Текущая кодовая страница Macintosh. Примечание: Это значение преимущественно используется в ранее созданных программных кодах и теперь в нем нет необходимости, так как современные компьютеры Macintosh используют Unicode кодировку.",
+    "/ru/convert/chararraytostring"
+  ],
+  [
+    "CP_OEMCP",
+    "Текущая кодовая страница OEM.",
+    "/ru/convert/chararraytostring"
+  ],
+  [
+    "CP_SYMBOL",
+    "Кодовая страница Symbol",
+    "/ru/convert/chararraytostring"
+  ],
+  [
+    "CP_THREAD_ACP",
+    "Кодировка Windows ANSI для текущего потока выполнения.",
+    "/ru/convert/chararraytostring"
+  ],
+  [
+    "CP_UTF7",
+    "Кодовая страница UTF-7.",
+    "/ru/convert/chararraytostring"
+  ],
+  [
+    "CP_UTF8",
+    "Кодовая страница UTF-8.",
+    "/ru/convert/chararraytostring"
+  ],
+  [
+    "CRYPT_AES128",
+    "Шифрование AES с ключом 128 бит (16 байт)",
+    "/ru/common/cryptencode"
+  ],
+  [
+    "CRYPT_AES256",
+    "Шифрование AES с ключом 256 бит (32 байта)",
+    "/ru/common/cryptencode"
+  ],
+  [
+    "CRYPT_ARCH_ZIP",
+    "ZIP архивирование",
+    "/ru/common/cryptencode"
+  ],
+  [
+    "CRYPT_BASE64",
+    "Шифрование BASE64 (перекодировка)",
+    "/ru/common/cryptencode"
+  ],
+  [
+    "CRYPT_DES",
+    "Шифрование DES с ключом 56 бит (7 байт)",
+    "/ru/common/cryptencode"
+  ],
+  [
+    "CRYPT_HASH_MD5",
+    "Расчёт HASH MD5",
+    "/ru/common/cryptencode"
+  ],
+  [
+    "CRYPT_HASH_SHA1",
+    "Расчёт HASH SHA1",
+    "/ru/common/cryptencode"
+  ],
+  [
+    "CRYPT_HASH_SHA256",
+    "Расчёт HASH SHA256",
+    "/ru/common/cryptencode"
+  ],
+  [
+    "DBL_DIG",
+    "Количество значимых десятичных знаков",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "DBL_EPSILON",
+    "Наименьшее число для которого выполняется условие 1.0+DBL_EPSILON != 1.0",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "DBL_MANT_DIG",
+    "Количество битов в мантиссе",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "DBL_MAX",
+    "Максимальное значение, которое может быть представлено типом double",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "DBL_MAX_10_EXP",
+    "Максимальное десятичное значение степени экспоненты",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "DBL_MAX_EXP",
+    "Максимальное двоичное значение степени экспоненты",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "DBL_MIN",
+    "Минимальное положительное значение, которое может быть  представлено типом double",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "DBL_MIN_10_EXP",
+    "Минимальное десятичное значение степени экспоненты",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "DBL_MIN_EXP",
+    "Минимальное двоичное значение степени экспоненты",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "DRAW_ARROW",
+    "Стрелки (символы)",
+    "/ru/constants/indicatorconstants/drawstyles"
+  ],
+  [
+    "DRAW_HISTOGRAM",
+    "Гистограмма",
+    "/ru/constants/indicatorconstants/drawstyles"
+  ],
+  [
+    "DRAW_LINE",
+    "Простая линия",
+    "/ru/constants/indicatorconstants/drawstyles"
+  ],
+  [
+    "DRAW_NONE",
+    "Отсутствие какого-либо рисования",
+    "/ru/constants/indicatorconstants/drawstyles"
+  ],
+  [
+    "DRAW_SECTION",
+    "Отрезки между непустыми значениями линии",
+    "/ru/constants/indicatorconstants/drawstyles"
+  ],
+  [
+    "DRAW_ZIGZAG",
+    "Отрезки между непустыми значениями чётной и нечётной линий (зигзаг), 2 буфера значений",
+    "/ru/constants/indicatorconstants/drawstyles"
+  ],
+  [
+    "EMPTY",
+    "Указывает пустое состояние параметра",
+    "/ru/constants/namedconstants/otherconstants"
+  ],
+  [
+    "EMPTY_VALUE",
+    "Пустое значение в индикаторном буфере",
+    "/ru/constants/namedconstants/otherconstants"
+  ],
+  [
+    "ERR_ACCOUNT_DISABLED",
+    "Счет заблокирован",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_ARRAY_AS_PARAMETER_EXPECTED",
+    "В качестве параметра ожидается массив",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_ARRAY_INDEX_OUT_OF_RANGE",
+    "Индекс массива - вне диапазона",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_ARRAY_INVALID",
+    "Неверный массив",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_BROKER_BUSY",
+    "Брокер занят",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_CANNOT_CALL_FUNCTION",
+    "Невозможно вызвать функцию",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_CANNOT_LOAD_LIBRARY",
+    "Невозможно загрузить библиотеку",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_CANNOT_OPEN_FILE",
+    "Невозможно открыть файл",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_CHART_NOREPLY",
+    "График не отвечает",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_CHART_NOT_FOUND",
+    "График не найден",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_CHART_PROP_INVALID",
+    "Неизвестное свойство графика",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_CHARTINDICATOR_NOT_FOUND",
+    "Индикатор не найден",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_CHARTWINDOW_NOT_FOUND",
+    "Не найдено подокно графика",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_COMMON_ERROR",
+    "Общая ошибка",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_CUSTOM_INDICATOR_ERROR",
+    "Ошибка пользовательского индикатора",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_DLL_CALLS_NOT_ALLOWED",
+    "Вызовы DLL не разрешены",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_DLLFUNC_CRITICALERROR",
+    "Критическая ошибка вызова DLL-функции",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_DOUBLE_PARAMETER_EXPECTED",
+    "Ожидается параметр типа double",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_END_OF_FILE",
+    "Конец файла",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_EXTERNAL_CALLS_NOT_ALLOWED",
+    "Вызовы внешних библиотечных функций не разрешены",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_ARRAYRESIZE_ERROR",
+    "Ошибка изменения размера массива",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_BIN_STRINGSIZE",
+    "Размер строки должен быть указан для двоичных файлов",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_BUFFER_ALLOCATION_ERROR",
+    "Ошибка размещения буфера текстового файла",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_CANNOT_CLEAN_DIRECTORY",
+    "Ошибка очистки директории",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_CANNOT_DELETE",
+    "Ошибка удаления файла",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_CANNOT_DELETE_DIRECTORY",
+    "Ошибка удаления директории",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_CANNOT_OPEN",
+    "Ошибка открытия файла",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_CANNOT_REWRITE",
+    "Файл не может быть перезаписан",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_DIRECTORY_NOT_EXIST",
+    "Директория не существует",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_INCOMPATIBLE",
+    "Неверный тип файла (для строковых массивов-TXT, для всех других-BIN)",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_INVALID_HANDLE",
+    "Неверный хендл файла (файл закрыт или не был открыт)",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_IS_DIRECTORY",
+    "Файл является директорией",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_NOT_BIN",
+    "Файл должен быть открыт с флагом FILE_BIN",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_NOT_CSV",
+    "Файл должен быть открыт с флагом FILE_CSV",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_NOT_DIRECTORY",
+    "Указанный файл не является директорией",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_NOT_EXIST",
+    "Файл не существует",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_NOT_TOREAD",
+    "Файл должен быть открыт с флагом FILE_READ",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_NOT_TOWRITE",
+    "Файл должен быть открыт с флагом FILE_WRITE",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_NOT_TXT",
+    "Файл должен быть открыт с флагом FILE_TXT",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_NOT_TXTORCSV",
+    "Файл должен быть открыт с флагом FILE_TXT или FILE_CSV",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_READ_ERROR",
+    "Ошибка чтения файла",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_STRINGRESIZE_ERROR",
+    "Ошибка изменения размера строки",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_STRUCT_WITH_OBJECTS",
+    "Структура содержит строки или динамические массивы",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_TOO_LONG_FILENAME",
+    "Слишком длинное имя файла",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_TOO_MANY_OPENED",
+    "Слишком много открытых файлов",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_WRITE_ERROR",
+    "Ошибка записи файла",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_WRONG_DIRECTORYNAME",
+    "Неверное имя директории",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_WRONG_FILENAME",
+    "Неверное имя файла",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FILE_WRONG_HANDLE",
+    "Неверный хендл файла (индекс хендла отсутствует в таблице)",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FORMAT_TOO_MANY_FORMATTERS",
+    "Слишком много параметров форматирования строки",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FORMAT_TOO_MANY_PARAMETERS",
+    "Число параметров превышает число параметров форматирования строки",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FUNC_NOT_ALLOWED_IN_TESTING",
+    "Функция не разрешена в тестовом режиме",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_FUNCTION_NOT_CONFIRMED",
+    "Функция не разрешена",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_GLOBAL_VARIABLE_NOT_FOUND",
+    "Глобальная переменная не обнаружена",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_GLOBAL_VARIABLES_PROCESSING",
+    "Ошибка обработки глобальных переменных",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_HISTORY_WILL_UPDATED",
+    "Запрошенные исторические данные в состоянии обновления",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INCOMPATIBLE_ARRAYS",
+    "Массивы несовместимы",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INCOMPATIBLE_FILEACCESS",
+    "Несовместимый режим доступа к файлу",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INCORRECT_SERIESARRAY_USING",
+    "Неправильное использование массива-таймсерии",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INDICATOR_CANNOT_INIT",
+    "Ошибка инициализации пользовательского индикатора",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INDICATOR_CANNOT_LOAD",
+    "Ошибка загрузки пользовательского индикатора",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INTEGER_PARAMETER_EXPECTED",
+    "Ожидается параметр типа integer",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INTERNAL_ERROR",
+    "Внутренняя ошибка",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INVALID_ACCOUNT",
+    "Неправильный номер счета",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INVALID_FUNCTION_PARAMSCNT",
+    "Неправильное количество параметров функции",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INVALID_FUNCTION_PARAMVALUE",
+    "Недопустимое значение параметра функции",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INVALID_POINTER",
+    "Неверный указатель",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INVALID_PRICE",
+    "Неправильная цена",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INVALID_PRICE_PARAM",
+    "Неправильный параметр цены для торговой функции",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INVALID_STOPS",
+    "Неправильные стопы",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INVALID_TICKET",
+    "Неверный номер тикета",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INVALID_TRADE_PARAMETERS",
+    "Неправильные параметры",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_INVALID_TRADE_VOLUME",
+    "Неправильный объем",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_LONG_POSITIONS_ONLY_ALLOWED",
+    "Разрешена только покупка",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_LONGS_NOT_ALLOWED",
+    "Ордера на покупку не разрешены. Необходимо проверить свойства эксперта",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_MALFUNCTIONAL_TRADE",
+    "Недопустимая операция, нарушающая функционирование сервера",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_MARKET_CLOSED",
+    "Рынок закрыт",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_CONNECTION",
+    "Нет связи с торговым сервером",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_ERROR",
+    "Нет ошибки",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_HISTORY_DATA",
+    "Нет исторических данных",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_MEMORY_FOR_ARRAYSTRING",
+    "Нет памяти для строкового массива",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_MEMORY_FOR_CALL_STACK",
+    "Нет памяти для стека функций",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_MEMORY_FOR_HISTORY",
+    "Не хватает памяти для исторических данных",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_MEMORY_FOR_PARAM_STRING",
+    "Нет памяти для строкового параметра",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_MEMORY_FOR_RETURNED_STR",
+    "Недостаточно памяти для строки, возвращаемой из функции",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_MEMORY_FOR_TEMP_STRING",
+    "Нет памяти для временной строки",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_MQLERROR",
+    "Нет ошибки",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_OBJECT_NAME",
+    "Нет имени объекта",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_ORDER_SELECTED",
+    "Ни один ордер не выбран",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_RESULT",
+    "Нет ошибки, но результат неизвестен",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NO_SPECIFIED_SUBWINDOW",
+    "Не найдено указанное подокно",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NOT_ENOUGH_MONEY",
+    "Недостаточно денег для совершения операции",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NOT_ENOUGH_RIGHTS",
+    "Недостаточно прав",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NOT_ENOUGH_STACK_FOR_PARAM",
+    "На стеке нет памяти для передачи параметров",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NOT_INITIALIZED_ARRAY",
+    "Неинициализированный массив",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NOT_INITIALIZED_ARRAYSTRING",
+    "Неинициализированная строка в массиве",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NOT_INITIALIZED_STRING",
+    "Неинициализированная строка",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NOTIFICATION_ERROR",
+    "Ошибка отправки push-уведомления",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NOTIFICATION_PARAMETER",
+    "Ошибка параметров push-уведомления",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NOTIFICATION_SETTINGS",
+    "Уведомления запрещены",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_NOTIFICATION_TOO_FREQUENT",
+    "Слишком частые запросы отсылки push-уведомлений",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_OBJECT_ALREADY_EXISTS",
+    "Объект уже существует",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_OBJECT_COORDINATES_ERROR",
+    "Ошибка координат объекта",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_OBJECT_DOES_NOT_EXIST",
+    "Объект не существует",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_OFF_QUOTES",
+    "Нет цен",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_OLD_VERSION",
+    "Старая версия клиентского терминала",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_ORDER_LOCKED",
+    "Ордер заблокирован и уже обрабатывается",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_OUT_OF_MEMORY",
+    "Нет памяти",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_PRICE_CHANGED",
+    "Цена изменилась",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_RECURSIVE_STACK_OVERFLOW",
+    "Переполнение стека после рекурсивного вызова",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_REMAINDER_FROM_ZERO_DIVIDE",
+    "Остаток от деления на ноль",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_REQUOTE",
+    "Новые цены",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_RESOURCE_DUPLICATED",
+    "Дубликат ресурса",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_RESOURCE_NOT_FOUND",
+    "Ресурс не найден",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_RESOURCE_NOT_SUPPORTED",
+    "Ресурс не поддерживается",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_SEND_MAIL_ERROR",
+    "Ошибка отправки почты",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_SERVER_BUSY",
+    "Торговый сервер занят",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_SHORTS_NOT_ALLOWED",
+    "Ордера на продажу не разрешены. Необходимо проверить свойства эксперта",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_SOME_ARRAY_ERROR",
+    "Ошибка массива",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_SOME_FILE_ERROR",
+    "Ошибка при работе с файлом",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_SOME_OBJECT_ERROR",
+    "Ошибка при работе с объектом",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_STRING_FUNCTION_INTERNAL",
+    "Внутренняя ошибка строковой функции",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_STRING_PARAMETER_EXPECTED",
+    "Ожидается параметр типа string",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_SYMBOL_SELECT",
+    "Ошибка выбора инструмента",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_SYSTEM_BUSY",
+    "Система занята",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TOO_FREQUENT_REQUESTS",
+    "Слишком частые запросы",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TOO_LONG_STRING",
+    "Слишком длинная строка",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TOO_MANY_OPENED_FILES",
+    "Слишком много открытых файлов",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TOO_MANY_REQUESTS",
+    "Слишком много запросов",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TRADE_CONTEXT_BUSY",
+    "Подсистема торговли занята",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TRADE_DISABLED",
+    "Торговля запрещена",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TRADE_ERROR",
+    "Ошибка при выполнении торговой операции",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TRADE_EXPERT_DISABLED_BY_SERVER",
+    "Автоматическая торговля с помощью экспертов/скриптов запрещена на стороне сервера",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TRADE_EXPIRATION_DENIED",
+    "Использование даты истечения ордера запрещено брокером",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TRADE_HEDGE_PROHIBITED",
+    "Попытка открыть противоположный ордер в случае, если хеджирование запрещено",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TRADE_MODIFY_DENIED",
+    "Модификация запрещена, так как ордер слишком близок к рынку",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TRADE_NOT_ALLOWED",
+    "Торговля не разрешена. Необходимо включить опцию \"Разрешить советнику торговать\" в свойствах эксперта",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TRADE_PROHIBITED_BY_FIFO",
+    "Попытка закрыть позицию по инструменту в противоречии с правилом FIFO",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TRADE_TIMEOUT",
+    "Истек срок ожидания совершения сделки",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_TRADE_TOO_MANY_ORDERS",
+    "Количество открытых и отложенных ордеров достигло предела, установленного брокером",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_UNKNOWN_COMMAND",
+    "Неизвестная команда",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_UNKNOWN_OBJECT_PROPERTY",
+    "Запрошено неизвестное свойство объекта",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_UNKNOWN_OBJECT_TYPE",
+    "Неизвестный тип объекта",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_UNKNOWN_SYMBOL",
+    "Неизвестный символ",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_USER_ERROR_FIRST",
+    "С этого кода начинаются ошибки, задаваемые пользователем",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_WEBREQUEST_CONNECT_FAILED",
+    "Не удалось подключиться к указанному URL",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_WEBREQUEST_INVALID_ADDRESS",
+    "URL не прошел проверку",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_WEBREQUEST_REQUEST_FAILED",
+    "Ошибка в результате выполнения HTTP запроса",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_WEBREQUEST_TIMEOUT",
+    "Превышен таймаут получения данных",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_WRONG_FILE_NAME",
+    "Неправильное имя файла",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_WRONG_FUNCTION_POINTER",
+    "Неправильный указатель функции",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_WRONG_JUMP",
+    "Неправильный переход",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "ERR_ZERO_DIVIDE",
+    "Деление на ноль",
+    "/ru/check/getlasterror"
+  ],
+  [
+    "FILE_ACCESS_DATE",
+    "Дата последнего доступа к файлу",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_ANSI",
+    "Строки типа ANSI (однобайтовые символы). Флаг используется при открытии файлов (FileOpen())",
+    "/ru/files/fileopen"
+  ],
+  [
+    "FILE_BIN",
+    "Двоичный режим чтения-записи (без преобразования из строки и в строку). Флаг используется при открытии файлов (FileOpen())",
+    "/ru/files/fileopen"
+  ],
+  [
+    "FILE_COMMON",
+    "Расположение файла в общей папке всех клиентских терминалов \\Terminal\\Common\\Files. Флаг используется при открытии файлов (FileOpen()), копировании файлов (FileCopy(), FileMove()) и проверке существования файлов (FileIsExist())",
+    "/ru/files/fileopen"
+  ],
+  [
+    "FILE_CREATE_DATE",
+    "Дата создания",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_CSV",
+    "Файл типа csv (все записанные элементы преобразуются к строкам соответствующего типа, unicode или ansi, и разделяются разделителем). Флаг используется при открытии файлов (FileOpen())",
+    "/ru/files/fileopen"
+  ],
+  [
+    "FILE_END",
+    "Получение признака конца файла",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_EXISTS",
+    "Проверка на существование",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_IS_ANSI",
+    "Файл открыт как ANSI (смотри FILE_ANSI)",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_IS_BINARY",
+    "Файл открыт как бинарный (смотри FILE_BIN)",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_IS_COMMON",
+    "Файл открыт в общей папке всех клиентских терминалов (смотри FILE_COMMON)",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_IS_CSV",
+    "Файл открыт как CSV (смотри FILE_CSV)",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_IS_READABLE",
+    "Файл открыт с возможностью чтения (смотри FILE_READ)",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_IS_TEXT",
+    "Файл открыт как текстовый (смотри FILE_TXT)",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_IS_WRITABLE",
+    "Файл открыт с возможностью записи (смотри FILE_WRITE)",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_LINE_END",
+    "Получение признака конца строки",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_MODIFY_DATE",
+    "Дата последнего изменения",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_POSITION",
+    "Позиция указателя в файле",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_READ",
+    "Файл открывается для чтения. Флаг используется при открытии файлов (FileOpen()). При открытии файла обязательно должен быть указан флаг FILE_WRITE и/или флаг FILE_READ",
+    "/ru/files/fileopen"
+  ],
+  [
+    "FILE_REWRITE",
+    "Возможность перезаписывания файла функциями FileCopy() и FileMove(). Файл должен существовать или открываться для записи. В противном случае файл открыт не будет",
+    "/ru/files/filecopy"
+  ],
+  [
+    "FILE_SHARE_READ",
+    "Совместный доступ по чтению со стороны нескольких программ. Флаг используется при открытии файлов (FileOpen()), но не заменяет при открытии файла необходимости указать FILE_WRITE и/или флаг FILE_READ",
+    "/ru/files/fileopen"
+  ],
+  [
+    "FILE_SHARE_WRITE",
+    "Совместный доступ по записи со стороны нескольких программ. Флаг используется при открытии файлов (FileOpen()), но не заменяет при открытии файла необходимости указать FILE_WRITE и/или флаг FILE_READ",
+    "/ru/files/fileopen"
+  ],
+  [
+    "FILE_SIZE",
+    "Размер файла в байтах",
+    "/ru/files/filegetinteger"
+  ],
+  [
+    "FILE_TXT",
+    "Простой текстовый файл (тот же csv, однако разделитель не принимается во внимание). Флаг используется при открытии файлов (FileOpen())",
+    "/ru/files/fileopen"
+  ],
+  [
+    "FILE_UNICODE",
+    "Строки типа UNICODE (двухбайтовые символы). Флаг используется при открытии файлов (FileOpen())",
+    "/ru/files/fileopen"
+  ],
+  [
+    "FILE_WRITE",
+    "Файл открывается для записи. Флаг используется при открытии файлов (FileOpen()). При открытии файла обязательно должен быть указан флаг FILE_WRITE и/или флаг FILE_READ",
+    "/ru/files/fileopen"
+  ],
+  [
+    "FLT_DIG",
+    "Количество значимых десятичных знаков",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "FLT_EPSILON",
+    "Наименьшее число для которого выполняется условие 1.0+FLT_EPSILON != 1.0",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "FLT_MANT_DIG",
+    "Количество битов в мантиссе",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "FLT_MAX",
+    "Максимальное значение, которое может быть представлено типом float",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "FLT_MAX_10_EXP",
+    "Максимальное десятичное значение степени экспоненты",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "FLT_MAX_EXP",
+    "Максимальное двоичное значение степени экспоненты",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "FLT_MIN",
+    "Минимальное положительное значение, которое может быть  представлено типом float",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "FLT_MIN_10_EXP",
+    "Минимальное десятичное значение степени экспоненты",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "FLT_MIN_EXP",
+    "Минимальное двоичное значение степени экспоненты",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "FRIDAY",
+    "Пятница",
+    "/ru/marketinformation/symbolinfosessionquote"
+  ],
+  [
+    "GANN_DOWN_TREND",
+    "Линия соответствует нисходящему тренду",
+    "/ru/constants/objectconstants/enum_gann_direction"
+  ],
+  [
+    "GANN_UP_TREND",
+    "Линия соответствует восходящему тренду",
+    "/ru/constants/objectconstants/enum_gann_direction"
+  ],
+  [
+    "IDABORT",
+    "Выбрана кнопка Прервать (Abort)",
+    "/ru/common/messagebox"
+  ],
+  [
+    "IDCANCEL",
+    "Выбрана кнопка Отмена (Cancel)",
+    "/ru/common/messagebox"
+  ],
+  [
+    "IDCONTINUE",
+    "Выбрана кнопка Продолжить (Continue)",
+    "/ru/common/messagebox"
+  ],
+  [
+    "IDIGNORE",
+    "Выбрана кнопка Пропустить (Ignore)",
+    "/ru/common/messagebox"
+  ],
+  [
+    "IDNO",
+    "Выбрана кнопка Нет (No)",
+    "/ru/common/messagebox"
+  ],
+  [
+    "IDOK",
+    "Выбрана кнопка OK",
+    "/ru/common/messagebox"
+  ],
+  [
+    "IDRETRY",
+    "Выбрана кнопка Повтор (Retry)",
+    "/ru/common/messagebox"
+  ],
+  [
+    "IDTRYAGAIN",
+    "Выбрана кнопка Повторить (Try Again)",
+    "/ru/common/messagebox"
+  ],
+  [
+    "IDYES",
+    "Выбрана кнопка Да (Yes)",
+    "/ru/common/messagebox"
+  ],
+  [
+    "INDICATOR_DIGITS",
+    "Точность отображения значений индикатора",
+    "/ru/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INDICATOR_HEIGHT",
+    "Фиксированная высота собственного окна индикатора (команда препроцессора #property indicator_height)",
+    "/ru/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INDICATOR_LEVELCOLOR",
+    "Цвет линии уровня",
+    "/ru/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INDICATOR_LEVELS",
+    "Количество уровней на окне индикатора",
+    "/ru/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INDICATOR_LEVELSTYLE",
+    "Стиль линии уровня",
+    "/ru/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INDICATOR_LEVELTEXT",
+    "Описание уровня",
+    "/ru/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INDICATOR_LEVELVALUE",
+    "Значение уровня",
+    "/ru/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INDICATOR_LEVELWIDTH",
+    "Толщина линии уровня",
+    "/ru/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INDICATOR_MAXIMUM",
+    "Максимум окна индикатора",
+    "/ru/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INDICATOR_MINIMUM",
+    "Минимум окна индикатора",
+    "/ru/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INDICATOR_SHORTNAME",
+    "Короткое наименование индикатора",
+    "/ru/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INT_MAX",
+    "Максимальное значение, которое может быть представлено типом int",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "INT_MIN",
+    "Минимальное значение, которое может быть представлено типом int",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "INVALID_HANDLE",
+    "Некорректный хэндл",
+    "/ru/constants/namedconstants/otherconstants"
+  ],
+  [
+    "IS_DEBUG_MODE",
+    "Признак работы mq5-программы в режиме отладки",
+    "/ru/constants/namedconstants/otherconstants"
+  ],
+  [
+    "IS_PROFILE_MODE",
+    "Признак работы mq5-программы в режиме профилирования",
+    "/ru/constants/namedconstants/otherconstants"
+  ],
+  [
+    "LONG_MAX",
+    "Максимальное значение, которое может быть представлено типом long",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "LONG_MIN",
+    "Минимальное значение, которое может быть представлено типом long",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "M_1_PI",
+    "1/pi",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_2_PI",
+    "2/pi",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_2_SQRTPI",
+    "2/sqrt(pi)",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_E",
+    "e",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_LN10",
+    "ln(10)",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_LN2",
+    "ln(2)",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_LOG10E",
+    "log10(e)",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_LOG2E",
+    "log2(e)",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_PI",
+    "pi",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_PI_2",
+    "pi/2",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_PI_4",
+    "pi/4",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_SQRT1_2",
+    "1/sqrt(2)",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "M_SQRT2",
+    "sqrt(2)",
+    "/ru/constants/namedconstants/mathsconstants"
+  ],
+  [
+    "MB_ABORTRETRYIGNORE",
+    "Окно сообщения содержит три кнопки: Abort, Retry и Ignore",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_CANCELTRYCONTINUE",
+    "Окно сообщения содержит три кнопки: Cancel, Try Again, Continue",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_DEFBUTTON1",
+    "Первая кнопка MB_DEFBUTTON1 - кнопка выбрана по умолчанию, если MB_DEFBUTTON2, MB_DEFBUTTON3, или MB_DEFBUTTON4 не определены",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_DEFBUTTON2",
+    "Вторая кнопка - кнопка по умолчанию",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_DEFBUTTON3",
+    "Третья кнопка - кнопка по умолчанию",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_DEFBUTTON4",
+    "Четвертая кнопка - кнопка по умолчанию",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_ICONEXCLAMATION, MB_ICONWARNING",
+    "Изображение восклицательного знака",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_ICONINFORMATION, MB_ICONASTERISK",
+    "Изображение, состоящее из строчного знака i в круге",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_ICONQUESTION",
+    "Изображение вопросительного знака",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_ICONSTOP, MB_ICONERROR, MB_ICONHAND",
+    "Изображение знака STOP",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_OK",
+    "Окно сообщения содержит одну кнопку: OK. По умолчанию",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_OKCANCEL",
+    "Окно сообщения содержит две кнопки: OK и Cancel",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_RETRYCANCEL",
+    "Окно сообщения содержит две кнопки: Retry и Cancel",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_YESNO",
+    "Окно сообщения содержит две кнопки: Yes и No",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MB_YESNOCANCEL",
+    "Окно сообщения содержит три кнопки: Yes, No и Cancel",
+    "/ru/common/messagebox"
+  ],
+  [
+    "MODE_ASK",
+    "Последняя поступившая цена продажи. Для текущего инструмента хранится в предопределенной переменной Ask",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_BID",
+    "Последняя поступившая цена предложения. Для текущего инструмента хранится в предопределенной переменной Bid",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_CHIKOUSPAN",
+    "Chinkou Span",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_CLOSE",
+    "Цена закрытия",
+    "/ru/constants/indicatorconstants/seriesconst"
+  ],
+  [
+    "MODE_DIGITS",
+    "Количество цифр после запятой в цене инструмента. Для текущего инструмента хранится в предопределенной переменной Digits",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_EMA",
+    "Экспоненциальное усреднение",
+    "/ru/constants/indicatorconstants/enum_ma_method"
+  ],
+  [
+    "MODE_EXPIRATION",
+    "Календарная дата конца торгов (обычно используется для фьючерсов)",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_FREEZELEVEL",
+    "Уровень заморозки ордеров в пунктах. Если цена исполнения находится в пределах, определяемых уровнем заморозки, то ордер не может быть модифицирован, отменен или закрыт.",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_GATORJAW",
+    "Линия Jaw (челюсти Аллигатора)",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_GATORLIPS",
+    "Линия Lips (губы Аллигатора)",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_GATORTEETH",
+    "Линия Teeth (зубы Аллигатора)",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_HIGH",
+    "Максимальная цена",
+    "/ru/constants/indicatorconstants/seriesconst"
+  ],
+  [
+    "MODE_HISTORY",
+    "Ордер выбирается среди закрытых и отмененных ордеров",
+    "/ru/trading/orderselect"
+  ],
+  [
+    "MODE_KIJUNSEN",
+    "Kijun-sen",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_LOTSIZE",
+    "Размер контракта в базовой валюте инструмента",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_LOTSTEP",
+    "Шаг изменения размера лота",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_LOW",
+    "Минимальная цена",
+    "/ru/constants/indicatorconstants/seriesconst"
+  ],
+  [
+    "MODE_LOWER",
+    "Нижняя линия",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_LWMA",
+    "Линейно-взвешенное усреднение",
+    "/ru/constants/indicatorconstants/enum_ma_method"
+  ],
+  [
+    "MODE_MAIN",
+    "Основная линия",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_MARGINCALCMODE",
+    "Способ расчета залоговых средств. 0 - Forex; 1 - CFD; 2 - Futures; 3 - CFD на индексы",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_MARGINHEDGED",
+    "Маржа, взимаемая с перекрытых ордеров в расчете на 1 лот",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_MARGININIT",
+    "Начальные залоговые требования для 1 лота",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_MARGINMAINTENANCE",
+    "Размер залоговых средств для поддержки открытых ордеров в расчете на 1 лот",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_MARGINREQUIRED",
+    "Размер свободных средств, необходимых для открытия 1 лота на покупку",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_MAXLOT",
+    "Максимальный размер лота",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_MINLOT",
+    "Минимальный размер лота",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_MINUSDI",
+    "Линия -DI",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_OPEN",
+    "Цена открытия",
+    "/ru/constants/indicatorconstants/seriesconst"
+  ],
+  [
+    "MODE_PLUSDI",
+    "Линия +DI",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_POINT",
+    "Размер пункта в валюте котировки. Для текущего инструмента хранится в предопределенной переменной Point",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_PROFITCALCMODE",
+    "Способ расчета прибыли. 0 - Forex; 1 - CFD; 2 - Futures",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_SENKOUSPANA",
+    "Senkou Span A",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_SENKOUSPANB",
+    "Senkou Span B",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_SIGNAL",
+    "Сигнальная линия",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_SMA",
+    "Простое усреднение",
+    "/ru/constants/indicatorconstants/enum_ma_method"
+  ],
+  [
+    "MODE_SMMA",
+    "Сглаженное усреднение",
+    "/ru/constants/indicatorconstants/enum_ma_method"
+  ],
+  [
+    "MODE_SPREAD",
+    "Спрэд в пунктах",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_STARTING",
+    "Календарная дата начала торгов (обычно используется для фьючерсов)",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_STOPLEVEL",
+    "Минимально допустимый уровень стоп-лосса/тейк-профита в пунктах   Нулевое значение MODE_STOPLEVEL означает либо отсутствие  ограничения на минимальную дистанцию для стоп-лосса/тейк-профита, либо факт использования торговым сервером внешних механизмов динамического контроля уровней, которые не могут быть транслированы в терминал. Во втором случае GetLastError() может возвращать ошибку 130, так как уровень MODE_STOPLEVEL фактически является \"плавающим\".",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_SWAPLONG",
+    "Размер свопа для ордеров на покупку",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_SWAPSHORT",
+    "Размер свопа для ордеров на продажу",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_SWAPTYPE",
+    "Метод вычисления свопов. 0 - в пунктах; 1 - в базовой валюте инструмента; 2 - в процентах; 3 - в валюте залоговых средств.",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_TENKANSEN",
+    "Tenkan-sen",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_TICKSIZE",
+    "Минимальный шаг изменения цены инструмента в пунктах",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_TICKVALUE",
+    "Размер минимального изменения цены инструмента в валюте депозита",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_TIME",
+    "Время открытия бара, используется в функции ArrayCopySeries()",
+    "/ru/constants/indicatorconstants/seriesconst"
+  ],
+  [
+    "MODE_TRADEALLOWED",
+    "Разрешение торгов по указанному инструменту",
+    "/ru/marketinformation/marketinfo"
+  ],
+  [
+    "MODE_TRADES",
+    "Ордер выбирается среди открытых и отложенных ордеров",
+    "/ru/trading/orderselect"
+  ],
+  [
+    "MODE_UPPER",
+    "Верхняя линия",
+    "/ru/constants/indicatorconstants/lines"
+  ],
+  [
+    "MODE_VOLUME",
+    "Объем (количество тиков, сформировавших бар), используется в функциях iLowest() и iHighest()",
+    "/ru/constants/indicatorconstants/seriesconst"
+  ],
+  [
+    "MONDAY",
+    "Понедельник",
+    "/ru/marketinformation/symbolinfosessionquote"
+  ],
+  [
+    "MQL_CODEPAGE",
+    "Кодовая страница, используемая в MQL4 программе для вывода и конвертации строк (Print, PrintFormat, Alert, MessageBox, SendFTP, SendMail, SendNotification  и т.д.)",
+    "/ru/constants/environment_state/mql4_programm_info"
+  ],
+  [
+    "MQL_DEBUG",
+    "Признак работы запущенной программы в режиме отладки",
+    "/ru/check/mqlinfointeger"
+  ],
+  [
+    "MQL_DLLS_ALLOWED",
+    "Разрешение на использование DLL для данной запущенной программы",
+    "/ru/check/mqlinfointeger"
+  ],
+  [
+    "MQL_LICENSE_TYPE",
+    "Тип лицензии модуля EX4. Лицензия относится именно к тому модулю EX4, из которого делается запрос с помощью MQLInfoInteger(MQL_LICENSE_TYPE).",
+    "/ru/check/mqlinfointeger"
+  ],
+  [
+    "MQL_OPTIMIZATION",
+    "Признак работы запущенной программы в процессе оптимизации",
+    "/ru/check/mqlinfointeger"
+  ],
+  [
+    "MQL_PROFILER",
+    "Признак работы запущенной программы в режиме профилирования кода",
+    "/ru/check/mqlinfointeger"
+  ],
+  [
+    "MQL_PROGRAM_NAME",
+    "Имя запущенной MQL4 программы",
+    "/ru/check/mqlinfostring"
+  ],
+  [
+    "MQL_PROGRAM_PATH",
+    "Путь для данной запущенной программы",
+    "/ru/check/mqlinfostring"
+  ],
+  [
+    "MQL_PROGRAM_TYPE",
+    "Тип MQL4 программы",
+    "/ru/check/mqlinfointeger"
+  ],
+  [
+    "MQL_SIGNALS_ALLOWED",
+    "Разрешение на работу с сигналами данной запущенной программы",
+    "/ru/check/mqlinfointeger"
+  ],
+  [
+    "MQL_TESTER",
+    "Признак работы запущенной программы в тестере",
+    "/ru/check/mqlinfointeger"
+  ],
+  [
+    "MQL_TRADE_ALLOWED",
+    "Разрешение на торговлю для данной запущенной программы",
+    "/ru/check/mqlinfointeger"
+  ],
+  [
+    "MQL_VISUAL_MODE",
+    "Признак работы запущенной программы в визуальном режиме тестирования",
+    "/ru/check/mqlinfointeger"
+  ],
+  [
+    "NULL",
+    "Ноль любого типа. Также указывает пустое состояние строки",
+    "/ru/constants/namedconstants/otherconstants"
+  ],
+  [
+    "OBJ_ALL_PERIODS",
+    "Объект рисуется на всех таймфреймах",
+    "/ru/constants/objectconstants/visible"
+  ],
+  [
+    "OBJ_ARROW",
+    "Объект \"Стрелка\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_ARROW_BUY",
+    "Знак \"Buy\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_ARROW_CHECK",
+    "Знак \"Птичка\" (галка)",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_ARROW_DOWN",
+    "Знак \"Стрелка вниз\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_ARROW_LEFT_PRICE",
+    "Левая ценовая метка",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_ARROW_RIGHT_PRICE",
+    "Правая ценовая метка",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_ARROW_SELL",
+    "Знак \"Sell\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_ARROW_STOP",
+    "Знак \"Стоп\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_ARROW_THUMB_DOWN",
+    "Знак \"Плохо\" (большой палец вниз)",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_ARROW_THUMB_UP",
+    "Знак \"Хорошо\" (большой палец вверх)",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_ARROW_UP",
+    "Знак \"Стрелка вверх\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_BITMAP",
+    "Объект \"Рисунок\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_BITMAP_LABEL",
+    "Объект \"Графическая метка\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_BUTTON",
+    "Объект \"Кнопка\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_CHANNEL",
+    "Равноудаленный канал",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_CYCLES",
+    "Циклические линии",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_EDIT",
+    "Объект \"Поле ввода\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_ELLIPSE",
+    "Эллипс",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_EVENT",
+    "Объект \"Событие\", соответствующий событию в экономическом календаре",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_EXPANSION",
+    "Расширение Фибоначчи",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_FIBO",
+    "Уровни Фибоначчи",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_FIBOARC",
+    "Дуги Фибоначчи",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_FIBOCHANNEL",
+    "Канал Фибоначчи",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_FIBOFAN",
+    "Веер Фибоначчи",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_FIBOTIMES",
+    "Временные зоны Фибоначчи",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_GANNFAN",
+    "Веер Ганна",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_GANNGRID",
+    "Сетка Ганна",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_GANNLINE",
+    "Линия Ганна",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_HLINE",
+    "Горизонтальная линия",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_LABEL",
+    "Объект \"Текстовая метка\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_NO_PERIODS, EMPTY",
+    "Объект не показывается ни на одном таймфрейме",
+    "/ru/constants/objectconstants/visible"
+  ],
+  [
+    "OBJ_PERIOD_D1",
+    "Объект рисуется только на дневных графиках",
+    "/ru/constants/objectconstants/visible"
+  ],
+  [
+    "OBJ_PERIOD_H1",
+    "Объект рисуется только на 1-часовых графиках",
+    "/ru/constants/objectconstants/visible"
+  ],
+  [
+    "OBJ_PERIOD_H4",
+    "Объект рисуется только на 4-часовых графиках",
+    "/ru/constants/objectconstants/visible"
+  ],
+  [
+    "OBJ_PERIOD_M1",
+    "Объект рисуется только на 1-минутных графиках",
+    "/ru/constants/objectconstants/visible"
+  ],
+  [
+    "OBJ_PERIOD_M15",
+    "Объект рисуется только на 15-минутных графиках",
+    "/ru/constants/objectconstants/visible"
+  ],
+  [
+    "OBJ_PERIOD_M30",
+    "Объект рисуется только на 30-минутных графиках",
+    "/ru/constants/objectconstants/visible"
+  ],
+  [
+    "OBJ_PERIOD_M5",
+    "Объект рисуется только на 5-минутных графиках",
+    "/ru/constants/objectconstants/visible"
+  ],
+  [
+    "OBJ_PERIOD_MN1",
+    "Объект рисуется только на месячных графиках",
+    "/ru/constants/objectconstants/visible"
+  ],
+  [
+    "OBJ_PERIOD_W1",
+    "Объект рисуется только на недельных графиках",
+    "/ru/constants/objectconstants/visible"
+  ],
+  [
+    "OBJ_PITCHFORK",
+    "Вилы Эндрюса",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_RECTANGLE",
+    "Прямоугольник",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_RECTANGLE_LABEL",
+    "Объект \"Прямоугольная метка\"для создания и оформления пользовательского графического интерфейса.",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_REGRESSION",
+    "Канал на линейной регрессии",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_STDDEVCHANNEL",
+    "Канал стандартного отклонения",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_TEXT",
+    "Объект \"Текст\"",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_TREND",
+    "Трендовая линия",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_TRENDBYANGLE",
+    "Трендовая линия по углу",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_TRIANGLE",
+    "Треугольник",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJ_VLINE",
+    "Вертикальная линия",
+    "/ru/constants/objectconstants/enum_object"
+  ],
+  [
+    "OBJPROP_ALIGN",
+    "Горизонтальное выравнивание текста в объекте \"Поле ввода\" (OBJ_EDIT)",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_ANCHOR",
+    "Положение точки привязки графического объекта",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_ANGLE",
+    "Получает/устанавливает значение угла в градусах объекта OBJ_TRENDBYANGLE",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_ARROWCODE",
+    "Получает/устанавливает код стрелки объекта OBJ_ARROW. Может быть одним из символов wingdings или один из предопределенных кодов стрелок",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_BACK",
+    "Получает/устанавливает флаг фонового отображения объекта",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_BGCOLOR",
+    "Цвет фона для OBJ_EDIT, OBJ_BUTTON, OBJ_RECTANGLE_LABEL",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_BMPFILE",
+    "Имя BMP-файла для объекта \"Графическая метка\". Смотри также Ресурсы",
+    "/ru/objects/objectgetstring"
+  ],
+  [
+    "OBJPROP_BORDER_COLOR",
+    "Цвет рамки для объекта OBJ_EDIT и OBJ_BUTTON",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_BORDER_TYPE",
+    "Тип рамки для объекта \"Прямоугольная рамка\"",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_COLOR",
+    "Получает/устанавливает цвет объекта",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_CORNER",
+    "Получает/устанавливает номер угла привязки для объекта OBJ_LABEL. Принимает значения 0-3",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_CREATETIME",
+    "Время создания объекта",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_DEVIATION",
+    "Получает/устанавливает размер отклонения для объекта OBJ_STDDEVCHANNEL",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_DRAWLINES",
+    "Отображение линий для волновой разметки Эллиота",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_ELLIPSE",
+    "Получает/устанавливает флаг отображения полного эллипса для объекта OBJ_FIBOARC",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_FIBOLEVELS",
+    "Получает/устанавливает число уровней объекта Fibonacci. Может быть от 1 до 32",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_FIRSTLEVEL+n",
+    "Получает/устанавливает значения уровня объекта Fibonacci с индексом n. Индекс n может быть от 0 до (количество уровней -1), но не более 31",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_FONT",
+    "Шрифт",
+    "/ru/objects/objectgetstring"
+  ],
+  [
+    "OBJPROP_FONTSIZE",
+    "Получает/устанавливает размер шрифта для объектов OBJ_TEXT и OBJ_LABEL",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_HIDDEN",
+    "Запрет на показ имени графического объекта в списке объектов из меню терминала \"Графики\" - \"Объекты\" - \"Список объектов\". Значение true позволяет скрыть ненужный для пользователя объект из списка. По умолчанию true устанавливается для объектов, которые отображают события календаря, историю торговли, а также для созданных из MQL4-программы. Для того чтобы увидеть такие графические объекты и получить доступ к их свойствам, нужно нажать кнопку \"Все\" в окне \"Список объектов\".",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_LEVELCOLOR",
+    "Получает/устанавливает цвет линии уровня объекта",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_LEVELS",
+    "Количество уровней",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_LEVELSTYLE",
+    "Получает/устанавливает стиль линии уровня объекта",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_LEVELTEXT",
+    "Описание уровня",
+    "/ru/objects/objectgetstring"
+  ],
+  [
+    "OBJPROP_LEVELVALUE",
+    "Значение уровня",
+    "/ru/objects/objectgetdouble"
+  ],
+  [
+    "OBJPROP_LEVELWIDTH",
+    "Получает/устанавливает ширину линии уровня объекта",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_NAME",
+    "Имя объекта",
+    "/ru/objects/objectgetstring"
+  ],
+  [
+    "OBJPROP_PRICE",
+    "Координата цены",
+    "/ru/objects/objectgetdouble"
+  ],
+  [
+    "OBJPROP_PRICE1",
+    "Получает/устанавливает первую координату цены",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_PRICE2",
+    "Получает/устанавливает вторую координату цены",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_PRICE3",
+    "Получает/устанавливает третью координату цены",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_RAY",
+    "Получает/устанавливает флаг свойства луч для объектов типа OBJ_TREND и ему подобных",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_RAY_RIGHT",
+    "Луч продолжается вправо",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_READONLY",
+    "Возможность редактирования текста в объекте Edit",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_SCALE",
+    "Получает/устанавливает значение масштаба объекта",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_SELECTABLE",
+    "Доступность объекта",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_SELECTED",
+    "Выделенность объекта",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_STATE",
+    "Состояние кнопки (Нажата/Отжата)",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_STYLE",
+    "Получает/устанавливает стиль линии объекта",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_SYMBOL",
+    "Символ для объекта \"График\"",
+    "/ru/objects/objectgetstring"
+  ],
+  [
+    "OBJPROP_TEXT",
+    "Описание объекта (текст, содержащийся в объекте)",
+    "/ru/objects/objectgetstring"
+  ],
+  [
+    "OBJPROP_TIME",
+    "Координата времени",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_TIME1",
+    "Получает/устанавливает первую координату времени",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_TIME2",
+    "Получает/устанавливает вторую координату времени",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_TIME3",
+    "Получает/устанавливает третью координату времени",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_TIMEFRAMES",
+    "Получает/устанавливает свойство отображения объекта на различных периодах. Может быть одним или комбинацией нескольких из констант видимости объекта",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_TOOLTIP",
+    "Текст всплывающей подсказки. Если свойство не задано, то показывается подсказка, автоматически сформированная терминалом. Можно  отключить показ подсказки, установив для нее значение \"\\n\" (перевод строки)",
+    "/ru/objects/objectgetstring"
+  ],
+  [
+    "OBJPROP_TYPE",
+    "Тип объекта",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_WIDTH",
+    "Получает/устанавливает ширину линии объекта",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_XDISTANCE",
+    "Получает/устанавливает расстояние X-координаты в пикселях относительно угла привязки (см. примечание)",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_XOFFSET",
+    "X-координата левого верхнего угла прямоугольной области видимости  в графических объектах \"Графическая метка\" и \"Рисунок\" (OBJ_BITMAP_LABEL и OBJ_BITMAP). Значение задается в пикселях относительного верхнего левого угла исходного изображения.",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_XSIZE",
+    "Ширина объекта по оси X в пикселях. Задается для объектов OBJ_LABEL (read-only), OBJ_BUTTON, OBJ_BITMAP, OBJ_BITMAP_LABEL, OBJ_EDIT, OBJ_RECTANGLE_LABEL.",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_YDISTANCE",
+    "Получает/устанавливает расстояние Y-координаты в пикселях относительно угла привязки (см. примечание)",
+    "/ru/objects/objectget"
+  ],
+  [
+    "OBJPROP_YOFFSET",
+    "Y-координата левого верхнего угла прямоугольной области видимости  в графических объектах \"Графическая метка\" и \"Рисунок\" (OBJ_BITMAP_LABEL и OBJ_BITMAP). Значение задается в пикселях относительного верхнего левого угла исходного изображения.",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_YSIZE",
+    "Высота объекта по оси Y в пикселях. Задается для объектов OBJ_LABEL (read-only), OBJ_BUTTON, OBJ_BITMAP, OBJ_BITMAP_LABEL, OBJ_EDIT, OBJ_RECTANGLE_LABEL.",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OBJPROP_ZORDER",
+    "Приоритет графического объекта на получение события нажатия мышки на графике (CHARTEVENT_CLICK). По умолчанию при создании значение выставляется равным нулю, но при необходимости можно повысить приоритет. При наложении объектов друг на друга событие CHARTEVENT_CLICK получит только один объект, чей приоритет выше остальных.",
+    "/ru/objects/objectgetinteger"
+  ],
+  [
+    "OP_BUY",
+    "Покупка",
+    "/ru/trading/ordersend"
+  ],
+  [
+    "OP_BUYLIMIT",
+    "Отложенный ордер BUY LIMIT",
+    "/ru/trading/ordersend"
+  ],
+  [
+    "OP_BUYSTOP",
+    "Отложенный ордер BUY STOP",
+    "/ru/trading/ordersend"
+  ],
+  [
+    "OP_SELL",
+    "Продажа",
+    "/ru/trading/ordersend"
+  ],
+  [
+    "OP_SELLLIMIT",
+    "Отложенный ордер SELL LIMIT",
+    "/ru/trading/ordersend"
+  ],
+  [
+    "OP_SELLSTOP",
+    "Отложенный ордер SELL STOP",
+    "/ru/trading/ordersend"
+  ],
+  [
+    "PERIOD_CURRENT",
+    "Текущий период",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_D1",
+    "1 день",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_H1",
+    "1 час",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_H12",
+    "12 часов",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_H2",
+    "2 часа",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_H3",
+    "3 часа",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_H4",
+    "4 часа",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_H6",
+    "6 часа",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_H8",
+    "8 часа",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_M1",
+    "1 минута",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_M10",
+    "10 минут",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_M12",
+    "12 минут",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_M15",
+    "15 минут",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_M2",
+    "2 минуты",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_M20",
+    "20 минут",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_M3",
+    "3 минуты",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_M30",
+    "30 минут",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_M4",
+    "4 минуты",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_M5",
+    "5 минут",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_M6",
+    "6 минут",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_MN1",
+    "1 месяц",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "PERIOD_W1",
+    "1 неделя",
+    "/ru/constants/chartconstants/enum_timeframes"
+  ],
+  [
+    "POINTER_AUTOMATIC",
+    "Указатель любого объекта, созданного автоматически (без использования new())",
+    "/ru/common/checkpointer"
+  ],
+  [
+    "POINTER_DYNAMIC",
+    "Указатель объекта, созданного оператором new",
+    "/ru/common/checkpointer"
+  ],
+  [
+    "POINTER_INVALID",
+    "Некорректный указатель",
+    "/ru/common/checkpointer"
+  ],
+  [
+    "PRICE_CLOSE",
+    "Цена закрытия",
+    "/ru/constants/indicatorconstants/prices"
+  ],
+  [
+    "PRICE_HIGH",
+    "Максимальная за период цена",
+    "/ru/constants/indicatorconstants/prices"
+  ],
+  [
+    "PRICE_LOW",
+    "Минимальная за период цена",
+    "/ru/constants/indicatorconstants/prices"
+  ],
+  [
+    "PRICE_MEDIAN",
+    "Медианная цена, (high+low)/2",
+    "/ru/constants/indicatorconstants/prices"
+  ],
+  [
+    "PRICE_OPEN",
+    "Цена открытия",
+    "/ru/constants/indicatorconstants/prices"
+  ],
+  [
+    "PRICE_TYPICAL",
+    "Типичная цена, (high+low+close)/3",
+    "/ru/constants/indicatorconstants/prices"
+  ],
+  [
+    "PRICE_WEIGHTED",
+    "Средневзвешенная цена, (high+low+close+close)/4",
+    "/ru/constants/indicatorconstants/prices"
+  ],
+  [
+    "REASON_ACCOUNT",
+    "Активирован другой счет либо произошло переподключение к торговому серверу вследствие изменения настроек счета",
+    "/ru/check/uninitializereason"
+  ],
+  [
+    "REASON_CHARTCHANGE",
+    "Символ или период графика был изменен",
+    "/ru/check/uninitializereason"
+  ],
+  [
+    "REASON_CHARTCLOSE",
+    "График закрыт",
+    "/ru/check/uninitializereason"
+  ],
+  [
+    "REASON_CLOSE",
+    "Терминал был закрыт",
+    "/ru/check/uninitializereason"
+  ],
+  [
+    "REASON_INITFAILED",
+    "Признак того, что обработчик OnInit() вернул ненулевое значение",
+    "/ru/check/uninitializereason"
+  ],
+  [
+    "REASON_PARAMETERS",
+    "Входные параметры были изменены пользователем",
+    "/ru/check/uninitializereason"
+  ],
+  [
+    "REASON_PROGRAM",
+    "Эксперт прекратил свою работу, вызвав функцию ExpertRemove()",
+    "/ru/check/uninitializereason"
+  ],
+  [
+    "REASON_RECOMPILE",
+    "Программа перекомпилирована",
+    "/ru/check/uninitializereason"
+  ],
+  [
+    "REASON_REMOVE",
+    "Программа удалена с графика",
+    "/ru/check/uninitializereason"
+  ],
+  [
+    "REASON_TEMPLATE",
+    "Применен другой шаблон графика",
+    "/ru/check/uninitializereason"
+  ],
+  [
+    "SATURDAY",
+    "Суббота",
+    "/ru/marketinformation/symbolinfosessionquote"
+  ],
+  [
+    "SEEK_CUR",
+    "Текущая позиция файлового указателя",
+    "/ru/files/fileseek"
+  ],
+  [
+    "SEEK_END",
+    "Конец файла",
+    "/ru/files/fileseek"
+  ],
+  [
+    "SEEK_SET",
+    "Начало файла",
+    "/ru/files/fileseek"
+  ],
+  [
+    "SELECT_BY_POS",
+    "Ордер выбирается по его порядковому номеру в списке ордеров",
+    "/ru/trading/orderselect"
+  ],
+  [
+    "SELECT_BY_TICKET",
+    "Ордер выбирается по его тикету",
+    "/ru/trading/orderselect"
+  ],
+  [
+    "SERIES_BARS_COUNT",
+    "Количество баров по символу-периоду на данный момент",
+    "/ru/series/seriesinfointeger"
+  ],
+  [
+    "SERIES_FIRSTDATE",
+    "Самая первая дата по символу-периоду на данный момент",
+    "/ru/series/seriesinfointeger"
+  ],
+  [
+    "SERIES_LASTBAR_DATE",
+    "Время открытия последнего бара по символу-периоду",
+    "/ru/series/seriesinfointeger"
+  ],
+  [
+    "SERIES_SERVER_FIRSTDATE",
+    "Самая первая дата в истории по символу на сервере независимо от периода",
+    "/ru/series/seriesinfointeger"
+  ],
+  [
+    "SHORT_MAX",
+    "Максимальное значение, которое может быть представлено типом short",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "SHORT_MIN",
+    "Минимальное значение, которое может быть представлено типом short",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "SIGNAL_BASE_AUTHOR_LOGIN",
+    "Логин автора сигнала",
+    "/ru/signals/signalbasegetstring"
+  ],
+  [
+    "SIGNAL_BASE_BALANCE",
+    "Баланс счета",
+    "/ru/signals/signalbasegetdouble"
+  ],
+  [
+    "SIGNAL_BASE_BROKER",
+    "Наименование брокера (компании)",
+    "/ru/signals/signalbasegetstring"
+  ],
+  [
+    "SIGNAL_BASE_BROKER_SERVER",
+    "Сервер брокера",
+    "/ru/signals/signalbasegetstring"
+  ],
+  [
+    "SIGNAL_BASE_CURRENCY",
+    "Валюта счета сигнала",
+    "/ru/signals/signalbasegetstring"
+  ],
+  [
+    "SIGNAL_BASE_DATE_PUBLISHED",
+    "Дата публикации сигнала (когда стал доступен для подписки)",
+    "/ru/signals/signalbasegetinteger"
+  ],
+  [
+    "SIGNAL_BASE_DATE_STARTED",
+    "Дата начала мониторинга сигнала",
+    "/ru/signals/signalbasegetinteger"
+  ],
+  [
+    "SIGNAL_BASE_EQUITY",
+    "Средства на счете",
+    "/ru/signals/signalbasegetdouble"
+  ],
+  [
+    "SIGNAL_BASE_GAIN",
+    "Прирост счета в процентах",
+    "/ru/signals/signalbasegetdouble"
+  ],
+  [
+    "SIGNAL_BASE_ID",
+    "ID сигнала",
+    "/ru/signals/signalbasegetinteger"
+  ],
+  [
+    "SIGNAL_BASE_LEVERAGE",
+    "Плечо торгового счета",
+    "/ru/signals/signalbasegetinteger"
+  ],
+  [
+    "SIGNAL_BASE_MAX_DRAWDOWN",
+    "Максимальная просадка",
+    "/ru/signals/signalbasegetdouble"
+  ],
+  [
+    "SIGNAL_BASE_NAME",
+    "Имя сигнала",
+    "/ru/signals/signalbasegetstring"
+  ],
+  [
+    "SIGNAL_BASE_PIPS",
+    "Результат торговли в пипсах",
+    "/ru/signals/signalbasegetinteger"
+  ],
+  [
+    "SIGNAL_BASE_PRICE",
+    "Цена подписки на сигнал",
+    "/ru/signals/signalbasegetdouble"
+  ],
+  [
+    "SIGNAL_BASE_RATING",
+    "Позиция в рейтинге сигналов",
+    "/ru/signals/signalbasegetinteger"
+  ],
+  [
+    "SIGNAL_BASE_ROI",
+    "Значение ROI (Return on Investment) сигнала в %",
+    "/ru/signals/signalbasegetdouble"
+  ],
+  [
+    "SIGNAL_BASE_SUBSCRIBERS",
+    "Количество подписчиков",
+    "/ru/signals/signalbasegetinteger"
+  ],
+  [
+    "SIGNAL_BASE_TRADE_MODE",
+    "Тип счета (0-реальный счет, 1-демо-счет, 2-конкурсный счет)",
+    "/ru/signals/signalbasegetinteger"
+  ],
+  [
+    "SIGNAL_BASE_TRADES",
+    "Количество трейдов",
+    "/ru/signals/signalbasegetinteger"
+  ],
+  [
+    "SIGNAL_INFO_CONFIRMATIONS_DISABLED",
+    "Флаг разрешения синхронизации без показа диалога подтверждения",
+    "/ru/signals/signalinfogetinteger"
+  ],
+  [
+    "SIGNAL_INFO_COPY_SLTP",
+    "Флаг копирования Stop Loss и Take Profit",
+    "/ru/signals/signalinfogetinteger"
+  ],
+  [
+    "SIGNAL_INFO_DEPOSIT_PERCENT",
+    "Ограничения по депозиту (в %)",
+    "/ru/signals/signalinfogetinteger"
+  ],
+  [
+    "SIGNAL_INFO_EQUITY_LIMIT",
+    "Процент для конвертации объема сделки",
+    "/ru/signals/signalinfogetdouble"
+  ],
+  [
+    "SIGNAL_INFO_ID",
+    "id сигнала, r/o",
+    "/ru/signals/signalinfogetinteger"
+  ],
+  [
+    "SIGNAL_INFO_NAME",
+    "Имя сигнала, r/o",
+    "/ru/signals/signalinfogetstring"
+  ],
+  [
+    "SIGNAL_INFO_SLIPPAGE",
+    "Величина проскальзывания, с которым выставляются рыночные ордера при синхронизации позиций и копировании сделок",
+    "/ru/signals/signalinfogetdouble"
+  ],
+  [
+    "SIGNAL_INFO_SUBSCRIPTION_ENABLED",
+    "Флаг разрешения на копирование сделок по подписке",
+    "/ru/signals/signalinfogetinteger"
+  ],
+  [
+    "SIGNAL_INFO_TERMS_AGREE",
+    "Флаг согласия с условиями использования сервиса \"Сигналы\", r/o",
+    "/ru/signals/signalinfogetinteger"
+  ],
+  [
+    "SIGNAL_INFO_VOLUME_PERCENT",
+    "Значение ограничения по средствам для сигнала, r/o",
+    "/ru/signals/signalinfogetdouble"
+  ],
+  [
+    "STAT_BALANCE_DD",
+    "Максимальная просадка баланса в деньгах. В процессе торговли баланс может испытать множество просадок, берется наибольшее значение.",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_BALANCE_DD_RELATIVE",
+    "Просадка баланса в деньгах, которая была зафиксирована в момент максимальной просадки баланса в процентах (STAT_BALANCE_DDREL_PERCENT).",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_BALANCE_DDREL_PERCENT",
+    "Максимальная просадка баланса в процентах. В процессе торговли баланс может испытать множество просадок, для каждой фиксируется относительное значение просадки в процентах. Возвращается наибольшее значение",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_BALANCEDD_PERCENT",
+    "Просадка баланса в процентах, которая была зафиксирована в момент максимальной просадки баланса в деньгах (STAT_BALANCE_DD).",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_BALANCEMIN",
+    "Минимальное значение баланса",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_CONLOSSMAX",
+    "Максимальный убыток в последовательности убыточных трейдов. Значение меньше или равно нулю",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_CONLOSSMAX_TRADES",
+    "Количество трейдов, сформировавших STAT_CONLOSSMAX (максимальный убыток в последовательности убыточных трейдов)",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_CONPROFITMAX",
+    "Максимальная прибыль в последовательности прибыльных трейдов. Значение больше или равно нулю",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_CONPROFITMAX_TRADES",
+    "Количество трейдов, сформировавших STAT_CONPROFITMAX (максимальная прибыль в последовательности прибыльных трейдов)",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_CUSTOM_ONTESTER",
+    "Значение рассчитанного пользовательского критерия оптимизации, возвращаемого функцией OnTester()",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_DEALS",
+    "Количество совершенных сделок",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_EQUITY_DD",
+    "Максимальная просадка средств в деньгах. В процессе торговли средства могут испытать множество просадок, берется наибольшее значение.",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_EQUITY_DD_RELATIVE",
+    "Просадка средств в деньгах, которая была зафиксирована в момент максимальной просадки средств в процентах (STAT_EQUITY_DDREL_PERCENT).",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_EQUITY_DDREL_PERCENT",
+    "Максимальная просадка средств в процентах. В процессе торговли средства могут испытать множество просадок, для каждой фиксируется относительное значение просадки в процентах. Возвращается наибольшее значение",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_EQUITYDD_PERCENT",
+    "Просадка средств в процентах, которая была зафиксирована в момент максимальной просадки средств в деньгах (STAT_EQUITY_DD).",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_EQUITYMIN",
+    "Минимальное значение собственных средств",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_EXPECTED_PAYOFF",
+    "Математическое ожидание выигрыша",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_GROSS_LOSS",
+    "Общий убыток, сумма всех убыточных (отрицательных) трейдов. Значение меньше или равно нулю",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_GROSS_PROFIT",
+    "Общая прибыль, сумма всех прибыльных (положительных) трейдов. Значение больше или равно нулю",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_INITIAL_DEPOSIT",
+    "Значение начального депозита",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_LONG_TRADES",
+    "Длинные трейды",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_LOSS_TRADES",
+    "Убыточные трейды",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_LOSSTRADES_AVGCON",
+    "Средняя длина убыточной серии трейдов",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_MAX_CONLOSS_TRADES",
+    "Количество трейдов  в самой длинной серии убыточных трейдов STAT_MAX_CONLOSSES",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_MAX_CONLOSSES",
+    "Общий убыток в самой длинной серии убыточных трейдов",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_MAX_CONPROFIT_TRADES",
+    "Количество трейдов  в самой длинной серии прибыльных трейдов STAT_MAX_CONWINS",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_MAX_CONWINS",
+    "Общая прибыль в самой длинной серии прибыльных трейдов",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_MAX_LOSSTRADE",
+    "Максимальный убыток \u2013 наименьшее значение среди всех убыточных трейдов. Значение меньше или равно нулю",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_MAX_PROFITTRADE",
+    "Максимальная прибыль \u2013 наибольшее значение среди всех прибыльных трейдов. Значение больше или равно нулю",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_MIN_MARGINLEVEL",
+    "Миниимальное достигнутое значение уровня маржи",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_PROFIT",
+    "Чистая прибыль по окончании тестирования, сумма STAT_GROSS_PROFIT и STAT_GROSS_LOSS (STAT_GROSS_LOSS всегда меньше или равно нулю)",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_PROFIT_FACTOR",
+    "Прибыльность \u2013 отношение STAT_GROSS_PROFIT/STAT_GROSS_LOSS. Если STAT_GROSS_LOSS=0, то прибыльность принимает значение DBL_MAX",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_PROFIT_LONGTRADES",
+    "Длинные прибыльные трейды",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_PROFIT_SHORTTRADES",
+    "Короткие прибыльные трейды",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_PROFIT_TRADES",
+    "Прибыльные трейды",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_PROFITTRADES_AVGCON",
+    "Средняя длина прибыльной серии трейдов",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_RECOVERY_FACTOR",
+    "Фактор восстановления \u2013 отношение STAT_PROFIT/STAT_BALANCE_DD",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_SHARPE_RATIO",
+    "Коэффициент Шарпа",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_SHORT_TRADES",
+    "Короткие трейды",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_TRADES",
+    "Количество трейдов",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STAT_WITHDRAWAL",
+    "Количество выведенных со счета средств",
+    "/ru/common/testerstatistics"
+  ],
+  [
+    "STO_CLOSECLOSE",
+    "Построение по ценам Close/Close",
+    "/ru/indicators/istochastic"
+  ],
+  [
+    "STO_LOWHIGH",
+    "Построение по ценам Low/High",
+    "/ru/indicators/istochastic"
+  ],
+  [
+    "STYLE_DASH",
+    "Штриховая линия",
+    "/ru/constants/indicatorconstants/drawstyles"
+  ],
+  [
+    "STYLE_DASHDOT",
+    "Штрих-пунктирная линия",
+    "/ru/constants/indicatorconstants/drawstyles"
+  ],
+  [
+    "STYLE_DASHDOTDOT",
+    "Штрих-пунктирная линия с двойными точками",
+    "/ru/constants/indicatorconstants/drawstyles"
+  ],
+  [
+    "STYLE_DOT",
+    "Пунктирная линия",
+    "/ru/constants/indicatorconstants/drawstyles"
+  ],
+  [
+    "STYLE_SOLID",
+    "Сплошная линия",
+    "/ru/constants/indicatorconstants/drawstyles"
+  ],
+  [
+    "SUNDAY",
+    "Воскресенье",
+    "/ru/marketinformation/symbolinfosessionquote"
+  ],
+  [
+    "SYMBOL_ARROWDOWN",
+    "Символ - стрелка вниз",
+    "/ru/constants/objectconstants/arrows"
+  ],
+  [
+    "SYMBOL_ARROWUP",
+    "Символ - стрелка вверх",
+    "/ru/constants/objectconstants/arrows"
+  ],
+  [
+    "SYMBOL_ASK",
+    "Ask - лучшее предложение на покупку",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_ASKHIGH",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_ASKLOW",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_BID",
+    "Bid - лучшее предложение на продажу",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_BIDHIGH",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_BIDLOW",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_CHECKSIGN",
+    "Символ - галочка",
+    "/ru/constants/objectconstants/arrows"
+  ],
+  [
+    "SYMBOL_CURRENCY_BASE",
+    "Базовая валюта инструмента",
+    "/ru/marketinformation/symbolinfostring"
+  ],
+  [
+    "SYMBOL_CURRENCY_MARGIN",
+    "Валюта в которой вычисляется залоговые средства",
+    "/ru/marketinformation/symbolinfostring"
+  ],
+  [
+    "SYMBOL_CURRENCY_PROFIT",
+    "Валюта прибыли",
+    "/ru/marketinformation/symbolinfostring"
+  ],
+  [
+    "SYMBOL_DESCRIPTION",
+    "Строковое описание символа",
+    "/ru/marketinformation/symbolinfostring"
+  ],
+  [
+    "SYMBOL_DIGITS",
+    "Количество знаков после запятой",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_EXPIRATION_MODE",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_EXPIRATION_TIME",
+    "Дата окончания торгов по инструменту (обычно используется для фьючерсов)",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_FILLING_MODE",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_LAST",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_LASTHIGH",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_LASTLOW",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_LEFTPRICE",
+    "Левая ценовая метка",
+    "/ru/constants/objectconstants/arrows"
+  ],
+  [
+    "SYMBOL_MARGIN_INITIAL",
+    "Начальная (инициирующая) маржа обозначает размер необходимых залоговых средств в маржинальной валюте для открытия ордера объемом в один лот. Используется при проверке средств клиента при входе в рынок.",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_MARGIN_LIMIT",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_MARGIN_LONG",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_MARGIN_MAINTENANCE",
+    "Поддерживающая маржа по инструменту. В случае если задана \u2013 указывает размер маржи в маржинальной валюте инструмента, удерживаемой с одного лота. Используется при проверке средств клиента при изменении состояния счета клиента. Если поддерживающая маржа равна 0, то используется начальная маржа.",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_MARGIN_SHORT",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_MARGIN_STOP",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_MARGIN_STOPLIMIT",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_ORDER_MODE",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_PATH",
+    "Путь в дереве символов",
+    "/ru/marketinformation/symbolinfostring"
+  ],
+  [
+    "SYMBOL_POINT",
+    "Значение одного пункта",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_RIGHTPRICE",
+    "Правая ценовая метка",
+    "/ru/constants/objectconstants/arrows"
+  ],
+  [
+    "SYMBOL_SELECT",
+    "Признак того, что символ выбран в Market Watch",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_SESSION_AW",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SESSION_BUY_ORDERS",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_SESSION_BUY_ORDERS_VOLUME",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SESSION_CLOSE",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SESSION_DEALS",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_SESSION_INTEREST",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SESSION_OPEN",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SESSION_PRICE_LIMIT_MAX",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SESSION_PRICE_LIMIT_MIN",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SESSION_PRICE_SETTLEMENT",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SESSION_SELL_ORDERS",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_SESSION_SELL_ORDERS_VOLUME",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SESSION_TURNOVER",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SESSION_VOLUME",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SPREAD",
+    "Размер спреда в пунктах",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_SPREAD_FLOAT",
+    "Признак плавающего спреда",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_START_TIME",
+    "Дата начала торгов по инструменту (обычно используется для фьючерсов)",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_STOPSIGN",
+    "Символ - СТОП",
+    "/ru/constants/objectconstants/arrows"
+  ],
+  [
+    "SYMBOL_SWAP_LONG",
+    "Значение свопа в покупку",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_SWAP_MODE",
+    "Модель расчета свопа",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_SWAP_ROLLOVER3DAYS",
+    "День недели для начисления тройного свопа",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_SWAP_SHORT",
+    "Значение свопа в продажу",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_THUMBSDOWN",
+    "Символ - большой палец вниз",
+    "/ru/constants/objectconstants/arrows"
+  ],
+  [
+    "SYMBOL_THUMBSUP",
+    "Символ - большой палец вверх",
+    "/ru/constants/objectconstants/arrows"
+  ],
+  [
+    "SYMBOL_TIME",
+    "Время последней котировки",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_CALC_MODE",
+    "Способ вычисления стоимости контракта",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_CONTRACT_SIZE",
+    "Размер торгового контракта",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_TRADE_EXECUTION_EXCHANGE",
+    "Биржевое исполнение",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_EXECUTION_INSTANT",
+    "Торговля по потоковым ценам",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_EXECUTION_MARKET",
+    "Исполнение ордеров по рынку",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_EXECUTION_REQUEST",
+    "Торговля по запросу",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_EXEMODE",
+    "Режим заключения сделок",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_FREEZE_LEVEL",
+    "Дистанция заморозки торговых операций (в пунктах)",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_MODE",
+    "Тип исполнения ордеров",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_MODE_CLOSEONLY",
+    "Разрешены только операции закрытия позиций",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_MODE_DISABLED",
+    "Торговля по символу запрещена",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_MODE_FULL",
+    "Нет ограничений на торговые операции",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_MODE_LONGONLY",
+    "Разрешены только покупки",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_MODE_SHORTONLY",
+    "Разрешены только продажи",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_STOPS_LEVEL",
+    "Минимальный отступ в пунктах от текущей цены закрытия для установки Stop ордеров",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_TRADE_TICK_SIZE",
+    "Минимальное изменение цены",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_TRADE_TICK_VALUE",
+    "Значение SYMBOL_TRADE_TICK_VALUE_PROFIT",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_TRADE_TICK_VALUE_LOSS",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_TRADE_TICK_VALUE_PROFIT",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_VOLUME",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_VOLUME_LIMIT",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_VOLUME_MAX",
+    "Максимальный объем для заключения сделки",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_VOLUME_MIN",
+    "Минимальный объем для заключения сделки",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_VOLUME_STEP",
+    "Минимальный шаг изменения объема для заключения сделки",
+    "/ru/marketinformation/symbolinfodouble"
+  ],
+  [
+    "SYMBOL_VOLUMEHIGH",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "SYMBOL_VOLUMELOW",
+    "Не поддерживается",
+    "/ru/marketinformation/symbolinfointeger"
+  ],
+  [
+    "TERMINAL_BUILD",
+    "Номер билда запущенного терминала",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_CODEPAGE",
+    "Номер кодовой страницы языка, установленного в клиентском терминале",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_COMMONDATA_PATH",
+    "Общая папка всех клиентских терминалов, установленных на компьютере",
+    "/ru/check/terminalinfostring"
+  ],
+  [
+    "TERMINAL_COMMUNITY_ACCOUNT",
+    "Флаг наличия авторизационных данных MQL5.community в терминале",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_COMMUNITY_BALANCE",
+    "Баланс пользователя в MQL5.community",
+    "/ru/check/terminalinfodouble"
+  ],
+  [
+    "TERMINAL_COMMUNITY_CONNECTION",
+    "Наличие подключения к MQL5.community",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_COMPANY",
+    "Имя компании",
+    "/ru/check/terminalinfostring"
+  ],
+  [
+    "TERMINAL_CONNECTED",
+    "Наличие подключения к торговому серверу",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_CPU_CORES",
+    "Количество процессоров в системе",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_DATA_PATH",
+    "Папка, в которой хранятся данные терминала",
+    "/ru/check/terminalinfostring"
+  ],
+  [
+    "TERMINAL_DISK_SPACE",
+    "Объем свободной памяти на диске для папки MQL4\\Files терминала (агента), в Mb",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_DLLS_ALLOWED",
+    "Разрешение на использование DLL",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_EMAIL_ENABLED",
+    "Разрешение на отправку писем с использованием SMTP-сервера и логина,указанных в настройках терминала",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_FTP_ENABLED",
+    "Разрешение на отправку отчетов по FTP на указанный сервер для указанного в настройках терминала торгового счета",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_LANGUAGE",
+    "Язык терминала",
+    "/ru/check/terminalinfostring"
+  ],
+  [
+    "TERMINAL_MAXBARS",
+    "Максимальное количество баров на графике",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_MEMORY_AVAILABLE",
+    "Размер свободной памяти процесса терминала (агента)в Mb",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_MEMORY_PHYSICAL",
+    "Размер физической памяти в системе, в Mb",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_MEMORY_TOTAL",
+    "Размер памяти, доступной процессу терминала (агента), в Mb",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_MEMORY_USED",
+    "Размер памяти, использованной терминалом (агентом), в Mb",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_MQID",
+    "Флаг наличия MetaQuotes ID для отправки Push-уведомлений",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_NAME",
+    "Имя терминала",
+    "/ru/check/terminalinfostring"
+  ],
+  [
+    "TERMINAL_NOTIFICATIONS_ENABLED",
+    "Разрешение на отправку уведомлений на смартфон",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_PATH",
+    "Папка, из которой запущен терминал",
+    "/ru/check/terminalinfostring"
+  ],
+  [
+    "TERMINAL_PING_LAST",
+    "Последнее известное значение пинга до торгового сервера в микросекундах. В одной секунде миллион микросекунд",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_SCREEN_DPI",
+    "Разрешающая способность вывода информации на экран",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "TERMINAL_TRADE_ALLOWED",
+    "Разрешение на торговлю",
+    "/ru/check/terminalinfointeger"
+  ],
+  [
+    "THURSDAY",
+    "Четверг",
+    "/ru/marketinformation/symbolinfosessionquote"
+  ],
+  [
+    "TUESDAY",
+    "Вторник",
+    "/ru/marketinformation/symbolinfosessionquote"
+  ],
+  [
+    "UCHAR_MAX",
+    "Максимальное значение, которое может быть представлено типом uchar",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "UINT_MAX",
+    "Максимальное значение, которое может быть представлено типом uint",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "ULONG_MAX",
+    "Максимальное значение, которое может быть представлено типом ulong",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "USHORT_MAX",
+    "Максимальное значение, которое может быть представлено типом ushort",
+    "/ru/constants/namedconstants/typeconstants"
+  ],
+  [
+    "VOLUME_TICK",
+    "Тиковый объем",
+    "/ru/constants/indicatorconstants/prices"
+  ],
+  [
+    "WEDNESDAY",
+    "Среда",
+    "/ru/marketinformation/symbolinfosessionquote"
+  ],
+  [
+    "WHOLE_ARRAY",
+    "Означает количество элементов, оставшееся до конца массива, то есть, будет обработан весь массив",
+    "/ru/constants/namedconstants/otherconstants"
+  ],
+  [
+    "WRONG_VALUE",
+    "Константа может неявно приводиться к типу любого перечисления",
+    "/ru/constants/namedconstants/otherconstants"
+  ]
+]

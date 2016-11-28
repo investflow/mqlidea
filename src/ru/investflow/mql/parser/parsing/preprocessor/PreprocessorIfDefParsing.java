@@ -21,7 +21,7 @@ public class PreprocessorIfDefParsing implements MQL4Elements {
         if (!ParsingUtils.nextTokenIs(b, l, "parseDefine", DEFINE_KEYWORD)) {
             return false;
         }
-        PsiBuilder.Marker m = enter_section_(b);
+        PsiBuilder.Marker m = b.mark();
         b.advanceLexer(); // #define
         try {
             if (!parseRequiredIdentifier(b)) {
@@ -30,7 +30,7 @@ public class PreprocessorIfDefParsing implements MQL4Elements {
             parseDefineParams(b);
             parseExpressionOrFail(b, l + 1);
         } finally {
-            exit_section_(b, m, PREPROCESSOR_DEFINE_BLOCK, true);
+            m.done(PREPROCESSOR_DEFINE_BLOCK);
         }
         return true;
     }

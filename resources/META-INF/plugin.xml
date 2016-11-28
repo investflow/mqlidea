@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>ru.investflow.mql</id>
     <name>MQL IDEA</name>
-    <version>0.0.1</version>
+    <version>0.1</version>
     <vendor email="mike.fursov@gmail.com" url="http://investflow.ru/dev">Investflow.Ru</vendor>
 
     <description><![CDATA[
@@ -9,11 +9,11 @@
     ]]></description>
 
     <change-notes><![CDATA[
-      Early and untested.
+      Initial version (unstable)
     ]]>
     </change-notes>
 
-    <idea-version since-build="141.0"/>
+    <idea-version since-build="162.0"/>
 
     <depends>com.intellij.modules.lang</depends>
 
@@ -28,5 +28,6 @@
         <lang.parserDefinition language="MQL4" implementationClass="ru.investflow.mql.MQL4ParserDefinition"/>
         <lang.syntaxHighlighterFactory language="MQL4" implementationClass="ru.investflow.mql.MQL4SyntaxHighlighterFactory"/>
         <lang.commenter language="MQL4" implementationClass="ru.investflow.mql.MQL4Commenter"/>
+        <lang.documentationProvider language="MQL4" implementationClass="ru.investflow.mql.doc.MQL4DocumentationProvider"/>
     </extensions>
 </idea-plugin>

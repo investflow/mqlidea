@@ -5,7 +5,7 @@ import ru.investflow.mql.psi.MQL4Elements;
 
 public class CommentParsing implements MQL4Elements {
 
-    public static boolean parseComment(PsiBuilder b, int l) {
+    public static boolean parseComment(PsiBuilder b) {
         if (b.getTokenType() != LINE_COMMENT && b.getTokenType() != BLOCK_COMMENT) {
             return false;
         }

@@ -15,7 +15,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
 import ru.investflow.mql.parser.MQL4Parser;
-import ru.investflow.mql.psi.MQL4ElementFactory;
+import ru.investflow.mql.psi.MQL4ElementsFactory;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4File;
 
@@ -79,6 +79,6 @@ public class MQL4ParserDefinition implements ParserDefinition, MQL4Elements {
     @NotNull
     @Override
     public PsiElement createElement(ASTNode node) {
-        return MQL4ElementFactory.createElement(node);
+        return MQL4ElementsFactory.createElement(node);
     }
 }

@@ -2,53 +2,31 @@ package ru.investflow.mql.parser;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.PsiBuilder;
-import com.intellij.lang.PsiBuilder.Marker;
 import com.intellij.lang.PsiParser;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 
-import static com.intellij.lang.parser.GeneratedParserUtilBase.TRUE_CONDITION;
-import static com.intellij.lang.parser.GeneratedParserUtilBase._COLLAPSE_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.adapt_builder_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
 import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 
-@SuppressWarnings("SimplifiableIfStatement")
 public class MQL4Parser implements PsiParser, MQL4Elements {
 
     @NotNull
-    public ASTNode parse(@NotNull IElementType t, @NotNull PsiBuilder b0) {
-        PsiBuilder b = adapt_builder_(t, b0, this);
-
-        Marker m = enter_section_(b, 0, _COLLAPSE_, null);
-        boolean r = parseFile(b);
-        exit_section_(b, 0, m, t, r, true, TRUE_CONDITION);
-
-        return b.getTreeBuilt();
-    }
-
-
-    /* ********************************************************** */
-
-    static boolean parseFile(@NotNull PsiBuilder b) {
-        int l = 1;
-        if (!recursion_guard_(b, l, "parseFile")) {
-            return false;
-        }
+    public ASTNode parse(@NotNull IElementType root, @NotNull PsiBuilder b0) {
+        PsiBuilder b = adapt_builder_(root, b0, this);
+        PsiBuilder.Marker rootMarker = b.mark();
         while (!b.eof()) {
             //noinspection PointlessBooleanExpression
             boolean r = false
-//                    || parsePreprocessorBlock(b, l + 1)
+//                    || parsePreprocessorBlock(b, 0)
 //                    || parseFunction(b, l + 1, Definition) != Failed
 //                    || parseVarDeclaration(b, l + 1)
                     || parseEmptyStatement(b)
-                    || parseComment(b, l);
+                    || parseComment(b);
 
             //noinspection ConstantConditions
             if (!r) {
@@ -58,8 +36,12 @@ public class MQL4Parser implements PsiParser, MQL4Elements {
                 ParsingUtils.advanceLexerUntil(b, LINE_TERMINATOR, ADVANCE);
             }
         }
-        return true;
+        rootMarker.done(root);
+        return b.getTreeBuilt();
     }
+
+
+    /* ********************************************************** */
 
     public static boolean parseIdentifier(@NotNull PsiBuilder b) {
         if (b.getTokenType() != MQL4Elements.IDENTIFIER) {
