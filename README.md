@@ -1,1 +1,6 @@
-# mqlidea - попытка добавить поддержку работы с MQL4 кодом в Intellij Idea
+## MQL Idea - support for MQL4 programming language in JetBrains' IDEs.
+
+Features:
+* Syntax highlighting
+* Inlined documentation (Ctrl+Q)
+
