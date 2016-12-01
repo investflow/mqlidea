@@ -32,7 +32,7 @@ public class ParsingUtils implements MQL4Elements {
      * @return returns true if stopToken was found.
      */
     public static boolean advanceLexerUntil(@NotNull PsiBuilder b, @NotNull TokenSet stopTypes, TokenAdvanceMode advanceStopTokens) {
-        b.setTokenTypeRemapper((source, start, end, text) -> stopTypes.contains(source) ? new ParsingMarker(source) : source);
+        b.setTokenTypeRemapper((source, start, end, text) -> stopTypes.contains(source) ? ParsingMarker.forType(source) : source);
         try {
             // find the token
             while (!(b.getTokenType() instanceof ParsingMarker)) {
