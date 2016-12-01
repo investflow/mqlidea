@@ -1,0 +1,32 @@
+<h1>ArrayCompare</h1> 
+<p><span>The function returns the result of comparing two arrays of the same type. It can be used to compare arrays of <a href="/basis/types#base_types">simple types</a> or custom structures without <a href="/basis/types#complex_types">complex objects</a>, that is the custom structures that do not contain <a href="/basis/types/stringconst">strings</a>, <a href="/basis/types/dynamic_array">dynamic arrays</a>, classes and other structures with complex objects.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayCompare</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;void&amp;</span><span>&nbsp;&nbsp;</span><span>array1[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;first&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;void&amp;</span><span>&nbsp;&nbsp;</span><span>array2[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;second&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start1=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;initial&nbsp;offset&nbsp;in&nbsp;the&nbsp;first&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start2=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;initial&nbsp;offset&nbsp;in&nbsp;the&nbsp;second&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>count=WHOLE_ARRAY</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;number&nbsp;of&nbsp;elements&nbsp;for&nbsp;comparison</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>array1[]</span></p> 
+<p><span>[in] &nbsp;First array.</span></p> 
+<p><span>array2[]</span></p> 
+<p><span>[in] &nbsp;Second array.</span></p> 
+<p><span>start1=0</span></p> 
+<p><span>[in] &nbsp;The element's initial index in the first array, from which comparison starts. The default start index - 0.</span></p> 
+<p><span>start2=0</span></p> 
+<p><span>[in] &nbsp;The element's initial index in the second array, from which comparison starts. The default start index - 0.</span></p> 
+<p><span>count=WHOLE_ARRAY</span></p> 
+<p><span>[in] &nbsp;Number of elements to be compared. All elements of both arrays participate in comparison by default (count=<a href="/constants/namedconstants/otherconstants">WHOLE_ARRAY</a>).</span></p> 
+<p><span>Returned value</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 43px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>-1, if array1[] less than array2[]</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>0, if array1[] equal to array2[]</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>1, if array1[] more than array2[]</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>-2, if an error occurs due to incompatibility of the types of compared arrays or if start1, start2 or count values lead to falling outside the array.</span></li> 
+</ul> 
+<p><span>Note</span></p> 
+<p><span>The function will not return 0 (the arrays will not be considered equal) if the arrays differ in size and count=WHOLE_ARRAY for the case when one array is a faithful subset of another one. In this case, the result of comparing the sizes of that arrays will be returned: -1, if the size of </span><span>array1[] is less than the size of array2[] </span><span>, otherwise 1.</span></p> 
+<br>

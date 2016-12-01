@@ -1,0 +1,33 @@
+<h1>ChartSetInteger</h1> 
+<p><span>Sets a value for a corresponding property of the specified chart. Chart property must be <a href="/basis/types/integer">datetime,&nbsp;int,&nbsp;color,&nbsp;bool&nbsp;or&nbsp;char</a>. The command is added to chart message queue and executed only after all previous commands have been processed.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ChartSetInteger</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Chart&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prop_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Property&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;</span><span>value</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Value</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Sets a value for a corresponding property of the specified subwindow of the specified chart:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ChartSetInteger</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Chart&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>property_id</span><span>,&nbsp;&nbsp;</span><span>//&nbsp;Property&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint</span><span>&nbsp;&nbsp;&nbsp;</span><span>sub_window</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Chart&nbsp;subwindow</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;</span><span>value</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Value</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>chart_id</span></p> 
+<p><span>[in] &nbsp;Chart ID. 0 means the current chart.</span></p> 
+<p><span>prop_id</span></p> 
+<p><span>[in] &nbsp;Chart property ID. It can be one of the <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">ENUM_CHART_PROPERTY_INTEGER</a> value (except the read-only properties).</span></p> 
+<p><span>sub_window</span></p> 
+<p><span>[in] &nbsp;Chart subwindow.</span></p> 
+<p><span>value</span></p> 
+<p><span>[in] &nbsp;Property value.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>Returns true if the command has been added to chart queue, otherwise false. To get <a href="/constants/errorswarnings/errorcodes">error</a> details use the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<br>

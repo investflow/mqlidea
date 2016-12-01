@@ -1,0 +1,33 @@
+<h1>Comment</h1> 
+<p><span>This function outputs a comment defined by a user in the top left corner of a chart.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>Comment</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>argument</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;first&nbsp;value</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;next&nbsp;values</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>...</span></p> 
+<p><span>[in] &nbsp; Any values, separated by commas. To delimit output information into several lines, a line break symbol "\n" or "\r\n" is used. Number of parameters cannot exceed 64. Total length of the input comment (including invisible symbols) cannot exceed 2045 characters (excess symbols will be cut out during output).</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>No return value.</span></p> 
+<p><span>Note</span></p> 
+<p><span>Arrays can't be passed to the Comment() function. Arrays must be entered element-by-element.</span></p> 
+<p><span>Data of double type are output with the accuracy of up to 16 digits after a decimal point, and can be output either in traditional or in scientific format, depending on what notation will be more compact. Data of float type are output with 5 digits after a decimal point. To output real numbers with another accuracy or in a predefined format, use the <a href="/convert/doubletostring">DoubleToString()</a> function. </span></p> 
+<p><span>Data of bool type are output as "true" or "false" strings. Dates are shown as YYYY.MM.DD HH:MI:SS. To show dates in another format, use the <a href="/convert/timetostring">TimeToString()</a> function. Data of color type are output either as R,G,B string or as a color name, if this color is present in the color set.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnTick</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;Ask,Bid;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;Spread;</span><br> <span>&nbsp;&nbsp;&nbsp;Ask=</span><span style="color: #0000ff;">SymbolInfoDouble</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">SYMBOL_ASK</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;Bid=</span><span style="color: #0000ff;">SymbolInfoDouble</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">SYMBOL_BID</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;Spread=</span><span style="color: #0000ff;">SymbolInfoInteger</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">SYMBOL_SPREAD</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;Output&nbsp;values&nbsp;in&nbsp;three&nbsp;lines</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Comment</span><span>(</span><span style="color: #0000ff;">StringFormat</span><span>(</span><span style="color: #008080;">"Show&nbsp;prices\nAsk&nbsp;=&nbsp;%G\nBid&nbsp;=&nbsp;%G\nSpread&nbsp;=&nbsp;%d"</span><span>,Ask,Bid,Spread));</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/common/alert">Alert()</a>, <a href="/common/print">Print()</a></span></p> 
+<br>

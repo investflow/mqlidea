@@ -1,0 +1,93 @@
+<h1>File Opening Flags</h1> 
+<p><span>File opening flag values specify the file access mode. Flags are defined as follows:</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Identifier</span></p> </td> 
+    <td style="vertical-align:top; width:80px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Value</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_READ</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>1</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File is opened for reading. Flag is used in <a href="/files/fileopen">FileOpen()</a>. When opening a file specification of FILE_WRITE and/or FILE_READ is required.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_WRITE</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>2</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File is opened for writing. Flag is used in <a href="/files/fileopen">FileOpen()</a>. When opening a file specification of FILE_WRITE and/or FILE_READ is required.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_BIN</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Binary read/write mode (without string to string conversion). Flag is used in <a href="/files/fileopen">FileOpen()</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_CSV</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>8</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CSV file (all its elements are converted to strings of the appropriate type, unicode or ansi, and separated by separator). Flag is used in <a href="/files/fileopen">FileOpen()</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_TXT</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>16</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Simple text file (the same as csv file, but without taking into account the separators). Flag is used in <a href="/files/fileopen">FileOpen()</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_ANSI</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>32</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Strings of ANSI type (one byte symbols). Flag is used in <a href="/files/fileopen">FileOpen()</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_UNICODE</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>64</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Strings of UNICODE type (two byte symbols). Flag is used in <a href="/files/fileopen">FileOpen()</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_SHARE_READ</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>128</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Shared access for reading from several programs. Flag is used in <a href="/files/fileopen">FileOpen()</a>, but it does not replace the necessity to indicate FILE_WRITE and/or the FILE_READ flag when opening a file.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_SHARE_WRITE</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>256</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Shared access for writing from several programs. Flag is used in <a href="/files/fileopen">FileOpen()</a>, but it does not replace the necessity to indicate FILE_WRITE and/or the FILE_READ flag when opening a file.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_REWRITE</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>512</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Possibility for the file rewrite using functions <a href="/files/filecopy">FileCopy()</a> and <a href="/files/filemove">FileMove()</a>. The file should exist or should be opened for writing, otherwise the file will not be opened.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_COMMON</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4096</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The file path in the common folder of all client terminals </span><span>\Terminal\Common\Files</span><span>. Flag is used in <a href="/files/fileopen">FileOpen()</a>, <a href="/files/filecopy">FileCopy()</a>, <a href="/files/filemove">FileMove()</a> and in <a href="/files/fileisexist">FileIsExist()</a> functions.</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>One or several flags can be specified when opening a file. This is a combination of flags. The combination of flags is written using the sign of logical OR (|), which is positioned between enumerated flags. For example, to open a file in CSV format for reading and writing at the same time, specify the combination FILE_READ|FILE_WRITE|FILE_CSV.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;filehandle=</span><span style="color: #0000ff;">FileOpen</span><span>(filename,</span><span style="color: #0000ff;">FILE_READ</span><span>|</span><span style="color: #0000ff;">FILE_WRITE</span><span>|</span><span style="color: #0000ff;">FILE_CSV</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>There are some specific features of work when you specify read and write flags:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>If FILE_READ is specified, an attempt is made to open an existing file. If a file does not exist, file opening fails, a new file is not created.</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>FILE_READ|FILE_WRITE  a new file is created if the file with the specified name does not exist.</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>FILE_WRITE  &nbsp;the file is created again with a zero size.</span></li> 
+</ul> 
+<p><span>When opening a file, specification of FILE_WRITE and/or FILE_READ is required.</span></p> 
+<p><span>Flags that define the type of reading of an open file possess priority. The highest flag is FILE_CSV, then goes FILE_BIN, and FILE_TXT is of lowest priority. Thus, if several flags are specified at the same time, (FILE_TXT|FILE_CSV or FILE_TXT|FILE_BIN or FILE_BIN|FILE_CSV), the flag with the highest priority will be used.</span></p> 
+<p><span>Flags that define the type of encoding also have priority. FILE_UNICODE is of a higher priority than FILE_ANSI. So if you specify combination FILE_UNICODE|FILE_ANSI, flag FILE_UNICODE will be used.</span></p> 
+<p><span>If neither FILE_UNICODE nor FILE_ANSI is indicated, FILE_UNICODE is implied. If neither FILE_CSV, nor FILE_BIN, nor FILE_TXT is specified, FILE_CSV is implied.</span></p> 
+<p><span>If a file is opened for reading as a text file (FILE_TXT or FILE_CSV), and at the file beginning a special two-byte indication </span><span style="color: #0000ff;">0xff,0xfe</span><span> is found, the encoding flag will be FILE_UNICODE, even if FILE_ANSI is specified.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/files">File Functions</a></span></p> 
+<br>

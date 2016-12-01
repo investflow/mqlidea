@@ -1,0 +1,28 @@
+<h1>GetTickCount</h1> 
+<p><span>The GetTickCount() function returns the number of milliseconds that elapsed since the system start.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>uint&nbsp;&nbsp;</span><span>GetTickCount</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Return Value</span></p> 
+<p><span>Value of uint type.</span></p> 
+<p><span>Note</span></p> 
+<p><span>Counter is limited by the restrictions of the system timer. Time is stored as an unsigned integer, so it's overfilled every 49.7 days if a computer works uninterruptedly.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#define</span><span>&nbsp;MAX_SIZE&nbsp;40</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;for&nbsp;measuring&nbsp;computation&nbsp;time&nbsp;of&nbsp;40&nbsp;Fibonacci&nbsp;numbers&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;Remember&nbsp;the&nbsp;initial&nbsp;value</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uint</span><span>&nbsp;start=</span><span style="color: #0000ff;">GetTickCount</span><span>();</span><br> <span style="color: #808080;">//---&nbsp;A&nbsp;variable&nbsp;for&nbsp;getting&nbsp;the&nbsp;next&nbsp;number&nbsp;in&nbsp;the&nbsp;Fibonacci&nbsp;series</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">long</span><span>&nbsp;fib=0;</span><br> <span style="color: #808080;">//---&nbsp;In&nbsp;loop&nbsp;calculate&nbsp;the&nbsp;specified&nbsp;amount&nbsp;of&nbsp;numbers&nbsp;from&nbsp;Fibonacci&nbsp;series</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;MAX_SIZE;i++)&nbsp;fib=TestFibo(i);</span><br> <span style="color: #808080;">//---&nbsp;Get&nbsp;the&nbsp;spent&nbsp;time&nbsp;in&nbsp;milliseconds</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uint</span><span>&nbsp;time=</span><span style="color: #0000ff;">GetTickCount</span><span>()-start;</span><br> <span style="color: #808080;">//---&nbsp;Output&nbsp;a&nbsp;message&nbsp;to&nbsp;the&nbsp;Experts&nbsp;journal</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"Calculating&nbsp;%d&nbsp;first&nbsp;Fibonacci&nbsp;numbers&nbsp;took&nbsp;%d&nbsp;ms"</span><span>,MAX_SIZE,time);</span><br> <span style="color: #808080;">//---&nbsp;Script&nbsp;completed</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>;</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Function&nbsp;for&nbsp;getting&nbsp;Fibonacci&nbsp;number&nbsp;by&nbsp;its&nbsp;serial&nbsp;number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">long</span><span>&nbsp;TestFibo(</span><span style="color: #0000ff;">long</span><span>&nbsp;n)</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;The&nbsp;first&nbsp;member&nbsp;of&nbsp;the&nbsp;Fibonacci&nbsp;series</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(n&lt;2)&nbsp;</span><span style="color: #0000ff;">return</span><span>(1);</span><br> <span style="color: #808080;">//---&nbsp;All&nbsp;other&nbsp;members&nbsp;are&nbsp;calculated&nbsp;by&nbsp;the&nbsp;following&nbsp;formula</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(TestFibo(n-2)+TestFibo(n-1));</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/dateandtime">Date and Time</a></span></p> 
+<br>

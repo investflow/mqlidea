@@ -1,0 +1,32 @@
+<h1>TimeGMT</h1> 
+<p><span>Returns the GMT, which is calculated taking into account the DST switch by the local time on the computer where the client terminal is running. There are 2 variants of the function.</span></p> 
+<p><span style="font-weight: bold;">Call without parameters</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>datetime&nbsp;&nbsp;</span><span>TimeGMT</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Call with MqlDateTime type parameter</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>datetime&nbsp;&nbsp;</span><span>TimeGMT</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>MqlDateTime&amp;</span><span>&nbsp;&nbsp;</span><span>dt_struct</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Variable&nbsp;of&nbsp;structure&nbsp;type</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>dt_struct</span></p> 
+<p><span>[out] &nbsp;Variable of structure type <a href="/constants/structures/mqldatetime">MqlDateTime</a>.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>Value of <a href="/basis/types/integer/datetime">datetime</a> type</span></p> 
+<p><span>Note</span></p> 
+<p><span>If the MqlDateTime structure type variable has been passed as a parameter, it is filled accordingly.</span></p> 
+<p><span>To arrange high-resolution counters and timers, use the <a href="/common/gettickcount">GetTickCount()</a> function, which produces values in milliseconds.</span></p> 
+<p><span>During testing in the <a href="/runtime/testing#time">Strategy Tester</a>, </span><span>TimeGMT() is always equal to <a href="/dateandtime/timecurrent">TimeCurrent()</a> simulated server time.</span></p> 
+<br>

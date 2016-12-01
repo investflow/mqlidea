@@ -1,5 +1,5 @@
 <h1>Формальные параметры</h1> 
-<p><span>Передаваемые в функцию параметры являются <a href="/ru/basis/variables/local">локальными</a>. Областью видимости является блок функции. Формальные параметры должны отличаться по именам от внешних переменных и локальных переменных, определенных внутри функции. В блоке функции формальным параметрам могут быть присвоены некоторые значения. Если же формальный параметр объявлен с модификатором <a href="/ru/basis/variables#const">const</a>, то его значение не может быть изменено внутри функции. </span></p> 
+<p><span>Передаваемые в функцию параметры являются <a href="/basis/variables/local">локальными</a>. Областью видимости является блок функции. Формальные параметры должны отличаться по именам от внешних переменных и локальных переменных, определенных внутри функции. В блоке функции формальным параметрам могут быть присвоены некоторые значения. Если же формальный параметр объявлен с модификатором <a href="/basis/variables#const">const</a>, то его значение не может быть изменено внутри функции. </span></p>
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -10,7 +10,7 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>Формальные параметры могут быть <a href="/ru/basis/variables/initialization">проинициализированы</a> константами. В этом случае инициализирующее значение считается значением по умолчанию. Параметры, следующие за проинициализированным параметром, должны быть тоже проинициализированы.</span></p> 
+<p><span>Формальные параметры могут быть <a href="/basis/variables/initialization">проинициализированы</a> константами. В этом случае инициализирующее значение считается значением по умолчанию. Параметры, следующие за проинициализированным параметром, должны быть тоже проинициализированы.</span></p>
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -33,7 +33,7 @@
  </table> 
 </div> 
 <p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
-<p><span>Параметры <a href="/ru/basis/types#base_types">простых&nbsp;типов</a> передаются по значению, то есть изменения соответствующей <a href="/ru/basis/variables/local">локальной&nbsp;переменной</a> такого типа внутри вызываемой функции никак не отразятся в вызывающей функции. Массивы любых типов и данные типа структур всегда передаются по ссылке. Если необходимо запретить изменение массива или содержимого структуры, параметры этих типов должны быть объявлены с ключевым словом const.</span></p> 
+<p><span>Параметры <a href="/basis/types#base_types">простых&nbsp;типов</a> передаются по значению, то есть изменения соответствующей <a href="/basis/variables/local">локальной&nbsp;переменной</a> такого типа внутри вызываемой функции никак не отразятся в вызывающей функции. Массивы любых типов и данные типа структур всегда передаются по ссылке. Если необходимо запретить изменение массива или содержимого структуры, параметры этих типов должны быть объявлены с ключевым словом const.</span></p>
 <p><span>Существует возможность передавать по ссылке и параметры простых типов. В этом случае модификация таких параметров внутри вызываемой функции отразится на соответствующих переменных, переданных по ссылке. Для того чтобы указать, что параметр передается по ссылке, после типа данных необходимо поставить модификатор &amp;.</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
@@ -48,7 +48,7 @@
 <p><span>Параметры, передаваемые по ссылке, нельзя инициализировать значениями по умолчанию.</span></p> 
 <p><span>В функцию нельзя передать больше 64 параметров.</span></p> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/basis/variables/inputvariables#icustompassparameters">Input переменные</a>, <a href="/ru/basis/types">Типы данных</a>, <a href="/ru/basis/oop/incapsulation">Инкапсуляция и расширяемость типов</a>, <a href="/ru/basis/variables/initialization">Инициализация переменных</a>, <a href="/ru/basis/variables/variable_scope">Область видимости и время жизни переменных</a>, <a href="/ru/basis/variables/object_live">Создание и уничтожение объектов</a></span></p> 
+<p><span><a href="/basis/variables/inputvariables#icustompassparameters">Input переменные</a>, <a href="/basis/types">Типы данных</a>, <a href="/basis/oop/incapsulation">Инкапсуляция и расширяемость типов</a>, <a href="/basis/variables/initialization">Инициализация переменных</a>, <a href="/basis/variables/variable_scope">Область видимости и время жизни переменных</a>, <a href="/basis/variables/object_live">Создание и уничтожение объектов</a></span></p>
 <p><span>&nbsp;</span></p> 
 <p><span>&nbsp;</span></p> 
 <br>

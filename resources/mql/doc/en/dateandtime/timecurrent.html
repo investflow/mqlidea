@@ -1,0 +1,32 @@
+<h1>TimeCurrent</h1> 
+<p><span>Returns the last known server time, time of the last quote receipt for one of the symbols selected in the "Market Watch" window. In the <a href="/basis/function/events#ontick">OnTick()</a> handler, this function returns the time of the received handled tick. In other cases (for example, call in <a href="/basis/function/events">handlers</a> OnInit(), OnDeinit(), OnTimer() and so on) this is the time of the last quote receipt for any symbol available in the "Market Watch" window, the time shown in the title of this window. The time value is formed on a trade server and does not depend on the time settings on your computer. There are 2 variants of the function.</span></p> 
+<p><span style="font-weight: bold;">Call without parameters</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>datetime&nbsp;&nbsp;</span><span>TimeCurrent</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Call with MqlDateTime type parameter</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>datetime&nbsp;&nbsp;</span><span>TimeCurrent</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>MqlDateTime&amp;</span><span>&nbsp;&nbsp;</span><span>dt_struct</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;structure&nbsp;type&nbsp;variable</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>dt_struct</span></p> 
+<p><span>[out] <a href="/constants/structures/mqldatetime">MqlDateTime</a> structure type variable.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>Value of <a href="/basis/types/integer/datetime">datetime</a> type</span></p> 
+<p><span>Note</span></p> 
+<p><span>If the MqlDateTime structure type variable has been passed as a parameter, it is filled accordingly.</span></p> 
+<p><span>To arrange high-resolution counters and timers, use the <a href="/common/gettickcount">GetTickCount()</a> function, which produces values in milliseconds.</span></p> 
+<p><span>During testing in the <a href="/runtime/testing#time">Strategy Tester</a>, </span><span>TimeCurrent() is simulated according to historical data.</span></p> 
+<br>

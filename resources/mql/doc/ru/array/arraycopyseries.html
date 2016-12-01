@@ -13,11 +13,11 @@
 <p><span>array[]</span></p> 
 <p><span>[out] &nbsp;Ссылка на одномерный числовой массив.</span></p> 
 <p><span>series_index</span></p> 
-<p><span>[in] &nbsp;Идентификатор массива-таймсерии. Должен быть одним из перечисленных <a href="/ru/constants/indicatorconstants/seriesconst">идентификаторов таймсерий</a>.</span></p> 
+<p><span>[in] &nbsp;Идентификатор массива-таймсерии. Должен быть одним из перечисленных <a href="/constants/indicatorconstants/seriesconst">идентификаторов таймсерий</a>.</span></p>
 <p><span>symbol</span></p> 
 <p><span>[in] &nbsp;Наименование инструмента (символ валютной пары).</span></p> 
 <p><span>timeframe</span></p> 
-<p><span>[in] &nbsp;Период. Может быть любым значением из <a href="/ru/constants/chartconstants/enum_timeframes">перечисленных периодов</a>.</span></p> 
+<p><span>[in] &nbsp;Период. Может быть любым значением из <a href="/constants/chartconstants/enum_timeframes">перечисленных периодов</a>.</span></p>
 <p><span>Возвращаемое значение</span></p> 
 <p><span>Возвращает количество скопированных элементов, либо -1 в случае неудачи.</span></p> 
 <p><span>Если копируются данные "чужого" инструмента и/или таймфрейма, то возможна ситуация отсутствия требуемых данных. В этом случае в переменную last_error будет помещена ошибка ERR_HISTORY_WILL_UPDATED (4066 - запрошенные исторические данные в состоянии обновления) и необходимо через некоторое время повторить попытку копирования.</span></p> 

@@ -1,0 +1,28 @@
+<h1>WindowFirstVisibleBar</h1> 
+<p><span>Returns index of the first visible bar in the current chart window.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>WindowFirstVisibleBar</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>None.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>Index of the first visible bar number in the current chart window.</span></p> 
+<p><span>Note</span></p> 
+<p><span>It must be taken into consideration that price bars are numbered in the reverse order, from the last to the first one. The current bar, the latest in the price array, is indexed as 0. The oldest bar is indexed as Bars-1. If the first visible bar number is 2 or more bars less than the amount of visible bars in the chart, it means that the chart window has not been fully filled out and there is a space to the left.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;work&nbsp;with&nbsp;visible&nbsp;bars.</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;bars_count=</span><span style="color: #0000ff;">WindowBarsPerChart</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;bar=</span><span style="color: #0000ff;">WindowFirstVisibleBar</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;bars_count;&nbsp;i++,bar--)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

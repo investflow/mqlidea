@@ -1,0 +1,26 @@
+<h1>ChartWindowOnDropped</h1> 
+<p><span>Returns the number (index) of the chart subwindow the Expert Advisor or script has been dropped to. 0 means the main chart window.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ChartWindowOnDropped</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Return Value</span></p> 
+<p><span>Value of <a href="/basis/types/integer/integertypes">int</a> type.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;myWindow=</span><span style="color: #0000ff;">ChartWindowOnDropped</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;windowsTotal=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_WINDOWS_TOTAL</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Script&nbsp;is&nbsp;running&nbsp;on&nbsp;the&nbsp;window&nbsp;#"</span><span>+myWindow+</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">".&nbsp;Total&nbsp;windows&nbsp;on&nbsp;the&nbsp;chart&nbsp;"</span><span>+</span><span style="color: #0000ff;">ChartSymbol</span><span>()+</span><span style="color: #008080;">":"</span><span>,windowsTotal);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/chart_operations/chartpriceondropped">ChartPriceOnDropped()</a>, <a href="/chart_operations/charttimeondropped">ChartTimeOnDropped()</a>, <a href="/chart_operations/chartxondropped">ChartXOnDropped()</a>, <a href="/chart_operations/chartyondropped">ChartYOnDropped()</a></span></p> 
+<br>

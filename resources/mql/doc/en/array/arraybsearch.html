@@ -1,0 +1,89 @@
+<h1>ArrayBsearch</h1> 
+<p><span>Searches for a specified value in a multidimensional numeric array sorted in the ascending order. The search is performed in the first dimension taking into account the <a href="/array/arraysetasseries">AS_SERIES flag</a>.</span></p> 
+<p><span style="font-weight: bold;">For searching in an array of double type</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayBsearch</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;double&amp;&nbsp;&nbsp;</span><span>&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;array&nbsp;for&nbsp;search</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;what&nbsp;is&nbsp;searched&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count=WHOLE_ARRAY</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;count&nbsp;of&nbsp;elements&nbsp;to&nbsp;search&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;starting&nbsp;position</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction=MODE_ASCEND</span><span>&nbsp;&nbsp;</span><span>//&nbsp;search&nbsp;direction</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">For searching in an array of float type</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayBsearch</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;float&amp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;array&nbsp;for&nbsp;search</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>float</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;what&nbsp;is&nbsp;searched&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count=WHOLE_ARRAY</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;count&nbsp;of&nbsp;elements&nbsp;to&nbsp;search&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;starting&nbsp;position</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction=MODE_ASCEND</span><span>&nbsp;&nbsp;</span><span>//&nbsp;search&nbsp;direction</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">For searching in an array of long type</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayBsearch</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;long&amp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;array&nbsp;for&nbsp;search</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;what&nbsp;is&nbsp;searched&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count=WHOLE_ARRAY</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;count&nbsp;of&nbsp;elements&nbsp;to&nbsp;search&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;starting&nbsp;position</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction=MODE_ASCEND</span><span>&nbsp;&nbsp;</span><span>//&nbsp;search&nbsp;direction</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">For searching in an array of int type</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayBsearch</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;int&amp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;array&nbsp;for&nbsp;search</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;what&nbsp;is&nbsp;searched&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count=WHOLE_ARRAY</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;count&nbsp;of&nbsp;elements&nbsp;to&nbsp;search&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;starting&nbsp;position</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction=MODE_ASCEND</span><span>&nbsp;&nbsp;</span><span>//&nbsp;search&nbsp;direction</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">For searching in an array of short type</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayBsearch</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;short&amp;&nbsp;&nbsp;</span><span>&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;array&nbsp;for&nbsp;search</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>short</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;what&nbsp;is&nbsp;searched&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count=WHOLE_ARRAY</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;count&nbsp;of&nbsp;elements&nbsp;to&nbsp;search&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;starting&nbsp;position</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction=MODE_ASCEND</span><span>&nbsp;&nbsp;</span><span>//&nbsp;search&nbsp;direction</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">For searching in an array of char type</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayBsearch</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;char&amp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;array&nbsp;for&nbsp;search</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>char</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;what&nbsp;is&nbsp;searched&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count=WHOLE_ARRAY</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;count&nbsp;of&nbsp;elements&nbsp;to&nbsp;search&nbsp;for</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;starting&nbsp;position</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction=MODE_ASCEND</span><span>&nbsp;&nbsp;</span><span>//&nbsp;search&nbsp;direction</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>array[]</span></p> 
+<p><span>[in] &nbsp;Numeric array for search.</span></p> 
+<p><span>value</span></p> 
+<p><span>[in] &nbsp;Value for search.</span></p> 
+<p><span>count=WHOLE_ARRAY</span></p> 
+<p><span>[in] &nbsp;Count of elements to search for. By default, it searches in the whole array.</span></p> 
+<p><span>start=0</span></p> 
+<p><span>[in] &nbsp;Starting index to search for. By default, the search starts at the first element.</span></p> 
+<p><span>direction=MODE_ASCEND</span></p> 
+<p><span>[in] &nbsp;Search direction. It can be any of the following values:</span></p> 
+<p><span>MODE_ASCEND searching in forward direction,</span><br> <span>MODE_DESCEND searching in backward direction.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>The function returns index of a found element. If the wanted value isn't found, the function returns the index of an element nearest in value.</span></p> 
+<p><span>Note</span></p> 
+<p><span>Binary search processes only sorted arrays. To sort numeric arrays use the <a href="/array/arraysort">ArraySort()</a> function.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;daytimes[];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shift=10,dayshift;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;All&nbsp;the&nbsp;Time[]&nbsp;series&nbsp;are&nbsp;sorted&nbsp;in&nbsp;descendant&nbsp;mode</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayCopySeries</span><span>(daytimes,MODE_TIME,</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">PERIOD_D1</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">Time</span><span>[shift]&gt;=daytimes[0])&nbsp;dayshift=0;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dayshift=</span><span style="color: #0000ff;">ArrayBsearch</span><span>(daytimes,</span><span style="color: #0000ff;">Time</span><span>[shift],</span><span style="color: #0000ff;">WHOLE_ARRAY</span><span>,0,MODE_DESCEND);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">Period</span><span>()&lt;</span><span style="color: #0000ff;">PERIOD_D1</span><span>)&nbsp;dayshift++;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #0000ff;">TimeToStr</span><span>(</span><span style="color: #0000ff;">Time</span><span>[shift]),</span><span style="color: #008080;">"&nbsp;corresponds&nbsp;to&nbsp;"</span><span>,dayshift,</span><span style="color: #008080;">"&nbsp;day&nbsp;bar&nbsp;opened&nbsp;at&nbsp;"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">TimeToStr</span><span>(daytimes[dayshift]));</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

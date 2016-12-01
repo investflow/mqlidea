@@ -1,0 +1,29 @@
+<h1>IndicatorShortName</h1> 
+<p><span>Sets the "short" name of a custom indicator to be shown in the DataWindow and in the chart subwindow.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>IndicatorShortName</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>name</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span style="color: #404040;">name</span></p> 
+<p><span>[in] &nbsp;New short name.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>None</span><span>.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;init()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//----&nbsp;2&nbsp;additional&nbsp;buffers&nbsp;are&nbsp;used&nbsp;for&nbsp;counting.</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">IndicatorBuffers</span><span>(3);</span><br> <span style="color: #808080;">//----&nbsp;drawing&nbsp;settings</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexStyle</span><span>(0,</span><span style="color: #0000ff;">DRAW_HISTOGRAM</span><span>,</span><span style="color: #0000ff;">STYLE_SOLID</span><span>,3);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexDrawBegin</span><span>(0,SignalSMA);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">IndicatorDigits</span><span>(</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),MODE_DIGITS)+2);</span><br> <span style="color: #808080;">//----&nbsp;3&nbsp;indicator&nbsp;buffers&nbsp;mapping</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexBuffer</span><span>(0,ind_buffer1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexBuffer</span><span>(1,ind_buffer2);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexBuffer</span><span>(2,ind_buffer3);</span><br> <span style="color: #808080;">//----&nbsp;name&nbsp;for&nbsp;DataWindow&nbsp;and&nbsp;indicator&nbsp;subwindow&nbsp;label</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">IndicatorShortName</span><span>(</span><span style="color: #008080;">"OsMA("</span><span>+FastEMA+</span><span style="color: #008080;">","</span><span>+SlowEMA+</span><span style="color: #008080;">","</span><span>+SignalSMA+</span><span style="color: #008080;">")"</span><span>);</span><br> <span style="color: #808080;">//----&nbsp;initialization&nbsp;done</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/constants/indicatorconstants/customindicatorproperties">Custom Indicator Properties</a></span></p> 
+<br>

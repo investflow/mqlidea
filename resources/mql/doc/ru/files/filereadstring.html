@@ -11,15 +11,15 @@
 </div> 
 <p><span>Параметры</span></p> 
 <p><span>file_handle</span></p> 
-<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/ru/files/fileopen">FileOpen()</a>.</span></p> 
+<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/files/fileopen">FileOpen()</a>.</span></p>
 <p><span>length=0</span></p> 
 <p><span>[in] &nbsp;Количество символов для чтения.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
 <p><span>Прочитанная строка(string).</span></p> 
 <p><span>Примечание</span></p> 
 <p><span>При чтении из bin-файла обязательно указывать длину читаемой строки. При чтении из txt-файла длину строки указывать не надо, будет прочитана строка от текущего положения до признака перевода строки "\r\n". При чтении из csv-файла длину строки также указывать не надо, будет прочитана строка от текущего положения до ближайшего разделителя либо до признака конца текстовой строки. </span></p> 
-<p><span>Если файл открыт с <a href="/ru/constants/io_constants/fileflags">флагом</a> FILE_ANSI, то прочитанная строка преобразовывается в Unicode.</span></p> 
-<p><span style="font-weight: bold;">Пример </span><span>(используется файл, полученный в результате работы примера для функции <a href="/ru/files/filewriteinteger">FileWriteInteger()</a>)</span></p> 
+<p><span>Если файл открыт с <a href="/constants/io_constants/fileflags">флагом</a> FILE_ANSI, то прочитанная строка преобразовывается в Unicode.</span></p>
+<p><span style="font-weight: bold;">Пример </span><span>(используется файл, полученный в результате работы примера для функции <a href="/files/filewriteinteger">FileWriteInteger()</a>)</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -30,5 +30,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/basis/types/stringconst">Тип string</a>, <a href="/ru/convert">Преобразование данных</a>, </span><span><a href="/ru/files/filewriteinteger">FileWriteInteger()</a></span></p> 
+<p><span><a href="/basis/types/stringconst">Тип string</a>, <a href="/convert">Преобразование данных</a>, </span><span><a href="/files/filewriteinteger">FileWriteInteger()</a></span></p>
 <br>

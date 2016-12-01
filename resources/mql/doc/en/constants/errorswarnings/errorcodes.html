@@ -1,0 +1,827 @@
+<h1>Runtime Errors</h1> 
+<p><span>The <a href="/check/getlasterror">GetLastError()</a> function return last error code, stored in <a href="/predefined/_lasterror">_LastError</a> predefined variable. This value can be reset using the <a href="/common/resetlasterror">ResetLastError()</a> function. Error code constants defined at stderror.mqh file. To print text messages use ErrorDescription() function defined at stdlib.mqh file.</span></p> 
+<p><span>For convenience, trade errors are additionally listed in the <a href="/constants/errorswarnings/enum_trade_return_codes">Trade Server Return Codes</a> section.</span></p> 
+<p><span>Runtime errors of mql4-program:</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 3px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Code</span></p> </td> 
+    <td style="vertical-align:top; width:270px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>ID</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>0</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No error returned</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>1</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_RESULT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No error returned, but the result is unknown</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>2</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_COMMON_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Common error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>3</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_TRADE_PARAMETERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid trade parameters</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SERVER_BUSY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade server is busy</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OLD_VERSION</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Old version of the client terminal</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>6</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_CONNECTION</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No connection with trade server</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>7</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_ENOUGH_RIGHTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not enough rights</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>8</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_FREQUENT_REQUESTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Too frequent requests</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>9</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_MALFUNCTIONAL_TRADE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Malfunctional trade operation</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>64</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ACCOUNT_DISABLED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Account disabled</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>65</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_ACCOUNT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid account</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>128</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_TIMEOUT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade timeout</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>129</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_PRICE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid price</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>130</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_STOPS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid stops</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>131</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_TRADE_VOLUME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid trade volume</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>132</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_MARKET_CLOSED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Market is closed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>133</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_DISABLED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade is disabled</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>134</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_ENOUGH_MONEY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not enough money</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>135</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_PRICE_CHANGED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Price changed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>136</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OFF_QUOTES</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Off quotes</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>137</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_BROKER_BUSY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Broker is busy</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>138</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_REQUOTE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Requote</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>139</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ORDER_LOCKED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Order is locked</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>140</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_LONG_POSITIONS_ONLY_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Buy orders only allowed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>141</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_MANY_REQUESTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Too many requests</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>145</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_MODIFY_DENIED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Modification denied because order is too close to market</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>146</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_CONTEXT_BUSY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade context is busy</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>147</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_EXPIRATION_DENIED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Expirations are denied by broker</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>148</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_TOO_MANY_ORDERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The amount of open and pending orders has reached the limit set by the broker</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>149</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_HEDGE_PROHIBITED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>An attempt to open an order opposite to the existing one when hedging is disabled</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>150</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_PROHIBITED_BY_FIFO</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>An attempt to close an order contravening the FIFO rule</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4000</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MQLERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No error returned</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4001</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WRONG_FUNCTION_POINTER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Wrong function pointer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4002</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ARRAY_INDEX_OUT_OF_RANGE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Array index is out of range</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4003</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_CALL_STACK</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No memory for function call stack</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4004</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_RECURSIVE_STACK_OVERFLOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Recursive stack overflow</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4005</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_ENOUGH_STACK_FOR_PARAM</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not enough stack for parameter</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4006</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_PARAM_STRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No memory for parameter string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4007</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_TEMP_STRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No memory for temp string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4008</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_INITIALIZED_STRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not initialized string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4009</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_INITIALIZED_ARRAYSTRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not initialized string in array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4010</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_ARRAYSTRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No memory for array string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4011</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_LONG_STRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Too long string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4012</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_REMAINDER_FROM_ZERO_DIVIDE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Remainder from zero divide</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4013</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ZERO_DIVIDE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Zero divide</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4014</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_UNKNOWN_COMMAND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Unknown command</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4015</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WRONG_JUMP</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Wrong jump (never generated error)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4016</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_INITIALIZED_ARRAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not initialized array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4017</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_DLL_CALLS_NOT_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>DLL calls are not allowed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4018</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CANNOT_LOAD_LIBRARY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Cannot load library</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4019</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CANNOT_CALL_FUNCTION</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Cannot call function</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4020</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_EXTERNAL_CALLS_NOT_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Expert function calls are not allowed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4021</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_RETURNED_STR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not enough memory for temp string returned from function</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4022</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SYSTEM_BUSY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>System is busy (never generated error)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4023</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_DLLFUNC_CRITICALERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>DLL-function call critical error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4024</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INTERNAL_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Internal error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4025</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OUT_OF_MEMORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Out of memory</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4026</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_POINTER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid pointer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4027</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FORMAT_TOO_MANY_FORMATTERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Too many formatters in the format function</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4028</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FORMAT_TOO_MANY_PARAMETERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Parameters count exceeds formatters count</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4029</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ARRAY_INVALID</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4030</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CHART_NOREPLY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No reply from chart</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4050</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_FUNCTION_PARAMSCNT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid function parameters count</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4051</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_FUNCTION_PARAMVALUE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid function parameter value</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4052</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_STRING_FUNCTION_INTERNAL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>String function internal error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4053</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SOME_ARRAY_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Some array error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4054</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INCORRECT_SERIESARRAY_USING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Incorrect series array using</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4055</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CUSTOM_INDICATOR_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Custom indicator error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4056</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INCOMPATIBLE_ARRAYS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Arrays are incompatible</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4057</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_GLOBAL_VARIABLES_PROCESSING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Global variables processing error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4058</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_GLOBAL_VARIABLE_NOT_FOUND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Global variable not found</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4059</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FUNC_NOT_ALLOWED_IN_TESTING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Function is not allowed in testing mode</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4060</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FUNCTION_NOT_CONFIRMED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Function is not allowed for call</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4061</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SEND_MAIL_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Send mail error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4062</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_STRING_PARAMETER_EXPECTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>String parameter expected</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4063</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INTEGER_PARAMETER_EXPECTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Integer parameter expected</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4064</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_DOUBLE_PARAMETER_EXPECTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Double parameter expected</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4065</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ARRAY_AS_PARAMETER_EXPECTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Array as parameter expected</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4066</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_HISTORY_WILL_UPDATED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Requested history data is in updating state</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4067</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Internal trade error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4068</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_RESOURCE_NOT_FOUND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Resource not found</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4069</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_RESOURCE_NOT_SUPPORTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Resource not supported</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4070</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_RESOURCE_DUPLICATED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Duplicate resource</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4071</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INDICATOR_CANNOT_INIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Custom indicator cannot initialize</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4072</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INDICATOR_CANNOT_LOAD</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Cannot load custom indicator</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4073</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_HISTORY_DATA</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No history data</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4074</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_HISTORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No memory for history data</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4075</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_INDICATOR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not enough memory for indicator calculation</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4099</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_END_OF_FILE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>End of file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4100</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SOME_FILE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Some file error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4101</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WRONG_FILE_NAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Wrong file name</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4102</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_MANY_OPENED_FILES</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Too many opened files</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4103</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CANNOT_OPEN_FILE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Cannot open file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4104</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INCOMPATIBLE_FILEACCESS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Incompatible access to a file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4105</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_ORDER_SELECTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No order selected</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4106</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_UNKNOWN_SYMBOL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Unknown symbol</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4107</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_PRICE_PARAM</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid price</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4108</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_TICKET</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid ticket</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4109</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_NOT_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade is not allowed. Enable checkbox "Allow live trading" in the Expert Advisor properties</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4110</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_LONGS_NOT_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Longs are not allowed. Check the Expert Advisor properties</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4111</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SHORTS_NOT_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Shorts are not allowed. Check the Expert Advisor properties</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4112</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_EXPERT_DISABLED_BY_SERVER </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Automated trading by Expert Advisors/Scripts disabled by trade server</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4200</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OBJECT_ALREADY_EXISTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Object already exists</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4201</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_UNKNOWN_OBJECT_PROPERTY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Unknown object property</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4202</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OBJECT_DOES_NOT_EXIST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Object does not exist</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4203</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_UNKNOWN_OBJECT_TYPE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Unknown object type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4204</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_OBJECT_NAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No object name</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4205</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OBJECT_COORDINATES_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Object coordinates error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4206</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_SPECIFIED_SUBWINDOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No specified subwindow</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4207</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SOME_OBJECT_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Graphical object error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4210</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CHART_PROP_INVALID</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Unknown chart property</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4211</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CHART_NOT_FOUND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart not found</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4212</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CHARTWINDOW_NOT_FOUND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart subwindow not found</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4213</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CHARTINDICATOR_NOT_FOUND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart indicator not found</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4220</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SYMBOL_SELECT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Symbol select error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4250</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOTIFICATION_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Notification error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4251</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOTIFICATION_PARAMETER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Notification parameter error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4252</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOTIFICATION_SETTINGS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Notifications disabled</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4253</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOTIFICATION_TOO_FREQUENT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Notification send too frequent</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4260</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_NOSERVER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FTP server is not specified</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4261</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_NOLOGIN </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FTP login is not specified</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4262</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_CONNECT_FAILED </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FTP connection failed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4263</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_CLOSED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FTP connection closed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4264</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_CHANGEDIR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FTP path not found on server</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4265</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_FILE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File not found in the MQL4\Files directory to send on FTP server</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4266</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Common error during FTP data transmission</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5001</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_TOO_MANY_OPENED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Too many opened files</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5002</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_WRONG_FILENAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Wrong file name</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5003</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_TOO_LONG_FILENAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Too long file name</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5004</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_CANNOT_OPEN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Cannot open file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5005</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_BUFFER_ALLOCATION_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Text file buffer allocation error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5006</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_CANNOT_DELETE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Cannot delete file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:91px; height:16px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5007</span></p> </td> 
+    <td style="vertical-align:top; width:274px; height:16px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_INVALID_HANDLE</span></p> </td> 
+    <td style="vertical-align:top; width:966px; height:16px; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid file handle (file closed or was not opened)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5008</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_WRONG_HANDLE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Wrong file handle (handle index is out of handle table)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5009</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_TOWRITE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File must be opened with FILE_WRITE flag</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5010</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_TOREAD</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File must be opened with FILE_READ flag</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5011</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_BIN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File must be opened with FILE_BIN flag</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5012</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_TXT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File must be opened with FILE_TXT flag</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5013</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_TXTORCSV</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File must be opened with FILE_TXT or FILE_CSV flag</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5014</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_CSV</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File must be opened with FILE_CSV flag</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5015</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_READ_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File read error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5016</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_WRITE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File write error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5017</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_BIN_STRINGSIZE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>String size must be specified for binary file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5018</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_INCOMPATIBLE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Incompatible file (for string arrays-TXT, for others-BIN)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5019</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_IS_DIRECTORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File is directory not file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5020</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_EXIST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File does not exist</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5021</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_CANNOT_REWRITE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File cannot be rewritten</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5022</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_WRONG_DIRECTORYNAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Wrong directory name</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5023</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_DIRECTORY_NOT_EXIST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Directory does not exist</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5024</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_DIRECTORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Specified file is not directory</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5025</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_CANNOT_DELETE_DIRECTORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Cannot delete directory</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5026</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_CANNOT_CLEAN_DIRECTORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Cannot clean directory</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5027</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_ARRAYRESIZE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Array resize error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5028</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_STRINGRESIZE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>String resize error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5029</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_STRUCT_WITH_OBJECTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Structure contains strings or dynamic arrays</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5200</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WEBREQUEST_INVALID_ADDRESS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid URL</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5201</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WEBREQUEST_CONNECT_FAILED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Failed to connect to specified URL</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5202</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WEBREQUEST_TIMEOUT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Timeout exceeded</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5203</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WEBREQUEST_REQUEST_FAILED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>HTTP request failed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>&nbsp;</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span style="font-weight: bold;">User errors</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>65536</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_USER_ERROR_FIRST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/common/setusererror">User defined</a> errors start with this code</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h1>&nbsp;</h1> 
+<br>

@@ -1,0 +1,78 @@
+<h1>ResourceCreate</h1> 
+<p><span>Creates an image resource based on a data set. There are two variants of the function:</span><br> <span style="font-weight: bold;">Creating a resource based on a file</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ResourceCreate</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>resource_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Resource&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>path&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;A&nbsp;relative&nbsp;path&nbsp;to&nbsp;the&nbsp;file</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><a id="dynamic_resourcecreate"></a><span style="font-weight: bold;">Creating a resource based on the array of pixels</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ResourceCreate</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>resource_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Resource&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;uint&amp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Data&nbsp;set&nbsp;as&nbsp;an&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>img_width</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;The&nbsp;width&nbsp;of&nbsp;the&nbsp;image&nbsp;resource</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>img_height</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>//&nbsp;The&nbsp;height&nbsp;of&nbsp;the&nbsp;image&nbsp;resource</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data_xoffset</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;The&nbsp;horizontal&nbsp;rightward&nbsp;offset&nbsp;of&nbsp;the&nbsp;upper&nbsp;left&nbsp;corner&nbsp;of&nbsp;the&nbsp;image</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data_yoffset</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;The&nbsp;vertical&nbsp;downward&nbsp;offset&nbsp;of&nbsp;the&nbsp;upper&nbsp;left&nbsp;corner&nbsp;of&nbsp;the&nbsp;image</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data_width</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>//&nbsp;The&nbsp;total&nbsp;width&nbsp;of&nbsp;the&nbsp;image&nbsp;based&nbsp;on&nbsp;the&nbsp;data&nbsp;set</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_COLOR_FORMAT&nbsp;</span><span>color_format&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Color&nbsp;processing&nbsp;method</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>resource_name</span></p> 
+<p><span>[in] &nbsp;Resource name.</span></p> 
+<p><span>path</span></p> 
+<p><span>[in] &nbsp;Relative path to the file, containing the resource data. If the path is started from "\" (written as "\\"), it is assumed that file path is relative to </span><span style="font-weight: bold;">terminal_data_folder</span><span>\MQL4\, otherwise it is assumed that file is specified relative to .EX4 program folder.</span></p> 
+<p><span>data[][]</span></p> 
+<p><span>[in] &nbsp;A one-dimensional or two-dimensional array for creating a complete image.</span></p> 
+<p><span>img_width</span></p> 
+<p><span>[in] &nbsp;The width of the rectangular image area in pixels to be placed in the resource in the form of an image. It cannot be greater than the </span><span>data_width </span><span>value</span><span>.</span></p> 
+<p><span>img_height</span></p> 
+<p><span>[in] &nbsp;The height of the rectangular image area in pixels to be placed in the resource in the form of an image.</span></p> 
+<p><span>data_xoffset</span></p> 
+<p><span>[in] &nbsp;The horizontal rightward offset of the rectangular area of the image.</span></p> 
+<p><span>data_yoffset</span></p> 
+<p><span>[in] &nbsp;The vertical downward offset of the rectangular area of the image.</span></p> 
+<p><span>data_width</span></p> 
+<p><span>[in] &nbsp;Required only for one-dimensional arrays. It denotes the full width of the image from the data set. If </span><span style="font-style: italic;">data_width</span><span>=0, it is assumed to be equal to </span><span style="font-style: italic;">img_width. </span><span>For two-dimensional arrays the parameter is ignored and is assumed to be equal to the second dimension of the </span><span style="font-style: italic;">data[]</span><span> array.</span></p> 
+<p><span>color_format</span></p> 
+<p><span>[in] &nbsp;Color processing method, from a value from the <a href="/common/resourcecreate#enum_color_format">ENUM_COLOR_FORMAT</a> enumeration.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>Returns true if successful, otherwise false. To get information about the error call the <a href="/check/getlasterror">GetLastError()</a> function. The following errors may occur:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 43px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>4015  ERR_RESOURCE_NAME_DUPLICATED (identical names of the dynamic and the <a href="/runtime/resources">static</a> resource)</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>4016  ERR_RESOURCE_NOT_FOUND (the resource is not found)</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>4017  ERR_RESOURCE_UNSUPPORTED_TYPE (this type of resource is not supported)</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>4018  ERR_RESOURCE_NAME_IS_TOO_LONG (the name of the resource is too long)</span></li> 
+</ul> 
+<p><span>Note</span></p> 
+<p><span>If the second version of the function is called for creating the same resource with different width, height and shift parameters, it does not create a new resource, but simply updates the existing one.</span></p> 
+<p><span>The first version of the function is used for uploading images and sounds from files, and the second version is used only for the dynamic creation of images.</span></p> 
+<p><span>Images must be in the BMP format with a color depth of 24 or 32 bits. Sounds can only be in the WAV format. The size of the resource should not exceed 16 Mb.</span><br> <span>&nbsp;</span></p> 
+<p><a id="enum_color_format"></a><span style="font-weight: bold;">ENUM_COLOR_FORMAT</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Identifier</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>COLOR_FORMAT_XRGB_NOALPHA</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The component of the alpha channel is ignored</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>COLOR_FORMAT_ARGB_RAW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Color components are not handled by the terminal (must be correctly set by the user)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>COLOR_FORMAT_ARGB_NORMALIZE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Color components are handled by the terminal</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/runtime/resources">Resources</a>, <a href="/objects/objectcreate">ObjectCreate()</a>, <a href="/objects/objectsetstring">ObjectSetString()</a>, <a href="/constants/objectconstants/enum_object_property#enum_object_property_string">OBJPROP_BMPFILE</a></span></p> 
+<br>

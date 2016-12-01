@@ -1,0 +1,36 @@
+<h1>CheckPointer</h1> 
+<p><span>The function returns the type of the object <a href="/basis/types/object_pointers">pointer</a>.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>ENUM_POINTER_TYPE&nbsp;&nbsp;</span><span>CheckPointer</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>object</span><span style="color: #000000;">*&nbsp;</span><span>anyobject</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;pointer</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>anyobject</span></p> 
+<p><span>[in] &nbsp;Object pointer.</span></p> 
+<p><span>Return value</span></p> 
+<p><span>Returns a value from the <a href="/constants/namedconstants/enum_pointer_type">ENUM_POINTER_TYPE</a> enumeration.</span></p> 
+<p><span>Note</span></p> 
+<p><span>An attempt to call an incorrect pointer results in the <a href="/runtime/errors">critical termination</a> of a program. That's why it's necessary to call the CheckPointer function before using a pointer. A pointer can be incorrect in the following cases:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 43px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 8px; margin-right: 17px; margin-bottom: 4px;"><span>the pointer is equal to <a href="/basis/types/void">NULL</a>;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 8px; margin-right: 17px; margin-bottom: 4px;"><span>the object has been deleted using the <a href="/basis/operators/deleteoperator">delete</a> operator.</span></li> 
+</ul> 
+<p><span>This function can be used for checking pointer validity. A non-zero value warranties that the pointer can be used for accessing.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Deletes&nbsp;list&nbsp;by&nbsp;deleting&nbsp;its&nbsp;elements&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;CMyList::Destroy()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;service&nbsp;pointer&nbsp;for&nbsp;working&nbsp;in&nbsp;the&nbsp;loop</span><br> <span>&nbsp;&nbsp;&nbsp;CItem*&nbsp;item;</span><br> <span style="color: #808080;">//---&nbsp;go&nbsp;through&nbsp;loop&nbsp;and&nbsp;try&nbsp;to&nbsp;delete&nbsp;dynamic&nbsp;pointers</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">while</span><span>(</span><span style="color: #0000ff;">CheckPointer</span><span>(m_items)!=</span><span style="color: #0000ff;">POINTER_INVALID</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item=m_items;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_items=m_items.Next();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">CheckPointer</span><span>(item)==</span><span style="color: #0000ff;">POINTER_DYNAMIC</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Dynamyc&nbsp;object&nbsp;"</span><span>,item.Identifier(),</span><span style="color: #008080;">"&nbsp;to&nbsp;be&nbsp;deleted"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">delete</span><span>&nbsp;(item);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Non-dynamic&nbsp;object&nbsp;"</span><span>,item.Identifier(),</span><span style="color: #008080;">"&nbsp;cannot&nbsp;be&nbsp;deleted"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/types/object_pointers">Object Pointers</a>, <a href="/constants/namedconstants/enum_pointer_type">Checking the Object Pointer</a>, <a href="/basis/operators/deleteoperator">Object Delete Operator delete</a></span></p> 
+<br>

@@ -1,0 +1,39 @@
+<h1>WindowScreenShot</h1> 
+<p><span>Saves current chart screen shot as a GIF file.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>WindowScreenShot</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>filename</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;file&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>size_x</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;width</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>size_y</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;height</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start_bar=-1</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;first&nbsp;visible&nbsp;bar</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_scale=-1</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;scale</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_mode=-1&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;mode</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>filename</span></p> 
+<p><span>[in] &nbsp;Screen shot file name. Screenshot is saved to \Files folder.</span></p> 
+<p><span>size_x</span></p> 
+<p><span>[in] &nbsp;Screen shot width in pixels.</span></p> 
+<p><span>size_y</span></p> 
+<p><span>[in] &nbsp;Screen shot height in pixels.</span></p> 
+<p><span>start_bar=-1</span></p> 
+<p><span>[in] &nbsp;Index of the first visible bar in the screen shot. If 0 value is set, the current first visible bar will be shot. If no value or negative value has been set, the end-of-chart screen shot will be produced, indent being taken into consideration.</span></p> 
+<p><span>chart_scale=-1</span></p> 
+<p><span>[in] &nbsp;Horizontal chart scale for screen shot. Can be in the range from 0 to 5. If no value or negative value has been set, the current chart scale will be used.</span></p> 
+<p><span>chart_mode=-1</span></p> 
+<p><span>[in] &nbsp;Chart displaying mode. It can take the following values: CHART_BAR (0 is a sequence of bars), CHART_CANDLE (1 is a sequence of candlesticks), CHART_LINE (2 is a close prices line). If no value or negative value has been set, the chart will be shown in its current mode.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>Returns true if succeed, otherwise false. To get the <a href="/constants/errorswarnings/errorcodes">error</a> code, one has to use the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span>Note</span></p> 
+<p><span>The screen shot is saved in the terminal_dir\experts\files (terminal_dir\tester\files in case of testing) directory or its subdirectories.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;lasterror=0;</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;tester&nbsp;has&nbsp;closed&nbsp;one&nbsp;or&nbsp;more&nbsp;trades</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">IsTesting</span><span>()&nbsp;&amp;&amp;&nbsp;ExtTradesCounter&lt;TradesTotal())</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;make&nbsp;WindowScreenShot&nbsp;for&nbsp;further&nbsp;checking</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">WindowScreenShot</span><span>(</span><span style="color: #008080;">"shots\\tester"</span><span>+ExtShotsCounter+</span><span style="color: #008080;">".gif"</span><span>,640,480))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lasterror=</span><span style="color: #0000ff;">GetLastError</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;ExtShotsCounter++;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ExtTradesCounter=TradesTotal();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

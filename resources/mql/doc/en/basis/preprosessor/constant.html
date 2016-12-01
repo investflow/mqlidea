@@ -1,0 +1,80 @@
+<h1>Macro substitution (#define, #undef)</h1> 
+<p><span>The #define directive can be used to assign mnemonic names to constants. There are two forms:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#define</span><span>&nbsp;identifier&nbsp;expression&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;parameter-free&nbsp;form</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;identifier(par1,...&nbsp;par8)&nbsp;expression&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;parametric&nbsp;form</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The #define directive substitutes </span><span style="font-weight: bold;">expression</span><span> for all further found entries of </span><span style="font-style: italic;">identifier </span><span>in the source text. The </span><span style="font-style: italic;">identifier</span><span> is replaced only if it is a separate token. The </span><span style="font-style: italic;">identifier</span><span> is not replaced if it is part of a comment, part of a string, or part of another longer identifier.</span></p> 
+<p><span>The constant identifier is governed by the same rules as variable names. The value can be of any type:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#define</span><span>&nbsp;ABC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;PI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.14</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;COMPANY_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"MetaQuotes&nbsp;Software&nbsp;Corp."</span><br> <span>...</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;ShowCopyright()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Copyright&nbsp;&nbsp;2001-2013,&nbsp;"</span><span>,COMPANY_NAME);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"http://www.metaquotes.net"</span><span>);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">expression</span><span> can consist of several tokens, such as keywords, constants, constant and non-constant expressions. </span><span style="font-weight: bold;">expression</span><span> ends with the end of the line and can't be transferred to the next line.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#define</span><span>&nbsp;TWO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;THREE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;INCOMPLETE&nbsp;TWO+THREE</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;COMPLETE&nbsp;&nbsp;(TWO+THREE)</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"2&nbsp;+&nbsp;3*2&nbsp;=&nbsp;"</span><span>,INCOMPLETE*2);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"(2&nbsp;+&nbsp;3)*2&nbsp;=&nbsp;"</span><span>,COMPLETE*2);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//&nbsp;Result</span><br> <span style="color: #808080;">//&nbsp;2&nbsp;+&nbsp;3*2&nbsp;=&nbsp;8</span><br> <span style="color: #808080;">//&nbsp;(2&nbsp;+&nbsp;3)*2&nbsp;=&nbsp;10</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<h3>Parametric Form #define</h3> 
+<p><span>With the parametric form, all the subsequent found entries of identifier will be replaced by expression taking into account the actual parameters. For example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;</span><span style="color: #808080;">//&nbsp;example&nbsp;with&nbsp;two&nbsp;parameters&nbsp;a&nbsp;and&nbsp;b</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;A&nbsp;2+3</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;B&nbsp;5-1</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;MUL(a,&nbsp;b)&nbsp;((a)*(b))</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">double</span><span>&nbsp;c=MUL(A,B);</span><br> <span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"c="</span><span>,c);</span><br> <span style="color: #787771;">/*</span><br> <span style="color: #787771;">expression&nbsp;double&nbsp;c=MUL(A,B);</span><br> <span style="color: #787771;">is&nbsp;equivalent&nbsp;to&nbsp;double&nbsp;c=((2+3)*(5-1));</span><br> <span style="color: #787771;">*/</span><br> <span style="color: #808080;">//&nbsp;Result</span><br> <span style="color: #808080;">//&nbsp;c=20</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Be sure to enclose parameters in parentheses when using the parameters in expression, as this will help avoid non-obvious errors that are hard to find. If we rewrite the code without using the brackets, the result will be different:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;</span><span style="color: #808080;">//&nbsp;example&nbsp;with&nbsp;two&nbsp;parameters&nbsp;a&nbsp;and&nbsp;b</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;A&nbsp;2+3</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;B&nbsp;5-1</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;MUL(a,&nbsp;b)&nbsp;a*b</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">double</span><span>&nbsp;c=MUL(A,B);</span><br> <span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"c="</span><span>,c);</span><br> <span style="color: #787771;">/*</span><br> <span style="color: #787771;">expression&nbsp;double&nbsp;c=MUL(A,B);</span><br> <span style="color: #787771;">is&nbsp;equivalent&nbsp;to&nbsp;double&nbsp;c=2+3*5-1;</span><br> <span style="color: #787771;">*/</span><br> <span style="color: #808080;">//&nbsp;Result</span><br> <span style="color: #808080;">//&nbsp;c=16</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>When using the parametric form, maximum 8 parameters are allowed. </span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;</span><span style="color: #808080;">//&nbsp;correct&nbsp;parametric&nbsp;form</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;</span><span style="color: #0000ff;">LOG</span><span>(text)&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #0000ff;">__FILE__</span><span>,</span><span style="color: #008080;">"("</span><span>,</span><span style="color: #0000ff;">__LINE__</span><span>,</span><span style="color: #008080;">")&nbsp;:"</span><span>,text)&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;one&nbsp;parameter&nbsp;-&nbsp;'text'</span><br> <span>&nbsp;</span><br> <span>&nbsp;</span><span style="color: #808080;">//&nbsp;incorrect&nbsp;parametric&nbsp;form&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;WRONG_DEF(p1,&nbsp;p2,&nbsp;p3,&nbsp;p4,&nbsp;p5,&nbsp;p6,&nbsp;p7,&nbsp;p8,&nbsp;p9)&nbsp;&nbsp;&nbsp;p1+p2+p3+p4&nbsp;</span><span style="color: #808080;">//&nbsp;more&nbsp;than&nbsp;8&nbsp;parameters&nbsp;from&nbsp;p1&nbsp;to&nbsp;p9</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h3>The #undef directive</h3> 
+<p><span>The #undef directive cancels declaration of the macro substitution, defined before.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#define</span><span>&nbsp;MACRO</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;func1()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #0000ff;">#ifdef</span><span>&nbsp;MACRO</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"MACRO&nbsp;is&nbsp;defined&nbsp;in&nbsp;"</span><span>,</span><span style="color: #0000ff;">__FUNCTION__</span><span>);&nbsp;&nbsp;&nbsp;</span><br> <span style="color: #0000ff;">#else</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"MACRO&nbsp;is&nbsp;not&nbsp;defined&nbsp;in&nbsp;"</span><span>,</span><span style="color: #0000ff;">__FUNCTION__</span><span>);</span><br> <span style="color: #0000ff;">#endif</span><br> <span>&nbsp;&nbsp;}</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">#undef</span><span>&nbsp;MACRO</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;func2()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #0000ff;">#ifdef</span><span>&nbsp;MACRO</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"MACRO&nbsp;is&nbsp;defined&nbsp;in&nbsp;"</span><span>,</span><span style="color: #0000ff;">__FUNCTION__</span><span>);</span><br> <span style="color: #0000ff;">#else</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"MACRO&nbsp;is&nbsp;not&nbsp;defined&nbsp;in&nbsp;"</span><span>,</span><span style="color: #0000ff;">__FUNCTION__</span><span>);</span><br> <span style="color: #0000ff;">#endif</span><br> <span>&nbsp;&nbsp;}</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;func1();</span><br> <span>&nbsp;&nbsp;&nbsp;func2();</span><br> <span>&nbsp;&nbsp;}</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">/*&nbsp;Result:</span><br> <span style="color: #808080;">&nbsp;MACRO&nbsp;is&nbsp;defined&nbsp;in&nbsp;func1</span><br> <span style="color: #808080;">&nbsp;MACRO&nbsp;is&nbsp;not&nbsp;defined&nbsp;in&nbsp;func2</span><br> <span style="color: #808080;">*/</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/syntax/identifiers">Identifiers</a>, <a href="/basis/types/integer/symbolconstants">Character Constants</a></span></p> 
+<br>

@@ -55,17 +55,17 @@
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>WRONG_VALUE</span></p> </td> 
-    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>Константа может неявно <a href="/ru/basis/types/casting">приводиться</a> к типу любого <a href="/ru/basis/types/integer/enumeration">перечисления</a></span></p> </td> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>Константа может неявно <a href="/basis/types/casting">приводиться</a> к типу любого <a href="/basis/types/integer/enumeration">перечисления</a></span></p> </td>
     <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>-1</span></p> </td> 
    </tr> 
   </tbody> 
  </table> 
 </div> 
-<p><span>Константа <a href="/ru/basis/types/void">NULL</a> может быть присвоена переменной любого простого типа или указателю на объект структуры или класса. Присвоение NULL строковой переменной означает полную деинициализацию этой переменной.</span></p> 
+<p><span>Константа <a href="/basis/types/void">NULL</a> может быть присвоена переменной любого простого типа или указателю на объект структуры или класса. Присвоение NULL строковой переменной означает полную деинициализацию этой переменной.</span></p>
 <p><span>Константа EMPTY_VALUE обычно соответствует тем значениям индикаторов, которые не отрисовываются на графике. Например, для встроенного индикатора Standard Deviation с периодом 20 не выводится на график линия для первых в истории 19 баров.</span></p> 
-<p><span>Константа CLR_NONE служит для указания отсутствия цвета, то есть <a href="/ru/objects">графический&nbsp;объект</a> или <a href="/ru/constants/indicatorconstants/drawstyles">графическая&nbsp;серия</a> индикатора не будут отображены. Эта константа не вошла в список констант с наименованиями <a href="/ru/constants/objectconstants/webcolors">Web-цветов</a>, но может применяться везде, где требуется указание цвета.</span></p> 
-<p><span>Константа INVALID_HANDLE может использоваться при проверке файловых хэндлов (см. функции <a href="/ru/files/fileopen">FileOpen()</a> и <a href="/ru/files/filefindfirst">FileFindFirst()</a>). </span></p> 
-<p><span>Константа WRONG_VALUE предназначена для тех случаев, когда требуется вернуть значение <a href="/ru/basis/types/integer/enumeration">перечисления</a>, и это должно быть неверное значение. Например, нужно сообщить, что возвращаемое значение является значением этого перечисления. Приведем в качестве иллюстрации некую функцию CheckLineStyle(), которая возвращает стиль линии для объекта, указанного по имени. Если при запросе стиля функцией ObjectGetInteger() результатом будет true, то вернется значение перечисления <a href="/ru/constants/indicatorconstants/drawstyles#enum_line_style">ENUM_LINE_STYLE</a>, иначе возвращается WRONG_VALUE.</span></p> 
+<p><span>Константа CLR_NONE служит для указания отсутствия цвета, то есть <a href="/objects">графический&nbsp;объект</a> или <a href="/constants/indicatorconstants/drawstyles">графическая&nbsp;серия</a> индикатора не будут отображены. Эта константа не вошла в список констант с наименованиями <a href="/constants/objectconstants/webcolors">Web-цветов</a>, но может применяться везде, где требуется указание цвета.</span></p>
+<p><span>Константа INVALID_HANDLE может использоваться при проверке файловых хэндлов (см. функции <a href="/files/fileopen">FileOpen()</a> и <a href="/files/filefindfirst">FileFindFirst()</a>). </span></p>
+<p><span>Константа WRONG_VALUE предназначена для тех случаев, когда требуется вернуть значение <a href="/basis/types/integer/enumeration">перечисления</a>, и это должно быть неверное значение. Например, нужно сообщить, что возвращаемое значение является значением этого перечисления. Приведем в качестве иллюстрации некую функцию CheckLineStyle(), которая возвращает стиль линии для объекта, указанного по имени. Если при запросе стиля функцией ObjectGetInteger() результатом будет true, то вернется значение перечисления <a href="/constants/indicatorconstants/drawstyles#enum_line_style">ENUM_LINE_STYLE</a>, иначе возвращается WRONG_VALUE.</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -76,11 +76,11 @@
  </table> 
 </div> 
 <p><span>Константа WHOLE_ARRAY предназначена для функций, которые требуют указания количества элементов в обрабатываемых массивах:</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/array/arraycopy">ArrayCopy()</a>;</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/array/arrayminimum">ArrayMinimum()</a>; </span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/array/arraymaximum">ArrayMaximum()</a>;</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 30px; margin: 0px 0px 0px 0px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/files/filereadarray">FileReadArray()</a>;</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/files/filewritearray">FileWriteArray()</a>. </span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/array/arraycopy">ArrayCopy()</a>;</span></p>
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/array/arrayminimum">ArrayMinimum()</a>; </span></p>
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/array/arraymaximum">ArrayMaximum()</a>;</span></p>
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 30px; margin: 0px 0px 0px 0px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/files/filereadarray">FileReadArray()</a>;</span></p>
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/files/filewritearray">FileWriteArray()</a>. </span></p>
 <p><span>Если требуется указать, что необходимо обработать все значения массива с указанной позиции и до конца, то достаточно указать значение WHOLE_ARRAY.</span></p> 
 <p><span>Константа </span><span>IS_PROFILE_MODE позволяет изменить работу программы для корректного сбора информации в режиме профилирования. Профилирование позволяет замерить время выполнения отдельных фрагментов программы (обычно это функции), а также подсчитать количество таких вызовов. Для корректного получения информации о времени выполнения в режиме профилировки можно отключить вызовы функции Sleep() как в примере:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
@@ -106,7 +106,7 @@
  </table> 
 </div> 
 <h1>Методы шифрования данных</h1> 
-<p><span>Для указания метода преобразования данных (шифрование и расчет хешей) в функциях <a href="/ru/common/cryptencode">CryptEncode()</a> и <a href="/ru/common/cryptdecode">CryptDecode()</a> используется перечисление ENUM_CRYPT_METHOD. </span></p> 
+<p><span>Для указания метода преобразования данных (шифрование и расчет хешей) в функциях <a href="/common/cryptencode">CryptEncode()</a> и <a href="/common/cryptdecode">CryptDecode()</a> используется перечисление ENUM_CRYPT_METHOD. </span></p>
 <p><a id="enum_crypt_method"></a><span style="font-weight: bold;">ENUM_CRYPT_METHOD</span></p> 
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
@@ -151,5 +151,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/common/debugbreak">DebugBreak</a>, <a href="/ru/constants/environment_state/mql4_programm_info">Информация о запущенной MQL4-программе</a>, <a href="/ru/common/cryptencode">CryptEncode()</a>, <a href="/ru/common/cryptdecode">CryptDecode()</a></span></p> 
+<p><span><a href="/common/debugbreak">DebugBreak</a>, <a href="/constants/environment_state/mql4_programm_info">Информация о запущенной MQL4-программе</a>, <a href="/common/cryptencode">CryptEncode()</a>, <a href="/common/cryptdecode">CryptDecode()</a></span></p>
 <br>

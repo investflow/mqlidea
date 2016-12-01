@@ -1,0 +1,21 @@
+<h1>GlobalVariableTime</h1> 
+<p><span>Returns the time when the global variable was last accessed. </span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>datetime&nbsp;&nbsp;</span><span>GlobalVariableTime</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>name</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>name</span></p> 
+<p><span>[in] &nbsp;Name of the global variable.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>The function returns time of last accessing the specified global variable. Addressing a variable for its value, for example using the <a href="/globals/globalvariableget">GlobalVariableGet()</a> and <a href="/globals/globalvariablecheck">GlobalVariableCheck()</a> functions, also modifies the time of last access. In order to obtain <a href="/constants/errorswarnings/errorcodes">error</a> details, call the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span>Note</span></p> 
+<p><span>Global variables exist in the client terminal during 4 weeks since they were called last. After that they are automatically deleted.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/globals/globalvariablecheck">GlobalVariableCheck()</a></span></p> 
+<br>

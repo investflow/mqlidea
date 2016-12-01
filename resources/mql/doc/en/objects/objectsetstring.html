@@ -1,0 +1,36 @@
+<h1>ObjectSetString</h1> 
+<p><span>The function sets the value of the corresponding object property. The object property must be of the <a href="/basis/types/stringconst">string</a> type. There are 2 variants of the function.</span></p> 
+<p><span style="font-weight: bold;">Setting property value, without modifier:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ObjectSetString</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;chart&nbsp;identifier</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;</span><span>object_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prop_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;property</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;</span><span>prop_value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;value</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Setting a property value indicating the modifier:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ObjectSetString</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;chart&nbsp;identifier</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;</span><span>object_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prop_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;property</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prop_modifier</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;modifier</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;</span><span>prop_value&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;value</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>chart_id</span></p> 
+<p><span>[in] &nbsp;Chart identifier. 0 means the current chart.</span></p> 
+<p><span>object_name</span></p> 
+<p><span>[in] &nbsp;Name of the object.</span></p> 
+<p><span>prop_id</span></p> 
+<p><span>[in] &nbsp;ID of the object property. The value can be one of the values of the <a href="/constants/objectconstants/enum_object_property#enum_object_property_string">ENUM_OBJECT_PROPERTY_STRING</a> enumeration.</span></p> 
+<p><span>prop_modifier</span></p> 
+<p><span>[in] &nbsp;Modifier of the specified property. &nbsp;It denotes the number of the level in <a href="/constants/objectconstants/enum_object">Fibonacci tools</a> and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</span></p> 
+<p><span>prop_value </span></p> 
+<p><span>[in] &nbsp;The value of the property.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>The function returns true only if the command to change properties of a graphical object has been sent to a chart successfully. Otherwise it returns false. To read more about the <a href="/constants/errorswarnings/errorcodes">error</a> call <a href="/check/getlasterror">GetLastError()</a>.</span></p> 
+<br>

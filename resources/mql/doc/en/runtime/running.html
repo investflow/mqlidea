@@ -1,0 +1,216 @@
+<h1>Program Running</h1> 
+<p><span>Each script and each Expert Advisor runs in its own separate thread. All indicators work in the graphic interface thread. processing of ticks and history synchronization are also performed in graphic interface thread. Custom indicators work in the main interface thread. If a custom indicator has been called with the <a href="/indicators/icustom">iCustom()</a> function, this indicator works in the thread of the program that has called it. Library (imported) functions work in the calling program thread, as well.</span></p> 
+<p><span>When running an Expert Advisor, make sure that it has an actual <a href="/marketinformation">trading environment</a> and can <a href="/series/timeseries_access">access the history</a> of the required symbol and period, and <a href="/series/timeseries_access#synchronized">synchronize</a> data between the terminal and the server. For all these procedures, the terminal provides a start delay of no more than 5 seconds, after which the Expert Advisor will be started with available data. Therefore, in case there is no connection to the server, this may lead to a delay in the start of an Expert Advisor.</span></p> 
+<p><span>The below table contains a brief summary of MQL4 programs:</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Program</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Running</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Note</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>Script</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>A separate thread, the number of threads for scripts is equal to the number of scripts</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>A looped script cannot break running of other programs</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>Expert Advisor</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>A separate thread, the number of threads for Expert Advisors is equal to the number of Expert Advisors</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>A looped Expert Advisor cannot break running of other programs</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>Indicator</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>All indicators share the resources of graphic interface thread of the terminal</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>An infinite loop in one indicator will stop the work of terminal</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Right after a program is attached to a chart, it is uploaded to the client terminal memory, as well as global variable are <a href="/basis/variables/initialization">initialized</a>. If some global variable of the class type has a <a href="/basis/types/classes#constructor">constructor</a>, this constructor will be called during initialization of <a href="/basis/variables/global">global variables</a>.</span></p> 
+<p><span>After that the program is waiting for an <a href="/runtime/event_fire">event</a> from the client terminal. Each mql4-program should have at least one <a href="/basis/function/events">event-handler</a>, otherwise the loaded program will not be executed. Event handlers have &nbsp;predefined names, parameters and return types.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Type</span></p> </td> 
+    <td style="vertical-align:top; width:97px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Function name</span></p> </td> 
+    <td style="vertical-align:top; width:155px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Parameters</span></p> </td> 
+    <td style="vertical-align:top; width:110px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Application</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Comment</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+    <td style="vertical-align:top; width:97px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/function/events#oninit">OnInit</a></span></p> </td> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span>none</span></p> </td> 
+    <td style="vertical-align:top; width:110px; padding:5px; border:solid thin #b1c2d6;"><p><span>Expert Advisors, indicators and scripts</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/runtime/event_fire#init">Init</a> event handler. It allows to use the void return type.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50px; padding:5px; border:solid thin #b1c2d6;"><p><span>void</span></p> </td> 
+    <td style="vertical-align:top; width:97px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/function/events#ondeinit">OnDeinit</a></span></p> </td> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span>const int reason</span></p> </td> 
+    <td style="vertical-align:top; width:110px; padding:5px; border:solid thin #b1c2d6;"><p><span>Expert Advisors, indicators and scripts</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/runtime/event_fire#deinit">Deinit</a> event handler.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50px; padding:5px; border:solid thin #b1c2d6;"><p><span>void</span></p> </td> 
+    <td style="vertical-align:top; width:97px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/function/events#onstart">OnStart</a></span></p> </td> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span>none</span></p> </td> 
+    <td style="vertical-align:top; width:110px; padding:5px; border:solid thin #b1c2d6;"><p><span>scripts</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/runtime/event_fire#start">Start</a> event handler.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+    <td style="vertical-align:top; width:97px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/function/events#oncalculate">OnCalculate</a></span></p> </td> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span>const int rates_total,</span></p> <p><span>const int prev_calculated,</span></p> <p><span>const datetime &amp;Time[],</span></p> <p><span>const double &amp;Open[],</span></p> <p><span>const double &amp;High[],</span></p> <p><span>const double &amp;Low[],</span></p> <p><span>const double &amp;Close[],</span></p> <p><span>const long &amp;TickVolume[],</span></p> <p><span>const long &amp;Volume[],</span></p> <p><span>const int &amp;Spread[]</span></p> </td> 
+    <td style="vertical-align:top; width:110px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicators</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Calculate event handler for all prices.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50px; padding:5px; border:solid thin #b1c2d6;"><p><span>void</span></p> </td> 
+    <td style="vertical-align:top; width:97px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/function/events#ontick">OnTick</a></span></p> </td> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span>none</span></p> </td> 
+    <td style="vertical-align:top; width:110px; padding:5px; border:solid thin #b1c2d6;"><p><span>Expert Advisors</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/runtime/event_fire#newtick">NewTick</a> event handler. While the event of a new tick receipt is being processed, no other events of this type are received.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50px; padding:5px; border:solid thin #b1c2d6;"><p><span>void</span></p> </td> 
+    <td style="vertical-align:top; width:97px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/function/events#ontimer">OnTimer</a></span></p> </td> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span>none</span></p> </td> 
+    <td style="vertical-align:top; width:110px; padding:5px; border:solid thin #b1c2d6;"><p><span>Expert Advisors and indicators</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/runtime/event_fire#timer">Timer</a> event handler.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+    <td style="vertical-align:top; width:97px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/function/events#ontester">OnTester</a></span></p> </td> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span>none</span></p> </td> 
+    <td style="vertical-align:top; width:110px; padding:5px; border:solid thin #b1c2d6;"><p><span>Expert Advisors</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/runtime/event_fire#tester">Tester</a> event handler.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50px; padding:5px; border:solid thin #b1c2d6;"><p><span>void</span></p> </td> 
+    <td style="vertical-align:top; width:97px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/function/events#onchartevent">OnChartEvent</a></span></p> </td> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span>const int id,</span></p> <p><span>const long &amp;lparam,</span></p> <p><span>const double &amp;dparam,</span></p> <p><span>const string &amp;sparam</span></p> </td> 
+    <td style="vertical-align:top; width:110px; padding:5px; border:solid thin #b1c2d6;"><p><span>Expert Advisors and indicators</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/runtime/event_fire#chartevent">ChartEvent</a> event handler.</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>A client terminal sends new events to the corresponding open charts. Events can also be generated by charts (<a href="/basis/function/events#onchartevent">chart events</a>) or mql4-programs (<a href="/eventfunctions/eventchartcustom">custom events</a>). Generation of events of creation or deletion of graphical objects on a chart can be enabled or disabled by setting <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_CREATE</a> and <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_DELETE</a> chart properties. Each MQL4 program and each chart has its own queue of events, where all new incoming events are added.</span></p> 
+<p><span>A program receives only events from the chart it runs on. All events are processed one after another in the order they are received. If a queue already has a <a href="/runtime/event_fire#newtick">NewTick</a> event, or this event is currently being processed, then the new NewTick event is not placed in the queue of the MQL4 program. Similarly, if <a href="/runtime/event_fire#chartevent">ChartEvent</a> is already enqueued, or this event is being processed, no new event of this kind is enqueued. The timer events are handled the same way  if the <a href="/runtime/event_fire#timer">Timer</a> event is in the queue or being handled, the new timer event is not enqueued.</span></p> 
+<p><span>Event queues have a limited but sufficient size, so that the queue overflow for well written programs is unlikely. In case of queue overflow, new events are discarded without queuing.</span></p> 
+<p><span>It is not recommended to use infinite loops to handle events. The exception to this rule may be only scripts that process only a single <a href="/runtime/event_fire#start">Start</a> event.</span></p> 
+<p><span><a href="/#library">Libraries</a> do not handle any events.</span></p> 
+<p><span>&nbsp;</span></p> 
+<h3>Functions prohibited in Indicators and Expert Advisors</h3> 
+<p><span>Indicators, scripts and Expert Advisors are executable programs written in MQL4. They are designed for different types of tasks. Therefore there are some restrictions on the use of certain functions, depending on the <a href="/constants/environment_state/mql4_programm_info#enum_program_type">type of program</a>. The following functions are prohibited in indicators:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/trading/ordersend">OrderSend()</a>;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/common/sendftp">SendFTP()</a>;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/common/sleep">Sleep()</a>;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/common/expertremove">ExpertRemove()</a>;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/common/messagebox">MessageBox()</a>.</span></li> 
+</ul> 
+<p><span>All functions designed for indicators are prohibited in Expert Advisors and scripts:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/customind/setindexbuffer">SetIndexBuffer()</a>;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/customind/indicatorsetdouble">IndicatorSetDouble()</a>;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/customind/indicatorsetinteger">IndicatorSetInteger()</a>;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/customind/indicatorsetstring">IndicatorSetString()</a>.</span></li> 
+</ul> 
+<p><span>The library is not an independent program and is executed in the context of the MQL4 program that has called it: script, indicator or Expert Advisor. Accordingly, the above restrictions apply to the called library.</span></p> 
+<p><span>&nbsp;</span></p> 
+<h3><a id="load"></a>Loading and Unloading of Indicators</h3> 
+<p><span>Indicators are loaded in the following cases:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>an indicator is attached to a chart;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>terminal start (if the indicator was attached to the chart prior to the shutdown of the terminal); </span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>loading of a template (if the indicator attached to a chart is specified in the template); </span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>change of a profile (if the indicator is attached to one of the profile charts); </span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>change of a symbol and/or timeframe of a chart, to which the indicator is attached; </span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>after the successful recompilation of an indicator (if the indicator was attached to a chart);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>change of <a href="/basis/variables/inputvariables">input parameters</a> of the indicator.</span></li> 
+</ul> 
+<p><span>Indicators are unloaded in the following cases: </span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>when detaching an indicator from a chart; </span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>terminal shutdown (if the indicator was attached to a chart); </span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>loading of a template (if an indicator is attached to a chart); </span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>closing of a chart, to which the indicator was attached; </span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>change of a profile (if the indicator is attached to one of charts of the changed profile); </span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>change of a symbol and/or timeframe of a chart, to which the indicator is attached; </span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>change of <a href="/basis/variables/inputvariables">input parameters</a> of the indicator.</span></li> 
+</ul> 
+<p><span>&nbsp;</span></p> 
+<h3>Loading and Unloading of Expert Advisors</h3> 
+<p><span>Expert Advisors are loaded in the following cases:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>when attaching an Expert Advisor to a chart;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>terminal start (if the Expert Advisor was attached to the chart prior to the shutdown of the terminal);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>loading of a template (if the Expert Advisor attached to the chart is specified in the template);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>change of a profile (if the Expert Advisor is attached to the one of the profile charts);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>connection to an account, even if the account number is the same (if the Expert Advisor was attached to the chart before the authorization of the terminal on the server).</span></li> 
+</ul> 
+<p><span>Expert Advisors are unloaded in the following cases:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>when detaching an Expert Advisor from a chart;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>if a new Expert Advisor is attached to a chart, if another Expert Advisor has been attached already, this Expert Advisor is unloaded.</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>terminal shutdown (if the Expert Advisor was attached to a chart);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>loading of a template (if an Expert Advisor is attached to the chart);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>close of a chart, to which the Expert Advisor is attached.</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>change of a profile (if the Expert Advisor is attached to one of charts of the changed profile);</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>change of the account to which the terminal is connected (if the Expert Advisor was attached to the chart before the authorization of the terminal on the server);</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>calling the <a href="/common/expertremove">ExpertRemove()</a> function.</span></li> 
+</ul> 
+<p><span style="font-weight: bold;">In case the symbol or timeframe of a chart, to which the Expert Advisor is attached, changes, Expert Advisors are not loaded or unloaded.</span><span> In this case client terminal subsequently calls <a href="/basis/function/events#ondeinit">OnDeinit()</a> handlers on the old symbol/timeframe and <a href="/basis/function/events#oninit">OnInit()</a> on the new symbol/timeframe (if they are such), values of global variables and <a href="/basis/variables/static">static variables</a> are not reset. All events, which have been received for the Expert Advisor before the initialization is completed (<a href="/basis/function/events#oninit">OnInit()</a> function) are skipped.</span></p> 
+<p><span>For a better understanding of the Expert Advisor operation we recommend to compile the code of the following Expert Advisor and perform actions of load/unload, template change, symbol change, timeframe change etc:</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TestExpert.mq5&nbsp;|</span><br> <span style="color: #808080;">//|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright&nbsp;2009,&nbsp;MetaQuotes&nbsp;Software&nbsp;Corp.&nbsp;|</span><br> <span style="color: #808080;">//|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.mql5.com&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">copyright</span><span>&nbsp;</span><span style="color: #008080;">"2009,&nbsp;MetaQuotes&nbsp;Software&nbsp;Corp."</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">link</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"https://www.mql5.com"</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">version</span><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"1.00"</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">class</span><span>&nbsp;CTestClass</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #0000ff;">public</span><span>:&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;CTestClass()&nbsp;{&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CTestClass&nbsp;constructor"</span><span>);&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;~CTestClass()&nbsp;{&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CTestClass&nbsp;destructor"</span><span>);&nbsp;}</span><br> <span>&nbsp;&nbsp;};</span><br> <span>CTestClass&nbsp;global;</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Expert&nbsp;initialization&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">int</span><span>&nbsp;</span><span style="color: #0000ff;">OnInit</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Initialization"</span><span>);</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">INIT_SUCCEEDED</span><span>);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Expert&nbsp;deinitialization&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnDeinit</span><span>(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;reason)</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Deinitialization&nbsp;with&nbsp;reason"</span><span>,reason);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Expert&nbsp;tick&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnTick</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<h3>Loading and Unloading of Scripts </h3> 
+<p><span>Scripts are loaded immediately after they are attached to a chart and unloaded immediately after they complete their operation.</span></p> 
+<p><span>When a program is unloaded (deleted from a chart) the client terminal performs deinitialization of <a href="/basis/variables/global">global</a> variables and deletes the events queue. In this case deinitialization means reset of all the <a href="/basis/types/stringconst">string-</a>type variables, deallocation of <a href="/basis/types/dynamic_array">dynamical array objects</a> and call of their <a href="/basis/types/classes#destructor">destructors</a> if they are available.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TestScript.mq5&nbsp;|</span><br> <span style="color: #808080;">//|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright&nbsp;2014,&nbsp;MetaQuotes&nbsp;Software&nbsp;Corp.&nbsp;|</span><br> <span style="color: #808080;">//|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.mql5.com&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">copyright</span><span>&nbsp;</span><span style="color: #008080;">"2014,&nbsp;MetaQuotes&nbsp;Software&nbsp;Corp."</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">link</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"https://www.mql5.com"</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">version</span><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"1.00"</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">class</span><span>&nbsp;CTestClass</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #0000ff;">public</span><span>:&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;CTestClass()&nbsp;{&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CTestClass&nbsp;constructor"</span><span>);&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;~CTestClass()&nbsp;{&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CTestClass&nbsp;destructor"</span><span>);&nbsp;}</span><br> <span>&nbsp;&nbsp;};</span><br> <span>CTestClass&nbsp;global;</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;initialization&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnInit</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #0000ff;">__FUNCTION__</span><span>);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;deinitialization&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnDeinit</span><span>(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;reason)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #0000ff;">__FUNCTION__</span><span>,</span><span style="color: #008080;">"&nbsp;reason="</span><span>,reason);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #0000ff;">__FUNCTION__</span><span>);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h3>Input Parameters and Source Code Compilation</h3> 
+<p><span>If a source code of a program launched on a chart is successfully recompiled, its previous version is removed from the chart and the new compiled copy is executed instead.</span></p> 
+<p><span>If the set of the <a href="/basis/variables/inputvariables">input parameters</a> is not changed after the recompilation, the previously specified parameter values are applied. Otherwise, the default values are used.</span></p> 
+<p><span>The set of mql4 program input parameters is considered to be changed when editing the source code in the following cases:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>the number of parameters has been changed;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>the sequence order of parameters has been changed;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>parameter names have been changed;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>the type of one or more parameters has been changed.</span></li> 
+</ul> 
+<p><span>Changing a default value of any of the parameters is not considered to be a change of the input parameter set.</span></p> 
+<p><span>The set of the input parameters clearly identifies the program in the terminal's execution system. If this set is unchanged, the new versions of the executable file are considered to retain the entire logic and functionality of the program.</span></p> 
+<p><span>If the set of the input parameters is changed, the terminal considers the new executable file as incompatible with the program that has been previously launched on the chart. Thus, the new recompiled program is launched with the set of the input parameters having default values.</span></p> 
+<p><span>In other cases (including the ones when a default value of any parameter is changed), the previously specified parameters are applied after the recompilation.</span></p> 
+<p><span>The <a href="/runtime/event_fire#init">OnInit()</a> predefined function is called after any compilation. Its purpose is to correctly initialize all <a href="/basis/variables/global">global</a> and <a href="/basis/variables/static">static</a> variables of the program. The program's input parameter values should be used correctly in OnInit() event handler.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/runtime/event_fire">Client terminal events</a>, <a href="/basis/function/events">Event handlers</a></span></p> 
+<br>

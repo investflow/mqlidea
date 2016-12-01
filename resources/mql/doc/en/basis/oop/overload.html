@@ -1,0 +1,13 @@
+<h1>Overload</h1> 
+<p><span>Within one class it is possible to define two or more methods that use the same name, but have different numbers of parameters. When this occurs, methods are called overloaded and such a process is referred to as method overloading. </span></p> 
+<p><span>Method overloading is one of ways of <a href="/basis/oop/polymorphism">polymorphism</a> realization. Overloading of methods is performed according to the same rules as the <a href="/basis/function/functionoverload">function overloading</a>.</span></p> 
+<p><span>If the called function has no exact match, the compiler searches for a suitable function on three levels sequentially:</span></p> 
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 37px;list-style-position:outside; list-style-type:decimal"> 
+ <li value="1" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>search within class methods.</span></li> 
+ <li value="2" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>search within the base class methods, consistently from the nearest ancestor to the very first.</span></li> 
+ <li value="3" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>search among other functions.</span></li> 
+</ol> 
+<p><span>If there is no exact correspondence at all levels, but several suitable functions at different levels have been found, the function found at the least level is used. Within one level, there can't be more than one suitable function.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/function/functionoverload">Function Overloading</a></span></p> 
+<br>

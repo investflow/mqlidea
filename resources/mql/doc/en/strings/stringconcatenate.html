@@ -1,0 +1,31 @@
+<h1>StringConcatenate</h1> 
+<p><span>The function returns the string </span><span>formed by concatenation of parameters transformed into string type</span><span>.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>StringConcatenate</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void</span><span>&nbsp;</span><span>argument1</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;first&nbsp;parameter&nbsp;of&nbsp;any&nbsp;simple&nbsp;type</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void</span><span>&nbsp;</span><span>argument2</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;second&nbsp;parameter&nbsp;of&nbsp;any&nbsp;simple&nbsp;type</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>...</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;next&nbsp;parameter&nbsp;of&nbsp;any&nbsp;simple&nbsp;type</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>argumentN</span></p> 
+<p><span>[in] &nbsp;Any comma separated values. From 2 to 63 parameters of any simple type.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>Returns the string, formed by concatenation of parameters transformed into string type. Parameters are transformed into strings according to the same rules as in <a href="/common/print">Print()</a> and <a href="/common/comment">Comment()</a>.</span></p> 
+<p><span>Note</span></p> 
+<p><span>Parameters can be of any type. Number of parameters can't be less than 2 or more than 64.</span></p> 
+<p><span>Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;text;</span><br> <span>&nbsp;&nbsp;text=</span><span style="color: #0000ff;">StringConcatenate</span><span>(</span><span style="color: #008080;">"Account&nbsp;free&nbsp;margin&nbsp;is&nbsp;"</span><span>,&nbsp;</span><span style="color: #0000ff;">AccountFreeMargin</span><span>(),&nbsp;</span><span style="color: #008080;">"&nbsp;Current&nbsp;time&nbsp;is&nbsp;"</span><span>,&nbsp;</span><span style="color: #0000ff;">TimeToStr</span><span>(</span><span style="color: #0000ff;">TimeCurrent</span><span>()));</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;text="Account&nbsp;free&nbsp;margin&nbsp;is&nbsp;"&nbsp;+&nbsp;AccountFreeMargin()&nbsp;+&nbsp;"&nbsp;&nbsp;Current&nbsp;time&nbsp;is&nbsp;"&nbsp;+&nbsp;TimeToStr(TimeCurrent())</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(text);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/strings/stringadd">StringAdd()</a></span></p> 
+<br>

@@ -1,0 +1,20 @@
+<h1>ZeroMemory</h1> 
+<p><span>The function resets a variable passed to it by reference.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>ZeroMemory</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void</span><span>&nbsp;&amp;&nbsp;</span><span>variable</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;reset&nbsp;variable</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>variable</span></p> 
+<p><span>[in] [out] &nbsp;Variable passed by reference, you want to reset (initialize by zero values).</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>No return value.</span></p> 
+<p><span>Note</span></p> 
+<p><span>If the function parameter is a string, the call will be equivalent to indicating NULL as its value.</span><br> <span>For simple types and their arrays, as well as for structures/classes consisting of such types, this is a simple reset.</span><br> <span>For objects containing strings and dynamic arrays, ZeroMemory() is called for each element.</span><br> <span>For any arrays not protected by the const modifier, this is the zeroing of all elements.</span><br> <span>For arrays of complex objects, ZeroMemory() is called for each element.</span></p> 
+<p><span>ZeroMemory() can't be applied to classes with protected <a href="/basis/types/classes#public">members</a> or <a href="/basis/oop/inheritance#protected_inheritance">inheritance</a>.</span></p> 
+<br>

@@ -1,5 +1,5 @@
 <h1>Передача параметров</h1> 
-<p><span>Существует два метода, с помощью которых машинный язык может передавать аргумент подпрограмме (функции). Первый способ – передача параметра по значению. Этот метод копирует значение <a href="/ru/basis/function/call#argument">аргумента</a> в формальный параметр функции. Поэтому любые изменения этого параметра внутри функции не имеют никакого влияния на соответствующий аргумент вызова.</span></p> 
+<p><span>Существует два метода, с помощью которых машинный язык может передавать аргумент подпрограмме (функции). Первый способ – передача параметра по значению. Этот метод копирует значение <a href="/basis/function/call#argument">аргумента</a> в формальный параметр функции. Поэтому любые изменения этого параметра внутри функции не имеют никакого влияния на соответствующий аргумент вызова.</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -19,7 +19,7 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>MQL4 использует оба метода, за одним исключением: массивы, переменные типа структур и объекты классов всегда передаются по ссылке. Для того чтобы исключить изменения фактических параметров (аргументов, переданных при вызове функции) необходимо использовать спецификатор доступа </span><span><a href="/ru/basis/variables#const">const</a></span><span>. При попытке изменить содержимое переменной, объявленной со спецификатором </span><span style="font-style: italic;">const</span><span>, компилятор выдаст ошибку. </span></p> 
+<p><span>MQL4 использует оба метода, за одним исключением: массивы, переменные типа структур и объекты классов всегда передаются по ссылке. Для того чтобы исключить изменения фактических параметров (аргументов, переданных при вызове функции) необходимо использовать спецификатор доступа </span><span><a href="/basis/variables#const">const</a></span><span>. При попытке изменить содержимое переменной, объявленной со спецификатором </span><span style="font-style: italic;">const</span><span>, компилятор выдаст ошибку. </span></p>
 <h3>Примечание</h3> 
 <p><span>Необходимо помнить, что параметры передаются в функцию задом наперед, то есть сначала вычисляется и передается самый последний параметр, затем предпоследний и так далее. Последним по очереди вычисляется и передается параметр, стоящий первым после открывающей скобки.</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
@@ -42,8 +42,8 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>При этом ее значение не меняется. Затем переменная </span><span style="font-weight: bold;">i</span><span> участвует в вычислении элемента массива </span><span style="font-style: italic; font-weight: bold;">a[i++]</span><span>, то есть после взятия i-го элемента массива переменная </span><span style="font-style: italic; font-weight: bold;">i</span><span> <a href="/ru/basis/operations/mathoperation#posfix">инкрементируется</a>. И только после этого вычисляется первый параметр с измененным значением переменной </span><span style="font-style: italic; font-weight: bold;">i</span><span>.</span></p> 
+<p><span>При этом ее значение не меняется. Затем переменная </span><span style="font-weight: bold;">i</span><span> участвует в вычислении элемента массива </span><span style="font-style: italic; font-weight: bold;">a[i++]</span><span>, то есть после взятия i-го элемента массива переменная </span><span style="font-style: italic; font-weight: bold;">i</span><span> <a href="/basis/operations/mathoperation#posfix">инкрементируется</a>. И только после этого вычисляется первый параметр с измененным значением переменной </span><span style="font-style: italic; font-weight: bold;">i</span><span>.</span></p>
 <p><span>Во втором вызове при вычислении всех трех параметров используется одно и тоже значение i, измененное на первом вызове функции, и только после вычисления первого параметра переменная </span><span style="font-style: italic; font-weight: bold;">i</span><span> опять изменяется.</span></p> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/basis/variables/variable_scope">Область видимости и время жизни переменных</a>, <a href="/ru/basis/oop/overload">Перегрузка</a>, <a href="/ru/basis/oop/virtual">Виртуальные функции</a>, <a href="/ru/basis/oop/polymorphism">Полиморфизм</a></span></p> 
+<p><span><a href="/basis/variables/variable_scope">Область видимости и время жизни переменных</a>, <a href="/basis/oop/overload">Перегрузка</a>, <a href="/basis/oop/virtual">Виртуальные функции</a>, <a href="/basis/oop/polymorphism">Полиморфизм</a></span></p>
 <br>

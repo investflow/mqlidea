@@ -1,0 +1,26 @@
+<h1>Including Files (#include)</h1> 
+<p><span>The </span><span style="font-style: italic;">#include</span><span> command line can be placed anywhere in the program, but usually all inclusions are placed at the beginning of the source code. Call format:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#include</span><span>&nbsp;&lt;file_name&gt;</span><br> <span style="color: #0000ff;">#include</span><span>&nbsp;</span><span style="color: #008080;">"file_name"</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Examples:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#include</span><span>&nbsp;&lt;WinUser32.mqh&gt;</span><br> <span style="color: #0000ff;">#include</span><span>&nbsp;</span><span style="color: #008080;">"mylib.mqh"</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The preprocessor replaces the line </span><span style="font-style: italic;">#include &lt;file_name&gt;</span><span> with the content of the file WinUser32.mqh. Angle brackets indicate that the WinUser32.mqh file will be taken from the standard directory (usually it is </span><span style="font-style: italic;">terminal_installation_directory\MQL4\Include</span><span>). The current directory is not included in the search.</span></p> 
+<p><span>If the file name is enclosed in quotation marks, the search is made in the current directory (which contains the main source file). The standard directory is not included in the search.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/preprosessor/import">Importing Functions</a></span></p> 
+<br>

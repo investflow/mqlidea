@@ -1,5 +1,5 @@
 <h1>ColorToARGB</h1> 
-<p><span>Преобразует тип <a href="/ru/basis/types/integer/color">color</a> в тип <a href="/ru/basis/types/integer/integertypes#uint">uint</a> для получения ARGB-представления цвета. ARGB формат цвета используется при создании <a href="/ru/runtime/resources">графического ресурса</a>, <a href="/ru/objects/textout">вывода текста</a> и в классе стандартной библиотеки CCanvas.</span></p> 
+<p><span>Преобразует тип <a href="/basis/types/integer/color">color</a> в тип <a href="/basis/types/integer/integertypes#uint">uint</a> для получения ARGB-представления цвета. ARGB формат цвета используется при создании <a href="/runtime/resources">графического ресурса</a>, <a href="/objects/textout">вывода текста</a> и в классе стандартной библиотеки CCanvas.</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -13,7 +13,7 @@
 <p><span>clr</span></p> 
 <p><span>[in] &nbsp;Значение цвета в переменной типа color.</span></p> 
 <p><span>alpha</span></p> 
-<p><span>[in] &nbsp;Значение альфа-канала, для получения цвета в формате </span><span><a href="/ru/common/resourcecreate">ARGB</a>. Задается значением от 0 (цвет накладываемого пикселя совсем не меняет отображения нижележащего пикселя) до 255 (цвет накладывается полностью и перекрывает собою цвет нижележащего пикселя). Прозрачность цвета в процентом выражении вычисляется как &nbsp;(1-alpha/255)*100%, то есть чем меньше значение альфа-канала, тем более прозрачен цвет.</span></p> 
+<p><span>[in] &nbsp;Значение альфа-канала, для получения цвета в формате </span><span><a href="/common/resourcecreate">ARGB</a>. Задается значением от 0 (цвет накладываемого пикселя совсем не меняет отображения нижележащего пикселя) до 255 (цвет накладывается полностью и перекрывает собою цвет нижележащего пикселя). Прозрачность цвета в процентом выражении вычисляется как &nbsp;(1-alpha/255)*100%, то есть чем меньше значение альфа-канала, тем более прозрачен цвет.</span></p>
 <p><span>Возвращаемое значение</span></p> 
 <p><span>Представление цвета в формате ARGB, где в четырех байтах типа uint прописаны по порядку значения Alfa, Red, Green, Blue (альфа-канал, красный, зеленый, голубой).</span></p> 
 <p><span>Примечание</span></p> 
@@ -33,5 +33,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/runtime/resources">Ресурсы</a>, <a href="/ru/common/resourcecreate">ResourceCreate()</a>, <a href="/ru/objects/textout">TextOut()</a>, <a href="/ru/basis/types/integer/color">Тип color</a>, <a href="/ru/basis/types/integer/integertypes">Типы char, short, int и long</a></span></p> 
+<p><span><a href="/runtime/resources">Ресурсы</a>, <a href="/common/resourcecreate">ResourceCreate()</a>, <a href="/objects/textout">TextOut()</a>, <a href="/basis/types/integer/color">Тип color</a>, <a href="/basis/types/integer/integertypes">Типы char, short, int и long</a></span></p>
 <br>

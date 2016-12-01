@@ -25,9 +25,9 @@
 <p><span>object_name</span></p> 
 <p><span>[in] &nbsp;Уникальное имя объекта.</span></p> 
 <p><span>object_type</span></p> 
-<p><span>[in] &nbsp;Тип объекта. Может быть любым из <a href="/ru/constants/objectconstants/enum_object">типов объектов</a>.</span></p> 
+<p><span>[in] &nbsp;Тип объекта. Может быть любым из <a href="/constants/objectconstants/enum_object">типов объектов</a>.</span></p>
 <p><span>sub_window</span></p> 
-<p><span>[in] &nbsp;Индекс окна, в которое будет добавлен объект. Окно должно существовать (индекс окна должен быть большим или равным 0 и меньшим, чем <a href="/ru/chart_operations/windowstotal">WindowsTotal()</a>), иначе функция возвратит false.</span></p> 
+<p><span>[in] &nbsp;Индекс окна, в которое будет добавлен объект. Окно должно существовать (индекс окна должен быть большим или равным 0 и меньшим, чем <a href="/chart_operations/windowstotal">WindowsTotal()</a>), иначе функция возвратит false.</span></p>
 <p><span>time1</span></p> 
 <p><span>[in] &nbsp;Временная координата первой точки привязки.</span></p> 
 <p><span>price1</span></p> 
@@ -45,9 +45,9 @@
 <p><span>priceN=0</span></p> 
 <p><span>[in] &nbsp;Ценовая координата N-й точки привязки.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
-<p><span>При успешном создании объекта функция возвращает true, иначе false. Чтобы получить дополнительную информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>При успешном создании объекта функция возвращает true, иначе false. Чтобы получить дополнительную информацию об <a href="/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/check/getlasterror">GetLastError()</a>.</span></p>
 <p><span>Примечание</span></p> 
-<p><span>Число координат, связываемых с объектом, может быть от 1 до 3 в зависимости от типа. &nbsp;Объекты с типом OBJ_LABEL игнорируют координаты. Используйте функцию <a href="/ru/objects/objectset">ObjectSet</a>() для установки свойств OBJPROP_XDISTANCE и OBJPROP_YDISTANCE. Нумерация подокон графика (если на графике есть подокна с индикаторами) начинается с 1. Главное окно графика есть всегда и имеет индекс 0. Координаты должны передаваться парами - время и цена. Для примера, объекту OBJ_VLINE требуется только время, но также нужно передать и цену (любое значение).</span></p> 
+<p><span>Число координат, связываемых с объектом, может быть от 1 до 3 в зависимости от типа. &nbsp;Объекты с типом OBJ_LABEL игнорируют координаты. Используйте функцию <a href="/objects/objectset">ObjectSet</a>() для установки свойств OBJPROP_XDISTANCE и OBJPROP_YDISTANCE. Нумерация подокон графика (если на графике есть подокна с индикаторами) начинается с 1. Главное окно графика есть всегда и имеет индекс 0. Координаты должны передаваться парами - время и цена. Для примера, объекту OBJ_VLINE требуется только время, но также нужно передать и цену (любое значение).</span></p>
 <p><span>Имя графического объекта не должно превышать 63 символа. Не допускаются символы вне текущей кодовой страницы (символы, которые не могут быть переведены из Unicode в ANSI, заменяются на символ '?'). Если предполагается распространение программ среди пользователей, имеющих различные кодовые страницы, настоятельно рекомендуется использование латинских символов в именах объектов.</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
@@ -60,5 +60,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/constants/objectconstants/enum_object">Типы объектов</a> </span></p> 
+<p><span><a href="/constants/objectconstants/enum_object">Типы объектов</a> </span></p>
 <br>

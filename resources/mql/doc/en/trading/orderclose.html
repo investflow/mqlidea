@@ -1,0 +1,35 @@
+<h1>OrderClose</h1> 
+<p><span>Closes opened order.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>OrderClose</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ticket</span><span style="color: #000000;">,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;ticket</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>lots</span><span style="color: #000000;">,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;volume</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>price</span><span style="color: #000000;">,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;close&nbsp;price</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>slippage</span><span style="color: #000000;">,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;slippage</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>color&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>arrow_color</span><span>&nbsp;&nbsp;</span><span>//&nbsp;color</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>ticket</span></p> 
+<p><span>[in] &nbsp;Unique number of the order ticket.</span></p> 
+<p><span>lots</span></p> 
+<p><span>[in] &nbsp;Number of lots.</span></p> 
+<p><span>price</span></p> 
+<p><span>[in] &nbsp;Closing price.</span></p> 
+<p><span>slippage</span></p> 
+<p><span>[in] &nbsp;Value of the maximum price slippage in points.</span></p> 
+<p><span>arrow_color</span></p> 
+<p><span>[in] &nbsp;Color of the closing arrow on the chart. If the parameter is missing or has CLR_NONE value closing arrow will not be drawn on the chart.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>Returns true if successful, otherwise false. To get additional <a href="/constants/errorswarnings/enum_trade_return_codes">error</a> information, one has to call the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">iRSI</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,14,</span><span style="color: #0000ff;">PRICE_CLOSE</span><span>,0)&gt;75)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">OrderClose</span><span>(order_id,1,</span><span style="color: #0000ff;">Ask</span><span>,3,Red);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

@@ -1,0 +1,27 @@
+<h1>While Loop Operator</h1> 
+<p><span>The </span><span style="color: #0000ff;">while</span><span> operator consists of a checked expression and the operator, which must be fulfilled:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">while</span><span>(expression)</span><br> <span>&nbsp;&nbsp;operator;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>If the expression is true, the operator is executed until the expression becomes false. If the expression is false, the control is passed to the next operator. The expression value is defined before the operator is executed. Therefore, if the expression is false from the very beginning, the operator will not be executed at all.</span></p> 
+<p><span>Note</span></p> 
+<p><span>If it is expected that a large number of iterations will be handled in a loop, it is advisable that you check the fact of forced program termination using the <a href="/check/isstopped">IsStopped()</a> function.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">while</span><span>(k&lt;n&nbsp;&amp;&amp;&nbsp;!</span><span style="color: #0000ff;">IsStopped</span><span>())</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;y=y*x;</span><br> <span>&nbsp;&nbsp;&nbsp;k++;</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/variables/initialization">Initialization of Variables</a>, <a href="/basis/variables/variable_scope">Visibility Scope and Lifetime of Variables</a>, <a href="/basis/variables/object_live">Creating and Deleting Objects</a></span></p> 
+<br>

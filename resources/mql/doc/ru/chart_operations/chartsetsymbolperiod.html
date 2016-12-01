@@ -13,13 +13,13 @@
 <p><span>chart_id</span></p> 
 <p><span>[in] &nbsp;Идентификатор графика. 0 означает текущий график.</span></p> 
 <p><span>symbol</span></p> 
-<p><span>[in] &nbsp;Символ графика. <a href="/ru/basis/types/void">NULL</a> oзначает символ текущего графика (к которому прикреплен эксперт)</span></p> 
+<p><span>[in] &nbsp;Символ графика. <a href="/basis/types/void">NULL</a> oзначает символ текущего графика (к которому прикреплен эксперт)</span></p>
 <p><span>period</span></p> 
-<p><span>[in] &nbsp;Период графика (таймфрейм). Может принимать одно из значений значений перечисления <a href="/ru/constants/chartconstants/enum_timeframes">ENUM_TIMEFRAMES</a>. 0 означает период текущего графика.</span></p> 
+<p><span>[in] &nbsp;Период графика (таймфрейм). Может принимать одно из значений значений перечисления <a href="/constants/chartconstants/enum_timeframes">ENUM_TIMEFRAMES</a>. 0 означает период текущего графика.</span></p>
 <p><span>Возвращаемое значение</span></p> 
-<p><span>Возвращает true в случае удачного помещения команды в очередь графика, иначе false. Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Возвращает true в случае удачного помещения команды в очередь графика, иначе false. Чтобы получить информацию об <a href="/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/check/getlasterror">GetLastError()</a>.</span></p>
 <p><span>Примечание</span></p> 
 <p><span>Смена символа/периода влечет за собой переинициализацию эксперта, прикрепленного к соответствующему графику. На оффлайновых графиках переинициализация не происходит, осуществляется только обновление графика (аналогично команде Refresh в терминале).</span></p> 
 <p><span>Смотри также</span></p> 
-<p><span> <a href="/ru/chart_operations/chartsymbol">ChartSymbol()</a>, <a href="/ru/chart_operations/chartperiod">ChartPeriod()</a></span></p> 
+<p><span> <a href="/chart_operations/chartsymbol">ChartSymbol()</a>, <a href="/chart_operations/chartperiod">ChartPeriod()</a></span></p>
 <br>

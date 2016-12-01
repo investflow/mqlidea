@@ -1,5 +1,5 @@
 <h1>Статистика тестирования</h1> 
-<p><span>После окончания тестирования вычисляются статистические показатели результатов торговли по множеству параметров. Значения показателей можно получить с помощью функции <a href="/ru/common/testerstatistics">TesterStatistics()</a>, указав идентификатор показателя из перечисления ENUM_STATISTICS.</span></p> 
+<p><span>После окончания тестирования вычисляются статистические показатели результатов торговли по множеству параметров. Значения показателей можно получить с помощью функции <a href="/common/testerstatistics">TesterStatistics()</a>, указав идентификатор показателя из перечисления ENUM_STATISTICS.</span></p>
 <p><span>Хотя при вычислении статистики используются показатели двух типов - int и double - функция возвращает все значения в виде double. Все статистические величины, имеющие тип double, по умолчанию выражаются в</span><span> валюте депозита, если не сказано иное.</span></p> 
 <p><a id="enum_statistics"></a><span style="font-weight: bold;">ENUM_STATISTICS</span></p> 
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
@@ -137,7 +137,7 @@
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>STAT_PROFIT_FACTOR</span></p> </td> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Прибыльность – отношение </span><span>STAT_GROSS_PROFIT/STAT_GROSS_LOSS. Если STAT_GROSS_LOSS=0, то прибыльность принимает значение <a href="/ru/constants/namedconstants/typeconstants">DBL_MAX</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Прибыльность – отношение </span><span>STAT_GROSS_PROFIT/STAT_GROSS_LOSS. Если STAT_GROSS_LOSS=0, то прибыльность принимает значение <a href="/constants/namedconstants/typeconstants">DBL_MAX</a></span></p> </td>
     <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
@@ -147,7 +147,7 @@
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>STAT_CUSTOM_ONTESTER</span></p> </td> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение рассчитанного пользовательского критерия оптимизации, возвращаемого функцией <a href="/ru/basis/function/events#ontester">OnTester()</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение рассчитанного пользовательского критерия оптимизации, возвращаемого функцией <a href="/basis/function/events#ontester">OnTester()</a></span></p> </td>
     <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 

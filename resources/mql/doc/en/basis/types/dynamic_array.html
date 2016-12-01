@@ -1,0 +1,33 @@
+<h1>Dynamic Array Object</h1> 
+<h3>Dynamic Arrays</h3> 
+<p><span>Maximum 4-dimension <a href="/basis/variables#array_define">array</a> can be declared. When declaring a dynamic array (an array of unspecified value in the first pair of square brackets), the compiler automatically creates a variable of the above structure (a dynamic array object) and provides a code for the correct initialization.</span></p> 
+<p><span>Dynamic arrays are automatically freed when going beyond the visibility area of the block they are declared in.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">double</span><span>&nbsp;matrix[][</span><span style="color: #008080;">10</span><span>][</span><span style="color: #008080;">20</span><span>];&nbsp;</span><span style="color: #808080;">//&nbsp;3-dimensional&nbsp;dynamic&nbsp;array</span><br> <span style="color: #0000ff;">ArrayResize</span><span>(matrix,</span><span style="color: #008080;">5</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Set&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;first&nbsp;dimension</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h3><a id="static_array"></a>Static Arrays</h3> 
+<p><span>When all significant array dimensions are explicitly specified, the compiler pre-allocates the necessary memory size. Such an array is called static. Nevertheless, the compiler allocates additional memory for the object of a dynamic array, which (object) is associated with the pre-allocated static buffer (memory part for storing the array).</span></p> 
+<p><span>Creating a dynamic array object is due to the possible need to pass this static array as a parameter to some function.</span></p> 
+<p><span style="font-weight: bold;">Examples:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">double</span><span>&nbsp;stat_array[</span><span style="color: #008080;">5</span><span>];&nbsp;</span><span style="color: #808080;">//&nbsp;1-dimensional&nbsp;static&nbsp;array</span><br> <span>some_function(stat_array);</span><br> <span>...</span><br> <span style="color: #0000ff;">bool</span><span>&nbsp;some_function(</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;array[])</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">ArrayResize</span><span>(array,</span><span style="color: #008080;">100</span><span>)&lt;</span><span style="color: #008080;">0</span><span>)&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">true</span><span>);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h3>Arrays in Structures</h3> 
+<p><span>When a static array is declared as a member of a structure, a dynamic array object is not created. This is done to ensure compatibility of data structures used in the Windows API.</span></p> 
+<p><span>However, static arrays that are declared as members of structures can also be passed to MQL5 functions. In this case, when passing the parameter, a temporary object of a dynamic array will be created. Such an object is linked with the static array - member of structure.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/array">Array Functions</a>, <a href="/basis/variables/initialization">Initialization of Variables</a>, <a href="/basis/variables/variable_scope">Visibility Scope and Lifetime of Variables</a>, <a href="/basis/variables/object_live">Creating and Deleting Objects</a></span></p> 
+<br>

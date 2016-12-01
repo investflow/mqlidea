@@ -24,17 +24,17 @@
 <p><span>name</span></p> 
 <p><span>[in] &nbsp;Имя символа.</span></p> 
 <p><span>prop_id</span></p> 
-<p><span>[in] &nbsp;Идентификатор свойства символа. Значение может быть одним из значений перечисления <a href="/ru/constants/environment_state/marketinfoconstants#enum_symbol_info_double">ENUM_SYMBOL_INFO_DOUBLE</a>.</span></p> 
+<p><span>[in] &nbsp;Идентификатор свойства символа. Значение может быть одним из значений перечисления <a href="/constants/environment_state/marketinfoconstants#enum_symbol_info_double">ENUM_SYMBOL_INFO_DOUBLE</a>.</span></p>
 <p><span>double_var</span></p> 
 <p><span>[out] &nbsp;Переменная типа double, принимающая &nbsp;значение запрашиваемого свойства.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
-<p><span>Значение типа double. В случае неудачного выполнения информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибкe</a> можно получить с помощью функции <a href="/ru/check/getlasterror">GetLastError()</a>:</span></p> 
+<p><span>Значение типа double. В случае неудачного выполнения информацию об <a href="/constants/errorswarnings/errorcodes">ошибкe</a> можно получить с помощью функции <a href="/check/getlasterror">GetLastError()</a>:</span></p>
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4106 – символ не выбран в "Обзоре рынка" (нет в списке доступных),</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4051 – неверный идентификатор свойства символа,</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4024 – внутренняя ошибка.</span></p> 
 <p><span>Примечание</span></p> 
-<p><span>Если функция используется для получения информации о последнем тике, то лучше использовать <a href="/ru/marketinformation/symbolinfotick">SymbolInfoTick()</a>. Вполне возможно, что по данному символу с момента подключения терминала к торговому счету не было еще ни одной котировки. В таком случае запрашиваемое значение будет неопределенным.</span></p> 
-<p><span>В большинстве случаев достаточно использовать функцию <a href="/ru/marketinformation/symbolinfotick">SymbolInfoTick()</a>, которая позволяет получить за один вызов значения Ask, Bid, Last, Volume и время прихода последнего тика.</span></p> 
+<p><span>Если функция используется для получения информации о последнем тике, то лучше использовать <a href="/marketinformation/symbolinfotick">SymbolInfoTick()</a>. Вполне возможно, что по данному символу с момента подключения терминала к торговому счету не было еще ни одной котировки. В таком случае запрашиваемое значение будет неопределенным.</span></p>
+<p><span>В большинстве случаев достаточно использовать функцию <a href="/marketinformation/symbolinfotick">SymbolInfoTick()</a>, которая позволяет получить за один вызов значения Ask, Bid, Last, Volume и время прихода последнего тика.</span></p>
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 

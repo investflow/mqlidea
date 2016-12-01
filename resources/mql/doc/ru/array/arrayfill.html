@@ -11,9 +11,9 @@
 </div> 
 <p><span>Параметры</span></p> 
 <p><span>array[]</span></p> 
-<p><span>[out] &nbsp;Массив простого типа (</span><span><a href="/ru/basis/types/integer/integertypes">char</a>, <a href="/ru/basis/types/integer/integertypes">uchar</a>, <a href="/ru/basis/types/integer/integertypes">short</a>, <a href="/ru/basis/types/integer/integertypes">ushort</a>, <a href="/ru/basis/types/integer/integertypes">int</a>, <a href="/ru/basis/types/integer/integertypes">uint</a>, <a href="/ru/basis/types/integer/integertypes">long</a>, <a href="/ru/basis/types/integer/integertypes">ulong</a>, <a href="/ru/basis/types/integer/boolconst">bool</a>, <a href="/ru/basis/types/integer/color">color</a>, <a href="/ru/basis/types/integer/datetime">datetime</a>, <a href="/ru/basis/types/double">float</a>, <a href="/ru/basis/types/double">double</a>).</span></p> 
+<p><span>[out] &nbsp;Массив простого типа (</span><span><a href="/basis/types/integer/integertypes">char</a>, <a href="/basis/types/integer/integertypes">uchar</a>, <a href="/basis/types/integer/integertypes">short</a>, <a href="/basis/types/integer/integertypes">ushort</a>, <a href="/basis/types/integer/integertypes">int</a>, <a href="/basis/types/integer/integertypes">uint</a>, <a href="/basis/types/integer/integertypes">long</a>, <a href="/basis/types/integer/integertypes">ulong</a>, <a href="/basis/types/integer/boolconst">bool</a>, <a href="/basis/types/integer/color">color</a>, <a href="/basis/types/integer/datetime">datetime</a>, <a href="/basis/types/double">float</a>, <a href="/basis/types/double">double</a>).</span></p>
 <p><span>start</span></p> 
-<p><span>[in] &nbsp;Индекс начального элемента (с какого элемента заполнять). </span><span>При этом не учитывается установленный <a href="/ru/array/arraysetasseries">флаг серийности</a>.</span></p> 
+<p><span>[in] &nbsp;Индекс начального элемента (с какого элемента заполнять). </span><span>При этом не учитывается установленный <a href="/array/arraysetasseries">флаг серийности</a>.</span></p>
 <p><span>count</span></p> 
 <p><span>[in] &nbsp;Количество элементов, которое следует заполнить.</span></p> 
 <p><span>value</span></p> 
@@ -21,7 +21,7 @@
 <p><span>Возвращаемое значение</span></p> 
 <p><span>Нет возвращаемого значения.</span></p> 
 <p><span>Примечание</span></p> 
-<p><span>При вызове функции ArrayFill() всегда подразумевается обычное направление индексации – слева направо, то есть изменение порядка доступа к элементам массива с помощью функции <a href="/ru/array/arraysetasseries">ArraySetAsSeries()</a> не принимается во внимание. </span></p> 
+<p><span>При вызове функции ArrayFill() всегда подразумевается обычное направление индексации – слева направо, то есть изменение порядка доступа к элементам массива с помощью функции <a href="/array/arraysetasseries">ArraySetAsSeries()</a> не принимается во внимание. </span></p>
 <p><span>Многомерный массив при обработке функцией ArrayFill() представляется одномерным, например, массив array[2][4] обрабатывается как array[8], поэтому при работе с этим массивом допустимо указать индекс начального элемента равным 5. Таким образом, вызов ArrayFill(array, 5, 2, 3.14) для массива array[2][4] заполнит значением 3.14 элементы массива array[1][1] и array[1][2].</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 

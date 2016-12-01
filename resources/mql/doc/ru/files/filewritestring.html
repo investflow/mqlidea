@@ -11,15 +11,15 @@
 </div> 
 <p><span>Параметры</span></p> 
 <p><span>file_handle</span></p> 
-<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/ru/files/fileopen">FileOpen()</a>.</span></p> 
+<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/files/fileopen">FileOpen()</a>.</span></p>
 <p><span>text_string</span></p> 
 <p><span>[in] &nbsp;Строка.</span></p> 
 <p><span>length=0</span></p> 
 <p><span>[in] &nbsp;Количество символов, которые нужно записать. Параметр необходим для записи строки в файл типа BIN. Если размер не указан, то записывается вся строка без завершающего 0. Если указан размер меньший, чем длина строки, то записывается часть строки без завершающего 0. Если указан размер больший, чем длина строки, то строка дописывается соответствующим количеством нулей. Для файлов типа CSV и TXT этот параметр игнорируется и строка записывается полностью.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
-<p><span>В случае удачи функция возвращает количество записанных байт или 0 в случае ошибки. </span><span>Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span><span> Файловый указатель перемещается на это же количество байт.</span></p> 
+<p><span>В случае удачи функция возвращает количество записанных байт или 0 в случае ошибки. </span><span>Чтобы получить информацию об <a href="/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/check/getlasterror">GetLastError()</a>.</span><span> Файловый указатель перемещается на это же количество байт.</span></p>
 <p><span>Примечание</span></p> 
-<p><span>Следует иметь в виду, что при записи в файл, открытый с <a href="/ru/constants/io_constants/fileflags">флагом</a> FILE_UNICODE (либо без флага FILE_ANSI), количество записанных байт будет в 2 раза больше количества записанных символов строки. При записи в файл, открытый с флагом FILE_ANSI, количество записанных байт будет совпадать с количеством записанных символов строки.</span></p> 
+<p><span>Следует иметь в виду, что при записи в файл, открытый с <a href="/constants/io_constants/fileflags">флагом</a> FILE_UNICODE (либо без флага FILE_ANSI), количество записанных байт будет в 2 раза больше количества записанных символов строки. При записи в файл, открытый с флагом FILE_ANSI, количество записанных байт будет совпадать с количеством записанных символов строки.</span></p>
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -31,5 +31,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/basis/types/stringconst">Тип string</a>, <a href="/ru/convert/stringformat">StringFormat()</a></span></p> 
+<p><span><a href="/basis/types/stringconst">Тип string</a>, <a href="/convert/stringformat">StringFormat()</a></span></p>
 <br>

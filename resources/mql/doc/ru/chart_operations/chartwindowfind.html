@@ -5,7 +5,7 @@
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ChartWindowFind</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;</span><span>indicator_shortname</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;короткое&nbsp;имя&nbsp;индикатора,&nbsp;см&nbsp;<a href="/ru/constants/indicatorconstants/customindicatorproperties#enum_customind_property_string">INDICATOR_SHORTNAME</a></span></p></td> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ChartWindowFind</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;</span><span>indicator_shortname</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;короткое&nbsp;имя&nbsp;индикатора,&nbsp;см&nbsp;<a href="/constants/indicatorconstants/customindicatorproperties#enum_customind_property_string">INDICATOR_SHORTNAME</a></span></p></td>
    </tr> 
   </tbody> 
  </table> 
@@ -29,8 +29,8 @@
 <p><span>Номер подокна в случае удачи. Ноль означает главное окно графика. В случае неудачи возвращает -1.</span></p> 
 <p><span>Примечание</span></p> 
 <p><span>Если вызывается второй вариант функции (без параметров) из скрипта или эксперта, то она возвращает -1.</span></p> 
-<p><span>Не следует путать короткое имя индикатора и имя файла, которое указывается при создании индикатора функцией <a href="/ru/indicators/icustom">iCustom()</a>. Если короткое наименование индикатора не задается явным образом, то при компиляции в нем указывается имя файла с исходным кодом индикатора. </span></p> 
-<p><span>Необходимо правильно формировать короткое имя индикатора, которое с помощью функции </span><span><a href="/ru/customind/indicatorsetstring">IndicatorSetString()</a> записывается в свойство <a href="/ru/constants/indicatorconstants/customindicatorproperties#enum_customind_property_string">INDICATOR_SHORTNAME</a>. Мы рекомендуем, чтобы короткое имя содержало значения входных параметров индикатора, так как идентификация удаляемого с графика индикатора в функции <a href="/ru/chart_operations/chartindicatordelete">ChartIndicatorDelete()</a> производится именно по короткому имени.</span></p> 
+<p><span>Не следует путать короткое имя индикатора и имя файла, которое указывается при создании индикатора функцией <a href="/indicators/icustom">iCustom()</a>. Если короткое наименование индикатора не задается явным образом, то при компиляции в нем указывается имя файла с исходным кодом индикатора. </span></p>
+<p><span>Необходимо правильно формировать короткое имя индикатора, которое с помощью функции </span><span><a href="/customind/indicatorsetstring">IndicatorSetString()</a> записывается в свойство <a href="/constants/indicatorconstants/customindicatorproperties#enum_customind_property_string">INDICATOR_SHORTNAME</a>. Мы рекомендуем, чтобы короткое имя содержало значения входных параметров индикатора, так как идентификация удаляемого с графика индикатора в функции <a href="/chart_operations/chartindicatordelete">ChartIndicatorDelete()</a> производится именно по короткому имени.</span></p>
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -42,5 +42,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/objects/objectcreate">ObjectCreate()</a>, <a href="/ru/objects/objectfind">ObjectFind()</a></span></p> 
+<p><span><a href="/objects/objectcreate">ObjectCreate()</a>, <a href="/objects/objectfind">ObjectFind()</a></span></p>
 <br>

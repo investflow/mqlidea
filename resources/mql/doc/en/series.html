@@ -1,0 +1,124 @@
+<h1>Access to Timeseries and Indicator Data</h1> 
+<p><span>These are functions for working with timeseries and indicators. A timeseries differs from the usual data array by its reverse ordering - elements of timeseries are indexed from the end of an array to its begin (from the most recent data to the oldest ones). To copy the time-series values and indicator data, it's recommended to use <a href="/basis/types/dynamic_array">dynamic arrays</a> only, because copying functions are designed to allocate the necessary size of arrays that receive values.</span></p> 
+<p><span>There is an </span><span style="font-weight: bold;">important exception </span><span>to this rule</span><span>: if timeseries and indicator values need to be copied often, for example at each call of <a href="/basis/function/events#ontick">OnTick()</a> in Expert Advisors or at each call of <a href="/basis/function/events#oncalculate">OnCalculate()</a> in indicators, in this case one should better use <a href="/basis/types/dynamic_array#static_array">statically distributed arrays</a>, because </span><span style="font-weight: bold;">operations of memory allocation </span><span>for dynamic arrays </span><span style="font-weight: bold;">require additional time</span><span>, and this will have effect during testing and optimization</span><span>.</span></p> 
+<p><span>When using functions accessing timeseries and indicator values, indexing direction should be taken into account. This is described in the <a href="/series/bufferdirection">Indexing Direction in Arrays, Buffers and Timeseries</a> section.</span></p> 
+<p><span>Access to indicator and timeseries data is implemented irrespective of the fact whether the requested data are ready (the so called <a href="/series/timeseries_access#synchronized">asynchronous access</a>). This is critically important for the calculation of custom indicator, so if there are no data, functions of </span><span style="font-style: italic;">Copy...()</span><span> type immediately return an error. However, when accessing form Expert Advisors and scripts, several attempts to receive data are made in a small pause, which is aimed at providing some time necessary to download required timeseries or to calculate indicator values.</span></p> 
+<p><span>If data (<a href="/chart_operations/symbolwindow">symbol</a> name and/or <a href="/chart_operations/periodwindow">timeframe</a> differ from the current ones) are requested from another chart, the situation is possible that the corresponding chart was not opened in the client terminal and the necessary data must be requested from the server. In this case, error <a href="/constants/errorswarnings/errorcodes">ERR_HISTORY_WILL_UPDATED</a> (4066 - the requested history data are under updating) will be placed in the last_error variable, and one will has to re-request (see example of <a href="/array/arraycopyseries">ArrayCopySeries()</a>).</span></p> 
+<p><span>The <a href="/series/timeseries_access">Organizing Data Access</a> section describes details of receiving, storing and requesting price data in the MetaTrader 4 client terminal.</span></p> 
+<p style="text-align: center;"><img alt="Direction of indexing in a timeseries and in a commonl array" title="Direction of indexing in a timeseries and in a commonl array" width="628" height="415" style="margin:0px auto 0px auto;width:628px;height:415px;border:none" src="https://c.mql4.com/i/docs/en/timeseries.png"></p> 
+<p><span>It is historically accepted that an access to the price data in an array is performed from the end of the data. Physically, the new data are always written at the array end, but the index of the array is always equal to zero. The 0 index in the timeseries array denotes data of the current bar, i.e. the bar that corresponds to the unfinished time interval in this timeframe.</span></p> 
+<p><span>A timeframe is the time period, during which a single price bar is formed. There are several predefined <a href="/constants/chartconstants/enum_timeframes">standard timeframes</a>. </span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;"> Function</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Action</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/seriesinfointeger">SeriesInfoInteger</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns information about the state of historical data</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/refreshrates">RefreshRates</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Refreshing of data in pre-defined variables and series arrays</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/copyrates">CopyRates</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Gets history data of the <a href="/constants/structures/mqlrates">Rates</a> structure for a specified symbol and period into an array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/copytime">CopyTime</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Gets history data on bar opening time for a specified symbol and period into an array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/copyopen">CopyOpen</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Gets history data on bar opening price for a specified symbol and period into an array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/copyhigh">CopyHigh</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Gets history data on maximal bar price for a specified symbol and period into an array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/copylow">CopyLow</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Gets history data on minimal bar price for a specified symbol and period into an array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/copyclose">CopyClose</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Gets history data on bar closing price for a specified symbol and period into an array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/copytickvolume">CopyTickVolume</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Gets history data on tick volumes for a specified symbol and period into an array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/barsfunction">Bars</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the number of bars count in the history for a specified symbol and period</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/ibars">iBars</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the number of bars on the specified chart</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/ibarshift">iBarShift</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the index of the bar which covers the specified time</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/iclose">iClose</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns Close price value for the bar of specified symbol with timeframe and shift</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/ihigh">iHigh</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns High price value for the bar of specified symbol with timeframe and shift</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/ihighest">iHighest</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the shift of the maximum value over a specific number of bars</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/ilow">iLow</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns Low price value for the bar of indicated symbol with timeframe and shift</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/ilowest">iLowest</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the shift of the lowest value over a specific number of bars</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/iopen">iOpen</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns Open price value for the bar of specified symbol with timeframe and shift</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/itime">iTime</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns time value for the bar of specified symbol with timeframe and shift</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/series/ivolume">iVolume</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns Tick Volume value for the bar of specified symbol with timeframe and shift</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Despite the fact that by using the <a href="/array/arraysetasseries">ArraySetAsSeries()</a> function it is possible to set up in <a href="/basis/variables#array_define">arrays</a> access to elements like that in timeseries, it should be remembered that the array elements are physically stored in one and the same order - only indexing direction changes. To demonstrate this fact let's perform an example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;TimeAsSeries[];</span><br> <span style="color: #808080;">//---&nbsp;set&nbsp;access&nbsp;to&nbsp;the&nbsp;array&nbsp;like&nbsp;to&nbsp;a&nbsp;timeseries</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArraySetAsSeries</span><span>(TimeAsSeries,</span><span style="color: #0000ff;">true</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ResetLastError</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;copied=</span><span style="color: #0000ff;">CopyTime</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,0,10,TimeAsSeries);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(copied&lt;=0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;copy&nbsp;operation&nbsp;of&nbsp;the&nbsp;open&nbsp;time&nbsp;values&nbsp;for&nbsp;last&nbsp;10&nbsp;bars&nbsp;has&nbsp;failed"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"TimeCurrent&nbsp;="</span><span>,</span><span style="color: #0000ff;">TimeCurrent</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ArraySize(Time)&nbsp;="</span><span>,</span><span style="color: #0000ff;">ArraySize</span><span>(TimeAsSeries));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;size=</span><span style="color: #0000ff;">ArraySize</span><span>(TimeAsSeries);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;size;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"TimeAsSeries["</span><span>+i+</span><span style="color: #008080;">"]&nbsp;="</span><span>,TimeAsSeries[i]);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;ArrayNotSeries[];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArraySetAsSeries</span><span>(ArrayNotSeries,</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ResetLastError</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;copied=</span><span style="color: #0000ff;">CopyTime</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,0,10,ArrayNotSeries);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(copied&lt;=0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;copy&nbsp;operation&nbsp;of&nbsp;the&nbsp;open&nbsp;time&nbsp;values&nbsp;for&nbsp;last&nbsp;10&nbsp;bars&nbsp;has&nbsp;failed"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;size=</span><span style="color: #0000ff;">ArraySize</span><span>(ArrayNotSeries);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=size-1;i&gt;=0;i--)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ArrayNotSeries["</span><span>+i+</span><span style="color: #008080;">"]&nbsp;="</span><span>,ArrayNotSeries[i]);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>As a result we will get the output like this:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>TimeCurrent&nbsp;=&nbsp;2009.06.11&nbsp;14:16:23</span><br> <span>ArraySize(Time)&nbsp;=&nbsp;10</span><br> <span>TimeAsSeries[0]&nbsp;=&nbsp;2009.06.11&nbsp;14:00:00</span><br> <span>TimeAsSeries[1]&nbsp;=&nbsp;2009.06.11&nbsp;13:00:00</span><br> <span>TimeAsSeries[2]&nbsp;=&nbsp;2009.06.11&nbsp;12:00:00</span><br> <span>TimeAsSeries[3]&nbsp;=&nbsp;2009.06.11&nbsp;11:00:00</span><br> <span>TimeAsSeries[4]&nbsp;=&nbsp;2009.06.11&nbsp;10:00:00</span><br> <span>TimeAsSeries[5]&nbsp;=&nbsp;2009.06.11&nbsp;09:00:00</span><br> <span>TimeAsSeries[6]&nbsp;=&nbsp;2009.06.11&nbsp;08:00:00</span><br> <span>TimeAsSeries[7]&nbsp;=&nbsp;2009.06.11&nbsp;07:00:00</span><br> <span>TimeAsSeries[8]&nbsp;=&nbsp;2009.06.11&nbsp;06:00:00</span><br> <span>TimeAsSeries[9]&nbsp;=&nbsp;2009.06.11&nbsp;05:00:00</span><br> <span>&nbsp;</span><br> <span>ArrayNotSeries[9]&nbsp;=&nbsp;2009.06.11&nbsp;14:00:00</span><br> <span>ArrayNotSeries[8]&nbsp;=&nbsp;2009.06.11&nbsp;13:00:00</span><br> <span>ArrayNotSeries[7]&nbsp;=&nbsp;2009.06.11&nbsp;12:00:00</span><br> <span>ArrayNotSeries[6]&nbsp;=&nbsp;2009.06.11&nbsp;11:00:00</span><br> <span>ArrayNotSeries[5]&nbsp;=&nbsp;2009.06.11&nbsp;10:00:00</span><br> <span>ArrayNotSeries[4]&nbsp;=&nbsp;2009.06.11&nbsp;09:00:00</span><br> <span>ArrayNotSeries[3]&nbsp;=&nbsp;2009.06.11&nbsp;08:00:00</span><br> <span>ArrayNotSeries[2]&nbsp;=&nbsp;2009.06.11&nbsp;07:00:00</span><br> <span>ArrayNotSeries[1]&nbsp;=&nbsp;2009.06.11&nbsp;06:00:00</span><br> <span>ArrayNotSeries[0]&nbsp;=&nbsp;2009.06.11&nbsp;05:00:00</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>As we see from the output, as the index of TimeAsSeries array increases, the time value of the index decreases, i.e. we move from the present to the past. For the common array ArrayNotSeries the result is different - as index grows, we move from past to present.</span></p> 
+<p><span>See Also</span></p> 
+<p><span><a href="/array/arrayisdynamic">ArrayIsDynamic()</a>, <a href="/array/arraygetasseries">ArrayGetAsSeries()</a>, <a href="/array/arraysetasseries">ArraySetAsSeries()</a>, <a href="/array/arrayisseries">ArrayIsSeries()</a></span></p> 
+<br>

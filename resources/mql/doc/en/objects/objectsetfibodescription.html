@@ -1,0 +1,35 @@
+<h1>ObjectSetFiboDescription</h1> 
+<p><span>The function sets a new description to a level of a Fibonacci object.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ObjectSetFiboDescription</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&nbsp;&nbsp;&nbsp;</span><span>object_name</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>index</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;level&nbsp;index</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;</span><span>text&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;new&nbsp;description</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>object_name</span></p> 
+<p><span>[in] &nbsp;Object name.</span></p> 
+<p><span>index</span></p> 
+<p><span>[in] &nbsp;Index of the Fibonacci level (0-31).</span></p> 
+<p><span>text</span></p> 
+<p><span>[in] &nbsp;New description of the level.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>The function returns true if successful, otherwise false. To get the detailed <a href="/constants/errorswarnings/errorcodes">error</a> information, one has to call the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span>Note</span></p> 
+<p><span>The amount of Fibonacci levels depends on the object type. The maximum amount of Fibonacci levels is 32.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectSetFiboDescription</span><span>(</span><span style="color: #008080;">"MyFiboObject"</span><span>,2,</span><span style="color: #008080;">"Second&nbsp;line"</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/objects/objectgetfibodescription">ObjectGetFiboDescription()</a></span></p> 
+<br>

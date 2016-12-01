@@ -1,0 +1,45 @@
+<h1>Local Variables</h1> 
+<p><span>A variable declared inside a <a href="/basis/function">function</a> is local. The scope of a local variable is limited to the function range inside which it is declared. Local variable can be <a href="/basis/variables/initialization">initialized</a> by outcome of any <a href="/basis/operators/expression">expression</a>. Every call of the function initializes a local variable. Local variables are stored in memory area of the corresponding function.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;somefunc()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;ret_code=0;</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(ret_code);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span><a href="/basis/variables/variable_scope">Scope</a> of a variable is a program part, in which a variable can be referred to. Variables declared inside a block (at the internal level), have the <a href="/basis/operators/compound">block</a> as their scope. The block scope start with the variable declaration and ends with the final right brace.</span></p> 
+<p><span>Local variables declared in the beginning of a function also have the scope of block, as well as <a href="/basis/function/call#argument">function parameters</a> that are local variables. Any block can contain variable declarations. If blocks are nested and the <a href="/basis/syntax/identifiers">identifier</a> in the external block has the same name as the identifier in the internal block, the external block identifier is hidden, until the operation of the internal block is over.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;i=5;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;local&nbsp;variable&nbsp;of&nbsp;the&nbsp;function</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;i=10;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;function&nbsp;variable</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Inside&nbsp;block&nbsp;i&nbsp;=&nbsp;"</span><span>,i);&nbsp;</span><span style="color: #808080;">//&nbsp;result&nbsp;is&nbsp;&nbsp;i=10;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Outside&nbsp;block&nbsp;i&nbsp;=&nbsp;"</span><span>,i);&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;result&nbsp;is&nbsp;&nbsp;i=5;</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>This means that while the internal block is running, it sees values of its own local identifiers, not the values of identifiers with identical names in the external block.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;i=5;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;local&nbsp;variable&nbsp;of&nbsp;the&nbsp;function</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;3;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Inside&nbsp;for&nbsp;i&nbsp;=&nbsp;"</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Outside&nbsp;the&nbsp;block&nbsp;i&nbsp;=&nbsp;"</span><span>,i);</span><br> <span>&nbsp;&nbsp;}</span><br> <span>/*&nbsp;Execution&nbsp;result</span><br> <span>Inside&nbsp;</span><span style="color: #0000ff;">for</span><span>&nbsp;i&nbsp;=&nbsp;0</span><br> <span>Inside&nbsp;</span><span style="color: #0000ff;">for</span><span>&nbsp;i&nbsp;=&nbsp;1</span><br> <span>Inside&nbsp;</span><span style="color: #0000ff;">for</span><span>&nbsp;i&nbsp;=&nbsp;2</span><br> <span>Outside&nbsp;block&nbsp;i&nbsp;=&nbsp;5</span><br> <span>*/</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Local variables declared as <a href="/basis/variables/static">static</a> have the scope of the block, despite the fact that they exist since the program start.</span></p> 
+<h2><a id="stack"></a>Stack</h2> 
+<p><span>In every MQL4 program, a special memory area called stack is allocated for storing local function variables that are created automatically. One stack is allocated for all functions. The default stack size is 256 kb, the stack size can be managed using the <a href="/basis/preprosessor/compilation">#property stacksize</a> compiler directive.</span></p> 
+<p><span><a href="/basis/variables/static">Static</a> local variables are stored in the same place where other static and <a href="/basis/variables/global">global</a> variables are stored - in a special memory area, which exists separately from the stack. <a href="/basis/variables/object_live">Dynamically</a> created variables also use a memory area separate from the stack.</span></p> 
+<p><span>With each function call, a place on the stack is allocated for internal non-static variables. After exiting the function, the memory is available for use again.</span></p> 
+<p><span>If from the first function the second one is called, then the second function occupies the required size from the remaining stack memory for its variables. Thus, when using included functions, stack memory will be sequentially occupied for each function. This may lead to a shortage of memory during one of the function calls, such a situation is called stack overflow.</span></p> 
+<p><span>Therefore, for large local data you should better use dynamic memory - when entering a function, allocate the memory, which is required for local needs, in the system (<a href="/basis/operators/newoperator">new</a>, <a href="/array/arrayresize">ArrayResize()</a>), and when exiting the function, release the memory (<a href="/basis/operators/deleteoperator">delete</a>, <a href="/array/arrayfree">ArrayFree()</a>).</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/types">Data Types</a>, <a href="/basis/oop/incapsulation">Encapsulation and Extensibility of Types</a>,<a href="/basis/variables/initialization">Initialization of Variables</a>, <a href="/basis/variables/variable_scope">Visibility Scope and Lifetime of Variables</a>, <a href="/basis/variables/object_live">Creating and Deleting Objects</a></span></p> 
+<br>

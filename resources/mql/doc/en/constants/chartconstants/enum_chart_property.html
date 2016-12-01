@@ -1,0 +1,334 @@
+<h1>Chart Properties</h1> 
+<p><span>Identifiers of ENUM_CHART_PROPERTY enumerations are used as parameters of <a href="/chart_operations">functions for working with charts</a>. The abbreviation of r/o in the "Property Type" column means that this property is read-only and cannot be changed. The w/o abbreviation in the "Property Type" column means that this property is write-only and it cannot be received. When accessing certain properties, it's necessary to specify an additional parameter-modifier (modifier), which serves to indicate the number of chart subwindows. 0 means the main window.</span></p> 
+<p><span>For functions <a href="/chart_operations/chartsetinteger">ChartSetInteger()</a> and <a href="/chart_operations/chartgetinteger">ChartGetInteger()</a></span></p> 
+<p><a id="enum_chart_property_integer"></a><span style="font-weight: bold;"> ENUM_CHART_PROPERTY_INTEGER</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>ID</span></p> </td> 
+    <td style="vertical-align:top; width:378px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Property Type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_bring_to_top">CHART_BRING_TO_TOP</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Show chart on top of other charts</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool &nbsp; w/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_mouse_scroll">CHART_MOUSE_SCROLL</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Scrolling the chart horizontally using the left mouse button. Vertical scrolling is also available if the value of any following properties is set to true: CHART_SCALEFIX, CHART_SCALEFIX_11 or CHART_SCALE_PT_PER_BAR</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_event_mouse_move">CHART_EVENT_MOUSE_MOVE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Send notifications of mouse move and mouse click events (<a href="/constants/chartconstants/enum_chartevents">CHARTEVENT_MOUSE_MOVE</a>) to all mql4 programs on a chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_event_object_create">CHART_EVENT_OBJECT_CREATE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Send a notification of an event of new object creation (<a href="/constants/chartconstants/enum_chartevents">CHARTEVENT_OBJECT_CREATE</a>) to all mql4-programs on a chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_event_object_delete">CHART_EVENT_OBJECT_DELETE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Send a notification of an event of object deletion (<a href="/constants/chartconstants/enum_chartevents">CHARTEVENT_OBJECT_DELETE</a>) to all mql4-programs on a chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_mode">CHART_MODE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart type (candlesticks, bars or line)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>enum &nbsp; &nbsp; <a href="/constants/chartconstants/chart_view#enum_chart_mode">ENUM_CHART_MODE</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_foreground">CHART_FOREGROUND</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Price chart in the foreground</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_shift">CHART_SHIFT</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Mode of price chart indent from the right border</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_autoscroll">CHART_AUTOSCROLL</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Mode of automatic moving to the right border of the chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_scale">CHART_SCALE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Scale</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int &nbsp; &nbsp; &nbsp; &nbsp;from 0 to 5</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_scalefix">CHART_SCALEFIX</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Fixed scale mode</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_scalefix_11">CHART_SCALEFIX_11</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Scale 1:1 mode</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_scale_pt_per_bar">CHART_SCALE_PT_PER_BAR</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Scale to be specified in points per bar</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_show_ohlc">CHART_SHOW_OHLC</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Show OHLC values in the upper left corner</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_show_bid_line">CHART_SHOW_BID_LINE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Display Bid values as a horizontal line in a chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_show_ask_line">CHART_SHOW_ASK_LINE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Display Ask values as a horizontal line in a chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_show_last_line">CHART_SHOW_LAST_LINE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Display Last values as a horizontal line in a chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_show_period_sep">CHART_SHOW_PERIOD_SEP</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Display vertical separators between adjacent periods</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_show_grid">CHART_SHOW_GRID</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Display grid in the chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_show_volumes">CHART_SHOW_VOLUMES</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Display volume in the chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>enum &nbsp; &nbsp; <a href="/constants/chartconstants/chart_view#enum_chart_volume_mode">ENUM_CHART_VOLUME_MODE</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_show_object_descr">CHART_SHOW_OBJECT_DESCR</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Display textual descriptions of objects (not available for all objects)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_visible_bars">CHART_VISIBLE_BARS</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>The number of bars on the chart that can be displayed</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_windows_total">CHART_WINDOWS_TOTAL</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>The total number of chart windows, including indicator subwindows</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_window_is_visible">CHART_WINDOW_IS_VISIBLE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Visibility of subwindows</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool r/o &nbsp; modifier - subwindow number</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_window_handle">CHART_WINDOW_HANDLE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart window handle (HWND)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_window_ydistance">CHART_WINDOW_YDISTANCE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>The distance between the upper frame of the indicator subwindow and the upper frame of the main chart window, along the vertical Y axis, in pixels. In case of a mouse event, the cursor coordinates are passed in terms of the coordinates of the main chart window, while the coordinates of graphical objects in an indicator subwindow are set relative to the upper left corner of the subwindow. </span></p> <p><span>The value is required for converting the absolute coordinates of the main chart to the local coordinates of a subwindow for correct work with the graphical objects, whose coordinates are set relative to &nbsp;the upper left corner of the subwindow frame.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int r/o &nbsp; &nbsp; modifier - subwindow number</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_first_visible_bar">CHART_FIRST_VISIBLE_BAR</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Number of the first visible bar in the chart. Indexing of bars is the same as for <a href="/series">timeseries</a>.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_width_in_bars">CHART_WIDTH_IN_BARS</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart width in bars</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_width_in_pixels">CHART_WIDTH_IN_PIXELS</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart width in pixels</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_height_in_pixels">CHART_HEIGHT_IN_PIXELS</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart height in pixels</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int &nbsp; &nbsp; &nbsp;modifier - subwindow number</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_background">CHART_COLOR_BACKGROUND</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart background color</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_foreground">CHART_COLOR_FOREGROUND</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Color of axes, scales and OHLC line</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_grid">CHART_COLOR_GRID</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Grid color</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_volume">CHART_COLOR_VOLUME</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Color of volumes and order opening levels</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_chart_up">CHART_COLOR_CHART_UP</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Color for the up bar, shadows and body borders of bull candlesticks</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_chart_down">CHART_COLOR_CHART_DOWN</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Color for the down bar, shadows and body borders of bear candlesticks</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_chart_line">CHART_COLOR_CHART_LINE</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Line chart color and color of "Doji" Japanese candlesticks</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_candle_bull">CHART_COLOR_CANDLE_BULL</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Body color of a bull candlestick</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_candle_bear">CHART_COLOR_CANDLE_BEAR</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Body color of a bear candlestick</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_bid">CHART_COLOR_BID</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Bid price level color</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_ask">CHART_COLOR_ASK</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ask price level color</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_last">CHART_COLOR_LAST</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Line color of the last executed deal price (Last)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_color_stop_level">CHART_COLOR_STOP_LEVEL</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Color of stop order levels (Stop Loss and Take Profit)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_show_trade_levels">CHART_SHOW_TRADE_LEVELS</a></span></p> </td> 
+    <td style="vertical-align:top; width:378px; padding:5px; border:solid thin #b1c2d6;"><p><span>Displaying trade levels in the chart (levels of open orders, Stop Loss, Take Profit and pending orders)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_drag_trade_levels">CHART_DRAG_TRADE_LEVELS</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Permission to drag trading levels on a chart with a mouse. The drag mode is enabled by default (true value)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_show_date_scale">CHART_SHOW_DATE_SCALE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Showing the time scale on a chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_show_price_scale">CHART_SHOW_PRICE_SCALE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Showing the price scale on a chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_is_offline">CHART_IS_OFFLINE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Flag, indicating that chart opened in offline mode</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool &nbsp; r/o</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>For functions <a href="/chart_operations/chartsetdouble">ChartSetDouble()</a> and <a href="/chart_operations/chartgetdouble">ChartGetDouble()</a></span></p> 
+<p><a id="enum_chart_property_double"></a><span style="font-weight: bold;"> ENUM_CHART_PROPERTY_DOUBLE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>ID</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Property Type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_shift_size">CHART_SHIFT_SIZE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The size of the zero bar indent from the right border in percents</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double &nbsp;(from 10 to 50 percents) </span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_fixed_position">CHART_FIXED_POSITION</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart fixed position from the left border in percent value. Chart fixed position is marked by a small gray triangle on the horizontal time axis. It is displayed only if the automatic chart scrolling to the right on tick incoming is disabled (see CHART_AUTOSCROLL property). The bar on a fixed position remains in the same place when zooming in and out.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_fixed_max">CHART_FIXED_MAX</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Fixed &nbsp;chart maximum</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_fixed_min">CHART_FIXED_MIN</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Fixed &nbsp;chart minimum </span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_points_per_bar">CHART_POINTS_PER_BAR</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Scale in points per bar</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_price_min">CHART_PRICE_MIN</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart minimum</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double r/o &nbsp; modifier - subwindow number</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_price_max">CHART_PRICE_MAX</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart maximum</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double r/o &nbsp; modifier - subwindow number</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>For functions <a href="/chart_operations/chartsetstring">ChartSetString()</a> and <a href="/chart_operations/chartgetstring">ChartGetString()</a></span></p> 
+<p><a id="enum_chart_property_string"></a><span style="font-weight: bold;">ENUM_CHART_PROPERTY_STRING</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>ID</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Property Type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/chartconstants/charts_samples#chart_comment">CHART_COMMENT</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Text of a comment in a chart</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;chartMode=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_MODE</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">switch</span><span>(chartMode)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>(</span><span style="color: #0000ff;">CHART_BARS</span><span>):&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_BARS"</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>(</span><span style="color: #0000ff;">CHART_CANDLES</span><span>):&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_CANDLES"</span><span>);</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">default</span><span>:</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_LINE"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;shifted=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_SHIFT</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(shifted)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_SHIFT&nbsp;=&nbsp;true"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_SHIFT&nbsp;=&nbsp;false"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;autoscroll=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_AUTOSCROLL</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(autoscroll)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_AUTOSCROLL&nbsp;=&nbsp;true"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_AUTOSCROLL&nbsp;=&nbsp;false"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;chartHandle=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_WINDOW_HANDLE</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_WINDOW_HANDLE&nbsp;=&nbsp;"</span><span>,chartHandle);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;windows=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_WINDOWS_TOTAL</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_WINDOWS_TOTAL&nbsp;=&nbsp;"</span><span>,windows);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(windows&gt;1)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;windows;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;height=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_HEIGHT_IN_PIXELS</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;priceMin=</span><span style="color: #0000ff;">ChartGetDouble</span><span>(0,</span><span style="color: #0000ff;">CHART_PRICE_MIN</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;priceMax=</span><span style="color: #0000ff;">ChartGetDouble</span><span>(0,</span><span style="color: #0000ff;">CHART_PRICE_MAX</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(i+</span><span style="color: #008080;">":&nbsp;CHART_HEIGHT_IN_PIXELS&nbsp;=&nbsp;"</span><span>,height,</span><span style="color: #008080;">"&nbsp;pixels"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(i+</span><span style="color: #008080;">":&nbsp;CHART_PRICE_MIN&nbsp;=&nbsp;"</span><span>,priceMin);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(i+</span><span style="color: #008080;">":&nbsp;CHART_PRICE_MAX&nbsp;=&nbsp;"</span><span>,priceMax);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/constants/chartconstants/charts_samples">Examples of Working with the Chart</a></span></p> 
+<br>

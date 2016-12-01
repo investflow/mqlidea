@@ -1,0 +1,20 @@
+<h1>Sleep</h1> 
+<p><span>The function suspends execution of the current Expert Advisor or script within a specified interval.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>Sleep</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;</span><span>milliseconds</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;interval</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>milliseconds</span></p> 
+<p><span>[in] &nbsp;Delay interval in milliseconds.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>No return value.</span></p> 
+<p><span>Note</span></p> 
+<p><span>The Sleep() function can't be called for custom indicators, because indicators are executed in the interface thread and must not slow down it. The function has the built-in check of EA halt flag every 0.1 seconds. </span></p> 
+<p><span>Sleep() function does not suspend execution of the Expert Advisor in the <a href="/runtime/testing#alert_etc">Strategy Tester</a>.</span></p> 
+<br>

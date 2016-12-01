@@ -28,7 +28,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
 
     public static final String DOC_NOT_FOUND = "";
 
-    private final Map<String, DocEntry> docEntryMapByText = new HashMap<>();
+    private final Map<String, String> docLinkByText = new HashMap<>();
     private final Map<String, DocEntry> docEntryMapByLink = new HashMap<>();
     private final ClassLoader loader = MQL4DocumentationProvider.class.getClassLoader();
 
@@ -40,15 +40,15 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     }
 
     private void loadResource(@NotNull String name, @NotNull DocEntryType type) {
-        String resource = "/mql/doc/" + name + "-ru.json";
+        String resource = "/mql/doc/" + name + "-" + getDocsLanguage() + ".json";
         try (Reader reader = new InputStreamReader(getClass().getResourceAsStream(resource), StandardCharsets.UTF_8)) {
             Gson gson = new GsonBuilder().create();
             JsonArray arr = gson.fromJson(reader, JsonArray.class);
             for (int i = 0; i < arr.size(); i++) {
                 JsonArray doc = arr.get(i).getAsJsonArray();
                 DocEntry entry = new DocEntry(doc.get(0).getAsString(), doc.get(1).getAsString(), doc.get(2).getAsString(), type);
-                docEntryMapByText.put(entry.token, entry);
                 docEntryMapByLink.put(entry.link, entry);
+                docLinkByText.put(entry.text, entry.link);
             }
         } catch (Exception e) {
             log.error("Error loading resource with docs: " + resource, e);
@@ -70,8 +70,8 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     @Nullable
     @Override
     public String generateDoc(PsiElement element, @Nullable PsiElement originalElement) {
-        DocEntry entry = getEntryByPsiElement(originalElement);
-        return entry == null ? null : generateDocByLink(entry.link);
+        String link = getLinkByElementText(originalElement);
+        return link == null ? null : generateDocByLink(link);
 
     }
 
@@ -95,16 +95,16 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     }
 
     @NotNull
-    private static String docLinkToResource(@Nullable String link) {
-        return "/mql/doc/" + link + ".html";
+    private String docLinkToResource(@Nullable String link) {
+        return "/mql/doc/" + getDocsLanguage() + "/" + link + ".html";
     }
 
     @Nullable
-    private DocEntry getEntryByPsiElement(@Nullable PsiElement originalElement) {
+    private String getLinkByElementText(@Nullable PsiElement originalElement) {
         if (originalElement == null) {
             return null;
         }
-        return docEntryMapByText.get(originalElement.getText());
+        return docLinkByText.get(originalElement.getText());
     }
 
     @Nullable
@@ -118,7 +118,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
 
     @Override
     public boolean handleExternal(PsiElement element, PsiElement originalElement) {
-        return getEntryByPsiElement(originalElement) != null;
+        return getLinkByElementText(originalElement) != null;
     }
 
     @Override
@@ -135,5 +135,9 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     @Override
     public String fetchExternalDocumentation(@NotNull String link, @Nullable PsiElement element) {
         return generateDocByLink(link);
+    }
+
+    public String getDocsLanguage() {
+        return "ru";
     }
 }

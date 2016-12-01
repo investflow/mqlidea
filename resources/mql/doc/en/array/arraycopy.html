@@ -1,0 +1,39 @@
+<h1>ArrayCopy</h1> 
+<p><span>It copies an array into another one.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayCopy</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>dst_array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;destination&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;void&amp;</span><span>&nbsp;&nbsp;</span><span>src_array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;source&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>dst_start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;index&nbsp;starting&nbsp;from&nbsp;which&nbsp;write&nbsp;into&nbsp;destination&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>src_start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;first&nbsp;index&nbsp;of&nbsp;a&nbsp;source&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>count=WHOLE_ARRAY</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;number&nbsp;of&nbsp;elements</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>dst_array[]</span></p> 
+<p><span>[out] &nbsp;Destination array</span></p> 
+<p><span>src_array[]</span></p> 
+<p><span>[in] &nbsp;Source array</span></p> 
+<p><span>dst_start=0</span></p> 
+<p><span>[in] &nbsp;Starting index from the destination array. By default, start index is 0.</span></p> 
+<p><span>src_start=0</span></p> 
+<p><span>[in] &nbsp;Starting index for the source array. By default, start index is 0.</span></p> 
+<p><span>count=WHOLE_ARRAY</span></p> 
+<p><span>[in] &nbsp;Number of elements that should be copied. By default, the whole array is copied (count=<a href="/constants/namedconstants/otherconstants">WHOLE_ARRAY</a>).</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>It returns the number of copied elements.</span></p> 
+<p><span>Note</span></p> 
+<p><span>If count&lt;=0 or count&gt;src_size-src_start, all the remaining array part is copied. Arrays are copied from left to right. For series arrays, the starting position is correctly defined adjusted for copying from left to right. If an array is copied to itself, the result is undefined.</span></p> 
+<p><span>If arrays are of different types, during copying it tries to transform each element of a source array into the type of the destination array. A string array can be copied into a string array only. Array of <a href="/basis/types/classes">classes and structures</a> containing objects that require initialization aren't copied. An array of structures can be copied into an array of the same type only.</span></p> 
+<p><span>For static and dynamic arrays (except for class and structure members), the size of a destination array is automatically increased to the amount of copied data (if the latter exceeds the array size).</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;src_data[10];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>&nbsp;(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;</span><span style="color: #0000ff;">ArraySize</span><span>(src_data);&nbsp;i++)&nbsp;src_data[i]=i;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;dst_data[];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;copy&nbsp;data&nbsp;to&nbsp;dst_data[]</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayCopy</span><span>(dst_data,src_data,0,0,</span><span style="color: #0000ff;">WHOLE_ARRAY</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;print&nbsp;copied&nbsp;data[]</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"Copied&nbsp;array&nbsp;size=%d"</span><span>,</span><span style="color: #0000ff;">ArraySize</span><span>(dst_data));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>&nbsp;(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;</span><span style="color: #0000ff;">ArraySize</span><span>(dst_data);&nbsp;i++)&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"index=%d,&nbsp;value=%d"</span><span>,i,dst_data[i]);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

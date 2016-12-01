@@ -10,9 +10,9 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>С помощью импорта можно очень легко описывать функции, вызываемые из внешних DLL или скомпилированных EX4 библиотек. Библиотеками EX4 являются скомпилированные ex4-файлы, которые имеют свойство <a href="/ru/basis/preprosessor/compilation">library</a>. Импортировать из EX4 библиотек можно только функции, описанные с <a href="/ru/basis/function/export">модификатором export</a>.</span></p> 
+<p><span>С помощью импорта можно очень легко описывать функции, вызываемые из внешних DLL или скомпилированных EX4 библиотек. Библиотеками EX4 являются скомпилированные ex4-файлы, которые имеют свойство <a href="/basis/preprosessor/compilation">library</a>. Импортировать из EX4 библиотек можно только функции, описанные с <a href="/basis/function/export">модификатором export</a>.</span></p>
 <p><span>При совместном использовании DLL и EX4-библиотек следует помнить о том, что библиотеки должны иметь разные имена (вне зависимости от каталогов их размещения). Все импортируемые функции получают область видимости "имя файла" библиотеки.</span></p> 
-<p><span>Если в программе используются или могут в будущем использоваться несколько одноименных функций из разных контекстов исполнения, то может возникнуть неоднозначность. </span><span>Для устранения неоднозначности вызова функций явно указывайте область видимости с помощью <a href="/ru/basis/operations/other#context_allow">операции разрешения контекста</a>.</span></p> 
+<p><span>Если в программе используются или могут в будущем использоваться несколько одноименных функций из разных контекстов исполнения, то может возникнуть неоднозначность. </span><span>Для устранения неоднозначности вызова функций явно указывайте область видимости с помощью <a href="/basis/operations/other#context_allow">операции разрешения контекста</a>.</span></p>
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -24,5 +24,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/basis/oop/overload">Перегрузка</a>, <a href="/ru/basis/oop/virtual">Виртуальные функции</a>, <a href="/ru/basis/oop/polymorphism">Полиморфизм</a></span></p> 
+<p><span><a href="/basis/oop/overload">Перегрузка</a>, <a href="/basis/oop/virtual">Виртуальные функции</a>, <a href="/basis/oop/polymorphism">Полиморфизм</a></span></p>
 <br>

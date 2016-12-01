@@ -1,0 +1,15 @@
+<h1>double Ask</h1> 
+<p><span>The latest known seller's price (ask price) for the current symbol. The <a href="/series/refreshrates">RefreshRates()</a> function must be used to update.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">iRSI</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,14,</span><span style="color: #0000ff;">PRICE_CLOSE</span><span>,0)&lt;25)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">OrderSend</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),OP_BUY,Lots,</span><span style="color: #0000ff;">Ask</span><span>,3,</span><span style="color: #0000ff;">NormalizeDouble</span><span>(</span><span style="color: #0000ff;">Bid</span><span>-StopLoss*</span><span style="color: #0000ff;">Point</span><span>,</span><span style="color: #0000ff;">Digits</span><span>),</span><span style="color: #0000ff;">NormalizeDouble</span><span>(</span><span style="color: #0000ff;">Ask</span><span>+TakeProfit*</span><span style="color: #0000ff;">Point</span><span>,</span><span style="color: #0000ff;">Digits</span><span>),</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"My&nbsp;order&nbsp;#2"</span><span>,3,D'2005.10.10&nbsp;12:30',Red);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/marketinformation/marketinfo">MarketInfo()</a></span></p> 
+<br>

@@ -13,11 +13,11 @@
 <p><span>file_name</span></p> 
 <p><span>[in] &nbsp;Имя проверяемого файла.</span></p> 
 <p><span>common_flag=0</span></p> 
-<p><span>[in] <a href="/ru/constants/io_constants/fileflags">Флаг</a>, определяющий местоположение файла. Если common_flag=FILE_COMMON, то файл находится в общей папке всех клиентских терминалов \Terminal\Common\Files. В противном случае файл находится в локальной папке.</span></p> 
+<p><span>[in] <a href="/constants/io_constants/fileflags">Флаг</a>, определяющий местоположение файла. Если common_flag=FILE_COMMON, то файл находится в общей папке всех клиентских терминалов \Terminal\Common\Files. В противном случае файл находится в локальной папке.</span></p>
 <p><span>Возвращаемое значение</span></p> 
 <p><span>Возвращает true, если указанный файл существует.</span></p> 
 <p><span>Примечание</span></p> 
-<p><span>Проверяемый файл может оказаться поддиректорией. В этом случае функция FileIsExist() возвратит false, а в переменную _LastError будет записана ошибка 5019 - "Это не файл, а директория" (смотрите пример для функции <a href="/ru/files/filefindfirst">FileFindFirst</a>).</span></p> 
+<p><span>Проверяемый файл может оказаться поддиректорией. В этом случае функция FileIsExist() возвратит false, а в переменную _LastError будет записана ошибка 5019 - "Это не файл, а директория" (смотрите пример для функции <a href="/files/filefindfirst">FileFindFirst</a>).</span></p>
 <p><span>Из соображений безопасности в языке MQL4 строго контролируется работа с файлами. Файлы, с которыми проводятся файловые операции средствами языка MQL4, не могут находиться за пределами файловой "песочницы".</span></p> 
 <p><span>Если common_flag=FILE_COMMON, то функция ищет указанный файл в общей папке всех клиентских терминалов </span><span>\Terminal\Common\Files</span><span>, в противном случае функция ищет файл в локальной папке (MQL4\Files или MQL4\Tester\Files в случае тестирования).</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
@@ -31,5 +31,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/files/filefindfirst">FileFindFirst()</a></span></p> 
+<p><span><a href="/files/filefindfirst">FileFindFirst()</a></span></p>
 <br>

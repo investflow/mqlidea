@@ -1,0 +1,17 @@
+<h1>EventKillTimer</h1> 
+<p><span>Specifies the client terminal that is necessary to stop the generation of events from <a href="/runtime/event_fire#timer">Timer</a>.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>EventKillTimer</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Return Value</span></p> 
+<p><span>No return value.</span></p> 
+<p><span>Note</span></p> 
+<p><span>Typically, this function must be called from a function <a href="/basis/function/events#ondeinit">OnDeinit()</a>, if the <a href="/eventfunctions/eventsettimer">EventSetTimer()</a> function has been called from <a href="/basis/function/events#oninit">OnInit()</a>. This function can also be called form the class destructor, if the EventSetTimer() function has been called in the <a href="/basis/types/classes#destructor">constructor</a> of this class.</span></p> 
+<p style="margin: 8px 17px 7px 30px;"><span>Every Expert Advisor, as well as every indicator works with its own timer and receives events only from it. As soon as a mql4 program stops operating, the timer is destroyed forcibly if it was created but hasn't been disabled by the EventKillTimer() function.</span></p> 
+<br>

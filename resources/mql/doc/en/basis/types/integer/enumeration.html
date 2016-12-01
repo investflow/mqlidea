@@ -1,0 +1,42 @@
+<h1>Enumerations</h1> 
+<p><span>Data of the </span><span style="color: #0000ff;">enum</span><span> type belong to a certain limited set of data. Defining the enumeration type:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">enum</span><span>&nbsp;name&nbsp;of&nbsp;enumerable&nbsp;type</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;values</span><br> <span>&nbsp;&nbsp;};</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The list of values is a list of identifiers of named constants separated by commas.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">enum</span><span>&nbsp;months&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;enumeration&nbsp;of&nbsp;named&nbsp;constants</span><br> <span>&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;January,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;February,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;March,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;April,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;May,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;June,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;July,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;August,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;September,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;October,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;November,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;December</span><br> <span>&nbsp;&nbsp;&nbsp;};</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>After the enumeration is declared, a new integer-valued 4-byte data type appears. Declaration of the new data type allows the compiler to strictly control types of passed parameters, because enumeration introduces new named constants. In the above example, the January named constant has the value of 0, February - 1, December - 11.</span></p> 
+<p><span style="font-weight: bold;">Rule</span><span>: If a certain value is not assigned to a named constant that is a member of the enumeration, its new value will be formed automatically. If it is the first member of the enumeration, the 0 value will be assigned to it. For all subsequent members, values will be calculated based on the value of the previous members by adding one.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">enum</span><span>&nbsp;intervals&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Enumeration&nbsp;of&nbsp;named&nbsp;constants</span><br> <span>&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;month=</span><span style="color: #008080;">1</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Interval&nbsp;of&nbsp;one&nbsp;month</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;two_months,&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Two&nbsp;months</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;quarter,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Three&nbsp;months&nbsp;-&nbsp;quarter</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;halfyear=</span><span style="color: #008080;">6</span><span>,&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Half&nbsp;a&nbsp;year</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;year=</span><span style="color: #008080;">12</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Year&nbsp;-&nbsp;12&nbsp;months</span><br> <span>&nbsp;&nbsp;&nbsp;};</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h3>Notes</h3> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Unlike C++, the size of the internal representation of the enumerated type in MQL4 is always equal to 4 bytes. That is, <a href="/basis/operations/other#sizeof">sizeof</a>(months) returns the value 4.</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Unlike C++, an anonymous enumeration can't be declared in MQL4. That is, a unique name must be always specified after the enum keyword.</span></li> 
+</ul> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/types/casting">Typecasting</a></span></p> 
+<br>

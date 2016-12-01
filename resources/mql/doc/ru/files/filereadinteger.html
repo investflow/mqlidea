@@ -11,14 +11,14 @@
 </div> 
 <p><span>Параметры</span></p> 
 <p><span>file_handle</span></p> 
-<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/ru/files/fileopen">FileOpen()</a>.</span></p> 
+<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/files/fileopen">FileOpen()</a>.</span></p>
 <p><span>size=INT_VALUE</span></p> 
 <p><span>[in] &nbsp;Количество байт (до 4 включительно), которые нужно прочитать. Предусмотрены соответствующие константы: CHAR_VALUE=1, SHORT_VALUE=2 и INT_VALUE (LONG_VALUE)=4, таким образом функция может прочитать целое значение типа char, short, int, uint и long.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
 <p><span>Значение типа int. Результат этой функции необходимо явно приводить к целевому типу, то есть тому типу данных, который требуется прочитать. Так как возвращается значение типа int, то его можно спокойно преобразовать в любое целое значение. Файловый указатель перемещается на количество считываемых байт.</span></p> 
 <p><span>Примечание</span></p> 
-<p><span>При чтении менее 4-х байт, полученный результат всегда будет положительным. Если читается один или два байта, то знак числа можно точно определить путем явного приведения соответственно к типу char (1 байт) или типу short (2 байта). Получение знака для трехбайтового числа является нетривиальным, так как нет соответствующего <a href="/ru/basis/types/integer">базового типа</a>.</span></p> 
-<p><span style="font-weight: bold;">Пример </span><span>(используется файл, полученный в результате работы примера для функции <a href="/ru/files/filewriteinteger">FileWriteInteger()</a>)</span></p> 
+<p><span>При чтении менее 4-х байт, полученный результат всегда будет положительным. Если читается один или два байта, то знак числа можно точно определить путем явного приведения соответственно к типу char (1 байт) или типу short (2 байта). Получение знака для трехбайтового числа является нетривиальным, так как нет соответствующего <a href="/basis/types/integer">базового типа</a>.</span></p>
+<p><span style="font-weight: bold;">Пример </span><span>(используется файл, полученный в результате работы примера для функции <a href="/files/filewriteinteger">FileWriteInteger()</a>)</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -29,5 +29,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/convert/integertostring">IntegerToString()</a>, <a href="/ru/convert/stringtointeger">StringToInteger()</a>, <a href="/ru/basis/types/integer">Целые типы</a>, </span><span><a href="/ru/files/filewriteinteger">FileWriteInteger()</a></span></p> 
+<p><span><a href="/convert/integertostring">IntegerToString()</a>, <a href="/convert/stringtointeger">StringToInteger()</a>, <a href="/basis/types/integer">Целые типы</a>, </span><span><a href="/files/filewriteinteger">FileWriteInteger()</a></span></p>
 <br>

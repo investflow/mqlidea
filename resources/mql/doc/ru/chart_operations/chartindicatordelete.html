@@ -15,14 +15,14 @@
 <p><span>sub_window</span></p> 
 <p><span>[in] &nbsp;Номер подокна графика. 0 означает главное окно графика.</span></p> 
 <p><span>const indicator_shortname</span></p> 
-<p><span>[in] &nbsp;Короткое имя индикатора, которое задается в свойстве <a href="/ru/constants/indicatorconstants/customindicatorproperties#enum_customind_property_string">INDICATOR_SHORTNAME</a> функцией <a href="/ru/customind/indicatorsetstring">IndicatorSetString()</a>. Получить короткое имя индикатора можно функцией <a href="/ru/chart_operations/chartindicatorname">ChartIndicatorName()</a>.</span></p> 
+<p><span>[in] &nbsp;Короткое имя индикатора, которое задается в свойстве <a href="/constants/indicatorconstants/customindicatorproperties#enum_customind_property_string">INDICATOR_SHORTNAME</a> функцией <a href="/customind/indicatorsetstring">IndicatorSetString()</a>. Получить короткое имя индикатора можно функцией <a href="/chart_operations/chartindicatorname">ChartIndicatorName()</a>.</span></p>
 <p><span>Возвращаемое значение</span></p> 
-<p><span>Возвращает true в случае удачного помещения команды в очередь графика, иначе false. Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Возвращает true в случае удачного помещения команды в очередь графика, иначе false. Чтобы получить информацию об <a href="/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/check/getlasterror">GetLastError()</a>.</span></p>
 <p><span>Примечание</span></p> 
 <p><span>Если в указанном подокне графика существует несколько индикаторов с одинаковым коротким именем, то будет удален первый по порядку.</span></p> 
 <p><span>Если на значениях удаляемого индикатора построены другие индикаторы на этом же графике, то они также будут удалены.</span></p> 
 <p><span>Если короткое наименование индикатора не задается явным образом, то при компиляции в нем указывается имя файла, содержащего исходный код индикатора. </span></p> 
-<p><span>Необходимо правильно формировать короткое имя индикатора, которое с помощью функции </span><span><a href="/ru/customind/indicatorsetstring">IndicatorSetString()</a> записывается в свойство <a href="/ru/constants/indicatorconstants/customindicatorproperties#enum_customind_property_string">INDICATOR_SHORTNAME</a>. Мы рекомендуем, чтобы короткое имя содержало значения входных параметров индикатора, так как идентификация удаляемого с графика индикатора в функции <a href="/ru/chart_operations/chartindicatordelete">ChartIndicatorDelete()</a> производится именно по короткому имени.</span></p> 
+<p><span>Необходимо правильно формировать короткое имя индикатора, которое с помощью функции </span><span><a href="/customind/indicatorsetstring">IndicatorSetString()</a> записывается в свойство <a href="/constants/indicatorconstants/customindicatorproperties#enum_customind_property_string">INDICATOR_SHORTNAME</a>. Мы рекомендуем, чтобы короткое имя содержало значения входных параметров индикатора, так как идентификация удаляемого с графика индикатора в функции <a href="/chart_operations/chartindicatordelete">ChartIndicatorDelete()</a> производится именно по короткому имени.</span></p>
 <p><span style="font-weight: bold;">Пример удаления индикатора при неудачной инициализации:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -34,5 +34,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/chart_operations/chartindicatorname">ChartIndicatorName()</a>, <a href="/ru/chart_operations/chartindicatorstotal">ChartIndicatorsTotal()</a>, <a href="/ru/customind/indicatorsetstring">IndicatorSetString()</a></span></p> 
+<p><span><a href="/chart_operations/chartindicatorname">ChartIndicatorName()</a>, <a href="/chart_operations/chartindicatorstotal">ChartIndicatorsTotal()</a>, <a href="/customind/indicatorsetstring">IndicatorSetString()</a></span></p>
 <br>

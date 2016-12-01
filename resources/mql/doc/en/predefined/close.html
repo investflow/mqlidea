@@ -1,0 +1,16 @@
+<h1>double Close[]</h1> 
+<p><span>Series array that contains close prices for each bar of the current chart.</span></p> 
+<p><span>Series array elements are indexed in the reverse order, i.e., from the last one to the first one. The current bar which is the last in the array is indexed as 0. The oldest bar, the first in the chart, is indexed as <a href="/predefined/bars">Bars</a>-1.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;handle&nbsp;=&nbsp;</span><span style="color: #0000ff;">FileOpen</span><span>(</span><span style="color: #008080;">"file.csv"</span><span>,&nbsp;</span><span style="color: #0000ff;">FILE_CSV</span><span>|</span><span style="color: #0000ff;">FILE_WRITE</span><span>,&nbsp;</span><span style="color: #008080;">";"</span><span>);</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(handle&gt;0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;table&nbsp;column&nbsp;headers&nbsp;recording</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">FileWrite</span><span>(handle,&nbsp;</span><span style="color: #008080;">"Time;Open;High;Low;Close;Volume"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;data&nbsp;recording</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;</span><span style="color: #0000ff;">Bars</span><span>;&nbsp;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">FileWrite</span><span>(handle,&nbsp;</span><span style="color: #0000ff;">Time</span><span>[i],&nbsp;</span><span style="color: #0000ff;">Open</span><span>[i],&nbsp;</span><span style="color: #0000ff;">High</span><span>[i],&nbsp;</span><span style="color: #0000ff;">Low</span><span>[i],&nbsp;</span><span style="color: #0000ff;">Close</span><span>[i],&nbsp;</span><span style="color: #0000ff;">Volume</span><span>[i]);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">FileClose</span><span>(handle);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/series/iclose">iClose()</a></span></p> 
+<br>

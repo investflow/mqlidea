@@ -1,0 +1,25 @@
+<h1>AccountFreeMarginMode</h1> 
+<p><span>Returns the calculation mode of free margin allowed to open orders on the current account.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>AccountFreeMarginMode</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Returned value</span></p> 
+<p><span>Calculation mode of free margin allowed to opened orders on the current account. </span></p> 
+<p><span>The calculation mode can take the following values:</span><br> <span>0 - floating profit/loss is not used for calculation;</span><br> <span>1 - both floating profit and loss on opened orders on the current account are used for free margin calculation;</span><br> <span>2 - only profit value is used for calculation, the current loss on opened orders is not considered;</span><br> <span>3 - only loss value is used for calculation, the current loss on opened orders is not considered.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">&nbsp;&nbsp;if</span><span>(</span><span style="color: #0000ff;">AccountFreeMarginMode</span><span>()==0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Floating&nbsp;Profit/Loss&nbsp;do&nbsp;not&nbsp;use."</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

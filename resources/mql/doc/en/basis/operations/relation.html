@@ -1,0 +1,26 @@
+<h1>Operations of Relation</h1> 
+<p><span>Boolean FALSE is represented with an integer zero value, while the boolean TRUE is represented by any non-zero value.</span></p> 
+<p><span>The value of expressions containing operations of relation or <a href="/basis/operations/bool">logical operations</a> is FALSE (0) or TRUE (1).</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>True&nbsp;if&nbsp;a&nbsp;is&nbsp;equal&nbsp;to&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;==&nbsp;b;</span><br> <span>True&nbsp;if&nbsp;a&nbsp;is&nbsp;not&nbsp;equal&nbsp;to&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;!=&nbsp;b;</span><br> <span>True&nbsp;if&nbsp;a&nbsp;is&nbsp;less&nbsp;than&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&lt;&nbsp;b;</span><br> <span>True&nbsp;if&nbsp;a&nbsp;is&nbsp;greater&nbsp;than&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&gt;&nbsp;b;</span><br> <span>True&nbsp;if&nbsp;a&nbsp;is&nbsp;less&nbsp;than&nbsp;or&nbsp;equal&nbsp;to&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&lt;=&nbsp;b;</span><br> <span>True&nbsp;if&nbsp;a&nbsp;is&nbsp;greater&nbsp;than&nbsp;or&nbsp;equal&nbsp;to&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&gt;=&nbsp;b;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The equality of two <a href="/basis/types/double">real numbers</a> can't be compared. In most cases, two seemingly identical numbers can be unequal because of different values in the 15th decimal place. In order to correctly compare two real numbers, compare the normalized difference of these numbers with zero.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">bool</span><span>&nbsp;CompareDoubles(</span><span style="color: #0000ff;">double</span><span>&nbsp;number1,</span><span style="color: #0000ff;">double</span><span>&nbsp;number2)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">NormalizeDouble</span><span>(number1-number2,8)==0)&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">true</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;first=0.3;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;second=3.0;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;third=second-2.7;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(first!=third)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(CompareDoubles(first,third))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">printf</span><span>(</span><span style="color: #008080;">"%.16f&nbsp;and&nbsp;%.16f&nbsp;are&nbsp;equal"</span><span>,first,third);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//&nbsp;Result:&nbsp;0.3000000000000000&nbsp;&nbsp;0.2999999999999998&nbsp;&nbsp;&nbsp;are&nbsp;equal</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/operations/rules">Precedence Rules</a></span></p> 
+<br>

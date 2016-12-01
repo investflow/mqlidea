@@ -1,0 +1,76 @@
+<h1>Uninitialization Reason Codes</h1> 
+<p><span>Uninitialization reason <a href="/#expert">codes</a> are returned by the <a href="/check/uninitializereason">UninitializeReason()</a> function. The possible values are the following:</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:159px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Constant</span></p> </td> 
+    <td style="vertical-align:top; width:93px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Value</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_PROGRAM</span></p> </td> 
+    <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>0</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Expert Advisor terminated its operation by calling the <a href="/common/expertremove">ExpertRemove()</a> function</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_REMOVE</span></p> </td> 
+    <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>1</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Program has been deleted from the chart</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_RECOMPILE</span></p> </td> 
+    <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>2</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Program has been recompiled</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_CHARTCHANGE</span></p> </td> 
+    <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>3</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Symbol or chart period has been changed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_CHARTCLOSE</span></p> </td> 
+    <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Chart has been closed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_PARAMETERS</span></p> </td> 
+    <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Input parameters have been changed by a user</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_ACCOUNT</span></p> </td> 
+    <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>6</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Another account has been activated or reconnection to the trade server has occurred due to changes in the account settings</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_TEMPLATE</span></p> </td> 
+    <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>7</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>A new template has been applied</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><a id="reason_initfailed"></a><span>REASON_INITFAILED</span></p> </td> 
+    <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>8</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>This value means that <a href="/basis/function/events#oninit">OnInit()</a> handler has returned a nonzero value</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_CLOSE</span></p> </td> 
+    <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>9</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Terminal has been closed</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The uninitialization reason code is also passed as a parameter of the predetermined function <a href="/basis/function/events#ondeinit">OnDeinit</a>(const int reason).</span></p> 
+<p><span>The codes 1(REASON_REMOVE) and 2(REASON_RECOMPILE) are implemented for the indicators.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;get&nbsp;text&nbsp;description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">string</span><span>&nbsp;getUninitReasonText(</span><span style="color: #0000ff;">int</span><span>&nbsp;reasonCode)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;text=</span><span style="color: #008080;">""</span><span>;</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">switch</span><span>(reasonCode)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;</span><span style="color: #0000ff;">REASON_ACCOUNT</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text=</span><span style="color: #008080;">"Account&nbsp;was&nbsp;changed"</span><span>;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;</span><span style="color: #0000ff;">REASON_CHARTCHANGE</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text=</span><span style="color: #008080;">"Symbol&nbsp;or&nbsp;timeframe&nbsp;was&nbsp;changed"</span><span>;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;</span><span style="color: #0000ff;">REASON_CHARTCLOSE</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text=</span><span style="color: #008080;">"Chart&nbsp;was&nbsp;closed"</span><span>;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;</span><span style="color: #0000ff;">REASON_PARAMETERS</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text=</span><span style="color: #008080;">"Input-parameter&nbsp;was&nbsp;changed"</span><span>;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;</span><span style="color: #0000ff;">REASON_RECOMPILE</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text=</span><span style="color: #008080;">"Program&nbsp;"</span><span>+</span><span style="color: #0000ff;">__FILE__</span><span>+</span><span style="color: #008080;">"&nbsp;was&nbsp;recompiled"</span><span>;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;</span><span style="color: #0000ff;">REASON_REMOVE</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text=</span><span style="color: #008080;">"Program&nbsp;"</span><span>+</span><span style="color: #0000ff;">__FILE__</span><span>+</span><span style="color: #008080;">"&nbsp;was&nbsp;removed&nbsp;from&nbsp;chart"</span><span>;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;</span><span style="color: #0000ff;">REASON_TEMPLATE</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text=</span><span style="color: #008080;">"New&nbsp;template&nbsp;was&nbsp;applied&nbsp;to&nbsp;chart"</span><span>;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">default</span><span>:text=</span><span style="color: #008080;">"Another&nbsp;reason"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>&nbsp;text;</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Expert&nbsp;deinitialization&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnDeinit</span><span>(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;reason)</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;The&nbsp;first&nbsp;way&nbsp;to&nbsp;get&nbsp;the&nbsp;uninitialization&nbsp;reason&nbsp;code</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #0000ff;">__FUNCTION__</span><span>,</span><span style="color: #008080;">"_Uninitalization&nbsp;reason&nbsp;code&nbsp;=&nbsp;"</span><span>,reason);</span><br> <span style="color: #808080;">//---&nbsp;The&nbsp;second&nbsp;way&nbsp;to&nbsp;get&nbsp;the&nbsp;uninitialization&nbsp;reason&nbsp;code</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #0000ff;">__FUNCTION__</span><span>,</span><span style="color: #008080;">"_UninitReason&nbsp;=&nbsp;"</span><span>,getUninitReasonText(</span><span style="color: #ff00ff;">_UninitReason</span><span>));</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

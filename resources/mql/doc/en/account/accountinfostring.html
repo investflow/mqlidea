@@ -1,0 +1,29 @@
+<h1>AccountInfoString</h1> 
+<p><span>Returns the value of the corresponding account property.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>AccountInfoString</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;</span><span>property_id</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Identifier&nbsp;of&nbsp;the&nbsp;property</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>property_id</span></p> 
+<p><span>[in] &nbsp;Identifier of the property. The value can be one of the values of <a href="/constants/environment_state/accountinformation#enum_account_info_string">ENUM_ACCOUNT_INFO_STRING</a>.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>Value of <a href="/basis/types/stringconst">string</a> type.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;Show&nbsp;all&nbsp;the&nbsp;information&nbsp;available&nbsp;from&nbsp;the&nbsp;function&nbsp;AccountInfoString()</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;name&nbsp;of&nbsp;the&nbsp;broker&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">AccountInfoString</span><span>(</span><span style="color: #0000ff;">ACCOUNT_COMPANY</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Deposit&nbsp;currency&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">AccountInfoString</span><span>(</span><span style="color: #0000ff;">ACCOUNT_CURRENCY</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Client&nbsp;name&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">AccountInfoString</span><span>(</span><span style="color: #0000ff;">ACCOUNT_NAME</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;name&nbsp;of&nbsp;the&nbsp;trade&nbsp;server&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">AccountInfoString</span><span>(</span><span style="color: #0000ff;">ACCOUNT_SERVER</span><span>));</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/constants/environment_state/accountinformation">Account Information</a> </span></p> 
+<br>

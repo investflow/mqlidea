@@ -37,10 +37,10 @@
 <p><span>data_width</span></p> 
 <p><span>[in] &nbsp;Требуется только для одномерных массивов и означает полную ширину создаваемого изображения из набора данных. Если </span><span style="font-style: italic;">data_width</span><span>=0, то подразумевается равным </span><span style="font-style: italic;">img_width. </span><span>Д</span><span>ля двумерных массивов данный параметр игнорируется и принимается равным второй размерности массива </span><span style="font-style: italic;">data[]</span><span>.</span></p> 
 <p><span>color_format</span></p> 
-<p><span>[in] &nbsp;Способ обработки цвета из перечисления <a href="/ru/common/resourcecreate#enum_color_format">ENUM_COLOR_FORMAT</a>.</span></p> 
+<p><span>[in] &nbsp;Способ обработки цвета из перечисления <a href="/common/resourcecreate#enum_color_format">ENUM_COLOR_FORMAT</a>.</span></p>
 <p><span>Возвращаемое значение</span></p> 
-<p><span>true – в случае успеха, иначе false. Чтобы получить информацию об ошибке, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>. Возможные ошибки:</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4015 – ERR_RESOURCE_NAME_DUPLICATED (совпадение имен динамического и <a href="/ru/runtime/resources">статического</a> ресурсов),</span></p> 
+<p><span>true – в случае успеха, иначе false. Чтобы получить информацию об ошибке, необходимо вызвать функцию <a href="/check/getlasterror">GetLastError()</a>. Возможные ошибки:</span></p>
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4015 – ERR_RESOURCE_NAME_DUPLICATED (совпадение имен динамического и <a href="/runtime/resources">статического</a> ресурсов),</span></p>
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4016 – ERR_RESOURCE_NOT_FOUND (ресурс не найден),</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4017 – ERR_RESOURCE_UNSUPPORTED_TYPE (тип ресурса не поддерживается),</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4018 – ERR_RESOURCE_NAME_IS_TOO_LONG (слишком длинное имя ресурса).</span></p> 
@@ -72,5 +72,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/runtime/resources">Ресурсы</a>, <a href="/ru/objects/objectcreate">ObjectCreate()</a>, <a href="/ru/objects/objectsetstring">ObjectSetString()</a>, <a href="/ru/constants/objectconstants/enum_object_property#enum_object_property_string">OBJPROP_BMPFILE</a></span></p> 
+<p><span><a href="/runtime/resources">Ресурсы</a>, <a href="/objects/objectcreate">ObjectCreate()</a>, <a href="/objects/objectsetstring">ObjectSetString()</a>, <a href="/constants/objectconstants/enum_object_property#enum_object_property_string">OBJPROP_BMPFILE</a></span></p>
 <br>

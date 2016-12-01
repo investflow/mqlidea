@@ -1,0 +1,39 @@
+<h1>Operation of Programs in the Strategy Tester</h1> 
+<p><span>The Strategy Tester in MetaTrader 4 trading terminal allows you to test Expert Advisor's performance on historical data.</span></p> 
+<p><span>The features of program testing and optimization in the Strategy Tester should be considered when testing a trading robot:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/runtime/testing#function_limitations">Function limitations in the Strategy Tester</a></span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/runtime/testing#globals">The global variables of the client terminal</a></span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/runtime/testing#time">Simulation of time in the Strategy Tester</a></span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/runtime/testing#objects">Graphical objects in testing</a></span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/runtime/testing#events">Event handling in the tester</a></span></li> 
+</ul> 
+<h2>&nbsp;</h2> 
+<h2><a id="function_limitations"></a>Function Limitations in the Strategy Tester</h2> 
+<p><span>There are operation limitations for some functions in the client terminal's Strategy Tester. Calling that functions leads to error <a href="/constants/errorswarnings/errorcodes">4059</a> (Function is not allowed in testing mode).</span></p> 
+<h3><a id="sleep"></a>The Sleep() Function</h3> 
+<p><span>The <a href="/common/sleep">Sleep()</a> function does not cause any delays in the Strategy Tester.</span></p> 
+<h3><a id="print"></a>The Print() and PrintFormat() Functions</h3> 
+<p><span>To increase performance, <a href="/common/print">Print()</a> and <a href="/common/printformat">PrintFormat()</a> functions are not executed when optimizing the trading robot's parameters. The exception is the use of these functions inside the <a href="/basis/function/events#oninit">OnInit()</a> handler. This allows you to easily find the cause of errors when they occur.</span></p> 
+<h3><a id="alert_etc"></a>The Alert(), MessageBox(), PlaySound(), SendFTP, SendMail(), SendNotification(), WebRequest() Functions</h3> 
+<p><span>The <a href="/common/alert">Alert()</a>, <a href="/common/messagebox">MessageBox()</a>, <a href="/common/playsound">PlaySound()</a>, <a href="/common/sendftp">SendFTP()</a>, <a href="/common/sendmail">SendMail()</a>, <a href="/common/sendnotification">SendNotification()</a> и <a href="/common/webrequest">WebRequest()</a> functions designed for interaction with the "outside world" are not executed in the Strategy Tester.</span></p> 
+<h3><a id="trade_operations"></a>The OrderSend(), OrderModify(), OrderDelete(), OrderClose(), OrderCloseBy() Functions</h3> 
+<p><span>Trade operations are not performed on the symbols that are different from the tested one.</span></p> 
+<p><span>&nbsp;</span></p> 
+<h2><a id="globals"></a>The Global Variables of the Client Terminal</h2> 
+<p><span>Since the tester is the part of the client terminal, they share the common <a href="/globals">global variables</a>. Thus, their names should not overlap with the names of the global variables of working applications. This may lead to incorrect operation of programs and inaccurate test results.</span></p> 
+<h1>&nbsp;</h1> 
+<h2><a id="time"></a>Simulation of Time in the Tester</h2> 
+<p><span>When testing, the time is simulated according to the historical data. <a href="/dateandtime/timelocal">TimeLocal()</a> local time is always equal to <a href="/dateandtime/timecurrent">TimeCurrent()</a> server time. In turn, the server time is always equal to the time corresponding to the GMT - <a href="/dateandtime/timegmt">TimeGMT()</a>. This way, all of these functions display the same time during testing.</span></p> 
+<p><span>The absence of the difference between GMT, local and server time in the tester is provided deliberately in case connection to the server is lost. The test results should always be the same, regardless of whether or not there is a connection. Information about the server time is not stored locally, and is taken from the server.</span></p> 
+<p><span>&nbsp;</span></p> 
+<p><span>&nbsp;</span></p> 
+<h2><a id="objects"></a>Graphical Objects in Testing</h2> 
+<p><span>During visualization, the Expert Advisor interacts with a real chart. In case there is no visualization, the Expert Advisor works with a "virtual" chart that is not displayed. The former case has some peculiarities. During optimization, working with graphical objects is not supported.</span></p> 
+<p><span>&nbsp;</span></p> 
+<h2><a id="events"></a>Event Handling in the Tester</h2> 
+<p><span>The following events are handled in the Strategy Tester: initializing an Expert Advisor before a single run of <a href="/basis/function/events#oninit">OnInit()</a>, deinitializing an Expert Advisor after a single run of <a href="/basis/function/events#ondeinit">OnDeInit()</a> and simulating a new tick <a href="/basis/function/events#ontick">OnTick()</a>.</span></p> 
+<p><span>In addition, <a href="/runtime/event_fire#tester">Tester</a> event handled in <a href="/basis/function/events#ontester">OnTester()</a> function is generated before calling OnDeInit() deinitialization function after testing a trading robot on historical data. The value returned by this function is used as a Custom max criterion when optimizing the input parameters.</span></p> 
+<p><span><a href="/runtime/event_fire#timer">Timer</a> and <a href="/runtime/event_fire#chartevent">ChartEvent</a> events are not handled in the Strategy Tester.</span></p> 
+<p><span>&nbsp;</span></p> 
+<br>

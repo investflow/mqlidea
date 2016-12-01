@@ -1,0 +1,30 @@
+<h1>ColorToString</h1> 
+<p><span>It converts color value into string of "R,G,B" form.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>ColorToString</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>color</span><span>&nbsp;&nbsp;</span><span>color_value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;color&nbsp;value</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>bool</span><span>&nbsp;&nbsp;&nbsp;</span><span>color_name</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;show&nbsp;color&nbsp;name&nbsp;or&nbsp;not</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>color_value</span></p> 
+<p><span>[in] &nbsp;Color value in color type variable.</span></p> 
+<p><span>color_name</span></p> 
+<p><span>[in] &nbsp;Return color name if it is identical to one of predefined <a href="/constants/objectconstants/webcolors">color constants</a>.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>String presentation of color as </span><span>"R,G,B", where R, G and B are decimal constants from 0 to 255 converted into a string. If the </span><span>color_name=true parameter is set, it will try to convert color value into color name.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;clr=</span><span style="color: #0000ff;">ColorToString</span><span>(C'</span><span style="color: #008000;">0</span><span>,</span><span style="color: #008000;">255</span><span>,</span><span style="color: #008000;">0</span><span>');&nbsp;</span><span style="color: #808080;">//&nbsp;green&nbsp;color</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(clr);</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;clr=</span><span style="color: #0000ff;">ColorToString</span><span>(C'</span><span style="color: #008000;">0</span><span>,</span><span style="color: #008000;">255</span><span>,</span><span style="color: #008000;">0</span><span>',</span><span style="color: #0000ff;">true</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;get&nbsp;color&nbsp;constant</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(clr);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<br>

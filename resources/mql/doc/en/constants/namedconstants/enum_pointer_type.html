@@ -1,0 +1,30 @@
+<h1>Checking Object Pointer</h1> 
+<p><span>The <a href="/common/checkpointer">CheckPointer()</a> function is used for checking the type of the <a href="/basis/types/object_pointers">object pointer</a>. The function returns a value of the ENUM_POINTER_TYPE enumeration. If an incorrect pointer is used, the program execution will be immediately terminated.</span></p> 
+<p><span>Objects created by the <a href="/basis/operators/newoperator">new()</a> operator are of POINTER_DYNAMIC type. The <a href="/basis/operators/deleteoperator">delete() operator</a> can and should be used only for such pointers.</span></p> 
+<p><span>All other pointers are of POINTER_AUTOMATIC type, which means that this object has been created automatically by the mql4 program environment. Such objects are deleted automatically after being used.</span></p> 
+<p><span style="font-weight: bold;">ENUM_POINTER_TYPE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:33%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Constant</span></p> </td> 
+    <td style="vertical-align:top; width:33%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>POINTER_INVALID</span></p> </td> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>Incorrect pointer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>POINTER_DYNAMIC</span></p> </td> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>Pointer of the object created by the <a href="/basis/operators/newoperator">new()</a> operator</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>POINTER_AUTOMATIC</span></p> </td> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>Pointer of any objects created automatically (not using new())</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/runtime/errors">Runtime errors</a>, <a href="/basis/operators/deleteoperator">Object Delete Operator delete</a>, <a href="/common/checkpointer">CheckPointer()</a></span></p> 
+<br>

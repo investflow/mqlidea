@@ -1,0 +1,19 @@
+<h1>Global Variables</h1> 
+<p><span>Global variables are created by placing their declarations outside function descriptions. Global variables are defined at the same level as functions, i.e., they are not local in any block.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;GlobalFlag=10;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Global&nbsp;variable</span><br> <span style="color: #0000ff;">int</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The scope of global variables is the entire program. Global variables are accessible from all functions defined in the program. They are initialized to zero unless another initial value is explicitly defined. A global variable can be initialized only by a constant or constant expression that corresponds to its type.</span></p> 
+<p><span>Global variables are initialized only once after the program is loaded into the client terminal memory and before the first handling of the <a href="/runtime/event_fire#init">Init</a> event. For global variables representing class objects, during their initialization the corresponding constructors are called.</span></p> 
+<p><span>The <a href="/basis/variables/variable_scope">scope</a> of the global variables is the same as the scope of the <a href="/basis/variables/static">static variables</a> : the lifetime of <a href="/runtime/running#load">MQL4 program</a>.</span></p> 
+<p><span style="font-weight: bold;">Note:</span><span> Variables declared at global level must not be mixed up with the client terminal global variables that can be accessed using the <a href="/globals">GlobalVariable...()</a> functions.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/types">Data Types</a>, <a href="/basis/oop/incapsulation">Encapsulation and Extensibility of Types</a>,<a href="/basis/variables/initialization">Initialization of Variables</a>, <a href="/basis/variables/variable_scope">Visibility Scope and Lifetime of Variables</a>, <a href="/basis/variables/object_live">Creating and Deleting Objects</a></span></p> 
+<br>

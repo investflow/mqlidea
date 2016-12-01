@@ -40,7 +40,7 @@
  </table> 
 </div> 
 <h2>&nbsp;<br> <a id="operation_dot"></a>Операция точка ( . )</h2> 
-<p><span>Для прямого <a href="/ru/basis/types/classes#dot_operation">доступа&nbsp;к&nbsp;публичным&nbsp;членам</a> структур и классов используется операция точка. Синтаксис</span></p> 
+<p><span>Для прямого <a href="/basis/types/classes#dot_operation">доступа&nbsp;к&nbsp;публичным&nbsp;членам</a> структур и классов используется операция точка. Синтаксис</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -61,7 +61,7 @@
  </table> 
 </div> 
 <h2>&nbsp;<br> <a id="context_allow"></a>Операция разрешения контекста ( :: )</h2> 
-<p><span>Каждая функция в mql4-программе имеет свой контекст исполнения. Например, системная функция <a href="/ru/common/print">Print()</a> выполняется в глобальном контексте. <a href="/ru/basis/preprosessor/import">Импортируемые</a> функции вызываются в контексте соответствующего импорта. Функции-методы <a href="/ru/basis/types/classes#class">классов</a> имеют контекст соответствующего класса. Синтаксис операции разрешения контекста:</span></p> 
+<p><span>Каждая функция в mql4-программе имеет свой контекст исполнения. Например, системная функция <a href="/common/print">Print()</a> выполняется в глобальном контексте. <a href="/basis/preprosessor/import">Импортируемые</a> функции вызываются в контексте соответствующего импорта. Функции-методы <a href="/basis/types/classes#class">классов</a> имеют контекст соответствующего класса. Синтаксис операции разрешения контекста:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -72,7 +72,7 @@
  </table> 
 </div> 
 <p><span>Если имя контекста отсутствует, то это явное указание на использование глобального контекста. В случае отсутствия операции разрешения контекста, функция ищется в ближайшем контексте. В случае отсутствия функции в локальном контексте, поиск производится в глобальном контексте.</span></p> 
-<p><span>Также операция разрешения контекста используется для <a href="/ru/basis/function#function_definition">определения&nbsp;функции</a>-члена класса.</span></p> 
+<p><span>Также операция разрешения контекста используется для <a href="/basis/function#function_definition">определения&nbsp;функции</a>-члена класса.</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -112,7 +112,7 @@
  </table> 
 </div> 
 <p><span>В качестве выражения может быть использован любой идентификатор, либо имя типа, заключенное в скобки. Отметим, что не может быть использовано имя типа void, а идентификатор не может относится к полю битов или быть именем функции.</span></p> 
-<p><span>Если в качестве выражения указано имя статического массива (то есть, задана первая размерность), то результатом является размер всего массива (т.е. произведение числа элементов на длину типа). Если в качестве выражения указано имя динамического массива (первая размерность не задана), то результатом будет размер объекта <a href="/ru/basis/types/dynamic_array">динамического&nbsp;массива</a>.</span></p> 
+<p><span>Если в качестве выражения указано имя статического массива (то есть, задана первая размерность), то результатом является размер всего массива (т.е. произведение числа элементов на длину типа). Если в качестве выражения указано имя динамического массива (первая размерность не задана), то результатом будет размер объекта <a href="/basis/types/dynamic_array">динамического&nbsp;массива</a>.</span></p>
 <p><span>Когда sizeof применяются к имени типа структуры или класса или к идентификатору имеющему тип структуры или класса, то результатом является фактический размер структуры или класса.</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
@@ -126,5 +126,5 @@
 </div> 
 <p><span>Вычисления размера происходит на этапе компиляции.</span></p> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/basis/operations/rules">Приоритеты и &nbsp;порядок операций</a></span></p> 
+<p><span><a href="/basis/operations/rules">Приоритеты и &nbsp;порядок операций</a></span></p>
 <br>

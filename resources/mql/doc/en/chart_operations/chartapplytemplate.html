@@ -1,0 +1,98 @@
+<h1>ChartApplyTemplate</h1> 
+<p><span>Applies a specific template from a specified file to the chart. The command is added to chart message queue and executed only after all previous commands have been processed.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ChartApplyTemplate</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Chart&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;</span><span>filename</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Template&nbsp;file&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>chart_id</span></p> 
+<p><span>[in] &nbsp;Chart ID. 0 means the current chart.</span></p> 
+<p><span>filename</span></p> 
+<p><span>[in] &nbsp;The name of the file containing the template.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>Returns true if the command has been added to chart queue, otherwise false. To get <a href="/constants/errorswarnings/errorcodes">error</a> details use the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span>Note</span></p> 
+<p><span>The Expert Advisor will be unloaded and will not be able to continue operating in case of successful loading of a new template to the chart it is attached to.</span></p> 
+<h3>Live Trading and DLL Imports</h3> 
+<p><span>Users can allow or forbid the following actions for an mql4 program launched on a chart:</span></p> 
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 50px;list-style-position:outside; list-style-type:decimal"> 
+ <li value="1" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>Performing trade operations (live trading),</span></li> 
+ <li value="2" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>DLL imports.</span></li> 
+</ol> 
+<p style="text-align: center;"><img alt="Expert Advisor Common Settings" title="Expert Advisor Common Settings" width="629" height="318" style="margin:0px auto 0px auto;width:629px;height:318px;border:none" src="https://c.mql4.com/i/docs/en/ea_common_settings_en.png"></p> 
+<p><span>The terminal allows saving the configured chart as a <a href="http://www.metatrader5.com/en/terminal/help/charts_advanced/templates_profiles" target="_blank" title="template">template</a> with all indicators and Expert Advisors launched on it. Thus, it is possible to quickly apply template settings to all other charts. When saving the template, permissions of the launched programs (live trading and DLL imports) are also saved. When applying the template to the chart, these permissions may be limited due to security reasons:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="font-weight: bold;">Live trading and DLL imports permissions cannot be extended for the Expert Advisors launched by applying the template using ChartApplyTemplate() function.</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>If the mql4 program calling ChartApplyTemplate() function has no permission to trade, the Expert Advisor launched via the template will also not be able to trade regardless of the template settings.</span></p> 
+<p><span>If the mql4 program calling ChartApplyTemplate() function has permission to trade, while there is no such permission in the template settings, the Expert Advisor launched via the template will not be able to trade.</span></p> 
+<h3>Using Templates</h3> 
+<p><span>The resources of the MQL4 language allow setting multiple chart properties, including colors using the <a href="/chart_operations/chartsetinteger">ChartSetInteger()</a> function:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Chart background color;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Color of the axes, scale and the OHLC line;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Grid color;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Color of volumes and position open levels;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Color of the up bar, shadow and edge of a bullish candlestick;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Color of the down bar, shadow and edge of a bearish candlestick;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Color of the chart line and Doji candlesticks;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Color of the bullish candlestick body;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Color of the bearish candlestick body;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Color of the Bid price line;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Color of the Ask price line;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Color of the line of the last deal price (Last);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Color of the stop order levels (Stop Loss and Take Profit).</span></li> 
+</ul> 
+<p><span>Besides, there can be multiple <a href="/objects">graphical objects</a> and <a href="/indicators">indicators</a> on a chart. You may set up a chart with all the necessary indicators once and then save it as a template. Such a template can be applied to any chart. </span></p> 
+<p><span>The <a href="/chart_operations/chartapplytemplate">ChartApplyTemplate()</a> function is intended for using a previously saved template, and it can be used in any mql4 program. The path to the file that stores the template is passed as the second parameter to ChartApplyTemplate(). The template file is searched according to the following rules:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>if the backslash "\" separator (written as "\\") is placed at &nbsp;the beginning of the path, the template is searched for relative to the path _terminal_data_directory\MQL4,</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>if there is no backslash, the template is searched for relative to the executable EX4 file, in which ChartApplyTemplate() is called;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>if a template is not found in the first two variants, the search is performed in the folder terminal_directory\Profiles\Templates\.</span></li> 
+</ul> 
+<p><span>Here terminal_directory is the folder from which the MetaTrader 4 Client Terminal is running, and terminal_data_directory is the folder, in which editable files are stored, its location depends on the operating system, user name and computer's security settings. Normally they are different folders, but in some cases they may coincide.</span></p> 
+<p><span>The location of folders terminal_data_directory and terminal_directory can be obtained using the <a href="/check/terminalinfostring">TerminalInfoString()</a> function.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;directory&nbsp;from&nbsp;which&nbsp;the&nbsp;terminal&nbsp;is&nbsp;started</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;terminal_path=</span><span style="color: #0000ff;">TerminalInfoString</span><span>(</span><span style="color: #0000ff;">TERMINAL_PATH</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Terminal&nbsp;directory:"</span><span>,</span><span style="color: #0000ff;">terminal_path</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;terminal&nbsp;data&nbsp;directory,&nbsp;in&nbsp;which&nbsp;the&nbsp;MQL4&nbsp;folder&nbsp;with&nbsp;EAs&nbsp;and&nbsp;indicators&nbsp;is&nbsp;located</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;terminal_data_path=</span><span style="color: #0000ff;">TerminalInfoString</span><span>(</span><span style="color: #0000ff;">TERMINAL_DATA_PATH</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Terminal&nbsp;data&nbsp;directory:"</span><span>,</span><span style="color: #0000ff;">terminal_data_path</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>For example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;search&nbsp;for&nbsp;a&nbsp;template&nbsp;in&nbsp;terminal_data_directory\MQL4\</span><br> <span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"\\first_template.tpl"</span><span>))</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;search&nbsp;for&nbsp;a&nbsp;template&nbsp;in&nbsp;directory_of_EX4_file\,&nbsp;then&nbsp;in&nbsp;folder&nbsp;terminal_data_directory\Profiles\Templates\</span><br> <span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"second_template.tpl"</span><span>))</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;search&nbsp;for&nbsp;a&nbsp;template&nbsp;in&nbsp;directory_of_EX4_file\My_templates\,&nbsp;then&nbsp;in&nbsp;folder&nbsp;terminal_directory\Profiles\Templates\My_templates\</span><br> <span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"My_templates\\third_template.tpl"</span><span>))</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Templates are not resources, they cannot be included into an executable EX4 file.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;example&nbsp;of&nbsp;applying&nbsp;template,&nbsp;located&nbsp;in&nbsp;\MQL4\Files</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">FileIsExist</span><span>(</span><span style="color: #008080;">"my_template.tpl"</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;file&nbsp;my_template.tpl&nbsp;found&nbsp;in&nbsp;\Files'"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;apply&nbsp;template</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"\\Files\\my_template.tpl"</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;template&nbsp;'my_template.tpl'&nbsp;applied&nbsp;successfully"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Failed&nbsp;to&nbsp;apply&nbsp;'my_template.tpl',&nbsp;error&nbsp;code&nbsp;"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"File&nbsp;'my_template.tpl'&nbsp;not&nbsp;found&nbsp;in&nbsp;"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span><span style="color: #0000ff;">TerminalInfoString</span><span>(</span><span style="color: #0000ff;">TERMINAL_PATH</span><span>)+</span><span style="color: #008080;">"\\MQL4\\Files"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/runtime/resources">Resources</a></span></p> 
+<br>

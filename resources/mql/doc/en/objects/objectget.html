@@ -1,0 +1,31 @@
+<h1>ObjectGet</h1> 
+<p><span>Returns the value of the specified object property.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>ObjectGet</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;</span><span>object_name</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>index</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;property</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>object_name</span></p> 
+<p><span>[in] &nbsp;Object name.</span></p> 
+<p><span>index</span></p> 
+<p><span>[in] &nbsp;Object property index. It can be any of the <a href="/constants/objectconstants/enum_object_property">Object properties</a> enumeration values.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>The value of the specified object property. To check <a href="/constants/errorswarnings/errorcodes">errors</a>, one has to call the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">color</span><span>&nbsp;oldColor=</span><span style="color: #0000ff;">ObjectGet</span><span>(</span><span style="color: #008080;">"hline12"</span><span>,&nbsp;</span><span style="color: #0000ff;">OBJPROP_COLOR</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/objects/objectset">ObjectSet()</a></span></p> 
+<br>

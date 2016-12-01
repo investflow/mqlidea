@@ -1,0 +1,29 @@
+<h1>IndicatorCounted</h1> 
+<p><span>The function returns the amount of bars not changed after the indicator had been launched last. </span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>IndicatorCounted</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Returned value</span></p> 
+<p><span>The amount of bars not changed after the indicator had been launched last. </span></p> 
+<p><span>Note</span></p> 
+<p><span>The most calculated bars do not need any recalculation. In most cases, same count of index values do not need for recalculation. The function is used to optimize calculating.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;start()</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;limit;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;counted_bars=</span><span style="color: #0000ff;">IndicatorCounted</span><span>();</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;check&nbsp;for&nbsp;possible&nbsp;errors</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(counted_bars&lt;0)&nbsp;</span><span style="color: #0000ff;">return</span><span>(-1);</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;the&nbsp;last&nbsp;counted&nbsp;bar&nbsp;will&nbsp;be&nbsp;recounted</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(counted_bars&gt;0)&nbsp;counted_bars--;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;limit=</span><span style="color: #0000ff;">Bars</span><span>-counted_bars;</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;main&nbsp;loop</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;limit;&nbsp;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;ma_shift&nbsp;set&nbsp;to&nbsp;0&nbsp;because&nbsp;SetIndexShift&nbsp;called&nbsp;abowe</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ExtBlueBuffer[i]=</span><span style="color: #0000ff;">iMA</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,JawsPeriod,0,</span><span style="color: #0000ff;">MODE_SMMA</span><span>,</span><span style="color: #0000ff;">PRICE_MEDIAN</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ExtRedBuffer[i]=</span><span style="color: #0000ff;">iMA</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,TeethPeriod,0,</span><span style="color: #0000ff;">MODE_SMMA</span><span>,</span><span style="color: #0000ff;">PRICE_MEDIAN</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ExtLimeBuffer[i]=</span><span style="color: #0000ff;">iMA</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,LipsPeriod,0,</span><span style="color: #0000ff;">MODE_SMMA</span><span>,</span><span style="color: #0000ff;">PRICE_MEDIAN</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;done</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/constants/indicatorconstants/customindicatorproperties">Custom Indicator Properties</a>, <a href="/series">Access to timeseries and indicators</a></span></p> 
+<p><span>&nbsp;</span></p> 
+<br>

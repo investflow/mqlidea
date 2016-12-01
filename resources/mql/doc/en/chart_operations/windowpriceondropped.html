@@ -1,0 +1,30 @@
+<h1>WindowPriceOnDropped</h1> 
+<p><span>Returns the price of the chart point where Expert Advisor or script was dropped.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>WindowPriceOnDropped</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>None.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>The price of the chart point where Expert Advisor or script was dropped. This value is only valid if the expert or script was dropped by mouse.</span></p> 
+<p><span>Note</span></p> 
+<p><span>For custom indicators this value is undefined.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;&nbsp;&nbsp;drop_price=</span><span style="color: #0000ff;">WindowPriceOnDropped</span><span>();</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;drop_time=</span><span style="color: #0000ff;">WindowTimeOnDropped</span><span>();</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;may&nbsp;be&nbsp;undefined&nbsp;(zero)</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(drop_time&gt;0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectCreate</span><span>(</span><span style="color: #008080;">"Dropped&nbsp;price&nbsp;line"</span><span>,&nbsp;</span><span style="color: #0000ff;">OBJ_HLINE</span><span>,&nbsp;0,&nbsp;drop_price);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectCreate</span><span>(</span><span style="color: #008080;">"Dropped&nbsp;time&nbsp;line"</span><span>,&nbsp;</span><span style="color: #0000ff;">OBJ_VLINE</span><span>,&nbsp;0,&nbsp;drop_time);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/chart_operations/windowtimeondropped">WindowTimeOnDropped()</a>, <a href="/chart_operations/windowyondropped">WindowYOnDropped()</a>, <a href="/chart_operations/windowondropped">WindowOnDropped()</a></span></p> 
+<br>

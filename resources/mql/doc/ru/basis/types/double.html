@@ -52,7 +52,7 @@
 </div> 
 <p><span>Необходимо помнить, что вещественные числа хранятся в памяти компьютера с некоторой ограниченной точностью в двоичной системе счисления, в то время как общепринятой в использовании является десятичная система счисления. Поэтому многие числа, которые точно записываются в десятичной системе, в двоичной системе можно записать только в виде бесконечной дроби. </span></p> 
 <p><span>Например, числа 0.3 и 0.7 представлены в компьютере бесконечными дробями, в то время как число 0.25 хранится точно, так как представляет из себя степень двойки.</span></p> 
-<p><span>В связи с этим, категорически не рекомендуется <a href="/ru/basis/operations/relation">сравнивать</a> между собой два вещественных числа на равенство, так как такое сравнение не является корректным. </span></p> 
+<p><span>В связи с этим, категорически не рекомендуется <a href="/basis/operations/relation">сравнивать</a> между собой два вещественных числа на равенство, так как такое сравнение не является корректным. </span></p>
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -86,7 +86,7 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>В результате некоторых операций математического сопроцессора может получиться недействительное вещественное число, которое нельзя использовать в математических операциях и операциях сравнения, так как результат выполнения операций над недействительными вещественными числами неопределен. Например, при попытке вычислить <a href="/ru/math/matharcsin">арксинус</a> от 2, результатом будет минус бесконечность.</span></p> 
+<p><span>В результате некоторых операций математического сопроцессора может получиться недействительное вещественное число, которое нельзя использовать в математических операциях и операциях сравнения, так как результат выполнения операций над недействительными вещественными числами неопределен. Например, при попытке вычислить <a href="/math/matharcsin">арксинус</a> от 2, результатом будет минус бесконечность.</span></p>
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -97,7 +97,7 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>Кроме минус бесконечности существуют плюс бесконечность и NaN (не число). Чтобы определить, что данное число недействительно, можно использовать функцию <a href="/ru/math/mathisvalidnumber">MathIsValidNumber()</a>. По стандарту IEEE они имеют специальное машинное представление. Например, плюс бесконечность для типа double имеет битовое представление 0x7FF0 0000 0000 0000. </span></p> 
+<p><span>Кроме минус бесконечности существуют плюс бесконечность и NaN (не число). Чтобы определить, что данное число недействительно, можно использовать функцию <a href="/math/mathisvalidnumber">MathIsValidNumber()</a>. По стандарту IEEE они имеют специальное машинное представление. Например, плюс бесконечность для типа double имеет битовое представление 0x7FF0 0000 0000 0000. </span></p>
 <p><span style="font-weight: bold;">Примеры:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -109,5 +109,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/convert/doubletostring">DoubleToString</a>, <a href="/ru/convert/normalizedouble">NormalizeDouble</a>, <a href="/ru/constants/namedconstants/typeconstants">Константы числовых типов</a></span></p> 
+<p><span><a href="/convert/doubletostring">DoubleToString</a>, <a href="/convert/normalizedouble">NormalizeDouble</a>, <a href="/constants/namedconstants/typeconstants">Константы числовых типов</a></span></p>
 <br>

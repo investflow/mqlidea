@@ -1,0 +1,184 @@
+<h1>File Functions</h1> 
+<p><span>This is a group of functions for working with files.</span></p> 
+<p><span>For security reasons, work with files is strictly controlled in the MQL4 language. Files with which file operations are conducted using MQL4 means cannot be outside the file sandbox.</span></p> 
+<p><span>There are two directories (with subdirectories) in which working files can be located:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>terminal_data_folder\MQL4\Files\ (in the terminal menu select to view "File" - "Open the data directory");</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>the common folder for all the terminals installed on a computer - usually located in the directory C:\Documents and Settings\All Users\Application Data\MetaQuotes\Terminal\Common\Files. </span></li> 
+</ul> 
+<p><span>There is a program method to obtain names of these catalogs using the <a href="/check/terminalinfostring">TerminalInfoString()</a> function, using the <a href="/constants/environment_state/terminalstatus#enum_terminal_info_string">ENUM_TERMINAL_INFO_STRING</a> enumeration:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;Folder&nbsp;that&nbsp;stores&nbsp;the&nbsp;terminal&nbsp;data</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;terminal_data_path=</span><span style="color: #0000ff;">TerminalInfoString</span><span>(</span><span style="color: #0000ff;">TERMINAL_DATA_PATH</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;Common&nbsp;folder&nbsp;for&nbsp;all&nbsp;client&nbsp;terminals</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;common_data_path=</span><span style="color: #0000ff;">TerminalInfoString</span><span>(</span><span style="color: #0000ff;">TERMINAL_COMMONDATA_PATH</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Work with files from other directories is prohibited.</span></p> 
+<p><span>File functions allow working with so-called "named pipes". To do this, simply call <a href="/files/fileopen">FileOpen()</a> function with appropriate parameters.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Function</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Action</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filefindfirst">FileFindFirst</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Starts the search of files in a directory in accordance with the specified filter</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filefindnext">FileFindNext</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Continues the search started by the FileFindFirst() function</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filefindclose">FileFindClose</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Closes search handle</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileopen">FileOpen</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Opens a file with a specified name and flag</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filedelete">FileDelete</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Deletes a specified file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileflush">FileFlush</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Writes to a disk all data remaining in the input/output file buffer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filegetinteger">FileGetInteger</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Gets an integer property of a file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileisending">FileIsEnding</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Defines the end of a file in the process of reading</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileislineending">FileIsLineEnding</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Defines the end of a line in a text file in the process of reading</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileclose">FileClose</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Closes a previously opened file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileisexist">FileIsExist</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks the existence of a file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filecopy">FileCopy</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Copies the original file from a local or shared folder to another file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filemove">FileMove</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Moves or renames a file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadarray">FileReadArray</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Reads arrays of any type except for string from the file of the BIN type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadbool">FileReadBool</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Reads from the file of the CSV type a string from the current position till a delimiter (or till the end of a text line) and converts the read string to a value of bool type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereaddatetime">FileReadDatetime</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Reads from the file of the CSV type a string of one of the formats: "YYYY.MM.DD HH:MM:SS", "YYYY.MM.DD" or "HH:MM:SS" - and converts it into a datetime value</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereaddouble">FileReadDouble</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Reads a double value from the current position of the file pointer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadfloat">FileReadFloat</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Reads a float value from the current position of the file pointer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadinteger">FileReadInteger</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Reads int, short or char value from the current position of the file pointer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadlong">FileReadLong</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Reads a long type value from the current position of the file pointer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadnumber">FileReadNumber</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Reads from the file of the CSV type a string from the current position till a delimiter (or til the end of a text line) and converts the read string into double value</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadstring">FileReadString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Reads a string from the current position of a file pointer from a file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadstruct">FileReadStruct</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Reads the contents from a binary file &nbsp;into a structure passed as a parameter, from the current position of the file pointer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileseek">FileSeek</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Moves the position of the file pointer by a specified number of bytes relative to the specified position</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filesize">FileSize</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the size of a corresponding open file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filetell">FileTell</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the current position of the file pointer of a corresponding open file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewrite">FileWrite</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Writes data to a file of CSV or TXT type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritearray">FileWriteArray</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Writes arrays of any type except for string into a file of BIN type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritedouble">FileWriteDouble</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Writes value of the double type from the current position of a file pointer into a binary file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritefloat">FileWriteFloat</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Writes value of the float type from the current position of a file pointer into a binary file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewriteinteger">FileWriteInteger</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span> Writes value of the int type from the current position of a file pointer into a binary file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritelong">FileWriteLong</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Writes value of the long type from the current position of a file pointer into a binary file</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritestring">FileWriteString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Writes the value of a string parameter into a BIN or TXT file starting from the current position of the file pointer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritestruct">FileWriteStruct</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Writes the contents of a structure passed as a parameter into a binary file, starting from the current position of the file pointer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/foldercreate">FolderCreate</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Creates a folder in the Files directory</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/folderdelete">FolderDelete</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Removes a selected directory. If the folder is not empty, then it can't be removed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/folderclean">FolderClean</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Deletes all files in the specified folder</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileopenhistory">FileOpenHistory</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Opens file in the current history directory or in its subfolders</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>If the file is opened for writing using <a href="/files/fileopen">FileOpen()</a>, all subfolders specified in the path will be created if there are no such ones.</span></p> 
+<br>

@@ -1,11 +1,11 @@
 <h1>Ресурсы</h1> 
 <h2>Использование графики и звука в программах на MQL4</h2> 
 <p><span>Программы на MQL4 позволяют работать со звуковыми и графическими файлами:</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/common/playsound">PlaySound()</a> воспроизводит звуковой файл;</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/objects/objectcreate">ObjectCreate()</a> позволяет с помощью <a href="/ru/constants/objectconstants/enum_object">графических объектов</a> OBJ_BITMAP и OBJ_BITMAP_LABEL создавать пользовательские интерфейсы. </span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/common/playsound">PlaySound()</a> воспроизводит звуковой файл;</span></p>
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/objects/objectcreate">ObjectCreate()</a> позволяет с помощью <a href="/constants/objectconstants/enum_object">графических объектов</a> OBJ_BITMAP и OBJ_BITMAP_LABEL создавать пользовательские интерфейсы. </span></p>
 <p><span>&nbsp;</span></p> 
 <h3>PlaySound()</h3> 
-<p><span>Пример вызова функции </span><span><a href="/ru/common/playsound">PlaySound()</a>:</span></p> 
+<p><span>Пример вызова функции </span><span><a href="/common/playsound">PlaySound()</a>:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -46,8 +46,8 @@
  </table> 
 </div> 
 <p><span>Обратите внимание на то, что в комментарии путь к файлу написан с использованием символа "\", а в самой функции для разделения папок в пути используется последовательность "\\".</span></p> 
-<p><span>При указании пути всегда используйте только двойную обратную косую черту в качестве разделителя, так как одиночная обратная черта является управляющим символом для компилятора при разборе константных строк и <a href="/ru/basis/types/integer/symbolconstants">символьных констант</a> в исходном коде программы. </span></p> 
-<p><span>Для остановки воспроизведения файла нужно вызвать функцию <a href="/ru/common/playsound">PlaySound()</a> с параметром NULL:</span></p> 
+<p><span>При указании пути всегда используйте только двойную обратную косую черту в качестве разделителя, так как одиночная обратная черта является управляющим символом для компилятора при разборе константных строк и <a href="/basis/types/integer/symbolconstants">символьных констант</a> в исходном коде программы. </span></p>
+<p><span>Для остановки воспроизведения файла нужно вызвать функцию <a href="/common/playsound">PlaySound()</a> с параметром NULL:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -69,7 +69,7 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>Создание и настройка графического объекта с именем currency_label происходят в</span><span> функции OnInit(). Пути к загружаемым графическим файлам заданы в <a href="/ru/basis/variables/global">глобальных переменных</a> </span><span style="font-weight: bold;">euro</span><span> и </span><span style="font-weight: bold;">dollar</span><span>, в качестве разделителя использована двойная обратная косая черта:</span></p> 
+<p><span>Создание и настройка графического объекта с именем currency_label происходят в</span><span> функции OnInit(). Пути к загружаемым графическим файлам заданы в <a href="/basis/variables/global">глобальных переменных</a> </span><span style="font-weight: bold;">euro</span><span> и </span><span style="font-weight: bold;">dollar</span><span>, в качестве разделителя использована двойная обратная косая черта:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -83,7 +83,7 @@
 <p><span>Объект OBJ_BITMAP_LABEL фактически представляет собою кнопку, которая в зависимости от состояния (нажата или отжата) может отображать одну из двух картинок: euro.bmp или dollar.bmp.</span></p> 
 <p style="text-align: center;"><img alt="Свойства объекта OBJ_BITMAP_LABEL" title="Свойства объекта OBJ_BITMAP_LABEL" width="537" height="297" style="margin:0px auto 0px auto;width:537px;height:297px;border:none" src="https://c.mql4.com/i/docs/ru/demo_create_obj_bitmap_label_ea.png"></p> 
 <p><span>Размеры кнопки с графическим интерфейсом автоматически устанавливаются под размер отображаемой картинки. Смена изображения производится при нажатии левой кнопкой мышки на объекте OBJ_BITMAP_LABEL (</span><span style="font-weight: bold;">в свойствах должен быть выбрано &nbsp;"Отключить выделение"</span><span>). Объект OBJ_BITMAP создается аналогичным образом и предназначен для создания фона с требуемым рисунком. </span></p> 
-<p><span>Значение свойства <a href="/ru/constants/objectconstants/enum_object_property#enum_object_property_integer">OBJPROP_BMPFILE</a>, которое отвечает за вид объектов </span><span>OBJ_BITMAP и OBJ_BITMAP_LABEL</span><span>, можно менять динамически. Это позволяет создавать разнообразные интерактивные пользовательские интерфейсы для mql4-программ.</span></p> 
+<p><span>Значение свойства <a href="/constants/objectconstants/enum_object_property#enum_object_property_integer">OBJPROP_BMPFILE</a>, которое отвечает за вид объектов </span><span>OBJ_BITMAP и OBJ_BITMAP_LABEL</span><span>, можно менять динамически. Это позволяет создавать разнообразные интерактивные пользовательские интерфейсы для mql4-программ.</span></p>
 <p><span>&nbsp;</span></p> 
 <h2><a id="resource_include"></a>Включение ресурсов в исполняемые файлы при компиляции mql4-программ</h2> 
 <p><span>Для работы mql4-программы может потребоваться множество разнообразных загружаемых ресурсов в виде файлов изображений и звуков. Для того чтобы исключить необходимость переноса всех этих файлов при передаче исполняемой программы на MQL4, следует использовать директиву компилятора </span><span style="color: #0000ff;">#resource</span><span>:</span></p> 
@@ -210,8 +210,8 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>Случай, когда пользовательский индикатор в функции <a href="/ru/basis/function/events#oninit">OnInit()</a> создает одну или несколько копий себя, требует отдельного рассмотрения. Напомним, что для использования ресурса из mql4-программы его необходимо указывать в виде: </span><span style="font-weight: bold;">&lt;путь_имя_файла_EX4&gt;::&lt;имя_ресурса&gt;</span><span>.</span></p> 
-<p><span>Например, если индикатор SampleIndicator.ex4 включается в советник SampleEA.ex4 в качестве ресурса, то путь к самому себе, указанный при вызове <a href="/ru/indicators/icustom">iCustom()</a> в функции инициализации пользовательского индикатора, будет выглядеть следующим образом: "\\Experts\\SampleEA.ex4::Indicators\\SampleIndicator.ex4". При явном указании данного пути пользовательский индикатор SampleIndicator.ex4 будет жестко привязан к советнику SampleEA.ex4 и теряет способность самостоятельной работы.</span></p> 
+<p><span>Случай, когда пользовательский индикатор в функции <a href="/basis/function/events#oninit">OnInit()</a> создает одну или несколько копий себя, требует отдельного рассмотрения. Напомним, что для использования ресурса из mql4-программы его необходимо указывать в виде: </span><span style="font-weight: bold;">&lt;путь_имя_файла_EX4&gt;::&lt;имя_ресурса&gt;</span><span>.</span></p>
+<p><span>Например, если индикатор SampleIndicator.ex4 включается в советник SampleEA.ex4 в качестве ресурса, то путь к самому себе, указанный при вызове <a href="/indicators/icustom">iCustom()</a> в функции инициализации пользовательского индикатора, будет выглядеть следующим образом: "\\Experts\\SampleEA.ex4::Indicators\\SampleIndicator.ex4". При явном указании данного пути пользовательский индикатор SampleIndicator.ex4 будет жестко привязан к советнику SampleEA.ex4 и теряет способность самостоятельной работы.</span></p>
 <p><span>Путь до самого себя можно получить при помощи функции GetRelativeProgramPath(), пример использования которой приведен ниже:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -223,5 +223,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/common/resourcecreate">ResourceCreate()</a>, <a href="/ru/common/resourcesave">ResourceSave()</a>, <a href="/ru/common/playsound">PlaySound()</a>, <a href="/ru/objects/objectsetinteger">ObjectSetInteger()</a>, <a href="/ru/chart_operations/chartapplytemplate">ChartApplyTemplate()</a>, <a href="/ru/files">Файловые операции</a> </span></p> 
+<p><span><a href="/common/resourcecreate">ResourceCreate()</a>, <a href="/common/resourcesave">ResourceSave()</a>, <a href="/common/playsound">PlaySound()</a>, <a href="/objects/objectsetinteger">ObjectSetInteger()</a>, <a href="/chart_operations/chartapplytemplate">ChartApplyTemplate()</a>, <a href="/files">Файловые операции</a> </span></p>
 <br>

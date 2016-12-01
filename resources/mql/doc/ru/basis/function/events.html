@@ -1,8 +1,8 @@
 <h1>Функции обработки событий</h1> 
-<p><span>В языке MQL4 предусмотрена обработка некоторых <a href="/ru/runtime/event_fire">предопределенных&nbsp;событий</a>. Функции для обработки этих событий должны быть определены в программе MQL4: имя функции, тип возвращаемого значения, состав параметров (если они есть) и их типы должны строго соответствовать описанию функции-обработчика события.</span></p> 
+<p><span>В языке MQL4 предусмотрена обработка некоторых <a href="/runtime/event_fire">предопределенных&nbsp;событий</a>. Функции для обработки этих событий должны быть определены в программе MQL4: имя функции, тип возвращаемого значения, состав параметров (если они есть) и их типы должны строго соответствовать описанию функции-обработчика события.</span></p>
 <p><span>Именно по типу возвращаемого значения и по типам параметров обработчик событий клиентского терминала идентифицирует функции, обрабатывающие то или иное событие. Если у соответствующей функции указаны иные, не соответствующие нижеследующим описаниям, параметры или указан иной тип возвращаемого значения, то такая функция не будет использоваться для обработки события.</span></p> 
 <h3><a id="onstart"></a>OnStart</h3> 
-<p><span>Функция OnStart() является обработчиком события <a href="/ru/runtime/event_fire#start">Start</a>, которое автоматически генерируется </span><span style="font-weight: bold;">только</span><span> для запущенных на выполнение </span><span style="font-weight: bold;">скриптов</span><span>. Должна иметь тип </span><span style="color: #0000ff;">void</span><span>, параметров не имеет:</span></p> 
+<p><span>Функция OnStart() является обработчиком события <a href="/runtime/event_fire#start">Start</a>, которое автоматически генерируется </span><span style="font-weight: bold;">только</span><span> для запущенных на выполнение </span><span style="font-weight: bold;">скриптов</span><span>. Должна иметь тип </span><span style="color: #0000ff;">void</span><span>, параметров не имеет:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -14,7 +14,7 @@
 </div> 
 <p><span> Для функции OnStart() допустимо указывать тип возвращаемого значения int.</span></p> 
 <h3><a id="oninit"></a>OnInit</h3> 
-<p><span>Функция OnInit() является обработчиком события <a href="/ru/runtime/event_fire#init">Init</a>. Может иметь тип </span><span style="color: #0000ff;">void </span><span>или </span><span style="color: #0000ff;">int</span><span>, параметров не имеет:</span></p> 
+<p><span>Функция OnInit() является обработчиком события <a href="/runtime/event_fire#init">Init</a>. Может иметь тип </span><span style="color: #0000ff;">void </span><span>или </span><span style="color: #0000ff;">int</span><span>, параметров не имеет:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -24,9 +24,9 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>Событие Init генерируется сразу после загрузки эксперта или индикатора. Функция OnInit() используется для инициализации. Если OnInit() имеет возвращаемое значение типа int, то ненулевой код возврата означает неудачную инициализацию и генерирует событие <a href="/ru/runtime/event_fire#deinit">Deinit</a> с кодом причины деинициализации </span><span><a href="/ru/constants/namedconstants/uninit#reason_initfailed">REASON_INITFAILED</a></span><span>.</span></p> 
-<p><span>Результат выполнения функции OnInit() анализируется исполняющей подсистемой терминала только в том случае, если программа скомпилирована с использованием <a href="/ru/mql4changes#compiler_difference">#property strict</a>.</span></p> 
-<p><span>Для оптимизации входных параметров эксперта рекомендуется в качестве кода возврата использовать значения из перечисления <a href="/ru/basis/function/events#enum_init_retcode">ENUM_INIT_RETCODE</a>. Эти значения предназначены для организации управления ходом оптимизации. Прямо при инициализации эксперта еще до запуска самого тестирования можно запросить информацию о конфигурации и ресурсах с помощью функции <a href="/ru/check/terminalinfointeger">TerminalInfoInteger()</a>.</span></p> 
+<p><span>Событие Init генерируется сразу после загрузки эксперта или индикатора. Функция OnInit() используется для инициализации. Если OnInit() имеет возвращаемое значение типа int, то ненулевой код возврата означает неудачную инициализацию и генерирует событие <a href="/runtime/event_fire#deinit">Deinit</a> с кодом причины деинициализации </span><span><a href="/constants/namedconstants/uninit#reason_initfailed">REASON_INITFAILED</a></span><span>.</span></p>
+<p><span>Результат выполнения функции OnInit() анализируется исполняющей подсистемой терминала только в том случае, если программа скомпилирована с использованием <a href="/mql4changes#compiler_difference">#property strict</a>.</span></p>
+<p><span>Для оптимизации входных параметров эксперта рекомендуется в качестве кода возврата использовать значения из перечисления <a href="/basis/function/events#enum_init_retcode">ENUM_INIT_RETCODE</a>. Эти значения предназначены для организации управления ходом оптимизации. Прямо при инициализации эксперта еще до запуска самого тестирования можно запросить информацию о конфигурации и ресурсах с помощью функции <a href="/check/terminalinfointeger">TerminalInfoInteger()</a>.</span></p>
 <p><a id="enum_init_retcode"></a><span style="font-weight: bold;">ENUM_INIT_RETCODE</span></p> 
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
@@ -52,7 +52,7 @@
 </div> 
 <p><span>Функция OnInit() типа void всегда означает удачную инициализацию.</span></p> 
 <h3><a id="ondeinit"></a>OnDeinit</h3> 
-<p><span>Функция OnDeinit() вызывается при деинициализации и является обработчиком события <a href="/ru/runtime/event_fire#deinit">Deinit</a>. Должна быть объявлена с типом </span><span style="color: #0000ff;">void</span><span> и иметь один параметр типа </span><span style="color: #0000ff;">const int</span><span> , который содержит <a href="/ru/constants/namedconstants/uninit">код причины деинициализации</a>. Е</span><span>сли объявлен иной тип, компилятор выдаст предупреждение, но функция вызываться не будет.</span></p> 
+<p><span>Функция OnDeinit() вызывается при деинициализации и является обработчиком события <a href="/runtime/event_fire#deinit">Deinit</a>. Должна быть объявлена с типом </span><span style="color: #0000ff;">void</span><span> и иметь один параметр типа </span><span style="color: #0000ff;">const int</span><span> , который содержит <a href="/constants/namedconstants/uninit">код причины деинициализации</a>. Е</span><span>сли объявлен иной тип, компилятор выдаст предупреждение, но функция вызываться не будет.</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -64,10 +64,10 @@
 </div> 
 <p><span>Событие Deinit генерируется для экспертов и индикаторов в следующих случаях:</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>перед переинициализацией в связи со сменой символа или периода графика, к которому прикреплена mql4-программа;</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 8px 17px 7px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>перед переинициализацией в связи со сменой <a href="/ru/basis/variables/inputvariables">входных параметров</a>;</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 8px 17px 7px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>перед переинициализацией в связи со сменой <a href="/basis/variables/inputvariables">входных параметров</a>;</span></p>
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>перед выгрузкой mql4-программы.</span></p> 
 <h3><a id="ontick"></a>OnTick</h3> 
-<p><span>Событие <a href="/ru/runtime/event_fire#newtick">NewTick</a> генерируется </span><span style="font-weight: bold;">только для экспертов</span><span> при поступлении нового тика по символу, к графику которого прикреплен эксперт. Функцию OnTick() бесполезно определять в пользовательском индикаторе или скрипте, поскольку событие NewTick для них не генерируется. </span></p> 
+<p><span>Событие <a href="/runtime/event_fire#newtick">NewTick</a> генерируется </span><span style="font-weight: bold;">только для экспертов</span><span> при поступлении нового тика по символу, к графику которого прикреплен эксперт. Функцию OnTick() бесполезно определять в пользовательском индикаторе или скрипте, поскольку событие NewTick для них не генерируется. </span></p>
 <p><span>Событие Tick генерируется только для экспертов, но это не означает, что эксперты обязаны иметь функцию OnTick(), так как для экспертов генерируются не только события NewTick, но и события Timer, BookEvent и ChartEvent. Должна быть объявлена с типом </span><span style="color: #0000ff;">void</span><span>, параметров не имеет:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -79,8 +79,8 @@
  </table> 
 </div> 
 <h3><a id="ontimer"></a>OnTimer</h3> 
-<p><span>Функция OnTimer() вызывается при наступлении события <a href="/ru/runtime/event_fire#timer">Timer</a>, которое генерируется системным таймером только для экспертов и индикаторов – использовать ее в скриптах нельзя. Периодичность наступления этого события устанавливается при подписке на получение функцией <a href="/ru/eventfunctions/eventsettimer">EventSetTimer()</a> уведомлений о событии Timer. </span></p> 
-<p><span>Отписывание от приема посылки событий таймера для конкретного эксперта производится функцией <a href="/ru/eventfunctions/eventkilltimer">EventKillTimer()</a>. Функция должна быть определена с типом void, параметров не имеет:</span></p> 
+<p><span>Функция OnTimer() вызывается при наступлении события <a href="/runtime/event_fire#timer">Timer</a>, которое генерируется системным таймером только для экспертов и индикаторов – использовать ее в скриптах нельзя. Периодичность наступления этого события устанавливается при подписке на получение функцией <a href="/eventfunctions/eventsettimer">EventSetTimer()</a> уведомлений о событии Timer. </span></p>
+<p><span>Отписывание от приема посылки событий таймера для конкретного эксперта производится функцией <a href="/eventfunctions/eventkilltimer">EventKillTimer()</a>. Функция должна быть определена с типом void, параметров не имеет:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -91,9 +91,9 @@
  </table> 
 </div> 
 <p><span>Рекомендуется вызывать функцию EventSetTimer() однократно в функции OnInit(), а функцию EventKillTimer() вызывать однократно в OnDeinit().</span></p> 
-<p><span>Каждый эксперт и каждый индикатор работает со своим таймером, и получает события только от него. При завершении работы mql4-программы таймер уничтожается принудительно, если он был создан, но не был отключен функцией <a href="/ru/eventfunctions/eventkilltimer">EventKillTimer()</a>.</span></p> 
+<p><span>Каждый эксперт и каждый индикатор работает со своим таймером, и получает события только от него. При завершении работы mql4-программы таймер уничтожается принудительно, если он был создан, но не был отключен функцией <a href="/eventfunctions/eventkilltimer">EventKillTimer()</a>.</span></p>
 <h3><a id="ontester"></a>OnTester</h3> 
-<p><span>Функция OnTester() является обработчиком события <a href="/ru/runtime/event_fire#tester">Tester</a>, которое автоматически генерируется по окончании исторического тестирования эксперта на заданном интервале дат. Функция должна быть определена с типом double, параметров не имеет:</span></p> 
+<p><span>Функция OnTester() является обработчиком события <a href="/runtime/event_fire#tester">Tester</a>, которое автоматически генерируется по окончании исторического тестирования эксперта на заданном интервале дат. Функция должна быть определена с типом double, параметров не имеет:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -106,12 +106,12 @@
 <p><span>Функция вызывается непосредственно перед вызовом функции OnDeinit() и имеет тип возвращаемого значения double. Функция OnTester() может быть использована только в экспертах при тестировании и предназначена в первую очередь для расчета некоторого значения, используемого в качестве критерия Custom max при генетической оптимизации входных параметров.</span></p> 
 <p><span>При генетической оптимизации сортировка результатов в пределах одного поколения производится по убыванию. То есть, лучшими с точки зрения критерия оптимизации считаются результаты с наибольшим значением (для критерия оптимизации Custom max в расчет принимаются значения, возвращенные функцией OnTester). Худшие значения при такой сортировке помещаются в конец и впоследствии отбрасываются и не принимают участия в формировании следующего поколения.</span></p> 
 <h3><a id="onchartevent"></a>OnChartEvent</h3> 
-<p><span>OnChartEvent() является обработчиком группы событий <a href="/ru/runtime/event_fire#chartevent">ChartEvent</a>:</span></p> 
+<p><span>OnChartEvent() является обработчиком группы событий <a href="/runtime/event_fire#chartevent">ChartEvent</a>:</span></p>
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>CHARTEVENT_KEYDOWN — событие нажатия клавиатуры, когда окно графика находится в фокусе;</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 26px; margin: 0px 0px 0px 4px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>CHARTEVENT_MOUSE_MOVE — события перемещения мыши и нажатия кнопок мыши (если для графика установлено свойство <a href="/ru/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_MOUSE_MOVE</a>=true);</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>CHARTEVENT_OBJECT_CREATE — событие создания графического объекта (если для графика установлено свойство <a href="/ru/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_CREATE</a>=true);</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 26px; margin: 0px 0px 0px 4px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>CHARTEVENT_MOUSE_MOVE — события перемещения мыши и нажатия кнопок мыши (если для графика установлено свойство <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_MOUSE_MOVE</a>=true);</span></p>
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>CHARTEVENT_OBJECT_CREATE — событие создания графического объекта (если для графика установлено свойство <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_CREATE</a>=true);</span></p>
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>CHARTEVENT_OBJECT_CHANGE — событие изменения свойств объекта через диалог свойств;</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>CHARTEVENT_OBJECT_DELETE — событие удаления графического объекта (если для графика установлено свойство <a href="/ru/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_DELETE</a>=true);</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>CHARTEVENT_OBJECT_DELETE — событие удаления графического объекта (если для графика установлено свойство <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_DELETE</a>=true);</span></p>
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>CHARTEVENT_CLICK — cобытие щелчка мыши на графике;</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>CHARTEVENT_OBJECT_CLICK — событие щелчка мыши на графическом объекте, принадлежащем графику;</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>CHARTEVENT_OBJECT_DRAG — событие перемещения графического объекта при помощи мыши;</span></p> 
@@ -148,14 +148,14 @@
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Строковое значение битовой маски, описывающее статус кнопок клавиатуры</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>События мыши </span><span>(если для графика установлено свойство <a href="/ru/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_MOUSE_MOVE</a>=true)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>События мыши </span><span>(если для графика установлено свойство <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_MOUSE_MOVE</a>=true)</span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_MOUSE_MOVE</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>X координата</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Y координата</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Строковое значение битовой маски, описывающее статус кнопок мыши</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Событие создания графического объекта (если для графика установлено свойство <a href="/ru/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_CREATE</a>=true)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Событие создания графического объекта (если для графика установлено свойство <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_CREATE</a>=true)</span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_CREATE</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>—</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>—</span></p> </td> 
@@ -169,7 +169,7 @@
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Имя измененного графического объекта</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Событие удаления графического объекта (если для графика установлено свойство <a href="/ru/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_DELETE</a>=true)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Событие удаления графического объекта (если для графика установлено свойство <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_DELETE</a>=true)</span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_DELETE </span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>—</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>—</span></p> </td> 
@@ -213,15 +213,15 @@
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Пользовательское событие с номером N</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_CUSTOM+N</span></p> </td> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение, заданное функцией <a href="/ru/eventfunctions/eventchartcustom">EventChartCustom()</a></span></p> </td> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение, заданное функцией <a href="/ru/eventfunctions/eventchartcustom">EventChartCustom()</a></span></p> </td> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение, заданное функцией <a href="/ru/eventfunctions/eventchartcustom">EventChartCustom()</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение, заданное функцией <a href="/eventfunctions/eventchartcustom">EventChartCustom()</a></span></p> </td>
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение, заданное функцией <a href="/eventfunctions/eventchartcustom">EventChartCustom()</a></span></p> </td>
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение, заданное функцией <a href="/eventfunctions/eventchartcustom">EventChartCustom()</a></span></p> </td>
    </tr> 
   </tbody> 
  </table> 
 </div> 
 <h3><a id="oncalculate"></a>OnCalculate</h3> 
-<p><span>Функция OnCalculate() вызывается только в пользовательских индикаторах при необходимости произвести расчет значений индикатора по событию <a href="/ru/runtime/event_fire#calculate">Calculate</a>. Обычно это происходит при поступлении нового тика по символу, для которого рассчитывается индикатор. При этом индикатор не обязательно должен быть прикреплен к какому-нибудь ценовому графику данного символа. </span></p> 
+<p><span>Функция OnCalculate() вызывается только в пользовательских индикаторах при необходимости произвести расчет значений индикатора по событию <a href="/runtime/event_fire#calculate">Calculate</a>. Обычно это происходит при поступлении нового тика по символу, для которого рассчитывается индикатор. При этом индикатор не обязательно должен быть прикреплен к какому-нибудь ценовому графику данного символа. </span></p>
 <p><span>Функция OnCalculate() должна иметь тип возвращаемого значения int.</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -233,7 +233,7 @@
  </table> 
 </div> 
 <p><span>Параметры open[], high[], low[] и close[] содержит массивы с ценами открытия, максимальной, минимальной ценами и ценами закрытия текущего таймфрейма. Параметр time[] содержит массив со значениями времени открытия, параметр spread[] – массив, содержащий историю спредов (если спред предусмотрен для данного торгового инструмента). Параметры volume[] и tick_volume[] содержат соответственно историю торгового и тикового объема.</span></p> 
-<p><span>Чтобы определить направление индексации в массивах time[], open[], high[], low[], close[], tick_volume[], volume[] и spread[], необходимо вызывать функцию <a href="/ru/array/arraygetasseries">ArrayGetAsSeries()</a>. Чтобы не зависеть от умолчаний, необходимо безусловно вызывать функцию <a href="/ru/array/arraysetasseries">ArraySetAsSeries()</a> для тех массивов, с которыми предполагается работать.</span></p> 
+<p><span>Чтобы определить направление индексации в массивах time[], open[], high[], low[], close[], tick_volume[], volume[] и spread[], необходимо вызывать функцию <a href="/array/arraygetasseries">ArrayGetAsSeries()</a>. Чтобы не зависеть от умолчаний, необходимо безусловно вызывать функцию <a href="/array/arraysetasseries">ArraySetAsSeries()</a> для тех массивов, с которыми предполагается работать.</span></p>
 <p><span>Первый параметр rates_total содержит количество баров, доступных индикатору для расчета, и соответствует количеству баров, доступных на графике.</span></p> 
 <p><span>Необходимо отметить связь между значением, возвращаемым функцией OnCalculate() и вторым входным параметром prev_calculated. Параметр prev_calculated при вызове функции содержит значение, которое </span><span style="font-weight: bold;">вернула</span><span> функция OnCalculate() на </span><span style="font-weight: bold;">предыдущем</span><span> вызове. Это позволяет реализовать экономные алгоритмы расчета пользовательского индикатора с тем, чтобы избежать повторных расчетов для тех баров, которые не изменились с предыдущего запуска этой функции. </span></p> 
 <p><span>Для этого обычно достаточно вернуть значение параметра rates_total, которое содержит количество баров при текущем вызове функции. Если с момента последнего вызова функции OnCalculate() ценовые данные были изменены (подкачана более глубокая история или были заполнены пропуски истории), то значение входного параметра prev_calculated будет установлено в нулевое значение самим терминалом. </span></p> 
@@ -249,5 +249,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/runtime/running">Выполнение программ</a>, <a href="/ru/runtime/event_fire">События клиентского терминала</a>, <a href="/ru/eventfunctions">Работа с событиями</a></span></p> 
+<p><span><a href="/runtime/running">Выполнение программ</a>, <a href="/runtime/event_fire">События клиентского терминала</a>, <a href="/eventfunctions">Работа с событиями</a></span></p>
 <br>

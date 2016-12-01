@@ -1,0 +1,29 @@
+<h1>WindowFind</h1> 
+<p><span>Returns the window index containing this specified indicator.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>WindowFind</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>name</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>name</span></p> 
+<p><span>[in] &nbsp;Indicator short name.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>If indicator with name was found, the function returns the window index containing this specified indicator, otherwise it returns -1.</span></p> 
+<p><span>Note</span></p> 
+<p><span>WindowFind() returns -1 if custom indicator searches itself when init() function works.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;win_idx=</span><span style="color: #0000ff;">WindowFind</span><span>(</span><span style="color: #008080;">"MACD(12,26,9)"</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

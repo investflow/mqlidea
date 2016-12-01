@@ -15,7 +15,7 @@
 <p><span>filename</span></p> 
 <p><span>[in] &nbsp;Имя файла, содержащего шаблон.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
-<p><span>Возвращает true в случае удачного помещения команды в очередь графика, иначе false. Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Возвращает true в случае удачного помещения команды в очередь графика, иначе false. Чтобы получить информацию об <a href="/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/check/getlasterror">GetLastError()</a>.</span></p>
 <p><span>Примечание</span></p> 
 <p><span>Если посредством этой функции из эксперта будет загружен новый шаблон на график, к которому он присоединен, то эксперт будет выгружен и не сможет продолжить работу.</span></p> 
 <h3>Права на торговлю и использование DLL</h3> 
@@ -37,7 +37,7 @@
 <p><span>Если у mql4-программы, которая вызывает функцию ChartApplyTemplate(), отсутствуют права на торговлю, то эксперт, загруженный при помощи шаблона, также не будет иметь прав на торговлю вне зависимости от настроек шаблона.</span></p> 
 <p><span>Если у mql4-программы, которая вызывает функцию ChartApplyTemplate(), есть права на торговлю, а в настройках шаблона права отсутствуют, то советник, загруженный при помощи шаблона, не будет иметь прав на торговлю.</span></p> 
 <h3>Использование шаблонов</h3> 
-<p><span>Средствами языка MQL4 можно задавать множество свойств графика, в том числе устанавливать цвета с помощью функции <a href="/ru/chart_operations/chartsetinteger">ChartSetInteger()</a>:</span></p> 
+<p><span>Средствами языка MQL4 можно задавать множество свойств графика, в том числе устанавливать цвета с помощью функции <a href="/chart_operations/chartsetinteger">ChartSetInteger()</a>:</span></p>
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>Цвет фона графика;</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>Цвет осей, шкалы и строки OHLC;</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>Цвет сетки;</span></p> 
@@ -51,13 +51,13 @@
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>Цвет линии Ask-цены;</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>Цвет линии цены последней совершенной сделки (Last);</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>Цвет уровней стоп-ордеров (Stop Loss и Take Profit).</span></p> 
-<p><span>Кроме того, на графике может быть множество <a href="/ru/objects">графических объектов</a> и <a href="/ru/indicators">индикаторов</a>. Достаточно один раз настроить внешний вид графика со всеми необходимыми индикаторами и сохранить его в виде шаблона, чтобы в последствии можно было применять этот шаблон к любому графику. </span></p> 
-<p><span>Функция <a href="/ru/chart_operations/chartapplytemplate">ChartApplyTemplate()</a> предназначена для использования ранее сохраненного шаблона и может использоваться в любой mql4-программе. Вторым параметром функции ChartApplyTemplate() передается путь к имени файла, в котором находится шаблон. Поиск файла шаблона осуществляется по следующим правилам:</span></p> 
+<p><span>Кроме того, на графике может быть множество <a href="/objects">графических объектов</a> и <a href="/indicators">индикаторов</a>. Достаточно один раз настроить внешний вид графика со всеми необходимыми индикаторами и сохранить его в виде шаблона, чтобы в последствии можно было применять этот шаблон к любому графику. </span></p>
+<p><span>Функция <a href="/chart_operations/chartapplytemplate">ChartApplyTemplate()</a> предназначена для использования ранее сохраненного шаблона и может использоваться в любой mql4-программе. Вторым параметром функции ChartApplyTemplate() передается путь к имени файла, в котором находится шаблон. Поиск файла шаблона осуществляется по следующим правилам:</span></p>
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>если в начале пути стоит разделитель обратная косая черта "\" (пишется "\\"), то шаблон ищется относительно пути каталог_данных_терминала\MQL4,</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>если обратной косой черты нет, то шаблон ищется относительно исполняемого EX4-файла, в котором происходит вызов функции ChartApplyTemplate();</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>если шаблон не найден в первых двух вариантах, то поиск ведется в папке каталог_терминала\Profiles\Templates\.</span></p> 
 <p><span>Здесь каталог_терминала означает папку, из которой запущен клиентский терминал MetaTrader 4, а каталог_данных_терминала означает папку, в которой хранятся изменяемые файлы и ее расположение может зависеть от типа операционной системы, имени пользователя и настроек безопасности компьютера. В общем случае это разные папки, хотя в некоторых случаях могут и совпадать.</span></p> 
-<p><span>Расположение папок каталог_данных_терминала и каталог_терминала можно узнать с помощью функции <a href="/ru/check/terminalinfostring">TerminalInfoString()</a>.</span></p> 
+<p><span>Расположение папок каталог_данных_терминала и каталог_терминала можно узнать с помощью функции <a href="/check/terminalinfostring">TerminalInfoString()</a>.</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -89,5 +89,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/runtime/resources">Ресурсы</a></span></p> 
+<p><span><a href="/runtime/resources">Ресурсы</a></span></p>
 <br>

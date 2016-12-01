@@ -1,0 +1,117 @@
+<h1>State Checking</h1> 
+<p><span>Functions that return parameters of the current state of the client terminal</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Function</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Action</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/getlasterror">GetLastError</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the last error</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/isstopped">IsStopped</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns true, if an mql4 program has been commanded to stop its operation</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/uninitializereason">UninitializeReason</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the code of the reason for deinitialization</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/mqlinfointeger">MQLInfoInteger</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns an integer value of a corresponding property of a running mql4 program</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/mqlinfostring">MQLInfoString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns a string value of a corresponding property of a running mql4 program</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/mqlsetinteger">MQLSetInteger</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Sets the value of the MQL_CODEPAGE property in an MQL4 program environment</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/terminalinfointeger">TerminalInfoInteger</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns an integer value of a corresponding property of a running mql4 program</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span style="background-color: transparent;"><a href="/check/terminalinfodouble">TerminalInfoDouble</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns a double value of a corresponding property of a running mql4 program</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span style="background-color: transparent;"><a href="/check/terminalinfostring">TerminalInfoString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns a string value of a corresponding property of a running mql4 program</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/symbol">Symbol</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the name of a symbol of the current chart</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/period">Period</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the current chart timeframe</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/digits">Digits</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the number of decimal digits determining the accuracy of the price value of the current chart symbol</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/point">Point</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the point size of the current symbol in the quote currency</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/isconnected">IsConnected</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks connection between client terminal and server</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/isdemo">IsDemo</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks if the Expert Advisor runs on a demo account</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/isdllsallowed">IsDllsAllowed</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks if the DLL function call is allowed for the Expert Advisor</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/isexpertenabled">IsExpertEnabled</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks if Expert Advisors are enabled for running</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/islibrariesallowed">IsLibrariesAllowed</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks if the Expert Advisor can call library function</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/isoptimization">IsOptimization</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks if Expert Advisor runs in the Strategy Tester optimization mode</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/istesting">IsTesting</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks if the Expert Advisor runs in the testing mode</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/istradeallowed">IsTradeAllowed</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks if the Expert Advisor is allowed to trade and trading context is not busy</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/istradecontextbusy">IsTradeContextBusy</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the information about trade context</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/isvisualmode">IsVisualMode</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks if the Expert Advisor is tested in visual mode</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/terminalcompany">TerminalCompany</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the name of company owning the client terminal</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/terminalname">TerminalName</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns client terminal name</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:153px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/check/terminalpath">TerminalPath</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the directory, from which the client terminal was launched</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

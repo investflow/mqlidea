@@ -1,0 +1,36 @@
+<h1>StringSetCharacter</h1> 
+<p><span>Returns true is a symbol is successfully inserted to the passed string.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>StringSetCharacter</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&amp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>string_var</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>pos</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;position</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ushort</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>character</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;character</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>string_var</span></p> 
+<p><span>[in][out] &nbsp;String.</span></p> 
+<p><span>pos</span></p> 
+<p><span>[in] &nbsp;Position of a character in a string. Can be from 0 to <a href="/strings/stringlen">StringLen</a>(text).</span></p> 
+<p><span>character</span></p> 
+<p><span>[in] &nbsp;Symbol code Unicode.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>In case of success returns true, otherwise - false. </span></p> 
+<p><span>Note</span></p> 
+<p><span>If pos is less than <a href="/strings/stringlen">string length</a> and the symbol code value = 0, the string is cut off (but the <a href="/strings/stringbufferlen">buffer size</a>, distributed for the string remains unchanged). The string length becomes equal to pos. </span></p> 
+<p><span>If </span><span style="font-style: italic;">pos</span><span> is equal to string length, the specified symbol is added at the string end, and the length is enlarged by one.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;str=</span><span style="color: #008080;">"0123456789"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"before:&nbsp;str&nbsp;=&nbsp;"</span><span>,str,</span><span style="color: #008080;">",StringBufferLen(str)&nbsp;=&nbsp;"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringBufferLen</span><span>(str),</span><span style="color: #008080;">"&nbsp;&nbsp;StringLen(str)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">StringLen</span><span>(str));</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;zero&nbsp;value&nbsp;in&nbsp;the&nbsp;middle</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(str,6,0);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"after:&nbsp;str&nbsp;=&nbsp;"</span><span>,str,</span><span style="color: #008080;">",StringBufferLen(str)&nbsp;=&nbsp;"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringBufferLen</span><span>(str),</span><span style="color: #008080;">"&nbsp;&nbsp;StringLen(str)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">StringLen</span><span>(str));</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;symbol&nbsp;at&nbsp;the&nbsp;end</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;size=</span><span style="color: #0000ff;">StringLen</span><span>(str);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(str,size,'+');</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"addition:&nbsp;str&nbsp;=&nbsp;"</span><span>,str,</span><span style="color: #008080;">",StringBufferLen(str)&nbsp;=&nbsp;"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringBufferLen</span><span>(str),</span><span style="color: #008080;">"&nbsp;&nbsp;StringLen(str)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">StringLen</span><span>(str));</span><br> <span>&nbsp;&nbsp;}</span><br> <span>/*&nbsp;Result</span><br> <span>&nbsp;&nbsp;&nbsp;before:&nbsp;str&nbsp;=&nbsp;0123456789&nbsp;,</span><span style="color: #0000ff;">StringBufferLen</span><span>(str)&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringLen</span><span>(str)&nbsp;=&nbsp;10</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;after:&nbsp;str&nbsp;=&nbsp;012345&nbsp;,</span><span style="color: #0000ff;">StringBufferLen</span><span>(str)&nbsp;=&nbsp;16&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringLen</span><span>(str)&nbsp;=&nbsp;6</span><br> <span>&nbsp;&nbsp;&nbsp;addition:&nbsp;str&nbsp;=&nbsp;012345+&nbsp;,</span><span style="color: #0000ff;">StringBufferLen</span><span>(str)&nbsp;=&nbsp;16&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringLen</span><span>(str)&nbsp;=&nbsp;7</span><br> <span>*/</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/strings/stringbufferlen">StringBufferLen()</a>, <a href="/strings/stringlen">StringLen()</a>, <a href="/strings/stringfill">StringFill()</a>, <a href="/strings/stringinit">StringInit()</a></span></p> 
+<br>

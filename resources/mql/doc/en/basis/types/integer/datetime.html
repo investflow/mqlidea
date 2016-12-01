@@ -1,0 +1,28 @@
+<h1>Datetime Type</h1> 
+<p><span>The </span><span style="color: #0000ff;">datetime</span><span> type is intended for storing the date and time as the number of seconds elapsed since January 01, 1970. This type occupies 8 bytes of memory.</span></p> 
+<p><span>Constants of the date and time can be represented as a literal string, which consists of 6 parts showing the numerical value of the year, month, day (or day, month, year), hours, minutes and seconds. The constant is enclosed in single quotation marks and starts with the D character.</span></p> 
+<p><span>Values range from 1 January, 1970 to 31 December, 3000. Either date (year , month, day) or time (hours, minutes, seconds), or all together can be omitted.</span></p> 
+<p><span>With literal date specification, it is desirable that you specify year, month and day. Otherwise the compiler returns a <a href="/constants/errorswarnings/warningscompile">warning</a> about an incomplete entry. </span></p> 
+<p><span style="font-weight: bold;">Examples:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">datetime</span><span>&nbsp;NY=D'2015.01.01&nbsp;00:00';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Time&nbsp;of&nbsp;beginning&nbsp;of&nbsp;year&nbsp;2015</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;d1=D'1980.07.19&nbsp;12:30:27';&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Year&nbsp;Month&nbsp;Day&nbsp;Hours&nbsp;Minutes&nbsp;Seconds</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;d2=D'19.07.1980&nbsp;12:30:27';&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Equal&nbsp;to&nbsp;D'1980.07.19&nbsp;12:30:27';</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;d3=D'19.07.1980&nbsp;12';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Equal&nbsp;to&nbsp;D'1980.07.19&nbsp;12:00:00'</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;d4=D'01.01.2004';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Equal&nbsp;to&nbsp;D'01.01.2004&nbsp;00:00:00'</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;compilation_date=</span><span style="color: #0000ff;">__DATE__</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Compilation&nbsp;date</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;compilation_date_time=</span><span style="color: #0000ff;">__DATETIME__</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Compilation&nbsp;date&nbsp;and&nbsp;time</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;compilation_time=</span><span style="color: #0000ff;">__DATETIME__</span><span>-</span><span style="color: #0000ff;">__DATE__</span><span>;</span><span style="color: #808080;">//&nbsp;Compilation&nbsp;time</span><br> <span style="color: #808080;">//---&nbsp;Examples&nbsp;of&nbsp;declarations&nbsp;after&nbsp;which&nbsp;compiler&nbsp;warnings&nbsp;will&nbsp;be&nbsp;returned</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;warning1=D'12:30:27';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Equal&nbsp;to&nbsp;D'[date&nbsp;of&nbsp;compilation]&nbsp;12:30:27'</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;warning2=D'';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Equal&nbsp;to&nbsp;__DATETIME__</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The string representation of </span><span style="color: #0000ff;">datetime</span><span> type depends on compilation mode: </span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;date=D'2014.03.05&nbsp;15:46:58';</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;str=</span><span style="color: #008080;">"mydate="</span><span>+date;</span><br> <span style="color: #808080;">//---&nbsp;str="mydate=1394034418"&nbsp;-&nbsp;without&nbsp;#property&nbsp;strict</span><br> <span style="color: #808080;">//---&nbsp;str="mydate=2014.03.05&nbsp;15:46:58"&nbsp;-&nbsp;with&nbsp;#property&nbsp;strict</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/constants/structures/mqldatetime">Structure of the Date Type</a>, <a href="/dateandtime">Date and Time</a>, <a href="/convert/timetostring">TimeToString</a>, <a href="/convert/stringtotime">StringToTime</a></span></p> 
+<br>

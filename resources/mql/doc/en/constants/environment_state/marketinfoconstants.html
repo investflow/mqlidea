@@ -1,0 +1,650 @@
+<h1>Symbol Properties</h1> 
+<p><span>Market information identifiers, used with <a href="/marketinformation/marketinfo">MarketInfo()</a> function. It can be any of the following values:</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>ID</span></p> </td> 
+    <td style="vertical-align:top; width:145px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Value</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_LOW</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>1</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Low day price</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_HIGH</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>2</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>High day price</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_TIME</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>5</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>The last incoming tick time (last known server time)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_BID</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>9</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Last incoming bid price. For the current symbol, it is stored in the predefined variable Bid</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_ASK</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>10</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Last incoming ask price. For the current symbol, it is stored in the predefined variable Ask</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_POINT</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>11</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Point size in the quote currency. For the current symbol, it is stored in the predefined variable Point</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_DIGITS</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>12</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Count of digits after decimal point in the symbol prices. For the current symbol, it is stored in the predefined variable Digits</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_SPREAD</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>13</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Spread value in points</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_STOPLEVEL</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>14</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Stop level in points</span></p> <p><span>&nbsp;</span></p> <p><span>A zero value of MODE_STOPLEVEL means either absence of any restrictions on the minimal distance for Stop Loss/Take Profit or the fact that a trade server utilizes some external mechanisms for dynamic level control, which cannot be translated in the client terminal. In the second case, GetLastError() can return error 130, because MODE_STOPLEVEL is actually "floating" here</span><span>.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_LOTSIZE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>15</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Lot size in the base currency</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_TICKVALUE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>16</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Tick value in the deposit currency</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_TICKSIZE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>17</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Tick size in points</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; height:16px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_SWAPLONG</span></p> </td> 
+    <td style="vertical-align:top; width:145px; height:16px; padding:5px; border:solid thin #b1c2d6;"><p><span>18</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; height:16px; padding:5px; border:solid thin #b1c2d6;"><p><span>Swap of the buy order</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_SWAPSHORT</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>19</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Swap of the sell order</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_STARTING</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>20</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Market starting date (usually used for futures)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_EXPIRATION</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>21</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Market expiration date (usually used for futures)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_TRADEALLOWED</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>22</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade is allowed for the symbol</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MINLOT</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>23</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Minimum permitted amount of a lot</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_LOTSTEP</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>24</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Step for changing lots</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MAXLOT</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>25</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Maximum permitted amount of a lot</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_SWAPTYPE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>26</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Swap calculation method. 0 - in points; 1 - in the symbol base currency; 2 - by interest; 3 - in the margin currency</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_PROFITCALCMODE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>27</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Profit calculation mode. 0 - Forex; 1 - CFD; 2 - Futures</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MARGINCALCMODE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>28</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Margin calculation mode. 0 - Forex; 1 - CFD; 2 - Futures; 3 - CFD for indices</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MARGININIT</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>29</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Initial margin requirements for 1 lot</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MARGINMAINTENANCE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>30</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Margin to maintain open orders calculated for 1 lot</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MARGINHEDGED</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>31</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Hedged margin calculated for 1 lot</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MARGINREQUIRED</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>32</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Free margin required to open 1 lot for buying</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_FREEZELEVEL</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>33</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Order freeze level in points. If the execution price lies within the range defined by the freeze level, the order cannot be modified, cancelled or closed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_CLOSEBY_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>34</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Allowed using <a href="/trading/ordercloseby">OrderCloseBy()</a> to close opposite orders on a specified symbol</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;The&nbsp;script&nbsp;prints&nbsp;information&nbsp;on&nbsp;symbol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Symbol="</span><span>,</span><span style="color: #0000ff;">Symbol</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Low&nbsp;day&nbsp;price="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_LOW</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"High&nbsp;day&nbsp;price="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_HIGH</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;last&nbsp;incoming&nbsp;tick&nbsp;time="</span><span>,(</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_TIME</span><span>)));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Last&nbsp;incoming&nbsp;bid&nbsp;price="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_BID</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Last&nbsp;incoming&nbsp;ask&nbsp;price="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_ASK</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Point&nbsp;size&nbsp;in&nbsp;the&nbsp;quote&nbsp;currency="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_POINT</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Digits&nbsp;after&nbsp;decimal&nbsp;point="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_DIGITS</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Spread&nbsp;value&nbsp;in&nbsp;points="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_SPREAD</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Stop&nbsp;level&nbsp;in&nbsp;points="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_STOPLEVEL</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Lot&nbsp;size&nbsp;in&nbsp;the&nbsp;base&nbsp;currency="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_LOTSIZE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Tick&nbsp;value&nbsp;in&nbsp;the&nbsp;deposit&nbsp;currency="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_TICKVALUE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Tick&nbsp;size&nbsp;in&nbsp;points="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_TICKSIZE</span><span>));&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Swap&nbsp;of&nbsp;the&nbsp;buy&nbsp;order="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_SWAPLONG</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Swap&nbsp;of&nbsp;the&nbsp;sell&nbsp;order="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_SWAPSHORT</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Market&nbsp;starting&nbsp;date&nbsp;(for&nbsp;futures)="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_STARTING</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Market&nbsp;expiration&nbsp;date&nbsp;(for&nbsp;futures)="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_EXPIRATION</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Trade&nbsp;is&nbsp;allowed&nbsp;for&nbsp;the&nbsp;symbol="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_TRADEALLOWED</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Minimum&nbsp;permitted&nbsp;amount&nbsp;of&nbsp;a&nbsp;lot="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MINLOT</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Step&nbsp;for&nbsp;changing&nbsp;lots="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_LOTSTEP</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Maximum&nbsp;permitted&nbsp;amount&nbsp;of&nbsp;a&nbsp;lot="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MAXLOT</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Swap&nbsp;calculation&nbsp;method="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_SWAPTYPE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Profit&nbsp;calculation&nbsp;mode="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_PROFITCALCMODE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Margin&nbsp;calculation&nbsp;mode="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MARGINCALCMODE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Initial&nbsp;margin&nbsp;requirements&nbsp;for&nbsp;1&nbsp;lot="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MARGININIT</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Margin&nbsp;to&nbsp;maintain&nbsp;open&nbsp;orders&nbsp;calculated&nbsp;for&nbsp;1&nbsp;lot="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MARGINMAINTENANCE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Hedged&nbsp;margin&nbsp;calculated&nbsp;for&nbsp;1&nbsp;lot="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MARGINHEDGED</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Free&nbsp;margin&nbsp;required&nbsp;to&nbsp;open&nbsp;1&nbsp;lot&nbsp;for&nbsp;buying="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MARGINREQUIRED</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Order&nbsp;freeze&nbsp;level&nbsp;in&nbsp;points="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_FREEZELEVEL</span><span>));&nbsp;</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>To obtain the current market information there are several functions: <a href="/marketinformation/symbolinfointeger">SymbolInfoInteger()</a>, <a href="/marketinformation/symbolinfodouble">SymbolInfoDouble()</a> and <a href="/marketinformation/symbolinfostring">SymbolInfoString()</a>. The first parameter is the symbol name, the values of the second function parameter can be one of the identifiers of ENUM_SYMBOL_INFO_INTEGER, ENUM_SYMBOL_INFO_DOUBLE and ENUM_SYMBOL_INFO_STRING.</span></p> 
+<p><span>For function <a href="/marketinformation/symbolinfointeger">SymbolInfoInteger()</a>:</span></p> 
+<p><a id="enum_symbol_info_integer"></a><span style="font-weight: bold;">ENUM_SYMBOL_INFO_INTEGER</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Identifier</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description </span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SELECT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Symbol is selected in Market Watch.</span></p> <p><span>&nbsp;</span></p> <p><span>Some symbols can be hidden in Market Watch, but still they are considered as selected.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VISIBLE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Symbol is visible in Market Watch.</span></p> <p><span>&nbsp;</span></p> <p><span>Some symbols (mostly, these are cross rates required for calculation of margin requirements or profits in deposit currency) are selected automatically, but generally are not visible in Market Watch. To be displayed such symbols have to be explicitly selected.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_DEALS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_BUY_ORDERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_SELL_ORDERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUMEHIGH</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUMELOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><a id="lastticktime"></a><span>SYMBOL_TIME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Time of the last quote</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>datetime</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_DIGITS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Digits after a decimal point</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SPREAD_FLOAT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Indication of a floating spread</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SPREAD</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Spread value in points</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_CALC_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Contract price calculation mode</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Order execution type</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/environment_state/marketinfoconstants#enum_symbol_trade_mode">ENUM_SYMBOL_TRADE_MODE</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_START_TIME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Date of the symbol trade beginning (usually used for futures)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>datetime</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_EXPIRATION_TIME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Date of the symbol trade end (usually used for futures)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>datetime</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_STOPS_LEVEL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Minimal indention in points from the current close price to place Stop orders</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_FREEZE_LEVEL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Distance to freeze trade operations in points</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_EXEMODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Deal execution mode</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/environment_state/marketinfoconstants#enum_symbol_trade_execution">ENUM_SYMBOL_TRADE_EXECUTION</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SWAP_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Swap calculation model</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SWAP_ROLLOVER3DAYS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Day of week to charge 3 days swap rollover</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/environment_state/marketinfoconstants#enum_day_of_week">ENUM_DAY_OF_WEEK</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_EXPIRATION_MODE </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_FILLING_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_ORDER_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>For function <a href="/marketinformation/symbolinfodouble">SymbolInfoDouble()</a>:</span></p> 
+<p><a id="enum_symbol_info_double"></a><span style="font-weight: bold;">ENUM_SYMBOL_INFO_DOUBLE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Identifier</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_BID</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Bid - best sell offer</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_BIDHIGH</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_BIDLOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_ASK</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ask - best buy offer</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_ASKHIGH</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_ASKLOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_LAST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_LASTHIGH</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_LASTLOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_POINT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Symbol point value</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_TICK_VALUE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Value of SYMBOL_TRADE_TICK_VALUE_PROFIT</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_TICK_VALUE_PROFIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_TICK_VALUE_LOSS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_TICK_SIZE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Minimal price change</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_CONTRACT_SIZE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade contract size</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUME_MIN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Minimal volume for a deal</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUME_MAX</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Maximal volume for a deal</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUME_STEP</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Minimal volume change step for deal execution</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUME_LIMIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SWAP_LONG</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Buy order swap value</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SWAP_SHORT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Sell order swap value</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_INITIAL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Initial margin means the amount in the margin currency required for opening an order with the volume of one lot. It is used for checking a client's assets when he or she enters the market.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_MAINTENANCE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The maintenance margin. If it is set, it sets the margin amount in the margin currency of the symbol, charged from one lot. It is used for checking a client's assets when his/her account state changes. If the maintenance margin is equal to 0, the initial margin is used.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_LONG</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_SHORT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_LIMIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_STOP</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_STOPLIMIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_VOLUME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_TURNOVER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_INTEREST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_BUY_ORDERS_VOLUME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_SELL_ORDERS_VOLUME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_OPEN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_CLOSE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_AW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_PRICE_SETTLEMENT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_PRICE_LIMIT_MIN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_PRICE_LIMIT_MAX</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not supported</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>For function <a href="/marketinformation/symbolinfostring">SymbolInfoString()</a>:</span></p> 
+<p><a id="enum_symbol_info_string"></a><span style="font-weight: bold;">ENUM_SYMBOL_INFO_STRING</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Identifier</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_CURRENCY_BASE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Basic currency of a symbol</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_CURRENCY_PROFIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Profit currency</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_CURRENCY_MARGIN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Margin currency</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_DESCRIPTION</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Symbol description</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_PATH</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Path in the symbol tree</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>There are several symbol trading modes. Information about trading modes of a certain symbol is reflected in the values of enumeration ENUM_SYMBOL_TRADE_MODE.</span></p> 
+<p><a id="enum_symbol_trade_mode"></a><span style="font-weight: bold;">ENUM_SYMBOL_TRADE_MODE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Identifier</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE_DISABLED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade is disabled for the symbol</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE_LONGONLY*</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Allowed only long positions</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE_SHORTONLY*</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Allowed only short positions</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE_CLOSEONLY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Allowed only position close operations</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE_FULL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No trade restrictions</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Possible deal execution modes for a certain symbol are defined in enumeration ENUM_SYMBOL_TRADE_EXECUTION.</span></p> 
+<p><a id="enum_symbol_trade_execution"></a><span style="font-weight: bold;">ENUM_SYMBOL_TRADE_EXECUTION</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Identifier</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_EXECUTION_REQUEST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span> Execution by request</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_EXECUTION_INSTANT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Instant execution</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_EXECUTION_MARKET</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Market execution</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_EXECUTION_EXCHANGE*</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Exchange execution</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>*These values are not used in MQL4 (added for compatibility with MQL5).</span></p> 
+<p><span>Values of the ENUM_DAY_OF_WEEK enumeration are used for specifying d</span><span>ays of week</span><span>.</span></p> 
+<p><a id="enum_day_of_week"></a><span style="font-weight: bold;">ENUM_DAY_OF_WEEK</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Identifier</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SUNDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Sunday</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MONDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Monday</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>TUESDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Tuesday</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>WEDNESDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Wednesday</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>THURSDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Thursday</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>FRIDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Friday</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SATURDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Saturday</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

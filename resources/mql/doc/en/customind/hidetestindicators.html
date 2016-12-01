@@ -1,0 +1,29 @@
+<h1>HideTestIndicators</h1> 
+<p><span>The function sets a flag hiding indicators called by the Expert Advisor.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>HideTestIndicators</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>bool</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>hide</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;flag</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>hide</span></p> 
+<p><span>[in] &nbsp;Hiding flag.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>None.</span></p> 
+<p><span>Note</span></p> 
+<p><span>After the Expert Advisor has been tested and the appropriate chart opened, the flagged indicators will not be drawn in the testing chart. Every indicator called will first be flagged with the current hiding flag. It must be noted that only those indicators can be drawn in the testing chart that are directly called from the expert under test.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">HideTestIndicators</span><span>(</span><span style="color: #0000ff;">true</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;MaCurrent=</span><span style="color: #0000ff;">iMA</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,56,0,</span><span style="color: #0000ff;">MODE_EMA</span><span>,</span><span style="color: #0000ff;">PRICE_CLOSE</span><span>,0);</span><br> <span>&nbsp;&nbsp;&nbsp;MaPrevious=</span><span style="color: #0000ff;">iMA</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,56,0,</span><span style="color: #0000ff;">MODE_EMA</span><span>,</span><span style="color: #0000ff;">PRICE_CLOSE</span><span>,1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">HideTestIndicators</span><span>(</span><span style="color: #0000ff;">false</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

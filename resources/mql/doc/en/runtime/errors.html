@@ -1,0 +1,11 @@
+<h1>Runtime Errors</h1> 
+<p><span>The executing subsystem of the client terminal has an opportunity to save the <a href="/constants/errorswarnings/errorcodes">error code</a> in case it occurs during a MQL4 program run. There is a predefined variable <a href="/predefined/_lasterror">_LastError</a> for each executable MQL4 program.</span></p> 
+<p><span>Before starting the <a href="/basis/function/events#oninit">OnInit</a> function, the _LastError variable is reset. In case an erroneous situation occurs during calculations or in the process of internal function calls, the _LastError variable accepts a corresponding error code. The value stored in this variable can be obtained using the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span>There are several critical errors in case of which a program is terminated immediately:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>division by zero</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>going beyond array boundary</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>using an incorrect <a href="/basis/types/object_pointers">object pointer</a></span></li> 
+</ul> 
+<p><span>&nbsp;</span></p> 
+<br>

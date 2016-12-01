@@ -1,0 +1,51 @@
+<h1>Formal Parameters</h1> 
+<p><span>Parameters passed to the function are <a href="/basis/variables/local">local</a>. The scope is the function block. Formal parameters must have names differing from those of external variables and local variables defined within one function. Some values can be assigned to formal parameters in the function block. If a formal parameter is declared with the <a href="/basis/variables#const">const</a> modifier, its value can't be changed within the function.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;func(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&amp;&nbsp;x[],&nbsp;</span><span style="color: #0000ff;">double&nbsp;</span><span>y,&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;z)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(y&gt;0.0&nbsp;&amp;&amp;&nbsp;!z)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(x[0]);</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Formal parameters can be <a href="/basis/variables/initialization">initialized</a> by constants. In this case, the initializing value is considered as the default value. Parameters, next to the initialized one, must also be initialized.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;func(</span><span style="color: #0000ff;">int</span><span>&nbsp;x,&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;y&nbsp;=&nbsp;0.0,&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;z&nbsp;=&nbsp;</span><span style="color: #0000ff;">true</span><span>)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>When calling such a function, the initialized parameters can be omitted, the defaults being substituted instead of them.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>func(</span><span style="color: #008080;">123</span><span>,&nbsp;</span><span style="color: #008080;">0</span><span>.</span><span style="color: #008080;">5</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters of <a href="/basis/types#base_types">simple types</a> are passed by value, i.e., modifications of the corresponding <a href="/basis/variables/local">local variable</a> of this type inside the called function will not be reflected in the calling function. Arrays of any type and data of the structure type are always passed by reference. If it is necessary to prohibit modifying the array or structure contents, the parameters of these types must be declared with the </span><span style="font-style: italic;">const</span><span> keyword.</span></p> 
+<p><span>There is an opportunity to pass parameters of simple types by reference. In this case, modification of such parameters inside the calling function will affect the corresponding variables passed by reference. In order to indicate that a parameter is passed by reference, put the &amp; modifier after the data type.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;func(</span><span style="color: #0000ff;">int</span><span>&amp;&nbsp;x,&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;y,&nbsp;</span><span style="color: #0000ff;">double&nbsp;</span><span>&amp;&nbsp;z[])</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;calculated_tp;</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;</span><span style="color: #0000ff;">OrdersTotal</span><span>();&nbsp;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(i==</span><span style="color: #0000ff;">ArraySize</span><span>(z))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(OrderSelect(i)==</span><span style="color: #0000ff;">false</span><span>)&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z[i]=OrderOpenPrice();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;x=i;</span><br> <span>&nbsp;&nbsp;&nbsp;y=calculated_tp;</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters passed by reference can't be initialized by default values.</span></p> 
+<p><span>Maximum 64 parameters can be passed into a function.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/variables/inputvariables#icustompassparameters">Input Variables</a>, <a href="/basis/types">Data Types</a>, <a href="/basis/oop/incapsulation">Encapsulation and Extensibility of Types</a>,<a href="/basis/variables/initialization">Initialization of Variables</a>, <a href="/basis/variables/variable_scope">Visibility Scope and Lifetime of Variables</a>, <a href="/basis/variables/object_live">Creating and Deleting Objects</a></span></p> 
+<br>

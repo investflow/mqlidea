@@ -1,0 +1,198 @@
+<h1>Program Properties (#property)</h1> 
+<p><span>Every MQL4-program allows to specify additional specific parameters named #property that help client terminal in proper servicing for programs without the necessity to launch them explicitly. This concerns external settings of indicators, first of all. Properties described in included files are completely ignored. Properties must be specified in the main mq4 file.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#property</span><span>&nbsp;identifier&nbsp;value</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The compiler will write declared values in the configuration of the module executed.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Constant</span></p> </td> 
+    <td style="vertical-align:top; width:69px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Type</span></p> </td> 
+    <td style="vertical-align:top; width:623px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:176px; padding:5px; border:solid thin #b1c2d6;"><p><span>strict</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Compiler directive for strict compilation mode (see <a href="/mql4changes#compiler_difference">Updated MQL4</a>)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:176px; padding:5px; border:solid thin #b1c2d6;"><p><span>icon</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/stringconst">string</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Path to the file of an image that will be used as an icon of the EX4 program. Path specification rules are the same as for <a href="/runtime/resources">resources</a>. The property must be specified in the main module with the MQL4 source code. The icon file must be in the ICO format.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>link</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/stringconst">string</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Link to the company website</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>copyright</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/stringconst">string</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>The company name</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>version</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/stringconst">string</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Program version, maximum 31 characters</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>description</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/stringconst">string</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Brief text description of a MQL4-program. Several </span><span style="font-style: italic;">description</span><span> can be present, each of them describes one line of the text. The total length of all </span><span style="font-style: italic;">description</span><span> can not exceed 511 characters including line feed.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>stacksize</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/integer/integertypes">int</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL4 program <a href="/basis/variables/local#stack">stack</a> size. The stack of sufficient size is necessary when executing function recursive calls.</span></p> <p><span>When launching a script or an Expert Advisor on the chart, the stack of at least 8 MB is allocated. In case of indicators, the stack size is always fixed and equal to 1 MB.</span></p> <p><span>When a program is launched in the strategy tester, the stack of 8 MB is always allocated for it.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>library</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>A library; no start function is assigned, functions with <a href="/basis/function/export">the export modifier</a> can be <a href="/basis/preprosessor/import">imported</a> in other MQL4-programs</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_chart_window</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Show the indicator in the chart window</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_separate_window</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Show the indicator in a separate window</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_height </span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/integer/integertypes">int</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Fixed height of the indicator subwindow in pixels (property <a href="/constants/indicatorconstants/customindicatorproperties#enum_customind_property_integer">INDICATOR_HEIGHT</a>)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_buffers</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/integer/integertypes">int</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Number of buffers for indicator calculation</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_minimum</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/double">double</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>The bottom scaling limit for a separate indicator window</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_maximum</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/double">double</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>The top scaling limit for a separate indicator window</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_labelN</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/stringconst">string</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Sets a label for the N-th <a href="/constants/indicatorconstants/drawstyles">graphic series</a> displayed in DataWindow</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_colorN</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/integer/color">color</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>The color for displaying line N, where N is the number of <a href="/constants/indicatorconstants/drawstyles">graphic series</a>; numbering starts from 1</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_widthN</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/integer/integertypes">int</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Line thickness in <a href="/constants/indicatorconstants/drawstyles">graphic series</a>, where N is the number of graphic series; numbering starts from 1</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_styleN</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/integer/integertypes">int</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Line style in <a href="/constants/indicatorconstants/drawstyles">graphic series</a>, specified by the values of <a href="/constants/indicatorconstants/drawstyles#enum_line_style">ENUM_LINE_STYLE</a>. N is the number of graphic series; numbering starts from 1</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_typeN</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/integer/integertypes">int</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Type of indicator <a href="/constants/indicatorconstants/drawstyles">drawing style</a>. N is the number of graphic series; numbering starts from 1</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_levelN</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/double">double</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Horizontal level of N in a separate indicator window</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_levelcolor</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/integer/color">color</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Color of horizontal levels of the indicator</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_levelwidth</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/integer/integertypes">int</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Thickness of horizontal levels of the indicator</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>indicator_levelstyle</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/integer/integertypes">int</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Style of horizontal levels of the indicator</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>script_show_confirm</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Display a confirmation window before running the script</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>script_show_inputs</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Display a window with the properties before running the script and disable this confirmation window</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>tester_file</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/stringconst">string</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>File name from &lt;terminal_data_folder&gt;\MQL4\Files\ to be sent to a virtual server</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>tester_indicator</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/stringconst">string</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Indicator file name from &lt;terminal_data_folder&gt;\MQL4\Indicators\ to be sent to a virtual server</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:173px; padding:5px; border:solid thin #b1c2d6;"><p><span>tester_library</span></p> </td> 
+    <td style="vertical-align:top; width:69px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/stringconst">string</a></span></p> </td> 
+    <td style="vertical-align:top; width:623px; padding:5px; border:solid thin #b1c2d6;"><p><span>Library file name from &lt;terminal_data_folder&gt;\MQL4\Libraries\ to be sent to a virtual server</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>tester_file, tester_indicator and tester_library properties are necessary for describing the list of the files required for working in virtual hosting.</span></p> 
+<p><span>Indicator files called in <a href="/indicators/icustom">iCustom()</a> function with a fixed name, as well as all library files used in MQL4 programs are copied automatically during the migration.</span></p> 
+<p><span>Find out more about migration of programs in the article <a href="https://www.mql5.com/en/articles/994" target="_blank" title="How to Prepare a Trading Account for Migration to Virtual Hosting">"How to Prepare a Trading Account for Migration to Virtual Hosting"</a>.</span></p> 
+<p><span style="font-weight: bold;">Sample code for moving files to a hosting</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">tester_file</span><span>&nbsp;</span><span style="color: #008080;">"trade_patterns.csv"</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;file&nbsp;with&nbsp;the&nbsp;data&nbsp;to&nbsp;be&nbsp;read&nbsp;by&nbsp;an&nbsp;Expert&nbsp;Advisor</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">tester_indicator</span><span>&nbsp;</span><span style="color: #008080;">"smoothed_ma.ex4"</span><span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;file&nbsp;with&nbsp;a&nbsp;custom&nbsp;indicator&nbsp;specified&nbsp;in&nbsp;iCustom()&nbsp;as&nbsp;a&nbsp;variable</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example of an implicit indication of an indicator name in the code</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">string</span><span>&nbsp;indicator_name=</span><span style="color: #008080;">"smoothed_ma.ex4"</span><span>;</span><br> <span style="color: #0000ff;">double</span><span>&nbsp;val=</span><span style="color: #0000ff;">iCustom</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,indicator_name,13,1,0);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Sample Task of Description and Version Number</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">version</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"3.70"</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Current&nbsp;version&nbsp;of&nbsp;the&nbsp;Expert&nbsp;Advisor</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">description</span><span>&nbsp;</span><span style="color: #008080;">"ZigZag&nbsp;universal&nbsp;with&nbsp;Pesavento&nbsp;Patterns"</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">description</span><span>&nbsp;</span><span style="color: #008080;">"At&nbsp;the&nbsp;moment&nbsp;in&nbsp;the&nbsp;indicator&nbsp;several&nbsp;ZigZags&nbsp;with&nbsp;different&nbsp;algorithms&nbsp;are&nbsp;included"</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">description</span><span>&nbsp;</span><span style="color: #008080;">"It&nbsp;is&nbsp;possible&nbsp;to&nbsp;embed&nbsp;a&nbsp;large&nbsp;number&nbsp;of&nbsp;other&nbsp;indicators&nbsp;showing&nbsp;the&nbsp;highs&nbsp;and"</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">description</span><span>&nbsp;</span><span style="color: #008080;">"lows&nbsp;and&nbsp;automatically&nbsp;build&nbsp;from&nbsp;these&nbsp;highs&nbsp;and&nbsp;lows&nbsp;various&nbsp;graphical&nbsp;tools"</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p style="text-align: center;"><img alt="Example of displaying description and version at program startup" title="Example of displaying description and version at program startup" width="619" height="346" style="margin:0px auto 0px auto;width:619px;height:346px;border:none" src="https://c.mql4.com/i/docs/en/property_description.png"></p> 
+<br>

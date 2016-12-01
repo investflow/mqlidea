@@ -1,0 +1,81 @@
+<h1>Char, Short, Int and Long Types</h1> 
+<h2><a id="char"></a>char</h2> 
+<p><span>The </span><span style="font-style: italic;">char</span><span> type takes 1 byte of memory (8 bits) and allows expressing in the binary notation 2^8=256 values. The </span><span style="font-style: italic;">char</span><span> type can contain both positive and negative values. The range of values is from -128 to 127.</span></p> 
+<h2><a id="uchar"></a>uchar</h2> 
+<p><span>The </span><span style="font-style: italic;">uchar</span><span> integer type also occupies 1 byte of memory, as well as the </span><span style="font-style: italic;">char</span><span> type, but unlike it </span><span style="font-style: italic;">uchar</span><span> is intended only for positive values. The minimum value is zero, the maximum value is 255. The first letter u in the name of the </span><span style="font-style: italic;">uchar</span><span> type is the abbreviation for </span><span style="font-style: italic;">unsigned</span><span>.</span></p> 
+<h2><a id="short"></a>short</h2> 
+<p><span>The size of the </span><span style="font-style: italic;">short</span><span> type is 2 bytes (16 bits) and, accordingly, it allows expressing the range of values equal to 2 to the power 16: 2^16 = 65 536.Since the </span><span style="font-style: italic;">short</span><span> type is a signed one, and contains both positive and negative values, the range of values is between -32 768 and 32 767.</span></p> 
+<h2><a id="ushort"></a>ushort</h2> 
+<p><span>The unsigned </span><span style="font-style: italic;">short</span><span> type is the type </span><span style="font-style: italic;">ushort</span><span>, which also has a size of 2 bytes. The minimum value is 0, the maximum value is 65 535.</span></p> 
+<h2><a id="int"></a>int</h2> 
+<p><span>The size of the </span><span style="font-style: italic;">int</span><span> type is 4 bytes (32 bits). The minimal value is -2 147 483 648, the maximal one is 2 147 483 647.</span></p> 
+<h2><a id="uint"></a>uint</h2> 
+<p><span>The unsigned integer type is </span><span style="font-style: italic;">uint</span><span>. It takes 4 bytes of memory and allows expressing integers from 0 to 4 294 967 295.</span></p> 
+<h2><a id="long"></a>long</h2> 
+<p><span>The size of the </span><span style="font-style: italic;">long</span><span> type is 8 bytes (64 bits). The minimum value is -9 223 372 036 854 775 808, the maximum value is 9 223 372 036 854 775 807.</span></p> 
+<h2><a id="ulong"></a>ulong</h2> 
+<p><span>The </span><span style="font-style: italic;">ulong</span><span> type also occupies 8 bytes and can store values from 0 to 18 446 744 073 709 551 615.</span></p> 
+<p><span style="font-weight: bold;">Examples:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">char</span><span>&nbsp;&nbsp;ch=</span><span style="color: #008080;">12</span><span>;</span><br> <span style="color: #0000ff;">short</span><span>&nbsp;sh=-</span><span style="color: #008080;">5000</span><span>;</span><br> <span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;in=</span><span style="color: #008080;">2445777</span><span>;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Since the unsigned integer types are not designed for storing negative values, the attempt to set a negative value can lead to unexpected consequences. Such a simple script will lead to an infinite loop:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;Infinite&nbsp;loop</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uchar</span><span>&nbsp;&nbsp;u_ch;</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">char</span><span>&nbsp;ch=-128;ch&lt;128;ch++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u_ch=ch;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ch&nbsp;=&nbsp;"</span><span>,ch,</span><span style="color: #008080;">"&nbsp;u_ch&nbsp;=&nbsp;"</span><span>,u_ch);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The correct variant is:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;Correct&nbsp;variant</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uchar</span><span>&nbsp;&nbsp;u_ch;</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">char</span><span>&nbsp;ch=-128;ch&lt;=127;ch++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u_ch=ch;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ch&nbsp;=&nbsp;"</span><span>,ch,</span><span style="color: #008080;">"&nbsp;u_ch&nbsp;=&nbsp;"</span><span>,u_ch);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(ch==127)&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Result:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-128&nbsp;&nbsp;u_ch=&nbsp;128</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-127&nbsp;&nbsp;u_ch=&nbsp;129</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-126&nbsp;&nbsp;u_ch=&nbsp;130</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-125&nbsp;&nbsp;u_ch=&nbsp;131</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-124&nbsp;&nbsp;u_ch=&nbsp;132</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-123&nbsp;&nbsp;u_ch=&nbsp;133</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-122&nbsp;&nbsp;u_ch=&nbsp;134</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-121&nbsp;&nbsp;u_ch=&nbsp;135</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-120&nbsp;&nbsp;u_ch=&nbsp;136</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-119&nbsp;&nbsp;u_ch=&nbsp;137</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-118&nbsp;&nbsp;u_ch=&nbsp;138</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-117&nbsp;&nbsp;u_ch=&nbsp;139</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-116&nbsp;&nbsp;u_ch=&nbsp;140</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-115&nbsp;&nbsp;u_ch=&nbsp;141</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-114&nbsp;&nbsp;u_ch=&nbsp;142</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-113&nbsp;&nbsp;u_ch=&nbsp;143</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-112&nbsp;&nbsp;u_ch=&nbsp;144</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-111&nbsp;&nbsp;u_ch=&nbsp;145</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Examples:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;Negative&nbsp;values&nbsp;can&nbsp;not&nbsp;be&nbsp;stored&nbsp;in&nbsp;unsigned&nbsp;types</span><br> <span style="color: #0000ff;">uchar</span><span>&nbsp;&nbsp;u_ch=-</span><span style="color: #008080;">120</span><span>;</span><br> <span style="color: #0000ff;">ushort</span><span>&nbsp;u_sh=-</span><span style="color: #008080;">5000</span><span>;</span><br> <span style="color: #0000ff;">uint</span><span>&nbsp;&nbsp;&nbsp;u_in=-</span><span style="color: #008080;">401280</span><span>;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Hexadecimal: numbers 0-9, the letters a-f or A-F for the values of 10-15; start with 0x or 0X.</span></p> 
+<p><span style="font-weight: bold;">Examples:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #008080;">0x0A</span><span>,&nbsp;</span><span style="color: #008080;">0x12</span><span>,&nbsp;</span><span style="color: #008080;">0X12</span><span>,&nbsp;</span><span style="color: #008080;">0x2f</span><span>,&nbsp;</span><span style="color: #008080;">0xA3</span><span>,&nbsp;</span><span style="color: #008080;">0Xa3</span><span>,&nbsp;</span><span style="color: #008080;">0X7C7</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/types/casting">Typecasting</a></span></p> 
+<br>

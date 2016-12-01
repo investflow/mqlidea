@@ -1,0 +1,112 @@
+<h1>Conversion Functions</h1> 
+<p><span>This is a group of functions that provide conversion of data from one format into another.</span></p> 
+<p><span>The <a href="/convert/normalizedouble">NormalizeDouble()</a> function must be specially noted as it provides the necessary accuracy of the price presentation. In trading operations, no unnormalized prices may be used if their accuracy even a digit exceeds that required by the trade server.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Function</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Action</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/chartostring">CharToString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting a symbol code into a one-character string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/doubletostring">DoubleToString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting a numeric value to a text line with a specified accuracy</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/enumtostring">EnumToString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting an enumeration value of any type to string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/normalizedouble">NormalizeDouble</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Rounding of a floating point number to a specified accuracy</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/stringtodouble">StringToDouble</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting a string containing a symbol representation of number into number of double type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/stringtointeger">StringToInteger</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting a string containing a symbol representation of number into number of int type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/stringtotime">StringToTime</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting a string containing time or date in "yyyy.mm.dd [hh:mi]" format into datetime type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/timetostring">TimeToString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting a value containing time in seconds elapsed since 01.01.1970 into a string of "yyyy.mm.dd hh:mi" format</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/integertostring">IntegerToString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting int into a string of preset length</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/shorttostring">ShortToString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting symbol code (unicode) into one-symbol string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/shortarraytostring">ShortArrayToString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Copying array part into a string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/stringtoshortarray">StringToShortArray</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Symbol-wise copying a string to a selected part of array of ushort type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/chararraytostring">CharArrayToString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting symbol code (ansi) into one-symbol array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/stringtochararray">StringToCharArray</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Symbol-wise copying a string converted from Unicode to ANSI, to a selected place of array of uchar type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/colortoargb">ColorToARGB</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting color type to uint type to receive ARGB representation of the color.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/colortostring">ColorToString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting color value into string as "R,G,B"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/stringtocolor">StringToColor</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting "R,G,B" string or string with color name into color type value</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/stringformat">StringFormat</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converting number into string according to preset format</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/chartostr">CharToStr</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Conversion of the symbol code into a one-character string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/doubletostr">DoubleToStr</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns text string with the specified numerical value converted into a specified precision format</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/strtodouble">StrToDouble</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converts string representation of number to double type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/strtointeger">StrToInteger</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converts string containing the value character representation into a value of the integer type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/strtotime">StrToTime</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converts string in the format "yyyy.mm.dd hh:mi" to datetime type</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:174px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/convert/timetostr">TimeToStr</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Converts value of datetime type into a string of "yyyy.mm.dd hh:mi" format</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/constants/io_constants/codepageusage">Use of a Codepage</a></span></p> 
+<br>

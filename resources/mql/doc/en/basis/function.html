@@ -1,0 +1,65 @@
+<h1>Functions</h1> 
+<p><a id="function_definition"></a><span>Every task can be divided into subtasks, each of which can either be directly represented in the form of a code, or divided into smaller sub-tasks. This method is called </span><span style="font-style: italic;">stepwise refinement</span><span>. Functions are used for writing the code of sub-tasks to be solved. The code that describes what a function does is called </span><span style="font-style: italic;">function definition:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>function_header</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;instructions</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>All that is before the first brace is the </span><span style="font-style: italic;">header</span><span> of the function definition, and what is between braces is the <a id="function_body"></a></span><span style="font-style: italic;">body</span><span> of the function definition. The function header includes a description of the return value type, name (<a href="/basis/syntax/identifiers">identifier</a>) and <a href="/basis/variables/formal">formal parameters</a>. &nbsp;The number of parameters passed to the function is limited and cannot exceed 64.</span></p> 
+<p><span>The function can be called from other parts of the program as many times as necessary. In fact, the return type, function identifier and parameter types constitute the </span><span style="font-style: italic;">function prototype</span><span>.</span></p> 
+<p><a id="function_declaration"></a><span>Function prototype is the function declaration, but not its definition. Due to the explicit declaration of the return type and a list of argument types, the strict type checking and implicit typecasting are possible during function calls. Very often function declarations are used in classes to improve the code readability.</span></p> 
+<p><span>The function definition must exactly match its declaration. Each declared function must be defined.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;return&nbsp;value&nbsp;type</span><br> <span>linfunc&nbsp;(</span><span style="color: #0000ff;">double</span><span>&nbsp;a,&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;b)&nbsp;</span><span style="color: #808080;">//&nbsp;function&nbsp;name&nbsp;and&nbsp;parameter&nbsp;list</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;composite&nbsp;operator</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>&nbsp;(a&nbsp;+&nbsp;b);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;return&nbsp;value</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><span>The <a href="/basis/operators/return">return</a> operator can return the value of an expression located in this operator. If necessary, the expression value is converted to the function result type. What can be returned: <a href="/basis/types#base_types">simple types</a>, <a href="/basis/types/casting#casting_structure">simple structures</a>, <a href="/basis/types/object_pointers">object pointers</a>. With &nbsp;the </span><span style="font-style: italic;">return</span><span> operator you can't return any arrays, class objects, variables of compound structure type.</span></p> 
+<p><span>A function that returns no value should be described as that of <a href="/basis/types/void">void</a> type.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;errmesg(</span><span style="color: #0000ff;">string</span><span>&nbsp;s)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"error:&nbsp;"</span><span>+s);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><a id="default_value"></a><span>Parameters passed to the function can have default values, which are defined by constants of that type.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;somefunc(</span><span style="color: #0000ff;">double</span><span>&nbsp;a,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;d=0.0001,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;n=5,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;b=</span><span style="color: #0000ff;">true</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;s=</span><span style="color: #008080;">"passed&nbsp;string"</span><span>)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Required&nbsp;parameter&nbsp;a&nbsp;=&nbsp;"</span><span>,a);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Pass&nbsp;the&nbsp;following&nbsp;parameters:&nbsp;d&nbsp;=&nbsp;"</span><span>,d,</span><span style="color: #008080;">"&nbsp;n&nbsp;=&nbsp;"</span><span>,n,</span><span style="color: #008080;">"&nbsp;b&nbsp;=&nbsp;"</span><span>,b,</span><span style="color: #008080;">"&nbsp;s&nbsp;=&nbsp;"</span><span>,s);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><span>If any of parameters has a default value, all subsequent parameters must also have default values.</span></p> 
+<p><span style="font-weight: bold;">Example of incorrect declaration:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;somefunc(</span><span style="color: #0000ff;">double</span><span>&nbsp;a,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;d=0.0001,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;default&nbsp;value&nbsp;0.0001&nbsp;declared</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;n,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;default&nbsp;value&nbsp;is&nbsp;not&nbsp;specified&nbsp;!</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;b,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;default&nbsp;value&nbsp;is&nbsp;not&nbsp;specified&nbsp;!</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;s=</span><span style="color: #008080;">"passed&nbsp;string"</span><span>)</span><br> <span>&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/oop/overload">Overload</a>, <a href="/basis/oop/virtual">Virtual Functions</a>, <a href="/basis/oop/polymorphism">Polymorphism</a></span></p> 
+<br>

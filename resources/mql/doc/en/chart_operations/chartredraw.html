@@ -1,0 +1,20 @@
+<h1>ChartRedraw</h1> 
+<p><span>This function calls a forced redrawing of a specified chart.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>ChartRedraw</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;</span><span>chart_id=0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Chart&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>chart_id=0</span></p> 
+<p><span>[in] &nbsp;Chart ID. 0 means the current chart.</span></p> 
+<p><span>Note</span></p> 
+<p><span>Usually it is used after changing the <a href="/constants/objectconstants/enum_object_property">object properties</a>.</span></p> 
+<p><span>When the ChartRedraw() function is called from an indicator, the chart is redrawn only after the calculation of the <a href="/basis/function/events#oncalculate">OnCalculate()</a> function is over, because indicators are executed in the common terminal thread.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/objects">Objects functions</a> </span></p> 
+<br>

@@ -1,0 +1,22 @@
+<h1>GlobalVariableSet</h1> 
+<p><span>Sets a new value for a global variable. If the variable does not exist, the system creates a new global variable.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>datetime&nbsp;&nbsp;</span><span>GlobalVariableSet</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Global&nbsp;variable&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;</span><span>value</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Value&nbsp;to&nbsp;set</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>name</span></p> 
+<p><span>[in] &nbsp;Global variable name.</span></p> 
+<p><span>value</span></p> 
+<p><span>[in] &nbsp;The new numerical value.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>If successful, the function returns the last modification time, otherwise 0. For more details about the <a href="/constants/errorswarnings/errorcodes">error</a>, call <a href="/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Note</span></p> 
+<p><span>A global variable name should not exceed 63 characters. Characters not belonging to the current code page are not allowed (characters that cannot be converted from Unicode to ANSI are replaced with '?'). If programs are to be distributed among users with different code pages, we strongly recommend using Latin characters in global variable names.</span></p> 
+<p><span>Global variables exist in the client terminal during 4 weeks since their last use, then they are automatically deleted.</span></p> 
+<br>

@@ -1,0 +1,39 @@
+<h1>StringCompare</h1> 
+<p><span>The function compares two strings and returns the comparison result in form of an integer.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>StringCompare</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string&amp;</span><span>&nbsp;&nbsp;</span><span>string1</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;the&nbsp;first&nbsp;string&nbsp;in&nbsp;the&nbsp;comparison</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string&amp;</span><span>&nbsp;&nbsp;</span><span>string2</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;the&nbsp;second&nbsp;string&nbsp;in&nbsp;the&nbsp;comparison</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>bool</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>case_sensitive=true</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;case&nbsp;sensitivity&nbsp;mode&nbsp;selection&nbsp;for&nbsp;the&nbsp;comparison</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>string1</span></p> 
+<p><span>[in] &nbsp;The first string.</span></p> 
+<p><span>string2</span></p> 
+<p><span>[in] &nbsp;The second string.</span></p> 
+<p><span>case_sensitive=true</span></p> 
+<p><span>[in] &nbsp;Case sensitivity mode selection. If it is true, then "A"&gt;"a". If it is false, then "A"="a". By default the value is equal to true.</span></p> 
+<p><span>Return Value</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 43px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>-1 (minus one), if string1&lt;string2</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>0 (zero), if string1=string2</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>1 (one), if string1&gt;string2</span></li> 
+</ul> 
+<p><span>Note</span></p> 
+<p><span>The strings are compared symbol by symbol, the symbols are compared in the alphabetic order in accordance with the current code page.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;what&nbsp;is&nbsp;larger&nbsp;-&nbsp;apple&nbsp;or&nbsp;home?</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;s1="</span><span style="color: #008080;">Apple</span><span>";</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;s2="</span><span style="color: #008080;">home</span><span>";</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;compare&nbsp;case&nbsp;sensitive&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;result1=</span><span style="color: #0000ff;">StringCompare</span><span>(s1,s2);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(result1&gt;0)&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>("</span><span style="color: #008080;">Case&nbsp;sensitive&nbsp;comparison:&nbsp;%s&nbsp;&gt;&nbsp;%s</span><span>",s1,s2);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(result1&lt;0)</span><span style="color: #0000ff;">PrintFormat</span><span>("</span><span style="color: #008080;">Case&nbsp;sensitive&nbsp;comparison:&nbsp;%s&nbsp;&lt;&nbsp;%s</span><span>",s1,s2);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>("</span><span style="color: #008080;">Case&nbsp;sensitive&nbsp;comparison:&nbsp;%s&nbsp;=&nbsp;%s</span><span>",s1,s2);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;compare&nbsp;case-insensitive</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;result2=</span><span style="color: #0000ff;">StringCompare</span><span>(s1,s2,false);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(result2&gt;0)&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>("</span><span style="color: #008080;">Case&nbsp;insensitive&nbsp;comparison:&nbsp;%s&nbsp;&gt;&nbsp;%s</span><span>",s1,s2);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(result2&lt;0)</span><span style="color: #0000ff;">PrintFormat</span><span>("</span><span style="color: #008080;">Case&nbsp;insensitive&nbsp;comparison:&nbsp;%s&nbsp;&lt;&nbsp;%s</span><span>",s1,s2);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>("</span><span style="color: #008080;">Case&nbsp;insensitive&nbsp;comparison:&nbsp;%s&nbsp;=&nbsp;%s</span><span>",s1,s2);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">/*&nbsp;Result:</span><br> <span style="color: #808080;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case-sensitive&nbsp;comparison:&nbsp;Apple&nbsp;&lt;&nbsp;home</span><br> <span style="color: #808080;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case&nbsp;insensitive&nbsp;comparison:&nbsp;Apple&nbsp;&lt;&nbsp;home</span><br> <span style="color: #808080;">*/</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/types/stringconst">String Type</a>, <a href="/convert/chartostring">CharToString()</a>, <a href="/convert/shorttostring">ShortToString()</a>, <a href="/convert/stringtochararray">StringToCharArray()</a>, <a href="/convert/stringtoshortarray">StringToShortArray()</a>, <a href="/strings/stringgetcharacter">StringGetCharacter()</a>, <a href="/constants/io_constants/codepageusage">Use of a Codepage</a></span></p> 
+<br>

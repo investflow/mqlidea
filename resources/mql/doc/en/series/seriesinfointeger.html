@@ -1,0 +1,45 @@
+<h1>SeriesInfoInteger</h1> 
+<p><span>Returns information about the state of historical data. There are 2 variants of function calls.</span></p> 
+<p><span style="font-weight: bold;">Directly returns the property value.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>long&nbsp;&nbsp;</span><span>SeriesInfoInteger</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;symbol&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_TIMEFRAMES</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;period</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_SERIES_INFO_INTEGER</span><span>&nbsp;&nbsp;&nbsp;</span><span>prop_id&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;property&nbsp;identifier</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Returns true or false depending on the success of the function run.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>SeriesInfoInteger</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;symbol&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_TIMEFRAMES</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;period</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_SERIES_INFO_INTEGER</span><span>&nbsp;&nbsp;&nbsp;</span><span>prop_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;property&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>long_var</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;variable&nbsp;for&nbsp;getting&nbsp;info</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>symbol_name</span></p> 
+<p><span>[in] &nbsp;Symbol name.</span></p> 
+<p><span>timeframe</span></p> 
+<p><span>[in] &nbsp;Period.</span></p> 
+<p><span>prop_id</span></p> 
+<p><span>[in] &nbsp;Identifier of the requested property, value of the <a href="/constants/tradingconstants/enum_series_info_integer">ENUM_SERIES_INFO_INTEGER</a> enumeration.</span></p> 
+<p><span>long_var</span></p> 
+<p><span>[out] &nbsp;Variable to which the value of the requested property is placed.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>In the first case, it returns value of the long type. </span></p> 
+<p><span>For the second case, &nbsp;it returns true, if the specified property is available and its value has been placed into long_var variable, otherwise it returns false. For more details about an <a href="/constants/errorswarnings/errorcodes">error</a>, call <a href="/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Total&nbsp;number&nbsp;of&nbsp;bars&nbsp;for&nbsp;the&nbsp;symbol-period&nbsp;at&nbsp;this&nbsp;moment&nbsp;=&nbsp;"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SeriesInfoInteger</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),0,</span><span style="color: #0000ff;">SERIES_BARS_COUNT</span><span>));</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;first&nbsp;date&nbsp;for&nbsp;the&nbsp;symbol-period&nbsp;at&nbsp;this&nbsp;moment&nbsp;=&nbsp;"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(</span><span style="color: #0000ff;">datetime</span><span>)</span><span style="color: #0000ff;">SeriesInfoInteger</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),0,</span><span style="color: #0000ff;">SERIES_FIRSTDATE</span><span>));</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;first&nbsp;date&nbsp;in&nbsp;the&nbsp;history&nbsp;for&nbsp;the&nbsp;symbol-period&nbsp;on&nbsp;the&nbsp;server&nbsp;=&nbsp;"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(</span><span style="color: #0000ff;">datetime</span><span>)</span><span style="color: #0000ff;">SeriesInfoInteger</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),0,</span><span style="color: #0000ff;">SERIES_SERVER_FIRSTDATE</span><span>));</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

@@ -22,15 +22,15 @@
 </div> 
 <p><span>Параметры</span></p> 
 <p><span>file_handle</span></p> 
-<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/ru/files/fileopen">FileOpen()</a>.</span></p> 
+<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/files/fileopen">FileOpen()</a>.</span></p>
 <p><span>file_name</span></p> 
 <p><span>[in] &nbsp;Имя файла.</span></p> 
 <p><span>property_id</span></p> 
-<p><span>[in] &nbsp;Идентификатор свойства файла. Значение может быть одним из значений перечисления <a href="/ru/constants/io_constants/enum_file_property_integer">ENUM_FILE_PROPERTY_INTEGER</a>. Если используется второй вариант функции, то можно получать значения только <a href="/ru/constants/io_constants/enum_file_property_integer#filegetinteger_limitation">следующих свойств</a>: </span><span>FILE_EXISTS, FILE_CREATE_DATE, FILE_MODIFY_DATE, FILE_ACCESS_DATE и FILE_SIZE.</span></p> 
+<p><span>[in] &nbsp;Идентификатор свойства файла. Значение может быть одним из значений перечисления <a href="/constants/io_constants/enum_file_property_integer">ENUM_FILE_PROPERTY_INTEGER</a>. Если используется второй вариант функции, то можно получать значения только <a href="/constants/io_constants/enum_file_property_integer#filegetinteger_limitation">следующих свойств</a>: </span><span>FILE_EXISTS, FILE_CREATE_DATE, FILE_MODIFY_DATE, FILE_ACCESS_DATE и FILE_SIZE.</span></p>
 <p><span>common_folder=false</span></p> 
-<p><span>[in] &nbsp;Указывает на местоположение файла. Если параметр равен false, то просматривается каталог данных терминала, в противном случае предполагается, что файл находится в общей папке всех клиентских терминалов \Terminal\Common\Files (<a href="/ru/constants/io_constants/fileflags">FILE_COMMON</a>).</span></p> 
+<p><span>[in] &nbsp;Указывает на местоположение файла. Если параметр равен false, то просматривается каталог данных терминала, в противном случае предполагается, что файл находится в общей папке всех клиентских терминалов \Terminal\Common\Files (<a href="/constants/io_constants/fileflags">FILE_COMMON</a>).</span></p>
 <p><span>Возвращаемое значение</span></p> 
-<p><span>Значение свойства. В случае ошибки функция возвращает -1, для получения кода ошибки необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Значение свойства. В случае ошибки функция возвращает -1, для получения кода ошибки необходимо вызвать функцию <a href="/check/getlasterror">GetLastError()</a>.</span></p>
 <p><span>Если при получении свойств по имени будет указан каталог, то функция в любом случае выставит ошибку 5018 (ERR_MQL_FILE_IS_DIRECTORY), при этом возвращаемое значение будет корректным.</span></p> 
 <p><span>Примечание</span></p> 
 <p><span>Функция всегда изменяет код ошибки. При успешном завершении код ошибки сбрасывается в ноль.</span></p> 
@@ -45,5 +45,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/files">Файловые операции</a>, <a href="/ru/constants/io_constants/enum_file_property_integer">Свойства файлов</a></span></p> 
+<p><span><a href="/files">Файловые операции</a>, <a href="/constants/io_constants/enum_file_property_integer">Свойства файлов</a></span></p>
 <br>

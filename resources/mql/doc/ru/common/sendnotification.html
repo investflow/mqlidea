@@ -13,12 +13,12 @@
 <p><span>text</span></p> 
 <p><span>[in] &nbsp; Текст сообщения в уведомлении. Длина сообщения должна быть не более 255 символов.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
-<p><span>true при успешной отправке уведомления из терминала, &nbsp;в случае неудачи возвращает false. При проверке после неудачной отправки уведомления <a href="/ru/check/getlasterror">GetLastError()</a> может выдать одну из следующих ошибок:</span></p> 
+<p><span>true при успешной отправке уведомления из терминала, &nbsp;в случае неудачи возвращает false. При проверке после неудачной отправки уведомления <a href="/check/getlasterror">GetLastError()</a> может выдать одну из следующих ошибок:</span></p>
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4250 – ERR_NOTIFICATION_SEND_FAILED,</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4251 – ERR_NOTIFICATION_WRONG_PARAMETER,</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4252 – ERR_NOTIFICATION_WRONG_SETTINGS,</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4253 – ERR_NOTIFICATION_TOO_FREQUENT.</span></p> 
 <p><span>Примечание</span></p> 
 <p><span>Для функции SendNotification() установлены жесткие ограничения по использованию: не более 2-х вызовов в секунду и не более 10 вызовов в минуту. Контроль за частотой использования осуществляется динамически, и функция может быть заблокирована при нарушении. </span></p> 
-<p><span>При работе в <a href="/ru/runtime/testing#alert_etc">тестере стратегий</a> функция SendNotification() не выполняется.</span></p> 
+<p><span>При работе в <a href="/runtime/testing#alert_etc">тестере стратегий</a> функция SendNotification() не выполняется.</span></p>
 <br>

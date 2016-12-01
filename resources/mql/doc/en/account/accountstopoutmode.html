@@ -1,0 +1,25 @@
+<h1>AccountStopoutMode</h1> 
+<p><span>Returns the calculation mode for the Stop Out level.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>AccountStopoutMode</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Returned value</span></p> 
+<p><span>Returns the calculation mode for the Stop Out level. </span></p> 
+<p><span>Calculation mode can take the following values:</span><br> <span>0 - calculation of percentage ratio between margin and equity;</span><br> <span>1 - comparison of the free margin level to the absolute value.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">&nbsp;&nbsp;int</span><span>&nbsp;level=</span><span style="color: #0000ff;">AccountStopoutLevel</span><span>();</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;if</span><span>(</span><span style="color: #0000ff;">AccountStopoutMode</span><span>()==0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"StopOut&nbsp;level&nbsp;=&nbsp;"</span><span>,&nbsp;level,&nbsp;</span><span style="color: #008080;">"%"</span><span>);</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"StopOut&nbsp;level&nbsp;=&nbsp;"</span><span>,&nbsp;level,&nbsp;</span><span style="color: #008080;">"&nbsp;"</span><span>,&nbsp;</span><span style="color: #0000ff;">AccountCurrency</span><span>());</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

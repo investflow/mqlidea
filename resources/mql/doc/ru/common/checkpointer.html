@@ -1,5 +1,5 @@
 <h1>CheckPointer</h1> 
-<p><span>Возвращает тип <a href="/ru/basis/types/object_pointers">указателя</a> объекта.</span></p> 
+<p><span>Возвращает тип <a href="/basis/types/object_pointers">указателя</a> объекта.</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -13,11 +13,11 @@
 <p><span>anyobject</span></p> 
 <p><span>[in] &nbsp;Указатель объекта.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
-<p><span>Возвращает значение из перечисления <a href="/ru/constants/namedconstants/enum_pointer_type">ENUM_POINTER_TYPE</a>.</span></p> 
+<p><span>Возвращает значение из перечисления <a href="/constants/namedconstants/enum_pointer_type">ENUM_POINTER_TYPE</a>.</span></p>
 <p><span>Примечание</span></p> 
-<p><span>Попытка обращения к некорректному указателю приводит к <a href="/ru/runtime/errors">критическому завершению</a> программы. Поэтому существует необходимость использования функции CheckPointer перед использованием указателя. Указатель может быть некорректным в следующих случаях:</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 8px 17px 4px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>указатель равен <a href="/ru/basis/types/void">NULL</a>;</span></p> 
-<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 8px 17px 4px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>если объект был уничтожен при помощи оператора <a href="/ru/basis/operators/deleteoperator">delete</a>.</span></p> 
+<p><span>Попытка обращения к некорректному указателю приводит к <a href="/runtime/errors">критическому завершению</a> программы. Поэтому существует необходимость использования функции CheckPointer перед использованием указателя. Указатель может быть некорректным в следующих случаях:</span></p>
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 8px 17px 4px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>указатель равен <a href="/basis/types/void">NULL</a>;</span></p>
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 8px 17px 4px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>если объект был уничтожен при помощи оператора <a href="/basis/operators/deleteoperator">delete</a>.</span></p>
 <p><span>Данную функцию можно использовать как проверку указателя на корректность. Значение, отличное от нуля, гарантирует, что по этому указателю можно получить доступ к данным.</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
@@ -30,5 +30,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/basis/types/object_pointers">Указатели объектов</a>, <a href="/ru/constants/namedconstants/enum_pointer_type">Проверка указателя объекта</a>, <a href="/ru/basis/operators/deleteoperator">Оператор уничтожения объекта delete</a></span></p> 
+<p><span><a href="/basis/types/object_pointers">Указатели объектов</a>, <a href="/constants/namedconstants/enum_pointer_type">Проверка указателя объекта</a>, <a href="/basis/operators/deleteoperator">Оператор уничтожения объекта delete</a></span></p>
 <br>

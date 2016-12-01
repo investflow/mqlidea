@@ -1,0 +1,53 @@
+<h1>NormalizeDouble</h1> 
+<p><span>Rounding floating point number to a specified accuracy.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>NormalizeDouble</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;</span><span>value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;normalized&nbsp;number</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>digits</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;number&nbsp;of&nbsp;digits&nbsp;after&nbsp;decimal&nbsp;point</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>value</span></p> 
+<p><span>[in] Value with a floating point.</span></p> 
+<p><span>digits</span></p> 
+<p><span>[in] &nbsp;Accuracy format, number of digits after point (0-8).</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>Value of double type with preset accuracy.</span></p> 
+<p><span>Note</span></p> 
+<p><span>Calculated values of StopLoss, TakeProfit, and values of open prices for pending orders must be normalized with the accuracy, the value of which can be obtained by <a href="/check/digits">Digits()</a>.</span></p> 
+<p><span>Please note that when output to Journal using the Print() function, a normalized number may contain a greater number of decimal places than you expect. For example, for:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;a=76.671;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #999999;">//&nbsp;A&nbsp;normalized&nbsp;number&nbsp;with&nbsp;three&nbsp;decimal&nbsp;places</span><br> <span>&nbsp;&nbsp;&nbsp;Print(</span><span style="color: #008080;">"Print(76.671)="</span><span>,a);&nbsp;&nbsp;&nbsp;</span><span style="color: #999999;">//&nbsp;Output&nbsp;as&nbsp;is</span><br> <span>&nbsp;&nbsp;&nbsp;Print(</span><span style="color: #008080;">"DoubleToString(a,8)="</span><span>,DoubleToString(a,8));&nbsp;</span><span style="color: #999999;">//&nbsp;Output&nbsp;with&nbsp;a&nbsp;preset&nbsp;accuracy</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>you will have the following in the terminal:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span> &nbsp;DoubleToString(a,8)=76.67100000</span></p> <p><span> &nbsp;Print(76.671)=76.67100000000001</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;pi=</span><span style="color: #0000ff;">M_PI</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"pi&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">DoubleToString</span><span>(pi,16));</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;pi_3=</span><span style="color: #0000ff;">NormalizeDouble</span><span>(</span><span style="color: #0000ff;">M_PI</span><span>,3);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"NormalizeDouble(pi,3)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">DoubleToString</span><span>(pi_3,16))</span><br> <span>&nbsp;&nbsp;&nbsp;;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;pi_8=</span><span style="color: #0000ff;">NormalizeDouble</span><span>(</span><span style="color: #0000ff;">M_PI</span><span>,8);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"NormalizeDouble(pi,8)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">DoubleToString</span><span>(pi_8,16));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;pi_0=</span><span style="color: #0000ff;">NormalizeDouble</span><span>(</span><span style="color: #0000ff;">M_PI</span><span>,0);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"NormalizeDouble(pi,0)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">DoubleToString</span><span>(pi_0,16));</span><br> <span>/*</span><br> <span>&nbsp;&nbsp;&nbsp;Result:</span><br> <span>&nbsp;&nbsp;&nbsp;pi=&nbsp;3.1415926535897931</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">NormalizeDouble</span><span>(pi,3)=&nbsp;3.1419999999999999</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">NormalizeDouble</span><span>(pi,8)=&nbsp;3.1415926499999998</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">NormalizeDouble</span><span>(pi,0)=&nbsp;3.0000000000000000</span><br> <span>*/</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/convert/doubletostring">DoubleToString</a>, <a href="/basis/types/double">Real types&nbsp;(double,&nbsp;float)</a>, <a href="/basis/types/casting">Reduction of types</a>, </span></p> 
+<br>

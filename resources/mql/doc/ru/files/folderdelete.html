@@ -13,12 +13,12 @@
 <p><span>folder_name</span></p> 
 <p><span>[in] &nbsp;Имя директории, которую требуется удалить. Содержит полный путь к папке.</span></p> 
 <p><span>common_flag=0</span></p> 
-<p><span>[in] <a href="/ru/constants/io_constants/fileflags">Флаг</a>, определяющий местоположение директории. Если common_flag=FILE_COMMON, то директория находится в общей папке всех клиентских терминалов \Terminal\Common\Files. В противном случае директория находится в локальной папке </span><span>(MQL4\Files или MQL4\Tester\Files в случае тестирования).</span></p> 
+<p><span>[in] <a href="/constants/io_constants/fileflags">Флаг</a>, определяющий местоположение директории. Если common_flag=FILE_COMMON, то директория находится в общей папке всех клиентских терминалов \Terminal\Common\Files. В противном случае директория находится в локальной папке </span><span>(MQL4\Files или MQL4\Tester\Files в случае тестирования).</span></p>
 <p><span>Возвращаемое значение</span></p> 
 <p><span>Возвращает true в случае успеха, иначе false.</span></p> 
 <p><span>Примечание</span></p> 
 <p><span>Из соображений безопасности в языке MQL4 строго контролируется работа с файлами. Файлы, с которыми проводятся файловые операции средствами языка MQL4, не могут находиться за пределами файловой "песочницы".</span></p> 
-<p><span>Если директория содержит хоть один файл и/или поддиректорию, то удаление такой директории невозможно, ее необходимо предварительно очистить. Тотальная очистка папки от всех файлов и всех вложенных подпапок осуществляется при помощи функции <a href="/ru/files/folderclean">FolderClean()</a>.</span></p> 
+<p><span>Если директория содержит хоть один файл и/или поддиректорию, то удаление такой директории невозможно, ее необходимо предварительно очистить. Тотальная очистка папки от всех файлов и всех вложенных подпапок осуществляется при помощи функции <a href="/files/folderclean">FolderClean()</a>.</span></p>
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
@@ -30,5 +30,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/files/fileopen">FileOpen()</a>, <a href="/ru/files/folderclean">FolderClean()</a>, <a href="/ru/files/filemove">FileMove()</a></span></p> 
+<p><span><a href="/files/fileopen">FileOpen()</a>, <a href="/files/folderclean">FolderClean()</a>, <a href="/files/filemove">FileMove()</a></span></p>
 <br>

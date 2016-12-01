@@ -1,0 +1,89 @@
+<h1>Group of Functions for Working with Arrays</h1> 
+<p><span><a href="/basis/variables#array_define">Arrays</a> are allowed to be maximum four-dimensional. Each dimension is indexed from 0 to </span><span style="font-style: italic;">dimension_size-1</span><span>. In a particular case of a one-dimensional array of 50 elements, calling of the first element will appear as array[0], of the last one - as array[49].</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Function</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Action</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraybsearch">ArrayBsearch</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns index of the first found element in the first array dimension</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraycopy">ArrayCopy</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Copies one array into another</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraycompare">ArrayCompare</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the result of comparing two arrays of <a href="/basis/types#base_types">simple types</a> or custom structures without <a href="/basis/types#complex_types">complex objects</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arrayfree">ArrayFree</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Frees up buffer of any dynamic array and sets the size of the zero dimension in 0.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraygetasseries">ArrayGetAsSeries</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks direction of array indexing</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arrayinitialize">ArrayInitialize</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Sets all elements of a numeric array into a single value</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arrayfill">ArrayFill</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Fills an array with the specified value</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arrayisseries">ArrayIsSeries</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks whether an array is a timeseries</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arrayisdynamic">ArrayIsDynamic</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Checks whether an array is dynamic</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraymaximum">ArrayMaximum</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Search for an element with the maximal value</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arrayminimum">ArrayMinimum</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Search for an element with the minimal value</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arrayrange">ArrayRange</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the number of elements in the specified dimension of the array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arrayresize">ArrayResize</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Sets the new size in the first dimension of the array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraysetasseries">ArraySetAsSeries</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Sets the direction of array indexing</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraysize">ArraySize</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the number of elements in the array</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraysort">ArraySort</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Sorting of numeric arrays by the first dimension</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraycopyrates">ArrayCopyRates</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Copies rates to the two-dimensional array from chart RateInfo array returns copied bars amount</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraycopyseries">ArrayCopySeries</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Copies a series array to another one and returns the count of the copied elements</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:140px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraydimension">ArrayDimension</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Returns the multidimensional array rank</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

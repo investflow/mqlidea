@@ -2,241 +2,241 @@
   [
     "bool",
     "Тип bool предназначен для хранения логических значений true (истина) или false (ложь), числовое представление которых 1 или 0 соответственно",
-    "/ru/basis/types/integer/boolconst"
+    "/basis/types/integer/boolconst"
   ],
   [
     "enum",
     "Перечислимый тип (enum) определяет некоторое ограниченное множество возможных значений",
-    "/ru/basis/types/integer/enumeration"
+    "/basis/types/integer/enumeration"
   ],
   [
     "struct",
     "Структура является набором элементов произвольного типа (кроме типа void). Объединяет логически связанные данные разных типов.",
-    "/ru/basis/types/classes"
+    "/basis/types/classes"
   ],
   [
     "char",
     "Целый тип char занимает в памяти 1 байт. Диапазон изменения значений составляет от -128 до 127.",
-    "/ru/basis/types/integer/integertypes"
+    "/basis/types/integer/integertypes"
   ],
   [
     "float",
     "Тип имеющий дробную часть. Размер float равен 4 байтам, что позволяет хранить значения от 1.175494351e-38 до 3.402823466e+38",
-    "/ru/basis/types/double"
+    "/basis/types/double"
   ],
   [
     "uchar",
     "Целый тип uchar также занимает в памяти 1 байт и предназначен для хранения положительных значений. Диапазон значений от 0 до 255.",
-    "/ru/basis/types/integer/integertypes"
+    "/basis/types/integer/integertypes"
   ],
   [
     "class",
     "Класс является набором элементов произвольного типа (кроме типа void) и методов. Класс объединяет логически связанные данные разных типов и операции над ними.",
-    "/ru/basis/types/classes"
+    "/basis/types/classes"
   ],
   [
     "int",
     "Целый тип int имеет размер 4 байта. Минимальное значение -2 147 483 648, максимальное значение 2 147 483 647.",
-    "/ru/basis/types/integer/integertypes"
+    "/basis/types/integer/integertypes"
   ],
   [
     "uint",
     "Беззнаковый целый тип uint занимает в памяти 4 байта и позволяет выражать целочисленные значения от 0 до 4 294 967 295.",
-    "/ru/basis/types/integer/integertypes"
+    "/basis/types/integer/integertypes"
   ],
   [
     "color",
     "Тип color предназначен для хранения информации о цвете и занимает в памяти 4 байта. Первый байт не учитывается, остальные 3 байта содержат RGB-составляющие.",
-    "/ru/basis/types/integer/color"
+    "/basis/types/integer/color"
   ],
   [
     "long",
     "Целый тип long имеет размер 8 байт. Минимальное значение -9 223 372 036 854 775 808, максимальное значение 9 223 372 036 854 775 807.",
-    "/ru/basis/types/integer/integertypes"
+    "/basis/types/integer/integertypes"
   ],
   [
     "ulong",
     "Целый тип ulong занимает 8 байт и позволяет хранить значения от 0 до 18 446 744 073 709 551 615.",
-    "/ru/basis/types/integer/integertypes"
+    "/basis/types/integer/integertypes"
   ],
   [
     "datetime",
     "Тип datetime предназначен для хранения даты и времени в виде количества секунд, прошедших с 01 января 1970 года. Занимает в памяти 8 байт.",
-    "/ru/basis/types/integer/datetime"
+    "/basis/types/integer/datetime"
   ],
   [
     "short",
     "Целый тип short имеет размер 2 байта c диапазон значений находится между -32 768 и 32 767",
-    "/ru/basis/types/integer/integertypes"
+    "/basis/types/integer/integertypes"
   ],
   [
     "ushort",
     "Беззнаковым тип размером 2 байта. Минимальное значение равно 0, максимальное значение 65 535.",
-    "/ru/basis/types/integer/integertypes"
+    "/basis/types/integer/integertypes"
   ],
   [
     "double",
     "Тип имеющий дробную часть. Размер типа double равен 8 байтам, что позволяет хранить значения от 2.2250738585072014e-308 до 1.7976931348623158e+308",
-    "/ru/basis/types/double"
+    "/basis/types/double"
   ],
   [
     "string",
     "Тип для хранения текстовых строк. Текстовая строка - это последовательность символов в формате Unicode с завершающим нулем на конце.",
-    "/ru/basis/types/stringconst"
+    "/basis/types/stringconst"
   ],
   [
     "void",
     "Тип void используется либо для указания того, что функция не возвращает значения, либо в качестве параметра функции обозначает отсутствие параметров.",
-    "/ru/basis/types/void"
+    "/basis/types/void"
   ],
   [
     "const",
     "Спецификатор const объявляет переменную константой, и не позволяет изменять значение этой переменной в процессе выполнения программы.",
-    "/ru/basis/variables#const"
+    "/basis/variables#const"
   ],
   [
     "private",
     "Разрешает доступ к переменным и методам класса только из методов данного класса.",
-    "/ru/basis/variables#private"
+    "/basis/variables#private"
   ],
   [
     "protected",
     "Разрешает доступ со стороны методов данного класса, а также со стороны методов публично наследуемых классов. Иной доступ невозможен.",
-    "/ru/basis/variables#protected"
+    "/basis/variables#protected"
   ],
   [
     "public",
     "Разрешает ничем неограниченный доступ к переменной или методу класса;",
-    "/ru/basis/variables#public"
+    "/basis/variables#public"
   ],
   [
     "virtual",
     "Применим к методам класса (но не к методам структур) и сообщает компилятору, что данный метод должен быть размещен в таблице виртуальных функций класса.",
-    "/ru/basis/variables#virtual"
+    "/basis/variables#virtual"
   ],
   [
     "extern",
     "Класс памяти extern определяет внешнюю переменную. Модификатор extern указывается перед типом данных.",
-    "/ru/basis/variables/externvariables"
+    "/basis/variables/externvariables"
   ],
   [
     "input",
     "Класс памяти input определяет внешнюю переменную. Модификатор input указывается перед типом данных. ",
-    "/ru/basis/variables/inputvariables"
+    "/basis/variables/inputvariables"
   ],
   [
     "static",
     "Класс памяти static определяет статическую переменную. Модификатор static указывается перед типом данных.",
-    "/ru/basis/variables/static"
+    "/basis/variables/static"
   ],
   [
     "break",
     "Оператор break прекращает выполнение ближайшего вложенного внешнего оператора switch, while, do-while или for. ",
-    "/ru/basis/operators/break"
+    "/basis/operators/break"
   ],
   [
     "dynamic_cast",
     "Преобразует тип у указанному в момент исполнения программы. В случае, если преобразование невозможно, результатом будет значение NULL",
-    "/ru/basis/types/casting#dynamic_cast"
+    "/basis/types/casting#dynamic_cast"
   ],
   [
     "return",
     "Прекращает выполнение текущей функции и возвращает управление вызвавшей программе. Результат вычисления выражения возвращается вызываемой функции.",
-    "/ru/basis/operators/return"
+    "/basis/operators/return"
   ],
   [
     "case",
     "Опция для оператора switch.",
-    "/ru/basis/operators/switch"
+    "/basis/operators/switch"
   ],
   [
     "else",
     "Оператор if - else используется при необходимости сделать выбор. Если выражение стоящее в if ложно, то выполняется блок else",
-    "/ru/basis/operators/if"
+    "/basis/operators/if"
   ],
   [
     "sizeof",
     "С помощью операции sizeof можно определить размер памяти которая соответствует идентификатору или типу.",
-    "/ru/basis/operations/other#sizeof"
+    "/basis/operations/other#sizeof"
   ],
   [
     "continue",
     "Оператор continue передает управление в начало ближайшего внешнего оператора цикла while, do-while или for, вызывая начало следующей итерации. ",
-    "/ru/basis/operators/continue"
+    "/basis/operators/continue"
   ],
   [
     "for",
     "Оператор начала цикла.",
-    "/ru/basis/operators/for"
+    "/basis/operators/for"
   ],
   [
     "switch",
     "Сравнивает значение выражения с константами во всех вариантах case и передает управление оператору, который соответствует значению выражения.",
-    "/ru/basis/operators/switch"
+    "/basis/operators/switch"
   ],
   [
     "default",
     "Операторы, связанные с меткой default, выполняются, если ни одна из констант в операторах case не равна значению выражения. ",
-    "/ru/basis/operators/switch"
+    "/basis/operators/switch"
   ],
   [
     "if",
     "Оператор if - else используется при необходимости сделать выбор. Если выражение стоящее в if верно, то выполняется блок после if",
-    "/ru/basis/operators/if"
+    "/basis/operators/if"
   ],
   [
     "while",
     "Цикл while. Выполняет последующий блок до тех пор, пока выражение не станет ложным. ",
-    "/ru/basis/operators/while"
+    "/basis/operators/while"
   ],
   [
     "delete",
     "Оператор delete удаляет созданный оператором new объект, вызывает деструктор соответствующего класса и освобождает память, занимаемую объектом.",
-    "/ru/basis/operators/deleteoperator"
+    "/basis/operators/deleteoperator"
   ],
   [
     "new",
     "Создает объект, вызывает конструктор объекта и возвращает указатель на созданный объект. В случае неудачи возвращает нулевой указатель, который можно сравнивать с константой NULL.",
-    "/ru/basis/operators/newoperator"
+    "/basis/operators/newoperator"
   ],
   [
     "do",
     "Оператор цикла do - while проверяет условие окончания в конце, после каждого прохода цикла. Тело цикла всегда выполняется по крайней мере один раз.",
-    "/ru/basis/operators/dowhile"
+    "/basis/operators/dowhile"
   ],
   [
     "operator",
     "Оператор перегрузки",
-    "/ru/basis/function/operationoverload"
+    "/basis/function/operationoverload"
   ],
   [
     "this",
     "Слово this предназначено для получения ссылки объекта на самого себя, доступной внутри методов класса или структуры.",
-    "/ru/basis/types/this"
+    "/basis/types/this"
   ],
   [
     "template",
     "Определение шаблона функции.",
-    "/ru/basis/oop/templates"
+    "/basis/oop/templates"
   ],
   [
     "typename",
     "Каждый формальный параметр шаблона функции предваряется ключевым словом typename.",
-    "/ru/basis/oop/templates"
+    "/basis/oop/templates"
   ],
   [
     "strict",
     "Указание компилятору на применение особого строгого режима проверки ошибок ",
-    "/ru/basis/preprosessor/compilation"
+    "/basis/preprosessor/compilation"
   ],
   [
     "true",
     "Логическое значение типа bool: true (истина) или false (ложь)",
-    "/ru/basis/types/integer/boolconst"
+    "/basis/types/integer/boolconst"
   ],
   [
     "false",
     "Логическое значение типа bool: true (истина) или false (ложь)",
-    "/ru/basis/types/integer/boolconst"
+    "/basis/types/integer/boolconst"
   ]
 ]

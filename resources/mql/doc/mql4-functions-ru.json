@@ -2,2236 +2,2236 @@
   [
     "AccountBalance",
     "Возвращает значение баланса активного счета",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountCompany",
     "Возвращает название брокерской компании, в которой зарегистрирован текущий счет",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountCredit",
     "Возвращает значение кредита активного счета",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountCurrency",
     "Возвращает наименование валюты текущего счета",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountEquity",
     "Возвращает сумму собственных средств текущего счета",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountFreeMargin",
     "Возвращает значение свободных средств, разрешенных для открытия ордеров на текущем счете",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountFreeMarginCheck",
     "Возвращает размер свободных средств, которые останутся после открытия указанного ордера по текущей цене на текущем счете",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountFreeMarginMode",
     "Возвращает режим расчета свободных средств, разрешенных для открытия ордеров на текущем счете",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountInfoDouble",
     "Возвращает значение типа double соответствующего свойства счета",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountInfoInteger",
     "Возвращает значение целочисленного типа (bool,int или long) соответствующего свойства счета",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountInfoString",
     "Возвращает значение типа string соответствующего свойства счета",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountLeverage",
     "Возвращает значение плеча текущего счета",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountMargin",
     "Возвращает сумму залоговых средств, используемых для поддержания открытых ордеров на текущем счете",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountName",
     "Возвращает имя пользователя текущего счета",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountNumber",
     "Возвращает номер текущего счета",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountProfit",
     "Возвращает значение прибыли текущего счета",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountServer",
     "Возвращает наименование активного сервера",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountStopoutLevel",
     "Возвращает значение уровня, по которому определяется состояние Stop Out",
-    "/ru/account"
+    "/account"
   ],
   [
     "AccountStopoutMode",
     "Возвращает режим расчета уровня Stop Out",
-    "/ru/account"
+    "/account"
   ],
   [
     "acos",
     "Возвращает значение арккосинуса x в радианах",
-    "/ru/math"
+    "/math"
   ],
   [
     "Alert",
     "Выводит сообщение в отдельном окне",
-    "/ru/common"
+    "/common"
   ],
   [
     "ArrayBsearch",
     "Возвращает индекс первого найденного элемента в первом измерении массива",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayCompare",
     "Возвращает результат сравнения двух массивов простых типов или пользовательских структур, не имеющих сложных объектов",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayCopy",
     "Копирует один массив в другой",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayCopyRates",
     "Копирует в двумерный массив вида RateInfo[][6], данные баров текущего графика и возвращает количество скопированных баров",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayCopySeries",
     "Копирует массив-таймсерию в пользовательский массив и возвращает количество скопированных элементов",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayDimension",
     "Возвращает ранг многомерного массива",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayFill",
     "Заполняет числовой массив указанным значением",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayFree",
     "Освобождает буфер любого динамического массива и устанавливает размер нулевого измерения в 0 (ноль)",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayGetAsSeries",
     "Проверяет направление индексации массива",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayInitialize",
     "Устанавливает все элементы числового массива в одну величину",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayIsDynamic",
     "Проверяет, является ли массив динамическим",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayIsSeries",
     "Проверяет, является ли массив таймсерией",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayMaximum",
     "Поиск элемента с максимальным значением",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayMinimum",
     "Поиск элемента с минимальным значением",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayRange",
     "Возвращает число элементов в указанном измерении массива",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArrayResize",
     "Устанавливает новый размер в первом измерении массива",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArraySetAsSeries",
     "Устанавливает направление индексирования в массиве",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArraySize",
     "Возвращает количество элементов в массиве",
-    "/ru/array"
+    "/array"
   ],
   [
     "ArraySort",
     "Сортировка числовых массивов по первому измерению",
-    "/ru/array"
+    "/array"
   ],
   [
     "asin",
     "Возвращает значение арксинуса x в радианах",
-    "/ru/math"
+    "/math"
   ],
   [
     "atan",
     "Возвращает арктангенс x в радианах",
-    "/ru/math"
+    "/math"
   ],
   [
     "Bars",
     "Возвращает количество баров в истории по соответствующему символу периоду",
-    "/ru/series"
+    "/series"
   ],
   [
     "ceil",
     "Возвращает ближайшее сверху целое числовое значение",
-    "/ru/math"
+    "/math"
   ],
   [
     "CharArrayToString",
     "Преобразует код символа (ansi) в односимвольную строку",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "ChartApplyTemplate",
     "Применяет к указанному графику шаблон из указанного файла",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartClose",
     "Закрывает указанный график",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartFirst",
     "Возвращает идентификатор первого графика клиентского терминала",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartGetDouble",
     "Возвращает значение соответствующего свойства указанного графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartGetInteger",
     "Возвращает целочисленное значение соответствующего свойства указанного графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartGetString",
     "Возвращает строковое значение соответствующего свойства указанного графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartID",
     "Возвращает идентификатор текущего графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartIndicatorDelete",
     "Удаляет с указанного окна графика индикатор с указанным именем",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartIndicatorName",
     "Возвращает короткое имя индикатора по номеру в списке индикаторов на указанном окне графика.",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartIndicatorsTotal",
     "Возвращает количество всех индикаторов, присоединенных к указанному окну графика.",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartNavigate",
     "Осуществляет сдвиг указанного графика на указанное количество баров относительно указанной позиции графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartNext",
     "Возвращает идентификатор графика, следующего за указанным",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartOpen",
     "Открывает новый график с указанным символом и периодом",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "CharToStr",
     "Преобразует код символа в односимвольную строку",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "CharToString",
     "Преобразование кода символа в односимвольную строку",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "ChartPeriod",
     "Возвращает значение периода указанного графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartPriceOnDropped",
     "Возвращает ценовую координату, соответствующую точке, в которой брошен мышкой данный эксперт или скрипт",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartRedraw",
     "Вызывает принудительную перерисовку указанного графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartSaveTemplate",
     "Сохраняет текущие настройки графика в шаблон с указанным именем",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartScreenShot",
     "Делает снимок указанного графика в формате gif",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartSetDouble",
     "Задает значение типа double соответствующего свойства указанного графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartSetInteger",
     "Задает значение целочисленного типа (datetime, int, color, bool или char) соответствующего свойства указанного графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartSetString",
     "Задает значение типа string соответствующего свойства указанного графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartSetSymbolPeriod",
     "Меняет значения символа и периода указанного графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartSymbol",
     "Возвращает имя символа указанного графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartTimeOnDropped",
     "Возвращает временную координату, соответствующую точке, в которой брошен мышкой данный эксперт или скрипт",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartTimePriceToXY",
     "Преобразует координаты графика из представления время/цена в координаты по оси X и Y",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartWindowFind",
     "Возвращает номер подокна, в котором находится индикатор",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartWindowOnDropped",
     "Возвращает номер подокна графика, на которое брошен мышкой данный эксперт, скрипт, объект или индикатор",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartXOnDropped",
     "Возвращает координату по оси X, соответствующую точке, в которой брошен мышкой данный эксперт или скрипт",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartXYToTimePrice",
     "Преобразует координаты  X и Y графика в значения время и цена",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "ChartYOnDropped",
     "Возвращает координату по оси Y, соответствующую точке, в которой брошен мышкой данный эксперт или скрипт",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "CheckPointer",
     "Возвращает тип указателя объекта",
-    "/ru/common"
+    "/common"
   ],
   [
     "ColorToARGB",
     "Преобразует тип color в тип uint для получения ARGB-представления цвета",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "ColorToString",
     "Преобразует значение цвета в строку вида \"R,G,B\"",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "Comment",
     "Выводит сообщение в левый верхний угол ценового графика",
-    "/ru/common"
+    "/common"
   ],
   [
     "CopyClose",
     "Получает в массив исторические данные по цене закрытия баров по соответствующим символу и периоду",
-    "/ru/series"
+    "/series"
   ],
   [
     "CopyHigh",
     "Получает в массив исторические данные по максимальной цене баров по соответствующим символу и периоду",
-    "/ru/series"
+    "/series"
   ],
   [
     "CopyLow",
     "Получает в массив исторические данные по минимальной цене баров по соответствующим символу и периоду",
-    "/ru/series"
+    "/series"
   ],
   [
     "CopyOpen",
     "Получает в массив исторические данные по цене открытия баров по соответствующим символу и периоду",
-    "/ru/series"
+    "/series"
   ],
   [
     "CopyRates",
     "Получает в массив исторические данные структуры Rates для указанных символа и периода",
-    "/ru/series"
+    "/series"
   ],
   [
     "CopyTickVolume",
     "Получает в массив исторические данные по тиковым объемам для соответствующих символа и периода",
-    "/ru/series"
+    "/series"
   ],
   [
     "CopyTime",
     "Получает в массив исторические данные по времени открытия баров по соответствующим символу и периоду",
-    "/ru/series"
+    "/series"
   ],
   [
     "cos",
     "Возвращает косинус числа",
-    "/ru/math"
+    "/math"
   ],
   [
     "CryptDecode",
     "Производит обратное преобразование данных массива",
-    "/ru/common"
+    "/common"
   ],
   [
     "CryptEncode",
     "Преобразует данные массива-источника в массив-приемник указанным методом",
-    "/ru/common"
+    "/common"
   ],
   [
     "Day",
     "Возвращает текущий день месяца, т.е. день месяца последнего известного времени сервера",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "DayOfWeek",
     "Возвращает порядковый номер дня недели последнего известного времени сервера",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "DayOfYear",
     "Возвращает текущий день года последнего известного времени сервера",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "DebugBreak",
     "Программная точка останова при отладке",
-    "/ru/common"
+    "/common"
   ],
   [
     "Digits",
     "Возвращает количество десятичных знаков после запятой, определяющее точность измерения цены символа текущего графика",
-    "/ru/check"
+    "/check"
   ],
   [
     "DoubleToStr",
     "Преобразует числовое значение в текстовую строку, содержащую символьное представление числа в указанном формате точности",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "DoubleToString",
     "Преобразование числового значения в текстовую строку с указанной точностью",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "EnumToString",
     "Преобразование значения перечисления любого типа в строку",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "EventChartCustom",
     "Генерирует пользовательское событие для указанного графика",
-    "/ru/eventfunctions"
+    "/eventfunctions"
   ],
   [
     "EventKillTimer",
     "Останавливает на текущем графике генерацию событий по таймеру",
-    "/ru/eventfunctions"
+    "/eventfunctions"
   ],
   [
     "EventSetMillisecondTimer",
     "Запускает генератор событий таймера высокого разрешения с периодом менее 1 секунды для текущего графика",
-    "/ru/eventfunctions"
+    "/eventfunctions"
   ],
   [
     "EventSetTimer",
     "Запускает генератор событий таймера с указанной периодичностью для текущего графика",
-    "/ru/eventfunctions"
+    "/eventfunctions"
   ],
   [
     "exp",
     "Возвращает экспоненту числа",
-    "/ru/math"
+    "/math"
   ],
   [
     "ExpertRemove",
     "Прекращает работу эксперта и выгружает его с графика",
-    "/ru/common"
+    "/common"
   ],
   [
     "fabs",
     "Возвращает абсолютное значение (значение по модулю) переданного ей числа",
-    "/ru/math"
+    "/math"
   ],
   [
     "FileClose",
     "Закрывает ранее открытый файл",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileCopy",
     "Копирует исходный файл из локальной или общей папки в другой файл",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileDelete",
     "Удаляет указанный файл",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileFindClose",
     "Закрывает хэндл поиска",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileFindFirst",
     "Начинает перебор файлов в соответствующей директории в соответствии с указанным фильтром",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileFindNext",
     "Продолжает поиск, начатый функцией FileFindFirst()",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileFlush",
     "Сброс на диск всех данных, оставшихся в файловом буфере ввода-вывода",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileGetInteger",
     "Получает целочисленное свойство файла",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileIsEnding",
     "Определяет конец файла в процессе чтения",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileIsExist",
     "Проверяет существование файла",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileIsLineEnding",
     "Определяет конец строки в текстовом файле в процессе чтения",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileMove",
     "Перемещает или переименовывает файл",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileOpen",
     "Открывает файл с указанным именем и указанными флагам",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileOpenHistory",
     "Открывает файл в текущей папке истории или ее подпапках",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileReadArray",
     "Читает массивы любых типов, кроме строковых (может быть массив структур, не содержащих строки и динамические массивы),  из бинарного файла с текущего положения файлового указателя",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileReadBool",
     "Читает из файла типа CSV строку от текущего положения до разделителя (либо до конца текстовой строки) и преобразует прочитанную строку в значение типа bool",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileReadDatetime",
     "Читает из файла типа CSV строку одного из форматов: \"YYYY.MM.DD HH:MM:SS\", \"YYYY.MM.DD\" или \"HH:MM:SS\" - и преобразует ее в значение типа datetime",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileReadDouble",
     "Читает число двойной точности с плавающей точкой (double) из бинарного файла с текущего положения файлового указателя",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileReadFloat",
     "Читает из текущего положения файлового указателя значение типа float",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileReadInteger",
     "Читает из бинарного файла значение типа int, short или char в зависимости от указанной длины в байтах",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileReadLong",
     "Читает из текущего положения файлового указателя значение типа long",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileReadNumber",
     "Читает из файла типа CSV строку от текущего положения до разделителя (либо до конца текстовой строки) и преобразует прочитанную строку в значение типа double",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileReadString",
     "Читает из файла строку с текущего положения файлового указателя",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileReadStruct",
     "Cчитывает из бинарного файла содержимое в структуру, переданную в качестве параметра",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileSeek",
     "Перемещает положение файлового указателя на указанное количество байт относительно указанного положения",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileSize",
     "Возвращает размер соответствующего открытого файла",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileTell",
     "Возвращает текущее положение файлового указателя соответствующего открытого файла",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileWrite",
     "Записывает данные в файл типа CSV или TXT",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileWriteArray",
     "Записывает в файл типа BIN массивы любых типов, кроме строковых",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileWriteDouble",
     "Записывает в двоичный файл значение параметра типа double с текущего положения файлового указателя",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileWriteFloat",
     "Записывает в двоичный файл значение параметра типа float с текущего положения файлового указателя",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileWriteInteger",
     "Записывает в двоичный файл значение параметра типа int с текущего положения файлового указателя",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileWriteLong",
     "Записывает в двоичный файл значение параметра типа long с текущего положения файлового указателя",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileWriteString",
     "Записывает в файл типа BIN или TXT значение параметра типа string с текущего положения файлового указателя",
-    "/ru/files"
+    "/files"
   ],
   [
     "FileWriteStruct",
     "Записывает в  двоичный файл содержимое структуры, переданной в качестве параметра, с текущего положения файлового указателя",
-    "/ru/files"
+    "/files"
   ],
   [
     "floor",
     "Возвращает ближайшее снизу целое числовое значение",
-    "/ru/math"
+    "/math"
   ],
   [
     "fmax",
     "Возвращает максимальное из двух числовых значений",
-    "/ru/math"
+    "/math"
   ],
   [
     "fmin",
     "Возвращает минимальное из двух числовых значений",
-    "/ru/math"
+    "/math"
   ],
   [
     "fmod",
     "Возвращает вещественный остаток от деления двух чисел",
-    "/ru/math"
+    "/math"
   ],
   [
     "FolderClean",
     "Удаляет все файлы в указанной папке",
-    "/ru/files"
+    "/files"
   ],
   [
     "FolderCreate",
     "Создает директорию в папке Files (в зависимости от значения common_flag)",
-    "/ru/files"
+    "/files"
   ],
   [
     "FolderDelete",
     "Удаляет указанную директорию. Если папка не пуста, то она не может быть удалена",
-    "/ru/files"
+    "/files"
   ],
   [
     "GetLastError",
     "Возвращает значение последней ошибки",
-    "/ru/check"
+    "/check"
   ],
   [
     "GetPointer",
     "Возвращает указатель объекта",
-    "/ru/common"
+    "/common"
   ],
   [
     "GetTickCount",
     "Возвращает количество миллисекунд, прошедших с момента старта системы",
-    "/ru/common"
+    "/common"
   ],
   [
     "GlobalVariableCheck",
     "Проверяет существование глобальной переменной с указанным именем",
-    "/ru/globals"
+    "/globals"
   ],
   [
     "GlobalVariableDel",
     "Удаляет глобальную переменную",
-    "/ru/globals"
+    "/globals"
   ],
   [
     "GlobalVariableGet",
     "Запрашивает значение глобальной переменной",
-    "/ru/globals"
+    "/globals"
   ],
   [
     "GlobalVariableName",
     "Возвращает имя глобальной переменной по порядковому номеру в списке глобальных переменных",
-    "/ru/globals"
+    "/globals"
   ],
   [
     "GlobalVariablesDeleteAll",
     "Удаляет глобальные переменные с указанным префиксом в имени",
-    "/ru/globals"
+    "/globals"
   ],
   [
     "GlobalVariableSet",
     "Устанавливает новое значение глобальной переменной",
-    "/ru/globals"
+    "/globals"
   ],
   [
     "GlobalVariableSetOnCondition",
     "Устанавливает новое значение существующей глобальной переменной по условию",
-    "/ru/globals"
+    "/globals"
   ],
   [
     "GlobalVariablesFlush",
     "Принудительно записывает содержимое всех глобальных переменных на диск",
-    "/ru/globals"
+    "/globals"
   ],
   [
     "GlobalVariablesTotal",
     "Возвращает общее количество глобальных переменных",
-    "/ru/globals"
+    "/globals"
   ],
   [
     "GlobalVariableTemp",
     "Устанавливает новое значение глобальной переменной, которая существует только на время текущего сеанса работы терминала",
-    "/ru/globals"
+    "/globals"
   ],
   [
     "GlobalVariableTime",
     "Возвращает время последнего доступа к глобальной переменной",
-    "/ru/globals"
+    "/globals"
   ],
   [
     "HideTestIndicators",
     "Выставляет флаг скрытия индикаторов, вызываемых экспертом",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "Hour",
     "Возвращает текущий час последнего известного серверного времени на момент старта программы",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "iAC",
     "Accelerator Oscillator",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iAD",
     "Accumulation/Distribution",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iADX",
     "Average Directional Index",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iAlligator",
     "Alligator",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iAO",
     "Awesome Oscillator",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iATR",
     "Average True Range",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iBands",
     "Bollinger Bands®",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iBandsOnArray",
     "Возвращает значение технического индикатора Bollinger Bands, рассчитанного на данных, хранящихся в массиве",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iBars",
     "Возвращает количество баров в истории по соответствующему символу и периоду",
-    "/ru/series"
+    "/series"
   ],
   [
     "iBarShift",
     "Возвращает смещение бара, которому принадлежит указанное время",
-    "/ru/series"
+    "/series"
   ],
   [
     "iBearsPower",
     "Bears Power",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iBullsPower",
     "Bulls Power",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iBWMFI",
     "Market Facilitation Index by Bill Williams",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iCCI",
     "Commodity Channel Index",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iCCIOnArray",
     "Возвращает значение технического индикатора Commodity Channel Index, рассчитанного на данных, хранящихся в массиве",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iClose",
     "Возвращает значение цены закрытия бара соответствующего графика",
-    "/ru/series"
+    "/series"
   ],
   [
     "iCustom",
     "Пользовательский индикатор",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iDeMarker",
     "DeMarker",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iEnvelopes",
     "Envelopes",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iEnvelopesOnArray",
     "Возвращает значение технического индикатора Envelopes, рассчитанного на данных, хранящихся в массиве",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iForce",
     "Force Index",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iFractals",
     "Fractals",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iGator",
     "Gator Oscillator",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iHigh",
     "Возвращает значение максимальной цены бара соответствующего графика",
-    "/ru/series"
+    "/series"
   ],
   [
     "iHighest",
     "Возвращает индекс наибольшего найденного значения соответствующего графика",
-    "/ru/series"
+    "/series"
   ],
   [
     "iIchimoku",
     "Ichimoku Kinko Hyo",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iLow",
     "Возвращает значение минимальной цены бара соответствующего графика",
-    "/ru/series"
+    "/series"
   ],
   [
     "iLowest",
     "Возвращает индекс наименьшего найденного значения соответствующего графика",
-    "/ru/series"
+    "/series"
   ],
   [
     "iMA",
     "Moving Average",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iMACD",
     "Moving Averages Convergence-Divergence",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iMAOnArray",
     "Возвращает значение технического индикатора Moving Average, рассчитанного на данных, хранящихся в массиве",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iMFI",
     "Money Flow Index",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iMomentum",
     "Momentum",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iMomentumOnArray",
     "Возвращает значение технического индикатора Momentum, рассчитанного на данных, хранящихся в массиве",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "IndicatorBuffers",
     "Распределяет память для буферов, используемых для вычислений пользовательского индикатора",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "IndicatorCounted",
     "Возвращает количество баров, не измененных после последнего вызова индикатора",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "IndicatorDigits",
     "Устанавливает формат точности (количество знаков после десятичной точки) для визуализации значений индикатора",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "IndicatorSetDouble",
     "Задает значение свойства индикатора, имеющего тип double",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "IndicatorSetInteger",
     "Задает значение свойства индикатора,имеющего тип int",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "IndicatorSetString",
     "Задает значение свойства индикатора, имеющего тип string",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "IndicatorShortName",
     "Устанавливает \"короткое\" имя пользовательского индикатора для отображения в подокне индикатора и в окне DataWindow",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "IntegerToString",
     "Преобразование значения целого типа в строку указанной длины",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "iOBV",
     "On Balance Volume",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iOpen",
     "Возвращает значение цены открытия бара соответствующего графика",
-    "/ru/series"
+    "/series"
   ],
   [
     "iOsMA",
     "Moving Average of Oscillator (MACD histogram)",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iRSI",
     "Relative Strength Index",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iRSIOnArray",
     "Возвращает значение технического индикатора Relative Strength Index, рассчитанного на данных, хранящихся в массиве",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iRVI",
     "Relative Vigor Index",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iSAR",
     "Parabolic Stop And Reverse System",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "IsConnected",
     "Возвращает состояние главного соединения клиентского терминала с сервером, по которому производится подкачка данных",
-    "/ru/check"
+    "/check"
   ],
   [
     "IsDemo",
     "Возвращает признак работы на демонстрационном счете",
-    "/ru/check"
+    "/check"
   ],
   [
     "IsDllsAllowed",
     "Возвращает информацию о возможности вызова внешних функций из DLL",
-    "/ru/check"
+    "/check"
   ],
   [
     "IsExpertEnabled",
     "Возвращает информацию о возможности запуска экспертов",
-    "/ru/check"
+    "/check"
   ],
   [
     "IsLibrariesAllowed",
     "Возвращает информацию о возможности вызова библиотек",
-    "/ru/check"
+    "/check"
   ],
   [
     "IsOptimization",
     "Возвращает информацию о работе эксперта в процессе оптимизации параметров тестирования",
-    "/ru/check"
+    "/check"
   ],
   [
     "IsStopped",
     "Возвращает true, если поступила команда завершить выполнение mql4-программы",
-    "/ru/check"
+    "/check"
   ],
   [
     "iStdDev",
     "Standard Deviation",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "iStdDevOnArray",
     "Возвращает значение технического индикатора Standard Deviation, рассчитанного на данных, хранящихся в массиве",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "IsTesting",
     "Возвращает информацию о работе эксперта в режиме тестирования",
-    "/ru/check"
+    "/check"
   ],
   [
     "iStochastic",
     "Stochastic Oscillator",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "IsTradeAllowed",
     "Возвращает информацию о возможности торговли при помощи экспертов",
-    "/ru/check"
+    "/check"
   ],
   [
     "IsTradeContextBusy",
     "Возвращает информацию о состоянии потока выполнения торговых операций",
-    "/ru/check"
+    "/check"
   ],
   [
     "IsVisualMode",
     "Возвращает информацию о работе эксперта в режиме визуализации тестирования",
-    "/ru/check"
+    "/check"
   ],
   [
     "iTime",
     "Возвращает значение времени открытия бара соответствующего графика",
-    "/ru/series"
+    "/series"
   ],
   [
     "iVolume",
     "Возвращает значение тикового объема бара соответствующего графика",
-    "/ru/series"
+    "/series"
   ],
   [
     "iWPR",
     "Williams' Percent Range",
-    "/ru/indicators"
+    "/indicators"
   ],
   [
     "log",
     "Возвращает натуральный логарифм",
-    "/ru/math"
+    "/math"
   ],
   [
     "log10",
     "Возвращает логарифм числа по основанию 10",
-    "/ru/math"
+    "/math"
   ],
   [
     "MarketInfo",
     "Возвращает различную информацию о финансовых инструментах, перечисленных в окне \"Обзор рынка\"",
-    "/ru/marketinformation"
+    "/marketinformation"
   ],
   [
     "MathAbs",
     "Возвращает абсолютное значение (значение по модулю) переданного ей числа",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathArccos",
     "Возвращает значение арккосинуса x в радианах",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathArcsin",
     "Возвращает значение арксинуса x в радианах",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathArctan",
     "Возвращает арктангенс x в радианах",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathCeil",
     "Возвращает ближайшее сверху целое числовое значение",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathCos",
     "Возвращает косинус числа",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathExp",
     "Возвращает экспоненту числа",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathFloor",
     "Возвращает ближайшее снизу целое числовое значение",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathIsValidNumber",
     "Проверяет корректность действительного числа",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathLog",
     "Возвращает натуральный логарифм",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathLog10",
     "Возвращает логарифм числа по основанию 10",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathMax",
     "Возвращает максимальное из двух числовых значений",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathMin",
     "Возвращает минимальное из двух числовых значений",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathMod",
     "Возвращает вещественный остаток от деления двух чисел",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathPow",
     "Возводит основание в указанную степень",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathRand",
     "Возвращает псевдослучайное целое число в диапазоне от 0 до 32767",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathRound",
     "Округляет число до ближайшего целого",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathSin",
     "Возвращает синус числа",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathSqrt",
     "Возвращает квадратный корень",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathSrand",
     "Устанавливает начальное состояние генератора псевдослучайных целых чисел",
-    "/ru/math"
+    "/math"
   ],
   [
     "MathTan",
     "Возвращает тангенс числа",
-    "/ru/math"
+    "/math"
   ],
   [
     "MessageBox",
     "Создает и отображает окно сообщений, а также управляет им",
-    "/ru/common"
+    "/common"
   ],
   [
     "Minute",
     "Возвращает текущую минуту последнего известного серверного времени на момент старта программы",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "Month",
     "Возвращает номер текущего месяца последнего известного времени сервера",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "MQLInfoInteger",
     "Возвращает значение целого типа соответствующего свойства запущенной mql4-программы",
-    "/ru/check"
+    "/check"
   ],
   [
     "MQLInfoString",
     "Возвращает значение типа string соответствующего свойства запущенной mql4-программы",
-    "/ru/check"
+    "/check"
   ],
   [
     "MQLSetInteger",
     "Устанавливает значение свойства MQL_CODEPAGE в окружении mql4-программы",
-    "/ru/check"
+    "/check"
   ],
   [
     "NormalizeDouble",
     "Округление числа с плавающей точкой до указанной точности",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "ObjectCreate",
     "Создает объект заданного типа в указанном подокне графика",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectDelete",
     "Удаляет объект с указанным именем",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectDescription",
     "Возвращает описание объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectFind",
     "Ищет по имени объект с указанным именем",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectGet",
     "Возвращает значение указанного свойства объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectGetDouble",
     "Возвращает значение типа double соответствующего свойства объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectGetFiboDescription",
     "Возвращает описание уровня объекта Фибоначчи",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectGetInteger",
     "Возвращает целочисленное значение соответствующего свойства объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectGetShiftByValue",
     "Вычисляет и возвращает номер бара (смещение относительно текущего бара) для указанной цены",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectGetString",
     "Возвращает значение типа string соответствующего свойства объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectGetTimeByValue",
     "Возвращает значение времени для указанного значения цены объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectGetValueByShift",
     "Вычисляет и возвращает значение цены для указанного бара (смещение относительно текущего бара)",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectGetValueByTime",
     "Возвращает ценовое значение объекта для указанного времени",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectMove",
     "Изменяет координаты указанной точки привязки объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectName",
     "Возвращает имя объекта по порядковому номеру в списке объектов",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectsDeleteAll",
     "Удаляет все объекты с указанным типом и в указанном подокне графика",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectSet",
     "Изменяет значение указанного свойства объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectSetDouble",
     "Устанавливает значение соответствующего свойства объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectSetFiboDescription",
     "Устанавливает новое описание уровня объекта Фибоначчи",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectSetInteger",
     "Устанавливает значение соответствующего свойства объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectSetString",
     "Устанавливает значение соответствующего свойства объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectSetText",
     "Изменяет описание объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectsTotal",
     "Возвращает общее число объектов указанного типа на графике",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "ObjectType",
     "Возвращает тип указанного объекта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "OrderClose",
     "Осуществляет закрытие ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderCloseBy",
     "Осуществляет закрытие одного открытого ордера другим ордером, открытым по тому же самому инструменту, но в противоположном направлении",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderClosePrice",
     "Возвращает цену закрытия выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderCloseTime",
     "Возвращает время закрытия выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderComment",
     "Возвращает комментарий выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderCommission",
     "Возвращает значение рассчитанной комиссии выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderDelete",
     "Осуществляет удаление ранее установленного отложенного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderExpiration",
     "Возвращает дату истечения выбранного отложенного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderLots",
     "Возвращает количество лотов выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderMagicNumber",
     "Возвращает идентификационное (\"магическое\") число выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderModify",
     "Изменяет параметры ранее открытых или отложенных ордеров",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderOpenPrice",
     "Возвращает цену открытия выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderOpenTime",
     "Возвращает время открытия выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderPrint",
     "Выводит в журнал информацию о свойствах выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderProfit",
     "Возвращает значение чистой прибыли выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderSelect",
     "Выбирает ордер для дальнейшей работы с ним",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderSend",
     "Основная функция, используемая для совершения торговых операций или установки отложенного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrdersHistoryTotal",
     "Возвращает количество закрытых и удаленных ордеров в истории текущего счета, загруженной в клиентском терминале",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderStopLoss",
     "Возвращает значение цены закрытия ордера при достижении убыточности (stop loss) текущего выбранного ордера.",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrdersTotal",
     "Возвращает общее количество открытых и отложенных ордеров",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderSwap",
     "Возвращает значение свопа текущего выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderSymbol",
     "Возвращает наименование финансового инструмента текущего выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderTakeProfit",
     "Возвращает значение цены закрытия ордера при достижении уровня прибыльности (take profit) текущего выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderTicket",
     "Возвращает номер тикета текущего выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "OrderType",
     "Возвращает тип операции текущего выбранного ордера",
-    "/ru/trading"
+    "/trading"
   ],
   [
     "Period",
     "Возвращает значение таймфрейма текущего графика",
-    "/ru/check"
+    "/check"
   ],
   [
     "Period",
     "Возвращает период текущего графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "PeriodSeconds",
     "Возвращает количество секунд в периоде",
-    "/ru/common"
+    "/common"
   ],
   [
     "PlaySound",
     "Воспроизводит звуковой файл",
-    "/ru/common"
+    "/common"
   ],
   [
     "Point",
     "Возвращает размер пункта текущего инструмента в валюте котировки",
-    "/ru/check"
+    "/check"
   ],
   [
     "pow",
     "Возводит основание в указанную степень",
-    "/ru/math"
+    "/math"
   ],
   [
     "Print",
     "Выводит сообщение в журнал",
-    "/ru/common"
+    "/common"
   ],
   [
     "PrintFormat",
     "Форматирует  и  печатает наборы символов и значений в лог-файл в соответствие с заданным форматом",
-    "/ru/common"
+    "/common"
   ],
   [
     "rand",
     "Возвращает псевдослучайное целое число в диапазоне от 0 до 32767",
-    "/ru/math"
+    "/math"
   ],
   [
     "RefreshRates",
     "Осуществляет обновление данных в предопределенных переменных и массивах-таймсериях",
-    "/ru/series"
+    "/series"
   ],
   [
     "ResetLastError",
     "Устанавливает значение предопределенной переменной _LastError в ноль",
-    "/ru/common"
+    "/common"
   ],
   [
     "ResourceCreate",
     "Создает ресурс изображения на основе набора данных",
-    "/ru/common"
+    "/common"
   ],
   [
     "ResourceFree",
     "Удаляет динамически созданный ресурс (освобождает занятую ресурсом память)",
-    "/ru/common"
+    "/common"
   ],
   [
     "ResourceReadImage",
     "Читает данные графического ресурса, созданного функцией ResourceCreate() или сохраненного в EX4-файле при компиляции",
-    "/ru/common"
+    "/common"
   ],
   [
     "ResourceSave",
     "Сохраняет ресурс в указанный файл",
-    "/ru/common"
+    "/common"
   ],
   [
     "round",
     "Округляет число до ближайшего целого",
-    "/ru/math"
+    "/math"
   ],
   [
     "Seconds",
     "Возвращает количество секунд, прошедших с начала текущей минуты последнего известного серверного времени на момент старта программы",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "SendFTP",
     "Посылает файл по адресу, указанному в окне настроек на закладке \"FTP\"",
-    "/ru/common"
+    "/common"
   ],
   [
     "SendMail",
     "Посылает электронное письмо по адресу, указанному в окне настроек на закладке \"Почта\"",
-    "/ru/common"
+    "/common"
   ],
   [
     "SendNotification",
     "Посылает Push-уведомления в мобильные терминалы, чьи MetaQuotes ID указаны на закладке \"Уведомления\"",
-    "/ru/common"
+    "/common"
   ],
   [
     "SeriesInfoInteger",
     "Возвращает информацию о состоянии исторических данных",
-    "/ru/series"
+    "/series"
   ],
   [
     "SetIndexArrow",
     "Устанавливает значок для линии индикаторов, имеющей стиль DRAW_ARROW",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "SetIndexBuffer",
     "Связывает указанный индикаторный буфер с одномерным динамическим массивом типа double",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "SetIndexDrawBegin",
     "Устанавливает порядковый номер бара от начала данных, с которого должна начинаться отрисовка указанной линии индикатора",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "SetIndexEmptyValue",
     "Устанавливает значение пустой величины для линии индикатора",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "SetIndexLabel",
     "Устанавливает текст описания линии индикатора для отображения информации в окне DataWindow и всплывающей подсказке",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "SetIndexShift",
     "Устанавливает смещение линии индикатора относительно начала графика",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "SetIndexStyle",
     "Устанавливает новый тип, стиль, ширину и цвет для указанной линии индикатора",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "SetLevelStyle",
     "Устанавливает новый стиль, ширину и цвет для горизонтальных уровней индикатора, выводимого в отдельное окно",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "SetLevelValue",
     "Устанавливает значение указанного горизонтального уровня индикатора, выводимого в отдельное окно",
-    "/ru/customind"
+    "/customind"
   ],
   [
     "ShortArrayToString",
     "Копирует часть массива в строку",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "ShortToString",
     "Преобразование код символа (unicode) в односимвольную строку",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "SignalBaseGetDouble",
     "Возвращает значение свойства типа double для выбранного сигнала",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "SignalBaseGetInteger",
     "Возвращает значение свойства типа integer для выбранного сигнала",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "SignalBaseGetString",
     "Возвращает значение свойства типа string для выбранного сигнала",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "SignalBaseSelect",
     "Выбирает для работы сигнал из базы торговых сигналов, доступных в терминале",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "SignalBaseTotal",
     "Возвращает общее количество сигналов, доступных в терминале",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "SignalInfoGetDouble",
     "Возвращает из настроек копирования торгового сигнала значение свойства типа double",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "SignalInfoGetInteger",
     "Возвращает из настроек копирования торгового сигнала значение свойства типа integer",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "SignalInfoGetString",
     "Возвращает из настроек копирования торгового сигнала значение свойства типа string",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "SignalInfoSetDouble",
     "Устанавливает в настройках копирования торгового сигнала значение свойства типа double",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "SignalInfoSetInteger",
     "Устанавливает в настройках копирования торгового сигнала значение свойства типа integer",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "SignalSubscribe",
     "Производит подписку на копирование торгового сигнала",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "SignalUnsubscribe",
     "Отменяет подписку на копирование торгового сигнала",
-    "/ru/signals"
+    "/signals"
   ],
   [
     "sin",
     "Возвращает синус числа",
-    "/ru/math"
+    "/math"
   ],
   [
     "Sleep",
     "Задерживает выполнение текущего эксперта или скрипта на определенный интервал",
-    "/ru/common"
+    "/common"
   ],
   [
     "sqrt",
     "Возвращает квадратный корень",
-    "/ru/math"
+    "/math"
   ],
   [
     "srand",
     "Устанавливает начальное состояние генератора псевдослучайных целых чисел",
-    "/ru/math"
+    "/math"
   ],
   [
     "StringAdd",
     "Присоединяет к концу строки по месту указанную подстроку",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringBufferLen",
     "Возвращает размер буфера, распределенного для строки",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringCompare",
     "Сравнивает две строки и возвращает 1, если первая строка больше второй; 0 - если строки равны; -1 (минус один) - если первая строка меньше второй",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringConcatenate",
     "Формирует строку из переданных параметров",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringFill",
     "Заполняет указанную строку по месту указанными символами",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringFind",
     "Поиск подстроки в строке",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringFormat",
     "Преобразует число в строку в соответствие с заданным форматом",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "StringGetChar",
     "Возвращает значение символа, расположенного в указанной позиции строки",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringGetCharacter",
     "Возвращает значение символа, расположенного в указанной позиции строки",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringInit",
     "Инициализирует строку указанными символами и обеспечивает указанный размер строки",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringLen",
     "Возвращает число символов в строке",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringReplace",
     "Заменяет в строке все найденные подстроки на заданную последовательность символов.",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringSetChar",
     "Возвращает копию строки с измененным значением символа в указанной позиции",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringSetCharacter",
     "Возвращает true при успешной вставке символа в переданную строку",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringSplit",
     "Получает из указанной строки подстроки по заданному разделителю и возвращает количество полученных подстрок",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringSubstr",
     "Извлекает подстроку из текстовой строки, начинающейся c указанной позиции",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringToCharArray",
     "Посимвольно копирует преобразованную из Unicode в ANSI строку в указанное место массива типа uchar",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "StringToColor",
     "Преобразует строку типа \"R,G,B\" или строку, содержащую наименование цвета, в значение типа color",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "StringToDouble",
     "Преобразование строки, содержащей символьное представление числа, в число типа double",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "StringToInteger",
     "Преобразование строки, содержащей символьное представление числа, в число типа int",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "StringToLower",
     "Преобразует все символы указанной строки в строчные (маленькие) по месту",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringToShortArray",
     "Посимвольно копирует строку в указанное место массива типа ushort",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "StringToTime",
     "Преобразование строки, содержащей время и/или дату в формате \"yyyy.mm.dd [hh:mi]\", в число типа datetime",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "StringToUpper",
     "Преобразует все символы указанной строки в прописные (большие) по месту",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringTrimLeft",
     "Удаляет символы перевода каретки, пробелы и символы табуляции с начала строки",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StringTrimRight",
     "Удаляет символы перевода каретки, пробелы и символы табуляции в конце строки",
-    "/ru/strings"
+    "/strings"
   ],
   [
     "StrToDouble",
     "Преобразует строку, содержащую символьное представление числа, в число типа double",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "StrToInteger",
     "Преобразует строку, содержащую символьное представление числа, в число типа int",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "StrToTime",
     "Преобразует строку, содержащую время и/или дату в формате \"yyyy.mm.dd [hh:mi]\", в число типа datetime",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "StructToTime",
     "Производит конвертацию из переменной типа структуры MqlDateTime в значение типа datetime",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "Symbol",
     "Возвращает имя символа текущего графика",
-    "/ru/check"
+    "/check"
   ],
   [
     "Symbol",
     "Возвращает текстовую строку с именем текущего финансового инструмента",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "SymbolInfoDouble",
     "Возвращает значение типа double указанного символа для соответствующего свойства",
-    "/ru/marketinformation"
+    "/marketinformation"
   ],
   [
     "SymbolInfoInteger",
     "Возвращает значение целочисленного типа (long, datetime, int или bool) указанного символа для соответствующего свойства",
-    "/ru/marketinformation"
+    "/marketinformation"
   ],
   [
     "SymbolInfoSessionQuote",
     "Позволяет получить время начала и время окончания  указанной котировочной сессии для указанных символа и дня недели.",
-    "/ru/marketinformation"
+    "/marketinformation"
   ],
   [
     "SymbolInfoSessionTrade",
     "Позволяет получить время начала и время окончания  указанной торговой сессии для указанных символа и дня недели.",
-    "/ru/marketinformation"
+    "/marketinformation"
   ],
   [
     "SymbolInfoString",
     "Возвращает значение типа string указанного символа для соответствующего свойства",
-    "/ru/marketinformation"
+    "/marketinformation"
   ],
   [
     "SymbolInfoTick",
     "Возвращает текущие цены  для указанного символа в переменной типа MqlTick",
-    "/ru/marketinformation"
+    "/marketinformation"
   ],
   [
     "SymbolName",
     "Возвращает наименование указанного символа",
-    "/ru/marketinformation"
+    "/marketinformation"
   ],
   [
     "SymbolSelect",
     "Выбирает символ в окне \"Обзор рынка\" или убирает символ из окна",
-    "/ru/marketinformation"
+    "/marketinformation"
   ],
   [
     "SymbolsTotal",
     "Возвращает количество доступных (выбранных в в окне \"Обзор рынка\" или всех) символов",
-    "/ru/marketinformation"
+    "/marketinformation"
   ],
   [
     "tan",
     "Возвращает тангенс числа",
-    "/ru/math"
+    "/math"
   ],
   [
     "TerminalClose",
     "Посылает терминалу команду на завершение работы",
-    "/ru/common"
+    "/common"
   ],
   [
     "TerminalCompany",
     "Возвращает наименование компании-владельца клиентского терминала",
-    "/ru/check"
+    "/check"
   ],
   [
     "TerminalInfoDouble",
     "Возвращает значение типа double соответствующего свойства запущенной mql4-программы",
-    "/ru/check"
+    "/check"
   ],
   [
     "TerminalInfoInteger",
     "Возвращает значение типа int соответствующего свойства окружения mql4-программы",
-    "/ru/check"
+    "/check"
   ],
   [
     "TerminalInfoString",
     "Возвращает значение типа string соответствующего свойства окружения mql4-программы",
-    "/ru/check"
+    "/check"
   ],
   [
     "TerminalName",
     "Возвращает наименование клиентского терминала",
-    "/ru/check"
+    "/check"
   ],
   [
     "TerminalPath",
     "Возвращает каталог, из которого запущен клиентский терминал",
-    "/ru/check"
+    "/check"
   ],
   [
     "TesterStatistics",
     "Возвращает значение указанного статистического показателя, рассчитанного по результатам тестирования",
-    "/ru/common"
+    "/common"
   ],
   [
     "TextGetSize",
     "Возвращает ширину и высоту строки при текущих настройках шрифта",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "TextOut",
     "Выводит текст в пользовательский массив (буфер), предназначенный для создания графического ресурса",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "TextSetFont",
     "Устанавливает шрифт для вывода текста методами рисования (по умолчанию используется шрифт Arial 20)",
-    "/ru/objects"
+    "/objects"
   ],
   [
     "TimeCurrent",
     "Возвращает последнее известное время сервера (время прихода последней котировки) в формате datetime",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeDay",
     "Возвращает день месяца (1 - 31) указанной даты",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeDaylightSavings",
     "Возвращает признак перехода на летнее /зимнее время",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeDayOfWeek",
     "Возвращает день недели указанной даты",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeDayOfYear",
     "Возвращает день года указанной даты",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeGMT",
     "Возвращает время GMT формате datetime с учетом перехода на зимнее или летнее время по локальному времени компьютера, на котором запущен клиентский терминал",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeGMTOffset",
     "Возвращает текущую разницу между временем GMT и локальным временем компьютера в секундах с учетом перехода на зимнее или летнее время",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeHour",
     "Возвращает час указанного времени",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeLocal",
     "Возвращает локальное компьютерное время в формате datetime",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeMinute",
     "Возвращает минуту указанного времени",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeMonth",
     "Возвращает номер месяца указанного времени",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeSeconds",
     "Возвращает количество секунд, прошедших с начала минуты указанного времени",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeToStr",
     "Преобразует значение, содержащее время в секундах, прошедшее с 01.01.1970, в строку формата \"yyyy.mm.dd hh:mi\".",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "TimeToString",
     "Преобразование значения, содержащего время в секундах, прошедшее с 01.01.1970, в строку формата \"yyyy.mm.dd hh:mi\"",
-    "/ru/convert"
+    "/convert"
   ],
   [
     "TimeToStruct",
     "Производит конвертацию из значения типа datetime в переменную типа структуры MqlDateTime",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "TimeYear",
     "Возвращает год указанной даты",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "UninitializeReason",
     "Возвращает код причины деинициализации",
-    "/ru/check"
+    "/check"
   ],
   [
     "WebRequest",
     "Отправляет HTTP-запрос на указанный сервер",
-    "/ru/common"
+    "/common"
   ],
   [
     "WindowBarsPerChart",
     "Возвращает количество баров, помещающихся в окно текущего графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowExpertName",
     "Возвращает имя выполняющегося эксперта, скрипта, пользовательского индикатора или библиотеки",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowFind",
     "Возвращает номер подокна графика, содержащего индикатор с указанным именем",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowFirstVisibleBar",
     "Возвращает номер первого видимого бара в окне текущего графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowHandle",
     "Возвращает системный дескриптор окна, содержащего указанный график",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowIsVisible",
     "Возвращает состояние видимости подокна графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowOnDropped",
     "Возвращает индекс окна, в которое был брошен эксперт, пользовательский индикатор или скрипт",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowPriceMax",
     "Возвращает максимальное значение вертикальной шкалы указанного подокна текущего графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowPriceMin",
     "Возвращает минимальное значение вертикальной шкалы указанного подокна текущего графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowPriceOnDropped",
     "Возвращает значение цены в точке графика, на который был брошен эксперт или скрипт",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowRedraw",
     "Принудительно перерисовывает текущий график",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowScreenShot",
     "Сохраняет изображение текущего графика в файле формата GIF, PNG или BMP в зависимости от указанного расширения",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowsTotal",
     "Возвращает количество окон индикаторов на графике, включая главное окно графика",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowTimeOnDropped",
     "Возвращает значение времени в точке графика, на который был брошен эксперт или скрипт",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowXOnDropped",
     "Возвращает значение координаты по оси X в пикселах точки клиентской области окна графика, на которой был брошен эксперт или скрипт",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "WindowYOnDropped",
     "Возвращает значение координаты по оси Y в пикселах точки клиентской области окна графика, на которой был брошен эксперт или скрипт",
-    "/ru/chart_operations"
+    "/chart_operations"
   ],
   [
     "Year",
     "Возвращает текущий год, т.е. год последнего известного времени сервера",
-    "/ru/dateandtime"
+    "/dateandtime"
   ],
   [
     "ZeroMemory",
     "Обнуляет переменную, переданную по ссылке. Тип переменной может быть любым, исключение составляют только классы и структуры, имеющие конструкторы",
-    "/ru/common"
+    "/common"
   ]
 ]

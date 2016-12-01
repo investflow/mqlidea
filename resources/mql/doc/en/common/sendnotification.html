@@ -1,0 +1,26 @@
+<h1>SendNotification</h1> 
+<p><span>Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the "Notifications" tab.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>SendNotification</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>text</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Text&nbsp;of&nbsp;the&nbsp;notification</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>text</span></p> 
+<p><span>[in] &nbsp; The text of the notification. The message length should not exceed 255 characters.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>true if a notification has been successfully sent from the terminal; in case of failure returns false. When checking after a failed push of notification, <a href="/check/getlasterror">GetLastError ()</a> may return one of the following errors:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 43px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>4250  ERR_NOTIFICATION_SEND_FAILED,</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>4251  ERR_NOTIFICATION_WRONG_PARAMETER,</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>4252  ERR_NOTIFICATION_WRONG_SETTINGS,</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>4253  ERR_NOTIFICATION_TOO_FREQUENT.</span></li> 
+</ul> 
+<p><span>Note</span></p> 
+<p><span>Strict use restrictions are set for the SendNotification() function: no more than 2 calls per second and not more than 10 calls per minute. Monitoring the frequency of use is dynamic. The function can be disabled in case of the restriction violation.</span></p> 
+<p><span>SendNotification() function does not work in the <a href="/runtime/testing#alert_etc">Strategy Tester</a>.</span></p> 
+<br>

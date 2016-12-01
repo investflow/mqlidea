@@ -1,0 +1,34 @@
+<h1>iMFI</h1> 
+<p><span>Calculates the Money Flow Index indicator and returns its value.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>iMFI</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;symbol</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;</span><span>//&nbsp;timeframe</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>period</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;averaging&nbsp;period</span><br> <span>&nbsp;&nbsp;&nbsp;int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>shift</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;shift</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>symbol</span></p> 
+<p><span>[in] &nbsp;Symbol name on the data of which the indicator will be calculated. <a href="/basis/types/void">NULL</a> means the current symbol.</span></p> 
+<p><span>timeframe</span></p> 
+<p><span>[in] &nbsp;Timeframe. It can be any of <a href="/constants/chartconstants/enum_timeframes">ENUM_TIMEFRAMES</a> enumeration values. 0 means the current chart timeframe.</span></p> 
+<p><span>period</span></p> 
+<p><span>[in] &nbsp;Period (amount of bars) for calculation of the indicator.</span></p> 
+<p><span>shift</span></p> 
+<p><span>[in] &nbsp;Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>Numerical value of the Money Flow Index indicator.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">iMFI</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,14,0)&gt;</span><span style="color: #0000ff;">iMFI</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,14,1))&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<br>

@@ -1,0 +1,34 @@
+<h1>StringSplit</h1> 
+<p><span>Gets substrings by a specified separator from the specified string, returns the number of substrings obtained.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>StringSplit</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string&nbsp;</span><span>&nbsp;&nbsp;</span><span>string_value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;A&nbsp;string&nbsp;to&nbsp;search&nbsp;in</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;ushort</span><span>&nbsp;&nbsp;&nbsp;</span><span>separator</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;A&nbsp;separator&nbsp;using&nbsp;which&nbsp;substrings&nbsp;will&nbsp;be&nbsp;searched</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&amp;</span><span>&nbsp;result[]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;An&nbsp;array&nbsp;passed&nbsp;by&nbsp;reference&nbsp;to&nbsp;get&nbsp;the&nbsp;found&nbsp;substrings</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>string_value</span></p> 
+<p><span>[in] &nbsp;The string from which you need to get substrings. The string will not change.</span></p> 
+<p><span>pos</span></p> 
+<p><span>[in] &nbsp;The code of the separator character. To get the code, you can use the <a href="/strings/stringgetcharacter">StringGetCharacter()</a> function.</span></p> 
+<p><span>result[]</span></p> 
+<p><span>[out] &nbsp;An array of strings where the obtained substrings are located.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>The number of substrings in the result[] array. If the separator is not found in the passed string, only one source string will be placed in the array. </span></p> 
+<p><span>If string_value is empty or NULL, the function will return zero. In case of an error the function returns -1. To get the <a href="/constants/errorswarnings/errorcodes">error</a> code, call the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">string</span><span>&nbsp;to_split=</span><span style="color: #008080;">"life_is_good"</span><span>;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;A&nbsp;string&nbsp;to&nbsp;split&nbsp;into&nbsp;substrings</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;sep=</span><span style="color: #008080;">"_"</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;A&nbsp;separator&nbsp;as&nbsp;a&nbsp;character</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ushort</span><span>&nbsp;u_sep;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;The&nbsp;code&nbsp;of&nbsp;the&nbsp;separator&nbsp;character</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;result[];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;An&nbsp;array&nbsp;to&nbsp;get&nbsp;strings</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Get&nbsp;the&nbsp;separator&nbsp;code</span><br> <span>&nbsp;&nbsp;&nbsp;u_sep=</span><span style="color: #0000ff;">StringGetCharacter</span><span>(sep,0);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Split&nbsp;the&nbsp;string&nbsp;to&nbsp;substrings</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;k=</span><span style="color: #0000ff;">StringSplit</span><span>(to_split,u_sep,result);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Show&nbsp;a&nbsp;comment&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"Strings&nbsp;obtained:&nbsp;%d.&nbsp;Used&nbsp;separator&nbsp;'%s'&nbsp;with&nbsp;the&nbsp;code&nbsp;%d"</span><span>,k,sep,u_sep);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Now&nbsp;output&nbsp;all&nbsp;obtained&nbsp;strings</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(k&gt;0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;k;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"result[%d]=%s"</span><span>,i,result[i]);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/strings/stringreplace">StringReplace()</a>, <a href="/strings/stringsubstr">StringSubstr()</a>, <a href="/strings/stringconcatenate">StringConcatenate()</a></span></p> 
+<br>

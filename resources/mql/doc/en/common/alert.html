@@ -1,0 +1,23 @@
+<h1>Alert</h1> 
+<p><span>Displays a message in a separate window.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>Alert</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>argument</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;first&nbsp;value</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;other&nbsp;values</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>argument</span></p> 
+<p><span>[in] &nbsp;Any values separated by commas. To split the information output in several lines you can use the line feed characters "\r\n". The number of parameters can not exceed 64.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>No return value.</span></p> 
+<p><span>Note</span></p> 
+<p><span>Arrays can't be passed to the Alert() function. Arrays should be output elementwise. Data of the double type are output with 8 digits after the decimal point, data of the float type are displayed with 5 digits after the decimal point. To output the real numbers with a different precision or in a scientific format, use the <a href="/convert/doubletostring">DoubleToString()</a> function.</span></p> 
+<p><span>Data of the bool type is output as "true" or "false" strings. Dates are output as YYYY.MM.DD HH:MI:SS. To display a date in another format use the <a href="/convert/timetostring">TimeToString()</a> function. Data of the color type are output either as an R,G,B string or as a color name, if the color is present in a color set.</span></p> 
+<p><span>Alert() function does not work in the <a href="/runtime/testing#alert_etc">Strategy Tester</a>.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/common/comment">Comment()</a>, <a href="/common/print">Print()</a></span></p> 
+<br>

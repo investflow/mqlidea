@@ -1,0 +1,41 @@
+<h1>OrderSelect</h1> 
+<p><span>The function selects an order for further processing.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>OrderSelect</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>index</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;index&nbsp;or&nbsp;order&nbsp;ticket</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>select</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;flag</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>pool=MODE_TRADES</span><span>&nbsp;&nbsp;</span><span>//&nbsp;mode</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>ticket</span></p> 
+<p><span>[in] &nbsp;Order index or order ticket depending on the second parameter.</span></p> 
+<p><span>select</span></p> 
+<p><span>[in] &nbsp;Selecting flags. It can be any of the following values: </span></p> 
+<p><span>SELECT_BY_POS - index in the order pool, </span><br> <span>SELECT_BY_TICKET - index is order ticket.</span></p> 
+<p><span>pool=MODE_TRADES</span></p> 
+<p><span>[in] &nbsp;Optional order pool index. Used when the selected parameter is SELECT_BY_POS. It can be any of the following values:</span></p> 
+<p><span>MODE_TRADES (default)- order selected from trading pool(opened and pending orders),</span><br> <span>MODE_HISTORY - order selected from history pool (closed and canceled order).</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>It returns true if the function succeeds, otherwise falses. To get the <a href="/constants/errorswarnings/enum_trade_return_codes">error</a> information, one has to call the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span>Note</span></p> 
+<p><span>The pool parameter is ignored if the order is selected by the ticket number. The ticket number is a unique order identifier. </span></p> 
+<p><span>To find out from what list the order has been selected, its close time must be analyzed. If the order close time equals to 0, the order is open or pending and taken from the terminal open orders list. </span></p> 
+<p><span>One can distinguish an opened order from a pending order by the order type. If the order close time does not equal to 0, the order is a closed order or a deleted pending order and was selected from the terminal history. They also differ from each other by their order types.</span></p> 
+<p><span>The OrderSelect() function copies order data into program environment and all further calls of <a href="/trading/ordercloseprice">OrderClosePrice()</a>, <a href="/trading/orderclosetime">OrderCloseTime()</a>, <a href="/trading/ordercomment">OrderComment()</a>, <a href="/trading/ordercommission">OrderCommission()</a>, <a href="/trading/orderexpiration">OrderExpiration()</a>, <a href="/trading/orderlots">OrderLots()</a>, <a href="/trading/ordermagicnumber">OrderMagicNumber()</a>, <a href="/trading/orderopenprice">OrderOpenPrice()</a>, <a href="/trading/orderopentime">OrderOpenTime()</a>, <a href="/trading/orderprint">OrderPrint()</a>, <a href="/trading/orderprofit">OrderProfit()</a>, <a href="/trading/orderstoploss">OrderStopLoss()</a>, <a href="/trading/orderswap">OrderSwap()</a>, <a href="/trading/ordersymbol">OrderSymbol()</a>, <a href="/trading/ordertakeprofit">OrderTakeProfit()</a>, <a href="/trading/orderticket">OrderTicket()</a>, <a href="/trading/ordertype">OrderType()</a> functions return the data, copied earlier. It means that in some cases the order details (open price, SL/TP levels or expiration date) may change and the data become non-actual. It is strongly recommended to call the OrderSelect() function before request the order data.</span></p> 
+<p><span>Consecutive selection of orders using the SELECT_BY_POS parameter returns information in the sequence in which it was received from the trading server. Sorting of the resulting list of orders cannot be guaranteed.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">OrderSelect</span><span>(12470,&nbsp;SELECT_BY_TICKET)==</span><span style="color: #0000ff;">true</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"order&nbsp;#12470&nbsp;open&nbsp;price&nbsp;is&nbsp;"</span><span>,&nbsp;</span><span style="color: #0000ff;">OrderOpenPrice</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"order&nbsp;#12470&nbsp;close&nbsp;price&nbsp;is&nbsp;"</span><span>,&nbsp;</span><span style="color: #0000ff;">OrderClosePrice</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"OrderSelect&nbsp;returned&nbsp;the&nbsp;error&nbsp;of&nbsp;"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/constants/tradingconstants/orderproperties">Order properties</a>, <a href="/trading/ordercloseprice">OrderClosePrice()</a>, <a href="/trading/orderclosetime">OrderCloseTime()</a>, <a href="/trading/ordercomment">OrderComment()</a>, <a href="/trading/ordercommission">OrderCommission()</a>, <a href="/trading/orderexpiration">OrderExpiration()</a>, <a href="/trading/orderlots">OrderLots()</a>, <a href="/trading/ordermagicnumber">OrderMagicNumber()</a>, <a href="/trading/orderopenprice">OrderOpenPrice()</a>, <a href="/trading/orderopentime">OrderOpenTime()</a>, <a href="/trading/orderprint">OrderPrint()</a>, <a href="/trading/orderprofit">OrderProfit()</a>, <a href="/trading/orderstoploss">OrderStopLoss()</a>, <a href="/trading/orderswap">OrderSwap()</a>, <a href="/trading/ordersymbol">OrderSymbol()</a>, <a href="/trading/ordertakeprofit">OrderTakeProfit()</a>, <a href="/trading/orderticket">OrderTicket()</a>, <a href="/trading/ordertype">OrderType()</a> </span></p> 
+<br>

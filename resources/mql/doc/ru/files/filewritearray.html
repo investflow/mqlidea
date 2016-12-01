@@ -11,15 +11,15 @@
 </div> 
 <p><span>Параметры</span></p> 
 <p><span>file_handle</span></p> 
-<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/ru/files/fileopen">FileOpen()</a>.</span></p> 
+<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/files/fileopen">FileOpen()</a>.</span></p>
 <p><span>array[]</span></p> 
 <p><span>[out] &nbsp;Массив для записи.</span></p> 
 <p><span>start=0</span></p> 
 <p><span>[in] &nbsp;Начальный индекс в массиве (номер первого записываемого элемента).</span></p> 
 <p><span>count=WHOLE_ARRAY</span></p> 
-<p><span>[in] &nbsp;Количество записываемых элементов (<a href="/ru/constants/namedconstants/otherconstants">WHOLE_ARRAY</a> означает, что записываются все элементы начиная с номера start до конца массива).</span></p> 
+<p><span>[in] &nbsp;Количество записываемых элементов (<a href="/constants/namedconstants/otherconstants">WHOLE_ARRAY</a> означает, что записываются все элементы начиная с номера start до конца массива).</span></p>
 <p><span>Возвращаемое значение</span></p> 
-<p><span>Количество записанных элементов или 0 в случае ошибки. </span><span>Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Количество записанных элементов или 0 в случае ошибки. </span><span>Чтобы получить информацию об <a href="/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/check/getlasterror">GetLastError()</a>.</span></p>
 <p><span>Примечание</span></p> 
 <p><span>Строковый массив может записываться только в файл типа TXT. В этом случае строки автоматически завершаются символами конца строки "\r\n". В зависимости от типа файла ANSI или UNICODE, строки преобразовываются к ansi-кодировке, или нет.</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
@@ -33,5 +33,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/basis/variables#array_define">Переменные</a>, <a href="/ru/files/fileseek">FileSeek()</a></span></p> 
+<p><span><a href="/basis/variables#array_define">Переменные</a>, <a href="/files/fileseek">FileSeek()</a></span></p>
 <br>

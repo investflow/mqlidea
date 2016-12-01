@@ -1,0 +1,63 @@
+<h1>CopyLow</h1> 
+<p><span>The function gets into low_array the history data of minimal bar prices for the selected symbol-period pair in the specified quantity. It should be noted that elements ordering is from present to past, i.e., starting position of 0 means the current bar.</span></p> 
+<p><img alt="CopyLow" width="656" height="214" style="margin:0;width:656px;height:214px;border:none" src="https://c.mql4.com/i/docs/en/copylow.png"></p> 
+<p><span>When copying the yet unknown amount of data, it</span><span> is recommended to use </span><span><a href="/basis/types/dynamic_array">dynamic array</a></span><span> as a target array, because if the requested data count is less (or more) than the length of the target array, function </span><span>tries to reallocate the memory so that the requested data fit entirely.</span></p> 
+<p><span>If you know the amount of data you need to copy, it should better be done to a <a href="/basis/types/dynamic_array#static_array">statically allocated buffer</a>, in order to prevent the allocation of excessive memory.</span></p> 
+<p><span>No matter what is the property of the target array - as_series=true or as_series=false. Data will be copied so that the oldest element will be located at the start of the physical memory allocated for the array. There are 3 variants of function calls.</span></p> 
+<p><span>Call by the first position and the number of required elements </span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>CopyLow</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;symbol&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_TIMEFRAMES</span><span>&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;period</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start_pos</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;start&nbsp;position</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>count</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;data&nbsp;count&nbsp;to&nbsp;copy</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>low_array[]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;target&nbsp;array&nbsp;to&nbsp;copy</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Call by the start date and the number of required elements </span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>CopyLow</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;symbol&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_TIMEFRAMES</span><span>&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;period</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start_time</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;start&nbsp;date&nbsp;and&nbsp;time</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>count</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;data&nbsp;count&nbsp;to&nbsp;copy</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>low_array[]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;target&nbsp;array&nbsp;to&nbsp;copy</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Call by the start and end dates of a required time interval</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>CopyLow</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;symbol&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_TIMEFRAMES</span><span>&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;period</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start_time</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;start&nbsp;date&nbsp;and&nbsp;time</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>stop_time</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;stop&nbsp;date&nbsp;and&nbsp;time</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>low_array[]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;target&nbsp;array&nbsp;to&nbsp;copy</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>symbol_name</span></p> 
+<p><span>[in] &nbsp;Symbol.</span></p> 
+<p><span>timeframe</span></p> 
+<p><span>[in] &nbsp;Period.</span></p> 
+<p><span>start_pos</span></p> 
+<p><span>[in] &nbsp;The start position for the first element to copy.</span></p> 
+<p><span>count</span></p> 
+<p><span>[in] &nbsp;Data count to copy.</span></p> 
+<p><span>start_time</span></p> 
+<p><span>[in] &nbsp;Bar time, corresponding to the first element to copy.</span></p> 
+<p><span>stop_time</span></p> 
+<p><span>[in] &nbsp;Bar time, corresponding to the last element to copy.</span></p> 
+<p><span>low_array[]</span></p> 
+<p><span>[out] &nbsp;Array of <a href="/basis/types/double">double</a> type.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>Returns the copied data count or -1 in case of an <a href="/constants/errorswarnings/errorcodes">error</a>.</span></p> 
+<p><span>Note</span></p> 
+<p><span>If the whole interval of requested data is out of the available data on the server, the function returns -1. If data outside <a href="/constants/environment_state/terminalstatus">TERMINAL_MAXBARS</a> (maximal number of bars on the chart) is requested, the function will also return -1.</span></p> 
+<p><span>If requested timeseries are not yet built or they need to be downloaded from the server, the function will immediately return -1.</span></p> 
+<p><span>When requesting data by the start date and the number of required elements, only data whose date is less than (earlier) or equal to the date specified will be returned. It means, the open time of any bar, for which value is returned (volume, spread, value on the indicator buffer, prices Open, High, Low, Close or open time Time) is always less or equal to the specified one.</span></p> 
+<p><span>When requesting data in a specified range of dates, only data from this interval will be returned. The interval is set and counted up to seconds. It means, the open time of any bar, for which value is returned (volume, spread, value on the indicator buffer, prices Open, High, Low, Close or open time Time) is always within the requested interval. </span></p> 
+<p><span>Thus, if the current day is Saturday, at the attempt to copy data on a week timeframe specifying </span><span style="font-style: italic;">start_time=Last_Tuesday</span><span> and </span><span style="font-style: italic;">stop_time=Last_Friday</span><span> the function will return 0, because the open time on a week timeframe is always Sunday, but one week bar does not fall into the specified interval.</span></p> 
+<p><span>If you need to return value corresponding to the current uncompleted bar, you can use the first form of call specifying </span><span style="font-style: italic;">start_pos</span><span>=0 and </span><span style="font-style: italic;">count</span><span>=1.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/series/copyhigh">CopyHigh</a> </span></p> 
+<br>

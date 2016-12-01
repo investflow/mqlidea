@@ -13,12 +13,12 @@
 <p><span>file_handle</span></p> 
 <p><span>[in] &nbsp;Файловый описатель открытого бинарного файла.</span></p> 
 <p><span>struct_object</span></p> 
-<p><span>[out] &nbsp;Объект указанной структуры. Структура не должна содержать строки, <a href="/ru/basis/types/dynamic_array">динамические массивы</a> и <a href="/ru/basis/oop/virtual">виртуальные функции</a>.</span></p> 
+<p><span>[out] &nbsp;Объект указанной структуры. Структура не должна содержать строки, <a href="/basis/types/dynamic_array">динамические массивы</a> и <a href="/basis/oop/virtual">виртуальные функции</a>.</span></p>
 <p><span>size=-1</span></p> 
 <p><span>[in] &nbsp;Количество байт, которые нужно прочитать. Если размер не указан или указано большее количество байт, чем размер структуры, то используется точный размер указанной структуры.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
-<p><span>В случае удачи функция возвращает количество прочитанных байт 0 в случае ошибки. &nbsp;При успешном завершении количество прочитанных байт равно размеру структуры. </span><span>Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span><span> Файловый указатель перемещается на это же количество байт.</span></p> 
-<p><span style="font-weight: bold;">Пример </span><span>(используется файл, полученный в результате работы примера для функции <a href="/ru/files/filewritestruct">FileWriteStruct()</a>)</span></p> 
+<p><span>В случае удачи функция возвращает количество прочитанных байт 0 в случае ошибки. &nbsp;При успешном завершении количество прочитанных байт равно размеру структуры. </span><span>Чтобы получить информацию об <a href="/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/check/getlasterror">GetLastError()</a>.</span><span> Файловый указатель перемещается на это же количество байт.</span></p>
+<p><span style="font-weight: bold;">Пример </span><span>(используется файл, полученный в результате работы примера для функции <a href="/files/filewritestruct">FileWriteStruct()</a>)</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -29,5 +29,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/basis/types/classes">Структуры и классы</a>, <a href="/ru/files/filewritestruct">FileWriteStruct()</a></span></p> 
+<p><span><a href="/basis/types/classes">Структуры и классы</a>, <a href="/files/filewritestruct">FileWriteStruct()</a></span></p>
 <br>

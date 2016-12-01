@@ -1,0 +1,33 @@
+<h1>ObjectGetFiboDescription</h1> 
+<p><span>Returns the level description of a Fibonacci object.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>ObjectGetFiboDescription</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&nbsp;&nbsp;&nbsp;</span><span>object_name</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>index</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;level&nbsp;index</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>object_name</span></p> 
+<p><span>[in] &nbsp;Fibonacci object name.</span></p> 
+<p><span>index</span></p> 
+<p><span>[in] &nbsp;Index of the Fibonacci level (0-31).</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>The level description of a Fibonacci object. To get the detailed <a href="/constants/errorswarnings/errorcodes">error</a> information, one has to call the<a href="/check/getlasterror"> GetLastError()</a> function.</span></p> 
+<p><span>Note</span></p> 
+<p><span>The amount of Fibonacci levels depends on the object type. The maximum amount of Fibonacci levels is 32.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#include</span><span>&nbsp;&lt;stdlib.mqh&gt;</span><br> <span>&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;text;</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;32;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text=</span><span style="color: #0000ff;">ObjectGetFiboDescription</span><span>(MyObjectName,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;check&nbsp;if&nbsp;your&nbsp;object&nbsp;has&nbsp;less&nbsp;than&nbsp;32&nbsp;levels</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">GetLastError</span><span>()!=ERR_NO_ERROR)&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(MyObjectName,</span><span style="color: #008080;">"&nbsp;level&nbsp;index:&nbsp;"</span><span>,i,</span><span style="color: #008080;">"&nbsp;description:&nbsp;"</span><span>,text);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/objects/objectsetfibodescription">ObjectSetFiboDescription()</a></span></p> 
+<br>

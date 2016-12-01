@@ -1,0 +1,23 @@
+<h1>GlobalVariableSetOnCondition</h1> 
+<p><span>Sets the new value of the existing global variable if the current value equals to the third parameter check_value. If there is no global variable, the function will generate an error ERR_GLOBALVARIABLE_NOT_FOUND (4501) and return false.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>GlobalVariableSetOnCondition</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Global&nbsp;variable&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;</span><span>value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;New&nbsp;value&nbsp;for&nbsp;variable&nbsp;if&nbsp;condition&nbsp;is&nbsp;true</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;</span><span>check_value</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Check&nbsp;value&nbsp;condition</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>name</span></p> 
+<p><span>[in] &nbsp;The name of a global variable.</span></p> 
+<p><span>value</span></p> 
+<p><span>[in] &nbsp;New value.</span></p> 
+<p><span>check_value</span></p> 
+<p><span>[in] &nbsp; The value to check the current value of the global variable.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>If successful, the function returns true, otherwise it returns false. For details about the <a href="/constants/errorswarnings/errorcodes">error</a> call <a href="/check/getlasterror">GetLastError()</a>. If the current value of the global variable is different from check_value, the function returns false.</span></p> 
+<p><span>Note</span></p> 
+<p><span>Function provides atomic access to the global variable, so it can be used for providing of a mutex at interaction of several Expert Advisors working simultaneously within one client terminal.</span></p> 
+<br>

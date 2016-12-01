@@ -1,0 +1,40 @@
+<h1>SymbolInfoString</h1> 
+<p><span>Returns the corresponding property of a specified symbol. There are 2 variants of the function.</span></p> 
+<p><span>1. Immediately returns the property value.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>SymbolInfoString</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Symbol</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_SYMBOL_INFO_STRING</span><span>&nbsp;&nbsp;</span><span>prop_id</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Property&nbsp;identifier</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>2. Returns true or false, depending on the success of a function. If successful, the value of the property is placed in a placeholder variable passed by reference in the last parameter.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>SymbolInfoString</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Symbol</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_SYMBOL_INFO_STRING</span><span>&nbsp;&nbsp;</span><span>prop_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Property&nbsp;identifier</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>string_var</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Here&nbsp;we&nbsp;accept&nbsp;the&nbsp;property&nbsp;value</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>name</span></p> 
+<p><span>[in] Symbol name.</span></p> 
+<p><span>prop_id</span></p> 
+<p><span>[in] Identifier of a symbol property. The value can be one of the values of the <a href="/constants/environment_state/marketinfoconstants#enum_symbol_info_string">ENUM_SYMBOL_INFO_STRING</a> enumeration.</span></p> 
+<p><span>string_var</span></p> 
+<p><span>[out] Variable of the string type receiving the value of the requested property.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>The value of string type. In case of execution failure, information about the <a href="/constants/errorswarnings/errorcodes">error</a> can be obtained using <a href="/check/getlasterror">GetLastError()</a> function:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 43px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>4106  symbol is not selected in "Market Watch" (not found in the list of available ones),</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>4051  invalid identifier of a symbol property,</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>4024  internal error.</span></li> 
+</ul> 
+<p><span>Note</span></p> 
+<p><span>It is recommended to use <a href="/marketinformation/symbolinfotick">SymbolInfoTick()</a> if the function is used for getting information about the last tick. It may well be that not a single quote has appeared yet since the terminal is connected to a trading account. In such a case, the requested value will be indefinite.</span></p> 
+<p><span>In most cases, it is enough to use <a href="/marketinformation/symbolinfotick">SymbolInfoTick()</a> function allowing a user to receive the values of Ask, Bid, Last, Volume and the time of the last tick's arrival during a single call.</span></p> 
+<br>

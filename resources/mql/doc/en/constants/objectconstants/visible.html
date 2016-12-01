@@ -1,0 +1,82 @@
+<h1>Visibility of Objects</h1> 
+<p><span>The combination of object visibility flags determines chart timeframes, where the object is visible. To set/get the value of the OBJPROP_TIMEFRAMES property, you can use the <a href="/objects/objectset">ObjectSet()</a>/<a href="/objects/objectget">ObjectGet</a> or <a href="/objects/objectsetinteger">ObjectSetInteger()</a>/<a href="/objects/objectgetinteger">ObjectGetInteger()</a> functions.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>ID</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Value</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>OBJ_NO_PERIODS, EMPTY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>-1</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The object is not drawn in all timeframes</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>OBJ_PERIOD_M1</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>0x0001</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The object is drawn in 1-minute chart</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>OBJ_PERIOD_M5</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>0x0002</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The object is drawn in 5-minute chart</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>OBJ_PERIOD_M15</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>0x0004</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The object is drawn in 15-minute chart</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>OBJ_PERIOD_M30</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>0x0008</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The object is drawn in 30-minute chart</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>OBJ_PERIOD_H1</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>0x0010</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The object is drawn in 1-hour chart</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>OBJ_PERIOD_H4</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>0x0020</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The object is drawn in 4-hour chart</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>OBJ_PERIOD_D1</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>0x0040</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The object is drawn in day charts</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>OBJ_PERIOD_W1</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>0x0080</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The object is drawn in week charts</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>OBJ_PERIOD_MN1</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>0x0100</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The object is drawn in month charts</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>OBJ_ALL_PERIODS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>0x01ff</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The object is drawn in all timeframes</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Visibility flags can be combined using the symbol "|", for example, the combination of flags OBJ_PERIOD_M15|OBJ_PERIOD_H1 means that the object will be visible on the 15-minute and hourly timeframes.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;highlevel=</span><span style="color: #008080;">"PreviousDayHigh"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;lowlevel=</span><span style="color: #008080;">"PreviousDayLow"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;prevHigh;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;The&nbsp;previous&nbsp;day&nbsp;High</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;prevLow;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;The&nbsp;previous&nbsp;day&nbsp;Low</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;highs[],lows[];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Arrays&nbsp;for&nbsp;High&nbsp;and&nbsp;Low</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;Reset&nbsp;the&nbsp;last&nbsp;error</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ResetLastError</span><span>();</span><br> <span style="color: #808080;">//---&nbsp;Get&nbsp;the&nbsp;last&nbsp;2&nbsp;High&nbsp;values&nbsp;on&nbsp;the&nbsp;daily&nbsp;timeframe</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;highsgot=</span><span style="color: #0000ff;">CopyHigh</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">PERIOD_D1</span><span>,0,2,highs);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(highsgot&gt;0)&nbsp;</span><span style="color: #808080;">//&nbsp;If&nbsp;copying&nbsp;was&nbsp;successful</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"High&nbsp;prices&nbsp;for&nbsp;the&nbsp;last&nbsp;2&nbsp;days&nbsp;were&nbsp;obtained&nbsp;successfully"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prevHigh=highs[0];&nbsp;</span><span style="color: #808080;">//&nbsp;The&nbsp;previous&nbsp;day&nbsp;High</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"prevHigh&nbsp;=&nbsp;"</span><span>,prevHigh);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">ObjectFind</span><span>(0,highlevel)&lt;0)&nbsp;</span><span style="color: #808080;">//&nbsp;Object&nbsp;with&nbsp;the&nbsp;name&nbsp;highlevel&nbsp;not&nbsp;found</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectCreate</span><span>(0,highlevel,</span><span style="color: #0000ff;">OBJ_HLINE</span><span>,0,0,0);&nbsp;</span><span style="color: #808080;">//&nbsp;Create&nbsp;the&nbsp;Horizontal&nbsp;Line&nbsp;object</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Set&nbsp;value&nbsp;for&nbsp;the&nbsp;price&nbsp;level&nbsp;for&nbsp;the&nbsp;line&nbsp;highlevel</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectSetDouble</span><span>(0,highlevel,</span><span style="color: #0000ff;">OBJPROP_PRICE</span><span>,0,prevHigh);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Set&nbsp;the&nbsp;visibility&nbsp;only&nbsp;PERIOD_M15&nbsp;and&nbsp;PERIOD_H1</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectSetInteger</span><span>(0,highlevel,</span><span style="color: #0000ff;">OBJPROP_TIMEFRAMES</span><span>,</span><span style="color: #0000ff;">OBJ_PERIOD_M15</span><span>|</span><span style="color: #0000ff;">OBJ_PERIOD_H1</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Could&nbsp;not&nbsp;get&nbsp;High&nbsp;prices&nbsp;over&nbsp;the&nbsp;past&nbsp;2&nbsp;days,&nbsp;Error&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;Reset&nbsp;the&nbsp;last&nbsp;error</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ResetLastError</span><span>();</span><br> <span style="color: #808080;">//---&nbsp;Get&nbsp;the&nbsp;2&nbsp;days&nbsp;values&nbsp;Low&nbsp;on&nbsp;the&nbsp;daily&nbsp;timeframe</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;lowsgot=</span><span style="color: #0000ff;">CopyLow</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">PERIOD_D1</span><span>,0,2,lows);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(lowsgot&gt;0)&nbsp;</span><span style="color: #808080;">//&nbsp;If&nbsp;copying&nbsp;was&nbsp;successful</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Low&nbsp;prices&nbsp;for&nbsp;the&nbsp;last&nbsp;2&nbsp;days&nbsp;were&nbsp;obtained&nbsp;successfully"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prevLow=lows[0];&nbsp;</span><span style="color: #808080;">//&nbsp;The&nbsp;previous&nbsp;day&nbsp;Low</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"prevLow&nbsp;=&nbsp;"</span><span>,prevLow);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">ObjectFind</span><span>(0,lowlevel)&lt;0)&nbsp;</span><span style="color: #808080;">//&nbsp;Object&nbsp;with&nbsp;the&nbsp;name&nbsp;lowlevel&nbsp;not&nbsp;found</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectCreate</span><span>(0,lowlevel,</span><span style="color: #0000ff;">OBJ_HLINE</span><span>,0,0,0);&nbsp;</span><span style="color: #808080;">//&nbsp;Create&nbsp;the&nbsp;Horizontal&nbsp;Line&nbsp;object</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Set&nbsp;value&nbsp;for&nbsp;the&nbsp;price&nbsp;level&nbsp;for&nbsp;the&nbsp;line&nbsp;lowlevel</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectSetDouble</span><span>(0,lowlevel,</span><span style="color: #0000ff;">OBJPROP_PRICE</span><span>,0,prevLow);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Set&nbsp;the&nbsp;visibility&nbsp;only&nbsp;PERIOD_M15&nbsp;and&nbsp;PERIOD_H1</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectSetInteger</span><span>(0,lowlevel,</span><span style="color: #0000ff;">OBJPROP_TIMEFRAMES</span><span>,</span><span style="color: #0000ff;">OBJ_PERIOD_M15</span><span>|</span><span style="color: #0000ff;">OBJ_PERIOD_H1</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Could&nbsp;not&nbsp;get&nbsp;Low&nbsp;prices&nbsp;for&nbsp;the&nbsp;last&nbsp;2&nbsp;days,&nbsp;Error&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartRedraw</span><span>(0);&nbsp;</span><span style="color: #808080;">//&nbsp;redraw&nbsp;the&nbsp;chart&nbsp;forcibly</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/common/periodseconds">PeriodSeconds</a>, <a href="/check/period">Period</a>, <a href="/constants/chartconstants/enum_timeframes">Chart timeframes</a>, <a href="/dateandtime">Date and Time</a></span></p> 
+<br>

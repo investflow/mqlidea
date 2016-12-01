@@ -1,0 +1,31 @@
+<h1>TimeToStr</h1> 
+<p><span>Converts value containing time in seconds that has passed since January 1, 1970, into a string of "yyyy.mm.dd hh:mi" format.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>TimeToStr</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime</span><span>&nbsp;&nbsp;</span><span>value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;value</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mode=TIME_DATE|TIME_MINUTES</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;format</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>value</span></p> 
+<p><span>[in] &nbsp;Positive amount of seconds that have passed since 00:00, January 1, 1970.</span></p> 
+<p><span>mode=TIME_DATE|TIME_MINUTES</span></p> 
+<p><span>[in] &nbsp;Optional data output mode can be one or combination of:</span><br> <span>TIME_DATE gets result as "yyyy.mm.dd",</span><br> <span>TIME_MINUTES gets result as "hh:mi",</span><br> <span>TIME_SECONDS gets result as "hh:mi:ss".</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>String.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;var1=</span><span style="color: #0000ff;">TimeToStr</span><span>(</span><span style="color: #0000ff;">TimeCurrent</span><span>(),</span><span style="color: #0000ff;">TIME_DATE</span><span>|</span><span style="color: #0000ff;">TIME_SECONDS</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/common/printformat">PrintFormat()</a>, <a href="/convert/strtotime">StrToTime()</a>, <a href="/convert/stringtotime">StringToTime()</a></span></p> 
+<br>

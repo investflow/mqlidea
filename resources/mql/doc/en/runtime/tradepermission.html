@@ -1,0 +1,74 @@
+<h1>Trade Permission</h1> 
+<h2>Trade Automation</h2> 
+<p><span>MQL4 language provides a special group of <a href="/trading">trade functions</a> designed for developing automated trading systems. Programs developed for automated trading with no human intervention are called Expert Advisors or trading robots. In order to create an Expert Advisor in MetaEditor, launch MQL4 Wizard and select the option "</span><span>Expert Advisor (template)". It allows you to create a template with ready-made <a href="/basis/function/events">event handling functions</a> that should be supplemented with all necessary functionality by means of programming.</span></p> 
+<p style="text-align: center;"><img alt="MQL4_Wizard" width="532" height="399" style="margin:0px auto 0px auto;width:532px;height:399px;border:none" src="https://c.mql4.com/i/docs/en/mql4_wizard.png"></p> 
+<p><span>Trading functions can work only in Expert Advisors and scripts. Trading is not allowed for indicators.</span></p> 
+<h2>Checking for Permission to Perform Automated Trading</h2> 
+<p><span>In order to develop a reliable Expert Advisor capable of working without human intervention, it is necessary to arrange a set of important checks. First, we should programmatically check if trading is allowed at all. This is a basic check that is indispensable when developing any automated system.</span></p> 
+<h3>Checking for permission to perform automated trading in the terminal</h3> 
+<p><span>The terminal settings provide you with an ability to allow or forbid automated trading for all programs.</span></p> 
+<p style="text-align: center;"><img alt="TERMINAL_TRADE_ALLOWED" width="591" height="393" style="margin:0px auto 0px auto;width:591px;height:393px;border:none" src="https://c.mql4.com/i/docs/en/terminal_trade_allowed.png"></p> 
+<p><span>You can switch automated trading option right on the terminal's Standard panel: </span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><img alt="AutoTrading_enabled" width="97" height="23" style="margin:0;width:97px;height:23px;border:none" src="https://c.mql4.com/i/docs/en/autotrading_enabled.png"><span> automated trading enabled, trading functions in launched applications are allowed for use.</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><img alt="AutoTrading_disabled" width="97" height="23" style="margin:0;width:97px;height:23px;border:none" src="https://c.mql4.com/i/docs/en/autotrading_disabled.png"><span>  automated trading disabled, </span><span>running applications are unable to execute trading functions. </span></li> 
+</ul> 
+<p><span>Sample check:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">if</span><span>&nbsp;(!</span><span style="color: #0000ff;">TerminalInfoInteger</span><span>(</span><span style="color: #0000ff;">TERMINAL_TRADE_ALLOWED</span><span>))&nbsp;</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;Alert</span><span>(</span><span style="color: #008080;">"Check&nbsp;if&nbsp;automated&nbsp;trading&nbsp;is&nbsp;allowed&nbsp;in&nbsp;the&nbsp;terminal&nbsp;settings!"</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<h3>Checking if trading is allowed for a certain running Expert Advisor/script</h3> 
+<p><span>You can allow or forbid automated trading for a certain program when launching it. To do this, use the special check box in the program properties.</span></p> 
+<p style="text-align: center;"><img alt="MQL_TRADE_ALLOWED" width="619" height="309" style="margin:0px auto 0px auto;width:619px;height:309px;border:none" src="https://c.mql4.com/i/docs/en/mql_trade_allowed.png"></p> 
+<p><span>Sample check:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">TerminalInfoInteger</span><span>(</span><span style="color: #0000ff;">TERMINAL_TRADE_ALLOWED</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Alert</span><span>(</span><span style="color: #008080;">"Check&nbsp;if&nbsp;automated&nbsp;trading&nbsp;is&nbsp;allowed&nbsp;in&nbsp;the&nbsp;terminal&nbsp;settings!"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">MQLInfoInteger</span><span>(</span><span style="color: #0000ff;">MQL_TRADE_ALLOWED</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Alert</span><span>(</span><span style="color: #008080;">"Automated&nbsp;trading&nbsp;is&nbsp;forbidden&nbsp;in&nbsp;the&nbsp;program&nbsp;settings&nbsp;for&nbsp;"</span><span>,</span><span style="color: #0000ff;">__FILE__</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<h3>Checking if trading is allowed for any Expert Advisors/scripts for the current account</h3> 
+<p><span>Automated trading can be disabled at the trade server side. Sample check:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_TRADE_EXPERT</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Alert</span><span>(</span><span style="color: #008080;">"Automated&nbsp;trading&nbsp;is&nbsp;forbidden&nbsp;for&nbsp;the&nbsp;account&nbsp;"</span><span>,</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LOGIN</span><span>),</span><br> <span style="color: #008080;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;at&nbsp;the&nbsp;trade&nbsp;server&nbsp;side"</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>If automated trading is disabled for a trading account, trading operations of Expert Advisors/scripts are not executed.</span></p> 
+<h3>Checking if trading is allowed for the current account</h3> 
+<p><span>In some cases, any trading operations are disabled for a certain trading account  neither manual nor automated trading can be performed. Sample check when an investor password has been used to connect to a trading account:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_TRADE_ALLOWED</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Comment</span><span>(</span><span style="color: #008080;">"Trading&nbsp;is&nbsp;forbidden&nbsp;for&nbsp;the&nbsp;account&nbsp;"</span><span>,</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LOGIN</span><span>),</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">".\n&nbsp;Perhaps&nbsp;an&nbsp;investor&nbsp;password&nbsp;has&nbsp;been&nbsp;used&nbsp;to&nbsp;connect&nbsp;to&nbsp;the&nbsp;trading&nbsp;account."</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"\n&nbsp;Check&nbsp;the&nbsp;terminal&nbsp;journal&nbsp;for&nbsp;the&nbsp;following&nbsp;entry:"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"\n\'"</span><span>,</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LOGIN</span><span>),</span><span style="color: #008080;">"\':&nbsp;trading&nbsp;has&nbsp;been&nbsp;disabled&nbsp;-&nbsp;investor&nbsp;mode."</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>AccountInfoInteger(ACCOUNT_TRADE_ALLOWED) may return </span><span style="font-weight: bold;">false</span><span> in the following cases:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>no connection to the trade server. That can be checked using TerminalInfoInteger(TERMINAL_CONNECTED));</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>trading account switched to read-only mode (sent to the archive);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>trading on the account is disabled at the trade server side;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>connection to a trading account has been performed in Investor mode.</span></li> 
+</ul> 
+<p><span>&nbsp;</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/constants/environment_state/terminalstatus">Client Terminal Properties</a>, <a href="/constants/environment_state/accountinformation">Account Properties</a>, <a href="/constants/environment_state/mql4_programm_info">Properties of a Running MQL4 Program</a></span></p> 
+<br>

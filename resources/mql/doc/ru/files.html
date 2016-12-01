@@ -4,7 +4,7 @@
 <p><span>Существует два каталога (с подкаталогами), в которых могут располагаться рабочие файлы:</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>папка_данных_терминала\MQL4\Files\ (выберите для просмотра в терминале пункт меню "Файл"-"Открыть каталог данных");</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>общая папка всех установленных на компьютере терминалов &nbsp;– обычно расположена в каталоге C:\Documents and Settings\All Users\Application Data\MetaQuotes\Terminal\Common\Files. </span></p> 
-<p><span>Программным путем можно получить наименования этих каталогов с помощью функции <a href="/ru/check/terminalinfostring">TerminalInfoString()</a>, используя перечисление <a href="/ru/constants/environment_state/terminalstatus#enum_terminal_info_string">ENUM_TERMINAL_INFO_STRING</a>:</span></p> 
+<p><span>Программным путем можно получить наименования этих каталогов с помощью функции <a href="/check/terminalinfostring">TerminalInfoString()</a>, используя перечисление <a href="/constants/environment_state/terminalstatus#enum_terminal_info_string">ENUM_TERMINAL_INFO_STRING</a>:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -15,7 +15,7 @@
  </table> 
 </div> 
 <p><span>Работа с файлами из других каталогов пресекается. </span></p> 
-<p><span>Файловые функции позволяют работать с так называемыми "именованными каналами". Для этого достаточно вызвать функцию <a href="/ru/files/fileopen">FileOpen()</a> с соответствующими параметрами.</span></p> 
+<p><span>Файловые функции позволяют работать с так называемыми "именованными каналами". Для этого достаточно вызвать функцию <a href="/files/fileopen">FileOpen()</a> с соответствующими параметрами.</span></p>
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody> 
@@ -24,159 +24,159 @@
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Действие</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filefindfirst">FileFindFirst</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filefindfirst">FileFindFirst</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Начинает перебор файлов в соответствующей директории в соответствии с указанным фильтром</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filefindnext">FileFindNext</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filefindnext">FileFindNext</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Продолжает поиск, начатый функцией FileFindFirst()</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filefindclose">FileFindClose</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filefindclose">FileFindClose</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Закрывает хэндл поиска</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/fileopen">FileOpen</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileopen">FileOpen</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Открывает файл с указанным именем и указанными флагам</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filedelete">FileDelete</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filedelete">FileDelete</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Удаляет указанный файл</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/fileflush">FileFlush</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileflush">FileFlush</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Сброс на диск всех данных, оставшихся в файловом буфере ввода-вывода</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filegetinteger">FileGetInteger</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filegetinteger">FileGetInteger</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Получает целочисленное свойство файла</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/fileisending">FileIsEnding</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileisending">FileIsEnding</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Определяет конец файла в процессе чтения</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/fileislineending">FileIsLineEnding</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileislineending">FileIsLineEnding</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Определяет конец строки в текстовом файле в процессе чтения</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/fileclose">FileClose</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileclose">FileClose</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Закрывает ранее открытый файл</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/fileisexist">FileIsExist</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileisexist">FileIsExist</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Проверяет существование файла</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filecopy">FileCopy</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filecopy">FileCopy</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Копирует исходный файл из локальной или общей папки в другой файл</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filemove">FileMove</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filemove">FileMove</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Перемещает или переименовывает файл</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filereadarray">FileReadArray</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadarray">FileReadArray</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Читает массивы любых типов, кроме строковых (может быть массив структур, не содержащих строки и динамические массивы), &nbsp;из бинарного файла с текущего положения файлового указателя</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filereadbool">FileReadBool</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadbool">FileReadBool</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Читает из файла типа CSV строку от текущего положения до разделителя (либо до конца текстовой строки) и преобразует прочитанную строку в значение типа bool</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filereaddatetime">FileReadDatetime</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereaddatetime">FileReadDatetime</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Читает из файла типа CSV строку одного из форматов: "YYYY.MM.DD HH:MM:SS", "YYYY.MM.DD" или "HH:MM:SS" - и преобразует ее в значение типа datetime</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filereaddouble">FileReadDouble</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereaddouble">FileReadDouble</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Читает число двойной точности с плавающей точкой (double) из бинарного файла с текущего положения файлового указателя</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filereadfloat">FileReadFloat</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadfloat">FileReadFloat</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Читает из текущего положения файлового указателя значение типа float</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filereadinteger">FileReadInteger</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadinteger">FileReadInteger</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Читает из бинарного файла значение типа int, short или char в зависимости от указанной длины в байтах</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filereadlong">FileReadLong</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadlong">FileReadLong</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Читает из текущего положения файлового указателя значение типа long</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filereadnumber">FileReadNumber</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadnumber">FileReadNumber</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Читает из файла типа CSV строку от текущего положения до разделителя (либо до конца текстовой строки) и преобразует прочитанную строку в значение типа double</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filereadstring">FileReadString</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadstring">FileReadString</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Читает из файла строку с текущего положения файлового указателя</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filereadstruct">FileReadStruct</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filereadstruct">FileReadStruct</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Cчитывает из бинарного файла содержимое в структуру, переданную в качестве параметра</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/fileseek">FileSeek</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileseek">FileSeek</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Перемещает положение файлового указателя на указанное количество байт относительно указанного положения</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filesize">FileSize</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filesize">FileSize</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает размер соответствующего открытого файла</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filetell">FileTell</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filetell">FileTell</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает текущее положение файлового указателя соответствующего открытого файла</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filewrite">FileWrite</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewrite">FileWrite</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Записывает данные в файл типа CSV или TXT</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filewritearray">FileWriteArray</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritearray">FileWriteArray</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Записывает в файл типа BIN массивы любых типов, кроме строковых</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filewritedouble">FileWriteDouble</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritedouble">FileWriteDouble</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Записывает в двоичный файл значение параметра типа double с текущего положения файлового указателя</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filewritefloat">FileWriteFloat</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritefloat">FileWriteFloat</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Записывает в двоичный файл значение параметра типа float с текущего положения файлового указателя</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filewriteinteger">FileWriteInteger</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewriteinteger">FileWriteInteger</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Записывает в двоичный файл значение параметра типа int с текущего положения файлового указателя</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filewritelong">FileWriteLong</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritelong">FileWriteLong</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Записывает в двоичный файл значение параметра типа long с текущего положения файлового указателя</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filewritestring">FileWriteString</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritestring">FileWriteString</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Записывает в файл типа BIN или TXT значение параметра типа string с текущего положения файлового указателя</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/filewritestruct">FileWriteStruct</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/filewritestruct">FileWriteStruct</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Записывает в &nbsp;двоичный файл содержимое структуры, переданной в качестве параметра, с текущего положения файлового указателя</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/foldercreate">FolderCreate</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/foldercreate">FolderCreate</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Создает директорию в папке Files (в зависимости от значения common_flag)</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/folderdelete">FolderDelete</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/folderdelete">FolderDelete</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Удаляет указанную директорию. Если папка не пуста, то она не может быть удалена</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/folderclean">FolderClean</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/folderclean">FolderClean</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Удаляет все файлы в указанной папке</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/files/fileopenhistory">FileOpenHistory</a></span></p> </td> 
+    <td style="vertical-align:top; width:166px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/files/fileopenhistory">FileOpenHistory</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Открывает файл в текущей папке истории или ее подпапках</span></p> </td> 
    </tr> 
   </tbody> 
  </table> 
 </div> 
-<p><span>Если файл открывается для записи с помощью функции <a href="/ru/files/fileopen">FileOpen()</a>, то все указанные в пути подпапки будут созданы в случае их отсутствия.</span></p> 
+<p><span>Если файл открывается для записи с помощью функции <a href="/files/fileopen">FileOpen()</a>, то все указанные в пути подпапки будут созданы в случае их отсутствия.</span></p>
 <br>

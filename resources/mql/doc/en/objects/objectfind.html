@@ -1,0 +1,41 @@
+<h1>ObjectFind</h1> 
+<p><span>The function searches for an object having the specified name. There are two variants of the function:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ObjectFind</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;chart&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&nbsp;&nbsp;&nbsp;</span><span>object_name&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The function searches the object with the specified name:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ObjectFind</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&nbsp;&nbsp;&nbsp;</span><span>object_name</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>chart_id</span></p> 
+<p><span>[in] &nbsp;Chart identifier.</span></p> 
+<p><span>object_name</span></p> 
+<p><span>[in] &nbsp;The name of the object to find.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>If successful the function returns the number of the subwindow (0 means the main window of the chart), in which the object is found. If the object is not found, the function returns a negative number. To read more about the <a href="/constants/errorswarnings/errorcodes">error</a> call <a href="/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Note</span></p> 
+<p><span>The chart sub-windows (if there are sub-windows with indicators in the chart) are numbered starting from 1. The chart main window always exists and has the 0 index.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">ObjectFind</span><span>(0,</span><span style="color: #008080;">"line_object2"</span><span>)!=win_idx)&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

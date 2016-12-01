@@ -1,0 +1,26 @@
+<h1>Data Types</h1> 
+<p><span>Any program operates with data. Data can be of different types depending on their purposes. For example, integer data are used to access to array components. Price data belong to those of double precision with floating point. This is related to the fact that no special data type for price data is provided in MQL4.</span></p> 
+<p><span>Data of different types are processed with different rates. Integer data are processed at the fastest. To process the double precision data, a special co-processor is used. However, because of complexity of internal representation of data with floating point, they are processed slower than the integer ones.</span></p> 
+<p><span>String data are processed at the longest because of dynamic computer memory allocation/reallocation.</span></p> 
+<p><a id="base_types"></a><span>The basic data types are:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>integers (<a href="/basis/types/integer/integertypes">char</a>, <a href="/basis/types/integer/integertypes">short</a>, <a href="/basis/types/integer/integertypes">int</a>, <a href="/basis/types/integer/integertypes">long</a>, <a href="/basis/types/integer/integertypes">uchar</a>, <a href="/basis/types/integer/integertypes">ushort</a>, <a href="/basis/types/integer/integertypes">uint</a>, <a href="/basis/types/integer/integertypes">ulong</a>);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>logical (<a href="/basis/types/integer/boolconst">bool</a>);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/basis/types/integer/symbolconstants">literals</a> (ushort);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>strings (<a href="/basis/types/stringconst">string</a>);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>floating-point numbers (<a href="/basis/types/double">double</a>, <a href="/basis/types/double">float</a>);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>color (<a href="/basis/types/integer/color">color</a>);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>date and time (<a href="/basis/types/integer/datetime">datetime</a>);</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>enumerations (<a href="/basis/types/integer/enumeration">enum</a>).</span></li> 
+</ul> 
+<p><a id="complex_types"></a><span>Complex data types are:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/basis/types/classes">structures</a>;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span><a href="/basis/types/classes#class">classes</a>.</span></li> 
+</ul> 
+<p><span>In terms of <a href="/basis/oop">OOP</a> complex data types are called abstract data types.</span></p> 
+<p><span>The </span><span style="font-style: italic;">color</span><span> and </span><span style="font-style: italic;">datetime</span><span> types make sense only to facilitate visualization and input of parameters defined from outside - from the table of Expert Advisor or custom indicator properties (the <a href="/basis/variables/inputvariables">Inputs</a> tab). Data of </span><span style="font-style: italic;">color</span><span> and </span><span style="font-style: italic;">datetime</span><span> types are represented as integers. Integer types and floating-point types are called arithmetic (numeric) types.</span></p> 
+<p><span>Only implicit <a href="/basis/types/casting">type casting</a> is used in <a href="/basis/operations/operexpression">expressions</a>, unless the explicit casting is specified.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/types/casting">Typecasting</a></span></p> 
+<br>

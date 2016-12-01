@@ -1,0 +1,36 @@
+<h1>ArrayFill</h1> 
+<p><span>The function fills an array with the specified value.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>ArrayFill</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void&amp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span><span>start</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;starting&nbsp;index</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>count</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;number&nbsp;of&nbsp;elements&nbsp;to&nbsp;fill</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void</span><span>&nbsp;&nbsp;&nbsp;</span><span>value</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;value</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>array[]</span></p> 
+<p><span>[out] &nbsp;Array of simple type (</span><span><a href="/basis/types/integer/integertypes">char</a>, <a href="/basis/types/integer/integertypes">uchar</a>, <a href="/basis/types/integer/integertypes">short</a>, <a href="/basis/types/integer/integertypes">ushort</a>, <a href="/basis/types/integer/integertypes">int</a>, <a href="/basis/types/integer/integertypes">uint</a>, <a href="/basis/types/integer/integertypes">long</a>, <a href="/basis/types/integer/integertypes">ulong</a>, <a href="/basis/types/integer/boolconst">bool</a>, <a href="/basis/types/integer/color">color</a>, <a href="/basis/types/integer/datetime">datetime</a>, <a href="/basis/types/double">float</a>, <a href="/basis/types/double">double</a>).</span></p> 
+<p><span>start</span></p> 
+<p><span>[in] &nbsp;Starting index. </span><span>In such a case, specified <a href="/array/arraysetasseries">AS_SERIES flag</a> is ignored.</span></p> 
+<p><span>count</span></p> 
+<p><span>[in] &nbsp;Number of elements to fill.</span></p> 
+<p><span>value</span></p> 
+<p><span>[in] &nbsp;Value to fill the array with.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>No return value.</span></p> 
+<p><span>Note</span></p> 
+<p><span>When ArrayFill() function is called, normal indexation direction (from left to right) is always implied. It means that the change of the order of access to the array elements using <a href="/array/arraysetasseries">ArraySetAsSeries()</a> function is ignored. </span></p> 
+<p><span>A multidimensional array is shown as one-dimensional when processed by ArrayFill() function. For example, array[2][4] is processed as array[8]. Therefore, you may specify the initial element's index to be equal to 5 when working with this array. Thus, the call of ArrayFill(array, 5, 2, 3.14) for array[2][4] fills array[1][1] and array[1][2] elements with 3.14.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;declare&nbsp;dynamic&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;a[];</span><br> <span style="color: #808080;">//---&nbsp;set&nbsp;size</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayResize</span><span>(a,10);</span><br> <span style="color: #808080;">//---&nbsp;fill&nbsp;first&nbsp;5&nbsp;elements&nbsp;with&nbsp;123</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayFill</span><span>(a,0,5,123);</span><br> <span style="color: #808080;">//---&nbsp;fill&nbsp;next&nbsp;5&nbsp;elements&nbsp;with&nbsp;456</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayFill</span><span>(a,5,5,456);</span><br> <span style="color: #808080;">//---&nbsp;show&nbsp;values</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;</span><span style="color: #0000ff;">ArraySize(a)</span><span>;i++)&nbsp;</span><span style="color: #0000ff;">printf</span><span>(</span><span style="color: #008080;">"a[%d]&nbsp;=&nbsp;%d"</span><span>,i,a[i]);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

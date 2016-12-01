@@ -1,0 +1,39 @@
+<h1>ObjectSetText</h1> 
+<p><span>The function c</span><span>hanges the object description.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ObjectSetText</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&nbsp;&nbsp;&nbsp;</span><span>object_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;</span><span>text</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;description</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>font_size=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;font&nbsp;size</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;</span><span>font_name=NULL</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;font&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>color</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>text_color=clrNONE&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;text&nbsp;color</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>object_name</span></p> 
+<p><span>[in] &nbsp;Object name.</span></p> 
+<p><span>text</span></p> 
+<p><span>[in] &nbsp;A text describing the object.</span></p> 
+<p><span>font_size=0</span></p> 
+<p><span>[in] &nbsp;Font size in points.</span></p> 
+<p><span>font_name=NULL</span></p> 
+<p><span>[in] &nbsp;Font name.</span></p> 
+<p><span>text_color=clrNONE</span></p> 
+<p><span>[in] &nbsp;Font color.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>Changes the object description. &nbsp;If the function succeeds, the returned value will be true, otherwise false. To get the detailed <a href="/constants/errorswarnings/errorcodes">error</a> information, one has to call the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span>Note</span></p> 
+<p><span>For objects of OBJ_TEXT and OBJ_LABEL, this description is shown as a text line in the chart. Parameters of font_size, font_name and text_color are used for objects of OBJ_TEXT and OBJ_LABEL only. For objects of other types, these parameters are ignored.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectSetText</span><span>(</span><span style="color: #008080;">"text_object"</span><span>,</span><span style="color: #008080;">"Hello&nbsp;world!"</span><span>,10,</span><span style="color: #008080;">"Times&nbsp;New&nbsp;Roman"</span><span>,Green);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/objects/objectdescription">ObjectDescription()</a></span></p> 
+<br>

@@ -1,0 +1,214 @@
+<h1>Types of Chart Events</h1> 
+<p><span>There are 9 types of events that can be processed using the predefined function <a href="/basis/function/events#onchartevent">OnChartEvent()</a>. For custom events 65535 identifiers are provided in the range of CHARTEVENT_CUSTOM to CHARTEVENT_CUSTOM_LAST inclusive. To generate a custom event, the <a href="/eventfunctions/eventchartcustom">EventChartCustom()</a> function should be used.</span></p> 
+<p><span style="font-weight: bold;">ENUM_CHART_EVENT</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>ID</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_KEYDOWN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Keystrokes</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_MOUSE_MOVE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Mouse move, mouse clicks (if <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_MOUSE_MOVE</a>=true is set for the chart)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_CREATE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/objectconstants/enum_object">Graphical object</a> created (if <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_CREATE</a>=true is set for the chart)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_CHANGE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/objectconstants/enum_object">Graphical object</a> property changed via the properties dialog</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_DELETE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/constants/objectconstants/enum_object">Graphical object</a> deleted (if <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_DELETE</a>=true is set for the chart)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_CLICK</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Clicking on a chart</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_CLICK</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Clicking on a <a href="/constants/objectconstants/enum_object">graphical object</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_DRAG</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Drag and drop of a <a href="/constants/objectconstants/enum_object">graphical object</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_ENDEDIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>End of text editing in the graphical object Edit</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_CHART_CHANGE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Change of the chart size or modification of chart properties through the Properties dialog</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_CUSTOM</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Initial number of an event from a range of custom events</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_CUSTOM_LAST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The final number of an event from a range of custom events</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>For each type of event, the input parameters of the OnChartEvent() function have definite values that are required for the processing of this event. The events and values passed through this parameters are listed in the below table.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Event</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Value of the id parameter</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Value of the lparam parameter</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Value of the dparam parameter</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Value of the sparam parameter</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of a keystroke</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_KEYDOWN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>code of a pressed key</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Repeat count (the number of times the keystroke is repeated as a result of the user holding down the key)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The string value of a bit mask describing the status of keyboard buttons</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Mouse events </span><span>(if <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_MOUSE_MOVE</a>=true is set for the chart)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_MOUSE_MOVE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the X coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the Y coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The string value of a bit mask describing the status of mouse buttons</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>event of graphical object creation </span><span>(if <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_CREATE</a>=true is set for the chart)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_CREATE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the created graphical object</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of change of an object property via the properties dialog</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_CHANGE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the modified graphical object</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of graphical object deletion </span><span>(if <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_DELETE</a>=true is set for the chart)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_DELETE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the deleted graphical object</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of a mouse click on the chart</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span> CHARTEVENT_CLICK</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the X coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the Y coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of a mouse click in a graphical object belonging to the chart</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_CLICK</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the X coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the Y coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the graphical object, on which the event occurred</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of a graphical object dragging using the mouse</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_DRAG</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the moved graphical object</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of the finished text editing in the entry box of the LabelEdit graphical object</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_ENDEDIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the </span><span>LabelEdit graphical object, in which text editing has completed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of change</span><span> of the chart size or modification of chart properties through the Properties dialog</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_CHART_CHANGE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>ID of the user event under the N number </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_CUSTOM+N</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Value set by the <a href="/eventfunctions/eventchartcustom">EventChartCustom()</a> function</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Value set by the <a href="/eventfunctions/eventchartcustom">EventChartCustom()</a> function</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Value set by the <a href="/eventfunctions/eventchartcustom">EventChartCustom()</a> function</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#define</span><span>&nbsp;KEY_NUMPAD_5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;KEY_LEFT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;KEY_UP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;38</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;KEY_RIGHT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;39</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;KEY_DOWN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;40</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;KEY_NUMLOCK_DOWN&nbsp;&nbsp;&nbsp;98</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;KEY_NUMLOCK_LEFT&nbsp;&nbsp;100</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;KEY_NUMLOCK_5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;KEY_NUMLOCK_RIGHT&nbsp;102</span><br> <span style="color: #0000ff;">#define</span><span>&nbsp;KEY_NUMLOCK_UP&nbsp;&nbsp;&nbsp;&nbsp;104</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Expert&nbsp;initialization&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">int</span><span>&nbsp;</span><span style="color: #0000ff;">OnInit</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;Expert&nbsp;Advisor&nbsp;with&nbsp;name&nbsp;"</span><span>,</span><span style="color: #0000ff;">MQLInfoString</span><span>(</span><span style="color: #0000ff;">MQL_PROGRAM_NAME</span><span>),</span><span style="color: #008080;">"&nbsp;is&nbsp;running"</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;enable&nbsp;object&nbsp;create&nbsp;events</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartSetInteger</span><span>(</span><span style="color: #0000ff;">ChartID</span><span>(),</span><span style="color: #0000ff;">CHART_EVENT_OBJECT_CREATE</span><span>,</span><span style="color: #0000ff;">true</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;enable&nbsp;object&nbsp;delete&nbsp;events</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartSetInteger</span><span>(</span><span style="color: #0000ff;">ChartID</span><span>(),</span><span style="color: #0000ff;">CHART_EVENT_OBJECT_DELETE</span><span>,</span><span style="color: #0000ff;">true</span><span>);</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">INIT_SUCCEEDED</span><span>);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;ChartEvent&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnChartEvent</span><span>(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;id,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Event&nbsp;identifier&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">long</span><span>&amp;&nbsp;lparam,&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Event&nbsp;parameter&nbsp;of&nbsp;long&nbsp;type</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;dparam,&nbsp;</span><span style="color: #808080;">//&nbsp;Event&nbsp;parameter&nbsp;of&nbsp;double&nbsp;type</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">string</span><span>&amp;&nbsp;sparam)&nbsp;</span><span style="color: #808080;">//&nbsp;Event&nbsp;parameter&nbsp;of&nbsp;string&nbsp;type</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;the&nbsp;left&nbsp;mouse&nbsp;button&nbsp;has&nbsp;been&nbsp;pressed&nbsp;on&nbsp;the&nbsp;chart</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(id==</span><span style="color: #0000ff;">CHARTEVENT_CLICK</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;coordinates&nbsp;of&nbsp;the&nbsp;mouse&nbsp;click&nbsp;on&nbsp;the&nbsp;chart&nbsp;are:&nbsp;x&nbsp;=&nbsp;"</span><span>,lparam,</span><span style="color: #008080;">"&nbsp;&nbsp;y&nbsp;=&nbsp;"</span><span>,dparam);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//---&nbsp;the&nbsp;mouse&nbsp;has&nbsp;been&nbsp;clicked&nbsp;on&nbsp;the&nbsp;graphic&nbsp;object</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(id==</span><span style="color: #0000ff;">CHARTEVENT_OBJECT_CLICK</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;mouse&nbsp;has&nbsp;been&nbsp;clicked&nbsp;on&nbsp;the&nbsp;object&nbsp;with&nbsp;name&nbsp;'"</span><span>+sparam+</span><span style="color: #008080;">"'"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//---&nbsp;the&nbsp;key&nbsp;has&nbsp;been&nbsp;pressed</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(id==</span><span style="color: #0000ff;">CHARTEVENT_KEYDOWN</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">switch</span><span>(</span><span style="color: #0000ff;">int(</span><span>lparam))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;KEY_NUMLOCK_LEFT:&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;KEY_NUMLOCK_LEFT&nbsp;has&nbsp;been&nbsp;pressed"</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;KEY_LEFT:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;KEY_LEFT&nbsp;has&nbsp;been&nbsp;pressed"</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;KEY_NUMLOCK_UP:&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;KEY_NUMLOCK_UP&nbsp;has&nbsp;been&nbsp;pressed"</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;KEY_UP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;KEY_UP&nbsp;has&nbsp;been&nbsp;pressed"</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;KEY_NUMLOCK_RIGHT:&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;KEY_NUMLOCK_RIGHT&nbsp;has&nbsp;been&nbsp;pressed"</span><span>);&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;KEY_RIGHT:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;KEY_RIGHT&nbsp;has&nbsp;been&nbsp;pressed"</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;KEY_NUMLOCK_DOWN:&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;KEY_NUMLOCK_DOWN&nbsp;has&nbsp;been&nbsp;pressed"</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;KEY_DOWN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;KEY_DOWN&nbsp;has&nbsp;been&nbsp;pressed"</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;KEY_NUMPAD_5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;KEY_NUMPAD_5&nbsp;has&nbsp;been&nbsp;pressed"</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;KEY_NUMLOCK_5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;KEY_NUMLOCK_5&nbsp;has&nbsp;been&nbsp;pressed"</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">default</span><span>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Some&nbsp;not&nbsp;listed&nbsp;key&nbsp;has&nbsp;been&nbsp;pressed"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartRedraw</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//---&nbsp;the&nbsp;object&nbsp;has&nbsp;been&nbsp;deleted</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(id==</span><span style="color: #0000ff;">CHARTEVENT_OBJECT_DELETE</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;object&nbsp;with&nbsp;name&nbsp;"</span><span>,sparam,</span><span style="color: #008080;">"&nbsp;has&nbsp;been&nbsp;deleted"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//---&nbsp;the&nbsp;object&nbsp;has&nbsp;been&nbsp;created</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(id==</span><span style="color: #0000ff;">CHARTEVENT_OBJECT_CREATE</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;object&nbsp;with&nbsp;name&nbsp;"</span><span>,sparam,</span><span style="color: #008080;">"&nbsp;has&nbsp;been&nbsp;created"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//---&nbsp;the&nbsp;object&nbsp;has&nbsp;been&nbsp;moved&nbsp;or&nbsp;its&nbsp;anchor&nbsp;point&nbsp;coordinates&nbsp;has&nbsp;been&nbsp;changed</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(id==</span><span style="color: #0000ff;">CHARTEVENT_OBJECT_DRAG</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;anchor&nbsp;point&nbsp;coordinates&nbsp;of&nbsp;the&nbsp;object&nbsp;with&nbsp;name&nbsp;"</span><span>,sparam,</span><span style="color: #008080;">"&nbsp;has&nbsp;been&nbsp;changed"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//---&nbsp;the&nbsp;text&nbsp;in&nbsp;the&nbsp;Edit&nbsp;of&nbsp;object&nbsp;has&nbsp;been&nbsp;changed</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(id==</span><span style="color: #0000ff;">CHARTEVENT_OBJECT_ENDEDIT</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;text&nbsp;in&nbsp;the&nbsp;Edit&nbsp;field&nbsp;of&nbsp;the&nbsp;object&nbsp;with&nbsp;name&nbsp;"</span><span>,sparam,</span><span style="color: #008080;">"&nbsp;has&nbsp;been&nbsp;changed"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>For CHARTEVENT_MOUSE_MOVE event the </span><span style="font-weight: bold;">sparam</span><span> string parameter contains information about state of the keyboard and mouse buttons:</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:70px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Bit</span></p> </td> 
+    <td style="vertical-align:top; width:1384px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:70px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>1</span></p> </td> 
+    <td style="vertical-align:top; width:1384px; padding:5px; border:solid thin #b1c2d6;"><p><span>State of the left mouse button</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:70px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>2</span></p> </td> 
+    <td style="vertical-align:top; width:1384px; padding:5px; border:solid thin #b1c2d6;"><p><span>State of the right mouse button</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:70px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>3</span></p> </td> 
+    <td style="vertical-align:top; width:1384px; padding:5px; border:solid thin #b1c2d6;"><p><span>State of the SHIFT button</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:70px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4</span></p> </td> 
+    <td style="vertical-align:top; width:1384px; padding:5px; border:solid thin #b1c2d6;"><p><span>State of the CTRL button</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:70px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5</span></p> </td> 
+    <td style="vertical-align:top; width:1384px; padding:5px; border:solid thin #b1c2d6;"><p><span>State of the middle mouse button</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:70px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>6</span></p> </td> 
+    <td style="vertical-align:top; width:1384px; padding:5px; border:solid thin #b1c2d6;"><p><span>State of the first extra mouse button</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:70px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>7</span></p> </td> 
+    <td style="vertical-align:top; width:1384px; padding:5px; border:solid thin #b1c2d6;"><p><span>State of the second extra mouse button</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Expert&nbsp;initialization&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnInit</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;enable&nbsp;CHART_EVENT_MOUSE_MOVE&nbsp;messages</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartSetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_EVENT_MOUSE_MOVE</span><span>,1);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;MouseState&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">string</span><span>&nbsp;MouseState(</span><span style="color: #0000ff;">uint</span><span>&nbsp;state)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;res;</span><br> <span>&nbsp;&nbsp;&nbsp;res+=</span><span style="color: #008080;">"\nML:&nbsp;"</span><span>&nbsp;&nbsp;&nbsp;+(((state&amp;&nbsp;1)==&nbsp;1)?</span><span style="color: #008080;">"DN"</span><span>:</span><span style="color: #008080;">"UP"</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;mouse&nbsp;left</span><br> <span>&nbsp;&nbsp;&nbsp;res+=</span><span style="color: #008080;">"\nMR:&nbsp;"</span><span>&nbsp;&nbsp;&nbsp;+(((state&amp;&nbsp;2)==&nbsp;2)?</span><span style="color: #008080;">"DN"</span><span>:</span><span style="color: #008080;">"UP"</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;mouse&nbsp;right&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;res+=</span><span style="color: #008080;">"\nMM:&nbsp;"</span><span>&nbsp;&nbsp;&nbsp;+(((state&amp;16)==16)?</span><span style="color: #008080;">"DN"</span><span>:</span><span style="color: #008080;">"UP"</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;mouse&nbsp;middle</span><br> <span>&nbsp;&nbsp;&nbsp;res+=</span><span style="color: #008080;">"\nMX:&nbsp;"</span><span>&nbsp;&nbsp;&nbsp;+(((state&amp;32)==32)?</span><span style="color: #008080;">"DN"</span><span>:</span><span style="color: #008080;">"UP"</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;mouse&nbsp;first&nbsp;X&nbsp;key</span><br> <span>&nbsp;&nbsp;&nbsp;res+=</span><span style="color: #008080;">"\nMY:&nbsp;"</span><span>&nbsp;&nbsp;&nbsp;+(((state&amp;64)==64)?</span><span style="color: #008080;">"DN"</span><span>:</span><span style="color: #008080;">"UP"</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;mouse&nbsp;second&nbsp;X&nbsp;key</span><br> <span>&nbsp;&nbsp;&nbsp;res+=</span><span style="color: #008080;">"\nSHIFT:&nbsp;"</span><span>+(((state&amp;&nbsp;4)==&nbsp;4)?</span><span style="color: #008080;">"DN"</span><span>:</span><span style="color: #008080;">"UP"</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;shift&nbsp;key</span><br> <span>&nbsp;&nbsp;&nbsp;res+=</span><span style="color: #008080;">"\nCTRL:&nbsp;"</span><span>&nbsp;+(((state&amp;&nbsp;8)==&nbsp;8)?</span><span style="color: #008080;">"DN"</span><span>:</span><span style="color: #008080;">"UP"</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;control&nbsp;key</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(res);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;ChartEvent&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnChartEvent</span><span>(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;id,</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">long</span><span>&nbsp;&amp;lparam,</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;&amp;dparam,</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;&amp;sparam)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(id==</span><span style="color: #0000ff;">CHARTEVENT_MOUSE_MOVE</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Comment</span><span>(</span><span style="color: #008080;">"POINT:&nbsp;"</span><span>,(</span><span style="color: #0000ff;">int</span><span>)lparam,</span><span style="color: #008080;">","</span><span>,(</span><span style="color: #0000ff;">int</span><span>)dparam,</span><span style="color: #008080;">"\n"</span><span>,MouseState((</span><span style="color: #0000ff;">uint</span><span>)sparam));</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/function/events">Event Handling Functions</a>, <a href="/eventfunctions">Working with events</a></span></p> 
+<br>

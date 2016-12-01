@@ -1,0 +1,26 @@
+<h1>If-Else Conditional Operator</h1> 
+<p><span>The IF - ELSE operator is used when a choice must be made. Formally, the syntax is as follows:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">if</span><span>&nbsp;(expression)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;operator1</span><br> <span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;operator2</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>If the expression is true, operator1 is executed and control is given to the operator that follows operator2 (operator2 is not executed). If the expression is false, operator2 is executed.</span></p> 
+<p><span>The </span><span style="color: #0000ff;">else</span><span> part of the </span><span style="color: #0000ff;">if</span><span> operator can be omitted. Thus, a divergence may appear in nested </span><span style="color: #0000ff;">if</span><span> operators with omitted </span><span style="color: #0000ff;">else</span><span> part. In this case, </span><span style="color: #0000ff;">else</span><span> addresses to the nearest previous </span><span style="color: #0000ff;">if</span><span> operator in the same block that has no </span><span style="color: #0000ff;">else</span><span> part.</span></p> 
+<p><span style="font-weight: bold;">Examples:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;The&nbsp;else&nbsp;part&nbsp;refers&nbsp;to&nbsp;the&nbsp;second&nbsp;if&nbsp;operator:</span><br> <span style="color: #0000ff;">if</span><span>(x&gt;1)</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(y==2)&nbsp;z=5;</span><br> <span style="color: #0000ff;">else</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z=6;</span><br> <span style="color: #808080;">//---&nbsp;The&nbsp;else&nbsp;part&nbsp;refers&nbsp;to&nbsp;the&nbsp;first&nbsp;if&nbsp;operator:</span><br> <span style="color: #0000ff;">if</span><span>(x&gt;l)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(y==2)&nbsp;z=5;</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #0000ff;">else</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z=6;</span><br> <span style="color: #808080;">//---&nbsp;Nested&nbsp;operators</span><br> <span style="color: #0000ff;">if</span><span>(x=='a')</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;y=1;</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">if</span><span>(x=='b')</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;y=2;</span><br> <span>&nbsp;&nbsp;&nbsp;z=3;</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">if</span><span>(x=='c')</span><br> <span>&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;y=4;</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ERROR"</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/variables/initialization">Initialization of Variables</a>, <a href="/basis/variables/variable_scope">Visibility Scope and Lifetime of Variables</a>, <a href="/basis/variables/object_live">Creating and Deleting Objects</a></span></p> 
+<br>

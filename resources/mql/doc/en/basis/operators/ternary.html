@@ -1,0 +1,62 @@
+<h1>Ternary Operator ?:</h1> 
+<p><span>The general form of the ternary operator is as follows:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>expression</span><span style="color: #008080;">1&nbsp;</span><span>?&nbsp;expression</span><span style="color: #008080;">2&nbsp;</span><span>:&nbsp;expression</span><span style="color: #008080;">3</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>For the first operand - "expression1" - any expression that results in a <a href="/basis/types/integer/boolconst">bool</a> type value can be used. If the result is </span><span style="color: #0000ff;">true</span><span>, then the operator set by the second operand, i.e. "expression2" is executed.</span></p> 
+<p><span>If the first operand is </span><span style="color: #0000ff;">false</span><span>, the third operand - "expression3" is performed. The second and third operands, i.e. "expression2" and "expression3" should return values of one type and should not be of <a href="/basis/types/void">void</a> type. The result of the conditional operator execution is the result of expression2 or result of the expression3, depending on the result of expression1.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;normalize&nbsp;difference&nbsp;between&nbsp;open&nbsp;and&nbsp;close&nbsp;prices&nbsp;for&nbsp;a&nbsp;day&nbsp;range</span><br> <span style="color: #0000ff;">double</span><span>&nbsp;true_range&nbsp;=&nbsp;(High==Low)?</span><span style="color: #008080;">0</span><span>:(Close-Open)/(High-Low);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>This entry is equivalent to the following:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;true_range;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(High==Low)true_range=</span><span style="color: #008000;">0</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;if&nbsp;High&nbsp;and&nbsp;Low&nbsp;are&nbsp;equal</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;true_range=(Close-Open)/(High-Low);&nbsp;</span><span style="color: #808080;">//&nbsp;if&nbsp;the&nbsp;range&nbsp;is&nbsp;not&nbsp;null</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<h2><a id="limitation"></a>Operator Use Restrictions</h2> 
+<p><span>Based on the value of "expression1", the operator must return one of the two values - either "expression2" or "expression3". There are several limitations to these expressions:</span></p> 
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 37px;list-style-position:outside; list-style-type:decimal"> 
+ <li value="1" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Do not mix <a href="/basis/types/classes">user-defined type</a> with <a href="/basis/types#base_types">simple type</a> or <a href="/basis/types/integer/enumeration">enumeration</a>. <a href="/basis/types/void">NULL</a> can be used for the <a href="/basis/types/object_pointers">pointer</a>.</span></li> 
+ <li value="2" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>If types of values are simple, the operator will be of the maximum type (see <a href="/basis/types/casting">Type casting</a>).</span></li> 
+ <li value="3" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>If one of the values is an enumeration and the second one is of a numeric type, the enumeration is replaced by int and the second rule is applied.</span></li> 
+ <li value="4" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>If both values are enumerations, their types must be identical, and the operator will be of type enumeration.</span></li> 
+</ol> 
+<p><span>Restrictions for the user-defined types (classes or structures):</span></p> 
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 37px;list-style-position:outside; list-style-type:lower-latin"> 
+ <li value="1" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Types must be identical or one should be <a href="/basis/oop/inheritance">derived</a> from the other one.</span></li> 
+ <li value="2" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>If types are not identical (inheritance), then the child is implicitly cast to the parent, i.e. the operator will be of the parent type.</span></li> 
+ <li value="3" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Do not mix object and pointer  both expressions must be either objects or <a href="/basis/types/object_pointers">pointers</a>. <a href="/basis/types/void">NULL</a> can be used for the pointer.</span></li> 
+</ol> 
+<p><span>Note</span></p> 
+<p><span>Be careful when using the conditional operator as an argument of an <a href="/basis/function/functionoverload">overloaded function</a>, because the type of the result of a conditional operator is defined at the time of program compilation. And this type is <a href="/basis/types/casting">determined</a> as the larger of the types "expression2" and "expression3".</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;func(</span><span style="color: #0000ff;">double</span><span>&nbsp;d)&nbsp;{&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"double&nbsp;argument:&nbsp;"</span><span>,d);&nbsp;}</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;func(</span><span style="color: #0000ff;">string</span><span>&nbsp;s)&nbsp;{&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"string&nbsp;argument:&nbsp;"</span><span>,s);&nbsp;}</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">bool</span><span>&nbsp;&nbsp;&nbsp;Expression1=true;</span><br> <span style="color: #0000ff;">double</span><span>&nbsp;Expression2=M_PI;</span><br> <span style="color: #0000ff;">string</span><span>&nbsp;Expression3=</span><span style="color: #008080;">"3.1415926"</span><span>;</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;func(Expression2);</span><br> <span>&nbsp;&nbsp;&nbsp;func(Expression3);</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;func(Expression1?Expression2:Expression3);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;warning&nbsp;on&nbsp;implicit&nbsp;casting&nbsp;to&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;func(!Expression1?Expression2:Expression3);&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;warning&nbsp;on&nbsp;implicit&nbsp;casting&nbsp;to&nbsp;string</span><br> <span>&nbsp;&nbsp;}</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//&nbsp;&nbsp;&nbsp;Result:</span><br> <span style="color: #808080;">//&nbsp;&nbsp;&nbsp;double&nbsp;argument:&nbsp;3.141592653589793</span><br> <span style="color: #808080;">//&nbsp;&nbsp;&nbsp;string&nbsp;argument:&nbsp;3.1415926</span><br> <span style="color: #808080;">//&nbsp;&nbsp;&nbsp;string&nbsp;argument:&nbsp;3.141592653589793</span><br> <span style="color: #808080;">//&nbsp;&nbsp;&nbsp;string&nbsp;argument:&nbsp;3.1415926</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/variables/initialization">Initialization of Variables</a>, <a href="/basis/variables/variable_scope">Visibility Scope and Lifetime of Variables</a>, <a href="/basis/variables/object_live">Creating and Deleting Objects</a></span></p> 
+<br>

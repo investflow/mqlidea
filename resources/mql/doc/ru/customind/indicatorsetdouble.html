@@ -22,15 +22,15 @@
 </div> 
 <p><span>Параметры</span></p> 
 <p><span>prop_id</span></p> 
-<p><span>[in] &nbsp;Идентификатор свойства индикатора. Значение может быть одним из значений перечисления <a href="/ru/constants/indicatorconstants/customindicatorproperties#enum_customind_property_double">ENUM_CUSTOMIND_PROPERTY_DOUBLE</a>.</span></p> 
+<p><span>[in] &nbsp;Идентификатор свойства индикатора. Значение может быть одним из значений перечисления <a href="/constants/indicatorconstants/customindicatorproperties#enum_customind_property_double">ENUM_CUSTOMIND_PROPERTY_DOUBLE</a>.</span></p>
 <p><span>prop_modifier</span></p> 
-<p><span>[in] &nbsp;Модификатор указанного свойства. Только свойства уровней требуют модификатора. Нумерация уровней идет с 0, то есть для задания свойства второму уровню нужно указать единицу (на 1 меньше, чем при использовании <a href="/ru/basis/preprosessor/compilation">директивы компилятора</a>).</span></p> 
+<p><span>[in] &nbsp;Модификатор указанного свойства. Только свойства уровней требуют модификатора. Нумерация уровней идет с 0, то есть для задания свойства второму уровню нужно указать единицу (на 1 меньше, чем при использовании <a href="/basis/preprosessor/compilation">директивы компилятора</a>).</span></p>
 <p><span>prop_value</span></p> 
 <p><span>[in] &nbsp;Значение свойства.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
 <p><span>В случае успешного выполнения возвращает true, в противном случае false.</span></p> 
 <p><span>Примечание</span></p> 
-<p><span>Нумерация свойств (модификаторов) при использовании директивы #property начинается с 1 (единицы), в то время как функция использует нумерацию с 0 (нуля). </span><span>При неправильном задании номера уровня <a href="/ru/constants/indicatorconstants/drawstyles">отображение индикатора</a> может отличаться от того, которое предполагается.</span></p> 
+<p><span>Нумерация свойств (модификаторов) при использовании директивы #property начинается с 1 (единицы), в то время как функция использует нумерацию с 0 (нуля). </span><span>При неправильном задании номера уровня <a href="/constants/indicatorconstants/drawstyles">отображение индикатора</a> может отличаться от того, которое предполагается.</span></p>
 <p><span>Например, задать значение первого уровня для индикатора в отдельном подокне можно двумя способами: </span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>property indicator_level</span><span style="font-weight: bold;">1</span><span> &nbsp;50 - используется 1 для указания номера уровня,</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>IndicatorSetDouble(INDICATOR_LEVELVALUE, </span><span style="font-weight: bold;">0</span><span>, 50) - используется 0 для указания первого уровня.</span></p> 
@@ -46,5 +46,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/constants/indicatorconstants/drawstyles">Стили рисования</a></span></p> 
+<p><span><a href="/constants/indicatorconstants/drawstyles">Стили рисования</a></span></p>
 <br>

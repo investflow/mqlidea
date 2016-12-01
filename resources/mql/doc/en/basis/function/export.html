@@ -1,0 +1,18 @@
+<h1>Exporting Functions</h1> 
+<p><span>A function declared in a mql4 program with the </span><span style="font-style: italic;">export </span><span>postmodifier can be used in another mql4 program</span><span>. Such a function is called exportable, and it can be called from other programs after compilation.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;Function()&nbsp;</span><span style="color: #0000ff;">export</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>This modifier orders the compiler to add the function into the table of EX4 functions exported by this ex4 file. Only function with such a modifier are accessible ("visible") from other mql4 programs.</span></p> 
+<p><span>The <a href="/basis/preprosessor/compilation">library</a> property tells the compiler that the EX4-file will be a library, and the compiler will show it in the header of EX4. </span></p> 
+<p><span>All functions that are planned as exportable ones must be marked with the </span><span style="font-style: italic;">export</span><span> modifier.</span></p> 
+<p><span>When compiling libraries in the <a href="/mql4changes#compiler_difference">strict mode</a>, the export modifier should be added for each exported function, otherwise the function will not be accessible from outside.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/oop/overload">Overload</a>, <a href="/basis/oop/virtual">Virtual Functions</a>, <a href="/basis/oop/polymorphism">Polymorphism</a></span></p> 
+<br>

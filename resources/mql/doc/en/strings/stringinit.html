@@ -1,0 +1,35 @@
+<h1>StringInit</h1> 
+<p><span>Initializes a string by specified symbols and provides the specified string size.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>StringInit</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&amp;</span><span>&nbsp;&nbsp;&nbsp;</span><span>string_var</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;string&nbsp;to&nbsp;initialize</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>new_len=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;required&nbsp;string&nbsp;length&nbsp;after&nbsp;initialization</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ushort</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>character=0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;symbol,&nbsp;by&nbsp;which&nbsp;the&nbsp;string&nbsp;will&nbsp;be&nbsp;filled</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>string_var</span></p> 
+<p><span>[in][out] &nbsp;String that should be initialized and deinitialized.</span></p> 
+<p><span>new_len=0</span></p> 
+<p><span>[in] &nbsp;String length after initialization. If length=0, it deinitializes the string, i.e. the string buffer is cleared and the buffer address is zeroed.</span></p> 
+<p><span>character=0</span></p> 
+<p><span>[in] &nbsp;Symbol to fill the string.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>In case of success returns true, otherwise - false. To get the <a href="/constants/errorswarnings/errorcodes">error code</a> call <a href="/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Note</span></p> 
+<p><span>If &nbsp;character=0 and the length new_len&gt;0, the buffer of the string of indicated length will be distributed and filled by zeroes. The string length will be equal to zero, because the whole buffer is filled out by string terminators.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;str;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringInit</span><span>(str,200,0);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"str&nbsp;=&nbsp;"</span><span>,str,</span><span style="color: #008080;">":&nbsp;StringBufferLen(str)&nbsp;=&nbsp;"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringBufferLen</span><span>(str),</span><span style="color: #008080;">"&nbsp;&nbsp;StringLen(str)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">StringLen</span><span>(str));</span><br> <span>&nbsp;&nbsp;}</span><br> <span>/*&nbsp;&nbsp;Result</span><br> <span>str&nbsp;=&nbsp;:&nbsp;</span><span style="color: #0000ff;">StringBufferLen</span><span>(str)&nbsp;=&nbsp;200&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringLen</span><span>(str)&nbsp;=&nbsp;0</span><br> <span>*/</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/strings/stringbufferlen">StringBufferLen()</a>, <a href="/strings/stringlen">StringLen()</a></span></p> 
+<br>

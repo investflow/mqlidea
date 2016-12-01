@@ -13,17 +13,17 @@
 <p><span>chart_id</span></p> 
 <p><span>[in] &nbsp;Идентификатор графика. 0 означает текущий график.</span></p> 
 <p><span>custom_event_id</span></p> 
-<p><span>[in] &nbsp;Идентификатор пользовательского события. Этот идентификатор автоматически добавляется к значению <a href="/ru/constants/chartconstants/enum_chartevents">CHARTEVENT_CUSTOM</a> и преобразуется к целому типу.</span></p> 
+<p><span>[in] &nbsp;Идентификатор пользовательского события. Этот идентификатор автоматически добавляется к значению <a href="/constants/chartconstants/enum_chartevents">CHARTEVENT_CUSTOM</a> и преобразуется к целому типу.</span></p>
 <p><span>lparam</span></p> 
-<p><span>[in] &nbsp;Параметр события типа long, передаваемый функции <a href="/ru/basis/function/events#onchartevent">OnChartEvent</a>.</span></p> 
+<p><span>[in] &nbsp;Параметр события типа long, передаваемый функции <a href="/basis/function/events#onchartevent">OnChartEvent</a>.</span></p>
 <p><span>dparam</span></p> 
 <p><span>[in] &nbsp;Параметр события типа double, передаваемый функции OnChartEvent.</span></p> 
 <p><span>sparam</span></p> 
 <p><span>[in] &nbsp;Параметр события типа string, передаваемый функции OnChartEvent. Если строка имеет длину больше, чем 63 символа, то строка усекается.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
-<p><span>Возвращает true в случае удачной постановки пользовательского события в очередь событий графика – получателя события. В случае ошибки возвращает false, для получения кода ошибки используйте <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Возвращает true в случае удачной постановки пользовательского события в очередь событий графика – получателя события. В случае ошибки возвращает false, для получения кода ошибки используйте <a href="/check/getlasterror">GetLastError()</a>.</span></p>
 <p><span>Примечание</span></p> 
-<p><span>Эксперт или индикатор, прикрепленный к указанному графику, обрабатывает данное событие при помощи функции <a href="/ru/basis/function/events#onchartevent">OnChartEvent</a>(int event_id, long&amp; lparam, double&amp; dparam, string&amp; sparam).</span></p> 
+<p><span>Эксперт или индикатор, прикрепленный к указанному графику, обрабатывает данное событие при помощи функции <a href="/basis/function/events#onchartevent">OnChartEvent</a>(int event_id, long&amp; lparam, double&amp; dparam, string&amp; sparam).</span></p>
 <p><span>Для каждого типа события входные параметры функции OnChartEvent() имеют определенные значения, которые необходимы для обработки этого события. В таблице перечислены события и значения, которые передаются через параметры.</span></p> 
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
@@ -43,14 +43,14 @@
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Строковое значение битовой маски, описывающее статус кнопок клавиатуры</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>События мыши </span><span>(если для графика установлено свойство <a href="/ru/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_MOUSE_MOVE</a>=true)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>События мыши </span><span>(если для графика установлено свойство <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_MOUSE_MOVE</a>=true)</span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_MOUSE_MOVE</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>X координата</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Y координата</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Строковое значение битовой маски, описывающее статус кнопок мыши</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Событие создания графического объекта (если для графика установлено свойство <a href="/ru/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_CREATE</a>=true)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Событие создания графического объекта (если для графика установлено свойство <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_CREATE</a>=true)</span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_CREATE</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>—</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>—</span></p> </td> 
@@ -64,7 +64,7 @@
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Имя измененного графического объекта</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Событие удаления графического объекта (если для графика установлено свойство <a href="/ru/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_DELETE</a>=true)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Событие удаления графического объекта (если для графика установлено свойство <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_DELETE</a>=true)</span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_DELETE</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>—</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>—</span></p> </td> 
@@ -126,5 +126,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/runtime/event_fire">События клиентского терминала</a>, <a href="/ru/basis/function/events">Функции обработки событий</a></span></p> 
+<p><span><a href="/runtime/event_fire">События клиентского терминала</a>, <a href="/basis/function/events">Функции обработки событий</a></span></p>
 <br>

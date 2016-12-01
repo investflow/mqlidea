@@ -1,0 +1,78 @@
+<h1>Variables</h1> 
+<h3>Declaring Variables</h3> 
+<p><span>Variables must be declared before they are used. Unique names are used to identify variables. To declare a variable, you must specify its type and a unique name. Declaration of variable is not an operator.</span></p> 
+<p><span>Simple types are:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>char, short, int, long, uchar, ushort, uint, ulong  integers;</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>color  integer representing the RGB-color;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>datetime  the date and time, an unsigned integer containing the number of seconds since 0 hour January 1, 1970;</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>bool  boolean values </span><span style="font-style: italic;">true</span><span> and </span><span style="font-style: italic;">false</span><span>;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>double  double-precision floating point number;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>float  single-precision floating point number;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>string  character strings.</span></li> 
+</ul> 
+<p><span style="font-weight: bold;">Examples:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">string</span><span>&nbsp;szInfoBox;</span><br> <span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;nOrders;</span><br> <span style="color: #0000ff;">double</span><span>&nbsp;dSymbolPrice;</span><br> <span style="color: #0000ff;">bool</span><span>&nbsp;&nbsp;&nbsp;bLog;</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;tBegin_Data&nbsp;&nbsp;&nbsp;=&nbsp;D'2004.01.01&nbsp;00:00';</span><br> <span style="color: #0000ff;">color</span><span>&nbsp;&nbsp;&nbsp;&nbsp;cModify_Color&nbsp;=&nbsp;C'0x44,0xB9,0xE6';</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Complex or compound types:</span></p> 
+<p><span>Structures are composite data types, constructed using other types.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">struct</span><span>&nbsp;MyTime</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;hour;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;0-23</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;minute;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;0-59</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;second;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;0-59</span><br> <span>&nbsp;&nbsp;};</span><br> <span style="color: #808080;">...</span><br> <span>MyTime&nbsp;strTime;&nbsp;</span><span style="color: #808080;">//&nbsp;Variable&nbsp;of&nbsp;the&nbsp;previously&nbsp;declared&nbsp;structure&nbsp;MyTime</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>You can't declare variables of the structure type until you declare the structure.</span></p> 
+<p><a id="array_define"></a><span style="font-weight: bold;">Arrays</span></p> 
+<p><span>Array &nbsp;is the indexed sequence of identical-type data:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;a[50];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;One-dimensional&nbsp;array&nbsp;of&nbsp;50&nbsp;integers.</span><br> <span style="color: #0000ff;">double</span><span>&nbsp;m[7][50];&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Two-dimensional&nbsp;array&nbsp;of&nbsp;seven&nbsp;arrays,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;each&nbsp;of&nbsp;them&nbsp;consisting&nbsp;of&nbsp;50&nbsp;numbers.</span><br> <span>MyTime&nbsp;t[100];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Array&nbsp;containing&nbsp;elements&nbsp;such&nbsp;as&nbsp;MyTime</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Only an integer can be an array index. No more than four-dimensional arrays are allowed. Numbering of array elements starts with 0. The last element of a one-dimensional array has the number which is 1 less than the array size. This means that call for the last element of an array consisting of 50 integers will appear as a[49]. The same concerns multidimensional arrays: A dimension is indexed from 0 to the dimension size-1. The last element of a two-dimensional array from the example will appear as m[6][49].</span></p> 
+<p><span>Static arrays can't be represented as timeseries, i.e., the <a href="/array/arraysetasseries">ArraySetAsSeries()</a> function, which sets access to array elements from the end to beginning, can't be applied to them. If you want to provide access to an array the same as in <a href="/series">timeseries</a>, use the <a href="/basis/types/dynamic_array">dynamic array object</a>.</span></p> 
+<p><span>If there is an attempt to access out of the array range, the executing subsystem will generate a critical error and the program will be stopped.</span></p> 
+<h3>Access Specifiers</h3> 
+<p><span>Access specifiers define how the compiler can access variables, members of structures or classes.</span></p> 
+<p><a id="const"></a><span>The </span><span style="color: #0000ff;">const</span><span> specifier declares a variable as a constant, and does not allow to change this variable during runtime. A single initialization of a variable is allowed when declaring it.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;</span><span style="color: #0000ff;">OnCalculate</span><span>&nbsp;(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;rates_total,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;size&nbsp;of&nbsp;input&nbsp;time&nbsp;series</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;prev_calculated,&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;bars&nbsp;handled&nbsp;in&nbsp;previous&nbsp;call</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&amp;&nbsp;time[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Time</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;open[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Open</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;high[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;High</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;low[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Low</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;close[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Close</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">long</span><span>&amp;&nbsp;tick_volume[],&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Tick&nbsp;Volume</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">long</span><span>&amp;&nbsp;volume[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Real&nbsp;Volume</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&amp;&nbsp;spread[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Spread</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>To access members of structures and classes use the following qualifiers:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><a id="public"></a><span><a href="/basis/types/classes#public">public</a>  allows unrestricted access to the variable or class method</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><a id="protected"></a><span><a href="/basis/oop/inheritance">protected</a>  allows access from methods of this class, as well as from methods of <a href="/basis/oop/inheritance#public_inheritance">publicly inherited</a> classes. Other access is impossible;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><a id="private"></a><span>private  allows access to variables and class methods only from methods of the same class.</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><a id="virtual"></a><span><a href="/basis/oop/virtual">virtual</a>  applies only to class methods (but not to methods of structures) and tells the compiler that this method should be placed in the table of virtual functions of the class.</span></li> 
+</ul> 
+<h3>Storage Classes</h3> 
+<p><span>There are three storage classes: <a href="/basis/variables/static">static</a>, <a href="/basis/variables/inputvariables">input</a> and <a href="/basis/variables/externvariables">extern</a>. These modifiers of a storage class explicitly indicate to the compiler that corresponding variables are distributed in a pre-allocated area of memory, which is called the global pool. Besides, these modifiers indicate the special processing of variable data. If a variable declared on a local level is not a <a href="/basis/variables/static">static</a> one, memory for such a variable is allocated automatically at a program stack. Freeing of memory allocated for a non-static array is also performed automatically when going beyond the visibility area of the block, in which the array is declared.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/types">Data Types</a>, <a href="/basis/oop/incapsulation">Encapsulation and Extensibility of Types</a>,<a href="/basis/variables/initialization">Initialization of Variables</a>, <a href="/basis/variables/variable_scope">Visibility Scope and Lifetime of Variables</a>, <a href="/basis/variables/object_live">Creating and Deleting Objects</a>, <a href="/basis/oop/staticmembers#const">Static Members of a Class</a></span></p> 
+<br>

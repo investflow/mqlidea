@@ -1,0 +1,38 @@
+<h1>StringToCharArray</h1> 
+<p><span>Symbol-wise copies </span><span>a string converted from Unicode to ANSI, to a selected place of array of uchar type. It returns the number of copied elements</span><span>.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>StringToCharArray</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>text_string</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;source&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uchar&amp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;starting&nbsp;position&nbsp;in&nbsp;the&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>count=-1</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;number&nbsp;of&nbsp;symbols</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>codepage=CP_ACP</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;code&nbsp;page</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>text_string</span></p> 
+<p><span>[in] &nbsp;String to copy.</span></p> 
+<p><span>array[]</span></p> 
+<p><span>[out] &nbsp;Array of uchar type.</span></p> 
+<p><span>start=0</span></p> 
+<p><span>[in] &nbsp;Position from which copying starts. Default - 0.</span></p> 
+<p><span>count=-1</span></p> 
+<p><span>[in] &nbsp;Number of array elements to copy. Defines length of a resulting string. Default value is -1, which means copying up to the array end, or till terminating '\0'. Terminating zero will also be copied to the recipient array, in this case the size of a dynamic array can be increased if necessary to the size of the string. If the size of the dynamic array exceeds the length of the string, the size of the array will not be reduced.</span></p> 
+<p><span>codepage=CP_ACP</span></p> 
+<p><span>[in] &nbsp;The value of the code page. For the most-used <a href="/constants/io_constants/codepageusage">code pages</a> provide appropriate constants.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>Number of copied elements.</span></p> 
+<p><span>Note</span></p> 
+<p><span>StringToCharArray() function includes terminating zero. To exclude it specify the string length explicitely:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;example&nbsp;of&nbsp;copying&nbsp;of&nbsp;string&nbsp;str&nbsp;to&nbsp;array[]</span><br> <span style="color: #0000ff;">StringToCharArray</span><span>(str,array,0,</span><span style="color: #0000ff;">StringLen</span><span>(str));</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/constants/io_constants/codepageusage">Use of a Codepage</a></span></p> 
+<br>

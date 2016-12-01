@@ -1,0 +1,133 @@
+<h1>Bitwise Operations</h1> 
+<h3>Complement to One</h3> 
+<p><span>Complement of the variable value up to one. The value of the expression contains 1 in all digits where the variable value contains 0, and 0 in all digits where the variable contains 1.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>b&nbsp;=&nbsp;~n;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;a='a',b;</span><br> <span>&nbsp;&nbsp;&nbsp;b=~a;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"a&nbsp;=&nbsp;"</span><span>,a,&nbsp;</span><span style="color: #008080;">"&nbsp;&nbsp;b&nbsp;=&nbsp;"</span><span>,b);&nbsp;&nbsp;</span><br> <span style="color: #808080;">//&nbsp;The&nbsp;result&nbsp;will&nbsp;be:</span><br> <span style="color: #808080;">//&nbsp;a&nbsp;=&nbsp;97&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;-98</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h3>Right Shift</h3> 
+<p><span>The binary representation of x is shifted to the right by y digits. If the value to shift is of the unsigned type, the logical right shift is made, i.e. the freed left-side bits will be filled with zeroes.</span></p> 
+<p><span>If the value to shift is of a sign type, the arithmetic right shift is made, i.e. the freed left-side digits will be filled with the value of a sign bit (if the number is positive, the value of the sign bit is 0; if the number is negative, the value of the sign bit is 1).</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>x&nbsp;=&nbsp;x&nbsp;&gt;&gt;&nbsp;y;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;a='a',b='b';</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Before:&nbsp;&nbsp;a&nbsp;=&nbsp;"</span><span>,a,&nbsp;</span><span style="color: #008080;">"&nbsp;&nbsp;b&nbsp;=&nbsp;"</span><span>,b);&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;shift&nbsp;to&nbsp;the&nbsp;right</span><br> <span>&nbsp;&nbsp;&nbsp;b=a&gt;&gt;1;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"After:&nbsp;&nbsp;&nbsp;a&nbsp;=&nbsp;"</span><span>,a,&nbsp;</span><span style="color: #008080;">"&nbsp;&nbsp;b&nbsp;=&nbsp;"</span><span>,b);&nbsp;</span><br> <span style="color: #808080;">//&nbsp;The&nbsp;result&nbsp;will&nbsp;be:</span><br> <span style="color: #808080;">//&nbsp;Before:&nbsp;&nbsp;a&nbsp;=&nbsp;97&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;98</span><br> <span style="color: #808080;">//&nbsp;After:&nbsp;&nbsp;&nbsp;a&nbsp;=&nbsp;97&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;48</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h3>Left Shift</h3> 
+<p><span>The binary representation of x is shifted to the left by y digits, the freed right-side digits are filled with zeros.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>x&nbsp;=&nbsp;x&nbsp;&lt;&lt;&nbsp;y;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;a='a',b='b';</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Before:&nbsp;&nbsp;a&nbsp;=&nbsp;"</span><span>,a,&nbsp;</span><span style="color: #008080;">"&nbsp;&nbsp;b&nbsp;=&nbsp;"</span><span>,b);&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;shift&nbsp;to&nbsp;the&nbsp;left</span><br> <span>&nbsp;&nbsp;&nbsp;b=a&lt;&lt;1;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"After:&nbsp;&nbsp;&nbsp;a&nbsp;=&nbsp;"</span><span>,a,&nbsp;</span><span style="color: #008080;">"&nbsp;&nbsp;b&nbsp;=&nbsp;"</span><span>,b);&nbsp;</span><br> <span style="color: #808080;">//&nbsp;The&nbsp;result&nbsp;will&nbsp;be:</span><br> <span style="color: #808080;">//&nbsp;Before:&nbsp;&nbsp;a&nbsp;=&nbsp;97&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;98</span><br> <span style="color: #808080;">//&nbsp;After:&nbsp;&nbsp;&nbsp;a&nbsp;=&nbsp;97&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;-62</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>It is not recommended to shift by the number of bits larger or equal to the length of the variable shifted, because the result of such an operation is undefined.</span></p> 
+<h3>Bitwise AND Operation</h3> 
+<p><span>The bitwise AND operation of binary-coded x and y representations. The value of the expression contains a 1 (TRUE) in all digits where both x and y contain non-zero, and it contains 0 (FALSE) in all other digits.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>b&nbsp;=&nbsp;((x&nbsp;&amp;&nbsp;y)&nbsp;!=&nbsp;</span><span style="color: #008080;">0</span><span>);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;a='a',b='b';</span><br> <span style="color: #808080;">//---&nbsp;AND&nbsp;operation</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;c=a&amp;b;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"a&nbsp;=&nbsp;"</span><span>,a,</span><span style="color: #008080;">"&nbsp;&nbsp;b&nbsp;=&nbsp;"</span><span>,b);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"a&nbsp;&amp;&nbsp;b&nbsp;=&nbsp;"</span><span>,c);</span><br> <span style="color: #808080;">//&nbsp;The&nbsp;result&nbsp;will&nbsp;be:</span><br> <span style="color: #808080;">//&nbsp;a&nbsp;=&nbsp;97&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;98</span><br> <span style="color: #808080;">//&nbsp;a&nbsp;&amp;&nbsp;b&nbsp;=&nbsp;96</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h3>Bitwise OR Operation</h3> 
+<p><span>The bitwise OR operation of binary representations of x and y. The value of the expression contains 1 in all digits where x or y does not contain 0, and it contains 0 in all other digits.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>b&nbsp;=&nbsp;x&nbsp;|&nbsp;y;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;a='a',b='b';</span><br> <span style="color: #808080;">//---&nbsp;OR&nbsp;operation</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;c=a|b;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"a&nbsp;=&nbsp;"</span><span>,a,</span><span style="color: #008080;">"&nbsp;&nbsp;b&nbsp;=&nbsp;"</span><span>,b);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"a&nbsp;|&nbsp;b&nbsp;=&nbsp;"</span><span>,c);</span><br> <span style="color: #808080;">//&nbsp;The&nbsp;result&nbsp;will&nbsp;be:</span><br> <span style="color: #808080;">//&nbsp;a&nbsp;=&nbsp;97&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;98</span><br> <span style="color: #808080;">//&nbsp;a&nbsp;|&nbsp;b&nbsp;=&nbsp;99</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h3>Bitwise Exclusive Operation OR</h3> 
+<p><span>The bitwise exclusive OR (eXclusive OR) operation of binary representations of x and y. The value of the expression contains a 1 in all digits where x and y have different binary values, and it contains 0 in all other digits.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>b&nbsp;=&nbsp;x&nbsp;^&nbsp;y;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;a='a',&nbsp;b='b';</span><br> <span style="color: #808080;">//---&nbsp;Excluding&nbsp;OR&nbsp;operation</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;c=a^b;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"a&nbsp;=&nbsp;"</span><span>,a,</span><span style="color: #008080;">"&nbsp;&nbsp;b&nbsp;=&nbsp;"</span><span>,b);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"a&nbsp;^&nbsp;b&nbsp;=&nbsp;"</span><span>,c);</span><br> <span style="color: #808080;">//&nbsp;The&nbsp;result&nbsp;will&nbsp;be:</span><br> <span style="color: #808080;">//&nbsp;a&nbsp;=&nbsp;97&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;98</span><br> <span style="color: #808080;">//&nbsp;a&nbsp;^&nbsp;b&nbsp;=&nbsp;3</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Bitwise operations are performed with <a href="/basis/types/integer">integers</a> only.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/operations/rules">Precedence Rules</a></span></p> 
+<br>

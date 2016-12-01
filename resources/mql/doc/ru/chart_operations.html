@@ -1,7 +1,7 @@
 <h1>Операции с графиками</h1> 
 <p><span>Функции для работы с графиками. Все операции с графиками применимы только в экспертах и скриптах.</span></p> 
 <p><span>Функции, устанавливающие свойства графика, фактически служат для отправки ему команд на изменение. При успешном выполнении этих функций команда попадает в общую очередь событий графика. Изменение графика производится в процессе обработки очереди событий данного графика. </span></p> 
-<p><span>По этой причине не следует ожидать немедленного визуального обновления графика после вызова данных функций. В общем случае обновление графика производится терминалом автоматически по событиям изменения - поступление новой котировки, изменения размера окна графика и т.д. Для принудительного обновления внешнего вида графика используйте команду на перерисовку графика <a href="/ru/chart_operations/chartredraw">ChartRedraw()</a>.</span></p> 
+<p><span>По этой причине не следует ожидать немедленного визуального обновления графика после вызова данных функций. В общем случае обновление графика производится терминалом автоматически по событиям изменения - поступление новой котировки, изменения размера окна графика и т.д. Для принудительного обновления внешнего вида графика используйте команду на перерисовку графика <a href="/chart_operations/chartredraw">ChartRedraw()</a>.</span></p>
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody> 
@@ -10,195 +10,195 @@
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Действие</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartapplytemplate">ChartApplyTemplate</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartapplytemplate">ChartApplyTemplate</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Применяет к указанному графику шаблон из указанного файла</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartsavetemplate">ChartSaveTemplate</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartsavetemplate">ChartSaveTemplate</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Сохраняет текущие настройки графика в шаблон с указанным именем</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartwindowfind">ChartWindowFind</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartwindowfind">ChartWindowFind</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает номер подокна, в котором находится индикатор</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/charttimepricetoxy">ChartTimePriceToXY</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/charttimepricetoxy">ChartTimePriceToXY</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Преобразует координаты графика из представления время/цена в координаты по оси X и Y</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartxytotimeprice">ChartXYToTimePrice</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartxytotimeprice">ChartXYToTimePrice</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Преобразует координаты &nbsp;X и Y графика в значения время и цена</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartopen">ChartOpen</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartopen">ChartOpen</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Открывает новый график с указанным символом и периодом</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartfirst">ChartFirst</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartfirst">ChartFirst</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает идентификатор первого графика клиентского терминала</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartnext">ChartNext</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartnext">ChartNext</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает идентификатор графика, следующего за указанным</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartclose">ChartClose</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartclose">ChartClose</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Закрывает указанный график</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartsymbol">ChartSymbol</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartsymbol">ChartSymbol</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает имя символа указанного графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartperiod">ChartPeriod</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartperiod">ChartPeriod</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение периода указанного графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartredraw">ChartRedraw</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartredraw">ChartRedraw</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Вызывает принудительную перерисовку указанного графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartsetdouble">ChartSetDouble</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartsetdouble">ChartSetDouble</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Задает значение типа double соответствующего свойства указанного графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartsetinteger">ChartSetInteger</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartsetinteger">ChartSetInteger</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Задает значение целочисленного типа (datetime, int, color, bool или char) соответствующего свойства указанного графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartsetstring">ChartSetString</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartsetstring">ChartSetString</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Задает значение типа string соответствующего свойства указанного графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartgetdouble">ChartGetDouble</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartgetdouble">ChartGetDouble</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение соответствующего свойства указанного графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartgetinteger">ChartGetInteger</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartgetinteger">ChartGetInteger</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает целочисленное значение соответствующего свойства указанного графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartgetstring">ChartGetString</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartgetstring">ChartGetString</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает строковое значение соответствующего свойства указанного графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartnavigate">ChartNavigate</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartnavigate">ChartNavigate</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Осуществляет сдвиг указанного графика на указанное количество баров относительно указанной позиции графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartid">ChartID</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartid">ChartID</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает идентификатор текущего графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartindicatordelete">ChartIndicatorDelete</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartindicatordelete">ChartIndicatorDelete</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Удаляет с указанного окна графика индикатор с указанным именем</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartindicatorname">ChartIndicatorName</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartindicatorname">ChartIndicatorName</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает короткое имя индикатора по номеру в списке индикаторов на указанном окне графика.</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartindicatorstotal">ChartIndicatorsTotal</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartindicatorstotal">ChartIndicatorsTotal</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает количество всех индикаторов, присоединенных к указанному окну графика.</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartwindowondropped">ChartWindowOnDropped</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartwindowondropped">ChartWindowOnDropped</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает номер подокна графика, на которое брошен мышкой данный эксперт, скрипт, объект или индикатор</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartpriceondropped">ChartPriceOnDropped</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartpriceondropped">ChartPriceOnDropped</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает ценовую координату, соответствующую точке, в которой брошен мышкой данный эксперт или скрипт</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/charttimeondropped">ChartTimeOnDropped</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/charttimeondropped">ChartTimeOnDropped</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает временную координату, соответствующую точке, в которой брошен мышкой данный эксперт или скрипт</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartxondropped">ChartXOnDropped</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartxondropped">ChartXOnDropped</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает координату по оси X, соответствующую точке, в которой брошен мышкой данный эксперт или скрипт</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartyondropped">ChartYOnDropped</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartyondropped">ChartYOnDropped</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает координату по оси Y, соответствующую точке, в которой брошен мышкой данный эксперт или скрипт</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartsetsymbolperiod">ChartSetSymbolPeriod</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartsetsymbolperiod">ChartSetSymbolPeriod</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Меняет значения символа и периода указанного графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/chartscreenshot">ChartScreenShot</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/chartscreenshot">ChartScreenShot</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Делает снимок указанного графика в формате gif</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/periodwindow">Period</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/periodwindow">Period</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает период текущего графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/symbolwindow">Symbol</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/symbolwindow">Symbol</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает текстовую строку с именем текущего финансового инструмента</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowbarsperchart">WindowBarsPerChart</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowbarsperchart">WindowBarsPerChart</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает количество баров, помещающихся в окно текущего графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowexpertname">WindowExpertName</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowexpertname">WindowExpertName</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает имя выполняющегося эксперта, скрипта, пользовательского индикатора или библиотеки</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowfind">WindowFind</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowfind">WindowFind</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает номер подокна графика, содержащего индикатор с указанным именем</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowfirstvisiblebar">WindowFirstVisibleBar</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowfirstvisiblebar">WindowFirstVisibleBar</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает номер первого видимого бара в окне текущего графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowhandle">WindowHandle</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowhandle">WindowHandle</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает системный дескриптор окна, содержащего указанный график</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowisvisible">WindowIsVisible</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowisvisible">WindowIsVisible</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает состояние видимости подокна графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowondropped">WindowOnDropped</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowondropped">WindowOnDropped</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает индекс окна, в которое был брошен эксперт, пользовательский индикатор или скрипт</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowpricemax">WindowPriceMax</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowpricemax">WindowPriceMax</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает максимальное значение вертикальной шкалы указанного подокна текущего графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowpricemin">WindowPriceMin</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowpricemin">WindowPriceMin</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает минимальное значение вертикальной шкалы указанного подокна текущего графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowpriceondropped">WindowPriceOnDropped</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowpriceondropped">WindowPriceOnDropped</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение цены в точке графика, на который был брошен эксперт или скрипт</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowredraw">WindowRedraw</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowredraw">WindowRedraw</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Принудительно перерисовывает текущий график</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowscreenshot">WindowScreenShot</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowscreenshot">WindowScreenShot</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Сохраняет изображение текущего графика в файле формата GIF, PNG или BMP в зависимости от указанного расширения</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowtimeondropped">WindowTimeOnDropped</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowtimeondropped">WindowTimeOnDropped</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение времени в точке графика, на который был брошен эксперт или скрипт</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowstotal">WindowsTotal</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowstotal">WindowsTotal</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает количество окон индикаторов на графике, включая главное окно графика</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowxondropped">WindowXOnDropped</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowxondropped">WindowXOnDropped</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение координаты по оси X в пикселах точки клиентской области окна графика, на которой был брошен эксперт или скрипт</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
-    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/chart_operations/windowyondropped">WindowYOnDropped</a></span></p> </td> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/chart_operations/windowyondropped">WindowYOnDropped</a></span></p> </td>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение координаты по оси Y в пикселах точки клиентской области окна графика, на которой был брошен эксперт или скрипт</span></p> </td> 
    </tr> 
   </tbody> 

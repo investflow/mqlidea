@@ -1,0 +1,31 @@
+<h1>WindowOnDropped</h1> 
+<p><span>Returns the window index where Expert Advisor, custom indicator or script was dropped.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>WindowOnDropped</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>None.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>The window index where Expert Advisor, custom indicator or script was dropped. This value is valid if the Expert Advisor, custom indicator or script was dropped by mouse.</span></p> 
+<p><span>Note</span></p> 
+<p><span>For custom indicators being initialized (call from the init() function), this index is not defined.</span></p> 
+<p><span>The returned index is the number of window (0-chart main menu, subwindows of indicators are numbered starting from 1) where the custom indicator is working. A custom indicator can create its own new subwindow during its work, and the number of this subwindow will differ from that of the window where the indicator was really dropped in.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">&nbsp;&nbsp;if</span><span>(</span><span style="color: #0000ff;">WindowOnDropped</span><span>()!=0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Indicator&nbsp;'MyIndicator'&nbsp;must&nbsp;be&nbsp;applied&nbsp;to&nbsp;main&nbsp;chart&nbsp;window!"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/chart_operations/windowxondropped">WindowXOnDropped()</a>, <a href="/chart_operations/windowyondropped">WindowYOnDropped()</a></span></p> 
+<br>

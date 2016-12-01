@@ -1,0 +1,35 @@
+<h1>iLowest</h1> 
+<p><span>Returns the shift of the lowest value over a specific number of bars depending on type.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>iLowest</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;symbol</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;timeframe</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>type</span><span>,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;timeseries&nbsp;id</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>count</span><span>,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;count</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;starting&nbsp;index</span><br> <span>&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>symbol</span></p> 
+<p><span>[in] &nbsp;Symbol name. <a href="/constants/namedconstants/otherconstants">NULL</a> means the current symbol.</span></p> 
+<p><span>timeframe</span></p> 
+<p><span>[in] &nbsp;Timeframe. It can be any of <a href="/constants/chartconstants/enum_timeframes">ENUM_TIMEFRAMES</a> enumeration values. 0 means the current chart timeframe.</span></p> 
+<p><span>type</span></p> 
+<p><span>[in] &nbsp;Series array identifier. It can be any of the <a href="/constants/indicatorconstants/seriesconst">Series array identifier</a> enumeration values.</span></p> 
+<p><span>count=WHOLE_ARRAY</span></p> 
+<p><span>[in] &nbsp;Number of bars (in direction from the start bar to the back one) on which the search is carried out.</span></p> 
+<p><span>start=0</span></p> 
+<p><span>[in] &nbsp;Shift showing the bar, relative to the current bar, that the data should be taken from.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>The shift of the lowest value over a specific number of bars or -1 if error. To check <a href="/constants/errorswarnings/errorcodes">errors</a>, one has to call the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;val;</span><br> <span style="color: #808080;">//---&nbsp;calculating&nbsp;the&nbsp;lowest&nbsp;value&nbsp;on&nbsp;the&nbsp;10&nbsp;consequtive&nbsp;bars&nbsp;in&nbsp;the&nbsp;range</span><br> <span style="color: #808080;">//---&nbsp;from&nbsp;the&nbsp;10th&nbsp;to&nbsp;the&nbsp;19th&nbsp;index&nbsp;inclusive&nbsp;on&nbsp;the&nbsp;current&nbsp;chart</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;val_index=</span><span style="color: #0000ff;">iLowest</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,</span><span style="color: #0000ff;">MODE_LOW</span><span>,10,10);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(val_index!=-1)&nbsp;val=</span><span style="color: #0000ff;">Low</span><span>[val_index];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"Error&nbsp;in&nbsp;iLowest.&nbsp;Error&nbsp;code=%d"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

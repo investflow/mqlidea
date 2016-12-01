@@ -1,0 +1,19 @@
+<h1>Color Type</h1> 
+<p><span>The </span><span style="color: #0000ff;">color</span><span> type is intended for storing information about color and occupies 4 bytes in memory. The first byte is ignored, the remaining 3 bytes contain the RGB-components.</span></p> 
+<p><span>Color constants can be represented in three ways: literally, by integers, or by name (for named <a href="/constants/objectconstants/webcolors">Web-colors</a> only).</span></p> 
+<p><span>Literal representation consists of three parts representing numerical rate values of the three main color components: red, green, blue. The constant starts with C and is enclosed in single quotes. Numerical rate values of a color component lie in the range from 0 to 255.</span></p> 
+<p><span>Integer-valued representation is written in a form of hexadecimal or a decimal number. A hexadecimal number looks like 0x00BBGGRR, where RR is the rate of the red color component, GG - of the green one, and BB - of the blue one. Decimal constants are not directly reflected in the RGB. They represent a decimal value of the hexadecimal integer representation.</span></p> 
+<p><span>Specific colors reflect the so-called <a href="/constants/objectconstants/webcolors">Web-colors</a> set.</span></p> 
+<p><span style="font-weight: bold;">Examples:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;Literals</span><br> <span>C'128,128,128'&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Gray</span><br> <span>C'0x00,0x00,0xFF'&nbsp;</span><span style="color: #808080;">//&nbsp;Blue</span><br> <span style="color: #808080;">//color&nbsp;names</span><br> <span style="color: #0000ff;">clrRed</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Red</span><br> <span style="color: #0000ff;">clrYellow</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Yellow</span><br> <span style="color: #0000ff;">clrBlack</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Black</span><br> <span style="color: #808080;">//---&nbsp;Integral&nbsp;representations</span><br> <span>0xFFFFFF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;White</span><br> <span>16777215&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;White</span><br> <span>0x008000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Green</span><br> <span>32768&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Green</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/constants/objectconstants/webcolors">Web Colors</a>, <a href="/convert/colortostring">ColorToString</a>, <a href="/convert/stringtocolor">StringToColor</a>, <a href="/basis/types/casting">Typecasting</a></span></p> 
+<br>

@@ -1,5 +1,5 @@
 <h1>MQLSetInteger</h1> 
-<p><span>Устанавливает значение свойства <a href="/ru/constants/environment_state/mql4_programm_info#enum_mql_info_integer">MQL_CODEPAGE</a> в окружении mql4-программы.</span></p> 
+<p><span>Устанавливает значение свойства <a href="/constants/environment_state/mql4_programm_info#enum_mql_info_integer">MQL_CODEPAGE</a> в окружении mql4-программы.</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -11,15 +11,15 @@
 </div> 
 <p><span>Параметры</span></p> 
 <p><span>property_id</span></p> 
-<p><span>[in] &nbsp;Идентификатор свойства. Может быть только <a href="/ru/constants/environment_state/mql4_programm_info#enum_mql_info_integer">MQL_CODEPAGE</a>, так как остальные свойства не могут быть изменены.</span></p> 
+<p><span>[in] &nbsp;Идентификатор свойства. Может быть только <a href="/constants/environment_state/mql4_programm_info#enum_mql_info_integer">MQL_CODEPAGE</a>, так как остальные свойства не могут быть изменены.</span></p>
 <p><span>property_value</span></p> 
-<p><span>[in] &nbsp;Значение свойства. Может быть одной из <a href="/ru/constants/io_constants/codepageusage">констант кодовой страницы</a>.</span></p> 
+<p><span>[in] &nbsp;Значение свойства. Может быть одной из <a href="/constants/io_constants/codepageusage">констант кодовой страницы</a>.</span></p>
 <p><span>Возвращаемое значение</span></p> 
 <p><span>Нет</span></p> 
 <p><span>Примечание</span></p> 
-<p><span>Функция MQLSetInteger() предназначена для изменения текущей кодовой страницы в запущенной mql4-программе. Это может понадобиться в тех случаях, когда для запускаемых mql4-программ терминал устанавливает по умолчанию <a href="/ru/constants/io_constants/codepageusage">кодовую страницу</a>, отличающаяся от той, которая использовалась при её компиляции. Например, mql4-программа скомпилирована на компьютере с испанской локалью, а запускается на компьютере с китайской локалью.</span></p> 
+<p><span>Функция MQLSetInteger() предназначена для изменения текущей кодовой страницы в запущенной mql4-программе. Это может понадобиться в тех случаях, когда для запускаемых mql4-программ терминал устанавливает по умолчанию <a href="/constants/io_constants/codepageusage">кодовую страницу</a>, отличающаяся от той, которая использовалась при её компиляции. Например, mql4-программа скомпилирована на компьютере с испанской локалью, а запускается на компьютере с китайской локалью.</span></p>
 <p><span>В случаях, когда не совпадают локали компиляции и запуска mql4-программ, могут возникать ошибки отображения сообщений или ошибки получения значений. Это касается функций PrintFormat, Print, Comment, Alert, MessageBox, SendFTP, SendMail, SendNotification, iCustom и других, в которых в качестве параметра используются имена объектов, имена глобальных переменных и т.д.</span></p> 
 <p><span>Чтобы явно изменить кодовую страницу для работы со строками в данной запущенной программе, необходимо вызвать MQLSetInteger() с нужной кодовой страницей. Функция может быть особенно полезна для локализации выводимых пользователю сообщений.</span></p> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/constants/io_constants/codepageusage">Использование кодовой страницы</a></span></p> 
+<p><span><a href="/constants/io_constants/codepageusage">Использование кодовой страницы</a></span></p>
 <br>

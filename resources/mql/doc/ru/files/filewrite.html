@@ -11,13 +11,13 @@
 </div> 
 <p><span>Параметры</span></p> 
 <p><span>file_handle</span></p> 
-<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/ru/files/fileopen">FileOpen()</a>.</span></p> 
+<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/files/fileopen">FileOpen()</a>.</span></p>
 <p><span>...</span></p> 
 <p><span>[in] &nbsp;Список параметров, разделенных запятыми, для записи в файл. Количество выводимых в файл параметров не должно превышать 63.</span></p> 
 <p><span>Возвращаемое значение</span></p> 
-<p><span>Количество записанных байт или 0 в случае ошибки. </span><span>Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Количество записанных байт или 0 в случае ошибки. </span><span>Чтобы получить информацию об <a href="/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/check/getlasterror">GetLastError()</a>.</span></p>
 <p><span>Примечание</span></p> 
-<p><span>При выводе числовые данные преобразуются в текстовый формат (см. функцию Print()). Данные типа double выводятся с точностью до 16 десятичных цифр после точки, при этом данные могут выводиться либо в традиционном либо в научном формате – в зависимости от того, как запись будет наиболее компактна. Данные типа float выводятся с 5 десятичными цифрами после точки. Для вывода вещественных чисел с другой точностью либо в явно указанном формате необходимо использовать функцию <a href="/ru/convert/doubletostring">DoubleToString()</a>. </span></p> 
+<p><span>При выводе числовые данные преобразуются в текстовый формат (см. функцию Print()). Данные типа double выводятся с точностью до 16 десятичных цифр после точки, при этом данные могут выводиться либо в традиционном либо в научном формате – в зависимости от того, как запись будет наиболее компактна. Данные типа float выводятся с 5 десятичными цифрами после точки. Для вывода вещественных чисел с другой точностью либо в явно указанном формате необходимо использовать функцию <a href="/convert/doubletostring">DoubleToString()</a>. </span></p>
 <p><span>Числа типа bool выводятся в виде строк "true" или "false". Числа типа datetime выводятся в формате "YYYY.MM.DD HH:MI:SS".</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
@@ -30,5 +30,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/common/comment">Comment()</a>, <a href="/ru/common/print">Print()</a>, <a href="/ru/convert/stringformat">StringFormat()</a></span></p> 
+<p><span><a href="/common/comment">Comment()</a>, <a href="/common/print">Print()</a>, <a href="/convert/stringformat">StringFormat()</a></span></p>
 <br>

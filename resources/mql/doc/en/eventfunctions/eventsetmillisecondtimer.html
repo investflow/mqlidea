@@ -1,0 +1,22 @@
+<h1>EventSetMillisecondTimer</h1> 
+<p><span>The function indicates to the client terminal that <a href="/runtime/event_fire#timer">timer</a> events should be generated at intervals less than one second for this Expert Advisor or indicator.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>EventSetMillisecondTimer</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;</span><span>milliseconds</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;number&nbsp;of&nbsp;milliseconds</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>milliseconds</span></p> 
+<p><span>[in] &nbsp;Number of milliseconds defining the frequency of timer events.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>In case of successful execution, returns true, otherwise - false. To receive an <a href="/constants/errorswarnings/errorcodes">error</a> code, <a href="/check/getlasterror">GetLastError()</a> function should be called.</span></p> 
+<p><span>Note</span></p> 
+<p><span>This feature is designed for the cases when </span><span>high-resolution timer is required. In other words, </span><span>timer events should be received more frequently than once per second. If a conventional timer with the period of several seconds is enough for you, use <a href="/eventfunctions/eventsettimer">EventSetTimer()</a>.</span></p> 
+<p><span>Usually, this function should be called from <a href="/basis/function/events#oninit">OnInit()</a> function or in class <a href="/basis/types/classes#constructor">constructor</a>. To handle events coming from the timer, an Expert Advisor or an indicator should have <a href="/basis/function/events#ontimer">OnTimer()</a> function. </span></p> 
+<p><span>Each Expert Advisor and each indicator work with its own timer receiving events solely from this timer. During mql4 application shutdown, the timer is forcibly destroyed in case it has been created but has not been disabled by <a href="/eventfunctions/eventkilltimer">EventKillTimer()</a> function.</span></p> 
+<p><span>Only one timer can be launched for each program. Each mql4 application and chart have their own queue of events where all newly arrived events are placed. If the queue already contains <a href="/runtime/event_fire#timer">Timer</a> event or this event is in the processing stage, then the new Timer event is not added to mql4 application queue. </span></p> 
+<br>

@@ -11,13 +11,13 @@
 </div> 
 <p><span>Параметры</span></p> 
 <p><span>file_handle</span></p> 
-<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/ru/files/fileopen">FileOpen()</a>.</span></p> 
+<p><span>[in] &nbsp;Файловый описатель, возвращаемый функцией <a href="/files/fileopen">FileOpen()</a>.</span></p>
 <p><span>offset</span></p> 
 <p><span>[in] &nbsp;Смещение в байтах (может принимать и отрицательное значение).</span></p> 
 <p><span>origin</span></p> 
-<p><span>[in] &nbsp;Точка отсчета для смещения. Может принимать одно из значений перечисления <a href="/ru/constants/io_constants/enum_file_position">ENUM_FILE_POSITION</a>.</span></p> 
+<p><span>[in] &nbsp;Точка отсчета для смещения. Может принимать одно из значений перечисления <a href="/constants/io_constants/enum_file_position">ENUM_FILE_POSITION</a>.</span></p>
 <p><span>Возвращаемое значение</span></p> 
-<p><span>В случае удачи функция возвращает true, в случае ошибки - false. </span><span>Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>В случае удачи функция возвращает true, в случае ошибки - false. </span><span>Чтобы получить информацию об <a href="/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/check/getlasterror">GetLastError()</a>.</span></p>
 <p><span>Примечание</span></p> 
 <p><span>Если результатом выполнения функции FileSeek() является отрицательное смещение (выход за "левую границу" файла), то </span><span>файловый указатель будет установлен</span><span> на начало файла.</span></p> 
 <p><span>Если выставить позицию за "правую границу" файла (больше, чем размер файла), то последующая запись в файл будет будет произведена не с конца файла, а с выставленной позиции. При этом между предыдущим концом файла и выставленной позицией будут записаны неопределенные значения.</span></p> 

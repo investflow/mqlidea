@@ -1,0 +1,37 @@
+<h1>ObjectGetInteger</h1> 
+<p><span>The function returns the value of the corresponding object property. The object property must be of the <a href="/basis/types/integer">datetime,&nbsp;int,&nbsp;color,&nbsp;bool&nbsp;or&nbsp;char</a> type. There are 2 variants of the function.</span></p> 
+<p><span>1. Immediately returns the property value.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>long&nbsp;&nbsp;</span><span>ObjectGetInteger</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;chart&nbsp;identifier</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&nbsp;&nbsp;&nbsp;</span><span>object_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prop_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;property&nbsp;identifier</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prop_modifier=0&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;property&nbsp;modifier,&nbsp;if&nbsp;required</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>2. Returns true or false, depending on the success of the function. If successful, the property value is placed to a receiving variable passed by reference by the last parameter.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ObjectGetInteger</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;chart&nbsp;identifier</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&nbsp;&nbsp;&nbsp;</span><span>object_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;object&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prop_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;property&nbsp;identifier</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prop_modifier</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;property&nbsp;modifier</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>long_var</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;here&nbsp;we&nbsp;accept&nbsp;the&nbsp;property&nbsp;value</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>chart_id</span></p> 
+<p><span>[in] &nbsp;Chart identifier. 0 means the current chart.</span></p> 
+<p><span>object_name</span></p> 
+<p><span>[in] &nbsp;Name of the object.</span></p> 
+<p><span>prop_id</span></p> 
+<p><span>[in] &nbsp;ID of the object property. The value can be one of the values of the <a href="/constants/objectconstants/enum_object_property#enum_object_property_integer">ENUM_OBJECT_PROPERTY_INTEGER</a> enumeration.</span></p> 
+<p><span>prop_modifier</span></p> 
+<p><span>[in] &nbsp;Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. &nbsp;It denotes the number of the level in <a href="/constants/objectconstants/enum_object">Fibonacci tools</a> and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</span></p> 
+<p><span>long_var</span></p> 
+<p><span>[out] &nbsp;Variable of the long type that receives the value of the requested property.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>The long value for the first calling variant.</span></p> 
+<p><span>For the second variant the function returns true, if this property is maintained and the value has been placed into the long_var variable, otherwise returns false. To read more about the <a href="/constants/errorswarnings/errorcodes">error</a> call <a href="/check/getlasterror">GetLastError()</a>.</span></p> 
+<br>

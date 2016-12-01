@@ -1,0 +1,34 @@
+<h1>FileOpenHistory</h1> 
+<p><span>Opens file in the current history directory (terminal_directory\history\server_name) or in its subfolders. </span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>FileOpenHistory</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>filename</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;file&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mode</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;open&nbsp;mode</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>delimiter=';'</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;delimiter</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>filename</span></p> 
+<p><span>[in] &nbsp;File name.</span></p> 
+<p><span>mode</span></p> 
+<p><span>[in] &nbsp;File open mode. Can be one or combination of values: FILE_BIN, FILE_CSV, FILE_READ, FILE_WRITE, FILE_SHARE_READ, FILE_SHARE_WRITE.</span></p> 
+<p><span>delimiter=';'</span></p> 
+<p><span>[in] &nbsp;Delimiter for csv files. By default, the ';' symbol will be passed.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>Returns the file handle for the opened file. If the function fails, the returned value is -1. To get the detailed <a href="/constants/errorswarnings/errorcodes">error</a> information, call the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span>Note</span></p> 
+<p><span>Client terminal can connect to servers of different brokerage companies. History data (HST files) for each brokerage company are stored in the corresponding subfolder of the terminal_directory\history folder. The function can be useful to form own history data for a non-standard symbol and/or period. The file formed in the history folder can be opened offline, not data pumping is needed to chart it.</span></p> 
+<p><span>In the new MQL4, FILE_SHARE_WRITE and FILE_SHARE_READ flags should explicitly be specified for shared use when opening files. If the flags are absent, the file is opened in exclusive mode and cannot be opened by anyone else till it is closed by the user who opened it (see <a href="https://www.mql5.com/en/articles/1387" target="_blank" title="Offline Charts in the New MQL4">"Offline Charts in the New MQL4"</a>).</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;handle=</span><span style="color: #0000ff;">FileOpenHistory</span><span>(</span><span style="color: #008080;">"USDX240.HST"</span><span>,</span><span style="color: #0000ff;">FILE_BIN</span><span>|</span><span style="color: #0000ff;">FILE_WRITE</span><span>|</span><span style="color: #0000ff;">FILE_SHARE_WRITE</span><span>|</span><span style="color: #0000ff;">FILE_SHARE_READ</span><span>);</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(handle&lt;1)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Cannot&nbsp;open&nbsp;file&nbsp;USDX240.HST"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;work&nbsp;with&nbsp;file</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;...</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">FileClose</span><span>(handle);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

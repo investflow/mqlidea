@@ -1,0 +1,33 @@
+<h1>iHigh</h1> 
+<p><span>Returns High price value for the bar of specified symbol with timeframe and shift.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>iHigh</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;symbol</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;timeframe</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>shift&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;shift</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>symbol</span></p> 
+<p><span>[in] &nbsp;Symbol name. <a href="/constants/namedconstants/otherconstants">NULL</a> means the current symbol.</span></p> 
+<p><span>timeframe</span></p> 
+<p><span>[in] &nbsp;Timeframe. It can be any of <a href="/constants/chartconstants/enum_timeframes">ENUM_TIMEFRAMES</a> enumeration values. 0 means the current chart timeframe.</span></p> 
+<p><span>shift</span></p> 
+<p><span>[in] &nbsp;Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>High value for the bar of specified symbol with timeframe and shift. If local history is empty (not loaded), function returns 0. To check <a href="/constants/errorswarnings/errorcodes">errors</a>, one has to call the <a href="/check/getlasterror">GetLastError()</a> function.</span></p> 
+<p><span>Note</span></p> 
+<p><span>For the current chart, the information about high prices is in the <a href="/predefined/high">High[]</a> predefined array.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Current&nbsp;bar&nbsp;for&nbsp;USDCHF&nbsp;H1:&nbsp;"</span><span>,</span><span style="color: #0000ff;">iTime</span><span>(</span><span style="color: #008080;">"USDCHF"</span><span>,</span><span style="color: #0000ff;">PERIOD_H1</span><span>,0),</span><span style="color: #008080;">",&nbsp;"</span><span>,&nbsp;&nbsp;</span><span style="color: #0000ff;">iOpen</span><span>(</span><span style="color: #008080;">"USDCHF"</span><span>,</span><span style="color: #0000ff;">PERIOD_H1</span><span>,0),</span><span style="color: #008080;">",&nbsp;"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">iHigh</span><span>(</span><span style="color: #008080;">"USDCHF"</span><span>,</span><span style="color: #0000ff;">PERIOD_H1</span><span>,0),</span><span style="color: #008080;">",&nbsp;"</span><span>,&nbsp;&nbsp;</span><span style="color: #0000ff;">iLow</span><span>(</span><span style="color: #008080;">"USDCHF"</span><span>,</span><span style="color: #0000ff;">PERIOD_H1</span><span>,0),</span><span style="color: #008080;">",&nbsp;"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">iClose</span><span>(</span><span style="color: #008080;">"USDCHF"</span><span>,</span><span style="color: #0000ff;">PERIOD_H1</span><span>,0),</span><span style="color: #008080;">",&nbsp;"</span><span>,&nbsp;</span><span style="color: #0000ff;">iVolume</span><span>(</span><span style="color: #008080;">"USDCHF"</span><span>,</span><span style="color: #0000ff;">PERIOD_H1</span><span>,0));</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

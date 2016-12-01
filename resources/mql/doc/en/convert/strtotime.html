@@ -1,0 +1,29 @@
+<h1>StrToTime</h1> 
+<p><span>Converts string in the format "yyyy.mm.dd hh:mi" to datetime type (the amount of seconds that have passed since 1 Jan., 1970).</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>datetime&nbsp;&nbsp;</span><span>StrToTime</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>value</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>value</span></p> 
+<p><span>[in] &nbsp;String having "yyyy.mm.dd hh:mi " format.</span></p> 
+<p><span>Returned value</span></p> 
+<p><span>Value of <a href="/basis/types/integer/datetime">datetime</a> type as a number of seconds, passed since 01.01.1970.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;var1,var2,var3;</span><br> <span>&nbsp;&nbsp;var1=</span><span style="color: #0000ff;">StrToTime</span><span>(</span><span style="color: #008080;">"2003.8.12&nbsp;17:35"</span><span>);</span><br> <span>&nbsp;&nbsp;var2=</span><span style="color: #0000ff;">StrToTime</span><span>(</span><span style="color: #008080;">"17:35"</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;returns&nbsp;the&nbsp;current&nbsp;date&nbsp;with&nbsp;the&nbsp;given&nbsp;time</span><br> <span>&nbsp;&nbsp;var3=</span><span style="color: #0000ff;">StrToTime</span><span>(</span><span style="color: #008080;">"2003.8.12"</span><span>);&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;returns&nbsp;the&nbsp;date&nbsp;with&nbsp;the&nbsp;midnight&nbsp;time&nbsp;of&nbsp;"00:00"</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/common/printformat">PrintFormat()</a>, <a href="/convert/timetostr">TimeToStr()</a>, <a href="/convert/timetostring">TimeToString()</a></span></p> 
+<br>

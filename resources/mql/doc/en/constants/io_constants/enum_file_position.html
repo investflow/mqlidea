@@ -1,0 +1,28 @@
+<h1>Positioning Inside a File</h1> 
+<p><span>Most of <a href="/files">file functions</a> are associated with data read/write operations. At the same time, using the <a href="/files/fileseek">FileSeek()</a> you can specify the position of a file pointer to a position inside the file, from which the next read or write operation will be performed. The ENUM_FILE_POSITION enumeration contains valid pointer positions, relative to which you can specify the shift in bytes for the next operation.</span></p> 
+<p><span style="font-weight: bold;">ENUM_FILE_POSITION</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:179px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Identifier</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:179px; padding:5px; border:solid thin #b1c2d6;"><p><span>SEEK_SET</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File beginning</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:179px; padding:5px; border:solid thin #b1c2d6;"><p><span>SEEK_CUR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Current position of a file pointer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:179px; padding:5px; border:solid thin #b1c2d6;"><p><span>SEEK_END</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>File end</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/files/fileisending">FileIsEnding</a>, <a href="/files/fileislineending">FileIsLineEnding</a></span></p> 
+<br>

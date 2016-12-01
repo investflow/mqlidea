@@ -1,0 +1,15 @@
+<h1>_RandomSeed</h1> 
+<p><span>Variable for storing the current state when generating pseudo-random integers. </span><span style="color: #0000ff;">_RandomSeed</span><span> changes its value when calling <a href="/math/mathrand">MathRand()</a>. Use <a href="/math/mathsrand">MathSrand()</a> to set the required initial condition. </span></p> 
+<p><span style="font-style: italic; font-weight: bold;">x</span><span> random number received by MathRand() function is calculated in the following way at each call:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>x=</span><span style="color: #0000ff;">_RandomSeed</span><span>*214013+2531011;</span><br> <span style="color: #0000ff;">_RandomSeed</span><span>=x;</span><br> <span>x=(x&gt;&gt;16)&amp;0x7FFF;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/math/mathrand">MathRand()</a>, <a href="/math/mathsrand">MathSrand()</a>, <a href="/basis/types/integer">Integer types</a></span></p> 
+<br>

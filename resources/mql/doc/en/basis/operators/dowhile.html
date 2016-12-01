@@ -1,0 +1,27 @@
+<h1>Loop Operator do while</h1> 
+<p><span>The <a href="/basis/operators/for">for</a> and <a href="/basis/operators/while">while</a> loops check the termination at the beginning, not at the end of a loop. The third loop operator </span><span style="color: #0000ff;">do</span><span> - </span><span style="color: #0000ff;">while</span><span> checks the condition of termination at the end, after each loop iteration. The loop body is always executed at least once.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">do</span><br> <span>&nbsp;&nbsp;&nbsp;operator;</span><br> <span style="color: #0000ff;">while</span><span>(expression);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>First the operator is executed, then the expression is calculated. If it is true, then the operator is executed again, and so on. If the expression becomes false, the loop terminates.</span></p> 
+<p><span>Note</span></p> 
+<p><span>If it is expected that a large number of iterations will be handled in a loop, it is advisable that you check the fact of forced program termination using the <a href="/check/isstopped">IsStopped()</a> function.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;Calculate&nbsp;the&nbsp;Fibonacci&nbsp;series</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;counterFibonacci=15;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0,first=0,second=1;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;currentFibonacciNumber;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">do</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentFibonacciNumber=first+second;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"i&nbsp;=&nbsp;"</span><span>,i,</span><span style="color: #008080;">"&nbsp;&nbsp;currentFibonacciNumber&nbsp;=&nbsp;"</span><span>,currentFibonacciNumber);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first=second;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;second=currentFibonacciNumber;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;&nbsp;</span><span style="color: #808080;">//&nbsp;without&nbsp;this&nbsp;operator&nbsp;an&nbsp;infinite&nbsp;loop&nbsp;will&nbsp;appear!</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">while</span><span>(i&lt;counterFibonacci&nbsp;&amp;&amp;&nbsp;!</span><span style="color: #0000ff;">IsStopped</span><span>());</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/variables/initialization">Initialization of Variables</a>, <a href="/basis/variables/variable_scope">Visibility Scope and Lifetime of Variables</a>, <a href="/basis/variables/object_live">Creating and Deleting Objects</a></span></p> 
+<br>

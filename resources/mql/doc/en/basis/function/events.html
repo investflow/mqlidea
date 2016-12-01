@@ -1,0 +1,275 @@
+<h1>Event Handling Functions</h1> 
+<p><span>The MQL4 language provides processing of some <a href="/runtime/event_fire">predefined events</a>. Functions for handling these events must be defined in a MQL4 program; function name, return type, composition of parameters (if there are any) and their types must strictly conform to the description of the event handler function.</span></p> 
+<p><span>The event handler of the client terminal identifies functions, handling this or that event, by the type of return value and type of parameters. If other parameters, not corresponding to below descriptions, are specified for a corresponding function, or another return type is indicated for it, such a function will not be used as an event handler.</span></p> 
+<h3><a id="onstart"></a>OnStart</h3> 
+<p><span>The OnStart() function is the <a href="/runtime/event_fire#start">Start</a> event handler, which is automatically generated </span><span style="font-weight: bold;">only</span><span> for running </span><span style="font-weight: bold;">scripts</span><span>. It must be of </span><span style="color: #0000ff;">void</span><span> type, with no parameters:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>For the OnStart() function, the int return type can be specified.</span></p> 
+<h3><a id="oninit"></a>OnInit</h3> 
+<p><span>The OnInit() function is the <a href="/runtime/event_fire#init">Init</a> event handler. It must be of </span><span style="color: #0000ff;">void </span><span>or </span><span style="color: #0000ff;">int</span><span> type, with no parameters:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnInit</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The Init event is generated immediately after an Expert Advisor or an indicator is downloaded; The OnInit() function is used for initialization. If OnInit() has the int type of the return value, the non-zero return code means unsuccessful initialization, and it generates the <a href="/runtime/event_fire#deinit">Deinit</a> event with the code of deinitialization reason </span><span><a href="/constants/namedconstants/uninit#reason_initfailed">REASON_INITFAILED</a></span><span>. </span></p> 
+<p><span>OnInit() function execution result is analyzed by the terminal's runtime subsystem only if the program has been compiled using <a href="/mql4changes#compiler_difference">#property strict</a>.</span></p> 
+<p><span>To optimize input parameters of an Expert Advisor, it is recommended to use values of the <a href="/basis/function/events#enum_init_retcode">ENUM_INIT_RETCODE</a> enumeration as the return code.. During initialization of an Expert Advisor before the start of testing you can request information about the configuration and resources using the <a href="/check/terminalinfointeger">TerminalInfoInteger()</a> function.</span></p> 
+<p><a id="enum_init_retcode"></a><span style="font-weight: bold;">ENUM_INIT_RETCODE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Identifier</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>INIT_SUCCEEDED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Successful initialization, testing of the Expert Advisor can be continued.</span></p> <p><span>This code means the same as a null value  the Expert Advisor has been successfully initialized in the tester.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>INIT_FAILED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Initialization failed; there is no point in continuing testing because of fatal errors. For example, failed to create an indicator that is required for the work of the Expert Advisor.</span></p> <p><span>This return value means the same as a value other than zero - initialization of the Expert Advisor in the tester failed.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>INIT_PARAMETERS_INCORRECT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>This value means the incorrect set of input parameters. The result string containing this return code is highlighted in red in the general optimization table.</span></p> <p><span>Testing for the given set of parameters of the Expert Advisor will not be executed</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The OnInit() function of the void type always denotes successful initialization.</span></p> 
+<h3><a id="ondeinit"></a>OnDeinit</h3> 
+<p><span>The OnDeinit() function is called during deinitialization and is the <a href="/runtime/event_fire#deinit">Deinit</a> event handler. It must be declared as the </span><span style="color: #0000ff;">void</span><span> type</span><span> and should have one parameter of the </span><span style="color: #0000ff;">const int</span><span> type, which contains <a href="/constants/namedconstants/uninit">the code of deinitialization reason</a>. If</span><span> a different type is</span><span> </span><span>declared, the compiler will generate a warning, but the function will not be called.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnDeinit</span><span>(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;reason);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The Deinit event is generated for Expert Advisors and indicators in the following cases:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>before reinitialization due to the change of a symbol or chart period, to which the mql4 program is attached;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px;"><span>before reinitialization due to the change of <a href="/basis/variables/inputvariables">input parameters</a>;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>before unloading the mql4 program.</span></li> 
+</ul> 
+<h3><a id="ontick"></a>OnTick</h3> 
+<p><span>The <a href="/runtime/event_fire#newtick">NewTick</a> event is generated for </span><span style="font-weight: bold;">Expert Advisors only</span><span> when a new tick for a symbol is received, to the chart of which the Expert Advisor is attached. It's useless to define the OnTick() function in a custom indicator or script, because the NewTick event is not generated for them.</span></p> 
+<p><span>The Tick event is generated only for Expert Advisors, but this does not mean that Expert Advisors required the OnTick() function, since not only NewTick events are generated for Expert Advisors, but also events of Timer, BookEvent and ChartEvent are generated. It must be declared as the </span><span style="color: #0000ff;">void</span><span> type, with no parameters:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnTick</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h3><a id="ontimer"></a>OnTimer</h3> 
+<p><span>The OnTimer() function is called when the <a href="/runtime/event_fire#timer">Timer</a> event occurs, which is generated by the system timer only for Expert Advisors and indicators - it can't be used in scripts. The frequency of the event occurrence is set when subscribing to notifications about this event to be received by the <a href="/eventfunctions/eventsettimer">EventSetTimer()</a> function. </span></p> 
+<p><span>You can unsubscribe from receiving timer events for a particular Expert Advisor using the <a href="/eventfunctions/eventkilltimer">EventKillTimer()</a> function. The function must be defined with the void type, with no parameters:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnTimer</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>It is recommended to call the EventSetTimer() function once in the OnInit() function, and the EventKillTimer() function should be called once in OnDeinit().</span></p> 
+<p><span>Every Expert Advisor, as well as every indicator works with its own timer and receives events only from it. As soon as the mql4 program stops operating, the timer is destroyed forcibly, if it was created but hasn't been disabled by the <a href="/eventfunctions/eventkilltimer">EventKillTimer()</a> function.</span></p> 
+<h3><a id="ontester"></a>OnTester</h3> 
+<p><span>The OnTester() function is the handler of the <a href="/runtime/event_fire#tester">Tester</a> event that is automatically generated after a history testing of an Expert Advisor on the chosen interval is over. The function must be defined with the double type, with no parameters:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">double</span><span>&nbsp;</span><span style="color: #0000ff;">OnTester</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The function is called right before the call of OnDeinit() and has the same type of the return value - double. OnTester() can be used only in the testing of Expert Advisors. Its main purpose is to calculate a certain value that is used as the Custom max criterion in the genetic optimization of input parameters.</span></p> 
+<p><span>In the genetic optimization descending sorting is applied to results within one generation. I.e. from the point of view of the optimization criterion, the best results are those with largest values (for the Custom max optimization criterion values returned by the OnTester function are taken into account). In such a sorting, the worst values are positioned at the end and further thrown off and do not participate in the forming of the next generation.</span></p> 
+<h3><a id="onchartevent"></a>OnChartEvent</h3> 
+<p><span>OnChartEvent() is the handler of a group of <a href="/runtime/event_fire#chartevent">ChartEvent</a> events:</span></p> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_KEYDOWN  event of a keystroke, when the chart window is focused;</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_MOUSE_MOVE  mouse move events and mouse click events (if <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_MOUSE_MOVE</a>=true is set for the chart);</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_OBJECT_CREATE  event of graphical object creation (if <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_CREATE</a>=true is set for the chart);</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_OBJECT_CHANGE  event of change of an object property via the properties dialog;</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_OBJECT_DELETE  event of graphical object deletion (if <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_DELETE</a>=true is set for the chart);</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_CLICK  event of a mouse click on the chart;</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_OBJECT_CLICK  event of a mouse click in a graphical object belonging to the chart; </span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_OBJECT_DRAG  event of a graphical object move using the mouse;</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_OBJECT_ENDEDIT  event of the finished text editing in the entry box of the LabelEdit graphical object;</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_CHART_CHANGE &nbsp; event of chart changes;</span></li> 
+</ul> 
+<ul style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 30px;list-style-position:outside; list-style-type:disc"> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_CUSTOM+n  ID of the user event, where n is in the range from 0 to 65535.</span></li> 
+ <li style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>CHARTEVENT_CUSTOM_LAST  the last acceptable ID of a custom event (CHARTEVENT_CUSTOM +65535).</span></li> 
+</ul> 
+<p><span>The function can be called only in Expert Advisors and indicators. The function should be of void type with 4 parameters:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnChartEvent</span><span>(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;id,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Event&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">long</span><span>&amp;&nbsp;lparam,&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Parameter&nbsp;of&nbsp;type&nbsp;long&nbsp;event</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;dparam,&nbsp;</span><span style="color: #808080;">//&nbsp;Parameter&nbsp;of&nbsp;type&nbsp;double&nbsp;event</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">string</span><span>&amp;&nbsp;sparam&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Parameter&nbsp;of&nbsp;type&nbsp;string&nbsp;events</span><br> <span>&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>For each type of event, the input parameters of the OnChartEvent() function have definite values that are required for the processing of this event. The events and values passed through these parameters are listed in the table below.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Event</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Value of the id parameter</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Value of the lparam parameter</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Value of the dparam parameter</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Value of the sparam parameter</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of a keystroke</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_KEYDOWN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>code of a pressed key</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Repeat count (the number of times the keystroke is repeated as a result of the user holding down the key)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The string value of a bit mask describing the status of keyboard buttons</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Mouse events </span><span>(if property <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_MOUSE_MOVE</a>=true is set for the chart)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_MOUSE_MOVE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the X coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the Y coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The string value of a bit mask describing the status of mouse buttons</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of graphical object creation </span><span>(if <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_CREATE</a>=true is set for the chart)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_CREATE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the created graphical object</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of change of an object property via the properties dialog</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_CHANGE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the modified graphical object</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of graphical object deletion </span><span>(if <a href="/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_EVENT_OBJECT_DELETE</a>=true is set for the chart)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_DELETE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the deleted graphical object</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of a mouse click on the chart</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span> CHARTEVENT_CLICK</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the X coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the Y coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of a mouse click in a graphical object belonging to the chart</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_CLICK</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the X coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>the Y coordinate</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the graphical object, on which the event occurred</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of a graphical object dragging using the mouse</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_DRAG</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the moved graphical object</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of the finished text editing in the entry box of the LabelEdit graphical object</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_OBJECT_ENDEDIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Name of the </span><span>LabelEdit graphical object, in which text editing has completed</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Event of chart Changes</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_CHART_CHANGE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>ID of the user event under the N number </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CHARTEVENT_CUSTOM+N</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Value set by the <a href="/eventfunctions/eventchartcustom">EventChartCustom()</a> function</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Value set by the <a href="/eventfunctions/eventchartcustom">EventChartCustom()</a> function</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Value set by the <a href="/eventfunctions/eventchartcustom">EventChartCustom()</a> function</span></p> </td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h3><a id="oncalculate"></a>OnCalculate</h3> 
+<p><span>The OnCalculate() function is called only in custom indicators when it's necessary to calculate the indicator values by the <a href="/runtime/event_fire#calculate">Calculate</a> event. This usually happens when a new tick is received for the symbol, for which the indicator is calculated. This indicator is not required to be attached to any price chart of this symbol.</span></p> 
+<p><span>The OnCalculate() function must have a return type int.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;</span><span style="color: #0000ff;">OnCalculate</span><span>&nbsp;(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;rates_total,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;size&nbsp;of&nbsp;input&nbsp;time&nbsp;series</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;prev_calculated,&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;bars&nbsp;handled&nbsp;in&nbsp;previous&nbsp;call</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&amp;&nbsp;time[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Time</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;open[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Open</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;high[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;High</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;low[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Low</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;close[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Close</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">long</span><span>&amp;&nbsp;tick_volume[],&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Tick&nbsp;Volume</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">long</span><span>&amp;&nbsp;volume[],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Real&nbsp;Volume</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&amp;&nbsp;spread[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Spread</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters of open[], high[], low[] and close[] contain arrays with open prices, high and low prices and close prices of the current time frame. The time[] parameter contains an array with open time values, the spread[] parameter has an array containing the history of spreads (if any spread is provided for the traded security). The parameters of volume[] and tick_volume[] contain the history of trade and tick volume, respectively.</span></p> 
+<p><span>To determine the indexing direction of time[], open[], high[], low[], close[], tick_volume[], volume[] and spread[], call <a href="/array/arraygetasseries">ArrayGetAsSeries()</a>. In order not to depend on default values, you should unconditionally call the <a href="/array/arraysetasseries">ArraySetAsSeries()</a> function for those arrays, which are expected to work with.</span></p> 
+<p><span>The first rates_total parameter contains the number of bars, available to the indicator for calculation, and corresponds to the number of bars available in the chart.</span></p> 
+<p><span>We should note the connection between the return value of OnCalculate() and the second input parameter prev_calculated. During the function call, the prev_calculated parameter contains a value </span><span style="font-weight: bold;">returned</span><span> by OnCalculate() during </span><span style="font-weight: bold;">previous</span><span> call. This allows for economical algorithms for calculating the custom indicator in order to avoid repeated calculations for those bars that haven't changed since the previous run of this function.</span></p> 
+<p><span>For this, it is usually enough to return the value of the rates_total parameter, which contains the number of bars in the current function call. If since the last call of OnCalculate() price data has changed (a deeper history downloaded or history blanks filled), the value of the input parameter prev_calculated will be set to zero by the terminal.</span></p> 
+<p><span>To understand it better, it would be useful to start the indicator, which code is attached below.</span></p> 
+<p><span style="font-weight: bold;">Indicator Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">indicator_chart_window</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">indicator_buffers</span><span>&nbsp;1</span><br> <span style="color: #808080;">//----&nbsp;plot&nbsp;Line</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">indicator_label1</span><span>&nbsp;&nbsp;</span><span style="color: #008080;">"Line"</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">indicator_type1</span><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">DRAW_LINE</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">indicator_color1</span><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">clrDarkBlue</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;indicator_style1&nbsp;&nbsp;</span><span style="color: #0000ff;">STYLE_SOLID</span><br> <span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">indicator_width1</span><span>&nbsp;&nbsp;1</span><br> <span style="color: #808080;">//---&nbsp;indicator&nbsp;buffers</span><br> <span style="color: #0000ff;">double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LineBuffer[];</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Custom&nbsp;indicator&nbsp;initialization&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">int</span><span>&nbsp;</span><span style="color: #0000ff;">OnInit</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;indicator&nbsp;buffers&nbsp;mapping</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexBuffer</span><span>(0,LineBuffer,</span><span style="color: #0000ff;">INDICATOR_DATA</span><span>);</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">INIT_SUCCEEDED</span><span>);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Custom&nbsp;indicator&nbsp;iteration&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">int</span><span>&nbsp;</span><span style="color: #0000ff;">OnCalculate</span><span>(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;rates_total,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;prev_calculated,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&amp;&nbsp;time[],</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;open[],</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;high[],</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;low[],</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;close[],</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">long</span><span>&amp;&nbsp;tick_volume[],</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">long</span><span>&amp;&nbsp;volume[],</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&amp;&nbsp;spread[])</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;Get&nbsp;the&nbsp;number&nbsp;of&nbsp;bars&nbsp;available&nbsp;for&nbsp;the&nbsp;current&nbsp;symbol&nbsp;and&nbsp;chart&nbsp;period</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;</span><span style="color: #0000ff;">bars</span><span>=</span><span style="color: #0000ff;">Bars</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),0);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Bars&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">bars</span><span>,</span><span style="color: #008080;">",&nbsp;rates_total&nbsp;=&nbsp;"</span><span>,rates_total,</span><span style="color: #008080;">",&nbsp;&nbsp;prev_calculated&nbsp;=&nbsp;"</span><span>,prev_calculated);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"time[0]&nbsp;=&nbsp;"</span><span>,time[0],</span><span style="color: #008080;">"&nbsp;time[rates_total-1]&nbsp;=&nbsp;"</span><span>,time[rates_total-1]);</span><br> <span style="color: #808080;">//---&nbsp;return&nbsp;value&nbsp;of&nbsp;prev_calculated&nbsp;for&nbsp;next&nbsp;call</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(rates_total);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/runtime/running">Running Programs</a>, <a href="/runtime/event_fire">Client Terminal Events</a>, <a href="/eventfunctions">Working with Events</a></span></p> 
+<br>

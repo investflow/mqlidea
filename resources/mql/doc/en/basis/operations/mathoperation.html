@@ -1,0 +1,42 @@
+<h1>Arithmetic Operations</h1> 
+<p><span>Arithmetic operations include additive and multiplicative operations:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>Sum&nbsp;of&nbsp;variables&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;j&nbsp;+&nbsp;</span><span style="color: #008000;">2</span><span>;</span><br> <span>Difference&nbsp;of&nbsp;variables&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;j&nbsp;-&nbsp;</span><span style="color: #008000;">3</span><span>;</span><br> <span>Changing&nbsp;the&nbsp;sign&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;=&nbsp;-&nbsp;x;</span><br> <span>Product&nbsp;of&nbsp;variables&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;=&nbsp;</span><span style="color: #008000;">3</span><span>&nbsp;*&nbsp;x;</span><br> <span>Division&nbsp;quotient&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;j&nbsp;/&nbsp;</span><span style="color: #008000;">5</span><span>;</span><br> <span>Remainder&nbsp;of&nbsp;division&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minutes&nbsp;=&nbsp;time&nbsp;%&nbsp;</span><span style="color: #008000;">60</span><span>;</span><br> <span>Adding&nbsp;</span><span style="color: #008000;">1</span><span>&nbsp;to&nbsp;the&nbsp;variable&nbsp;value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;</span><br> <span>Adding&nbsp;</span><span style="color: #008000;">1</span><span>&nbsp;to&nbsp;the&nbsp;variable&nbsp;value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++i;</span><br> <span>Subtracting&nbsp;</span><span style="color: #008000;">1</span><span>&nbsp;from&nbsp;the&nbsp;variable&nbsp;value&nbsp;&nbsp;&nbsp;k--;</span><br> <span>Subtracting&nbsp;</span><span style="color: #008000;">1</span><span>&nbsp;from&nbsp;the&nbsp;variable&nbsp;value&nbsp;&nbsp;&nbsp;--k;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Increment and decrement operations are applied only to variables, they can't be applied to constants. The prefix increment (++i) and decrement (--k) are applied to the variable right before this variable is used in an expression.</span></p> 
+<p><a id="posfix"></a><span>Post-increment (i++) and post-decrement (k--) are applied to the variable right after this variable is used in an expression.</span></p> 
+<p><span style="font-weight: bold;">Important Notice</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;i=5;</span><br> <span style="color: #0000ff;">int</span><span>&nbsp;k&nbsp;=&nbsp;i++&nbsp;+&nbsp;++i;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Computational problems may occur while moving the above expression from one programming environment to another one (for example, from Borland C++ to MQL4). In general, the order of computations depends on the compiler implementation. In practice, there are two ways to implement the post-decrement (post-increment):</span></p> 
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 50px;list-style-position:outside; list-style-type:decimal"> 
+ <li value="1" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>The </span><span>post-decrement (post-increment) is applied to the variable after calculating the whole expression.</span></li> 
+ <li value="2" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 1px; margin-right: 17px; margin-bottom: 1px;"><span>The </span><span>post-decrement (post-increment) is applied to the variable immediately at the operation</span><span>.</span></li> 
+</ol> 
+<p><span>Currently the first way of post-decrement (post-increment) calculation is implemented in MQL4. But even knowing this peculiarity, it is not recommended to experiment with its use.</span></p> 
+<p><span style="font-weight: bold;">Examples:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;a=</span><span style="color: #008000;">3</span><span>;</span><br> <span>a++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;valid&nbsp;expression</span><br> <span style="color: #0000ff;">int</span><span>&nbsp;b=(a++)*</span><span style="color: #008000;">3</span><span>;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;invalid&nbsp;expression</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/operations/rules">Precedence Rules</a></span></p> 
+<br>

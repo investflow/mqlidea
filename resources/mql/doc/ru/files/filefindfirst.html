@@ -15,9 +15,9 @@
 <p><span>returned_filename</span></p> 
 <p><span>[out] &nbsp;Возвращаемый параметр, куда в случае удачи помещается имя первого найденного файла или поддиректории. Возвращается только имя файла (включая расширение) без указания директорий и поддиректорий, независимо от того, указывались ли они в фильтре для поиска.</span></p> 
 <p><span>common_flag</span></p> 
-<p><span>[in] <a href="/ru/constants/io_constants/fileflags">Флаг</a>, определяющий местоположение файла. Если common_flag=FILE_COMMON, то файл находится в общей папке всех клиентских терминалов \Terminal\Common\Files. В противном случае файл находится в локальной папке.</span></p> 
+<p><span>[in] <a href="/constants/io_constants/fileflags">Флаг</a>, определяющий местоположение файла. Если common_flag=FILE_COMMON, то файл находится в общей папке всех клиентских терминалов \Terminal\Common\Files. В противном случае файл находится в локальной папке.</span></p>
 <p><span>Возвращаемое значение</span></p> 
-<p><span>Возвращает хэндл объекта поиска, который необходимо использовать для дальнейшего перебора файлов и поддиректорий функцией <a href="/ru/files/filefindnext">FileFindNext()</a>, либо </span><span><a href="/ru/constants/namedconstants/otherconstants">INVALID_HANDLE</a></span><span> в случае, когда нет ни одного файла и поддиректории, соответствующего фильтру (в частном случае – директория пуста). После окончания поиска хэндл необходимо закрыть при помощи функции <a href="/ru/files/filefindclose">FileFindClose()</a>.</span></p> 
+<p><span>Возвращает хэндл объекта поиска, который необходимо использовать для дальнейшего перебора файлов и поддиректорий функцией <a href="/files/filefindnext">FileFindNext()</a>, либо </span><span><a href="/constants/namedconstants/otherconstants">INVALID_HANDLE</a></span><span> в случае, когда нет ни одного файла и поддиректории, соответствующего фильтру (в частном случае – директория пуста). После окончания поиска хэндл необходимо закрыть при помощи функции <a href="/files/filefindclose">FileFindClose()</a>.</span></p>
 <p><span>Примечание</span></p> 
 <p><span>Из соображений безопасности в языке MQL4 строго контролируется работа с файлами. Файлы, с которыми проводятся файловые операции средствами языка MQL4, не могут находиться за пределами файловой "песочницы".</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
@@ -31,5 +31,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/files/filefindnext">FileFindNext()</a>, <a href="/ru/files/filefindclose">FileFindClose()</a></span></p> 
+<p><span><a href="/files/filefindnext">FileFindNext()</a>, <a href="/files/filefindclose">FileFindClose()</a></span></p>
 <br>

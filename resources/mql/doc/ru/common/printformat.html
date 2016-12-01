@@ -17,13 +17,13 @@
 <p><span>Возвращаемое значение</span></p> 
 <p><span>Строка.</span></p> 
 <p><span>Примечание</span></p> 
-<p><span>При работе в <a href="/ru/runtime/testing#print">тестере стратегий</a> в режиме оптимизации функция PrintFormat() не выполняется.</span></p> 
+<p><span>При работе в <a href="/runtime/testing#print">тестере стратегий</a> в режиме оптимизации функция PrintFormat() не выполняется.</span></p>
 <p><span>Количество, порядок и тип параметров должны точно соответствовать составу спецификаторов, в противном случае результат печати неопределён. Вместо функции PrintFormat() можно использовать функцию </span><span style="color: #0000ff;">printf</span><span>().</span></p> 
 <p><span>Если за строкой формата следуют еще параметры, то эта строка должна содержать спецификации формата, определяющие формат вывода этих параметров. Спецификация формата всегда начинается с символа знака процента (%). </span></p> 
 <p><span>Строка формата читается слева направо. Когда встречается первая спецификация формата (если она есть), то значение первого параметра после строки формата преобразовывается и выводится согласно заданной спецификации. Вторая спецификация формата вызывает преобразование и вывод второго параметра и так далее, до конца строки формата.</span></p> 
 <p><span>Спецификация формата имеет следующую форму:</span></p> 
 <p><span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span style="font-weight: bold;"> %[flags][width][.precision][{h | l | ll | I32 | I64}]type</span></p> 
-<p><span>Каждое поле форматной спецификации является либо простым символом, либо числом, обозначающим обычную форматную опцию. Простейшая спецификация формата содержит только знак процента (%) и символ, определяющий <a href="/ru/common/printformat#type">тип&nbsp;выводимого&nbsp;параметра</a> (например %s). Если требуется в форматной строке вывести символ знак процента, то необходимо использовать форматную спецификацию %%.</span></p> 
+<p><span>Каждое поле форматной спецификации является либо простым символом, либо числом, обозначающим обычную форматную опцию. Простейшая спецификация формата содержит только знак процента (%) и символ, определяющий <a href="/common/printformat#type">тип&nbsp;выводимого&nbsp;параметра</a> (например %s). Если требуется в форматной строке вывести символ знак процента, то необходимо использовать форматную спецификацию %%.</span></p>
 <h2>flags</h2> 
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 4px 30px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
@@ -45,7 +45,7 @@
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>0 (ноль)</span></p> </td> 
-    <td style="vertical-align:top; width:517px; padding:5px; border:solid thin #b1c2d6;"><p><span>Перед выводимом значением добавляются нули в пределах заданной <a href="/ru/common/printformat#width">ширины</a>. Если указан флаг </span><span style="font-weight: bold;">0</span><span> с целочисленным форматом (</span><span style="font-weight: bold;">i</span><span>, </span><span style="font-weight: bold;">u</span><span>, </span><span style="font-weight: bold;">x</span><span>, </span><span style="font-weight: bold;">X</span><span>, </span><span style="font-weight: bold;">o</span><span>, </span><span style="font-weight: bold;">d</span><span>) и задана спецификация точности (например, %04.d), то 0 игнорируется.</span></p> </td> 
+    <td style="vertical-align:top; width:517px; padding:5px; border:solid thin #b1c2d6;"><p><span>Перед выводимом значением добавляются нули в пределах заданной <a href="/common/printformat#width">ширины</a>. Если указан флаг </span><span style="font-weight: bold;">0</span><span> с целочисленным форматом (</span><span style="font-weight: bold;">i</span><span>, </span><span style="font-weight: bold;">u</span><span>, </span><span style="font-weight: bold;">x</span><span>, </span><span style="font-weight: bold;">X</span><span>, </span><span style="font-weight: bold;">o</span><span>, </span><span style="font-weight: bold;">d</span><span>) и задана спецификация точности (например, %04.d), то 0 игнорируется.</span></p> </td>
     <td style="vertical-align:top; width:305px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ничего не вставляется</span></p> </td> 
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
@@ -77,7 +77,7 @@
 <p><span>Если в качестве ширины указана звездочка (*), то в списке передаваемых параметров на соответствующем месте должно быть значение типа int, которое будет использовано для указания ширины выводимого значения.</span></p> 
 <h2><a id="precision"></a>precision</h2> 
 <p><span>Неотрицательное десятичное число, которое определяет точность вывода – количество цифр после десятичной точки. В отличие от спецификации ширины, спецификация точности может отсекать часть дробного значения с округлением или без округления. </span></p> 
-<p><span>Для разных форматных <a href="/ru/common/printformat#type">типов</a> (</span><span style="font-weight: bold;">type</span><span>) спецификация точности применяется по-разному.</span></p> 
+<p><span>Для разных форматных <a href="/common/printformat#type">типов</a> (</span><span style="font-weight: bold;">type</span><span>) спецификация точности применяется по-разному.</span></p>
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 4px 30px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody> 
@@ -257,12 +257,12 @@
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>a</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
-    <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вещественное значение в формате [−]0xh.hhhh </span><span style="font-weight: bold;">p</span><span>±dd, где h.hhhh – мантисса в виде шестнадцатиричных цифр с использованием "abcdef", dd – одна или более цифр экспоненты. Количество знаков после запятой определяется <a href="/ru/common/printformat#precision">спецификацией&nbsp;точности</a></span></p> </td> 
+    <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вещественное значение в формате [−]0xh.hhhh </span><span style="font-weight: bold;">p</span><span>±dd, где h.hhhh – мантисса в виде шестнадцатиричных цифр с использованием "abcdef", dd – одна или более цифр экспоненты. Количество знаков после запятой определяется <a href="/common/printformat#precision">спецификацией&nbsp;точности</a></span></p> </td>
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; width:79px; height:40px; padding:5px; border:solid thin #b1c2d6;"><p><span>A</span></p> </td> 
     <td style="vertical-align:top; width:68px; height:40px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
-    <td style="vertical-align:top; width:755px; height:40px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вещественное значение в формате [−]0xh.hhhh </span><span style="font-weight: bold;">P</span><span>±dd, где h.hhhh – мантисса в виде шестнадцатиричных цифр с использованием "ABCDEF", dd – одна или более цифр экспоненты. Количество знаков после запятой определяется <a href="/ru/common/printformat#precision">спецификацией&nbsp;точности</a></span></p> </td> 
+    <td style="vertical-align:top; width:755px; height:40px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вещественное значение в формате [−]0xh.hhhh </span><span style="font-weight: bold;">P</span><span>±dd, где h.hhhh – мантисса в виде шестнадцатиричных цифр с использованием "ABCDEF", dd – одна или более цифр экспоненты. Количество знаков после запятой определяется <a href="/common/printformat#precision">спецификацией&nbsp;точности</a></span></p> </td>
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>s</span></p> </td> 
@@ -284,5 +284,5 @@
  </table> 
 </div> 
 <p><span>Смотри также</span></p> 
-<p><span><a href="/ru/convert/stringformat">StringFormat</a>, <a href="/ru/convert/doubletostring">DoubleToString</a>, <a href="/ru/basis/types/double">Вещественные&nbsp;типы&nbsp;(double,&nbsp;float)</a></span></p> 
+<p><span><a href="/convert/stringformat">StringFormat</a>, <a href="/convert/doubletostring">DoubleToString</a>, <a href="/basis/types/double">Вещественные&nbsp;типы&nbsp;(double,&nbsp;float)</a></span></p>
 <br>

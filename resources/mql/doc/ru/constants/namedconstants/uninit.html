@@ -1,5 +1,5 @@
 <h1>Причины деинициализации</h1> 
-<p><span>Коды причины деинициализации <a href="/ru#expert">эксперта</a>, возвращаемые функцией <a href="/ru/check/uninitializereason">UninitializeReason()</a>. Могут иметь любые из следующих значений:</span></p> 
+<p><span>Коды причины деинициализации <a href="/ru#expert">эксперта</a>, возвращаемые функцией <a href="/check/uninitializereason">UninitializeReason()</a>. Могут иметь любые из следующих значений:</span></p>
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody> 
@@ -11,7 +11,7 @@
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_PROGRAM</span></p> </td> 
     <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>0</span></p> </td> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Эксперт прекратил свою работу, вызвав функцию <a href="/ru/common/expertremove">ExpertRemove()</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Эксперт прекратил свою работу, вызвав функцию <a href="/common/expertremove">ExpertRemove()</a></span></p> </td>
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_REMOVE</span></p> </td> 
@@ -51,7 +51,7 @@
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><a id="reason_initfailed"></a><span>REASON_INITFAILED</span></p> </td> 
     <td style="vertical-align:top; width:93px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>8</span></p> </td> 
-    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Признак того, что обработчик <a href="/ru/basis/function/events#oninit">OnInit()</a> вернул ненулевое значение</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Признак того, что обработчик <a href="/basis/function/events#oninit">OnInit()</a> вернул ненулевое значение</span></p> </td>
    </tr> 
    <tr style="text-align:left;vertical-align:top;"> 
     <td style="vertical-align:top; width:159px; padding:5px; border:solid thin #b1c2d6;"><p><span>REASON_CLOSE</span></p> </td> 
@@ -61,7 +61,7 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>Код причины деинициализации передается также в качестве параметра предопределенной функции <a href="/ru/basis/function/events#ondeinit">OnDeinit</a>(const int reason).</span></p> 
+<p><span>Код причины деинициализации передается также в качестве параметра предопределенной функции <a href="/basis/function/events#ondeinit">OnDeinit</a>(const int reason).</span></p>
 <p><span>Индикаторы принимают пока только код 1(REASON_REMOVE) и код 2(REASON_RECOMPILE).</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 

@@ -2,46 +2,46 @@
   [
     "#define",
     "Директива #define используется для присвоения мнемонических имен выражениям",
-    "/ru/basis/preprosessor/constant"
+    "/basis/preprosessor/constant"
   ],
   [
     "#undef",
     "Директива #undef предназначена для отмены макроса, объявленного ранее при помощи #define.",
-    "/ru/basis/preprosessor/constant"
+    "/basis/preprosessor/constant"
   ],
   [
     "#property",
     "Параметры #property - это настройки, которые помогают клиентскому терминалу правильно обслуживать программы без необходимости их явного запуска.",
-    "/ru/basis/preprosessor/compilation"
+    "/basis/preprosessor/compilation"
   ],
   [
     "#include",
     "Используется для включения других файлов. Если имя файла заключено в кавычки - файл ищется в текущей папке, если в угловые скобки - файл будет искаться в папке \\MQL4 \\Include.",
-    "/ru/basis/preprosessor/include"
+    "/basis/preprosessor/include"
   ],
   [
     "#import",
     "Используется для импорта функций из откомпилированных модулей MQL4 (файлы *.ex4) и из модулей операционной системы (файлы *.dll).",
-    "/ru/basis/preprosessor/import"
+    "/basis/preprosessor/import"
   ],
   [
     "#ifdef",
     "Директива условной компиляции препроцессора позволяющая компилировать или пропускать часть программы в зависимости от выполнения некоторого условия.",
-    "/ru/basis/preprosessor/conditional_compilation"
+    "/basis/preprosessor/conditional_compilation"
   ],
   [
     "#ifdef",
     "Директива условной компиляции препроцессора позволяющая компилировать или пропускать часть программы в зависимости от выполнения некоторого условия.",
-    "/ru/basis/preprosessor/conditional_compilation"
+    "/basis/preprosessor/conditional_compilation"
   ],
   [
     "#else",
     "Директива условной компиляции препроцессора позволяющая компилировать или пропускать часть программы в зависимости от выполнения некоторого условия.",
-    "/ru/basis/preprosessor/conditional_compilation"
+    "/basis/preprosessor/conditional_compilation"
   ],
   [
     "#else",
     "Директива условной компиляции препроцессора позволяющая компилировать или пропускать часть программы в зависимости от выполнения некоторого условия.",
-    "/ru/basis/preprosessor/conditional_compilation"
+    "/basis/preprosessor/conditional_compilation"
   ]
 ]

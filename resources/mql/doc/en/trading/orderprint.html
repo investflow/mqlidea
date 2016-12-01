@@ -1,0 +1,27 @@
+<h1>OrderPrint</h1> 
+<p><span>Prints information about the selected order in the log.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>OrderPrint</span><span>();</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>Prints information about the selected order in the log in the following format:</span></p> 
+<p><span>#ticket number; open time; trade operation; amount of lots; symbol; open price; Stop Loss; Take Profit; close time; close price; commission; swap; profit; comment; magic number; pending order expiration date.</span></p> 
+<p><span>Note</span></p> 
+<p><span>The order must be previously selected by the <a href="/trading/orderselect">OrderSelect()</a> function.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">OrderSelect</span><span>(10,&nbsp;SELECT_BY_TICKET)==</span><span style="color: #0000ff;">true</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">OrderPrint</span><span>();</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"OrderSelect&nbsp;failed&nbsp;error&nbsp;code&nbsp;is"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<br>

@@ -1,0 +1,132 @@
+<h1>Other operations</h1> 
+<h2>Indexing ( [] )</h2> 
+<p><span>When addressing the i-th element of the array, the expression value is the value of a variable with the serial number i.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>array[i]&nbsp;=&nbsp;</span><span style="color: #008080;">3</span><span>;&nbsp;</span><span style="color: #808080;">//&nbsp;Assign&nbsp;the&nbsp;value&nbsp;of&nbsp;3&nbsp;to&nbsp;i-th&nbsp;element&nbsp;of&nbsp;the&nbsp;array.</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Only an integer can be index of an array. Four-dimensional and below arrays are allowed. Each dimension is indexed from 0 to </span><span style="font-weight: bold;">dimension size</span><span>-1. In particular case, for a one-dimensional array consisting of 50 elements, the reference to the first element will look like array [0], that to the last element will be array [49].</span></p> 
+<p><span>When addressing beyond the array, the executing subsystem will generate a critical error, and the program will be stopped.</span></p> 
+<h2>Calling Function with x1, x2 ,..., xn Arguments</h2> 
+<p><span>Each argument can represent a constant, variable, or expression of the corresponding type. The arguments passed are separated by commas and must be inside of parentheses, the opening parenthesis must follow the name of the called function.</span></p> 
+<p><span>The expression value is the value returned by the function. If the return value is of void type, such function call cannot be placed to the right in the assignment operation. Please make sure that the expressions x1,..., xn are executed exactly in this order.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;int</span><span>&nbsp;length=</span><span style="color: #339966;">1000000</span><span>;&nbsp;&nbsp;&nbsp;</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;string</span><span>&nbsp;a=</span><span style="color: #008080;">"a"</span><span>,b=</span><span style="color: #008080;">"b"</span><span>,c;</span><br> <span style="color: #808080;">//---Other&nbsp;Operations</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;start=</span><span style="color: #0000ff;">GetTickCount</span><span>(),stop;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">long</span><span>&nbsp;i;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(i=</span><span style="color: #339966;">0</span><span>;i&lt;length;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c=a+b;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;stop=</span><span style="color: #0000ff;">GetTickCount</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"time&nbsp;for&nbsp;'c&nbsp;=&nbsp;a&nbsp;+&nbsp;b'&nbsp;=&nbsp;"</span><span>,(stop-start),</span><span style="color: #008080;">"&nbsp;milliseconds,&nbsp;i&nbsp;=&nbsp;"</span><span>,i);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h2>Comma Operation ( , )</h2> 
+<p><span>Expressions separated by commas are executed from left to right. All side effects of the left expression calculation can appear before the right expression is calculated. The result type and value coincide with those of the right expression. The list of parameters to be passed (see above) can be considered as an example.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">for</span><span>(i=</span><span style="color: #008000;">0</span><span>,j=</span><span style="color: #008000;">99</span><span>;&nbsp;i&lt;</span><span style="color: #008000;">100</span><span>;&nbsp;i++,j--)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(array[i][j]);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h2><a id="operation_dot"></a>Dot Operator ( . )</h2> 
+<p><span>For the direct <a href="/basis/types/classes#dot_operation">access to the public members</a> of structures and classes the dot operation is used. Syntax:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>Variable_name_of_structure_type.Member_name</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">struct</span><span>&nbsp;SessionTime</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;sessionName;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;startHour;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;startMinutes;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;endHour;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;endMinutes;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;st;</span><br> <span>&nbsp;&nbsp;&nbsp;st.sessionName=</span><span style="color: #008080;">"Asian"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;st.startHour=0;</span><br> <span>&nbsp;&nbsp;&nbsp;st.startMinutes=0;</span><br> <span>&nbsp;&nbsp;&nbsp;st.endHour=9;</span><br> <span>&nbsp;&nbsp;&nbsp;st.endMinutes=0;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h2><a id="context_allow"></a>Scope Resolution Operation ( :: )</h2> 
+<p><span>Each function in a mql4 program has its own execution scope. For example, the <a href="/common/print">Print()</a> system function is performed in a global scope. <a href="/basis/preprosessor/import">Imported</a> functions are called in the scope of the corresponding import. Method functions of <a href="/basis/types/classes#class">classes</a> have the scope of the corresponding class. The syntax of the scope resolution operation is as follows:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>[Scope_name]::Function_name(parameters)</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>If there is no scope name, this is the explicit direction to use the global scope. If there is no scope resolution operation, the function is sought in the nearest scope. If there is no function in the local scope, the search is conducted in the global scope.</span></p> 
+<p><span>The scope resolution operation is also used to <a href="/basis/function#function_definition">define function</a>-class member.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>type&nbsp;Class_name::Function_name(parameters_description)</span><br> <span>&nbsp;&nbsp;&nbsp;{</span><br> <span>//&nbsp;function&nbsp;body</span><br> <span>&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Use of several functions of the same name from different execution contexts in a program may cause ambiguity. The priority order of function calls without explicit scope specification is the following:</span></p> 
+<ol style="text-indent:0px; padding-left:0; margin-top:0; margin-bottom:0; margin-left: 37px;list-style-position:outside; list-style-type:decimal"> 
+ <li value="1" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Class methods. If no function with the specified name is set in the class, move to the next level.</span></li> 
+ <li value="2" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>MQL4 functions. If the language does not have such a function, move to the next level.</span></li> 
+ <li value="3" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>User defined global functions. If no function with the specified name is found, move to the next level.</span></li> 
+ <li value="4" style="text-align: justify; padding: 0px 0px 0px 0px; margin-top: 3px; margin-right: 17px; margin-bottom: 3px;"><span>Imported functions. If no function with the specified name is found, the compiler returns an error.</span></li> 
+</ol> 
+<p><span>To avoid the ambiguity of function calls, always explicitly specify the function scope using the scope resolution operation</span><span>.</span></p> 
+<p><span>&nbsp;</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">script_show_inputs</span><br> <span style="color: #0000ff;">#import&nbsp;</span><span style="color: #008080;">"kernel32.dll"</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;</span><span style="color: #0000ff;">GetLastError</span><span>(</span><span style="color: #0000ff;">void</span><span>);</span><br> <span style="color: #0000ff;">#import</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">class</span><span>&nbsp;CCheckContext</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_id;</span><br> <span style="color: #0000ff;">public</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CCheckContext()&nbsp;{&nbsp;m_id=1234;&nbsp;}</span><br> <span style="color: #0000ff;">protected</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">GetLastError</span><span>()&nbsp;{&nbsp;</span><span style="color: #0000ff;">return</span><span>(m_id);&nbsp;}</span><br> <span>&nbsp;&nbsp;};</span><br> <span style="color: #0000ff;">class</span><span>&nbsp;CCheckContext2&nbsp;:&nbsp;</span><span style="color: #0000ff;">public</span><span>&nbsp;CCheckContext</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_id2;</span><br> <span style="color: #0000ff;">public</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CCheckContext2()&nbsp;{&nbsp;m_id2=5678;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">void</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>();</span><br> <span style="color: #0000ff;">protected</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">GetLastError</span><span>()&nbsp;{&nbsp;</span><span style="color: #0000ff;">return</span><span>(m_id2);&nbsp;}</span><br> <span>&nbsp;&nbsp;};</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;CCheckContext2::</span><span style="color: #0000ff;">Print</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Terminal&nbsp;GetLastError"</span><span>,::</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"kernel32&nbsp;GetLastError"</span><span>,kernel32::</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"parent&nbsp;GetLastError"</span><span>,CCheckContext::</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"our&nbsp;GetLastError"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;}&nbsp;&nbsp;</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;CCheckContext2&nbsp;test;</span><br> <span>&nbsp;&nbsp;&nbsp;test.</span><span style="color: #0000ff;">Print</span><span>();</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<h2><a id="sizeof"></a>Operation of Obtaining Data Type Size or Size of Any Data Type Object ( sizeof )</h2> 
+<p><span>Using the </span><span style="color: #0000ff;">sizeof</span><span> operation, the memory size corresponding to an identifier or type can be defined. The sizeof operation is of the following format:</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">sizeof</span><span>(expression)</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Any identifier, or type name enclosed in brackets can be used as an expression. Note that the void type name can't be used, and the identifier cannot belong to the field of bits, or be a function name.</span></p> 
+<p><span>If the expression is the name of a static array (i.e. the first dimension is given), then the result is the size of the whole array (i.e. the product of the number of elements and the length of the type). If the expression is the name of a dynamic array (the first dimension is not specified), the result will be the size of the object of the <a href="/basis/types/dynamic_array">dynamic array</a>.</span></p> 
+<p><span>When sizeof is applied to the name of structure or class type, or to the identifier of the structure or class type, the result is the actual size of the structure or class.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">struct</span><span>&nbsp;myStruct</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;&nbsp;&nbsp;h;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;b;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;f;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;str;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"sizeof(str)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">sizeof</span><span>(str));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"sizeof(myStruct)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">sizeof</span><span>(myStruct));&nbsp;&nbsp;&nbsp;</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>The size is calculated at the compilation stage.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/basis/operations/rules">Precedence Rules</a></span></p> 
+<p><span>&nbsp;</span></p> 
+<br>

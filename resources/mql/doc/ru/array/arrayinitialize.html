@@ -88,7 +88,7 @@
 <p><span>Возвращаемое значение</span></p> 
 <p><span>Количество инициализированных элементов.</span></p> 
 <p><span>Примечание</span></p> 
-<p><span>Функция <a href="/ru/array/arrayresize">ArrayResize()</a> позволяет задать для массива размер с некоторым запасом для его будущего увеличения без физического перераспределения памяти. Это сделано для улучшения быстродействия, так как операции по распределению памяти являются достаточно медленными. </span></p> 
+<p><span>Функция <a href="/array/arrayresize">ArrayResize()</a> позволяет задать для массива размер с некоторым запасом для его будущего увеличения без физического перераспределения памяти. Это сделано для улучшения быстродействия, так как операции по распределению памяти являются достаточно медленными. </span></p>
 <p><span>Инициализация массива выражением </span><span style="color: #0000ff;">ArrayInitialize</span><span>(array, init_val) не означает инициализацию этим же значением и элементов резерва, выделенного для этого массива. При последующих увеличениях размера массива </span><span style="font-style: italic;">array</span><span> функцией ArrayResize() в пределах текущего резерва, в конец массива добавляются элементы, значения которых не определены и, чаще всего, не равны </span><span style="font-style: italic;">init_val</span><span>.</span></p> 
 <p><span style="font-weight: bold;">Пример:</span></p> 
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 

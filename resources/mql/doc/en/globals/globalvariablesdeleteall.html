@@ -1,0 +1,22 @@
+<h1>GlobalVariablesDeleteAll</h1> 
+<p><span>Deletes global variables of the client terminal.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>GlobalVariablesDeleteAll</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prefix_name=NULL</span><span style="color: #000000;">,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;All&nbsp;global&nbsp;variables&nbsp;with&nbsp;names&nbsp;beginning&nbsp;with&nbsp;the&nbsp;prefix</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime&nbsp;</span><span>&nbsp;&nbsp;</span><span>limit_data=0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;All&nbsp;global&nbsp;variables&nbsp;that&nbsp;were&nbsp;changed&nbsp;before&nbsp;this&nbsp;date</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>prefix_name=NULL</span></p> 
+<p><span>[in] Name prefix global variables to remove. If you specify a prefix NULL or empty string, then all variables that meet the data criterion will be deleted.</span></p> 
+<p><span>limit_data=0</span></p> 
+<p><span>[in] Optional parameter. Date to select global variables by the time of their last modification. The function removes global variables, which were changed before this date. If the parameter is zero, then all variables that meet the first criterion (prefix) are deleted.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>The number of deleted variables.</span></p> 
+<p><span>Note</span></p> 
+<p><span>If both options are equal to zero (prefix_name = NULL and limit_data = 0), then function deletes all global variables of the terminal. If both parameters are specified, then it deletes global variables corresponding to both parameters.</span></p> 
+<p><span>Global variables exist in the client terminal during 4 weeks since their last use, then they are automatically deleted</span><span>.</span></p> 
+<br>

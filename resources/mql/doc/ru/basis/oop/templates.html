@@ -1,5 +1,5 @@
 <h1>Шаблоны функций</h1> 
-<p><span><a href="/ru/basis/function/functionoverload">Перегруженные функции</a> обычно используются для выполнения похожих операций над различными типами данных. Простой пример такой функции в MQL4 - <a href="/ru/array/arraysize">ArraySize()</a>, которая возвращает размер массива любого типа. На самом деле эта системная функция является перегруженной, и вся реализация такой перегрузки спрятана от разработчика программ на MQL4:</span></p> 
+<p><span><a href="/basis/function/functionoverload">Перегруженные функции</a> обычно используются для выполнения похожих операций над различными типами данных. Простой пример такой функции в MQL4 - <a href="/array/arraysize">ArraySize()</a>, которая возвращает размер массива любого типа. На самом деле эта системная функция является перегруженной, и вся реализация такой перегрузки спрятана от разработчика программ на MQL4:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -19,7 +19,7 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>А для массива типа <a href="/ru/constants/structures/mqlrates">MqlRates</a> для работы с котировками в формате исторических данных функцию <a href="/ru/array/arraysize">ArraySize()</a> можно представить таким образом:</span></p> 
+<p><span>А для массива типа <a href="/constants/structures/mqlrates">MqlRates</a> для работы с котировками в формате исторических данных функцию <a href="/array/arraysize">ArraySize()</a> можно представить таким образом:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -29,7 +29,7 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>Таким образом, очень удобно использовать одну и ту же функцию для работы с разными типами, но необходимо самостоятельно провести всю предварительную работу, а именно – сделать <a href="/ru/basis/function/functionoverload">перегрузку</a> нужной функции для всех типов данных, с которыми она должна будет корректно работать.</span></p> 
+<p><span>Таким образом, очень удобно использовать одну и ту же функцию для работы с разными типами, но необходимо самостоятельно провести всю предварительную работу, а именно – сделать <a href="/basis/function/functionoverload">перегрузку</a> нужной функции для всех типов данных, с которыми она должна будет корректно работать.</span></p>
 <p><span>Есть более удобное решение – если для каждого типа данных должны выполняться идентичные операции, то более компактным и удобным решением является использование шаблонов функций. При этом программисту нужно написать всего одно описание шаблона функции. При таком описании шаблона в качестве параметра достаточно указать не конкретный тип данных, с которыми должна работать функция, а некий формальный параметр. Основываясь на типах аргументов, использованных при вызове этой функции, компилятор будет автоматически генерировать разные функции для соответствующей обработки каждого типа.</span></p> 
 <p><span>Определение шаблона функции начинается с ключевого слова </span><span style="color: #0000ff;">template,</span><span> после которого в угловых скобках идет список формальных параметров. Каждый формальный параметр предваряется ключевым словом </span><span style="color: #0000ff;">typename</span><span>. Формальные типы параметров – встроенные типы или типы, определенные пользователем. Они используются:</span></p> 
 <p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>для задания типов аргументов функции, </span></p> 
@@ -47,7 +47,7 @@
   </tbody> 
  </table> 
 </div> 
-<p><span>Данный шаблон описывает функцию, которая находит максимальное значение в переданном массиве и возвращает его в качестве результата. Напомним, что встроенная в MQL4 функция <a href="/ru/array/arraymaximum">ArrayMaximum()</a> возвращает только индекс найденного максимального значения, по которому пользователь в дальнейшем может получить уже и само значение. Например, так:</span></p> 
+<p><span>Данный шаблон описывает функцию, которая находит максимальное значение в переданном массиве и возвращает его в качестве результата. Напомним, что встроенная в MQL4 функция <a href="/array/arraymaximum">ArrayMaximum()</a> возвращает только индекс найденного максимального значения, по которому пользователь в дальнейшем может получить уже и само значение. Например, так:</span></p>
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
@@ -101,5 +101,5 @@
  </table> 
 </div> 
 <p><span>&nbsp;</span></p> 
-<p><span>Шаблоны функций нельзя объявлять с ключевыми словами <a href="/ru/basis/function/export">export</a>, <a href="/ru/basis/oop/virtual">virtual</a> и <a href="/ru/basis/function/extfunctions">#import</a>.</span></p> 
+<p><span>Шаблоны функций нельзя объявлять с ключевыми словами <a href="/basis/function/export">export</a>, <a href="/basis/oop/virtual">virtual</a> и <a href="/basis/function/extfunctions">#import</a>.</span></p>
 <br>

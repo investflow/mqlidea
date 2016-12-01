@@ -1,0 +1,23 @@
+<h1>ResourceSave</h1> 
+<p><span>Saves a resource into the specified file.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ResourceSave</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;</span><span>resource_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Resource&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;</span><span>file_name</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;File&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Parameters</span></p> 
+<p><span>resource_name</span></p> 
+<p><span>[in] &nbsp;The name of the resource, must start with "::".</span></p> 
+<p><span>file_name</span></p> 
+<p><span>[in] &nbsp;The name of the file relative to MQL4\Files.</span></p> 
+<p><span>Return Value</span></p> 
+<p><span>true  in case of success, otherwise false. For the error information call <a href="/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Note</span></p> 
+<p><span>The function always overwrites a file and creates all the required intermediate directories in the file name if necessary.</span></p> 
+<p><span>See also</span></p> 
+<p><span><a href="/runtime/resources">Resources</a>, <a href="/objects/objectcreate">ObjectCreate()</a>, <a href="/common/playsound">PlaySound()</a>, <a href="/objects/objectsetstring">ObjectSetString()</a>, <a href="/constants/objectconstants/enum_object_property#enum_object_property_string">OBJPROP_BMPFILE</a></span></p> 
+<br>

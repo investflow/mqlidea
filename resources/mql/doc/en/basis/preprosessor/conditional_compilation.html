@@ -1,0 +1,46 @@
+<h1>Conditional Compilation (#ifdef, #ifndef, #else, #endif)</h1> 
+<p><span>Preprocessor conditional compilation directives allow compiling or skipping a part of the program depending on the fulfillment of a certain condition.</span></p> 
+<p><span>That condition can take one of the following forms.</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#ifdef</span><span>&nbsp;identifier</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;the&nbsp;code&nbsp;located&nbsp;here&nbsp;is&nbsp;compiled&nbsp;if&nbsp;identifier&nbsp;has&nbsp;already&nbsp;been&nbsp;defined&nbsp;for&nbsp;the&nbsp;preprocessor&nbsp;in&nbsp;#define&nbsp;directive.</span><br> <span style="color: #0000ff;">#endif</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#ifndef</span><span>&nbsp;identifier</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;the&nbsp;code&nbsp;located&nbsp;here&nbsp;is&nbsp;compiled&nbsp;if&nbsp;identifier&nbsp;is&nbsp;not&nbsp;currently&nbsp;defined&nbsp;by&nbsp;#define&nbsp;preprocessor&nbsp;directive.</span><br> <span style="color: #0000ff;">#endif</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Any of the conditional compilation directives can be followed by any number of lines possibly containing #else directive and ending with #endif. If the verified condition is true, the lines between #else and #endif are ignored. If the verified condition is not fulfilled, all lines between checking and #else directive (or #endif directive if the former is absent) are ignored.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#ifndef</span><span>&nbsp;TestMode</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#define</span><span>&nbsp;TestMode</span><br> <span style="color: #0000ff;">#endif</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;#ifdef</span><span>&nbsp;TestMode</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Test&nbsp;mode"</span><span>);</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;#else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Normal&nbsp;mode"</span><span>);</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;#endif</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p><span>Depending on the program type and compilation mode, the standard macros are defined the following way:</span></p> 
+<p><span>__MQL4__ &nbsp;macro is defined when compiling *.mq4 file, __MQL5__ macro is defined when compiling *.mq5 one.</span><br> <span>_DEBUG macro is defined when compiling in debug mode.</span><br> <span>_RELEASE macro is defined when compiling in release mode.</span></p> 
+<p><span style="font-weight: bold;">Example:</span></p> 
+<div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody>
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;#ifdef</span><span>&nbsp;</span><span style="color: #333399;">__MQL5__</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#ifdef</span><span>&nbsp;</span><span style="color: #333399;">_DEBUG</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Hello&nbsp;from&nbsp;MQL5&nbsp;compiler&nbsp;[DEBUG]"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#ifdef</span><span>&nbsp;</span><span style="color: #333399;">_RELEASE</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Hello&nbsp;from&nbsp;MQL5&nbsp;compiler&nbsp;[RELEASE]"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#endif</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#endif</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;#else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#ifdef</span><span>&nbsp;</span><span style="color: #333399;">__MQL4__</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#ifdef</span><span>&nbsp;</span><span style="color: #333399;">_DEBUG</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Hello&nbsp;from&nbsp;MQL4&nbsp;compiler&nbsp;[DEBUG]"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#ifdef</span><span>&nbsp;</span><span style="color: #333399;">_RELEASE</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Hello&nbsp;from&nbsp;MQL4&nbsp;compiler&nbsp;[RELEASE]"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#endif</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#endif</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">#endif</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;#endif</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody>
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<br>
