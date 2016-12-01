@@ -1,0 +1,31 @@
+<h1>StringSubstr</h1> 
+<p><span>Извлекает подстроку из текстовой строки, начинающейся c указанной позиции.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>StringSubstr</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>string_value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;строка</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start_pos</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;с&nbsp;какой&nbsp;позиции&nbsp;начать</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>length=0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;длина&nbsp;извлекаемой&nbsp;строки</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>string_value</span></p> 
+<p><span>[in] &nbsp;Строка, из которой должна быть извлечена подстрока.</span></p> 
+<p><span>start_pos</span></p> 
+<p><span>[in] &nbsp;Начальная позиция подстроки. Может быть от 0 до <a href="/ru/strings/stringlen">StringLen</a>(text) -1.</span></p> 
+<p><span>length=0</span></p> 
+<p><span>[in] &nbsp;Длина извлекаемой подстроки. Если значение параметра меньше или равно 0, либо параметр не задан, то будет извлекаться подстрока, начиная с указанной позиции и до конца строки.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Копия извлеченной подстроки, если возможно, иначе возвращается пустая строка.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="font-weight: bold; color: #0000ff;">string</span><span>&nbsp;text&nbsp;=&nbsp;</span><span style="color: #008080;">"Быстрая&nbsp;коричневая&nbsp;собака&nbsp;перепрыгивает&nbsp;ленивую&nbsp;лисицу"</span><span>;</span><br> <span>&nbsp;&nbsp;</span><span style="font-weight: bold; color: #0000ff;">string</span><span>&nbsp;substr&nbsp;=&nbsp;</span><span style="font-weight: bold; color: #0000ff;">StringSubstr</span><span>(text,&nbsp;8,&nbsp;10);</span><br> <span>&nbsp;&nbsp;</span><span style="font-style: italic; color: #808080;">//&nbsp;извлеченная&nbsp;строка&nbsp;"коричневая"</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

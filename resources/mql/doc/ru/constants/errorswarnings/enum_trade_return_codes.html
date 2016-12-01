@@ -1,0 +1,185 @@
+<h1>Коды возврата торгового сервера</h1> 
+<p><span><a href="/ru/check/getlasterror">GetLastError()</a> - функция, возвращающая коды ошибок. Кодовые константы ошибок определены в файле stderror.mqh. Для вывода текстовых сообщений следует использовать функцию ErrorDescription(), определенную в файле stdlib.mqh.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#include</span><span>&nbsp;&lt;stderror.mqh&gt;</span><br> <span style="color: #0000ff;">#include</span><span>&nbsp;&lt;stdlib.mqh&gt;</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;SendMyMessage(</span><span style="color: #0000ff;">string</span><span>&nbsp;text)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;check;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SendMail</span><span>(</span><span style="color: #008080;">"Test"</span><span>,&nbsp;text);</span><br> <span>&nbsp;&nbsp;&nbsp;check=</span><span style="color: #0000ff;">GetLastError</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(check!=ERR_NO_ERROR)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Сообщение&nbsp;не&nbsp;отправлено.&nbsp;Ошибка:&nbsp;"</span><span>,ErrorDescription(check));</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Код</span></p> </td> 
+    <td style="vertical-align:top; width:255px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Константа</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>0</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет ошибки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>1</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_RESULT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет ошибки, но результат неизвестен</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>2</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_COMMON_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Общая ошибка</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>3</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_TRADE_PARAMETERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильные параметры</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SERVER_BUSY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Торговый сервер занят</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OLD_VERSION</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Старая версия клиентского терминала</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>6</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_CONNECTION</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет связи с торговым сервером</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>7</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_ENOUGH_RIGHTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Недостаточно прав</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>8</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_FREQUENT_REQUESTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слишком частые запросы</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>9</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_MALFUNCTIONAL_TRADE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Недопустимая операция, нарушающая функционирование сервера</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>64</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ACCOUNT_DISABLED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Счет заблокирован</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>65</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_ACCOUNT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильный номер счета</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>128</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_TIMEOUT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Истек срок ожидания совершения сделки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>129</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_PRICE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильная цена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>130</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_STOPS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильные стопы</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>131</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_TRADE_VOLUME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильный объем</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>132</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_MARKET_CLOSED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Рынок закрыт</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>133</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_DISABLED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Торговля запрещена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>134</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_ENOUGH_MONEY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Недостаточно денег для совершения операции</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>135</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_PRICE_CHANGED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цена изменилась</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>136</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OFF_QUOTES</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет цен</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>137</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_BROKER_BUSY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Брокер занят</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>138</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_REQUOTE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Новые цены</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>139</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ORDER_LOCKED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ордер заблокирован и уже обрабатывается</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>140</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_LONG_POSITIONS_ONLY_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Разрешена только покупка</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>141</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_MANY_REQUESTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слишком много запросов</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>145</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_MODIFY_DENIED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Модификация запрещена, так как ордер слишком близок к рынку</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>146</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_CONTEXT_BUSY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Подсистема торговли занята</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>147</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_EXPIRATION_DENIED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Использование даты истечения ордера запрещено брокером</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>148</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_TOO_MANY_ORDERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Количество открытых и отложенных ордеров достигло предела, установленного брокером</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>149</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_HEDGE_PROHIBITED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Попытка открыть противоположный ордер в случае, если хеджирование запрещено</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>150</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_PROHIBITED_BY_FIFO</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Попытка закрыть позицию по инструменту в противоречии с правилом FIFO</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<br>

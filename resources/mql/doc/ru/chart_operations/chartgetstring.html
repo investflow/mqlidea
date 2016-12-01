@@ -1,0 +1,47 @@
+<h1>ChartGetString</h1> 
+<p><span>Возвращает значение соответствующего свойства указанного графика. Свойство графика должно быть типа string. Существует 2 варианта функции.</span></p> 
+<p><span>1. Непосредственно возвращает значение свойства.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>ChartGetString</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>prop_id&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;свойства</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>2. Возвращает true или false в зависимости от успешности выполнения функции. &nbsp;В случае успеха значение свойства помещается в приемную переменную, передаваемую по ссылке последним параметром.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ChartGetString</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prop_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;свойства</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&amp;</span><span>&nbsp;</span><span>string_var&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;сюда&nbsp;примем&nbsp;значение&nbsp;свойства</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>chart_id</span></p> 
+<p><span>[in] &nbsp;Идентификатор графика. 0 означает текущий график.</span></p> 
+<p><span>prop_id</span></p> 
+<p><span>[in] &nbsp;Идентификатор свойства графика. Значение может быть одним из значений перечисления <a href="/ru/constants/chartconstants/enum_chart_property#enum_chart_property_string">ENUM_CHART_PROPERTY_STRING</a>.</span></p> 
+<p><span>string_var</span></p> 
+<p><span>[out] &nbsp;Переменная типа string, принимающая &nbsp;значение запрашиваемого свойства.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Значение типа string.</span></p> 
+<p><span>Для второго варианта вызова возвращает true, если данное свойство поддерживается и значение было помещено в переменную string_var, иначе возвращает false. Чтобы получить дополнительную информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Функция ChartGetString может использоваться для считывания комментариев, выведенных &nbsp;на график функциями <a href="/ru/common/comment">Comment()</a> или <a href="/ru/chart_operations/chartsetstring">ChartSetString()</a>.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartSetString</span><span>(0,</span><span style="color: #0000ff;">CHART_COMMENT</span><span>,</span><span style="color: #008080;">"Test&nbsp;comment.\nSecond&nbsp;line.\nThird!"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartRedraw</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Sleep</span><span>(1000);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;comm=</span><span style="color: #0000ff;">ChartGetString</span><span>(0,</span><span style="color: #0000ff;">CHART_COMMENT</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(comm);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/common/comment">Comment()</a>, <a href="/ru/chart_operations/chartsetstring">ChartSetString()</a></span></p> 
+<br>

@@ -1,0 +1,26 @@
+<h1>Symbol</h1> 
+<p><span>Возвращает текстовую строку с именем текущего финансового инструмента.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>Symbol</span><span>();</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>Нет.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Текстовая строка с именем текущего финансового инструмента.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;total=</span><span style="color: #0000ff;">OrdersTotal</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;pos=0;pos&lt;total;pos++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;результат&nbsp;выбора&nbsp;проверки,&nbsp;так&nbsp;как&nbsp;ордер&nbsp;может&nbsp;быть&nbsp;закрыт&nbsp;или&nbsp;удален&nbsp;в&nbsp;это&nbsp;время!</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">OrderSelect</span><span>(pos,&nbsp;SELECT_BY_POS)==</span><span style="color: #0000ff;">false</span><span>)&nbsp;</span><span style="color: #0000ff;">continue</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">OrderType</span><span>()&gt;OP_SELL&nbsp;||&nbsp;</span><span style="color: #0000ff;">OrderSymbol</span><span>()!=</span><span style="color: #0000ff;">Symbol</span><span>())&nbsp;</span><span style="color: #0000ff;">continue</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;делает&nbsp;некоторую&nbsp;обработку...</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

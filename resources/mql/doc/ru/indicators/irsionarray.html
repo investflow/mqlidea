@@ -1,0 +1,36 @@
+<h1>iRSIOnArray</h1> 
+<p><span>Возвращает </span><span>значение </span><span>технического индикатора Relative Strength Index, рассчитанного на данных, хранящихся в массиве.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>iRSIOnArray</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;массив</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>total</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;количество&nbsp;элементов</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>period</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;период</span><br> <span>&nbsp;&nbsp;&nbsp;int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>shift</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;сдвиг</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>array[]</span></p> 
+<p><span>[in] &nbsp;Массив с данными.</span></p> 
+<p><span>total</span></p> 
+<p><span>[in] &nbsp;Количество элементов для вычисления. 0 означает все элементы массива.</span></p> 
+<p><span>period</span></p> 
+<p><span>[in] &nbsp;Период усреднения для вычисления индикатора.</span></p> 
+<p><span>shift</span></p> 
+<p><span>[in] &nbsp;Индекс получаемого значения из индикаторного буфера (сдвиг относительно текущего бара на указанное количество периодов назад).</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Значение </span><span>технического индикатора Relative Strength Index, рассчитанного на данных, хранящихся в массиве array[].</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>В отличие от <a href="/ru/indicators/irsi">iRSI(...)</a>, функция iRSIOnArray не выбирает данные на основе названия инструмента, таймфрейма и используемой цены - ценовые данные должны быть подготовлены заранее. Расчет производится слева направо. Для организации доступа к элементам массива, как к таймсерии (то есть справа налево), необходимо использовать функцию <a href="/ru/array/arraysetasseries">ArraySetAsSeries()</a>.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">iRSIOnArray</span><span>(ExtBuffer,1000,14,0)&gt;</span><span style="color: #0000ff;">iRSI</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,14,</span><span style="color: #0000ff;">PRICE_CLOSE</span><span>,1))&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<br>

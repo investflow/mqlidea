@@ -1,0 +1,39 @@
+<h1>Особенности работы программ в тестере стратегий</h1> 
+<p><span>Тестер стратегий торгового терминала MetaTrader 4 позволяет протестировать работу советника на исторических данных. </span></p> 
+<p><span>При тестировании советника следует учитывать особенности тестирования и оптимизации программ в тестере стратегий:</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/runtime/testing#function_limitations">Ограничения работы функций в тестере торговых стратегий</a></span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/runtime/testing#globals">Глобальные переменные клиентского терминала</a></span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/runtime/testing#time">Моделирование времени в тестере</a></span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/runtime/testing#objects">Графические объекты при тестировании</a></span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/runtime/testing#events">Обработка событий в тестере</a></span></p> 
+<h2>&nbsp;</h2> 
+<h2><a id="function_limitations"></a>Ограничения работы функций в тестере торговых стратегий</h2> 
+<p><span>Существуют ограничения работы некоторых функций в тестере стратегий клиентского терминала, их вызов приведет к ошибке <a href="/ru/constants/errorswarnings/errorcodes">4059</a> (Функция не разрешена в тестовом режиме).</span></p> 
+<h3><a id="sleep"></a>Функция Sleep()</h3> 
+<p><span>Функция <a href="/ru/common/sleep">Sleep()</a> в тестере стратегий не вызывает никаких задержек.</span></p> 
+<h3><a id="print"></a>Функции Print() и PrintFormat()</h3> 
+<p><span>Для увеличения быстродействия при оптимизации параметров советника функции <a href="/ru/common/print">Print()</a> и <a href="/ru/common/printformat">PrintFormat()</a> не выполняются. Исключением является использование этих функций внутри обработчика <a href="/ru/basis/function/events#oninit">OnInit()</a>. Это позволяет облегчить поиск причин ошибок при их возникновении.</span></p> 
+<h3><a id="alert_etc"></a>Функции Alert(), MessageBox(), PlaySound(), SendFTP, SendMail(), SendNotification(), WebRequest()</h3> 
+<p><span>Функции взаимодействия с "внешним миром" <a href="/ru/common/alert">Alert()</a>, <a href="/ru/common/messagebox">MessageBox()</a>, <a href="/ru/common/playsound">PlaySound()</a>, <a href="/ru/common/sendftp">SendFTP()</a>, <a href="/ru/common/sendmail">SendMail()</a>, <a href="/ru/common/sendnotification">SendNotification()</a> и <a href="/ru/common/webrequest">WebRequest()</a> в тестере стратегий не выполняются.</span></p> 
+<h3><a id="trade_operations"></a>The OrderSend(), OrderModify(), OrderDelete(), OrderClose(), OrderCloseBy() Functions</h3> 
+<p><span>Торговые операции по инструментам, отличным от тестируемого символа, не производятся.</span></p> 
+<h2>&nbsp;</h2> 
+<h2><a id="globals"></a>Глобальные переменные клиентского терминала</h2> 
+<p><span>Поскольку тестер является частью клиентского терминала, <a href="/ru/globals">глобальные переменные</a> тестера стратегий и терминала являются общими. По этой причине их имена не должны пересекаться с именами глобальных переменных работающих программ. Это может привести к некорректной работе программ и неправильным результатам тестирования.</span></p> 
+<h1>&nbsp;</h1> 
+<h2><a id="time"></a>Моделирование времени в тестере</h2> 
+<p><span>При тестировании производится моделирование времени в соответствии с историческими данными. Локальное время <a href="/ru/dateandtime/timelocal">TimeLocal()</a> всегда равно серверному времени <a href="/ru/dateandtime/timecurrent">TimeCurrent()</a>. В свою очередь, серверное время всегда равно времени, соответствующему времени GMT - <a href="/ru/dateandtime/timegmt">TimeGMT()</a>. Таким образом, все эти функции при тестировании выдают одно и то же время.</span></p> 
+<p><span>Отсутствие разницы между GMT, локальным и серверным временем в тестере сделано сознательно по той самой причине, что связь с сервером может быть не всегда. А результаты тестирования должны быть одинаковыми, независимо от наличия связи. Информация о серверном времени не хранится локально, а берётся с сервера.</span></p> 
+<p><span>&nbsp;</span></p> 
+<h2><a id="objects"></a>Графические объекты при тестировании</h2> 
+<p><span>При визуализации тестирования эксперт взаимодействует с реальным графиком. При обычном тестировании без визуализации эксперт работает с "виртуальным" графиком, который не отрисовывается, в этом случае возможны нюансы. При работе тестера в режиме оптимизации работа с графическими объектами не поддерживается.</span></p> 
+<p><span>&nbsp;</span></p> 
+<h2><a id="events"></a>Обработка событий в тестере</h2> 
+<p><span>В тестере стратегий реализована обработка следующих событий: инициализация советника перед одиночным прогоном <a href="/ru/basis/function/events#oninit">OnInit()</a>, деинициализация советника после одиночного прогона <a href="/ru/basis/function/events#ondeinit">OnDeInit()</a>, моделирование нового тика <a href="/ru/basis/function/events#ontick">OnTick()</a>.</span></p> 
+<p><span>Кроме того, по окончании тестирования эксперта на исторических данных перед вызовом функции деинициализации OnDeInit() генерируется событие <a href="/ru/runtime/event_fire#tester">Tester</a>, обработка которого осуществляется в функции <a href="/ru/basis/function/events#ontester">OnTester()</a>. Значение, возвращаемое данной функцией, используется в качестве критерия Custom max при оптимизации входных параметров.</span></p> 
+<p><span>Обработка событий <a href="/ru/runtime/event_fire#timer">Timer</a> и <a href="/ru/runtime/event_fire#chartevent">ChartEvent</a> в тестере стратегий не поддерживается.</span></p> 
+<p><span>&nbsp;</span></p> 
+<h2><a id="trade_opearations"></a>Ограничения торговых операций</h2> 
+<p><span>Торговые операции по инструментам, отличным от тестируемого символа, не производятся.</span></p> 
+<p><span>&nbsp;</span></p> 
+<br>

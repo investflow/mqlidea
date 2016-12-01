@@ -1,0 +1,83 @@
+<h1>Типы char, short, int и long</h1> 
+<h2><a id="char"></a>char</h2> 
+<p><span>Целый тип char занимает в памяти 1 байт (8 бит) и позволяет выразить в двоичной системе счисления 2^8 значений=256. Тип char может содержать как положительные, так и отрицательные значения. Диапазон изменения значений составляет от -128 до 127. </span></p> 
+<h2><a id="uchar"></a>uchar</h2> 
+<p><span>Целый тип uchar также занимает в памяти 1 байт, как и тип char, но в отличие от него, uchar предназначен только для положительных значений. Минимальное значение равно нулю, максимальное значение равно 255. Первая буква u в названии типа uchar является сокращением слова unsigned (беззнаковый).</span></p> 
+<h2><a id="short"></a>short</h2> 
+<p><span>Целый тип short имеет размер 2 байта(16 бит) и, соответственно, позволяет выразить множество значений равное 2 в степени 16: 2^16=65 536. Так как тип short является знаковым и содержит как положительные, так и отрицательные значения, то диапазон значений находится между -32 768 и 32 767.</span></p> 
+<h2><a id="ushort"></a>ushort</h2> 
+<p><span>Беззнаковым типом short является тип ushort, который также имеет размер 2 байта. Минимальное значение равно 0, максимальное значение 65 535. </span></p> 
+<h2><a id="int"></a>int</h2> 
+<p><span>Целый тип int имеет размер 4 байта (32 бита). Минимальное значение -2 147 483 648, максимальное значение 2 147 483 647.</span></p> 
+<h2><a id="uint"></a>uint</h2> 
+<p><span>Беззнаковый целый тип uint занимает в памяти 4 байта и позволяет выражать целочисленные значения от 0 до 4 294 967 295. </span></p> 
+<h2><a id="long"></a>long</h2> 
+<p><span>Целый тип long имеет размер 8 байт (64 бита). Минимальное значение -9 223 372 036 854 775 808, максимальное значение 9 223 372 036 854 775 807.</span></p> 
+<h2><a id="ulong"></a>ulong</h2> 
+<p><span>Целый тип ulong также занимает 8 байт и позволяет хранить значения от 0 до 18 446 744 073 709 551 615.</span></p> 
+<p><span style="font-weight: bold;">Примеры:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">char</span><span style="color: #ffffff;">&nbsp;&nbsp;</span><span>ch=</span><span style="color: #008000;">12</span><span>;</span><br> <span style="color: #0000ff;">short</span><span style="color: #ffffff;">&nbsp;</span><span>sh=-</span><span style="color: #008000;">5000</span><span>;</span><br> <span style="color: #0000ff;">int</span><span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span>in=</span><span style="color: #008000;">2445777</span><span>;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Так как беззнаковые целые типы не предназначены для хранения отрицательных значений, то попытка установить отрицательное значение может привести к неожиданным последствиям. Вот такой невинный скрипт приведет к бесконечному циклу:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;бесконечный&nbsp;цикл</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uchar</span><span>&nbsp;&nbsp;u_ch;</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">char</span><span>&nbsp;ch=-128;ch&lt;128;ch++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u_ch=ch;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ch&nbsp;=&nbsp;"</span><span>,ch,</span><span style="color: #008080;">"&nbsp;u_ch&nbsp;=&nbsp;"</span><span>,u_ch);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Правильно будет так:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;правильный&nbsp;вариант</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uchar</span><span>&nbsp;&nbsp;u_ch;</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">char</span><span>&nbsp;ch=-128;ch&lt;=127;ch++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u_ch=ch;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ch&nbsp;=&nbsp;"</span><span>,ch,</span><span style="color: #008080;">"&nbsp;u_ch&nbsp;=&nbsp;"</span><span>,u_ch);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(ch==127)&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Результат:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-128&nbsp;&nbsp;u_ch=&nbsp;128</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-127&nbsp;&nbsp;u_ch=&nbsp;129</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-126&nbsp;&nbsp;u_ch=&nbsp;130</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-125&nbsp;&nbsp;u_ch=&nbsp;131</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-124&nbsp;&nbsp;u_ch=&nbsp;132</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-123&nbsp;&nbsp;u_ch=&nbsp;133</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-122&nbsp;&nbsp;u_ch=&nbsp;134</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-121&nbsp;&nbsp;u_ch=&nbsp;135</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-120&nbsp;&nbsp;u_ch=&nbsp;136</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-119&nbsp;&nbsp;u_ch=&nbsp;137</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-118&nbsp;&nbsp;u_ch=&nbsp;138</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-117&nbsp;&nbsp;u_ch=&nbsp;139</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-116&nbsp;&nbsp;u_ch=&nbsp;140</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-115&nbsp;&nbsp;u_ch=&nbsp;141</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-114&nbsp;&nbsp;u_ch=&nbsp;142</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-113&nbsp;&nbsp;u_ch=&nbsp;143</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-112&nbsp;&nbsp;u_ch=&nbsp;144</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-111&nbsp;&nbsp;u_ch=&nbsp;145</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Примеры:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;отрицательные&nbsp;значения&nbsp;нельзя&nbsp;хранить&nbsp;в&nbsp;беззнаковых&nbsp;типах</span><br> <span style="color: #0000ff;">uchar</span><span>&nbsp;&nbsp;u_ch=-120;</span><br> <span style="color: #0000ff;">ushort</span><span>&nbsp;u_sh=-5000;</span><br> <span style="color: #0000ff;">uint</span><span>&nbsp;&nbsp;&nbsp;u_in=-401280;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<p><span>Шестнадцатеричные: цифры 0-9, буквы а-f или А-F для значений 10-15; начинаются с 0х или 0Х.</span></p> 
+<p><span style="font-weight: bold;">Примеры:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #008080;">0x0A</span><span>,&nbsp;</span><span style="color: #008080;">0x12</span><span>,&nbsp;</span><span style="color: #008080;">0X12</span><span>,&nbsp;</span><span style="color: #008080;">0x2f</span><span>,&nbsp;</span><span style="color: #008080;">0xA3</span><span>,&nbsp;</span><span style="color: #008080;">0Xa3</span><span>,&nbsp;</span><span style="color: #008080;">0X7C7</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/types/casting">Приведение типов</a></span></p> 
+<br>

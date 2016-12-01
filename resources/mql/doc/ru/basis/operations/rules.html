@@ -1,0 +1,158 @@
+<h1>Приоритеты и порядок операций</h1> 
+<p><span>Для каждой группы операций в таблице приоритет одинаков. Чем выше приоритет группы операций, тем выше она расположена в таблице. Порядок выполнения определяет группировку операций и операндов. </span></p> 
+<p><span style="font-weight: bold;">Внимание: </span><span>Приоритет выполнения операций в языке MQL4 соответствует приоритету, принятому в языке С++.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Операция</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Порядок выполнения</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>()</span></p> <p><span>[]</span></p> <p><span>.</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Вызов функции </span></p> <p><span>Выделение элемента массива</span></p> <p><span>Выделение элемента структуры</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>!</span></p> <p><span>~</span></p> <p><span>–</span></p> <p><span>++</span></p> <p><span>--</span></p> <p><span>(тип)</span></p> <p><span>sizeof</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Логическое отрицание</span></p> <p><span>Побитовое отрицание (complement)</span><br> <span>Изменение знака</span><br> <span>Увеличение на единицу (increment)</span><br> <span>Уменьшение на единицу (decrement)</span><br> <span>Преобразование типа</span></p> <p><span>Определение размера в байтах</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Справа налево</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>*</span></p> <p><span>/</span></p> <p><span>%</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Умножение</span></p> <p><span>Деление</span></p> <p><span>Деление по модулю</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>+</span></p> <p><span>–</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Сложение</span></p> <p><span>Вычитание</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>&lt;&lt;</span></p> <p><span>&gt;&gt;</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Сдвиг влево</span><br> <span>Сдвиг вправо</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>&lt;</span></p> <p><span>&lt;=</span></p> <p><span>&gt;</span></p> <p><span>&gt;=</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Меньше, чем</span></p> <p><span>Меньше или равно</span><br> <span>Больше, чем</span><br> <span>Больше или равно</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>==</span></p> <p><span>!=</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Равно</span></p> <p><span>Не равно</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>&amp;</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Побитовая операция И </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>^</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Побитовая операция исключающее ИЛИ (eXclude OR)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>|</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Побитовая операция ИЛИ</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>&amp;&amp;</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Логическая операция И </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>||</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Логическая операция ИЛИ </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>?:</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Условная операция</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Справа налево</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>=</span></p> <p><span>*=</span></p> <p><span>/=</span></p> <p><span>%=</span></p> <p><span>+=</span></p> <p><span>-=</span></p> <p><span>&lt;&lt;=</span></p> <p><span>&gt;&gt;=</span></p> <p><span>&amp;=</span></p> <p><span>^=</span></p> <p><span>|=</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Присваивание</span></p> <p><span>Умножение с присваиванием</span><br> <span>Деление с присваиванием</span></p> <p><span>Деление по модулю с присваиванием</span><br> <span>Сложение с присваиванием</span></p> <p><span>Вычитание с присваиванием</span><br> <span>Сдвиг влево с присваиванием</span></p> <p><span>Сдвиг вправо с присваиванием</span><br> <span>Побитовое И с присваиванием</span><br> <span>Исключающее ИЛИ с присваиванием</span></p> <p><span>Побитовое ИЛИ с присваиванием</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Справа налево</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>,</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Запятая</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для изменения порядка выполнения операций применяются круглые скобки, которые имеют высший приоритет.</span></p> 
+<p><span>&nbsp;</span></p> 
+<h1>Приоритеты и порядок операций в старой версии языка MQL4</h1> 
+<p><span>Ниже для справки приведены приоритеты и порядок операций языка MQL4 до <a href="/ru/mql4changes" title="Mql4changes">обновления</a>.</span></p> 
+<p><span>Для каждой группы операций в таблице приоритет одинаков. Чем выше приоритет группы операций, тем выше она расположена в таблице. Порядок выполнения определяет группировку операций и операндов.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Операция</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Порядок выполнения</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>()</span></p> <p><span>[]</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Вызов функции</span></p> <p><span>Выделение элемента массива</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>!</span></p> <p><span>-</span></p> <p><span>++</span></p> <p><span>--</span></p> <p><span>~</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Логическое отрицание</span></p> <p><span>Изменение знака</span></p> <p><span>Увеличение на единицу (increment)</span></p> <p><span>Уменьшение на единицу (decrement)</span></p> <p><span>Побитовое отрицание (complement)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Справа налево</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>&amp;</span></p> <p><span>|</span></p> <p><span>^</span></p> <p><span>&lt;&lt;</span></p> <p><span>&gt;&gt;</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Побитовая операция И</span></p> <p><span>Побитовая операция ИЛИ</span></p> <p><span>Побитовая операция исключающее ИЛИ (eXclude OR)</span></p> <p><span>Сдвиг влево</span></p> <p><span>Сдвиг вправо</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>*</span></p> <p><span>/</span></p> <p><span>%</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Умножение</span></p> <p><span>Деление</span></p> <p><span>Деление по модулю</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>+</span></p> <p><span>-</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Сложение</span></p> <p><span>Вычитание</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>&lt;</span></p> <p><span>&lt;=</span></p> <p><span>&gt;</span></p> <p><span>&gt;=</span></p> <p><span>==</span></p> <p><span>!=</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Меньше, чем</span></p> <p><span>Меньше или равно</span></p> <p><span>Больше, чем</span></p> <p><span>Больше или равно</span></p> <p><span>Равно</span></p> <p><span>Не равно</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>||</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Логическая операция ИЛИ</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>&amp;&amp;</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Логическая операция И</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>=</span></p> <p><span>+=</span></p> <p><span>-=</span></p> <p><span>*= </span></p> <p><span>/=</span></p> <p><span>%=</span></p> <p><span>&gt;&gt;=</span></p> <p><span>&lt;&lt;=</span></p> <p><span>&amp;=</span></p> <p><span>|=</span></p> <p><span>^=</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Присваивание</span></p> <p><span>Сложение с присваиванием</span></p> <p><span>Вычитание с присваиванием</span></p> <p><span>Умножение с присваиванием</span></p> <p><span>Деление с присваиванием</span></p> <p><span>Деление по модулю с присваиванием</span></p> <p><span>Сдвиг вправо с присваиванием</span></p> <p><span>Сдвиг влево с присваиванием</span></p> <p><span>Побитовое И с присваиванием</span></p> <p><span>Побитовое ИЛИ с присваиванием</span></p> <p><span>Исключающее ИЛИ с присваиванием</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Справа налево</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:85px; padding:5px; border:solid thin #b1c2d6;"><p><span>,</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Запятая</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слева направо</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для изменения порядка выполнения операций применяются круглые скобки, которые имеют высший приоритет.</span></p> 
+<p><span style="font-weight: bold;">Внимание: </span><span>Приоритет выполнения операций в старой версии языка MQL4 несколько отличается от приоритета, принятого в языке Си.</span></p> 
+<br>

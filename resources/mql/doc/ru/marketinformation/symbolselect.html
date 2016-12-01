@@ -1,0 +1,22 @@
+<h1>SymbolSelect</h1> 
+<p><span>Выбирает символ в окне MarketWatch (Обзор рынка) или убирает символ из этого окна.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>SymbolSelect</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;символа</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>bool</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>select</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;включить&nbsp;или&nbsp;выключить</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>name</span></p> 
+<p><span>[in] &nbsp;Имя символа.</span></p> 
+<p><span>select</span></p> 
+<p><span>[in] &nbsp;Переключатель. Если значение false, то символ должен быть убран из окна MarketWatch, в противном случае символ должен быть выбран в окно MarketWatch. Символ не может быть убран, если есть открытые графики с этим символом или есть открытые ордера по этому символу.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>В случае неудачи функция возвращает false.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Для получения данных по символу с помощью функций <a href="/ru/series">доступа к таймсериям и индикаторам</a> необходимо, чтобы данный символ был включен в окне MarketWatch. Если символ отсутствует в нем, то перед запросом данных нужно его включить с помощью функции SymbolSelect(symbol_name, true).</span></p> 
+<p><span>Скрыть символ из окна MarketWatch можно будет через 10 минут после последнего обращения к истории символа, то есть &nbsp;с момента последнего вызова функций вида <a href="/ru/series/iopen">iOpen()</a>, <a href="/ru/series/ihigh">iHigh()</a>, <a href="/ru/series/copytime">CopyTime()</a> и т.д. Это обусловлено тем, что терминал хранит полученные данные по символу в течение 10 минут с момента последнего обращения к ним, после чего неиспользуемые данные автоматически удаляются из памяти терминала.</span></p> 
+<br>

@@ -1,0 +1,234 @@
+<h1>Что нового в MQL4</h1> 
+<p><span>Начиная с билда 600 язык программирования MQL4 полностью переработан и достиг уровня MQL5 - теперь писать торговых роботов на MQL4/MQL5 можно в единой среде разработке MetaEditor и используя единые стиль, библиотеки и инструменты отладки.</span></p> 
+<p><span>MQL4 пользуется заслуженной популярностью среди разработчиков автоматических торговых систем благодаря простоте изучения и огромному количеству кода, наработанного за многие годы использования терминала MetaTrader 4. Но вместе с тем, ему были присущи и некоторые недостатки, проистекающие из главного преимущества - простой язык программирования не позволял писать сложные системы и затруднял портирование отлаженных библиотек из языков высокого уровня. Поэтому мы решили перенести в него максимум функций и возможностей языка MQL5, полностью сохраняя функционал MQL4. То есть все мощные функции MQL5, включая ООП и компилятор в нативный код, станут доступны в MQL4.</span></p> 
+<p><span>Для этого мы разработали единый компилятор, который автоматически поддерживает оба языка MQL4 и MQL5. MetaEditor тоже становится единым для обеих платформ MetaTrader 4 и MetaTrader 5. С его помощью можно компилировать как MQL4, так и MQL5 из любой версии. Для работы также сразу становится доступным и MQL5 Storage.</span></p> 
+<p><span>Защита MQL4-программ поднимается на один уровень с MQL5, в новых EX4/EX5-файлах очень серьезная и полностью переработанная защита по сравнению со старым EX4. А это значит, что для MetaTrader 4 становится доступным и Маркет защищенных приложений на EX4.</span></p> 
+<p><span>Кроме того, в язык MQL4 добавлены новые графические объекты и новые функции по работе с графиками. Стандартная библиотека из MQL5 будет портирована и в MQL4, что предоставит для разработчиков программ новые возможности по созданию собственных графических интерфейсов и торговых библиотек. Теперь в MetaTrader 4 можно создавать полноценные приложения с использованием ресурсов.</span><br> <span>&nbsp;</span></p> 
+<h1>Изменения в языке MQL4</h1> 
+<p><span>Добавлены новые типы данных <a href="/ru/basis/types/integer/integertypes#char">char</a>, <a href="/ru/basis/types/integer/integertypes#short">short</a>, <a href="/ru/basis/types/integer/integertypes#long">long</a>, <a href="/ru/basis/types/integer/integertypes#uchar">uchar</a>, <a href="/ru/basis/types/integer/integertypes#ushort">ushort</a>, <a href="/ru/basis/types/integer/integertypes#uint">uint</a>, <a href="/ru/basis/types/integer/integertypes#ulong">ulong</a> и <a href="/ru/basis/types/double">double</a>. Это позволит легко переносить коды из других C++ подобных языков. Данные разного типа обрабатываются с разной скоростью. Целочисленные данные обрабатываются быстрее всего. Для обработки данных двойной точности используется специальный сопроцессор. Однако из-за сложности внутреннего представления данных с плавающей точкой они обрабатывается дольше, чем целочисленные. Введена операция <a href="/ru/basis/types/casting">приведения типов</a>.</span></p> 
+<p><span>Строки теперь представлены в формате Unicode, раньше они были в формате ANSI (однобайтовые). Это необходимо учитывать, если программа использует DLL и передает в них строковые переменные.</span></p> 
+<p><span>Предопределенная переменная <a href="/ru/predefined/volume">Volume</a> теперь имеет тип long, таймсерии для доступа к объемам также представлены массивами типа long. В старых программах MQL4 рекомендуется делать <a href="/ru/basis/types/casting">явное приведение</a> данных этого типа к целевому типу, чтобы избежать ошибки переполнения типа.</span></p> 
+<p><span>Добавлены структуры и классы, указатели объектов, тип <a href="/ru/basis/types/void">void</a> и ключевое слово <a href="/ru/basis/types/this">this</a> для получения объектом ссылки на самого себя. Поддерживаются все стандарты объектно-ориентированного программирования:</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 8px 17px 7px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/basis/oop/incapsulation">Инкапсуляция и расширяемость типов</a></span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 8px 17px 7px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/basis/oop/inheritance">Наследование</a></span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 8px 17px 7px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/basis/oop/polymorphism">Полиморфизм</a></span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 8px 17px 7px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/basis/oop/overload">Перегрузка</a></span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 8px 17px 7px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span><a href="/ru/basis/oop/virtual">Виртуальные функции</a></span></p> 
+<p><span>ООП позволяет писать программы с использованием классов, &nbsp;что облегчает отладку и разработку больших программ, позволяет многократно использовать наработки благодаря наследованию. Но это не означает, что теперь нельзя писать на MQL4 в процедурном стиле, как это было раньше. Вы можете писать свои программы как и раньше, если вам не нужны новые возможности.</span></p> 
+<p><span>Предопределенные функции init(), deinit() и start() остались для совместимости, но вместо них теперь можно использовать <a href="/ru/basis/function/events#oninit">OnInit()</a>, <a href="/ru/basis/function/events#ondeinit">OnDeinit()</a>, <a href="/ru/basis/function/events#onstart">OnStart()</a>, <a href="/ru/basis/function/events#oncalculate">OnCalculate()</a>, <a href="/ru/basis/function/events#ontick">OnTick()</a>. Кроме того, добавились новые предопределенные функции-обработчики <a href="/ru/basis/function/events#ontimer">OnTimer()</a>, <a href="/ru/basis/function/events#onchartevent">OnChartEvent()</a>, <a href="/ru/basis/function/events#ontester">OnTester()</a>. В старом MQL4 предопределенные функции могли иметь любые параметры и любой тип возврата, вызов этих функций осуществлялся не по сигнатуре, а по имени. В новом MQL4 все предопределенные функции должны точно соответствовать своим сигнатурам, то есть иметь четко определенный состав параметров и тип возврата.</span></p> 
+<p><span>Имена переменных теперь не могут содержать спецсимволы и точки, а также именами не могут быть новые ключевые слова языка MQL4. Старые программы на MQL4 можно будет прогнать через новый компилятор и легко исправить все такие ошибки по сообщениям компилятора.</span></p> 
+<p><span><a href="/ru/basis/operations/rules">Приоритет операций</a> теперь приведен к стандартам языка Cи. В старых программах MQL4 для надежности вы можете расставить круглые скобки для явного указания приоритета, если не уверены. </span></p> 
+<p><span>В <a href="/ru/basis/operations/bool">логических операциях</a> теперь используется укороченная проверка условия. В старой версии MQL4 вычислялись все выражения, и только потом производилась проверка условия. Например, пусть есть проверка двух условий с использованием логического И:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(condition1&nbsp;&amp;&amp;&nbsp;condition2)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;некоторый&nbsp;блок&nbsp;операций</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Если выражение condition1 окажется равным false, то вычисление выражения condition2 проводиться уже не будет, так как результат false &amp;&amp; true все равно будет равен false.</span></p> 
+<p><span>&nbsp;</span></p> 
+<p><span>Изменилось поведение функции <a href="/ru/array/arraycopyrates">ArrayCopyRates()</a> — в старой версии MQL4 эта функция производила копирование ценовых серий в массив double[][6]. Теперь для получения таймсерий необходимо использовать массив из элементов структуры <a href="/ru/constants/structures/mqlrates">MqlRates</a>:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;Структура&nbsp;для&nbsp;хранения&nbsp;информации&nbsp;о&nbsp;ценах,&nbsp;объемах&nbsp;и&nbsp;спреде.</span><br> <span>struct</span><span>&nbsp;</span><span style="font-weight: bold;">MqlRates</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime</span><span>&nbsp;</span><span>time</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;время&nbsp;начала&nbsp;периода</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;</span><span>open</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;цена&nbsp;открытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;</span><span>high</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;наивысшая&nbsp;цена&nbsp;за&nbsp;период</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;</span><span>low</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;наименьшая&nbsp;цена&nbsp;за&nbsp;период</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;</span><span>close</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;цена&nbsp;закрытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>tick_volume</span><span>;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;тиковый&nbsp;объем</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>spread</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;спред</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>real_volume</span><span>;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;биржевой&nbsp;объем</span><br> <span>&nbsp;&nbsp;};</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Новый формат функции также производит виртуальное копирование, то есть реального копирования не происходит, а при обращении к скопированным значениям &nbsp;происходит обращения прямо к ценовым данным.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;</span><span>ArrayCopyRates</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>MqlRates&amp;</span><span>&nbsp;&nbsp;</span><span>rates_array[]</span><span>,&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;массив&nbsp;MqlRates,&nbsp;переданный&nbsp;по&nbsp;ссылке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol=NULL</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;инструмент</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe=0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;таймфрейм</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для совместимости со старыми MQL4 программами сохранился и старый формат вызова, но теперь производится реальное копирование данных в массив типа double. </span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayCopyRates</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>dest_array[][]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;массив,&nbsp;переданный&nbsp;по&nbsp;ссылке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol=NULL</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;инструмент</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe=0&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;таймфрейм</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Это означает, что при изменении значений в таймсерии (добавлении новых баров, перестройке, обновлении цены Close последнего бара), необходимо заново скопировать нужные данные в массив dest_array[][]. При этом массив-приемник будет автоматически распределен под требуемое количество копируемых баров, даже если он был объявлен статически.</span></p> 
+<p><span>&nbsp;</span></p> 
+<p><span>Изменился формат хранения исторических данных RateInfo. В старой версии состав структуры RateInfo был представлен таким образом:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>struct</span><span>&nbsp;</span><span style="font-weight: bold;">RateInfo</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>unsigned</span><span>&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ctm</span><span>;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;дата&nbsp;открытия&nbsp;бара</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>open</span><span>;&nbsp;&nbsp;</span><span>//&nbsp;цена&nbsp;открытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>low</span><span>;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;минимальная&nbsp;цена&nbsp;бара</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>high</span><span>;&nbsp;</span><span>&nbsp;//&nbsp;максимальная&nbsp;цена&nbsp;бара</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>close</span><span>;&nbsp;</span><span>//&nbsp;цена&nbsp;закрытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>vol</span><span>;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;объем</span><br> <span>&nbsp;&nbsp;};</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>В новом формате в структура RateInfo добавлены поля для хранения спреда и торгового объема:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>//---&nbsp;Стандартное&nbsp;представление&nbsp;котировки&nbsp;в&nbsp;новой&nbsp;версии&nbsp;терминала</span><br> <span>struct</span><span>&nbsp;</span><span style="font-weight: bold;">RateInfo</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>INT64</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ctm</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;дата&nbsp;и&nbsp;время&nbsp;открытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>open</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;цена&nbsp;открытия&nbsp;(абсолютное&nbsp;значение)</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>high</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;минимальная&nbsp;цена&nbsp;бара</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>low</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;максимальная&nbsp;цена&nbsp;бара</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>close</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;цена&nbsp;закрытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>UINT64</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>vol</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;тиковый&nbsp;объём</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>INT32</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>spread</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;спред</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>UINT64</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>real</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;торговый&nbsp;объём</span><br> <span>&nbsp;&nbsp;};</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Соответственно, если в программах MQL4 используются DLL для передачи/приема ценовых данных, то соответствующие функции в исходных кодах должны быть переписаны и заново скомпилированы с учетом изменении формата для обеспечения правильной работы.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="font-weight: bold;">Старые EX4 программы и DLL, основанные на старом формате RateInfo, работать в новом терминале не будут. Требуется приведение к новому формату.</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<p><span>В <a href="/ru/files">файловых операциях</a> количество одновременно открытых файлов теперь может достигать 64, в старом MQL4 было не более 32. При этом раньше файлы всегда открывались в режиме FILE_SHARE_READ, FILE_SHARE_WRITE, теперь желательный режим открытия нужно указывать явно.</span></p> 
+<p><span>Для функций <a href="/ru/files/filewrite">FileWrite()</a>, <a href="/ru/files/filewritearray">FileWriteArray()</a>, <a href="/ru/files/filewritedouble">FileWriteDouble()</a>, <a href="/ru/files/filewriteinteger">FileWriteInteger()</a> и <a href="/ru/files/filewritestring">FileWriteString()</a> изменен тип возвращаемого значения с <a href="/ru/basis/types/integer/integertypes#int">int</a> на <a href="/ru/basis/types/integer/integertypes#uint">uint</a>. Данные функции возвращают количество записанных байт или 0 в случае ошибки (в старой версии MQL4 в случае ошибки возвращалось отрицательное число).</span></p> 
+<p><span>Изменилась также работа с функциями, областью видимости переменных и освобождением памяти в локальных массивах. Так как изменений оказалось достаточно много, то для обеспечения максимальной совместимости со старым подходом к написанию программ MQL4 было решено ввести новое свойство <a href="/ru/basis/preprosessor">#property strict</a>. При создании новой программы MQL4 с помощью Мастера MQL4 это свойство всегда добавляется в шаблон. </span></p> 
+<p><span>Следует иметь ввиду, что преобразование типа </span><span style="color: #0000ff;"><a href="/ru/basis/types/integer/datetime">datetime</a></span><span> в строку теперь зависит от режима компиляции: </span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;date=D'2014.03.05&nbsp;15:46:58';</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;str=</span><span style="color: #008080;">"mydate="</span><span>+date;</span><br> <span style="color: #808080;">//---&nbsp;str="mydate=1394034418"&nbsp;-&nbsp;старый&nbsp;компилятор,&nbsp;новый&nbsp;компилятор&nbsp;без&nbsp;директивы&nbsp;#property&nbsp;strict</span><br> <span style="color: #808080;">//---&nbsp;str="mydate=2014.03.05&nbsp;15:46:58"&nbsp;-&nbsp;новый&nbsp;компилятор&nbsp;с&nbsp;директивой&nbsp;#property&nbsp;strict</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Ниже в таблице перечислены все различия между старым MQL4, новым MQL4 без использования strict и новым MQL4 с указанием строгого режима компиляции:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#property</span><span> </span><span style="color: #0000ff;">strict</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>При компиляции библиотек в режиме strict для каждой экспортируемой функции необходимо добавлять модификатор <a href="/ru/basis/function/export">export</a>. в противном случае функция не будет доступна извне.</span></p> 
+<p><a id="compiler_difference"></a><span>Таблица отличий между компиляторами:</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Старый компилятор MQL4</span></p> </td> 
+    <td style="vertical-align:top; width:345px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Новый компилятор MQL4</span></p> </td> 
+    <td style="vertical-align:top; width:400px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Новый компилятор MQL4 с #property strict</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Точки входа init(), start(), deinit() могут иметь любые параметры и любой тип возврата</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>init(), start(), deinit(), оставленные для совместимости,</span></p> <p><span>и новые <a href="/ru/basis/function/events#oninit">OnInit()</a>, <a href="/ru/basis/function/events#onstart">OnStart()</a>, <a href="/ru/basis/function/events#oncalculate">OnCalculate()</a>, <a href="/ru/basis/function/events#ontick">OnTick()</a>, <a href="/ru/basis/function/events#ontimer">OnTimer()</a>, <a href="/ru/basis/function/events#onchartevent">OnChartEvent()</a>, <a href="/ru/basis/function/events#ontester">OnTester()</a>, <a href="/ru/basis/function/events#ondeinit">OnDeinit()</a> должны точно соответствовать своим сигнатурам</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Результат возврата из функции init() никак не анализируется исполняющей подсистемой</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Результат возврата из функций init() и OnInit() никак не анализируется исполняющей подсистемой</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>При возврате из OnInit() ненулевого значения выполнение эксперта или индикатора прекращается, программа выгружается</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Имена переменных практически любые (кроме зарезервированных слов), включая спецсимволы и точки</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Имена переменных не могут иметь спецсимволы и точки.</span></p> <p><span>Список <a href="/ru/basis/syntax/reserved">зарезервированных слов</a> расширен, поэтому именами не могут быть такие широко распространенные слова, как short, long, const и т.д.</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Область видимости переменной - от объявления (даже во вложенном блоке) до конца функции</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Область видимости переменной - от объявления до конца блока, в котором переменная объявлена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Неявная инициализация всех переменных (и глобальных и локальных) нулями</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Инициализация только глобальных переменных. Из локальных переменных неявно инициализируются только строки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Локальные массивы при выходе из функции не освобождаются</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Локальные массивы освобождаются при выходе из функции</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Локальные массивы освобождаются при выходе из блока {}</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка </span><span style="font-weight: bold;">"Array out of range"</span><span> (индекс за пределами массива) не приводит к критической ошибке*</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же. Кроме массивов структур и классов, для которых эта ошибка является критической</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">"Array out of range"</span><span> - критическая ошибка и приводит к остановке программы</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Структур и классов нет</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/basis/types/classes">Структуры и классы</a> есть. Появились дополнительные типы данных</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Строки - однобайтовые.</span></p> <p><span>datetime - 32-битное целое</span></p> <p><span>Предопределенная переменная Volume имеет тип double</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Строки - юникодные.</span></p> <p><span>datetime - 64-битное целое</span></p> <p><span>Предопределенная переменная <a href="/ru/predefined/volume">Volume</a> имеет тип long</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/array/arraycopyrates">ArrayCopyRates()</a> производит виртуальное копирование в массив double[][6]</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/array/arraycopyrates">ArrayCopyRates()</a> производит виртуальное копирование в массив MqlRates[]. Для совместимости осталось копирование в массив double[][6], но это копирование не виртуальное, а реальное.</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Функции могут не возвращать значения, даже если они имеют тип. Для этого в конце функции компилятором автоматически проставляется return(0)</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Функции любого типа всегда должны возвращать значение</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Количество одновременно открытых файлов - 32</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Количество одновременно открытых файлов - 64</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Файлы всегда открываются в режиме совместного использования **</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Режим совместного использования нужно указывать явно с помощью FILE_SHARE_READ и/или FILE_SHARE_WRITE </span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Для скриптов в окне входных параметров показываются имена <a href="/ru/basis/variables/externvariables">extern </a>переменных</span></p> </td> 
+    <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Для скриптов в режиме show_inputs в окне входных параметров показываются имена <a href="/ru/basis/variables/externvariables">extern</a> и <a href="/ru/basis/variables/inputvariables">input-</a>переменных</span></p> </td> 
+    <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Для скриптов в режиме show_inputs в окне входных параметров показываются строчные комментарии вместо имен <a href="/ru/basis/variables/externvariables">extern</a>- и <a href="/ru/basis/variables/inputvariables">input</a>-переменных </span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>* Следует обратить особое внимание на ошибку "Array out of range" - многие старые пользовательские индикаторы при запуске на графике будут выдавать эту ошибку в новом компиляторе в режиме strict. Желательно найти причину и устранить её.</span></p> 
+<p><span>** &nbsp;В новом MQL4 и MQL5 за режим совместного использования файлов отвечают флаги FILE_SHARE_READ и FILE_SHARE_WRITE, которых не было в старом MQL4.</span></p> 
+<p><span>&nbsp;</span></p> 
+<h1>Изменения в файловой структуре</h1> 
+<p><span>В предыдущих билдах клиентского терминала MetaTrader 4 (509 и ниже) все MQL4 программы хранились в корневой папке </span><span style="font-weight: bold;">&lt;каталог_установки_терминала&gt;\experts\</span><span> в следующих подпапках:</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\experts - эксперты (торговые роботы),</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\experts\indicators - пользовательские индикаторы,</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\experts\scripts - &nbsp;скрипты (программы на MQL4 для однократного выполнения на графике),</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\include - включаемые в другие программы файлы исходного кода с расширением MQH и MQ4,</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\libraries - библиотеки в виде исходного кода MQ4 и скомпилированные из них исполняемые файлы EX4, для динамического вызова собранных в них функций другими MQL4-программами,</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\files - специальная "файловая песочница", только в пределах этой папки MQL4 программам разрешается &nbsp;выполнять файловые операции.</span></p> 
+<p><span>&nbsp;</span><br> <span>В новой версии MQL4 файловая структура для хранения исходных кодов изменилась. Теперь все программы на MQL4 должны находиться в папке</span><span style="font-weight: bold;"> &lt;каталог_данных&gt;\MQL4\</span><span> во вложенных соответствующих папках:</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\Experts - эксперты (торговые роботы),</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\Indicators - пользовательские индикаторы,</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\Scripts - скрипты (программы на MQL4 для однократного выполнения на графике),</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\Include - включаемые в другие программы файлы исходного кода с расширением MQH и MQ4,</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\Libraries - библиотеки в виде исходного кода MQ4 и скомпилированные из них исполняемые файлы EX4, для динамического вызова собранных в них функций другими MQL4-программами,</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\Images - файлы картинок для использования в ресурсах,</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>\Files - специальная "файловая песочница", только в пределах этой папки MQL4 программам разрешается &nbsp;выполнять файловые операции.</span></p> 
+<p><span>При обновлении терминала MetaTrader 4 с 509 билда на новую версию все файлы MQ4, MQH и EX4 из стандартных корневых папок старого местоположения автоматически копируются и раскладываются в соответствующие папки. Дополнительно созданные пользователем внутри стандартных папок </span><span style="font-weight: bold;">дочерние папки с файлами никак не обрабатываются</span><span>, их необходимо самостоятельно скопировать в новое место, если они необходимы.</span><br> <span>&nbsp;</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="font-weight: bold;">Никакие файлы или папки при обновлении не удаляются!</span><span> Все операции по копированию файлов при обновлении записываются в Журнал терминала с указанием подробных путей.</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span><br> <span style="font-weight: bold;">При обновлении автоматическая перекомпиляция старых EX4-файлы на новую версию не производится,</span><span> пользователю предоставлена возможность самому решать какие исходные коды он хочет скомпилировать в новую версию EX4. Все старые EX4 будут работать и в новом терминале MetaTrader 4. Библиотеки EX4, скомпилированные новым компилятором, &nbsp;могут вызываться только из программ EX4, также скомпилированных в новой версии.</span></p> 
+<p><span>Возможно, в некоторых случаях в исходных файлах потребуется &nbsp;исправить пути в <a href="/ru/basis/preprosessor/include">#include</a> для включаемых файлов (если относительные пути изменились). &nbsp;Важно запомнить, что сейчас корневой папкой для редактора MetaEditor является папка &lt;каталог_данных&gt;\MQL4\, все программы должны находиться в правильных дочерних подпапках.</span></p> 
+<p><span>Найти каталог данных (&lt;каталог_данных&gt;) на компьютере для каждой копии установленного терминала MetaTrader 4 можно из меню терминала или редакторе MetaEditor: "Файл" - "Открыть каталог данных".</span></p> 
+<br>

@@ -1,0 +1,39 @@
+<h1>WindowScreenShot</h1> 
+<p><span>Сохраняет изображение текущего графика в файле формата GIF.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>WindowScreenShot</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>filename</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;файла</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>size_x</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;ширина</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>size_y</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;высота</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start_bar=-1</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;первый&nbsp;видимый&nbsp;бар</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_scale=-1</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;масштаб&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_mode=-1</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;вид&nbsp;отображения</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>filename</span></p> 
+<p><span>[in] &nbsp;Имя файла скриншота. Не может превышать 63 символов. Скриншот помещается в директорию \Files.</span></p> 
+<p><span>size_x</span></p> 
+<p><span>[in] &nbsp;Ширина скриншота в пикселях.</span></p> 
+<p><span>size_y</span></p> 
+<p><span>[in] &nbsp;Высота скриншота в пикселях.</span></p> 
+<p><span>start_bar=-1</span></p> 
+<p><span>[in] &nbsp;Номер первого видимого бара на скриншоте. Если указано значение 0, то скриншот снимается с текущего первого видимого бара. Если значение не указано, или указано отрицательное значение, то делается скриншот конца графика с учётом правого отступа.</span></p> 
+<p><span>chart_scale=-1</span></p> 
+<p><span>[in] &nbsp;Масштаб графика, выводимого на скриншот. Может принимать значение от 0 до 5. Если значение не указано, или указано отрицательное значение, то используется текущий масштаб графика.</span></p> 
+<p><span>chart_mode=-1</span></p> 
+<p><span>[in] &nbsp;Вид отображения графика. Может принимать значения: CHART_BAR (0 - последовательность баров), CHART_CANDLE (1 - японские свечи), CHART_LINE (2 - линия по ценам закрытия). Если значение не указано, или указано отрицательное значение, то график выводится в своем текущем виде.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Возвращает true в случае успеха, иначе false. </span><span>Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Скриншот сохраняется в папке каталог_терминала\experts\files (каталог_терминала\tester\files в случае тестирования эксперта) или ее подпапках.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;lasterror=0;</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;тестер&nbsp;закрыл&nbsp;однин&nbsp;или&nbsp;несколько&nbsp;ордеров</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">IsTesting</span><span>()&nbsp;&amp;&amp;&nbsp;ExtTradesCounter&lt;TradesTotal())</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;снимем&nbsp;скриншот&nbsp;для&nbsp;проверки</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">WindowScreenShot</span><span>(</span><span style="color: #008080;">"shots\\tester"</span><span>+ExtShotsCounter+</span><span style="color: #008080;">".gif"</span><span>,640,480))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lasterror=</span><span style="color: #0000ff;">GetLastError</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;ExtShotsCounter++;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ExtTradesCounter=TradesTotal();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

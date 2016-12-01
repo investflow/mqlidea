@@ -1,0 +1,61 @@
+<h1>Глобальные переменные клиентского терминала</h1> 
+<p><span>Группа функций, предназначенных для работы с глобальными переменными.</span></p> 
+<p><span>Не следует путать глобальные переменные клиентского терминала с переменными, объявленными на <a href="/ru/basis/variables/global">глобальном уровне</a> mql4-программы.</span></p> 
+<p><span>Глобальные переменные существуют в клиентском терминале 4 недели с момента последнего обращения, после этого автоматически уничтожаются. Обращением к глобальной переменной считается не только установка нового значения, но и чтение значения глобальной переменной.</span></p> 
+<p><span>Глобальные переменные клиентского терминала доступны одновременно из всех mql4-программ, запущенных на клиентском терминале. </span></p> 
+<p><span>При тестировании и оптимизации советников, использующих глобальные переменные клиентского терминала, следует помнить о том, что <a href="/ru/runtime/testing#globals">глобальные переменные тестера стратегий</a> и терминала являются общими. По этой причине их имена не должны пересекаться с именами глобальных переменных работающих программ. Это может привести к некорректной работе программ и неправильным результатам тестирования.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Функция</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Действие</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/globals/globalvariablecheck">GlobalVariableCheck</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Проверяет существование глобальной переменной с указанным именем</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/globals/globalvariabletime">GlobalVariableTime</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает время последнего доступа к глобальной переменной</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/globals/globalvariabledel">GlobalVariableDel</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Удаляет глобальную переменную</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/globals/globalvariableget">GlobalVariableGet</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Запрашивает значение глобальной переменной</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/globals/globalvariablename">GlobalVariableName</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает имя глобальной переменной по порядковому номеру в списке глобальных переменных</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/globals/globalvariableset">GlobalVariableSet</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Устанавливает новое значение глобальной переменной</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/globals/globalvariablesflush">GlobalVariablesFlush</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Принудительно записывает содержимое всех глобальных переменных на диск</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/globals/globalvariabletemp">GlobalVariableTemp</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Устанавливает новое значение глобальной переменной, которая существует только на время текущего сеанса работы терминала</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/globals/globalvariablesetoncondition">GlobalVariableSetOnCondition</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Устанавливает новое значение существующей глобальной переменной по условию</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/globals/globalvariablesdeleteall">GlobalVariablesDeleteAll</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Удаляет глобальные переменные с указанным префиксом в имени</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:194px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/globals/globalvariablestotal">GlobalVariablesTotal</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает общее количество глобальных переменных</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

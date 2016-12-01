@@ -1,0 +1,17 @@
+<h1>EventKillTimer</h1> 
+<p><span>Указывает клиентскому терминалу, что необходимо остановить генерацию событий от <a href="/ru/runtime/event_fire#timer">таймера</a> для данного эксперта или индикатора.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>EventKillTimer</span><span>();</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Нет возвращаемого значения.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Обычно эта функция должна вызываться из функции <a href="/ru/basis/function/events#ondeinit">OnDeinit()</a> в том случае, если в функции <a href="/ru/basis/function/events#oninit">OnInit()</a> была вызвана функция <a href="/ru/eventfunctions/eventsettimer">EventSetTimer()</a>. Либо должна вызываться из деструктора класса, если в <a href="/ru/basis/types/classes#destructor">конструкторе</a> этого класса вызывается функция EventSetTimer().</span></p> 
+<p><span>Каждый эксперт и каждый индикатор работает со своим таймером, и получает события только от него. При завершении работы mql4-программы таймер уничтожается принудительно, если он был создан, но не был отключен функцией EventKillTimer().</span></p> 
+<br>

@@ -1,0 +1,34 @@
+<h1>SetIndexEmptyValue</h1> 
+<p><span>Устанавливает значение пустой величины для линии индикатора.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>SetIndexEmptyValue</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>index</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;номер&nbsp;линии</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;</span><span>value</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;новое&nbsp;значение</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span style="color: #404040;">index</span></p> 
+<p><span>[in] &nbsp;Порядковый номер линии. Должен быть от 0 до 7.</span></p> 
+<p><span style="color: #404040;">value</span></p> 
+<p><span>[in] &nbsp;Новое "пустое" значение.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Нет</span><span>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Пустые значения не рисуются и не показываются в DataWindow. По умолчанию значение пустой величины - EMPTY_VALUE.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;init()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//----&nbsp;2&nbsp;распределенных&nbsp;буфера&nbsp;индикатора</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexBuffer</span><span>(0,ExtUppperBuffer);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexBuffer</span><span>(1,ExtLowerBuffer);</span><br> <span style="color: #808080;">//----&nbsp;настройка&nbsp;параметров&nbsp;отрисовки</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexStyle</span><span>(0,</span><span style="color: #0000ff;">DRAW_ARROW</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexArrow</span><span>(0,217);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexStyle</span><span>(1,</span><span style="color: #0000ff;">DRAW_ARROW</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexArrow</span><span>(1,218);</span><br> <span style="color: #808080;">//----&nbsp;значение&nbsp;0&nbsp;отображаться&nbsp;не&nbsp;будет</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexEmptyValue</span><span>(0,0.0);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexEmptyValue</span><span>(1,0.0);</span><br> <span style="color: #808080;">//----&nbsp;отображение&nbsp;в&nbsp;DataWindow</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexLabel</span><span>(0,</span><span style="color: #008080;">"Fractal&nbsp;Up"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexLabel</span><span>(1,</span><span style="color: #008080;">"Fractal&nbsp;Down"</span><span>);</span><br> <span style="color: #808080;">//----&nbsp;инициализация&nbsp;сделана</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/constants/indicatorconstants/customindicatorproperties">Свойства&nbsp;пользовательских&nbsp;индикаторов</a></span></p> 
+<p><span>&nbsp;</span></p> 
+<br>

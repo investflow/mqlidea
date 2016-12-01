@@ -1,0 +1,25 @@
+<h1>AccountFreeMarginMode</h1> 
+<p><span>Возвращает режим расчета свободных средств, разрешенных для открытия ордеров на текущем счете.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>AccountFreeMarginMode</span><span>();</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Режим расчета свободных средств, разрешенных для открытия ордеров на текущем счете. </span></p> 
+<p><span>Режим расчета может принимать следующие значения:</span><br> <span>0 - при расчете не используются нереализованные прибыли и убытки;</span><br> <span>1 - при расчете свободных средств используется как нереализованная прибыль, так и убыток по открытым позициям на текущем счете;</span><br> <span>2 - при расчете используется только значение прибыли, текущий убыток по открытым ордерам не учитывается;</span><br> <span>3 - при расчете используется только значение убытка, текущая прибыль по открытым ордерам не учитывается.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">AccountFreeMarginMode</span><span>()==0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Нереализованные&nbsp;прибыли/убытки&nbsp;не&nbsp;используются."</span><span>);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

@@ -1,0 +1,53 @@
+<h1>NormalizeDouble</h1> 
+<p><span>Округление числа с плавающей точкой до указанной точности.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>NormalizeDouble</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;</span><span>value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;нормализуемое&nbsp;число</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>digits</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;кол-во&nbsp;знаков&nbsp;после&nbsp;запятой</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>value</span></p> 
+<p><span>[in] Величина с плавающей точкой.</span></p> 
+<p><span>digits</span></p> 
+<p><span>[in] &nbsp;Формат точности, число цифр после десятичной точки (0-8).</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Значение типа double с заданной точностью.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Рассчитываемые значения StopLoss, TakeProfit, а также значения цены открытия отложенных ордеров, должны быть нормализованы с точностью, значение которой можно получить функцией <a href="/ru/check/digits">Digits()</a>.</span></p> 
+<p><span>Нужно иметь в виду, что нормализованное число при выводе в Журнал с помощью Print() может содержать большее количество знаков после запятой, чем вы ожидаете. Например,</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;a=76.671;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #999999;">//&nbsp;нормализованное&nbsp;число&nbsp;с&nbsp;3&nbsp;знаками&nbsp;после&nbsp;запятой</span><br> <span>&nbsp;&nbsp;&nbsp;Print(</span><span style="color: #008080;">"Print(76.671)="</span><span>,a);&nbsp;&nbsp;&nbsp;</span><span style="color: #999999;">//&nbsp;выведем&nbsp;его&nbsp;как&nbsp;есть</span><br> <span>&nbsp;&nbsp;&nbsp;Print(</span><span style="color: #008080;">"DoubleToString(a,8)="</span><span>,DoubleToString(a,8));&nbsp;</span><span style="color: #999999;">//&nbsp;выведем&nbsp;с&nbsp;заданной&nbsp;точностью</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>выдаст в терминале:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span> &nbsp;DoubleToString(a,8)=76.67100000</span></p> <p><span> &nbsp;Print(76.671)=76.67100000000001</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;pi=</span><span style="color: #0000ff;">M_PI</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"pi="</span><span>,</span><span style="color: #0000ff;">DoubleToString</span><span>(pi,16));</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;pi_3=</span><span style="color: #0000ff;">NormalizeDouble</span><span>(</span><span style="color: #0000ff;">M_PI</span><span>,3);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"NormalizeDouble(pi,3)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">DoubleToString</span><span>(pi_3,16))</span><br> <span>&nbsp;&nbsp;&nbsp;;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;pi_8=</span><span style="color: #0000ff;">NormalizeDouble</span><span>(</span><span style="color: #0000ff;">M_PI</span><span>,8);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"NormalizeDouble(pi,8)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">DoubleToString</span><span>(pi_8,16));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;pi_0=</span><span style="color: #0000ff;">NormalizeDouble</span><span>(</span><span style="color: #0000ff;">M_PI</span><span>,0);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"NormalizeDouble(pi,0)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">DoubleToString</span><span>(pi_0,16));</span><br> <span>/*</span><br> <span>&nbsp;&nbsp;&nbsp;Результат:</span><br> <span>&nbsp;&nbsp;&nbsp;pi=&nbsp;3.1415926535897931</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">NormalizeDouble</span><span>(pi,3)=&nbsp;3.1419999999999999</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">NormalizeDouble</span><span>(pi,8)=&nbsp;3.1415926499999998</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">NormalizeDouble</span><span>(pi,0)=&nbsp;3.0000000000000000</span><br> <span>*/</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/convert/doubletostring">DoubleToString</a>, <a href="/ru/basis/types/double">Вещественные&nbsp;типы&nbsp;(double,&nbsp;float)</a>, <a href="/ru/basis/types/casting">Приведение&nbsp;типов</a>, </span></p> 
+<br>

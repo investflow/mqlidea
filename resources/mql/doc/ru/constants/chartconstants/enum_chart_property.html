@@ -1,0 +1,334 @@
+<h1>Свойства графиков</h1> 
+<p><span>Идентификаторы семейства перечислений ENUM_CHART_PROPERTY используются в качестве параметров <a href="/ru/chart_operations">функций&nbsp;для&nbsp;работы&nbsp;с&nbsp;графиками</a>. Аббревиатура r/o в столбце "Тип свойства" означает, что данное свойство предназначено только для чтения и не может быть изменено. Аббревиатура w/o в столбце "Тип свойства" означает, что данное свойство предназначено только для записи и не может быть получено. При обращении к некоторым свойствам необходимо указывать дополнительный параметр-модификатор (modifier), который служит для указания номера подокна графика. 0 означает главное окно.</span></p> 
+<p><span>Для функций <a href="/ru/chart_operations/chartsetinteger">ChartSetInteger()</a> и <a href="/ru/chart_operations/chartgetinteger">ChartGetInteger()</a></span></p> 
+<p><a id="enum_chart_property_integer"></a><span style="font-weight: bold;"> ENUM_CHART_PROPERTY_INTEGER</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_bring_to_top">CHART_BRING_TO_TOP</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Показ графика поверх всех других</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool &nbsp; w/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_mouse_scroll">CHART_MOUSE_SCROLL</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Прокрутка графика левой кнопкой мышки по горизонтали. Прокрутка по вертикали также будет доступна, если установлено в true значение любого из трех свойств: CHART_SCALEFIX, CHART_SCALEFIX_11 или CHART_SCALE_PT_PER_BAR</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_event_mouse_move">CHART_EVENT_MOUSE_MOVE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отправка всем mql4-программам на графике сообщений о событиях перемещения и нажатия кнопок мыши (<a href="/ru/constants/chartconstants/enum_chartevents">CHARTEVENT_MOUSE_MOVE</a>)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_event_object_create">CHART_EVENT_OBJECT_CREATE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отправка всем mql4-программам на графике сообщений о событии создания графического объекта (<a href="/ru/constants/chartconstants/enum_chartevents">CHARTEVENT_OBJECT_CREATE</a>)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_event_object_delete">CHART_EVENT_OBJECT_DELETE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отправка всем mql4-программам на графике сообщений о событии уничтожения графического объекта (<a href="/ru/constants/chartconstants/enum_chartevents">CHARTEVENT_OBJECT_DELETE</a>)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_mode">CHART_MODE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип графика (свечи, бары или линия)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>enum &nbsp; &nbsp; <a href="/ru/constants/chartconstants/chart_view#enum_chart_mode">ENUM_CHART_MODE</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_foreground">CHART_FOREGROUND</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ценовой график на переднем плане</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_shift">CHART_SHIFT</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Режим отступа ценового графика от правого края</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_autoscroll">CHART_AUTOSCROLL</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Режим автоматического перехода к правому краю графика</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_scale">CHART_SCALE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Масштаб</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int &nbsp; &nbsp; &nbsp; от 0 до 5</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_scalefix">CHART_SCALEFIX</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Режим фиксированного масштаба</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_scalefix_11">CHART_SCALEFIX_11</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Режим масштаба 1:1</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_scale_pt_per_bar">CHART_SCALE_PT_PER_BAR</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Режим указания масштаба в пунктах на бар</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_show_ohlc">CHART_SHOW_OHLC</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отображение в левом верхнем углу значений OHLC</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_show_bid_line">CHART_SHOW_BID_LINE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отображение значения Bid горизонтальной линией на графике</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_show_ask_line">CHART_SHOW_ASK_LINE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отображение значения Ask горизонтальной линией на графике</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_show_last_line">CHART_SHOW_LAST_LINE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отображение значения Last горизонтальной линией на графике</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_show_period_sep">CHART_SHOW_PERIOD_SEP</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отображение вертикальных разделителей между соседними периодами</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_show_grid">CHART_SHOW_GRID</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отображение сетки на графике</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_show_volumes">CHART_SHOW_VOLUMES</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отображение объемов на графике</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>enum &nbsp; &nbsp; <a href="/ru/constants/chartconstants/chart_view#enum_chart_volume_mode">ENUM_CHART_VOLUME_MODE</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_show_object_descr">CHART_SHOW_OBJECT_DESCR</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отображение текстовых описаний объектов (не для всех объектов описания показываются)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_visible_bars">CHART_VISIBLE_BARS</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Количество баров на графике, доступных для отображения</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int &nbsp; &nbsp; r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_windows_total">CHART_WINDOWS_TOTAL</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Общее количество окон графика, включая подокна индикаторов</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int &nbsp; &nbsp; r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_window_is_visible">CHART_WINDOW_IS_VISIBLE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Видимость подокон</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool &nbsp; r/o &nbsp; модификатор - номер подокна</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_window_handle">CHART_WINDOW_HANDLE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Хэндл графика (HWND)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int &nbsp; &nbsp; r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_window_ydistance">CHART_WINDOW_YDISTANCE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Дистанция в пикселях по вертикальной оси Y между верхней рамкой подокна индикатора и верхней рамкой главного окна графика. При наступлении событий мыши координаты курсора передаются в координатах главного окна графика, в то время как координаты графических объектов в подокне индикатора задаются относительно верхнего левого угла подокна. </span></p> <p><span>Значение требуется для перевода абсолютных координат главного графика в локальные координаты подокна для корректной работы с графическими объектами, у которых координаты задаются относительно верхнего левого угла рамки подокна.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int &nbsp; &nbsp; r/o &nbsp; модификатор - номер подокна</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_first_visible_bar">CHART_FIRST_VISIBLE_BAR</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Номер первого видимого бара на графике. Индексация баров соответствует <a href="/ru/series">таймсерии</a>.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int &nbsp;r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_width_in_bars">CHART_WIDTH_IN_BARS</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ширина графика в барах</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int &nbsp;r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_width_in_pixels">CHART_WIDTH_IN_PIXELS</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ширина графика в пикселях</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int &nbsp;r/o</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_height_in_pixels">CHART_HEIGHT_IN_PIXELS</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Высота графика в пикселях</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int &nbsp; &nbsp; &nbsp;модификатор - номер подокна</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_background">CHART_COLOR_BACKGROUND</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет фона графика</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_foreground">CHART_COLOR_FOREGROUND</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет осей, шкалы и строки OHLC</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_grid">CHART_COLOR_GRID</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет сетки</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_volume">CHART_COLOR_VOLUME</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет объемов и уровней открытия ордеров</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_chart_up">CHART_COLOR_CHART_UP</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет бара вверх, тени и окантовки тела бычьей свечи</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_chart_down">CHART_COLOR_CHART_DOWN</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет бара вниз, тени и окантовки тела медвежьей свечи</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_chart_line">CHART_COLOR_CHART_LINE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет линии графика и японских свечей "Доджи"</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_candle_bull">CHART_COLOR_CANDLE_BULL</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет тела бычьей свечи</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_candle_bear">CHART_COLOR_CANDLE_BEAR</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет тела медвежьей свечи</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_bid">CHART_COLOR_BID</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет линии Bid-цены</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_ask">CHART_COLOR_ASK</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет линии Ask-цены</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_last">CHART_COLOR_LAST</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет линии цены последней совершенной сделки (Last)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_color_stop_level">CHART_COLOR_STOP_LEVEL</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цвет уровней стоп-ордеров (Stop Loss и Take Profit)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>color</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_show_trade_levels">CHART_SHOW_TRADE_LEVELS</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отображение на графике торговых уровней (уровни открытых ордеров, Stop Loss, Take Profit и отложенных ордеров)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_drag_trade_levels">CHART_DRAG_TRADE_LEVELS</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Разрешение на перетаскивание торговых уровней на графике с помощью мышки. По умолчанию режим перетаскивания включен (значение true)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_show_date_scale">CHART_SHOW_DATE_SCALE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отображение на графике шкалы времени</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_show_price_scale">CHART_SHOW_PRICE_SCALE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Отображение на графике ценовой шкалы</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_is_offline">CHART_IS_OFFLINE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Признак, определяющий, является ли график автономным</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool &nbsp; r/o</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для функций <a href="/ru/chart_operations/chartsetdouble">ChartSetDouble()</a> и <a href="/ru/chart_operations/chartgetdouble">ChartGetDouble()</a></span></p> 
+<p><a id="enum_chart_property_double"></a><span style="font-weight: bold;"> ENUM_CHART_PROPERTY_DOUBLE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_shift_size">CHART_SHIFT_SIZE</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер отступа нулевого бара от правого края в процентах</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double &nbsp;(от 10 до 50 процентов) </span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_fixed_position">CHART_FIXED_POSITION</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Положение фиксированной позиции графика от левого края в процентах. Фиксированная позиция графика обозначена маленьким серым треугольником на горизонтальной оси времени и показывается только в том случае, если отключена автоматическая прокрутка к правому краю при поступлении нового тика (смотри свойство </span><span>CHART_AUTOSCROLL</span><span>). Бар, который находится на фиксированной позиции, остаётся на том же месте при увеличении и уменьшении масштаба. </span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_fixed_max">CHART_FIXED_MAX</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Фиксированный максимум графика</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_fixed_min">CHART_FIXED_MIN</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Фиксированный минимум графика</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_points_per_bar">CHART_POINTS_PER_BAR</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение масштаба в пунктах на бар</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_price_min">CHART_PRICE_MIN</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Минимум графика</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double r/o &nbsp; модификатор - номер подокна</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_price_max">CHART_PRICE_MAX</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Максимум графика</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double r/o &nbsp; модификатор - номер подокна</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для функций <a href="/ru/chart_operations/chartsetstring">ChartSetString()</a> и <a href="/ru/chart_operations/chartgetstring">ChartGetString()</a></span></p> 
+<p><a id="enum_chart_property_string"></a><span style="font-weight: bold;">ENUM_CHART_PROPERTY_STRING</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/chartconstants/charts_samples#chart_comment">CHART_COMMENT</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Текст комментария на графике</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;chartMode=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_MODE</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">switch</span><span>(chartMode)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>(</span><span style="color: #0000ff;">CHART_BARS</span><span>):&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_BARS"</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>(</span><span style="color: #0000ff;">CHART_CANDLES</span><span>):&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_CANDLES"</span><span>);</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">default</span><span>:</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_LINE"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;shifted=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_SHIFT</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(shifted)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_SHIFT&nbsp;=&nbsp;true"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_SHIFT&nbsp;=&nbsp;false"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;autoscroll=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_AUTOSCROLL</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(autoscroll)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_AUTOSCROLL&nbsp;=&nbsp;true"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_AUTOSCROLL&nbsp;=&nbsp;false"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;chartHandle=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_WINDOW_HANDLE</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_WINDOW_HANDLE&nbsp;=&nbsp;"</span><span>,chartHandle);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;windows=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_WINDOWS_TOTAL</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_WINDOWS_TOTAL&nbsp;=&nbsp;"</span><span>,windows);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(windows&gt;1)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;windows;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;height=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_HEIGHT_IN_PIXELS</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;priceMin=</span><span style="color: #0000ff;">ChartGetDouble</span><span>(0,</span><span style="color: #0000ff;">CHART_PRICE_MIN</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;priceMax=</span><span style="color: #0000ff;">ChartGetDouble</span><span>(0,</span><span style="color: #0000ff;">CHART_PRICE_MAX</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(i+</span><span style="color: #008080;">":&nbsp;CHART_HEIGHT_IN_PIXELS&nbsp;=&nbsp;"</span><span>,height,</span><span style="color: #008080;">"pixels"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(i+</span><span style="color: #008080;">":&nbsp;CHART_PRICE_MIN&nbsp;=&nbsp;"</span><span>,priceMin);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(i+</span><span style="color: #008080;">":&nbsp;CHART_PRICE_MAX&nbsp;=&nbsp;"</span><span>,priceMax);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/constants/chartconstants/charts_samples">Примеры работы с графиком</a></span></p> 
+<br>

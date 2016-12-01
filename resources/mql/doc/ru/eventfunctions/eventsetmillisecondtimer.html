@@ -1,0 +1,22 @@
+<h1>EventSetMillisecondTimer</h1> 
+<p><span>Указывает клиентскому терминалу, что для данного эксперта или индикатора необходимо генерировать события <a href="/ru/runtime/event_fire#timer">таймера</a> с периодичностью менее одной секунды.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>EventSetMillisecondTimer</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;</span><span>milliseconds</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;количество&nbsp;миллисекунд</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>milliseconds</span></p> 
+<p><span>[in] &nbsp;Количество миллисекунд, определяющее периодичность возникновения событий от таймера.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>В случае успешного выполнения возвращает true, иначе - false. Для получения кода <a href="/ru/constants/errorswarnings/errorcodes">ошибки</a> нужно вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Эта функция предназначена для тех случаев, когда требуется </span><span>таймер высокого разрешения и </span><span>нужно получать события таймера чаще, чем один раз в секунду. Если вам достаточно обычного таймера с периодом в несколько секунд, то используйте <a href="/ru/eventfunctions/eventsettimer">EventSetTimer()</a>.</span></p> 
+<p><span>Обычно эта функция должна вызываться из функции <a href="/ru/basis/function/events#oninit">OnInit()</a> или в <a href="/ru/basis/types/classes#constructor">конструкторе</a> класса. Для того чтобы обрабатывать события, приходящие от таймера, эксперт или индикатор должен иметь функцию <a href="/ru/basis/function/events#ontimer">OnTimer()</a>. </span></p> 
+<p><span>Каждый эксперт и каждый индикатор работает со своим таймером и получает события только от него. При завершении работы mql4-программы таймер уничтожается принудительно, если он был создан, но не был отключен функцией <a href="/ru/eventfunctions/eventkilltimer">EventKillTimer()</a>.</span></p> 
+<p><span>Для каждой программы может быть запущено не более одного таймера. Каждая mql4-программа и каждый график имеют свою собственную очередь событий, куда складываются все вновь поступающие события. Если в очереди уже есть событие <a href="/ru/runtime/event_fire#timer">Timer</a> либо это событие находится в состоянии обработки, то новое событие Timer в очередь mql4-программы не ставится. </span></p> 
+<br>

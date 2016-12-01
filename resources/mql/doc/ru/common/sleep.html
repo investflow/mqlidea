@@ -1,0 +1,19 @@
+<h1>Sleep</h1> 
+<p><span>Функция задерживает выполнение текущего эксперта или скрипта на определенный интервал.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>Sleep</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;</span><span>milliseconds</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;интервал</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>milliseconds</span></p> 
+<p><span>[in] &nbsp;Интервал задержки в миллисекундах.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Нет возвращаемого значения.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Функцию Sleep() нельзя вызывать из пользовательских индикаторов, так как индикаторы выполняются в интерфейсном потоке и не должны его тормозить. В функцию встроена проверка состояния флага остановки эксперта каждую 0.1 секунды. Функция Sleep() в <a href="/ru/runtime/testing#sleep">тестере стратегий</a> не вызывает никаких задержек.</span></p> 
+<br>

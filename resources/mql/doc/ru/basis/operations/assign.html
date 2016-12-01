@@ -1,0 +1,37 @@
+<h1>Операции присваивания</h1> 
+<p><span>Значением выражения, в которое входит операция присваивания, является значение левого операнда после присваивания:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>Присваивание&nbsp;значения&nbsp;x&nbsp;переменной&nbsp;y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;у&nbsp;=&nbsp;x;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Следующие операции объединяют арифметические или побитовые операции с операцией присваивания:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>Увеличение&nbsp;значения&nbsp;переменной&nbsp;у&nbsp;на&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;у&nbsp;+=&nbsp;x;</span><br> <span>Уменьшение&nbsp;значения&nbsp;переменной&nbsp;y&nbsp;на&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;-=&nbsp;x;</span><br> <span>Умножение&nbsp;значения&nbsp;переменной&nbsp;y&nbsp;на&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;*=&nbsp;x;</span><br> <span>Деление&nbsp;значения&nbsp;переменной&nbsp;y&nbsp;на&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;/=&nbsp;x;</span><br> <span>Остаток&nbsp;от&nbsp;деления&nbsp;значения&nbsp;переменной&nbsp;y&nbsp;на&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;%=&nbsp;x;</span><br> <span>Сдвиг&nbsp;двоичного&nbsp;представления&nbsp;y&nbsp;вправо&nbsp;на&nbsp;x&nbsp;бит&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;&gt;&gt;=&nbsp;x;</span><br> <span>Сдвиг&nbsp;двоичного&nbsp;представления&nbsp;y&nbsp;влево&nbsp;на&nbsp;x&nbsp;бит&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;&lt;&lt;=&nbsp;x;</span><br> <span>Побитовая&nbsp;операция&nbsp;И&nbsp;двоичных&nbsp;представлений&nbsp;y&nbsp;и&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;&amp;=&nbsp;x;</span><br> <span>Побитовая&nbsp;операция&nbsp;ИЛИ&nbsp;двоичных&nbsp;представлений&nbsp;y&nbsp;и&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;|=&nbsp;x;</span><br> <span>Побитовая&nbsp;операция&nbsp;исключающее&nbsp;ИЛИ</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;двоичных&nbsp;представлений&nbsp;y&nbsp;и&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;^=&nbsp;x;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Побитовые операции производятся только с целыми числами. При выполнении операции логический сдвиг представления y вправо/влево на x бит используются младшие 5 двоичных разрядов значения x, старшие разряды отбрасываются, то есть сдвиг производится на 0-31 бит. </span></p> 
+<p><span>При выполнении операции %= (значение y по модулю x) знак результата совпадает со знаком делимого.</span></p> 
+<p><span>В выражении оператор присваивания может присутствовать много раз. В этом случае обработка выражения ведется справа налево:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;y=x=3;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Сначала переменной x будет присвоено значение 3, затем переменной y будет присвоено значение переменной x, то есть тоже 3.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/operations/rules">Приоритеты и &nbsp;порядок операций</a></span></p> 
+<br>

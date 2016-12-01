@@ -1,0 +1,26 @@
+<h1>IsLibrariesAllowed</h1> 
+<p><span>Возвращает информацию о возможности вызова библиотек. </span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>IsLibrariesAllowed</span><span>();</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Возвращает true, если эксперт может вызвать библиотечную функцию, иначе возвращает false.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#import</span><span>&nbsp;</span><span style="color: #008080;">"somelibrary.ex4"</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;somefunc();</span><br> <span>&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">IsLibrariesAllowed</span><span>()==</span><span style="color: #0000ff;">false</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Библиотечные&nbsp;вызовы&nbsp;запрещены."</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Тело&nbsp;Эксперта,&nbsp;вызывающее&nbsp;внешние&nbsp;функции&nbsp;DLL</span><br> <span>&nbsp;&nbsp;somefunc();</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/check/isdllsallowed">IsDllSAllowed</a>, <a href="/ru/check/istradeallowed">IsTradeAllowed</a></span></p> 
+<br>

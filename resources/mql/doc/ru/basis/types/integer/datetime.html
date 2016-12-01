@@ -1,0 +1,28 @@
+<h1>Тип datetime</h1> 
+<p><span>Тип </span><span style="color: #0000ff;">datetime</span><span> предназначен для хранения даты и времени в виде количества секунд, прошедших с 01 января 1970 года. Занимает в памяти 8 байт.</span></p> 
+<p><span>Константы даты и времени могут быть представлены в виде литеральной строки, которая состоит из 6 частей, представляющих числовое значение года, месяца, числа (либо числа, месяца, года), часа, минуты и секунды. Константа обрамляется одинарными кавычками и начинается с символа D. </span></p> 
+<p><span>Диапазон значений от 1 января 1970 года до 31 декабря 3000 года. Может опускаться либо дата (год, месяц, число), либо время (часы, минуты, секунды), либо все вместе. </span></p> 
+<p><span>При литеральном задании даты желательно указывать год, месяц и день, иначе компилятор выдаст <a href="/ru/constants/errorswarnings/warningscompile">предупреждения</a> о неполной литеральной записи.</span></p> 
+<p><span style="font-weight: bold;">Примеры:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">datetime</span><span>&nbsp;NY=D'2015.01.01&nbsp;00:00';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;время&nbsp;наступления&nbsp;2015&nbsp;года</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;d1=D'1980.07.19&nbsp;12:30:27';&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;год&nbsp;месяц&nbsp;день&nbsp;часы&nbsp;минуты&nbsp;секунды</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;d2=D'19.07.1980&nbsp;12:30:27';&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;равнозначно&nbsp;D'1980.07.19&nbsp;12:30:27';</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;d3=D'19.07.1980&nbsp;12';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;равнозначно&nbsp;D'1980.07.19&nbsp;12:00:00'</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;d4=D'01.01.2004';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;равнозначно&nbsp;D'01.01.2004&nbsp;00:00:00'</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;compilation_date=</span><span style="color: #0000ff;">__DATE__</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;дата&nbsp;компиляции</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;compilation_date_time=</span><span style="color: #0000ff;">__DATETIME__</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;дата&nbsp;и&nbsp;время&nbsp;компиляции&nbsp;</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;compilation_time=</span><span style="color: #0000ff;">__DATETIME__</span><span>-</span><span style="color: #0000ff;">__DATE__</span><span>;</span><span style="color: #808080;">//&nbsp;время&nbsp;компиляции</span><br> <span style="color: #808080;">//---&nbsp;примеры&nbsp;объявлений,&nbsp;на&nbsp;которые&nbsp;будут&nbsp;получены&nbsp;предупреждения&nbsp;компилятора</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;warning1=D'12:30:27';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;равнозначно&nbsp;D'[дата&nbsp;компиляции]&nbsp;12:30:27'</span><br> <span style="color: #0000ff;">datetime</span><span>&nbsp;warning2=D'';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;равнозначно&nbsp;__DATETIME__</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Следует иметь ввиду, что преобразование типа </span><span style="color: #0000ff;">datetime</span><span> в строку зависит от режима компиляции: </span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;date=D'2014.03.05&nbsp;15:46:58';</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;str=</span><span style="color: #008080;">"mydate="</span><span>+date;</span><br> <span style="color: #808080;">//---&nbsp;str="mydate=1394034418"&nbsp;-&nbsp;результат&nbsp;без&nbsp;директивы&nbsp;#property&nbsp;strict</span><br> <span style="color: #808080;">//---&nbsp;str="mydate=2014.03.05&nbsp;15:46:58"&nbsp;-&nbsp;результат&nbsp;с&nbsp;директивой&nbsp;#property&nbsp;strict</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/constants/structures/mqldatetime">Структура даты</a>, <a href="/ru/dateandtime">Дата и время</a>, <a href="/ru/convert/timetostring">TimeToString</a>, <a href="/ru/convert/stringtotime">StringToTime</a></span></p> 
+<br>

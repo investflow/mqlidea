@@ -1,0 +1,15 @@
+<h1>double Close[]</h1> 
+<p><span>Массив-таймсерия, содержащий цены закрытия каждого бара текущего графика.</span></p> 
+<p><span>Индексация элементов таймсерий производится задом наперед, от последнего к первому. Текущий бар, самый последний в массиве, имеет индекс 0. Самый старый бар, первый на графике, имеет индекс <a href="/ru/predefined/bars">Bars</a>-1.</span></p> 
+<p><span>См. также <a href="/ru/series/iclose">iClose()</a>.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;handle&nbsp;=&nbsp;</span><span style="color: #0000ff;">FileOpen</span><span>(</span><span style="color: #008080;">"file.csv"</span><span>,&nbsp;</span><span style="color: #0000ff;">FILE_CSV</span><span>|</span><span style="color: #0000ff;">FILE_WRITE</span><span>,&nbsp;</span><span style="color: #008080;">";"</span><span>);</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(handle&gt;0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;запись&nbsp;заголовков&nbsp;столбцов&nbsp;таблицы</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">FileWrite</span><span>(handle,&nbsp;</span><span style="color: #008080;">"Time;Open;High;Low;Close;Volume"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;запись&nbsp;данных</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;</span><span style="color: #0000ff;">Bars</span><span>;&nbsp;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">FileWrite</span><span>(handle,&nbsp;</span><span style="color: #0000ff;">Time</span><span>[i],&nbsp;</span><span style="color: #0000ff;">Open</span><span>[i],&nbsp;</span><span style="color: #0000ff;">High</span><span>[i],&nbsp;</span><span style="color: #0000ff;">Low</span><span>[i],&nbsp;</span><span style="color: #0000ff;">Close</span><span>[i],&nbsp;</span><span style="color: #0000ff;">Volume</span><span>[i]);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">FileClose</span><span>(handle);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

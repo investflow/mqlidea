@@ -1,0 +1,41 @@
+<h1>OrderSelect</h1> 
+<p><span>Выбирает ордер для дальнейшей работы с ним.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>OrderSelect</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>index</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;индекс&nbsp;или&nbsp;тикет&nbsp;ордера</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>select</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;флаг&nbsp;способа&nbsp;выбора</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>pool=MODE_TRADES&nbsp;</span><span>&nbsp;</span><span>//&nbsp;источник&nbsp;данных&nbsp;для&nbsp;выбора</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>ticket</span></p> 
+<p><span>[in] &nbsp;Индекс ордера или номер ордера в зависимости от второго параметра.</span></p> 
+<p><span>select</span></p> 
+<p><span>[in] &nbsp;Флаг способа выбора. Mожет быть одним из следующих величин: </span></p> 
+<p><span>SELECT_BY_POS - в параметре index передается порядковый номер ордера в списке, </span><br> <span>SELECT_BY_TICKET - в параметре index передается номер тикета.</span></p> 
+<p><span>pool=MODE_TRADES</span></p> 
+<p><span>[in] &nbsp;Источник данных для выбора. Используется, когда параметр select равен SELECT_BY_POS. Mожет быть одной из следующих величин:</span></p> 
+<p><span>MODE_TRADES (по умолчанию) - ордер выбирается среди открытых и отложенных ордеров,</span><br> <span>MODE_HISTORY - ордер выбирается среди закрытых и удаленных ордеров.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Возвращает true при успешном завершении функции или false в случае ошибки. Чтобы получить информацию об </span><span><a href="/ru/constants/errorswarnings/enum_trade_return_codes">ошибке</a></span><span>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Параметр pool игнорируется, если ордер выбирается по номеру тикета. Номер тикета является уникальным идентификатором ордера. </span></p> 
+<p><span>Чтобы определить, из какого списка выбран ордер, необходимо проанализировать его время закрытия. Если время закрытия ордера равно 0, то ордер является открытым или отложенным и взят из списка открытых ордеров терминала. </span></p> 
+<p><span>Отличить открытый ордер от отложенного ордера можно по типу ордера. Если время закрытия ордера не равно 0, то ордер является закрытым или удаленным отложенным и был выбран из истории терминала. Отличить закрытый ордер от удаленного отложенного также можно по типу ордера.</span></p> 
+<p><span>Функция OrderSelect() копирует данные об ордере в программное окружение, и последующие вызовы <a href="/ru/trading/ordercloseprice">OrderClosePrice()</a>, <a href="/ru/trading/orderclosetime">OrderCloseTime()</a>, <a href="/ru/trading/ordercomment">OrderComment()</a>, <a href="/ru/trading/ordercommission">OrderCommission()</a>, <a href="/ru/trading/orderexpiration">OrderExpiration()</a>, <a href="/ru/trading/orderlots">OrderLots()</a>, <a href="/ru/trading/ordermagicnumber">OrderMagicNumber()</a>, <a href="/ru/trading/orderopenprice">OrderOpenPrice()</a>, <a href="/ru/trading/orderopentime">OrderOpenTime()</a>, <a href="/ru/trading/orderprint">OrderPrint()</a>, <a href="/ru/trading/orderprofit">OrderProfit()</a>, <a href="/ru/trading/orderstoploss">OrderStopLoss()</a>, <a href="/ru/trading/orderswap">OrderSwap()</a>, <a href="/ru/trading/ordersymbol">OrderSymbol()</a>, <a href="/ru/trading/ordertakeprofit">OrderTakeProfit()</a>, <a href="/ru/trading/orderticket">OrderTicket()</a>, <a href="/ru/trading/ordertype">OrderType()</a> возвращают ранее скопированные данные. Это означает, что самого ордера может уже и не быть (или же в нем изменились цена открытия, уровни Stop Loss / Take Profit или момент истечения), а данные этому ордеру можно еще получать. Для гарантированного получения свежих данных об ордере рекомендуется вызывать функцию OrderSelect() непосредственно перед обращением за ними.</span></p> 
+<p><span>При последовательном выборе ордеров с помощью параметра SELECT_BY_POS информация отдаётся в том порядке, в котором она поступила с торгового сервера. Никакая сортировка полученного списка ордеров не гарантируется.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">OrderSelect</span><span>(12470,&nbsp;SELECT_BY_TICKET)==</span><span style="color: #0000ff;">true</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"order&nbsp;#12470&nbsp;open&nbsp;price&nbsp;is&nbsp;"</span><span>,&nbsp;</span><span style="color: #0000ff;">OrderOpenPrice</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"order&nbsp;#12470&nbsp;close&nbsp;price&nbsp;is&nbsp;"</span><span>,&nbsp;</span><span style="color: #0000ff;">OrderClosePrice</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"OrderSelect()&nbsp;вернул&nbsp;ошибку&nbsp;-&nbsp;"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/constants/tradingconstants/orderproperties">Свойства ордеров</a>, <a href="/ru/trading/ordercloseprice">OrderClosePrice()</a>, <a href="/ru/trading/orderclosetime">OrderCloseTime()</a>, <a href="/ru/trading/ordercomment">OrderComment()</a>, <a href="/ru/trading/ordercommission">OrderCommission()</a>, <a href="/ru/trading/orderexpiration">OrderExpiration()</a>, <a href="/ru/trading/orderlots">OrderLots()</a>, <a href="/ru/trading/ordermagicnumber">OrderMagicNumber()</a>, <a href="/ru/trading/orderopenprice">OrderOpenPrice()</a>, <a href="/ru/trading/orderopentime">OrderOpenTime()</a>, <a href="/ru/trading/orderprint">OrderPrint()</a>, <a href="/ru/trading/orderprofit">OrderProfit()</a>, <a href="/ru/trading/orderstoploss">OrderStopLoss()</a>, <a href="/ru/trading/orderswap">OrderSwap()</a>, <a href="/ru/trading/ordersymbol">OrderSymbol()</a>, <a href="/ru/trading/ordertakeprofit">OrderTakeProfit()</a>, <a href="/ru/trading/orderticket">OrderTicket()</a>, <a href="/ru/trading/ordertype">OrderType()</a> </span></p> 
+<br>

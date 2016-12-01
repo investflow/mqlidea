@@ -1,0 +1,22 @@
+<h1>GlobalVariablesDeleteAll</h1> 
+<p><span>Удаляет глобальные переменные клиентского терминала.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>GlobalVariablesDeleteAll</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prefix_name=NULL</span><span style="color: #000000;">,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;все&nbsp;глобальные&nbsp;переменные,&nbsp;чьи&nbsp;имена&nbsp;начинаются&nbsp;с&nbsp;префикса</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime&nbsp;</span><span>&nbsp;&nbsp;</span><span>limit_data=0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;все&nbsp;глобальные&nbsp;переменные,&nbsp;которые&nbsp;изменялись&nbsp;ранее&nbsp;ранее&nbsp;указанной&nbsp;даты</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>prefix_name=NULL</span></p> 
+<p><span>[in] &nbsp;Префикс имени удаляемых глобальных переменных. Если указан префикс NULL либо пустая строка, то под критерий удаления соответствуют все глобальные переменные, соответствующие критерию удаления по дате</span></p> 
+<p><span>limit_data=0</span></p> 
+<p><span>[in] &nbsp;Необязательный параметр. Дата для отбора глобальных переменных по времени последней модификации. Удаляются глобальные переменные, которые изменялись ранее указанной даты. Если параметр равен нулю, то удаляются все глобальные переменные, соответствующие первому критерию (по префиксу).</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Количество удаленных переменных.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Если оба параметра равны нулю (prefix_name=NULL и limit_data=0), то удаляются все глобальные переменные терминала. Если указаны оба параметра, то удаляются глобальные переменные, соответствующие одновременно каждому из указанных параметров. </span></p> 
+<p><span>Глобальные переменные существуют в клиентском терминале 4 недели с момента последнего обращения, после этого автоматически уничтожаются.</span></p> 
+<br>

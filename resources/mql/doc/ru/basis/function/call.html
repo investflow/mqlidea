@@ -1,0 +1,49 @@
+<h1>Вызов функции</h1> 
+<p><span>Если некоторое имя, которое не было описано ранее, появляется в выражении и за ним следует левая круглая скобка, то оно по контексту считается именем некоторой функции.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>имя_функции&nbsp;(x1,&nbsp;x2,...,&nbsp;xn)</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><a id="argument"></a><span>Аргументы (<a href="/ru/basis/variables/formal">формальные&nbsp;параметры</a>) передаются по значению, т. е. каждое выражение x1, . . . , xn вычисляется и значение передается функции. Порядок вычисления выражений и порядок загрузки значений не гарантируются. Во время выполнения производится проверка числа и типа аргументов, переданных функции. Такой способ обращения к функции называется вызовом по значению. </span></p> 
+<p><span>Вызов функции – это выражение, значением которого является значение, возвращаемое функцией. Описанный тип функции должен соответствовать типу возвращаемого значения. Функция может быть объявлена или описана в любом месте программы на <a href="/ru/basis/variables/global">глобальном&nbsp;уровне</a>, то есть, вне других функций. Функция не может быть объявлена или описана внутри другой функции.</span></p> 
+<p><span style="font-weight: bold;">Примеры:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;start()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;some_array[4]={0.3,&nbsp;1.4,&nbsp;2.5,&nbsp;3.6};</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;a=linfunc(some_array,&nbsp;10.5,&nbsp;8);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//...</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #0000ff;">double</span><span>&nbsp;linfunc(</span><span style="color: #0000ff;">double</span><span>&nbsp;x[],&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;a,&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;b)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>&nbsp;(a*x[0]&nbsp;+&nbsp;b);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>При вызове функции, имеющей умолчательные параметры, список передаваемых параметров можно ограничить не ранее первого умолчательного параметра.</span></p> 
+<p><span style="font-weight: bold;">Примеры:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;somefunc(</span><span style="color: #0000ff;">double</span><span>&nbsp;init,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;sec=0.0001,&nbsp;</span><span style="color: #808080;">//определены&nbsp;значения&nbsp;по&nbsp;умолчанию</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;level=10);&nbsp;&nbsp;</span><br> <span style="color: #808080;">//...</span><br> <span>somefunc();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;неправильный&nbsp;вызов.&nbsp;первый&nbsp;обязательный&nbsp;параметр&nbsp;должен&nbsp;быть.</span><br> <span>somefunc(3.14);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;правильный&nbsp;вызов</span><br> <span>somefunc(3.14,0.0002);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;правильный&nbsp;вызов</span><br> <span>somefunc(3.14,0.0002,10);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;правильный&nbsp;вызов</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>При вызове функции нельзя пропускать параметры, даже имеющие умолчательные значения:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>somefunc(3.14,&nbsp;,&nbsp;10);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;неправильный&nbsp;вызов&nbsp;-&gt;&nbsp;второй&nbsp;параметр&nbsp;пропущен.</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Если в программе используются или могут в будущем использоваться несколько одноименных функций из разных контекстов исполнения, то может возникнуть неоднозначность. </span><span>Для устранения неоднозначности вызова функций явно указывайте область видимости с помощью <a href="/ru/basis/operations/other#context_allow">операции разрешения контекста</a>.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/oop/overload">Перегрузка</a>, <a href="/ru/basis/oop/virtual">Виртуальные функции</a>, <a href="/ru/basis/oop/polymorphism">Полиморфизм</a></span></p> 
+<br>

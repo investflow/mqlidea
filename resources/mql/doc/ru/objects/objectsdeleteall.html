@@ -1,0 +1,55 @@
+<h1>ObjectsDeleteAll</h1> 
+<p><span>Удаляет все объекты с указанным типом и в указанном подокне графика. </span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ObjectsDeleteAll</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>sub_window=EMPTY</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;индекс&nbsp;окна</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;</span><span>object_type=EMPTY&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;тип&nbsp;объекта&nbsp;для&nbsp;удаления</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Удаляет все объекты с указанным типом:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ObjectsDeleteAll</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>sub_window=EMPTY</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;индекс&nbsp;окна</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;</span><span>object_type=EMPTY&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;тип&nbsp;объекта&nbsp;для&nbsp;удаления</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Удаляет по префиксу имени в подокне графика все объекты указанного типа.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ObjectsDeleteAll</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prefix</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;префикс&nbsp;имени&nbsp;объекта</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>sub_window=EMPTY</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;индекс&nbsp;окна</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;</span><span>object_type=EMPTY&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;тип&nbsp;объекта&nbsp;для&nbsp;удаления</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>chart_id</span></p> 
+<p><span>[in] &nbsp;Идентификатор графика.</span></p> 
+<p><span>prefix</span></p> 
+<p><span>[in] &nbsp;Префикс, по которому будут удалены все объекты, чьи имена начинаются с данного набора символов. Префикс можно указывать как 'name' или 'name*' – оба варианта работают одинаково. Если в качестве префикса указана пустая строка, то будут удалены объекты с любым именем.</span></p> 
+<p><span>sub_window=EMPTY</span></p> 
+<p><span>[in] &nbsp;Необязательный параметр. Индекс окна, на котором будут удалены объекты. Должен быть большим или равным -1 (EMPTY, значение по умолчанию) и меньшим, чем <a href="/ru/chart_operations/windowstotal">WindowsTotal()</a>.</span></p> 
+<p><span>object_type=EMPTY</span></p> 
+<p><span>[in] &nbsp;Необязательный параметр. Тип объекта для удаления. Это может быть любое из значений списка <a href="/ru/constants/objectconstants/enum_object">идентификаторов типов объектов</a> или EMPTY (-1) для удаления всех объектов.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Возвращает количество удаленных объектов. Для получения дополнительной информации об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a> необходимо вызвать функцию функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Замечания: нумерация подокон графика (если на графике есть подокна с индикаторами) начинается с 1. Главное окно графика есть всегда и имеет индекс 0. Если индекс окна отсутствует или имеет значение -1, то объекты удаляются со всего графика. Если значение параметра type равно -1 или этот параметр отсутствует, то удаляются все объекты из указанного подокна.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectsDeleteAll</span><span>(2,&nbsp;</span><span style="color: #0000ff;">OBJ_HLINE</span><span>);&nbsp;</span><span style="color: #808080;">//&nbsp;удаляются&nbsp;все&nbsp;горизонтальные&nbsp;линии&nbsp;из&nbsp;2-го&nbsp;подокна.</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectsDeleteAll</span><span>(2);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;удаляются&nbsp;все&nbsp;объекты&nbsp;из&nbsp;2-го&nbsp;подокна.</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectsDeleteAll</span><span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;удаляются&nbsp;все&nbsp;объекты&nbsp;с&nbsp;графика.</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

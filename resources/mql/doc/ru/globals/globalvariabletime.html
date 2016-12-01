@@ -1,0 +1,21 @@
+<h1>GlobalVariableTime</h1> 
+<p><span>Возвращает время последнего доступа к глобальной переменной. </span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>datetime&nbsp;&nbsp;</span><span>GlobalVariableTime</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>name</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>name</span></p> 
+<p><span>[in] &nbsp;Имя глобальной переменной.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Возвращает время последнего доступа к указанной глобальной переменной. Обращение к переменной за значением, например, с помощью функций <a href="/ru/globals/globalvariableget">GlobalVariableGet()</a> и <a href="/ru/globals/globalvariablecheck">GlobalVariableCheck()</a>, также изменяет время последнего доступа. Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Глобальные переменные существуют в клиентском терминале 4 недели с момента последнего обращения, после этого автоматически уничтожаются.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/globals/globalvariablecheck">GlobalVariableCheck()</a></span></p> 
+<br>

@@ -1,0 +1,28 @@
+<h1>ResourceReadImage</h1> 
+<p><span>Читает данные графического ресурса, <a href="/ru/common/resourcecreate#dynamic_resourcecreate">созданного функцией ResourceCreate()</a> или <a href="/ru/runtime/resources#resource_include">сохраненного в EX4-файле при компиляции</a>.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ResourceReadImage</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>resource_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;графического&nbsp;ресурса&nbsp;для&nbsp;чтения</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&amp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;массив&nbsp;для&nbsp;получения&nbsp;данных&nbsp;из&nbsp;ресурса</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&amp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>width</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;для&nbsp;получения&nbsp;ширины&nbsp;картинки&nbsp;в&nbsp;ресурсе</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&amp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>height&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;для&nbsp;получения&nbsp;высоты&nbsp;картинки&nbsp;в&nbsp;ресурсе</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>resource_name</span></p> 
+<p><span>[in] &nbsp;Имя графического ресурса, содержащего изображение. Для доступа к собственным ресурсам указывается в коротком виде "::resourcename". Если же необходимо загрузить ресурс из скомпилированного EX4-файла, то необходимо имя в полном виде с указанием пути относительно папки MQL4, имени файла и имени ресурса – "path\\filename.ex4::resourcename".</span></p> 
+<p><span>data[][]</span></p> 
+<p><span>[in] &nbsp;Одномерный или двумерный массив для получения данных из графического ресурса.</span></p> 
+<p><span>img_width</span></p> 
+<p><span>[out] &nbsp;Ширина картинки графического ресурса в пикселях</span><span>.</span></p> 
+<p><span>img_height</span></p> 
+<p><span>[out] &nbsp;Высота картинки графического ресурса в пикселях</span><span>.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>true – в случае успеха, иначе false. Чтобы получить информацию об ошибке, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Если на основании массива </span><span style="font-style: italic;">data[]</span><span> в дальнейшем необходимо <a href="/ru/common/resourcecreate#enum_color_format">создать графический ресурс</a>, то следует использовать <a href="/ru/common/resourcecreate#enum_color_format">формат цвета</a> COLOR_FORMAT_ARGB_NORMALIZE или COLOR_FORMAT_XRGB_NOALPHA.</span></p> 
+<p><span>Если массив </span><span style="font-style: italic;">data[]</span><span> является двумерным и его вторая размерность меньше размера X(width) графического ресурса, то функция ResourceReadImage() вернет false и чтение не будет произведено. Но при этом, если ресурс существует, то в параметры width и height возвращаются актуальные размеры картинки. </span><span>Это позволит сделать еще одну попытку получения данных из ресурса.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/runtime/resources">Ресурсы</a>, <a href="/ru/objects/objectcreate">ObjectCreate()</a>, <a href="/ru/objects/objectsetstring">ObjectSetString()</a>, <a href="/ru/constants/objectconstants/enum_object_property#enum_object_property_string">OBJPROP_BMPFILE</a></span></p> 
+<br>

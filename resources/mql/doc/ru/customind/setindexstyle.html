@@ -1,0 +1,38 @@
+<h1>SetIndexStyle</h1> 
+<p><span>Устанавливает новый тип, стиль, ширину и цвет для указанной линии индикатора.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>SetIndexStyle</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>index</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;номер&nbsp;линии</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>type</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;тип</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>style=EMPTY</span><span>,&nbsp;</span><span>//&nbsp;стиль&nbsp;линии</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>width=EMPTY</span><span>,&nbsp;</span><span>//&nbsp;ширина&nbsp;линии</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>color</span><span>&nbsp;&nbsp;&nbsp;</span><span>clr=clrNONE</span><span>&nbsp;&nbsp;</span><span>//&nbsp;цвет</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span style="color: #404040;">index</span></p> 
+<p><span>[in] &nbsp;Порядковый номер линии. Должен быть от 0 до 7.</span></p> 
+<p><span style="color: #404040;">type</span></p> 
+<p><span>[in] &nbsp;Стиль отрисовки линии индикатора. Может быть одним из перечисленных <a href="/ru/constants/indicatorconstants/drawstyles">стилей отрисовки линии</a>.</span></p> 
+<p><span style="color: #404040;">style=EMPTY</span></p> 
+<p><span>[in] &nbsp;Стиль линии. Используется для линий толщиной в 1 пиксель. Может быть одним из перечисленных <a href="/ru/constants/indicatorconstants/drawstyles">стилей линии</a>. Пустое значение (EMPTY) указывает, что стиль не будет изменен.</span></p> 
+<p><span style="color: #404040;">width=EMPTY</span></p> 
+<p><span>[in] &nbsp;Ширина линии. Допустимые значения - 1,2,3,4,5. Пустое значение (EMPTY) указывает, что ширина не будет изменена.</span></p> 
+<p><span style="color: #404040;">clr=clrNONE</span></p> 
+<p><span>[in] &nbsp;Цвет линии. Отсутствие параметра означает, что цвет не будет изменен.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Нет</span><span>.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexStyle</span><span>(3,</span><span style="color: #0000ff;">DRAW_LINE</span><span>,EMPTY,2,</span><span style="color: #0000ff;">clrRed</span><span>);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/constants/indicatorconstants/customindicatorproperties">Свойства&nbsp;пользовательских&nbsp;индикаторов</a></span></p> 
+<p><span>&nbsp;</span></p> 
+<br>

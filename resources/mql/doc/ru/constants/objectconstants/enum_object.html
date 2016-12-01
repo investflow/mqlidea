@@ -1,0 +1,216 @@
+<h1>Типы объектов</h1> 
+<p><span>При создании графического объекта функцией <a href="/ru/objects/objectcreate">ObjectCreate()</a> необходимо указать тип создаваемого объекта, который может принимать одно из значений перечисления ENUM_OBJECT. Идентификаторы типов графических объектов используются в функциях <a href="/ru/objects/objectcreate">ObjectCreate()</a>, <a href="/ru/objects/objectsdeleteall">ObjectsDeleteAll()</a> и <a href="/ru/objects/objecttype">ObjectType()</a>. </span></p> 
+<p><span>Дальнейшие уточнения <a href="/ru/constants/objectconstants/enum_object_property">свойств</a> созданного объекта возможно с помощью функций по работе с <a href="/ru/objects">графическими&nbsp;объектами</a>.</span></p> 
+<p><span style="font-weight: bold;">ENUM_OBJECT</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; width:30px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_vline">OBJ_VLINE</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="vertical_line" width="2" height="14" style="margin:0px auto 0px auto;width:2px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/vertical_line.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Вертикальная линия</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_hline">OBJ_HLINE</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="horizonal_line" width="14" height="12" style="margin:0px auto 0px auto;width:14px;height:12px;border:none" src="https://c.mql4.com/i/docs/ru/horizonal_line.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Горизонтальная линия</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_trend">OBJ_TREND</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="trend_line" width="12" height="12" style="margin:0px auto 0px auto;width:12px;height:12px;border:none" src="https://c.mql4.com/i/docs/ru/trend_line.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Трендовая линия</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_trendbyangle">OBJ_TRENDBYANGLE</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="trend_line)by_angle" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/trend_line)by_angle.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Трендовая линия по углу</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_cycles">OBJ_CYCLES</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="cycle_lines" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/cycle_lines.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Циклические линии</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_channel">OBJ_CHANNEL</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="equidistance_channel" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/equidistance_channel.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Равноудаленный канал</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_stddevchannel">OBJ_STDDEVCHANNEL</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="stddeviation_channel" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/stddeviation_channel.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Канал стандартного отклонения</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_regression">OBJ_REGRESSION</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="regression_channel" width="15" height="16" style="margin:0px auto 0px auto;width:15px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/regression_channel.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Канал на линейной регрессии</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_pitchfork">OBJ_PITCHFORK</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="andrewspitchfork" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/andrewspitchfork.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Вилы Эндрюса</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_gannline">OBJ_GANNLINE</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="gann_line" width="14" height="16" style="margin:0px auto 0px auto;width:14px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/gann_line.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Линия Ганна</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_gannfan">OBJ_GANNFAN</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="gann_fan" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/gann_fan.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Веер Ганна</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_ganngrid">OBJ_GANNGRID</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="gann_grid" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/gann_grid.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Сетка Ганна</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_fibo">OBJ_FIBO</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="fibonacci_levels" width="14" height="16" style="margin:0px auto 0px auto;width:14px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/fibonacci_levels.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Уровни Фибоначчи</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_fibotimes">OBJ_FIBOTIMES</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="fibonacci_time_zones" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/fibonacci_time_zones.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Временные зоны Фибоначчи</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_fibofan">OBJ_FIBOFAN</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="fibo_fan" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/fibo_fan.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Веер Фибоначчи</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_fiboarc">OBJ_FIBOARC</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="fibo_arc" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/fibo_arc.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Дуги Фибоначчи</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_fibochannel">OBJ_FIBOCHANNEL</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="fibo_channel" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/fibo_channel.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Канал Фибоначчи</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_expansion">OBJ_EXPANSION</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="fibo_expansion" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/fibo_expansion.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Расширение Фибоначчи</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_rectangle">OBJ_RECTANGLE</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="rectangle" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/rectangle.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Прямоугольник</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_triangle">OBJ_TRIANGLE</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="triangle" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/triangle.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Треугольник</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_ellipse">OBJ_ELLIPSE</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="ellipse" width="16" height="14" style="margin:0px auto 0px auto;width:16px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/ellipse.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Эллипс</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_arrow_thumb_up">OBJ_ARROW_THUMB_UP</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="THUMB_UP" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/thumb_up.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Знак "Хорошо" (большой палец вверх)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_arrow_thumb_down">OBJ_ARROW_THUMB_DOWN</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="THUMB_DOWN" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/thumb_down.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Знак "Плохо" (большой палец вниз)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_arrow_up">OBJ_ARROW_UP</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="arrow_up" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/arrow_up.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Знак "Стрелка вверх"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_arrow_down">OBJ_ARROW_DOWN</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="arrow_down" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/arrow_down.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Знак "Стрелка вниз"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_arrow_stop">OBJ_ARROW_STOP</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="stop_signal" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/stop_signal.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Знак "Стоп"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_arrow_check">OBJ_ARROW_CHECK</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="check_signal" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/check_signal.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Знак "Птичка" (галка)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_arrow_left_price">OBJ_ARROW_LEFT_PRICE</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="left_price_label" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/left_price_label.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Левая ценовая метка</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_arrow_right_price">OBJ_ARROW_RIGHT_PRICE</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="right_price_label" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/right_price_label.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Правая ценовая метка</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_arrow_buy">OBJ_ARROW_BUY</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="buy_sign_icon" width="10" height="11" style="margin:0px auto 0px auto;width:10px;height:11px;border:none" src="https://c.mql4.com/i/docs/ru/buy_sign_icon.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Знак "Buy"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_arrow_sell">OBJ_ARROW_SELL</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="sell_sign_icon" width="10" height="11" style="margin:0px auto 0px auto;width:10px;height:11px;border:none" src="https://c.mql4.com/i/docs/ru/sell_sign_icon.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Знак "Sell"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_arrow">OBJ_ARROW</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="arrow_symbol" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/arrow_symbol.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Объект "Стрелка"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_text">OBJ_TEXT</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="text_object" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/text_object.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Объект "Текст"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_label">OBJ_LABEL</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="label_object" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/label_object.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Объект "Текстовая метка"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_button">OBJ_BUTTON</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="button_object" width="15" height="14" style="margin:0px auto 0px auto;width:15px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/button_object.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Объект "Кнопка"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_bitmap">OBJ_BITMAP</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="picture_object" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/picture_object.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Объект "Рисунок"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_bitmap_label">OBJ_BITMAP_LABEL</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="bitmap_object" width="14" height="14" style="margin:0px auto 0px auto;width:14px;height:14px;border:none" src="https://c.mql4.com/i/docs/ru/bitmap_object.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Объект "Графическая метка"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_edit">OBJ_EDIT</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="edit_object" width="16" height="16" style="margin:0px auto 0px auto;width:16px;height:16px;border:none" src="https://c.mql4.com/i/docs/ru/edit_object.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Объект "Поле ввода"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_event">OBJ_EVENT</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="obj_event" width="29" height="15" style="margin:0px auto 0px auto;width:29px;height:15px;border:none" src="https://c.mql4.com/i/docs/ru/obj_event.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Объект "Событие", соответствующий событию в экономическом календаре</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/objectconstants/enum_object/obj_rectangle_label">OBJ_RECTANGLE_LABEL</a></span></p> </td> 
+    <td style="vertical-align:top; width:30px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><img alt="rectangle_label" width="29" height="18" style="margin:0px auto 0px auto;width:29px;height:18px;border:none" src="https://c.mql4.com/i/docs/ru/rectangle_label.png"></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Объект "Прямоугольная метка"для создания и оформления пользовательского графического интерфейса.</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

@@ -1,0 +1,30 @@
+<h1>RefreshRates</h1> 
+<p><span>Осуществляет обновление данных в предопределенных переменных и массивах-таймсериях.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>RefreshRates</span><span>();</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>Нет.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Возвращает true, если данные обновлены, иначе false.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Эта функция используется, когда эксперт или скрипт производит вычисления в течение долгого времени и нуждается в обновленных данных. </span></p> 
+<p><span>Данные могут не обновиться только по той причине, что они соответствуют текущему состоянию клиентского терминала. Эксперты и скрипты работают с собственной копией исторических данных. Копия данных по текущему инструменту создается при первоначальном запуске эксперта или скрипта. </span></p> 
+<p><span>При каждом следующем запуске эксперта (напомним, что скрипт выполняется однократно и не зависит от приходящих тиков) первоначально созданная копия обновляется. За то время, пока эксперт или скрипт работает, может прийти один или несколько новых тиков, поэтому данные могут устареть.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;ticket;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">while</span><span>(</span><span style="color: #0000ff;">true</span><span>)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ticket=</span><span style="color: #0000ff;">OrderSend</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),OP_BUY,1.0,</span><span style="color: #0000ff;">Ask</span><span>,3,0,0,</span><span style="color: #008080;">"комментарий&nbsp;эксперта"</span><span>,255,0,CLR_NONE);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(ticket&lt;=0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;error=</span><span style="color: #0000ff;">GetLastError</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;недостаточно&nbsp;денег</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(error==134)&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;10&nbsp;секунд&nbsp;ожидания</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Sleep</span><span>(10000);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;обновим&nbsp;ценовые&nbsp;данные</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">RefreshRates</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">OrderSelect</span><span>(ticket,SELECT_BY_TICKET);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">OrderPrint</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

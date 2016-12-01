@@ -1,0 +1,221 @@
+<h1>Информация о счете</h1> 
+<p><span>Для получения информации о текущем счете предназначены функции <a href="/ru/account/accountinfointeger">AccountInfoInteger()</a>, <a href="/ru/account/accountinfodouble">AccountInfoDouble()</a> и <a href="/ru/account/accountinfostring">AccountInfoString()</a>. В качестве параметра эти функции принимают значения из соответствующих перечислений ENUM_ACCOUNT_INFO.</span></p> 
+<p><span>Для функции <a href="/ru/account/accountinfointeger">AccountInfoInteger()</a></span></p> 
+<p><a id="enum_account_info_integer"></a><span style="font-weight: bold;">ENUM_ACCOUNT_INFO_INTEGER</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_LOGIN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Номер счета</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_TRADE_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип торгового счета</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/environment_state/accountinformation#enum_account_trade_mode">ENUM_ACCOUNT_TRADE_MODE</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_LEVERAGE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер предоставленного плеча</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_LIMIT_ORDERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Максимально допустимое количество действующих отложенных ордеров (0-ограничений нет)</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_MARGIN_SO_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Режим задания минимально допустимого уровня залоговых средств</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/environment_state/accountinformation#enum_account_stopout_mode">ENUM_ACCOUNT_STOPOUT_MODE</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_TRADE_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/runtime/tradepermission">Разрешенность торговли</a> для текущего счета</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_TRADE_EXPERT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/runtime/tradepermission">Разрешенность торговли</a> для эксперта</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для функции <a href="/ru/account/accountinfodouble">AccountInfoDouble()</a></span></p> 
+<p><a id="enum_account_info_double"></a><span style="font-weight: bold;">ENUM_ACCOUNT_INFO_DOUBLE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_BALANCE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Баланс счета в валюте депозита</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_CREDIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер предоставленного кредита в валюте депозита</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_PROFIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер текущей прибыли на счете в валюте депозита</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_EQUITY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение собственных средств на счете в валюте депозита</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_MARGIN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер зарезервированных залоговых средств на счете &nbsp;в валюте депозита</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_MARGIN_FREE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер свободных средств на счете &nbsp;в валюте депозита, доступных для открытия ордера</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_MARGIN_LEVEL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Уровень залоговых средств на счете в процентах</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_MARGIN_SO_CALL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Уровень залоговых средств, при котором требуется пополнение счета (Margin Call). В зависимости от установленного </span><span>ACCOUNT_MARGIN_SO_MODE в</span><span>ыражается в процентах либо в валюте депозита</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_MARGIN_SO_SO</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Уровень залоговых средств, при достижении которого происходит принудительное закрытие самого убыточного ордера (Stop Out). В зависимости от установленного </span><span>ACCOUNT_MARGIN_SO_MODE в</span><span>ыражается в процентах либо в валюте депозита</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:300px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_MARGIN_INITIAL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:300px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_MARGIN_MAINTENANCE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:300px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_ASSETS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:300px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_LIABILITIES</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:300px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_COMMISSION_BLOCKED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для функции <a href="/ru/account/accountinfostring">AccountInfoString()</a> </span></p> 
+<p><a id="enum_account_info_string"></a><span style="font-weight: bold;">ENUM_ACCOUNT_INFO_STRING</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_NAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Имя клиента</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_SERVER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Имя торгового сервера</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_CURRENCY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Валюта депозита</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_COMPANY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Имя компании, обслуживающей счет</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Существует несколько видов счетов, которые могут быть открыты на торговом сервере. Для того чтобы узнать тип счета, на котором работает MQL4-программа, предназначено перечисление ENUM_ACCOUNT_TRADE_MODE.</span></p> 
+<p><a id="enum_account_trade_mode"></a><span style="font-weight: bold;">ENUM_ACCOUNT_TRADE_MODE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_TRADE_MODE_DEMO</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Демонстрационный торговый счет</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_TRADE_MODE_CONTEST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Конкурсный торговый счет</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_TRADE_MODE_REAL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Реальный торговый счет</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>При нехватке собственных средств для поддержания открытых ордеров возникает ситуация принудительного закрытия Stop Out. Минимальный уровень маржи, при котором наступает Stop Out, может задаваться в процентах или в денежном выражении. Узнать какой режим задан для данного счета можно с помощью перечисления ENUM_ACCOUNT_STOPOUT_MODE.</span></p> 
+<p><a id="enum_account_stopout_mode"></a><span style="font-weight: bold;">ENUM_ACCOUNT_STOPOUT_MODE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_STOPOUT_MODE_PERCENT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Уровень задается в процентах</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:230px; padding:5px; border:solid thin #b1c2d6;"><p><span>ACCOUNT_STOPOUT_MODE_MONEY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Уровень задается в деньгах</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Пример скрипта, выводящего краткую информацию о счете.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;имя&nbsp;компании</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;company=</span><span style="color: #0000ff;">AccountInfoString</span><span>(</span><span style="color: #0000ff;">ACCOUNT_COMPANY</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;имя&nbsp;клиента</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;name=</span><span style="color: #0000ff;">AccountInfoString</span><span>(</span><span style="color: #0000ff;">ACCOUNT_NAME</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;номер&nbsp;счета</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">long</span><span>&nbsp;login=</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LOGIN</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;имя&nbsp;сервера</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;server=</span><span style="color: #0000ff;">AccountInfoString</span><span>(</span><span style="color: #0000ff;">ACCOUNT_SERVER</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;валюта&nbsp;счета</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;currency=</span><span style="color: #0000ff;">AccountInfoString</span><span>(</span><span style="color: #0000ff;">ACCOUNT_CURRENCY</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;демо,&nbsp;конкурсный&nbsp;или&nbsp;реальный&nbsp;счет</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ENUM_ACCOUNT_TRADE_MODE</span><span>&nbsp;account_type=(</span><span style="color: #0000ff;">ENUM_ACCOUNT_TRADE_MODE</span><span>)</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_TRADE_MODE</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;теперь&nbsp;превратим&nbsp;значение&nbsp;перечисления&nbsp;в&nbsp;понятный&nbsp;вид</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;trade_mode;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">switch</span><span>(account_type)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">ACCOUNT_TRADE_MODE_DEMO</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trade_mode=</span><span style="color: #008080;">"demo"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">ACCOUNT_TRADE_MODE_CONTEST</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trade_mode=</span><span style="color: #008080;">"конкурсный"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">default</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trade_mode=</span><span style="color: #008080;">"реальный"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//---&nbsp;в&nbsp;процентах&nbsp;или&nbsp;в&nbsp;денежном&nbsp;выражении&nbsp;задается&nbsp;уровень&nbsp;Stop&nbsp;Out</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ENUM_ACCOUNT_STOPOUT_MODE</span><span>&nbsp;stop_out_mode=(</span><span style="color: #0000ff;">ENUM_ACCOUNT_STOPOUT_MODE</span><span>)</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_MARGIN_SO_MODE</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;получим&nbsp;значения&nbsp;уровней,&nbsp;при&nbsp;которых&nbsp;наступает&nbsp;Margin&nbsp;Call&nbsp;и&nbsp;Stop&nbsp;Out</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;margin_call=</span><span style="color: #0000ff;">AccountInfoDouble</span><span>(</span><span style="color: #0000ff;">ACCOUNT_MARGIN_SO_CALL</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;stop_out=</span><span style="color: #0000ff;">AccountInfoDouble</span><span>(</span><span style="color: #0000ff;">ACCOUNT_MARGIN_SO_SO</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;выведем&nbsp;краткую&nbsp;информацию&nbsp;по&nbsp;счету</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"Счет&nbsp;клиента&nbsp;'%s'&nbsp;#%d&nbsp;%s&nbsp;открыт&nbsp;в&nbsp;'%s'&nbsp;на&nbsp;сервере&nbsp;'%s'"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name,login,trade_mode,company,server);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"Валюта&nbsp;счета&nbsp;-&nbsp;%s,&nbsp;уровень&nbsp;MarginCall&nbsp;и&nbsp;StopOut&nbsp;задается&nbsp;в&nbsp;%s"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currency,(stop_out_mode==</span><span style="color: #0000ff;">ACCOUNT_STOPOUT_MODE_PERCENT</span><span>)?</span><span style="color: #008080;">"процентах"</span><span>:</span><span style="color: #008080;">"&nbsp;в&nbsp;деньгах"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"Уровень&nbsp;MarginCall=%G,&nbsp;уровень&nbsp;StopOut=%G"</span><span>,margin_call,stop_out);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

@@ -1,0 +1,35 @@
+<h1>iSAR</h1> 
+<p><span>Возвращает значение индикатора Parabolic Stop and Reverse system.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>iSAR</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;символа</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;таймфрейм</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>step</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;шаг&nbsp;изменения&nbsp;цены&nbsp;-&nbsp;коэффициент&nbsp;ускорения</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>maximum</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;максимальный&nbsp;шаг</span><br> <span>&nbsp;&nbsp;&nbsp;int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>shift</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;сдвиг</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>symbol</span></p> 
+<p><span>[in] &nbsp;Символьное имя инструмента, на данных которого будет вычисляться индикатор. <a href="/ru/basis/types/void">NULL</a> означает текущий символ.</span></p> 
+<p><span>timeframe</span></p> 
+<p><span>[in] &nbsp;Период. Может быть одним из значений перечисления <a href="/ru/constants/chartconstants/enum_timeframes">ENUM_TIMEFRAMES</a>. 0 означает период текущего графика.</span></p> 
+<p><span>step</span></p> 
+<p><span>[in] &nbsp;Шаг изменения цены, обычно 0.02.</span></p> 
+<p><span>maximum</span></p> 
+<p><span>[in] &nbsp;Максимальный шаг, обычно 0.2.</span></p> 
+<p><span>shift</span></p> 
+<p><span>[in] &nbsp;Индекс получаемого значения из индикаторного буфера (сдвиг относительно текущего бара на указанное количество периодов назад).</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Значение </span><span>технического индикатора Parabolic Stop and Reverse system.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">iSAR</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,0.02,0.2,0)&gt;</span><span style="color: #0000ff;">Close</span><span>[0])&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

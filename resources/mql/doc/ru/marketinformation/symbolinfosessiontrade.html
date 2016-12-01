@@ -1,0 +1,27 @@
+<h1>SymbolInfoSessionTrade</h1> 
+<p><span>Позволяет получить время начала и время окончания &nbsp;указанной торговой сессии для указанных символа и дня недели.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>SymbolInfoSessionTrade</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;символа</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_DAY_OF_WEEK</span><span>&nbsp;&nbsp;</span><span>day_of_week</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;день&nbsp;недели</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>session_index</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;номер&nbsp;сессии</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>from</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;время&nbsp;начала&nbsp;сессии</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>to</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;время&nbsp;окончания&nbsp;сессии</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>name</span></p> 
+<p><span>[in] &nbsp;Имя символа.</span></p> 
+<p><span>ENUM_DAY_OF_WEEK</span></p> 
+<p><span>[in] &nbsp;День недели, значение из перечисления <a href="/ru/constants/environment_state/marketinfoconstants#enum_day_of_week">ENUM_DAY_OF_WEEK</a>.</span></p> 
+<p><span>uint</span></p> 
+<p><span>[in] &nbsp;Порядковый номер сессии, для которой нужно получить время начала и время окончания. Индексация сессий начинается с 0.</span></p> 
+<p><span>from</span></p> 
+<p><span>[out] &nbsp;Время начала сессии в секундах от 00 часов 00 минут, в полученном значении дату следует игнорировать.</span></p> 
+<p><span>to</span></p> 
+<p><span>[out] &nbsp;Время окончания сессии &nbsp;в секундах от 00 часов 00 минут, в полученном значении дату следует игнорировать.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Если данные для указанных сессии, символа и дня недели получены, то возвращает true, иначе возвращает false.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/constants/environment_state/marketinfoconstants">Информация об инструменте</a>, <a href="/ru/dateandtime/timetostruct">TimeToStruct</a>, <a href="/ru/constants/structures/mqldatetime">Структура даты</a></span></p> 
+<br>

@@ -1,0 +1,40 @@
+<h1>Логические операции</h1> 
+<h3>Логическое отрицание НЕ(!)</h3> 
+<p><span>Операнд операции логического отрицания НЕ(!) должен иметь арифметический тип. Результат равен ИСТИНА(1), если значение операнда есть ЛОЖЬ(0), и равен ЛОЖЬ(0), если операнд не равен ЛОЖЬ(0).</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">if</span><span>(!a)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008000;">"не&nbsp;'a'"</span><span>);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<h3>&nbsp;<br> Логическая операция ИЛИ (||)</h3> 
+<p><span>Логическая операция ИЛИ (||) значений x и y. Значением выражения является ИСТИНА(1), если истинно (не нуль) значение x или y. В противном случае - ЛОЖЬ(0).</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">if</span><span>(x&lt;</span><span style="color: #008080;">0</span><span>&nbsp;||&nbsp;x&gt;=max_bars)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008000;">"out&nbsp;of&nbsp;range"</span><span>);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<h3>&nbsp;<br> Логическая операция И (&amp;&amp;)</h3> 
+<p><span>Логическая операция И (&amp;&amp;) значений x и y. Значением выражения является ИСТИНА(1), если значения x и y истинны (не нуль). В противном случае - ЛОЖЬ(0). </span></p> 
+<h3>Короткая оценка логических операций</h3> 
+<p><span>К логическим выражениям применяется схема так называемой "короткой оценки", то есть, вычисление выражения прекращается в тот момент, когда можно точно оценить результат выражения. </span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;первый&nbsp;пример&nbsp;короткой&nbsp;оценки</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(func_false()&nbsp;&amp;&amp;&nbsp;func_true())</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Операция&nbsp;&amp;&amp;:&nbsp;Это&nbsp;сообщение&nbsp;вы&nbsp;никогда&nbsp;не&nbsp;увидите"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Операция&nbsp;&amp;&amp;:&nbsp;Результат&nbsp;первого&nbsp;выражения&nbsp;false,&nbsp;поэтому&nbsp;второе&nbsp;выражение&nbsp;не&nbsp;вычислялось"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//---&nbsp;второй&nbsp;пример&nbsp;короткой&nbsp;оценки</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!func_false()&nbsp;||&nbsp;!func_true())</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Операция&nbsp;||:&nbsp;Результат&nbsp;первого&nbsp;выражения&nbsp;true,&nbsp;поэтому&nbsp;второе&nbsp;выражение&nbsp;не&nbsp;вычислялось"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Операция&nbsp;||:&nbsp;Это&nbsp;сообщение&nbsp;вы&nbsp;никогда&nbsp;не&nbsp;увидите"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;функция&nbsp;всегда&nbsp;возвращает&nbsp;false&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">bool</span><span>&nbsp;func_false()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Функция&nbsp;func_false()"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;функция&nbsp;всегда&nbsp;возвращает&nbsp;true&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">bool</span><span>&nbsp;func_true()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Функция&nbsp;func_true()"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">true</span><span>);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/operations/rules">Приоритеты и &nbsp;порядок операций</a></span></p> 
+<br>

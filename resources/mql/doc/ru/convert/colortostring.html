@@ -1,0 +1,30 @@
+<h1>ColorToString</h1> 
+<p><span>Преобразует значение цвета в строку вида "R,G,B".</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>ColorToString</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>color</span><span>&nbsp;&nbsp;</span><span>color_value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;значение&nbsp;цвета</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>bool</span><span>&nbsp;&nbsp;&nbsp;</span><span>color_name</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;выводить&nbsp;имя&nbsp;цвета&nbsp;или&nbsp;нет</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>color_value</span></p> 
+<p><span>[in] &nbsp;Значение цвета в переменной типа color.</span></p> 
+<p><span>color_name</span></p> 
+<p><span>[in] &nbsp;Признак необходимости возвращать имя цвета, в случае, если значение цвета совпадает с одной из предопределенных <a href="/ru/constants/objectconstants/webcolors">цветовых&nbsp;констант</a>.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Строковое представление цвета в виде </span><span>"R,G,B", где R, G и B представляют собой преобразованные в строку десятичные константы со значением от 0 до 255. </span><span> Если задан параметр color_name=true, то производится попытка преобразовать значение цвета к имени цвета.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;clr=</span><span style="color: #0000ff;">ColorToString</span><span>(C'</span><span style="color: #008000;">0</span><span>,</span><span style="color: #008000;">255</span><span>,</span><span style="color: #008000;">0</span><span>');&nbsp;</span><span style="color: #808080;">//&nbsp;зеленый&nbsp;цвет</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(clr);</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;clr=</span><span style="color: #0000ff;">ColorToString</span><span>(C'</span><span style="color: #008000;">0</span><span>,</span><span style="color: #008000;">255</span><span>,</span><span style="color: #008000;">0</span><span>',</span><span style="color: #0000ff;">true</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;получить&nbsp;цветовую&nbsp;константу</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(clr);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<br>

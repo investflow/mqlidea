@@ -1,0 +1,30 @@
+<h1>WindowPriceMax</h1> 
+<p><span>Возвращает максимальное значение вертикальной шкалы указанного подокна текущего графика.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>WindowPriceMax</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>index=0</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;индекс&nbsp;подокна</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>index=0</span></p> 
+<p><span>[in] &nbsp;Индекс подокна текущего графика (0 - основной график цены).</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Максимальное значение вертикальной шкалы указанного подокна текущего графика (0-главное окно графика, подокна индикаторов нумеруются с 1). </span></p> 
+<p><span>Если индекс подокна не указан, то возвращается максимальное значение ценовой шкалы главного окна графика.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">&nbsp;&nbsp;double</span><span>&nbsp;&nbsp;&nbsp;top=</span><span style="color: #0000ff;">WindowPriceMax</span><span>();</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;double</span><span>&nbsp;&nbsp;&nbsp;bottom=</span><span style="color: #0000ff;">WindowPriceMin</span><span>();</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;datetime</span><span>&nbsp;left=</span><span style="color: #0000ff;">Time</span><span>[</span><span style="color: #0000ff;">WindowFirstVisibleBar</span><span>()];</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right_bound=</span><span style="color: #0000ff;">WindowFirstVisibleBar</span><span>()-</span><span style="color: #0000ff;">WindowBarsPerChart</span><span>();</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;if</span><span>(right_bound&lt;0)&nbsp;right_bound=0;</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;datetime</span><span>&nbsp;right=</span><span style="color: #0000ff;">Time</span><span>[right_bound]+</span><span style="color: #0000ff;">Period</span><span>()*60;</span><br> <span style="color: #808080;">//----</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;ObjectCreate</span><span>(</span><span style="color: #008080;">"Padding_rect"</span><span>,</span><span style="color: #0000ff;">OBJ_RECTANGLE</span><span>,0,left,top,right,bottom);</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;ObjectSet</span><span>(</span><span style="color: #008080;">"Padding_rect"</span><span>,</span><span style="color: #0000ff;">OBJPROP_BACK</span><span>,</span><span style="color: #0000ff;">true</span><span>);</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;ObjectSet</span><span>(</span><span style="color: #008080;">"Padding_rect"</span><span>,</span><span style="color: #0000ff;">OBJPROP_COLOR</span><span>,Blue);</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;WindowRedraw</span><span>();</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/chart_operations/windowpricemin">WindowPriceMin()</a>, <a href="/ru/chart_operations/windowfirstvisiblebar">WindowFirstVisibleBar()</a>, <a href="/ru/chart_operations/windowbarsperchart">WindowBarsPerChart()</a></span></p> 
+<br>

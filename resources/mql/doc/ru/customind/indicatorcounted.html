@@ -1,0 +1,30 @@
+<h1>IndicatorCounted</h1> 
+<p><span>Возвращает количество баров, не измененных после последнего вызова индикатора.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>IndicatorCounted</span><span>();</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>К</span><span>оличество баров, не измененных после последнего вызова индикатора.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Большинство подсчитанных баров не нуждается в пересчете. Функция используется для оптимизации вычислений.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;start()</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;limit;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;counted_bars=</span><span style="color: #0000ff;">IndicatorCounted</span><span>();</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;последний&nbsp;посчитанный&nbsp;бар&nbsp;будет&nbsp;пересчитан</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(counted_bars&gt;0)&nbsp;counted_bars--;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;limit=</span><span style="color: #0000ff;">Bars</span><span>-counted_bars;</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;основной&nbsp;цикл</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;limit;&nbsp;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;ma_shift&nbsp;присваивается&nbsp;0,&nbsp;потому&nbsp;что&nbsp;SetIndexShift,&nbsp;вызываемый&nbsp;выше</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ExtBlueBuffer[i]=</span><span style="color: #0000ff;">iMA</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,JawsPeriod,0,</span><span style="color: #0000ff;">MODE_SMMA</span><span>,</span><span style="color: #0000ff;">PRICE_MEDIAN</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ExtRedBuffer[i]=</span><span style="color: #0000ff;">iMA</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,TeethPeriod,0,</span><span style="color: #0000ff;">MODE_SMMA</span><span>,</span><span style="color: #0000ff;">PRICE_MEDIAN</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ExtLimeBuffer[i]=</span><span style="color: #0000ff;">iMA</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,LipsPeriod,0,</span><span style="color: #0000ff;">MODE_SMMA</span><span>,</span><span style="color: #0000ff;">PRICE_MEDIAN</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//----</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/constants/indicatorconstants/customindicatorproperties">Свойства&nbsp;пользовательских&nbsp;индикаторов</a>, <a href="/ru/series">Доступ к таймсериям и индикаторам</a></span></p> 
+<p><span>&nbsp;</span></p> 
+<p><span>&nbsp;</span></p> 
+<br>

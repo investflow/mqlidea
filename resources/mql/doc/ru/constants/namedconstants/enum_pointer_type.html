@@ -1,0 +1,30 @@
+<h1>Проверка указателя объекта</h1> 
+<p><span>Для проверки типа <a href="/ru/basis/types/object_pointers">указателя объекта</a> предназначена функция <a href="/ru/common/checkpointer">CheckPointer()</a>, которая возвращает значение из перечисления ENUM_POINTER_TYPE. В случае использования некорректного указателя исполнение программы будет немедленно прервано.</span></p> 
+<p><span>Объекты, созданные оператором <a href="/ru/basis/operators/newoperator">new</a>, имеют тип POINTER_DYNAMIC. Только для таких указателей можно и нужно использовать <a href="/ru/basis/operators/deleteoperator">оператор уничтожения delete()</a>.</span></p> 
+<p><span>Все остальные указатели имеют тип POINTER_AUTOMATIC, что означает, что данный объект был создан автоматически средой исполнения mql4-программы. Такие объекты уничтожаются после использования также автоматически.</span></p> 
+<p><span style="font-weight: bold;">ENUM_POINTER_TYPE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:33%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Константа</span></p> </td> 
+    <td style="vertical-align:top; width:33%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>POINTER_INVALID</span></p> </td> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>Некорректный указатель</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>POINTER_DYNAMIC</span></p> </td> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>Указатель объекта, созданного оператором <a href="/ru/basis/operators/newoperator">new</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>POINTER_AUTOMATIC</span></p> </td> 
+    <td style="vertical-align:top; width:33%; padding:5px; border:solid thin #b1c2d6;"><p><span>Указатель любого объекта, созданного автоматически (без использования new())</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/runtime/errors">Ошибки выполнения</a>, <a href="/ru/basis/operators/deleteoperator">Оператор уничтожения объекта delete</a>, <a href="/ru/common/checkpointer">CheckPointer()</a></span></p> 
+<br>

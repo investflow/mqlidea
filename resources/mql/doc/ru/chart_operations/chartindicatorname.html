@@ -1,0 +1,26 @@
+<h1>ChartIndicatorName</h1> 
+<p><span>Возвращает короткое имя индикатора по номеру в списке индикаторов на указанном окна графика.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>ChartIndicatorName</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>sub_window</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;номер&nbsp;подокна</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>index&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;индекс&nbsp;индикатора&nbsp;в&nbsp;списке&nbsp;индикаторов,&nbsp;добавленных&nbsp;к&nbsp;данному&nbsp;подокну&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>chart_id</span></p> 
+<p><span>[in] &nbsp;Идентификатор графика. 0 означает текущий график.</span></p> 
+<p><span>sub_window</span></p> 
+<p><span>[in] &nbsp;Номер подокна графика. 0 означает главное окно графика.</span></p> 
+<p><span>index</span></p> 
+<p><span>[in] &nbsp;Индекс индикатора с списке индикаторов. Нумерация индикаторов начинается с нуля, то есть самый первый индикатор в списке имеет нулевой индекс. Количество индикаторов в списке можно получить функцией <a href="/ru/chart_operations/chartindicatorstotal">ChartIndicatorsTotal()</a>.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Короткое имя индикатора, </span><span>которое задается в свойстве <a href="/ru/constants/indicatorconstants/customindicatorproperties#enum_customind_property_string">INDICATOR_SHORTNAME</a> функцией <a href="/ru/customind/indicatorsetstring">IndicatorSetString()</a>. </span><span>Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Если короткое наименование индикатора не задается явным образом, то при компиляции в нем указывается имя файла с исходным кодом индикатора. </span></p> 
+<p><span>Необходимо правильно формировать короткое имя индикатора, которое с помощью функции </span><span><a href="/ru/customind/indicatorsetstring">IndicatorSetString()</a> записывается в свойство <a href="/ru/constants/indicatorconstants/customindicatorproperties#enum_customind_property_string">INDICATOR_SHORTNAME</a>. Мы рекомендуем, чтобы короткое имя содержало значения входных параметров индикатора, так как идентификация удаляемого с графика индикатора в функции <a href="/ru/chart_operations/chartindicatordelete">ChartIndicatorDelete()</a> производится именно по короткому имени.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/chart_operations/chartindicatordelete">ChartIndicatorDelete()</a>, <a href="/ru/chart_operations/chartindicatorstotal">ChartIndicatorsTotal()</a>, <a href="/ru/customind/indicatorsetstring">IndicatorSetString()</a></span></p> 
+<br>

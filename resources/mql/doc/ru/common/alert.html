@@ -1,0 +1,23 @@
+<h1>Alert</h1> 
+<p><span>Отображает диалоговое окно, содержащее пользовательские данные.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>Alert</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>argument</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;первое&nbsp;значение</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;последующие&nbsp;значения</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>argument</span></p> 
+<p><span>[in] &nbsp;Любые значения, разделенные запятыми. Для разделения выводимой информации на несколько строк нужно использовать символы перевода строки "\r\n". Количество параметров не может превышать 64.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Нет возвращаемого значения.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Массивы нельзя передавать в функцию Alert(). Массивы должны выводиться поэлементно. Данные типа double выводятся с 8 десятичными цифрами после точки, данные типа float выводятся с 5 десятичными цифрами после точки. Для вывода вещественных чисел с другой точностью либо в научном формате необходимо использовать функцию <a href="/ru/convert/doubletostring">DoubleToString()</a>. </span></p> 
+<p><span>Данные типа bool выводятся в виде строк "true" или "false". Даты выводятся в виде YYYY.MM.DD HH:MI:SS. Для вывода даты в другом формате необходимо использовать функцию <a href="/ru/convert/timetostring">TimeToString()</a>. Данные типа color выводятся либо в виде строки R,G,B, либо в виде названия цвета, если этот цвет присутствует в наборе цветов.</span></p> 
+<p><span>При работе в <a href="/ru/runtime/testing#alert_etc">тестере стратегий</a> функция Alert() не выполняется.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/common/comment">Comment()</a>, <a href="/ru/common/print">Print()</a></span></p> 
+<br>

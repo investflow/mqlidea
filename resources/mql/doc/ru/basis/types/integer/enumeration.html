@@ -1,0 +1,40 @@
+<h1>Перечисления</h1> 
+<p><span>Данные перечислимого типа </span><span style="color: #0000ff;">enum</span><span> относятся к некоторому ограниченному множеству данных. Определение перечислимого типа:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">enum</span><span>&nbsp;имя_перечислимого_типа</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;список_значений</span><br> <span>&nbsp;&nbsp;};</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Список значений представляет из себя список идентификаторов именованных констант, разделенных запятыми.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">enum</span><span>&nbsp;months&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;перечисление&nbsp;именованных&nbsp;констант</span><br> <span>&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;January,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;February,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;March,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;April,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;May,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;June,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;July,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;August,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;September,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;October,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;November,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;December</span><br> <span>&nbsp;&nbsp;&nbsp;};</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>После объявления перечисления появляется новый целочисленный 4-байтовый тип данных. Объявление нового типа данных позволяет компилятору строго контролировать типы передаваемых параметров, так как &nbsp;перечисление вводит новые именованные константы. В приведенном примере именованная константа January имеет значение 0, February имеет значение 1, &nbsp;December имеет значение 11.</span></p> 
+<p><span style="font-weight: bold;">Правило</span><span>: если именованной константе - члену перечисления явно не присвоено конкретное значение, то ее значение будет сформировано автоматически. Если это первый член перечисления, то будет присвоено значение 0. Для всех последующих членов значения будет вычисляться на основе значения предыдущего члена путем прибавления единицы.</span></p> 
+<p><span style="font-weight: bold;">Пример</span><span>:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">enum</span><span>&nbsp;intervals&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;перечисление&nbsp;именованных&nbsp;констант</span><br> <span>&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;month=</span><span style="color: #008080;">1</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;интервал&nbsp;в&nbsp;один&nbsp;месяц</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;two_months,&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;два&nbsp;месяца</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;quarter,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;три&nbsp;месяца&nbsp;-&nbsp;квартал</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;halfyear=</span><span style="color: #008080;">6</span><span>,&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;полугодие</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;year=</span><span style="color: #008080;">12</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;год&nbsp;-&nbsp;12&nbsp;месяцев</span><br> <span>&nbsp;&nbsp;&nbsp;};</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<h3>Примечания</h3> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>В отличие от C++, размер внутреннего представления перечислимого типа в MQL4 всегда составляет 4 байта. То есть, <a href="/ru/basis/operations/other#sizeof">sizeof</a>(months) вернет значение 4.</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>В отличие от C++, в MQL4 нельзя объявить анонимное перечисление. То есть, после ключевого слова enum всегда должно быть указано уникальное имя.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/types/casting">Приведение типов</a></span></p> 
+<br>

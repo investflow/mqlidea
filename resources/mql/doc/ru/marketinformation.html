@@ -1,0 +1,54 @@
+<h1>Получение рыночной информации</h1> 
+<p><span>Функции для получения информации о состоянии рынка.&nbsp;</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:155px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Функция</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Действие</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/marketinformation/marketinfo">MarketInfo</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает различную информацию о финансовых инструментах, перечисленных в окне "Обзор рынка"</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/marketinformation/symbolstotal">SymbolsTotal</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает количество доступных (выбранных в в окне "Обзор рынка" или всех) символов</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/marketinformation/symbolname">SymbolName</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает наименование указанного символа</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/marketinformation/symbolselect">SymbolSelect</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Выбирает символ в окне "Обзор рынка" или убирает символ из окна</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/marketinformation/symbolinfodouble">SymbolInfoDouble</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение типа double указанного символа для соответствующего свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/marketinformation/symbolinfointeger">SymbolInfoInteger</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение целочисленного типа (long, datetime, int или bool) указанного символа для соответствующего свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/marketinformation/symbolinfostring">SymbolInfoString</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение типа string указанного символа для соответствующего свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/marketinformation/symbolinfotick">SymbolInfoTick</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает текущие цены &nbsp;для указанного символа в переменной типа </span><span><a href="/ru/constants/structures/mqltick">MqlTick</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/marketinformation/symbolinfosessionquote">SymbolInfoSessionQuote</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Позволяет получить время начала и время окончания &nbsp;указанной котировочной сессии для указанных символа и дня недели.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:155px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/marketinformation/symbolinfosessiontrade">SymbolInfoSessionTrade</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Позволяет получить время начала и время окончания &nbsp;указанной торговой сессии для указанных символа и дня недели.</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<br>

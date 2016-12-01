@@ -1,0 +1,157 @@
+<h1>Информация о запущенной MQL4-программе</h1> 
+<p><span>Константы, для получения информации о выполняющейся mql4-программе, перечислены в ENUM_MQL_INFO_INTEGER и ENUM_MQL_INFO_STRING.</span></p> 
+<p><span>Для функции <a href="/ru/check/mqlinfointeger">MQLInfoInteger()</a></span></p> 
+<p><a id="enum_mql_info_integer"></a><span style="font-weight: bold;">ENUM_MQL_INFO_INTEGER</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_CODEPAGE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Кодовая страница, используемая в MQL4 программе для вывода и конвертации строк (<a href="/ru/common/print">Print</a>, <a href="/ru/common/printformat">PrintFormat</a>, <a href="/ru/common/alert">Alert</a>, <a href="/ru/common/messagebox">MessageBox</a>, <a href="/ru/common/sendftp">SendFTP</a>, <a href="/ru/common/sendmail">SendMail</a>, <a href="/ru/common/sendnotification">SendNotification</a> &nbsp;и т.д.)</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/io_constants/codepageusage">Константа кодовой страницы</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_PROGRAM_TYPE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип MQL4 программы</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/environment_state/mql4_programm_info#enum_program_type">ENUM_PROGRAM_TYPE</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_DLLS_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Разрешение на использование DLL для </span><span style="font-weight: bold;">данной запущенной программы</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_TRADE_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/runtime/tradepermission">Разрешение на торговлю</a> для </span><span style="font-weight: bold;">данной запущенной программы</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_SIGNALS_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Разрешение на работу с сигналами </span><span style="font-weight: bold;">данной запущенной программы</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_DEBUG</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Признак работы запущенной программы в режиме отладки</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_PROFILER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Признак работы запущенной программы в режиме профилирования кода</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_TESTER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Признак работы запущенной программы в тестере</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_OPTIMIZATION</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Признак работы запущенной программы в процессе оптимизации</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_VISUAL_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Признак работы запущенной программы в визуальном режиме тестирования</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_LICENSE_TYPE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип лицензии модуля EX4. Лицензия относится именно к тому модулю EX4, из которого делается запрос с помощью MQLInfoInteger(</span><span>MQL_LICENSE_TYPE</span><span>).</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/environment_state/mql4_programm_info#enum_license_type">ENUM_LICENSE_TYPE</a></span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для функции <a href="/ru/check/mqlinfostring">MQLInfoString()</a></span></p> 
+<p><a id="enum_mql_info_string"></a><span style="font-weight: bold;">ENUM_MQL_INFO_STRING</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_PROGRAM_NAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Имя запущенной MQL4 программы</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>MQL_PROGRAM_PATH</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Путь для </span><span style="font-weight: bold;">данной запущенной программы</span></p> </td> 
+    <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<p><span>Для получения информации о типе выполняемой программы предназначены значения перечисления ENUM_PROGRAM_TYPE.</span></p> 
+<p><a id="enum_program_type"></a><span style="font-weight: bold;">ENUM_PROGRAM_TYPE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>PROGRAM_SCRIPT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Скрипт</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>PROGRAM_EXPERT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Эксперт</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>PROGRAM_INDICATOR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Индикатор</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<p><a id="enum_license_type"></a><span style="font-weight: bold;">ENUM_LICENSE_TYPE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>LICENSE_FREE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Бесплатная неограниченная версия</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>LICENSE_DEMO</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Демо-версия платного продукта из Маркета. Работает только в тестере стратегий</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>LICENSE_FULL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Купленная лицензионная версия допускает не менее 5 активаций. &nbsp;Продавец может увеличить разрешенное число активаций</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>LICENSE_TIME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Версия с ограниченной по времени лицензией</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ENUM_PROGRAM_TYPE</span><span>&nbsp;mql_program=(</span><span style="color: #0000ff;">ENUM_PROGRAM_TYPE</span><span>)</span><span style="color: #0000ff;">MQLInfoInteger</span><span>(</span><span style="color: #0000ff;">MQL_PROGRAM_TYPE</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">switch</span><span>(mql_program)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;</span><span style="color: #0000ff;">PROGRAM_SCRIPT</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #0000ff;">__FILE__</span><span>+</span><span style="color: #008080;">"&nbsp;is&nbsp;script"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;</span><span style="color: #0000ff;">PROGRAM_EXPERT</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #0000ff;">__FILE__</span><span>+</span><span style="color: #008080;">"&nbsp;is&nbsp;Expert&nbsp;Advisor"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">case</span><span>&nbsp;</span><span style="color: #0000ff;">PROGRAM_INDICATOR</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #0000ff;">__FILE__</span><span>+</span><span style="color: #008080;">"&nbsp;is&nbsp;custom&nbsp;indicator"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">default</span><span>:</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"MQL4&nbsp;program&nbsp;type&nbsp;value&nbsp;is&nbsp;"</span><span>,mql_program);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

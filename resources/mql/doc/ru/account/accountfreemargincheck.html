@@ -1,0 +1,31 @@
+<h1>AccountFreeMarginCheck</h1> 
+<p><span>Возвращает размер свободных средств, которые останутся после открытия указанного ордера по текущей цене на текущем счете.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>AccountFreeMarginCheck</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>symbol</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;символ</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>cmd</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;торговая&nbsp;операция</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;</span><span>volume</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;количество&nbsp;лотов</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>symbol</span></p> 
+<p><span>[in] &nbsp;Наименование финансового инструмента, с которым должна проводиться торговая операция.</span></p> 
+<p><span>cmd</span></p> 
+<p><span>[in] &nbsp;Торговая операция. Может быть либо OP_BUY, либо OP_SELL.</span></p> 
+<p><span>volume</span></p> 
+<p><span>[in] &nbsp;Количество лотов.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Размер свободных средств, которые останутся после открытия указанного ордера по текущей цене на текущем счете. Если свободных средств не хватает, то будет сгенерирована ошибка 134 (ERR_NOT_ENOUGH_MONEY).</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">AccountFreeMarginCheck</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),OP_BUY,Lots)&lt;=0&nbsp;||&nbsp;</span><span style="color: #0000ff;">GetLastError</span><span>()==134)&nbsp;</span><span style="color: #0000ff;">return</span><span>;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

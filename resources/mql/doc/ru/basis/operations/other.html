@@ -1,0 +1,130 @@
+<h1>Другие операции</h1> 
+<h2>Индексирование ( [] )</h2> 
+<p><span>При обращении к i-му элементу массива значением выражения является значение переменной с порядковым номером i.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>array[i]&nbsp;=&nbsp;</span><span style="color: #008080;">3</span><span>;&nbsp;</span><span style="color: #808080;">//&nbsp;Присвоить&nbsp;значение&nbsp;3&nbsp;i-му&nbsp;элементу&nbsp;массива&nbsp;array.</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><span>Индексом массива может быть только целое число. Допускаются не более чем четырехмерные массивы. Индексация каждого измерения производится от 0 до </span><span style="font-weight: bold;">размер измерения</span><span>-1. В частном случае одномерного массива из 50 элементов обращение к первому элементу будет выглядеть как array[0], к последнему элементу - array[49].</span></p> 
+<p><span>При доступе за пределы массива исполняющая подсистема сгенерирует критическую ошибку, и выполнение программы будет остановлено.</span><br> <span>&nbsp;</span></p> 
+<h2>Вызов функции с аргументами x1, x2,..., xn</h2> 
+<p><span>Каждый аргумент может представлять собой константу, переменную или выражение соответствующего типа. Передаваемые аргументы разделяются запятыми и должны находиться внутри круглых скобок, открывающая круглая скобка должна следовать за именем вызываемой функции.</span></p> 
+<p><span>Значением выражения является значение, возвращаемое функцией. Если тип возвращаемого значения функции есть void, то вызов такой функции нельзя помещать справа в операции присвоения. Обратите внимание, что порядок выполнения выражений x1,..., xn гарантируется.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;length=1000000;&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;a=</span><span style="color: #008080;">"a"</span><span>,b=</span><span style="color: #008080;">"b"</span><span>,c;</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;start=</span><span style="color: #0000ff;">GetTickCount</span><span>(),stop;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">long</span><span>&nbsp;i;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(i=0;i&lt;length;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c=a+b;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;stop=</span><span style="color: #0000ff;">GetTickCount</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"time&nbsp;for&nbsp;'c&nbsp;=&nbsp;a&nbsp;+&nbsp;b'&nbsp;=&nbsp;"</span><span>,(stop-start),</span><span style="color: #008080;">"&nbsp;milliseconds,&nbsp;i&nbsp;=&nbsp;"</span><span>,i);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<h2>&nbsp;<br> Операция запятая ( , )</h2> 
+<p><span>Выражения, разделенные запятыми, вычисляются слева направо. Все побочные эффекты вычисления левого выражения могут возникать до вычисления правого выражения. Тип и значение результата совпадают с типом и значением правого выражения. В качестве примера можно рассматривать список передаваемых параметров (см.выше).</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">for</span><span>(i=</span><span style="color: #008000;">0</span><span>,j=</span><span style="color: #008000;">99</span><span>;&nbsp;i&lt;</span><span style="color: #008000;">100</span><span>;&nbsp;i++,j--)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(array[i][j]);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<h2>&nbsp;<br> <a id="operation_dot"></a>Операция точка ( . )</h2> 
+<p><span>Для прямого <a href="/ru/basis/types/classes#dot_operation">доступа&nbsp;к&nbsp;публичным&nbsp;членам</a> структур и классов используется операция точка. Синтаксис</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>Имя_переменной_типа_структуры.Имя_члена</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">struct</span><span>&nbsp;SessionTime</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;sessionName;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;startHour;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;startMinutes;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;endHour;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;endMinutes;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;st;</span><br> <span>&nbsp;&nbsp;&nbsp;st.sessionName=</span><span style="color: #008080;">"Asian"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;st.startHour=0;</span><br> <span>&nbsp;&nbsp;&nbsp;st.startMinutes=0;</span><br> <span>&nbsp;&nbsp;&nbsp;st.endHour=9;</span><br> <span>&nbsp;&nbsp;&nbsp;st.endMinutes=0;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<h2>&nbsp;<br> <a id="context_allow"></a>Операция разрешения контекста ( :: )</h2> 
+<p><span>Каждая функция в mql4-программе имеет свой контекст исполнения. Например, системная функция <a href="/ru/common/print">Print()</a> выполняется в глобальном контексте. <a href="/ru/basis/preprosessor/import">Импортируемые</a> функции вызываются в контексте соответствующего импорта. Функции-методы <a href="/ru/basis/types/classes#class">классов</a> имеют контекст соответствующего класса. Синтаксис операции разрешения контекста:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>[Имя_контекста]::Имя_функции(параметры)</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Если имя контекста отсутствует, то это явное указание на использование глобального контекста. В случае отсутствия операции разрешения контекста, функция ищется в ближайшем контексте. В случае отсутствия функции в локальном контексте, поиск производится в глобальном контексте.</span></p> 
+<p><span>Также операция разрешения контекста используется для <a href="/ru/basis/function#function_definition">определения&nbsp;функции</a>-члена класса.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>тип&nbsp;Имя_класса::Имя_функции(описание_параметров)</span><br> <span>&nbsp;&nbsp;&nbsp;{</span><br> <span>//&nbsp;тело&nbsp;функции</span><br> <span>&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Если в программе используются или могут в будущем использоваться несколько одноименных функций из разных контекстов исполнения, то может возникнуть неоднозначность. Порядок приоритета вызова функций без явного указания контекста:</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 20px; margin: 2px 17px 3px 17px;"><span style="font-size:10pt; font-family: 'Trebuchet MS';color:#565656;display:inline-block;width:20px;margin-left:-20px">1.</span><span>Методы класса. Если функция с заданным именем в классе не задана, то ищем на следующем уровне.</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 20px; margin: 2px 17px 3px 17px;"><span style="font-size:10pt; font-family: 'Trebuchet MS';color:#565656;display:inline-block;width:20px;margin-left:-20px">2.</span><span>Функции MQL4. Если такой функции в языке нет, то ищем на следующем уровне.</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 20px; margin: 2px 17px 3px 17px;"><span style="font-size:10pt; font-family: 'Trebuchet MS';color:#565656;display:inline-block;width:20px;margin-left:-20px">3.</span><span>Глобальные функции, определенные пользователем. Если такой функции нет, то ищем на следующем уровне.</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 20px; margin: 2px 17px 3px 17px;"><span style="font-size:10pt; font-family: 'Trebuchet MS';color:#565656;display:inline-block;width:20px;margin-left:-20px">4.</span><span>Импортируемые функции. Если функция не найдена среди импортируемых, то компилятор выдает ошибку.</span></p> 
+<p><span>Для устранения неоднозначности вызова функций явно указывайте область видимости с помощью операции разрешения контекста.</span></p> 
+<p><span>&nbsp;</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">script_show_inputs</span><br> <span style="color: #0000ff;">#import</span><span style="color: #008080;">"kernel32.dll"</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;</span><span style="color: #0000ff;">GetLastError</span><span>(</span><span style="color: #0000ff;">void</span><span>);</span><br> <span style="color: #0000ff;">#import</span><br> <span style="color: #0000ff;">&nbsp;</span><br> <span style="color: #0000ff;">class</span><span>&nbsp;CCheckContext</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_id;</span><br> <span style="color: #0000ff;">public</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CCheckContext()&nbsp;{&nbsp;m_id=1234;&nbsp;}</span><br> <span style="color: #0000ff;">protected</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">GetLastError</span><span>()&nbsp;{&nbsp;</span><span style="color: #0000ff;">return</span><span>(m_id);&nbsp;}</span><br> <span>&nbsp;&nbsp;};</span><br> <span style="color: #0000ff;">class</span><span>&nbsp;CCheckContext2&nbsp;:&nbsp;</span><span style="color: #0000ff;">public</span><span>&nbsp;CCheckContext</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_id2;</span><br> <span style="color: #0000ff;">public</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CCheckContext2()&nbsp;{&nbsp;m_id2=5678;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">void</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>();</span><br> <span style="color: #0000ff;">protected</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">GetLastError</span><span>()&nbsp;{&nbsp;</span><span style="color: #0000ff;">return</span><span>(m_id2);&nbsp;}</span><br> <span>&nbsp;&nbsp;};</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;CCheckContext2::</span><span style="color: #0000ff;">Print</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Terminal&nbsp;GetLastError"</span><span>,::</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"kernel32&nbsp;GetLastError"</span><span>,kernel32::</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"parent&nbsp;GetLastError"</span><span>,CCheckContext::</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"our&nbsp;GetLastError"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;}&nbsp;&nbsp;</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;CCheckContext2&nbsp;test;</span><br> <span>&nbsp;&nbsp;&nbsp;test.</span><span style="color: #0000ff;">Print</span><span>();</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<h2>&nbsp;<br> <a id="sizeof"></a>Операция взятия размера типа данных или размера объекта любого типа данных ( sizeof )</h2> 
+<p><span>С помощью операции </span><span style="color: #0000ff;">sizeof</span><span> можно определить размер памяти которая соответствует идентификатору или типу. Операция sizeof имеет следующий формат:</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">sizeof</span><span>(выражение)</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>В качестве выражения может быть использован любой идентификатор, либо имя типа, заключенное в скобки. Отметим, что не может быть использовано имя типа void, а идентификатор не может относится к полю битов или быть именем функции.</span></p> 
+<p><span>Если в качестве выражения указано имя статического массива (то есть, задана первая размерность), то результатом является размер всего массива (т.е. произведение числа элементов на длину типа). Если в качестве выражения указано имя динамического массива (первая размерность не задана), то результатом будет размер объекта <a href="/ru/basis/types/dynamic_array">динамического&nbsp;массива</a>.</span></p> 
+<p><span>Когда sizeof применяются к имени типа структуры или класса или к идентификатору имеющему тип структуры или класса, то результатом является фактический размер структуры или класса.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">struct</span><span>&nbsp;myStruct</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;&nbsp;&nbsp;h;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;b;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;f;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;str;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"sizeof(str)&nbsp;="</span><span>,</span><span style="color: #0000ff;">sizeof</span><span>(str));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"sizeof(myStruct)&nbsp;="</span><span>,</span><span style="color: #0000ff;">sizeof</span><span>(myStruct));&nbsp;&nbsp;&nbsp;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Вычисления размера происходит на этапе компиляции.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/operations/rules">Приоритеты и &nbsp;порядок операций</a></span></p> 
+<br>

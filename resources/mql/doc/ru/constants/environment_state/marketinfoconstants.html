@@ -1,0 +1,650 @@
+<h1>Информация об инструменте</h1> 
+<p><span>Для получения текущей рыночной информации служит функция <a href="/ru/marketinformation/marketinfo">MarketInfo()</a>. Идентификаторы запроса могут быть одной из следующего величин:</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Константа</span></p> </td> 
+    <td style="vertical-align:top; width:145px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_LOW</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>1</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Минимальная дневная цена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_HIGH</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>2</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Максимальная дневная цена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_TIME</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>5</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Время поступления последней котировки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_BID</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>9</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Последняя поступившая цена предложения. Для текущего инструмента хранится в предопределенной переменной Bid</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_ASK</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>10</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Последняя поступившая цена продажи. Для текущего инструмента хранится в предопределенной переменной Ask</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_POINT</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>11</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер пункта в валюте котировки. Для текущего инструмента хранится в предопределенной переменной Point</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_DIGITS</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>12</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Количество цифр после запятой в цене инструмента. Для текущего инструмента хранится в предопределенной переменной Digits</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_SPREAD</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>13</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Спрэд в пунктах</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_STOPLEVEL</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>14</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Минимально допустимый уровень стоп-лосса/тейк-профита в пунктах. </span><br> <span>&nbsp;</span><br> <span>Нулевое значение MODE_STOPLEVEL означает либо отсутствие &nbsp;ограничения на минимальную дистанцию для стоп-лосса/тейк-профита, либо факт использования торговым сервером внешних механизмов динамического контроля уровней, которые не могут быть транслированы в терминал. Во втором случае GetLastError() может возвращать ошибку 130, так как уровень MODE_STOPLEVEL фактически является "плавающим"</span><span>.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_LOTSIZE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>15</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер контракта в базовой валюте инструмента</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_TICKVALUE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>16</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер минимального изменения цены инструмента в валюте депозита</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_TICKSIZE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>17</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Минимальный шаг изменения цены инструмента в пунктах</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_SWAPLONG</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>18</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер свопа для ордеров на покупку</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_SWAPSHORT</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>19</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер свопа для ордеров на продажу</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_STARTING</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>20</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Календарная дата начала торгов (обычно используется для фьючерсов)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_EXPIRATION</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>21</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Календарная дата конца торгов (обычно используется для фьючерсов)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_TRADEALLOWED</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>22</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Разрешение торгов по указанному инструменту</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MINLOT</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>23</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Минимальный размер лота</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_LOTSTEP</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>24</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Шаг изменения размера лота</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MAXLOT</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>25</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Максимальный размер лота</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_SWAPTYPE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>26</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Метод вычисления свопов. 0 - в пунктах; 1 - в базовой валюте инструмента; 2 - в процентах; 3 - в валюте залоговых средств.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_PROFITCALCMODE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>27</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Способ расчета прибыли. 0 - Forex; 1 - CFD; 2 - Futures</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MARGINCALCMODE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>28</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Способ расчета залоговых средств. 0 - Forex; 1 - CFD; 2 - Futures; 3 - CFD на индексы</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MARGININIT</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>29</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Начальные залоговые требования для 1 лота</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MARGINMAINTENANCE</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>30</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер залоговых средств для поддержки открытых ордеров в расчете на 1 лот</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MARGINHEDGED</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>31</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Маржа, взимаемая с перекрытых ордеров в расчете на 1 лот</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_MARGINREQUIRED</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>32</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер свободных средств, необходимых для открытия 1 лота на покупку</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MODE_FREEZELEVEL</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>33</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Уровень заморозки ордеров в пунктах. Если цена исполнения находится в пределах, определяемых уровнем заморозки, то ордер не может быть модифицирован, отменен или закрыт.</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span> MODE_CLOSEBY_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; width:145px; padding:5px; border:solid thin #b1c2d6;"><p><span>34</span></p> </td> 
+    <td style="vertical-align:top; width:1062px; padding:5px; border:solid thin #b1c2d6;"><p><span>Разрешение на использование <a href="/ru/trading/ordercloseby">OrderCloseBy()</a> для закрытия встречных ордеров на указанном символе</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Скрипт&nbsp;выводит&nbsp;информацию&nbsp;об&nbsp;инструменте&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Symbol="</span><span>,</span><span style="color: #0000ff;">Symbol</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Минимальная&nbsp;дневная&nbsp;цена="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_LOW</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Максимальная&nbsp;дневная&nbsp;цена="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_HIGH</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Время&nbsp;поступления&nbsp;последней&nbsp;котировки="</span><span>,(</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_TIME</span><span>)));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Последняя&nbsp;поступившая&nbsp;цена&nbsp;предложения="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_BID</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Последняя&nbsp;поступившая&nbsp;цена&nbsp;продажи="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_ASK</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Размер&nbsp;пункта&nbsp;в&nbsp;валюте&nbsp;котировки="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_POINT</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Количество&nbsp;цифр&nbsp;после&nbsp;запятой&nbsp;в&nbsp;цене&nbsp;инструмента="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_DIGITS</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Спрэд&nbsp;в&nbsp;пунктах="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_SPREAD</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Минимально&nbsp;допустимый&nbsp;уровень&nbsp;стоп-лосса/тейк-профита&nbsp;в&nbsp;пунктах="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_STOPLEVEL</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Размер&nbsp;контракта&nbsp;в&nbsp;базовой&nbsp;валюте&nbsp;инструмента="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_LOTSIZE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Размер&nbsp;минимального&nbsp;изменения&nbsp;цены&nbsp;инструмента&nbsp;в&nbsp;валюте&nbsp;депозита="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_TICKVALUE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Минимальный&nbsp;шаг&nbsp;изменения&nbsp;цены&nbsp;инструмента&nbsp;в&nbsp;пунктах="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_TICKSIZE</span><span>));&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Размер&nbsp;свопа&nbsp;для&nbsp;ордеров&nbsp;на&nbsp;покупку="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_SWAPLONG</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Размер&nbsp;свопа&nbsp;для&nbsp;ордеров&nbsp;на&nbsp;продажу="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_SWAPSHORT</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Календарная&nbsp;дата&nbsp;начала&nbsp;торгов&nbsp;(фьючерсы)="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_STARTING</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Календарная&nbsp;дата&nbsp;окончания&nbsp;торгов&nbsp;(фьючерсы)="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_EXPIRATION</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Разрешение&nbsp;торгов&nbsp;по&nbsp;указанному&nbsp;инструменту="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_TRADEALLOWED</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Минимальный&nbsp;размер&nbsp;лота="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MINLOT</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Шаг&nbsp;изменения&nbsp;размера&nbsp;лота="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_LOTSTEP</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Максимальный&nbsp;размер&nbsp;лота="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MAXLOT</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Метод&nbsp;вычисления&nbsp;свопов="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_SWAPTYPE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Способ&nbsp;расчета&nbsp;прибыли="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_PROFITCALCMODE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Способ&nbsp;расчета&nbsp;залоговых&nbsp;средств="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MARGINCALCMODE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Начальные&nbsp;залоговые&nbsp;требования&nbsp;для&nbsp;1&nbsp;лота="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MARGININIT</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Размер&nbsp;залоговых&nbsp;средств&nbsp;для&nbsp;поддержки&nbsp;открытых&nbsp;ордеров&nbsp;в&nbsp;расчете&nbsp;на&nbsp;1&nbsp;лот="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MARGINMAINTENANCE</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Маржа,&nbsp;взимаемая&nbsp;с&nbsp;перекрытых&nbsp;ордеров&nbsp;в&nbsp;расчете&nbsp;на&nbsp;1&nbsp;лот="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MARGINHEDGED</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Размер&nbsp;свободных&nbsp;средств,&nbsp;необходимых&nbsp;для&nbsp;открытия&nbsp;1&nbsp;лота&nbsp;на&nbsp;покупку="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_MARGINREQUIRED</span><span>));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Уровень&nbsp;заморозки&nbsp;ордеров&nbsp;в&nbsp;пунктах="</span><span>,</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #0000ff;">Symbol</span><span>(),</span><span style="color: #0000ff;">MODE_FREEZELEVEL</span><span>));&nbsp;</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для получения текущей рыночной информации используются функции <a href="/ru/marketinformation/symbolinfointeger">SymbolInfoInteger()</a>, <a href="/ru/marketinformation/symbolinfodouble">SymbolInfoDouble()</a> и <a href="/ru/marketinformation/symbolinfostring">SymbolInfoString()</a>. В качестве второго параметра этих функций допустимо передавать один из идентификаторов из перечислений ENUM_SYMBOL_INFO_INTEGER, ENUM_SYMBOL_INFO_DOUBLE и ENUM_SYMBOL_INFO_STRING соответственно.</span></p> 
+<p><span>Для функции <a href="/ru/marketinformation/symbolinfointeger">SymbolInfoInteger()</a>:</span></p> 
+<p><a id="enum_symbol_info_integer"></a><span style="font-weight: bold;">ENUM_SYMBOL_INFO_INTEGER</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SELECT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Признак того, что символ выбран в Market Watch.</span></p> <p><span>&nbsp;</span></p> <p><span>Некоторые символы могут не отображаться в Market Watch, но при этом быть выбранными.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VISIBLE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Признак того, что выбранный символ отображается в Market Watch.</span></p> <p><span>&nbsp;</span></p> <p><span>Некоторые символы (как правило, это кросс-курсы, которые необходимы для расчёта маржевых требований и прибыли в валюте депозита) выбираются автоматически, но при этом обычно не отображаются в Market Watch. Для отображения такие символы должны быть выбраны явно.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_DEALS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_BUY_ORDERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_SELL_ORDERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUMEHIGH</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUMELOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><a id="lastticktime"></a><span>SYMBOL_TIME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Время последней котировки</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>datetime</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_DIGITS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Количество знаков после запятой</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SPREAD</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер спреда в пунктах</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SPREAD_FLOAT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Признак плавающего спреда</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>bool</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_CALC_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Способ вычисления стоимости контракта</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип исполнения ордеров</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/environment_state/marketinfoconstants#enum_symbol_trade_mode">ENUM_SYMBOL_TRADE_MODE</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_START_TIME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Дата начала торгов по инструменту (обычно используется для фьючерсов)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>datetime</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_EXPIRATION_TIME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Дата окончания торгов по инструменту (обычно используется для фьючерсов)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>datetime</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_STOPS_LEVEL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Минимальный отступ в пунктах от текущей цены закрытия для установки Stop ордеров</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_FREEZE_LEVEL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Дистанция заморозки торговых операций (в пунктах)</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_EXEMODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Режим заключения сделок</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/environment_state/marketinfoconstants#enum_symbol_trade_execution">ENUM_SYMBOL_TRADE_EXECUTION</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SWAP_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Модель расчета свопа</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SWAP_ROLLOVER3DAYS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>День недели для начисления тройного свопа</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/constants/environment_state/marketinfoconstants#enum_day_of_week">ENUM_DAY_OF_WEEK</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_EXPIRATION_MODE </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_FILLING_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_ORDER_MODE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для функции <a href="/ru/marketinformation/symbolinfodouble">SymbolInfoDouble()</a>:</span></p> 
+<p><a id="enum_symbol_info_double"></a><span style="font-weight: bold;">ENUM_SYMBOL_INFO_DOUBLE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_BID</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Bid - лучшее предложение на продажу</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_BIDHIGH</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_BIDLOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_ASK</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ask - лучшее предложение на покупку</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_ASKHIGH</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_ASKLOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_LAST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_LASTHIGH</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_LASTLOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_POINT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение одного пункта</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_TICK_VALUE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение </span><span>SYMBOL_TRADE_TICK_VALUE_PROFIT</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_TICK_VALUE_PROFIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_TICK_VALUE_LOSS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_TICK_SIZE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Минимальное изменение цены</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_CONTRACT_SIZE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер торгового контракта</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUME_MIN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Минимальный объем для заключения сделки</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUME_MAX</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Максимальный объем для заключения сделки</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUME_STEP</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Минимальный шаг изменения объема для заключения сделки</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_VOLUME_LIMIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SWAP_LONG</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение свопа в покупку</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SWAP_SHORT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение свопа в продажу</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_INITIAL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Начальная (инициирующая) маржа обозначает размер необходимых залоговых средств в маржинальной валюте для открытия ордера объемом в один лот. Используется при проверке средств клиента при входе в рынок.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_MAINTENANCE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Поддерживающая маржа по инструменту. В случае если задана – указывает размер маржи в маржинальной валюте инструмента, удерживаемой с одного лота. Используется при проверке средств клиента при изменении состояния счета клиента. Если поддерживающая маржа равна 0, то используется начальная маржа.</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_LONG</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_SHORT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_LIMIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_STOP</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_MARGIN_STOPLIMIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_VOLUME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_TURNOVER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_INTEREST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_BUY_ORDERS_VOLUME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_SELL_ORDERS_VOLUME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_OPEN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_CLOSE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_AW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_PRICE_SETTLEMENT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_PRICE_LIMIT_MIN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_SESSION_PRICE_LIMIT_MAX</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не поддерживается</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для функции <a href="/ru/marketinformation/symbolinfostring">SymbolInfoString()</a>:</span></p> 
+<p><a id="enum_symbol_info_string"></a><span style="font-weight: bold;">ENUM_SYMBOL_INFO_STRING</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+    <td style="vertical-align:top; width:260px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип свойства</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_CURRENCY_BASE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Базовая валюта инструмента</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_CURRENCY_PROFIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Валюта прибыли</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_CURRENCY_MARGIN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Валюта в которой вычисляется залоговые средства</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_DESCRIPTION</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Строковое описание символа</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_PATH</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Путь в дереве символов</span></p> </td> 
+    <td style="vertical-align:top; width:260px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Существует несколько режимов торговли по финансовым инструментам. Информация о режимах торговли по конкретному инструменту отображена в значениях перечисления ENUM_SYMBOL_TRADE_MODE.</span></p> 
+<p><a id="enum_symbol_trade_mode"></a><span style="font-weight: bold;">ENUM_SYMBOL_TRADE_MODE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE_DISABLED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Торговля по символу запрещена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE_LONGONLY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Разрешены только покупки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE_SHORTONLY*</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Разрешены только продажи</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE_CLOSEONLY*</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Разрешены только операции закрытия позиций</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_MODE_FULL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет ограничений на торговые операции</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Возможные режимы заключения сделок по конкретному инструменту определены в перечислении &nbsp;ENUM_SYMBOL_TRADE_EXECUTION.</span></p> 
+<p><a id="enum_symbol_trade_execution"></a><span style="font-weight: bold;">ENUM_SYMBOL_TRADE_EXECUTION</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_EXECUTION_REQUEST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Торговля по запросу</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_EXECUTION_INSTANT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Торговля по потоковым ценам</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_EXECUTION_MARKET</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Исполнение ордеров по рынку</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SYMBOL_TRADE_EXECUTION_EXCHANGE*</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Биржевое исполнение</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>*Данные значения не используются в MQL4 (добавлены для совместимости с MQL5).</span></p> 
+<p><span>Для указания дня недели предназначены значения перечисления ENUM_DAY_OF_WEEK.</span></p> 
+<p><a id="enum_day_of_week"></a><span style="font-weight: bold;">ENUM_DAY_OF_WEEK</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SUNDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Воскресенье</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>MONDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Понедельник</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>TUESDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Вторник</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>WEDNESDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Среда</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>THURSDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Четверг</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>FRIDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Пятница</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:280px; padding:5px; border:solid thin #b1c2d6;"><p><span>SATURDAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Суббота</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

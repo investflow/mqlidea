@@ -1,0 +1,18 @@
+<h1>Экспортирование функций</h1> 
+<p><span>Существует возможность использования в mql4-программе функции, объявленной в другой mql4-программе с постмодификатором </span><span style="font-style: italic;">export</span><span>. Такая функция называется экспортируемой, и она доступна для вызова из других программ после компиляции.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;Function()&nbsp;</span><span style="color: #0000ff;">export</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Данный модификатор указывает компилятору внести функцию в таблицу EX4-функций, экспортируемых данным исполняемым ex4-файлом. Только функции с таким модификатором становятся доступными ("видимыми") из других mql4-программ.</span></p> 
+<p><span>Свойство <a href="/ru/basis/preprosessor/compilation">library</a> указывает компилятору, что данный EX4-файл будет являться библиотекой, и компилятор проставит это в заголовке EX4.</span></p> 
+<p><span>Все функции, которые планируются как экспортируемые, должны быть помечены модификатором </span><span style="font-style: italic;">export</span><span>. </span></p> 
+<p><span>При компиляции библиотек в <a href="/ru/mql4changes#compiler_difference">режиме strict</a> для каждой экспортируемой функции необходимо добавлять модификатор export. в противном случае функция не будет доступна извне.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/oop/overload">Перегрузка</a>, <a href="/ru/basis/oop/virtual">Виртуальные функции</a>, <a href="/ru/basis/oop/polymorphism">Полиморфизм</a></span></p> 
+<br>

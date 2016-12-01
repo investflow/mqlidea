@@ -1,0 +1,23 @@
+<h1>ResourceSave</h1> 
+<p><span>Сохраняет ресурс в указанный файл.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ResourceSave</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;</span><span>resource_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;ресурса</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;</span><span>file_name</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;файла</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>resource_name</span></p> 
+<p><span>[in] &nbsp;Имя ресурса, должно начинаться с "::".</span></p> 
+<p><span>file_name</span></p> 
+<p><span>[in] &nbsp;Имя файла относительно MQL4\Files.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>true – в случае успеха, иначе false. Чтобы получить информацию об ошибке, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Функция всегда перезаписывает файл и создаёт при необходимости все промежуточные подкаталоги в имени файла в случае их отсутствия.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/runtime/resources">Ресурсы</a>, <a href="/ru/objects/objectcreate">ObjectCreate()</a>, <a href="/ru/common/playsound">PlaySound()</a>, <a href="/ru/objects/objectsetstring">ObjectSetString()</a>, <a href="/ru/constants/objectconstants/enum_object_property#enum_object_property_string">OBJPROP_BMPFILE</a></span></p> 
+<br>

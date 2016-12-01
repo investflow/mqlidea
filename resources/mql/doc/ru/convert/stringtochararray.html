@@ -1,0 +1,38 @@
+<h1>StringToCharArray</h1> 
+<p><span>Посимвольно копирует преобразованную из unicode в ansi строку в указанное место массива типа uchar. Функция возвращает количество скопированных элементов.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>StringToCharArray</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>text_string</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;строка-источник</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uchar&amp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;массив</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;начальная&nbsp;позиция&nbsp;в&nbsp;массиве</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>count=-1</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;количество&nbsp;символов</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>codepage=CP_ACP</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;кодовая&nbsp;страница</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>text_string</span></p> 
+<p><span>[in] &nbsp;Строка для копирования.</span></p> 
+<p><span>array[]</span></p> 
+<p><span>[out] &nbsp;Массив типа uchar.</span></p> 
+<p><span>start=0</span></p> 
+<p><span>[in] &nbsp;Позиция, с которой начинается копирование. По умолчанию 0.</span></p> 
+<p><span>count=-1</span></p> 
+<p><span>[in] &nbsp;Количество элементов массива для копирования. Определяет длину результатной строки. По умолчанию -1, что означает копирование до конца массива, либо до встречи символа '\0', завершающего строку. Символ '\0' также будет скопирован в массив-приемник, при этом размер динамического массива может быть увеличен при необходимости под размер строки. Если размер динамического массива больше длины строки, то размер массива уменьшен не будет. </span></p> 
+<p><span>codepage=CP_ACP</span></p> 
+<p><span>[in] &nbsp;Значение кодовой страницы. Для наиболее </span><span>употребимых</span><span> <a href="/ru/constants/io_constants/codepageusage">кодовых страниц</a> предусмотрены соответствующие константы.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Количество скопированных элементов.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>При копировании функция StringToCharArray() также копирует символ '\0', завершающий строку. Для его исключения нужно явно указывать длину строки:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;пример&nbsp;копирования&nbsp;строки&nbsp;str&nbsp;в&nbsp;массив&nbsp;array[]</span><br> <span style="color: #0000ff;">StringToCharArray</span><span>(str,array,0,</span><span style="color: #0000ff;">StringLen</span><span>(str));</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/constants/io_constants/codepageusage">Использование кодовой страницы</a></span></p> 
+<br>

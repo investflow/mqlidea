@@ -1,0 +1,34 @@
+<h1>FileOpenHistory</h1> 
+<p><span>Открывает файл в текущей папке истории (каталог_терминала\history\server_name) или ее подпапках.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>FileOpenHistory</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>filename</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;файла</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mode</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;режим&nbsp;открытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>delimiter=';'</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;разделитель</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>filename</span></p> 
+<p><span>[in] &nbsp;Имя файла.</span></p> 
+<p><span>mode</span></p> 
+<p><span>[in] &nbsp;Режим открытия. Это может быть одна величина или их комбинация: FILE_BIN, FILE_CSV, FILE_READ, FILE_WRITE, FILE_SHARE_READ, FILE_SHARE_WRITE.</span></p> 
+<p><span>delimiter=';'</span></p> 
+<p><span>[in] &nbsp;Знак разделителя для csv-файлов. По умолчанию применяется символ ';'.</span></p> 
+<p><span>Возвращаемое значение</span><span> </span></p> 
+<p><span>Возвращает хендл файла или -1 в случае неудачи. Для получения дополнительной информации </span><span>об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Клиентский терминал может подключаться к серверам разных брокерских компаний. Исторические данные (файлы HST) каждой брокерской компании хранятся в соответствующей подпапке папки истории каталог_терминала\history. Функция может быть полезна для формирования собственных исторических данных нестандартного символа и/или периода. Файл, сформированный в папке истории может быть открыт автономно, для его графика не требуется подкачка данных.</span></p> 
+<p><span>Следует иметь в виду, что в старом MQL4 все файлы открывались в режиме совместного использования. В новом MQL4 при открытии файлов необходимо явно указывать флаги FILE_SHARE_WRITE и FILE_SHARE_READ для совместного использования. В случае их отсутствия файл будет открыт в монопольном режиме, что не позволит больше никому его открывать, пока он не будет закрыт монополистом (см. <a href="https://www.mql5.com/ru/articles/1387" target="_blank" title="Оффлайновые графики и новый MQL4">"Оффлайновые графики и новый MQL4"</a>).</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;handle=</span><span style="color: #0000ff;">FileOpenHistory</span><span>(</span><span style="color: #008080;">"USDX240.HST"</span><span>,</span><span style="color: #0000ff;">FILE_BIN</span><span>|</span><span style="color: #0000ff;">FILE_WRITE</span><span>|</span><span style="color: #0000ff;">FILE_SHARE_WRITE</span><span>|</span><span style="color: #0000ff;">FILE_SHARE_READ</span><span>);</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(handle&lt;1)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Ошибка&nbsp;открытия&nbsp;файла&nbsp;USDX240.HST"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;работа&nbsp;с&nbsp;файлом</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;...</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">FileClose</span><span>(handle);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

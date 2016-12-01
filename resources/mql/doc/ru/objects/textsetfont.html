@@ -1,0 +1,112 @@
+<h1>TextSetFont</h1> 
+<p><span>Устанавливает шрифт для вывода текста методами рисования и возвращает результат успешности этой операции. По умолчанию используется шрифт Arial и размер -120 (12 pt).</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>TextSetFont</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;</span><span>name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;шрифта&nbsp;или&nbsp;путь&nbsp;к&nbsp;файлу&nbsp;шрифта&nbsp;на&nbsp;диске</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>size</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;размер&nbsp;шрифта</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>flags=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;комбинация&nbsp;флагов</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>orientation=0&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;угол&nbsp;наклона&nbsp;текста</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>name</span></p> 
+<p><span>[in] &nbsp;Имя шрифта в системе, или имя ресурса, содержащего шрифт, или путь к файлу шрифта на диске.</span></p> 
+<p><span>size</span></p> 
+<p><span>[in] &nbsp;Размер шрифта, который может задаваться положительными и отрицательными значениями. При положительных значениях размер выводимого текста не зависит от настроек размеров шрифтов в операционной системе. При отрицательных значениях значение задается в десятых долях пункта и размер текста будет зависеть от настроек системы ("стандартный масштаб" или "крупный масштаб"). Более подробно о разнице в режимах смотрите в Примечании.</span></p> 
+<p><span>flags=0</span></p> 
+<p><span>[in] &nbsp;Комбинация <a href="/ru/objects/textsetfont#font_type_flags">флагов</a>, описывающих стиль шрифт.</span></p> 
+<p><span>orientation=0</span></p> 
+<p><span>[in] &nbsp;Угол наклона текста по горизонтали к оси X, единица измерения равна 0.1 градуса. То есть </span><span>orientation=450</span><span style="font-style: normal;"> означает наклон в 45 градусов.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Возвращает true в случае успешной установки текущего шрифта, иначе false. Возможные коды ошибок:</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>ERR_INVALID_PARAMETER(4003) - </span><span style="font-style: italic;">name</span><span> представляет NULL или "" (пустая строка),</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>ERR_INTERNAL_ERROR(4001) - ошибка операционной системы (например, попытка создания несуществующего шрифта).</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Если в имени шрифта используется "::", то шрифт загружается из <a href="/ru/runtime/resources">ресурса EX4</a>. Если имя шрифта </span><span style="font-style: italic;">name</span><span> указано с расширением, то шрифт загружается из файла, при этом – если путь начинается с "\" или "/", то файл ищется относительно каталога MQL4, иначе ищется относительно пути EX4-файла, вызвавшего функцию <a href="/ru/objects/textsetfont">TextSetFont(</a>).</span></p> 
+<p><span>Размер шрифта задается положительными или отрицательными значениями, знак определяет зависимость размера текста от настроек операционной системы (масштаба шрифта).</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>Если размер задается положительным числом, то при отображении логического шрифта в физический происходит преобразование размера в физические единицы измерения устройства (пиксели) и этот размер соответствует высоте ячеек символов из доступных шрифтов. Не рекомендуется в тех случаях, когда предполагается совместное использование на графике текстов, выведенных функцией <a href="/ru/objects/textout">TextOut()</a>, и текстов, отображаемых с помощью графического объекта <a href="/ru/constants/objectconstants/enum_object">OBJ_LABEL</a> ("Текстовая метка").</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>Если размер задается отрицательным числом, то указанный размер предполагается заданным в десятых долях логического пункта (значение -350 равно 35 логических пунктов) и делится на 10, а затем полученное значение преобразуется в физические единицы измерения устройства (пиксели) и соответствует абсолютному значению высоты символа из доступных шрифтов. Чтобы получить на экране текст такого же размера, как и в объекте <a href="/ru/constants/objectconstants/enum_object">OBJ_LABEL</a>, возьмите указанный в свойствах объекта размер шрифта и умножьте на -10.</span></p> 
+<p><span>Флаги могут использоваться в виде комбинации флагов стиля с одним из флагов, задающем толщину шрифта. Наименования флагов приведены ниже.</span></p> 
+<p><a id="font_type_flags"></a><span style="font-weight: bold;">Флаги для задания стиля начертания шрифта</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Флаг</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FONT_ITALIC</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Курсив</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FONT_UNDERLINE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Подчёркивание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FONT_STRIKEOUT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Перечёркивание</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<p><span style="font-weight: bold;">Флаги для задания толщины шрифта</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Флаг</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_DONTCARE</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_THIN</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_EXTRALIGHT</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_ULTRALIGHT</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_LIGHT</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_NORMAL</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_REGULAR</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_MEDIUM</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_SEMIBOLD</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_DEMIBOLD</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_BOLD</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_EXTRABOLD</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_ULTRABOLD</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_HEAVY</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>FW_BLACK</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/runtime/resources">Ресурсы</a>, <a href="/ru/common/resourcecreate">ResourceCreate()</a>, <a href="/ru/common/resourcesave">ResourceSave()</a>, <a href="/ru/objects/textout">TextOut()</a></span></p> 
+<br>

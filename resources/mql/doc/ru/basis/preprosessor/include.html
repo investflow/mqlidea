@@ -1,0 +1,26 @@
+<h1>Включение файлов (#include)</h1> 
+<p><span>Командная строка </span><span style="font-style: italic;">#include</span><span> может встречаться в любом месте программы, но обычно все включения размещаются в начале файла исходного текста. Формат вызова:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#include</span><span>&nbsp;&lt;имя_файла&gt;</span><br> <span style="color: #0000ff;">#include</span><span>&nbsp;</span><span style="color: #008080;">"имя_файла"</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Примеры:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#include</span><span>&nbsp;&lt;WinUser32.mqh&gt;</span><br> <span style="color: #0000ff;">#include</span><span>&nbsp;</span><span style="color: #008080;">"mylib.mqh"</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Препроцессор заменяет строку </span><span style="font-style: italic;">#include &lt;имя_файла&gt;</span><span> содержимым файла WinUser32.mqh. Угловые скобки обозначают, что файл WinUser32.mqh будет взят из стандартного каталога (обычно это </span><span style="font-style: italic;">каталог_терминала\MQL4\Include</span><span>). Текущий каталог не просматривается.</span></p> 
+<p><span>Если имя файла заключено в кавычки, то поиск производится в текущем каталоге (в котором содержится основной файл исходного текста). Cтандартный каталог не просматривается.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/preprosessor/import">Импорт функций</a></span></p> 
+<br>

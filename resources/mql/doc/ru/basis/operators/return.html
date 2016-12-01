@@ -1,0 +1,28 @@
+<h1>Оператор возврата return</h1> 
+<p><span>Оператор return прекращает выполнение текущей <a href="/ru/basis/function">функции</a> и возвращает управление вызвавшей программе. Результат вычисления выражения возвращается вызываемой функции. Выражение может содержать оператор присваивания.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;CalcSum(</span><span style="color: #0000ff;">int</span><span>&nbsp;x,&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;y)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(x+y);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><span>В функциях с типом возвращаемого значения <a href="/ru/basis/types/void">void</a> необходимо использовать оператор </span><span style="color: #0000ff;">return</span><span> без выражения:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;SomeFunction()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Hello!"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;этот&nbsp;оператор&nbsp;можно&nbsp;удалить</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Завершающая фигурная скобка функции предполагает неявное исполнение оператора </span><span style="color: #0000ff;">return</span><span> без выражения.</span></p> 
+<p><span>Можно возвращать <a href="/ru/basis/types#base_types">простые типы</a>, <a href="/ru/basis/types/casting#casting_structure">простые &nbsp;структуры</a>, <a href="/ru/basis/types/object_pointers">указатели объектов</a>. При помощи оператора </span><span style="font-style: italic;">return</span><span> нельзя возвращать любые массивы, объекты классов, переменные типа сложных структур.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/variables/initialization">Инициализация переменных</a>, <a href="/ru/basis/variables/variable_scope">Область видимости и время жизни переменных</a>, <a href="/ru/basis/variables/object_live">Создание и уничтожение объектов</a></span></p> 
+<br>

@@ -1,0 +1,105 @@
+<h1>Шаблоны функций</h1> 
+<p><span><a href="/ru/basis/function/functionoverload">Перегруженные функции</a> обычно используются для выполнения похожих операций над различными типами данных. Простой пример такой функции в MQL4 - <a href="/ru/array/arraysize">ArraySize()</a>, которая возвращает размер массива любого типа. На самом деле эта системная функция является перегруженной, и вся реализация такой перегрузки спрятана от разработчика программ на MQL4:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArraySize</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void&amp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;проверяемый&nbsp;массив</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>То есть на самом деле компилятор языка MQL4 подставляет для каждого вызова этой функции нужную реализацию, например, для массивов целого типа примерно так:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArraySize</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&amp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;массив&nbsp;с&nbsp;элементами&nbsp;типа&nbsp;int</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>А для массива типа <a href="/ru/constants/structures/mqlrates">MqlRates</a> для работы с котировками в формате исторических данных функцию <a href="/ru/array/arraysize">ArraySize()</a> можно представить таким образом:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArraySize</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>MqlRates&amp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>&nbsp;</span><span>//&nbsp;массив,&nbsp;заполненный&nbsp;значениями&nbsp;типа&nbsp;MqlRates</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Таким образом, очень удобно использовать одну и ту же функцию для работы с разными типами, но необходимо самостоятельно провести всю предварительную работу, а именно – сделать <a href="/ru/basis/function/functionoverload">перегрузку</a> нужной функции для всех типов данных, с которыми она должна будет корректно работать.</span></p> 
+<p><span>Есть более удобное решение – если для каждого типа данных должны выполняться идентичные операции, то более компактным и удобным решением является использование шаблонов функций. При этом программисту нужно написать всего одно описание шаблона функции. При таком описании шаблона в качестве параметра достаточно указать не конкретный тип данных, с которыми должна работать функция, а некий формальный параметр. Основываясь на типах аргументов, использованных при вызове этой функции, компилятор будет автоматически генерировать разные функции для соответствующей обработки каждого типа.</span></p> 
+<p><span>Определение шаблона функции начинается с ключевого слова </span><span style="color: #0000ff;">template,</span><span> после которого в угловых скобках идет список формальных параметров. Каждый формальный параметр предваряется ключевым словом </span><span style="color: #0000ff;">typename</span><span>. Формальные типы параметров – встроенные типы или типы, определенные пользователем. Они используются:</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>для задания типов аргументов функции, </span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>для задания типов возвращаемого значения функции,</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>для объявления переменных внутри тела описания функции</span></p> 
+<p><span>&nbsp;</span></p> 
+<p><span>Количество параметров в шаблоне не может быть больше восьми. Каждый формальный параметр в определении шаблона должен хотя бы один раз появиться в списке параметров функции. Каждое имя формального параметра должно быть уникальным.</span></p> 
+<p><span>Вот пример шаблона функции для поиска максимального значения в массиве любого числового типа (целые и вещественные числа):</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">template</span><span>&lt;</span><span style="color: #0000ff;">typename</span><span>&nbsp;T&gt;</span><br> <span>T&nbsp;ArrayMax(T&nbsp;&amp;arr[])</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uint</span><span>&nbsp;size=</span><span style="color: #0000ff;">ArraySize</span><span>(arr);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(size==0)&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;T&nbsp;max=arr[0];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">uint</span><span>&nbsp;n=1;n&lt;size;n++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(max&lt;arr[n])&nbsp;max=arr[n];</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(max);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Данный шаблон описывает функцию, которая находит максимальное значение в переданном массиве и возвращает его в качестве результата. Напомним, что встроенная в MQL4 функция <a href="/ru/array/arraymaximum">ArrayMaximum()</a> возвращает только индекс найденного максимального значения, по которому пользователь в дальнейшем может получить уже и само значение. Например, так:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;создадим&nbsp;массив</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;array[];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;size=50;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayResize</span><span>(array,size);</span><br> <span style="color: #808080;">//---&nbsp;&nbsp;заполним&nbsp;случайными&nbsp;значениями</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;size;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[i]=</span><span style="color: #0000ff;">MathRand</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;найдем&nbsp;позицию&nbsp;максимального&nbsp;элемента&nbsp;в&nbsp;массиве</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;max_position=</span><span style="color: #0000ff;">ArrayMaximum</span><span>(array);</span><br> <span style="color: #808080;">//---&nbsp;теперь&nbsp;получим&nbsp;само&nbsp;максимальное&nbsp;значение&nbsp;в&nbsp;массиве</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;max=array[max_position];</span><br> <span style="color: #808080;">//---&nbsp;вывод&nbsp;найденного&nbsp;значения</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Max&nbsp;value&nbsp;=&nbsp;"</span><span>,max);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Таким образом, нам понадобилось два действия, чтобы получить максимальное значение в массиве. С помощью шаблона функции ArrayMax() можно получить результат нужного типа, просто передав в неё массив соответствующего типа. То есть вместо двух последних строчек </span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;найдем&nbsp;позицию&nbsp;максимального&nbsp;элемента&nbsp;в&nbsp;массиве</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;max_position=</span><span style="color: #0000ff;">ArrayMaximum</span><span>(array);</span><br> <span style="color: #808080;">//---&nbsp;теперь&nbsp;получим&nbsp;само&nbsp;максимальное&nbsp;значение&nbsp;в&nbsp;массиве</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;max=array[max_position];</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>теперь мы можем использовать одну строку, возвращающую сразу результат того же типа, что и переданный массив:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;найдем&nbsp;максимальное&nbsp;значение</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;max=ArrayMax(array);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>При этом тип результата, возвращенный функцией ArrayMax(), будет автоматически соответствовать типу массива.</span></p> 
+<p><span>&nbsp;</span></p> 
+<p><span>Для создания универсальных способов работы с различными типами данных необходимо использовать ключевое слово </span><span style="color: #0000ff;">typename</span><span> для получения типа аргумента в виде строки. Покажем это на примере функции, которая возвращает в виде строки тип данных:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#include</span><span>&nbsp;&lt;Trade\Trade.mqh&gt;</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;CTrade&nbsp;trade;&nbsp;&nbsp;&nbsp;</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;double</span><span>&nbsp;d_value=M_PI;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;i_value=INT_MAX;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"d_value:&nbsp;type="</span><span>,GetTypeName(d_value),&nbsp;</span><span style="color: #008080;">",&nbsp;&nbsp;&nbsp;value="</span><span>,&nbsp;d_value);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"i_value:&nbsp;type="</span><span>,GetTypeName(i_value),&nbsp;</span><span style="color: #008080;">",&nbsp;&nbsp;&nbsp;value="</span><span>,&nbsp;i_value);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"trade:&nbsp;type="</span><span>,GetTypeName(trade));</span><br> <span style="color: #808080;">//---&nbsp;</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Возвращает&nbsp;в&nbsp;строковом&nbsp;виде&nbsp;тип&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">template</span><span>&lt;</span><span style="color: #0000ff;">typename</span><span>&nbsp;T&gt;</span><br> <span style="color: #0000ff;">string</span><span>&nbsp;GetTypeName(</span><span style="color: #0000ff;">const</span><span>&nbsp;T&nbsp;</span><span style="color: #0000ff;">&amp;</span><span>t)</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;вернем&nbsp;тип&nbsp;в&nbsp;виде&nbsp;строки</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">typename</span><span>(T));</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<p><span>Шаблоны функций можно также использовать и для методов класса, например:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">class</span><span>&nbsp;CFile</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span style="color: #0000ff;">public</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">template</span><span>&lt;</span><span style="color: #0000ff;">typename</span><span>&nbsp;T&gt;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uint</span><span>&nbsp;WriteStruct(T&nbsp;&amp;data);</span><br> <span>&nbsp;&nbsp;};</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">template</span><span>&lt;</span><span style="color: #0000ff;">typename</span><span>&nbsp;T&gt;</span><br> <span style="color: #0000ff;">uint</span><span>&nbsp;CFile::WriteStruct(T&nbsp;&amp;data)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">FileWriteStruct</span><span>(m_handle,data));</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<p><span>Шаблоны функций нельзя объявлять с ключевыми словами <a href="/ru/basis/function/export">export</a>, <a href="/ru/basis/oop/virtual">virtual</a> и <a href="/ru/basis/function/extfunctions">#import</a>.</span></p> 
+<br>

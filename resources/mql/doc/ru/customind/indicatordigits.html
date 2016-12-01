@@ -1,0 +1,32 @@
+<h1>IndicatorDigits</h1> 
+<p><span>Устанавливает формат точности (количество знаков после десятичной точки) для визуализации значений индикатора. </span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>IndicatorDigits</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>digits</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;количество&nbsp;знаков</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span style="color: #404040;">digits</span></p> 
+<p><span>[in] &nbsp;Формат точности, число цифр после десятичной точки.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Нет</span><span>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>По умолчанию используется точность цены финансового инструмента, к графику которого присоединен индикатор.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;init()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//----&nbsp;2&nbsp;дополнительных&nbsp;буфера&nbsp;используются&nbsp;для&nbsp;подсчета.</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">IndicatorBuffers</span><span>(3);</span><br> <span style="color: #808080;">//----&nbsp;настройка&nbsp;параметров&nbsp;отрисовки</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexStyle</span><span>(0,</span><span style="color: #0000ff;">DRAW_HISTOGRAM</span><span>,</span><span style="color: #0000ff;">STYLE_SOLID</span><span>,3);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexDrawBegin</span><span>(0,SignalSMA);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">IndicatorDigits</span><span>(</span><span style="color: #0000ff;">Digits</span><span>+2);</span><br> <span style="color: #808080;">//----&nbsp;3&nbsp;распределенных&nbsp;буферов&nbsp;индикатора</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexBuffer</span><span>(0,ind_buffer1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexBuffer</span><span>(1,ind_buffer2);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SetIndexBuffer</span><span>(2,ind_buffer3);</span><br> <span style="color: #808080;">//----&nbsp;"короткое&nbsp;имя"&nbsp;для&nbsp;DataWindow&nbsp;и&nbsp;подокна&nbsp;индикатора</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">IndicatorShortName</span><span>(</span><span style="color: #008080;">"OsMA("</span><span>+FastEMA+</span><span style="color: #008080;">","</span><span>+SlowEMA+</span><span style="color: #008080;">","</span><span>+SignalSMA+</span><span style="color: #008080;">")"</span><span>);</span><br> <span style="color: #808080;">//----&nbsp;инициализация&nbsp;сделана</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/constants/indicatorconstants/customindicatorproperties">Свойства&nbsp;пользовательских&nbsp;индикаторов</a></span></p> 
+<p><span>&nbsp;</span></p> 
+<br>

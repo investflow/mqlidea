@@ -1,0 +1,20 @@
+<h1>ZeroMemory</h1> 
+<p><span>Функция обнуляет переменную, переданную ей по ссылке.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>ZeroMemory</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void</span><span>&nbsp;&amp;&nbsp;</span><span>variable</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;обнуляемая&nbsp;переменная</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>variable</span></p> 
+<p><span>[in] [out] Переменная, передаваемая по ссылке, которую требуется обнулить (инициализировать нулевыми значениями). </span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Нет возвращаемого значения.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Если параметром функции является строка, то данный вызов будет эквивалентен указанию для нее значения NULL.</span><br> <span>Для простых типов и их массивов, а также структур/классов, состоящих из таких типов, это простое обнуление.</span><br> <span>Для объектов, содержащих строки и динамические массивы, производится вызов ZeroMemory() для каждого члена.</span><br> <span>Для любых массивов, не защищенных модификатором const, производится обнуление всех элементов.</span><br> <span>Для массивов сложных объектов происходит вызов ZeroMemory() для каждого элемента.</span></p> 
+<p><span>Функция ZeroMemory() не применима для классов с защищенными <a href="/ru/basis/types/classes#public">членами</a> или <a href="/ru/basis/oop/inheritance#protected_inheritance">наследованием</a>.</span></p> 
+<br>

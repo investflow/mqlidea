@@ -1,0 +1,65 @@
+<h1>Функции</h1> 
+<p><a id="function_definition"></a><span>Всякая задача может быть разбита на подзадачи, каждую из которых можно либо непосредственно представить в виде кода, либо разбить на еще более мелкие подзадачи. Данный метод называется </span><span style="font-style: italic;">пошаговым уточнением</span><span>. Функции служат для записи программного кода этих непосредственно решаемых подзадач. Код, описывающий, что делает функция, называется </span><span style="font-style: italic;">определением функции:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>заголовок_функции</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;инструкции</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Все, что находится перед первой фигурной скобкой, составляет </span><span style="font-style: italic;">заголовок</span><span> определения функции, а то, что находится между фигурными скобками, является <a id="function_body"></a></span><span style="font-style: italic;">телом</span><span> определения функции. Заголовок функции включает в себя описание типа возвращаемого значения, имени (<a href="/ru/basis/syntax/identifiers">идентификатора</a>) и <a href="/ru/basis/variables/formal">формальных&nbsp;параметров</a>. &nbsp;Количество параметров, передаваемых в функцию, ограничено и не может превышать 64.</span></p> 
+<p><span>Функция может вызываться из других частей программы столько раз, сколько необходимо. По сути, возвращаемый тип, идентификатор функции и типы параметров составляют </span><span style="font-style: italic;">прототип функции</span><span>.</span></p> 
+<p><a id="function_declaration"></a><span>Прототип функции – это объявление функции, но не ее определение. Благодаря явному объявлению возвращаемого типа и списка типов аргументов, при обращении к функциям возможны строгая проверка типов и неявные преобразования типов. Особенно часто объявления функций используются в классах для улучшения читаемости кода. </span></p> 
+<p><span>Определение функции должно точно соответствовать ее объявлению. Каждая объявленная функция должна быть определена.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #505050;">//&nbsp;тип&nbsp;возвращаемого&nbsp;значения</span><br> <span>linfunc&nbsp;(</span><span style="color: #0000ff;">double</span><span>&nbsp;a,&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;b)&nbsp;</span><span style="color: #505050;">//&nbsp;имя&nbsp;функции&nbsp;и&nbsp;список&nbsp;параметров</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #505050;">//&nbsp;составной&nbsp;оператор</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>&nbsp;(a&nbsp;+&nbsp;b);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #505050;">//&nbsp;возвращаемое&nbsp;значение</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><span>Оператор <a href="/ru/basis/operators/return">return</a> может возвращать значение выражения, стоящего в этом операторе. Значение выражения при необходимости преобразуется к типу результата функции. Можно возвращать <a href="/ru/basis/types#base_types">простые типы</a>, <a href="/ru/basis/types/casting#casting_structure">простые &nbsp;структуры</a>, <a href="/ru/basis/types/object_pointers">указатели объектов</a>. При помощи оператора </span><span style="font-style: italic;">return</span><span> нельзя возвращать любые массивы, объекты классов, переменные типа сложных структур.</span></p> 
+<p><span>Функция, которая не возвращает значения, должна быть описана как имеющая тип <a href="/ru/basis/types/void">void</a>.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;errmesg(</span><span style="color: #0000ff;">string</span><span>&nbsp;s)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"error:&nbsp;"</span><span>+s);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><a id="default_value"></a><span>Параметры, передаваемые в функцию, могут иметь умолчательные значения, которые задаются константами соответствующего типа. </span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;somefunc(</span><span style="color: #0000ff;">double</span><span>&nbsp;a,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;d=0.0001,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;n=5,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;b=</span><span style="color: #0000ff;">true</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;s=</span><span style="color: #008080;">"passed&nbsp;string"</span><span>)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Обязательный&nbsp;параметр&nbsp;a=&nbsp;"</span><span>,a);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Переданы&nbsp;следующие&nbsp;параметры:&nbsp;d&nbsp;=&nbsp;"</span><span>,d,</span><span style="color: #008080;">"&nbsp;n&nbsp;=&nbsp;"</span><span>,n,</span><span style="color: #008080;">"&nbsp;b&nbsp;=&nbsp;"</span><span>,b,</span><span style="color: #008080;">"&nbsp;s&nbsp;=&nbsp;"</span><span>,s);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><span>Если какому-либо параметру было назначено умолчательное значение, то все последующие параметры также должны иметь умолчательное значение.</span></p> 
+<p><span style="font-weight: bold;">Пример неправильного объявления:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;somefunc(</span><span style="color: #0000ff;">double</span><span>&nbsp;a,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;d=0.0001,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;объявлено&nbsp;значение&nbsp;по&nbsp;умолчанию&nbsp;0.0001</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;n,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;значение&nbsp;по&nbsp;умолчанию&nbsp;не&nbsp;указано&nbsp;!</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;b,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;значение&nbsp;по&nbsp;умолчанию&nbsp;не&nbsp;указано&nbsp;!</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;s=</span><span style="color: #008080;">"passed&nbsp;string"</span><span>)</span><br> <span>&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/oop/overload">Перегрузка</a>, <a href="/ru/basis/oop/virtual">Виртуальные функции</a>, <a href="/ru/basis/oop/polymorphism">Полиморфизм</a></span></p> 
+<br>

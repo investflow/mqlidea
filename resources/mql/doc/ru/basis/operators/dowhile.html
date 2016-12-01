@@ -1,0 +1,27 @@
+<h1>Оператор цикла do while</h1> 
+<p><span>Циклы <a href="/ru/basis/operators/for">for</a> и <a href="/ru/basis/operators/while">while</a> производят проверку окончания в начале, а не в конце цикла. Третий оператор цикла </span><span style="color: #0000ff;">do</span><span> - </span><span style="color: #0000ff;">while</span><span> проверяет условие окончания в конце, после каждого прохода цикла. Тело цикла всегда выполняется по крайней мере один раз.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">do</span><br> <span>&nbsp;&nbsp;&nbsp;оператор;</span><br> <span style="color: #0000ff;">while</span><span>(выражение);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Сначала выполняется оператор, затем вычисляется выражение. Если оно истинно, то оператор выполняется снова и т.д. Если выражение становится ложным, цикл заканчивается.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Если в цикле предполагается обрабатывать большое количество итераций, то рекомендуется проверять факт принудительного завершения программы с помощью функции <a href="/ru/check/isstopped">IsStopped()</a>.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;вычисление&nbsp;последовательности&nbsp;чисел&nbsp;Фибоначчи</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;counterFibonacci=15;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0,first=0,second=1;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;currentFibonacciNumber;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">do</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentFibonacciNumber=first+second;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"i&nbsp;=&nbsp;"</span><span>,i,</span><span style="color: #008080;">"&nbsp;&nbsp;currentFibonacciNumber&nbsp;=&nbsp;"</span><span>,currentFibonacciNumber);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first=second;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;second=currentFibonacciNumber;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;&nbsp;</span><span style="color: #808080;">//&nbsp;без&nbsp;этого&nbsp;оператора&nbsp;получится&nbsp;бесконечный&nbsp;цикл!!</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">while</span><span>(i&lt;counterFibonacci&nbsp;&amp;&amp;&nbsp;!</span><span style="color: #0000ff;">IsStopped</span><span>());</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/variables/initialization">Инициализация переменных</a>, <a href="/ru/basis/variables/variable_scope">Область видимости и время жизни переменных</a>, <a href="/ru/basis/variables/object_live">Создание и уничтожение объектов</a></span></p> 
+<br>

@@ -1,0 +1,35 @@
+<h1>StringInit</h1> 
+<p><span> Инициализирует строку указанными символами и обеспечивает указанный размер строки.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>StringInit</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&amp;</span><span>&nbsp;&nbsp;&nbsp;</span><span>string_var</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;строка&nbsp;для&nbsp;инициализации</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>new_len=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;требуемая&nbsp;длина&nbsp;строки&nbsp;после&nbsp;инициализации</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ushort</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>character=0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;символ,&nbsp;которым&nbsp;будет&nbsp;заполнена&nbsp;строка</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>string_var</span></p> 
+<p><span>[in][out] &nbsp;Строка, которая должна быть инициализирована или деинициализирована.</span></p> 
+<p><span>new_len=0</span></p> 
+<p><span>[in] &nbsp;Длина строки после инициализации. Если размер=0, то деинициализирует строку, то есть, буфер строки освобождается и адрес буфера обнуляется.</span></p> 
+<p><span>character=0</span></p> 
+<p><span>[in] &nbsp;Символ для заполнения строки.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>В случае успешного выполнения возвращает true, иначе false. Для получения кода <a href="/ru/constants/errorswarnings/errorcodes">ошибки</a> нужно вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Если &nbsp;character=0 и размер new_len&gt;0, то будет распределен буфер строки указанного размера и заполнен нулями. Размер строки будет равен нулю, так как весь буфер заполнен терминаторами строки.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;str;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringInit</span><span>(str,200,0);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"str&nbsp;=&nbsp;"</span><span>,str,</span><span style="color: #008080;">":&nbsp;StringBufferLen(str)&nbsp;=&nbsp;"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringBufferLen</span><span>(str),</span><span style="color: #008080;">"&nbsp;&nbsp;StringLen(str)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">StringLen</span><span>(str));</span><br> <span>&nbsp;&nbsp;}</span><br> <span>/*&nbsp;&nbsp;Результат</span><br> <span>str&nbsp;=&nbsp;:&nbsp;</span><span style="color: #0000ff;">StringBufferLen</span><span>(str)&nbsp;=&nbsp;200&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringLen</span><span>(str)&nbsp;=&nbsp;0</span><br> <span>*/</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/strings/stringbufferlen">StringBufferLen()</a>, <a href="/ru/strings/stringlen">StringLen()</a></span></p> 
+<br>

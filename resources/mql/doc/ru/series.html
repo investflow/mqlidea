@@ -1,0 +1,124 @@
+<h1>Доступ к таймсериям и данным индикаторов</h1> 
+<p><span>Функции для работы с таймсериями и индикаторами. Таймсерия отличается от обычного массива тем, что индексация элементов таймсерии производится от конца массива к началу (от самых свежих данных к самым старым). Для копирования значений таймсерий и индикаторов рекомендуется использовать только <a href="/ru/basis/types/dynamic_array">динамические массивы</a>, так как функции копирования самостоятельно распределяют необходимый размер массивов-приемников значений.</span></p> 
+<p><span>Из этого правила есть </span><span style="font-weight: bold;">важное исключение</span><span>: если копирование таймсерий и значений индикаторов необходимо делать часто, например, при каждом вызове <a href="/ru/basis/function/events#ontick">OnTick()</a> в экспертах или при каждом вызове <a href="/ru/basis/function/events#oncalculate">OnCalculate()</a> в индикаторах, то в этом случае лучше использовать <a href="/ru/basis/types/dynamic_array#static_array">статически распределенные массивы</a>, так как </span><span style="font-weight: bold;">операции распределения памяти</span><span> под динамические массивы </span><span style="font-weight: bold;">требуют дополнительного времени</span><span> и это скажется при тестировании и оптимизации экспертов.</span></p> 
+<p><span>При использовании функций доступа к таймсериям и значениям индикаторов необходимо учитывать направление индексации, это подробно описано в разделе <a href="/ru/series/bufferdirection">Направление индексации в массивах и таймсериях</a>.</span></p> 
+<p><span>Доступ к данным индикаторов и таймсерий осуществляется независимо от факта готовности запрашиваемых данных (так называемый <a href="/ru/series/timeseries_access#synchronized">асинхронный доступ</a>). Это критически важно для расчета пользовательских индикаторов, поэтому при отсутствии запрашиваемых данных функции типа </span><span style="font-style: italic;">Copy...()</span><span> сразу же возвращают ошибку. Однако при доступе из экспертов и скриптов производится несколько попыток получения данных с небольшой паузой, призванной обеспечить время, необходимое для загрузки недостающих таймсерий либо для расчета значений индикаторов.</span></p> 
+<p><span>Если запрашивается информация с другого графика (название <a href="/ru/chart_operations/symbolwindow">инструмента</a> и/или <a href="/ru/chart_operations/periodwindow">значение таймфрейма</a> отличаются от текущих), то возможна ситуация, что в клиентском терминале не открыт соответствующий график и необходимые данные должны быть запрошены у сервера. В этом случае в переменную _Last_error будет помещена ошибка <a href="/ru/constants/errorswarnings/errorcodes">ERR_HISTORY_WILL_UPDATED</a> (4066 - запрошенные исторические данные в состоянии обновления) и необходимо через некоторое время повторить попытку запроса (см. пример <a href="/ru/array/arraycopyseries">ArrayCopySeries()</a>).</span></p> 
+<p><span>В разделе <a href="/ru/series/timeseries_access">Организация доступа к данным</a> дается подробное описание тонкостей получения, хранения и запроса ценовых данных в клиентском терминале MetaTrader 4.</span></p> 
+<p style="text-align: center;"><img alt="Направление индексации в таймсерии и в обычном массиве" title="Направление индексации в таймсерии и в обычном массиве" width="628" height="415" style="margin:0px auto 0px auto;width:628px;height:415px;border:none" src="https://c.mql4.com/i/docs/ru/timeseries.png"></p> 
+<p><span>Исторически сложилось так, что доступ к данным в ценовом массиве производился с конца данных. Физически новые данные всегда дописываются в конец массива, но индекс этого массива всегда равен нулю. Индекс 0 в массиве-таймсерии означает данные текущего бара, то есть бара, который соответствует незавершенному промежутку времени на данном таймфрейме.</span></p> 
+<p><span>Таймфрейм – период времени, в течение которого формируется один ценовой бар. Существует несколько предопределенных <a href="/ru/constants/chartconstants/enum_timeframes">стандартных&nbsp;таймфреймов</a>.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Функция</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Действие</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/seriesinfointeger">SeriesInfoInteger</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает информацию о состоянии исторических данных</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:165px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/refreshrates">RefreshRates</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Осуществляет обновление данных в предопределенных переменных и массивах-таймсериях</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/copyrates">CopyRates</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Получает в массив исторические данные структуры <a href="/ru/constants/structures/mqlrates">Rates</a> для указанных символа и периода </span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/copytime">CopyTime</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Получает в массив исторические данные по времени открытия баров по соответствующим символу и периоду</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/copyopen">CopyOpen</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Получает в массив исторические данные по цене открытия баров по соответствующим символу и периоду</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/copyhigh">CopyHigh</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Получает в массив исторические данные по максимальной цене баров по соответствующим символу и периоду</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/copylow">CopyLow</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Получает в массив исторические данные по минимальной цене баров по соответствующим символу и периоду</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/copyclose">CopyClose</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Получает в массив исторические данные по цене закрытия баров по соответствующим символу и периоду</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/copytickvolume">CopyTickVolume</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Получает в массив исторические данные по тиковым объемам для соответствующих символа и периода</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/barsfunction">Bars</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает количество баров в истории по соответствующему символу периоду</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/ibars">iBars</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает количество баров в истории по соответствующему символу и периоду</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/ibarshift">iBarShift</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает смещение бара, которому принадлежит указанное время</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/iclose">iClose</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение цены закрытия бара соответствующего графика </span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/ihigh">iHigh</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение максимальной цены бара соответствующего графика</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/ihighest">iHighest</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает индекс наибольшего найденного значения соответствующего графика </span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/ilow">iLow</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение минимальной цены бара соответствующего графика</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/ilowest">iLowest</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает индекс наименьшего найденного значения соответствующего графика</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/iopen">iOpen</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение цены открытия бара соответствующего графика</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/itime">iTime</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение времени открытия бара соответствующего графика</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:130px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/series/ivolume">iVolume</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение тикового объема бара соответствующего графика</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Несмотря на то, что функцией <a href="/ru/array/arraysetasseries">ArraySetAsSeries()</a> можно задавать <a href="/ru/basis/variables#array_define">массивам</a> способ доступа к элементам как для таймсерии, нужно помнить, что физически элементы массива всегда хранятся в одном и том же порядке, меняется только направление индексации. Для демонстрации этого факта можно выполнить пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;TimeAsSeries[];</span><br> <span style="color: #808080;">//---&nbsp;установим&nbsp;доступ&nbsp;к&nbsp;массиву&nbsp;как&nbsp;к&nbsp;таймсерии</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArraySetAsSeries</span><span>(TimeAsSeries,</span><span style="color: #0000ff;">true</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ResetLastError</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;copied=</span><span style="color: #0000ff;">CopyTime</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,0,10,TimeAsSeries);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(copied&lt;=0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Не&nbsp;удалось&nbsp;скопировать&nbsp;время&nbsp;открытия&nbsp;для&nbsp;последних&nbsp;10&nbsp;баров"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"TimeCurrent&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">TimeCurrent</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ArraySize(Time)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">ArraySize</span><span>(TimeAsSeries));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;size=</span><span style="color: #0000ff;">ArraySize</span><span>(TimeAsSeries);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;size;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"TimeAsSeries["</span><span>+i+</span><span style="color: #008080;">"]&nbsp;=&nbsp;"</span><span>,TimeAsSeries[i]);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;ArrayNotSeries[];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArraySetAsSeries</span><span>(ArrayNotSeries,</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ResetLastError</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;copied=</span><span style="color: #0000ff;">CopyTime</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,0,10,ArrayNotSeries);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(copied&lt;=0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Не&nbsp;удалось&nbsp;скопировать&nbsp;время&nbsp;открытия&nbsp;для&nbsp;последних&nbsp;10&nbsp;баров"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;size=</span><span style="color: #0000ff;">ArraySize</span><span>(ArrayNotSeries);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=size-1;i&gt;=0;i--)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ArrayNotSeries["</span><span>+i+</span><span style="color: #008080;">"]&nbsp;=&nbsp;"</span><span>,ArrayNotSeries[i]);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>В результате будет произведен вывод подобный этому:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">TimeCurrent</span><span>&nbsp;=&nbsp;2009.06.11&nbsp;14:16:23</span><br> <span style="color: #0000ff;">ArraySize</span><span>(Time)&nbsp;=&nbsp;10</span><br> <span>TimeAsSeries[0]&nbsp;=&nbsp;2009.06.11&nbsp;14:00:00</span><br> <span>TimeAsSeries[1]&nbsp;=&nbsp;2009.06.11&nbsp;13:00:00</span><br> <span>TimeAsSeries[2]&nbsp;=&nbsp;2009.06.11&nbsp;12:00:00</span><br> <span>TimeAsSeries[3]&nbsp;=&nbsp;2009.06.11&nbsp;11:00:00</span><br> <span>TimeAsSeries[4]&nbsp;=&nbsp;2009.06.11&nbsp;10:00:00</span><br> <span>TimeAsSeries[5]&nbsp;=&nbsp;2009.06.11&nbsp;09:00:00</span><br> <span>TimeAsSeries[6]&nbsp;=&nbsp;2009.06.11&nbsp;08:00:00</span><br> <span>TimeAsSeries[7]&nbsp;=&nbsp;2009.06.11&nbsp;07:00:00</span><br> <span>TimeAsSeries[8]&nbsp;=&nbsp;2009.06.11&nbsp;06:00:00</span><br> <span>TimeAsSeries[9]&nbsp;=&nbsp;2009.06.11&nbsp;05:00:00</span><br> <span>&nbsp;</span><br> <span>ArrayNotSeries[9]&nbsp;=&nbsp;2009.06.11&nbsp;14:00:00</span><br> <span>ArrayNotSeries[8]&nbsp;=&nbsp;2009.06.11&nbsp;13:00:00</span><br> <span>ArrayNotSeries[7]&nbsp;=&nbsp;2009.06.11&nbsp;12:00:00</span><br> <span>ArrayNotSeries[6]&nbsp;=&nbsp;2009.06.11&nbsp;11:00:00</span><br> <span>ArrayNotSeries[5]&nbsp;=&nbsp;2009.06.11&nbsp;10:00:00</span><br> <span>ArrayNotSeries[4]&nbsp;=&nbsp;2009.06.11&nbsp;09:00:00</span><br> <span>ArrayNotSeries[3]&nbsp;=&nbsp;2009.06.11&nbsp;08:00:00</span><br> <span>ArrayNotSeries[2]&nbsp;=&nbsp;2009.06.11&nbsp;07:00:00</span><br> <span>ArrayNotSeries[1]&nbsp;=&nbsp;2009.06.11&nbsp;06:00:00</span><br> <span>ArrayNotSeries[0]&nbsp;=&nbsp;2009.06.11&nbsp;05:00:00</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Как видно из результатов вывода, для массива TimeAsSeries с ростом индекса уменьшается значение времени, находящегося под этим индексом, то есть мы продвигаемся от настоящего к прошлому. Для обычного массива ArrayNotSeries все наоборот - с ростом индекса мы двигаемся из прошлого к настоящему.</span></p> 
+<p><span>Смотри также </span></p> 
+<p><span><a href="/ru/array/arrayisdynamic">ArrayIsDynamic</a>, <a href="/ru/array/arraygetasseries">ArrayGetAsSeries</a>, <a href="/ru/array/arraysetasseries">ArraySetAsSeries</a>, <a href="/ru/array/arrayisseries">ArrayIsSeries</a></span></p> 
+<br>

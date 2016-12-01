@@ -1,0 +1,23 @@
+<h1>ChartIndicatorsTotal</h1> 
+<p><span>Возвращает количество всех индикаторов, присоединенных к указанному окну графика.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ChartIndicatorsTotal</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>sub_window&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;номер&nbsp;подокна</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>chart_id</span></p> 
+<p><span>[in] &nbsp;Идентификатор графика. 0 означает текущий график.</span></p> 
+<p><span>sub_window</span></p> 
+<p><span>[in] &nbsp;Номер подокна графика. 0 означает главное окно графика.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Количество индикаторов на указанном окне графика. Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Функция предназначена для организации перебора всех индикаторов, присоединенных к данному графику. Количества всех окон графика можно получить из свойства </span><span><a href="/ru/constants/chartconstants/enum_chart_property#enum_chart_property_integer">CHART_WINDOWS_TOTAL</a></span><span> функцией <a href="/ru/chart_operations/chartgetinteger">ChartGetInteger()</a>.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/chart_operations/chartindicatordelete">ChartIndicatorDelete()</a>, <a href="/ru/chart_operations/chartindicatorstotal">ChartIndicatorsTotal()</a>, <a href="/ru/customind/indicatorsetstring">IndicatorSetString()</a></span></p> 
+<br>

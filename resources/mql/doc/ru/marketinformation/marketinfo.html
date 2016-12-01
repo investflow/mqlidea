@@ -1,0 +1,31 @@
+<h1>MarketInfo</h1> 
+<p><span>Возвращает различную информацию о финансовых инструментах, перечисленных в окне "Обзор рынка". </span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>MarketInfo</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;символ&nbsp;инструмента</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>type&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;тип&nbsp;информации</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>symbol</span></p> 
+<p><span>[in] &nbsp;Имя символа.</span></p> 
+<p><span>type</span></p> 
+<p><span>[in] <a href="/ru/constants/environment_state/marketinfoconstants">Идентификатор запроса</a>, определяющий тип возвращаемой информации. Может быть любым из значений идентификаторов запроса.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Информация о финансовом инструменте. </span><span>Часть информации о текущем финансовом инструменте хранится в <a href="/ru/predefined">предопределенных переменных</a>.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;vbid&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #008080;">"EURUSD",</span><span style="color: #0000ff;">MODE_BID</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;vask&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #008080;">"EURUSD"</span><span>,</span><span style="color: #0000ff;">MODE_ASK</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;vpoint&nbsp;&nbsp;=&nbsp;</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #008080;">"EURUSD"</span><span>,</span><span style="color: #0000ff;">MODE_POINT</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;vdigits&nbsp;=&nbsp;(</span><span style="color: #0000ff;">int</span><span>)</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #008080;">"EURUSD"</span><span>,</span><span style="color: #0000ff;">MODE_DIGITS</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;vspread&nbsp;=&nbsp;(</span><span style="color: #0000ff;">int</span><span>)</span><span style="color: #0000ff;">MarketInfo</span><span>(</span><span style="color: #008080;">"EURUSD"</span><span>,</span><span style="color: #0000ff;">MODE_SPREAD</span><span>);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/constants/environment_state/marketinfoconstants">Информация об инструменте</a></span></p> 
+<br>

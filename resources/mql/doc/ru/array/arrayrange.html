@@ -1,0 +1,31 @@
+<h1>ArrayRange</h1> 
+<p><span>Возвращает число элементов в указанном измерении массива.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayRange</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;void&amp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;массив&nbsp;для&nbsp;проверки</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>rank_index</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;номер&nbsp;измерения</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>array[]</span></p> 
+<p><span>[in] &nbsp;Проверяемый массив.</span></p> 
+<p><span>rank_index</span></p> 
+<p><span>[in] &nbsp;Индекс измерения.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Число элементов в указанном измерении массива</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Поскольку индексы начинаются с нуля, количество измерений массива на единицу больше, чем индекс последнего измерения.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;создадим&nbsp;четырехмерный&nbsp;массив</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;array[][5][2][4];</span><br> <span style="color: #808080;">//---&nbsp;зададим&nbsp;размер&nbsp;нулевого&nbsp;измерения</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayResize</span><span>(array,10,10);</span><br> <span style="color: #808080;">//---&nbsp;распечатаем&nbsp;размерности&nbsp;измерений</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;temp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;4;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;получим&nbsp;размер&nbsp;i-ого&nbsp;измерения</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp=</span><span style="color: #0000ff;">ArrayRange</span><span>(array,i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;распечатаем</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"dim&nbsp;=&nbsp;%d,&nbsp;range&nbsp;=&nbsp;%d"</span><span>,i,temp);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//---&nbsp;Результат</span><br> <span style="color: #808080;">//&nbsp;dim&nbsp;=&nbsp;0,&nbsp;range&nbsp;=&nbsp;10</span><br> <span style="color: #808080;">//&nbsp;dim&nbsp;=&nbsp;1,&nbsp;range&nbsp;=&nbsp;5</span><br> <span style="color: #808080;">//&nbsp;dim&nbsp;=&nbsp;2,&nbsp;range&nbsp;=&nbsp;2</span><br> <span style="color: #808080;">//&nbsp;dim&nbsp;=&nbsp;3,&nbsp;range&nbsp;=&nbsp;4</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

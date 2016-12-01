@@ -1,0 +1,53 @@
+<h1>iGator</h1> 
+<p><span>Возвращает значение осциллятора Gator.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>iGator</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;символа</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;таймфрейм</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>jaw_period</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;период&nbsp;для&nbsp;расчета&nbsp;челюстей</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>jaw_shift</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;смещение&nbsp;челюстей&nbsp;по&nbsp;горизонтали</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>teeth_period</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;период&nbsp;для&nbsp;расчета&nbsp;зубов</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>teeth_shift</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;смещение&nbsp;зубов&nbsp;по&nbsp;горизонтали</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>lips_period</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;период&nbsp;для&nbsp;расчета&nbsp;губ</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>lips_shift</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;смещение&nbsp;губ&nbsp;по&nbsp;горизонтали</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ma_method</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;тип&nbsp;сглаживания</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>applied_price</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;тип&nbsp;цены</span><br> <span>&nbsp;&nbsp;&nbsp;int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>mode</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;источник&nbsp;данных</span><br> <span>&nbsp;&nbsp;&nbsp;int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>shift</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;сдвиг</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>symbol</span></p> 
+<p><span>[in] &nbsp;Символьное имя инструмента, на данных которого будет вычисляться индикатор. <a href="/ru/basis/types/void">NULL</a> означает текущий символ.</span></p> 
+<p><span>timeframe</span></p> 
+<p><span>[in] &nbsp;Период. Может быть одним из значений перечисления <a href="/ru/constants/chartconstants/enum_timeframes">ENUM_TIMEFRAMES</a>. 0 означает период текущего графика.</span></p> 
+<p><span>jaw_period</span></p> 
+<p><span>[in] &nbsp;Период усреднения синей линии (челюсти аллигатора).</span></p> 
+<p><span>jaw_shift</span></p> 
+<p><span>[in] &nbsp;Смещение синей линии относительно графика цены. </span></p> 
+<p><span>teeth_period</span></p> 
+<p><span>[in] &nbsp;Период усреднения красной линии (зубов аллигатора).</span></p> 
+<p><span>teeth_shift</span></p> 
+<p><span>[in] &nbsp;Смещение красной линии относительно графика цены. </span></p> 
+<p><span>lips_period</span></p> 
+<p><span>[in] &nbsp;Период усреднения зеленой линии (губ аллигатора).</span></p> 
+<p><span>lips_shift</span></p> 
+<p><span>[in] &nbsp;Смещение зеленой линии относительно графика цены. </span></p> 
+<p><span>ma_method</span></p> 
+<p><span>[in] &nbsp;Метод усреднения. Может быть любым из значений <a href="/ru/constants/indicatorconstants/enum_ma_method">методов скользящего среднего</a> (Moving Average).</span></p> 
+<p><span>applied_price</span></p> 
+<p><span>[in] &nbsp;Используемая цена. Может быть любой из <a href="/ru/constants/indicatorconstants/prices">ценовых констант</a>.</span></p> 
+<p><span>mode</span></p> 
+<p><span>[in] &nbsp;Источник данных, идентификатор одной из <a href="/ru/constants/indicatorconstants/lines">линий индикатора</a>. Mожет быть любой из следующих величин:</span></p> 
+<p><span>MODE_GATORJAW - синяя линия (линия челюсти аллигатора),</span><br> <span>MODE_GATORTEETH - красная линия (линия зубов аллигатора),</span><br> <span>MODE_GATORLIPS - зеленая линия (линия губ аллигатора).</span></p> 
+<p><span>shift</span></p> 
+<p><span>[in] &nbsp;Индекс получаемого значения из индикаторного буфера (сдвиг относительно текущего бара на указанное количество периодов назад).</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Численное значение осциллятора</span><span> Gator</span><span>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Осциллятор показывает разницу между синей и красной линией Аллигатора (верхняя гистограмма) и разницу между красной и зеленой линией (нижняя гистограмма).</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;diff=</span><span style="color: #0000ff;">iGator</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,13,8,8,5,5,3,</span><span style="color: #0000ff;">MODE_SMMA</span><span>,</span><span style="color: #0000ff;">PRICE_MEDIAN</span><span>,</span><span style="color: #0000ff;">MODE_UPPER</span><span>,1);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>&nbsp;</span></p> 
+<br>

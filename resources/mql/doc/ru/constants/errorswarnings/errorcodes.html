@@ -1,0 +1,832 @@
+<h1>Ошибки времени выполнения</h1> 
+<p><span><a href="/ru/check/getlasterror">GetLastError()</a> – функция, возвращающая код последней ошибки, которая хранится в предопределенной переменной <a href="/ru/predefined/_lasterror">_LastError</a>. Значение этой переменной можно сбросить в ноль функцией <a href="/ru/common/resetlasterror">ResetLastError()</a>.</span></p> 
+<p><span>Коды торговых ошибок для удобства дополнительно приведены отдельным списком в разделе <a href="/ru/constants/errorswarnings/enum_trade_return_codes">Коды возврата торгового сервера</a>. </span></p> 
+<p><span>Коды ошибок выполнения MQL4-программы:</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 3px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Код</span></p> </td> 
+    <td style="vertical-align:top; width:270px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Константа</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>0</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет ошибки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>1</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_RESULT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет ошибки, но результат неизвестен</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>2</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_COMMON_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Общая ошибка</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>3</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_TRADE_PARAMETERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильные параметры</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SERVER_BUSY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Торговый сервер занят</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OLD_VERSION</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Старая версия клиентского терминала</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>6</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_CONNECTION</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет связи с торговым сервером</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>7</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_ENOUGH_RIGHTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Недостаточно прав</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>8</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_FREQUENT_REQUESTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слишком частые запросы</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>9</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_MALFUNCTIONAL_TRADE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Недопустимая операция, нарушающая функционирование сервера</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>64</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ACCOUNT_DISABLED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Счет заблокирован</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>65</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_ACCOUNT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильный номер счета</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>128</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_TIMEOUT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Истек срок ожидания совершения сделки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>129</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_PRICE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильная цена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>130</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_STOPS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильные стопы</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>131</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_TRADE_VOLUME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильный объем</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>132</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_MARKET_CLOSED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Рынок закрыт</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>133</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_DISABLED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Торговля запрещена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>134</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_ENOUGH_MONEY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Недостаточно денег для совершения операции</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>135</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_PRICE_CHANGED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Цена изменилась</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>136</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OFF_QUOTES</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет цен</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>137</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_BROKER_BUSY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Брокер занят</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>138</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_REQUOTE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Новые цены</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>139</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ORDER_LOCKED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ордер заблокирован и уже обрабатывается</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>140</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_LONG_POSITIONS_ONLY_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Разрешена только покупка</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>141</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_MANY_REQUESTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слишком много запросов</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>145</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_MODIFY_DENIED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Модификация запрещена, так как ордер слишком близок к рынку</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>146</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_CONTEXT_BUSY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Подсистема торговли занята</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>147</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_EXPIRATION_DENIED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Использование даты истечения ордера запрещено брокером</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>148</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_TOO_MANY_ORDERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Количество открытых и отложенных ордеров достигло предела, установленного брокером</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>149</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_HEDGE_PROHIBITED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Попытка открыть противоположный ордер в случае, если хеджирование запрещено</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>150</span></p> </td> 
+    <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_PROHIBITED_BY_FIFO</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Попытка закрыть позицию по инструменту в противоречии с правилом FIFO</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4000</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MQLERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет ошибки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4001</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WRONG_FUNCTION_POINTER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильный указатель функции</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4002</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ARRAY_INDEX_OUT_OF_RANGE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Индекс массива - вне диапазона</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4003</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_CALL_STACK</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет памяти для стека функций</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4004</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_RECURSIVE_STACK_OVERFLOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Переполнение стека после рекурсивного вызова</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4005</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_ENOUGH_STACK_FOR_PARAM</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>На стеке нет памяти для передачи параметров</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4006</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_PARAM_STRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет памяти для строкового параметра</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4007</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_TEMP_STRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет памяти для временной строки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4008</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_INITIALIZED_STRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неинициализированная строка</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4009</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_INITIALIZED_ARRAYSTRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неинициализированная строка в массиве</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4010</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_ARRAYSTRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет памяти для строкового массива</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4011</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_LONG_STRING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слишком длинная строка</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4012</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_REMAINDER_FROM_ZERO_DIVIDE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Остаток от деления на ноль</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4013</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ZERO_DIVIDE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Деление на ноль</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4014</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_UNKNOWN_COMMAND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неизвестная команда</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4015</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WRONG_JUMP</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильный переход</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4016</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_INITIALIZED_ARRAY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неинициализированный массив</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4017</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_DLL_CALLS_NOT_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Вызовы DLL не разрешены</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4018</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CANNOT_LOAD_LIBRARY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Невозможно загрузить библиотеку</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4019</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CANNOT_CALL_FUNCTION</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Невозможно вызвать функцию</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4020</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_EXTERNAL_CALLS_NOT_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Вызовы внешних библиотечных функций не разрешены</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4021</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_RETURNED_STR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Недостаточно памяти для строки, возвращаемой из функции</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4022</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SYSTEM_BUSY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Система занята</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4023</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_DLLFUNC_CRITICALERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Критическая ошибка вызова DLL-функции</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4024</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INTERNAL_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Внутренняя ошибка</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4025</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OUT_OF_MEMORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет памяти</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4026</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_POINTER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неверный указатель</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4027</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FORMAT_TOO_MANY_FORMATTERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слишком много параметров форматирования строки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4028</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FORMAT_TOO_MANY_PARAMETERS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Число параметров превышает число параметров форматирования строки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4029</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ARRAY_INVALID</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неверный массив</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4030</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CHART_NOREPLY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>График не отвечает</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4050</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_FUNCTION_PARAMSCNT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильное количество параметров функции</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4051</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_FUNCTION_PARAMVALUE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Недопустимое значение параметра функции</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4052</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_STRING_FUNCTION_INTERNAL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Внутренняя ошибка строковой функции</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4053</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SOME_ARRAY_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка массива</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4054</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INCORRECT_SERIESARRAY_USING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильное использование массива-таймсерии</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4055</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CUSTOM_INDICATOR_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка пользовательского индикатора</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4056</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INCOMPATIBLE_ARRAYS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Массивы несовместимы</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4057</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_GLOBAL_VARIABLES_PROCESSING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка обработки глобальных переменных</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4058</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_GLOBAL_VARIABLE_NOT_FOUND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Глобальная переменная не обнаружена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4059</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FUNC_NOT_ALLOWED_IN_TESTING</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Функция не разрешена в тестовом режиме</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4060</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FUNCTION_NOT_CONFIRMED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Функция не разрешена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4061</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SEND_MAIL_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка отправки почты</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4062</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_STRING_PARAMETER_EXPECTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ожидается параметр типа string</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4063</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INTEGER_PARAMETER_EXPECTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ожидается параметр типа integer</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4064</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_DOUBLE_PARAMETER_EXPECTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ожидается параметр типа double</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4065</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ARRAY_AS_PARAMETER_EXPECTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>В качестве параметра ожидается массив</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4066</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_HISTORY_WILL_UPDATED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Запрошенные исторические данные в состоянии обновления</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4067</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка при выполнении торговой операции</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4068</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_RESOURCE_NOT_FOUND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ресурс не найден</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4069</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_RESOURCE_NOT_SUPPORTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ресурс не поддерживается</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4070</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_RESOURCE_DUPLICATED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Дубликат ресурса</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4071</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INDICATOR_CANNOT_INIT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка инициализации пользовательского индикатора</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4072</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INDICATOR_CANNOT_LOAD</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка загрузки пользовательского индикатора</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4073</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_HISTORY_DATA</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет исторических данных</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4074</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_HISTORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не хватает памяти для исторических данных</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4075</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_MEMORY_FOR_INDICATOR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не хватает памяти для расчёта индикатора</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4099</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_END_OF_FILE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Конец файла</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4100</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SOME_FILE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка при работе с файлом</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4101</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WRONG_FILE_NAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильное имя файла</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4102</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_MANY_OPENED_FILES</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слишком много открытых файлов</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4103</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CANNOT_OPEN_FILE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Невозможно открыть файл</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4104</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INCOMPATIBLE_FILEACCESS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Несовместимый режим доступа к файлу</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4105</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_ORDER_SELECTED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ни один ордер не выбран</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4106</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_UNKNOWN_SYMBOL</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неизвестный символ</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4107</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_PRICE_PARAM</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неправильный параметр цены для торговой функции</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4108</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_TICKET</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неверный номер тикета</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4109</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_NOT_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Торговля не разрешена. Необходимо включить опцию "Разрешить советнику торговать" в свойствах эксперта</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4110</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_LONGS_NOT_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ордера на покупку не разрешены. Необходимо проверить свойства эксперта</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4111</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SHORTS_NOT_ALLOWED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ордера на продажу не разрешены. Необходимо проверить свойства эксперта</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4112</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_EXPERT_DISABLED_BY_SERVER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Автоматическая торговля с помощью экспертов/скриптов запрещена на стороне сервера</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4200</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OBJECT_ALREADY_EXISTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Объект уже существует</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4201</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_UNKNOWN_OBJECT_PROPERTY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Запрошено неизвестное свойство объекта</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4202</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OBJECT_DOES_NOT_EXIST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Объект не существует</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4203</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_UNKNOWN_OBJECT_TYPE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неизвестный тип объекта</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4204</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_OBJECT_NAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Нет имени объекта</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4205</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OBJECT_COORDINATES_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка координат объекта</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4206</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_SPECIFIED_SUBWINDOW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не найдено указанное подокно</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4207</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SOME_OBJECT_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка при работе с объектом</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4210</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CHART_PROP_INVALID</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неизвестное свойство графика</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4211</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CHART_NOT_FOUND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>График не найден</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4212</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CHARTWINDOW_NOT_FOUND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не найдено подокно графика</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4213</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_CHARTINDICATOR_NOT_FOUND</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Индикатор не найден</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4220</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SYMBOL_SELECT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка выбора инструмента</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4250</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOTIFICATION_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка отправки push-уведомления</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4251</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOTIFICATION_PARAMETER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка параметров push-уведомления</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4252</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOTIFICATION_SETTINGS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Уведомления запрещены</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4253</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOTIFICATION_TOO_FREQUENT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слишком частые запросы отсылки push-уведомлений</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4260</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_NOSERVER</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не указан FTP сервер</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4261</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_NOLOGIN </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не указан FTP логин</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4262</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_CONNECT_FAILED </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка при подключении к FTP серверу</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4263</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_CLOSED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Подключение к FTP серверу закрыто</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4264</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_CHANGEDIR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>На FTP сервере не найдена директория для выгрузки файла </span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4265</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_FILE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не найден файл в директории MQL4\Files для отправки на FTP сервер</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4266</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FTP_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка при передаче файла на FTP сервер</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5001</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_TOO_MANY_OPENED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слишком много открытых файлов</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5002</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_WRONG_FILENAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неверное имя файла</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5003</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_TOO_LONG_FILENAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Слишком длинное имя файла</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5004</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_CANNOT_OPEN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка открытия файла</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5005</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_BUFFER_ALLOCATION_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка размещения буфера текстового файла</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5006</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_CANNOT_DELETE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка удаления файла</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5007</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_INVALID_HANDLE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неверный хендл файла (файл закрыт или не был открыт)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5008</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_WRONG_HANDLE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неверный хендл файла (индекс хендла отсутствует в таблице)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5009</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_TOWRITE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл должен быть открыт с флагом FILE_WRITE</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5010</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_TOREAD</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл должен быть открыт с флагом FILE_READ</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5011</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_BIN</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл должен быть открыт с флагом FILE_BIN</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5012</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_TXT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл должен быть открыт с флагом FILE_TXT</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5013</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_TXTORCSV</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл должен быть открыт с флагом FILE_TXT или FILE_CSV</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5014</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_CSV</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл должен быть открыт с флагом FILE_CSV</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5015</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_READ_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка чтения файла</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5016</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_WRITE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка записи файла</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5017</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_BIN_STRINGSIZE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Размер строки должен быть указан для двоичных файлов</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5018</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_INCOMPATIBLE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неверный тип файла (для строковых массивов-TXT, для всех других-BIN)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5019</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_IS_DIRECTORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл является директорией</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5020</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_EXIST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл не существует</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5021</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_CANNOT_REWRITE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл не может быть перезаписан</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5022</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_WRONG_DIRECTORYNAME</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неверное имя директории</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5023</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_DIRECTORY_NOT_EXIST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Директория не существует</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5024</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_NOT_DIRECTORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Указанный файл не является директорией</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5025</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_CANNOT_DELETE_DIRECTORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка удаления директории</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5026</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_CANNOT_CLEAN_DIRECTORY</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка очистки директории</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5027</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_ARRAYRESIZE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка изменения размера массива</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5028</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_STRINGRESIZE_ERROR</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка изменения размера строки</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5029</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_FILE_STRUCT_WITH_OBJECTS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Структура содержит строки или динамические массивы</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5200</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WEBREQUEST_INVALID_ADDRESS</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>URL не прошел проверку</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5201</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WEBREQUEST_CONNECT_FAILED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Не удалось подключиться к указанному URL</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5202</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WEBREQUEST_TIMEOUT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Превышен таймаут получения данных</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5203</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_WEBREQUEST_REQUEST_FAILED</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка в результате выполнения HTTP запроса</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>&nbsp;</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span style="font-weight: bold;">Пользовательские ошибки </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:75px; padding:5px; border:solid thin #b1c2d6;"><p><span>65536</span></p> </td> 
+    <td style="vertical-align:top; width:270px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_USER_ERROR_FIRST</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>С этого кода начинаются ошибки, <a href="/ru/common/setusererror">задаваемые пользователем</a></span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><br> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><br> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><br> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<h1>&nbsp;</h1> 
+<br>

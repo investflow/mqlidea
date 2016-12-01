@@ -1,0 +1,26 @@
+<h1>Операции отношения</h1> 
+<p><span>Логическое значение ЛОЖЬ представляется целым нулевым значением, а значение ИСТИНА представляется любым ненулевым.</span></p> 
+<p><span>Значением выражений, содержащих операции отношения или <a href="/ru/basis/operations/bool">логические&nbsp;операции</a>, являются ЛОЖЬ(0) или ИСТИНА(1).</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>Истина,&nbsp;если&nbsp;a&nbsp;равно&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;==&nbsp;b;</span><br> <span>Истина,&nbsp;если&nbsp;a&nbsp;не&nbsp;равно&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;!=&nbsp;b;</span><br> <span>Истина,&nbsp;если&nbsp;a&nbsp;меньше&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&lt;&nbsp;b;</span><br> <span>Истина,&nbsp;если&nbsp;a&nbsp;больше&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&gt;&nbsp;b;</span><br> <span>Истина,&nbsp;если&nbsp;a&nbsp;меньше&nbsp;или&nbsp;равно&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&lt;=&nbsp;b;</span><br> <span>Истина,&nbsp;если&nbsp;a&nbsp;больше&nbsp;или&nbsp;равно&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&gt;=&nbsp;b;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Нельзя сравнивать два <a href="/ru/basis/types/double">вещественных числа</a> на равенство друг другу. В большинстве случаев два вроде бы одинаковых числа могут оказаться неравными из-за разницы значения в 15-ом знаке после запятой. Для корректного сравнения двух вещественных чисел необходимо сравнивать нормализованную разницу этих чисел с нулевым значением.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">bool</span><span>&nbsp;CompareDoubles(</span><span style="color: #0000ff;">double</span><span>&nbsp;number1,</span><span style="color: #0000ff;">double</span><span>&nbsp;number2)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">NormalizeDouble</span><span>(number1-number2,8)==0)&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">true</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;first=0.3;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;second=3.0;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;third=second-2.7;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(first!=third)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(CompareDoubles(first,third))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">printf</span><span>(</span><span style="color: #008080;">"%.16f&nbsp;&nbsp;%.16f&nbsp;&nbsp;&nbsp;все&nbsp;таки&nbsp;равны"</span><span>,first,third);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//&nbsp;Результат:&nbsp;0.3000000000000000&nbsp;&nbsp;0.2999999999999998&nbsp;&nbsp;&nbsp;все&nbsp;таки&nbsp;равны&nbsp;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/operations/rules">Приоритеты и &nbsp;порядок операций</a></span></p> 
+<br>

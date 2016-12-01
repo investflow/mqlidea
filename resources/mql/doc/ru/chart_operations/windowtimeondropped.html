@@ -1,0 +1,29 @@
+<h1>WindowTimeOnDropped</h1> 
+<p><span>Возвращает значение времени в точке графика, на который был брошен эксперт или скрипт.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>datetime&nbsp;&nbsp;</span><span>WindowTimeOnDropped</span><span>();</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>Нет.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Значение времени в точке графика, на который был брошен эксперт или скрипт. Значение будет верным только в случае, если эксперт или скрипт перемещены с помощью мыши (технология "drag and drop"). </span></p> 
+<p><span>Для пользовательских индикаторов это значение не определено.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;&nbsp;&nbsp;drop_price=</span><span style="color: #0000ff;">WindowPriceOnDropped</span><span>();</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;drop_time=</span><span style="color: #0000ff;">WindowTimeOnDropped</span><span>();</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//----&nbsp;может&nbsp;быть&nbsp;неопределенным&nbsp;(нуль)</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(drop_time&gt;0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectCreate</span><span>(</span><span style="color: #008080;">"Уровень&nbsp;цены"</span><span>,&nbsp;</span><span style="color: #0000ff;">OBJ_HLINE</span><span>,&nbsp;0,&nbsp;drop_price);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectCreate</span><span>(</span><span style="color: #008080;">"Значение&nbsp;времени"</span><span>,&nbsp;</span><span style="color: #0000ff;">OBJ_VLINE</span><span>,&nbsp;0,&nbsp;drop_time);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/chart_operations/windowpriceondropped">WindowPriceOnDropped()</a>, <a href="/ru/chart_operations/windowyondropped">WindowYOnDropped()</a>, <a href="/ru/chart_operations/windowondropped">WindowOnDropped()</a></span></p> 
+<br>

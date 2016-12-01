@@ -1,0 +1,70 @@
+<h1>Разрешение на торговлю</h1> 
+<h2>Автоматизация торговли</h2> 
+<p><span>В языке MQL4 существует специальная группа <a href="/ru/trading">торговых функций</a>, с помощью которых можно создавать автоматизированные торговые системы. Программы для автоматической торговли без участия человека называются экспертами (Expert Advisor) или торговыми роботами. Для создания эксперта в редакторе MetaEditor запустите Мастер MQL4 и выберите опцию "</span><span>Советник (шаблон)". Она позволяет создать шаблон с готовыми <a href="/ru/basis/function/events">функциями обработки событий</a>, который необходимо дополнить всем необходимым функционалом с помощью самостоятельного программирования.</span></p> 
+<p style="text-align: center;"><img alt="MQL4_Wizard" width="532" height="399" style="margin:0px auto 0px auto;width:532px;height:399px;border:none" src="https://c.mql4.com/i/docs/ru/mql4_wizard.png"></p> 
+<p><span>Торговые функции могут работать только в экспертах и скриптах, для индикаторов торговля запрещена. </span></p> 
+<h2>Проверка разрешения на автоматическую торговлю</h2> 
+<p><span>Для создания надежного эксперта, который мог бы работать в автоматическом режиме без контроля человека, необходимо организовать множество необходимых проверок. В первую очередь необходимо программным путем проверять, есть ли вообще разрешение на совершение торговых операций. Проверка разрешения на торговлю является базовой и обязательной при разработке любой автоматической системы.</span></p> 
+<h3>Проверка на разрешение автоматической торговли в самом терминале</h3> 
+<p><span>В настройках терминала можно запретить или разрешить автоматическую торговлю для всех программ. </span></p> 
+<p style="text-align: center;"><img alt="TERMINAL_TRADE_ALLOWED" width="591" height="393" style="margin:0px auto 0px auto;width:591px;height:393px;border:none" src="https://c.mql4.com/i/docs/ru/terminal_trade_allowed.png"></p> 
+<p><span>Переключать опцию разрешения автоматической торговли также можно прямо из Стандартной панели терминала: </span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><img alt="AutoTrading_enabled" width="97" height="23" style="margin:0;width:97px;height:23px;border:none" src="https://c.mql4.com/i/docs/ru/autotrading_enabled.png"><span> – автоматическая торговля разрешена, торговые функции в запущенных программах разрешены для использования.</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><img alt="AutoTrading_disabled" width="97" height="23" style="margin:0;width:97px;height:23px;border:none" src="https://c.mql4.com/i/docs/ru/autotrading_disabled.png"><span> – автоматическая торговля запрещена, при этом </span><span>сами запущенные программы будут работать, хотя торговые функции не смогут выполняться. </span></p> 
+<p><span>Пример проверки:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">if</span><span>&nbsp;(!</span><span style="color: #0000ff;">TerminalInfoInteger</span><span>(</span><span style="color: #0000ff;">TERMINAL_TRADE_ALLOWED</span><span>))&nbsp;</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;Alert</span><span>(</span><span style="color: #008080;">"Проверьте&nbsp;в&nbsp;настройках&nbsp;терминала&nbsp;разрешение&nbsp;на&nbsp;автоматическую&nbsp;торговлю!"</span><span>);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<h3>Проверка разрешения на торговлю для данного запущенного эксперта/скрипта</h3> 
+<p><span>При запуске программы можно разрешить или запретить автоматическую торговлю конкретно для нее. Для этого есть отдельная специальная настройка в свойствах программы.</span></p> 
+<p style="text-align: center;"><img alt="MQL_TRADE_ALLOWED" width="619" height="309" style="margin:0px auto 0px auto;width:619px;height:309px;border:none" src="https://c.mql4.com/i/docs/ru/mql_trade_allowed.png"></p> 
+<p><span>Пример проверки:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">TerminalInfoInteger</span><span>(</span><span style="color: #0000ff;">TERMINAL_TRADE_ALLOWED</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Alert</span><span>(</span><span style="color: #008080;">"Проверьте&nbsp;в&nbsp;настройках&nbsp;терминала&nbsp;разрешение&nbsp;на&nbsp;автоматическую&nbsp;торговлю!"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">MQLInfoInteger</span><span>(</span><span style="color: #0000ff;">MQL_TRADE_ALLOWED</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Alert</span><span>(</span><span style="color: #008080;">"Автоматическая&nbsp;торговля&nbsp;запрещена&nbsp;в&nbsp;свойствах&nbsp;программы&nbsp;для&nbsp;"</span><span>,</span><span style="color: #0000ff;">__FILE__</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<h3>Проверка разрешения на торговлю любым экспертам/скриптам для данного счета</h3> 
+<p><span>Запрет на автоматическую торговлю может быть установлен на стороне торгового сервера. Пример проверки такой ситуации:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_TRADE_EXPERT</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Alert</span><span>(</span><span style="color: #008080;">"Автоматическая&nbsp;торговля&nbsp;запрещена&nbsp;для&nbsp;счета&nbsp;"</span><span>,</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LOGIN</span><span>),</span><br> <span style="color: #008080;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;на&nbsp;стороне&nbsp;торгового&nbsp;сервера"</span><span>);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Если для торгового счета запрещена автоматическая торговля, то торговые операции из экспертов/скриптов выполняться не будут.</span></p> 
+<h3>Проверка разрешения торговли для данного счета</h3> 
+<p><span>Возможны случаи, когда для конкретного торгового счета запрещены любые торговые операции – нельзя торговать ни вручную, ни с помощью экспертов. Пример проверки ситуации, когда к торговому счету подключились с помощью инвесторского пароля:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_TRADE_ALLOWED</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Comment</span><span>(</span><span style="color: #008080;">"Торговля&nbsp;запрещена&nbsp;для&nbsp;счета&nbsp;"</span><span>,</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LOGIN</span><span>),</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">".\n&nbsp;Возможно,&nbsp;подключение&nbsp;к&nbsp;торговому&nbsp;счету&nbsp;произведено&nbsp;по&nbsp;инвест&nbsp;паролю."</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"\n&nbsp;Проверьте&nbsp;журнал&nbsp;терминала,&nbsp;есть&nbsp;ли&nbsp;там&nbsp;такая&nbsp;запись:"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"\n\'"</span><span>,</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LOGIN</span><span>),</span><span style="color: #008080;">"\':&nbsp;trading&nbsp;has&nbsp;been&nbsp;disabled&nbsp;-&nbsp;investor&nbsp;mode."</span><span>);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>AccountInfoInteger(ACCOUNT_TRADE_ALLOWED) может возвращать false в следующих случаях:</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>нет соединения с торговым сервером. Можно проверить с помощью TerminalInfoInteger(TERMINAL_CONNECTED));</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>торговый счет переведен в режим read-only (отправлен в архив);</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>торговля на счете запрещена на стороне торгового сервера;</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>подключение к торговому счете произведено в режиме инвестора.</span></p> 
+<p><span>&nbsp;</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/constants/environment_state/terminalstatus">Состояние клиентского терминала</a>, <a href="/ru/constants/environment_state/accountinformation">Информация о счете</a>, <a href="/ru/constants/environment_state/mql4_programm_info">Информация о запущенной MQL4-программе</a></span></p> 
+<br>

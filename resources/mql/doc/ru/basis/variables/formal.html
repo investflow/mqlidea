@@ -1,0 +1,54 @@
+<h1>Формальные параметры</h1> 
+<p><span>Передаваемые в функцию параметры являются <a href="/ru/basis/variables/local">локальными</a>. Областью видимости является блок функции. Формальные параметры должны отличаться по именам от внешних переменных и локальных переменных, определенных внутри функции. В блоке функции формальным параметрам могут быть присвоены некоторые значения. Если же формальный параметр объявлен с модификатором <a href="/ru/basis/variables#const">const</a>, то его значение не может быть изменено внутри функции. </span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;func(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&amp;&nbsp;x[],&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;y,&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;z)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(y&gt;0.0&nbsp;&amp;&amp;&nbsp;!z)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(x[0]);</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Формальные параметры могут быть <a href="/ru/basis/variables/initialization">проинициализированы</a> константами. В этом случае инициализирующее значение считается значением по умолчанию. Параметры, следующие за проинициализированным параметром, должны быть тоже проинициализированы.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;func(</span><span style="color: #0000ff;">int</span><span>&nbsp;x,&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;y&nbsp;=&nbsp;0.0,&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;z&nbsp;=&nbsp;</span><span style="color: #0000ff;">true</span><span>)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>При вызове такой функции инициализированные параметры можно опускать, вместо них будут подставлены значения по умолчанию.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>func(</span><span style="color: #008080;">123</span><span>,&nbsp;</span><span style="color: #008080;">0</span><span>.</span><span style="color: #008080;">5</span><span>);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="page-break-inside: avoid;"><span>&nbsp;</span></p> 
+<p><span>Параметры <a href="/ru/basis/types#base_types">простых&nbsp;типов</a> передаются по значению, то есть изменения соответствующей <a href="/ru/basis/variables/local">локальной&nbsp;переменной</a> такого типа внутри вызываемой функции никак не отразятся в вызывающей функции. Массивы любых типов и данные типа структур всегда передаются по ссылке. Если необходимо запретить изменение массива или содержимого структуры, параметры этих типов должны быть объявлены с ключевым словом const.</span></p> 
+<p><span>Существует возможность передавать по ссылке и параметры простых типов. В этом случае модификация таких параметров внутри вызываемой функции отразится на соответствующих переменных, переданных по ссылке. Для того чтобы указать, что параметр передается по ссылке, после типа данных необходимо поставить модификатор &amp;.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;func(</span><span style="color: #0000ff;">int</span><span>&amp;&nbsp;x,&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;y,&nbsp;</span><span style="color: #0000ff;">double&nbsp;</span><span>&amp;&nbsp;z[])</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;calculated_tp;</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;</span><span style="color: #0000ff;">OrdersTotal</span><span>();&nbsp;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(i==</span><span style="color: #0000ff;">ArraySize</span><span>(z))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(OrderSelect(i)==</span><span style="color: #0000ff;">false</span><span>)&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z[i]=OrderOpenPrice();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;x=i;</span><br> <span>&nbsp;&nbsp;&nbsp;y=calculated_tp;</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры, передаваемые по ссылке, нельзя инициализировать значениями по умолчанию.</span></p> 
+<p><span>В функцию нельзя передать больше 64 параметров.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/variables/inputvariables#icustompassparameters">Input переменные</a>, <a href="/ru/basis/types">Типы данных</a>, <a href="/ru/basis/oop/incapsulation">Инкапсуляция и расширяемость типов</a>, <a href="/ru/basis/variables/initialization">Инициализация переменных</a>, <a href="/ru/basis/variables/variable_scope">Область видимости и время жизни переменных</a>, <a href="/ru/basis/variables/object_live">Создание и уничтожение объектов</a></span></p> 
+<p><span>&nbsp;</span></p> 
+<p><span>&nbsp;</span></p> 
+<br>

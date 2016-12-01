@@ -1,0 +1,35 @@
+<h1>iLowest</h1> 
+<p><span>Возвращает индекс наименьшего найденного значения (смещение относительно текущего бара) соответствующего графика. </span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>iLowest</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;символ</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;период</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>type</span><span>,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;таймсерии</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>count</span><span>,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;число&nbsp;элементов</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;индекс</span><br> <span>&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>symbol</span></p> 
+<p><span>[in] &nbsp;Символьное имя инструмента, на данных которого будет производиться поиск. <a href="/ru/constants/namedconstants/otherconstants">NULL</a> означает текущий символ.</span></p> 
+<p><span>timeframe</span></p> 
+<p><span>[in] &nbsp;Период. Может быть одним из значений перечисления <a href="/ru/constants/chartconstants/enum_timeframes">ENUM_TIMEFRAMES</a>. 0 означает период текущего графика.</span></p> 
+<p><span>type</span></p> 
+<p><span>[in] &nbsp;Идентификатор таймсерии, в которой будет производится поиск. Может быть любым из значений <a href="/ru/constants/indicatorconstants/seriesconst">иденитификаторов таймсерий</a>.</span></p> 
+<p><span>count=WHOLE_ARRAY</span></p> 
+<p><span>[in] &nbsp;Число элементов таймсерии (в направлении от текущего бара в сторону возрастания индекса), среди которых должен быть произведен поиск.</span></p> 
+<p><span>start=0</span></p> 
+<p><span>[in] &nbsp;Индекс (смещение относительно текущего бара) начального бара, с которого начинается поиск наибольшего значения. Отрицательные значения игнорируются и заменяются нулевым значением.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Индекс наименьшего найденного значения (смещение относительно текущего бара) соответствующего графика или -1 в случае ошибки. Для получения дополнительной информации об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a> необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;val;</span><br> <span style="color: #808080;">//---&nbsp;расчет&nbsp;минимального&nbsp;значения&nbsp;цены&nbsp;на&nbsp;10&nbsp;последовательных&nbsp;барах</span><br> <span style="color: #808080;">//---&nbsp;с&nbsp;индекса&nbsp;10&nbsp;по&nbsp;индекс&nbsp;19&nbsp;включительно&nbsp;на&nbsp;текущем&nbsp;графике</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;val_index=</span><span style="color: #0000ff;">iLowest</span><span>(</span><span style="color: #0000ff;">NULL</span><span>,0,</span><span style="color: #0000ff;">MODE_LOW</span><span>,10,10);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(val_index!=-1)&nbsp;val=</span><span style="color: #0000ff;">Low</span><span>[val_index];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><span>&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"Ошибка&nbsp;вызова&nbsp;iLowest.&nbsp;Код&nbsp;ошибки=%d"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

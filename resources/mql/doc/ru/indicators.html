@@ -1,0 +1,164 @@
+<h1>Функции для работы с техническими индикаторами</h1> 
+<p><span>Группа функций, предназначенных для расчета стандартных и пользовательских индикаторов.</span></p> 
+<p><span>Для того, чтобы эксперт (или любая MQL4-программа) мог получить значение какого-либо индикатора, присутствие данного индикатора на текущем графике необязательно. Запрошенный индикатор будет загружен и рассчитан в потоке вызвавшего его модуля.</span></p> 
+<p><span>Любой индикатор может быть рассчитан на данных не только текущего графика, но и на данных любого доступного символа/периода. Если запрашивается информация с другого графика (название инструмента и/или значение таймфрейма отличаются от текущих), то возможна ситуация, что в клиентском терминале не открыт соответствующий график и необходимые данные должны быть запрошены у сервера. В этом случае в переменную last_error будет помещена ошибка ERR_HISTORY_WILL_UPDATED (4066 - запрошенные исторические данные в состоянии обновления) и необходимо через некоторое время повторить попытку запроса (см. пример <a href="/ru/array/arraycopyseries">ArrayCopySeries()</a>). </span></p> 
+<p><span>Все индикаторные функции имеют как минимум 2 параметра - символ и период. Значение символа <a href="/ru/basis/types/void">NULL</a> означает текущий инструмент, значение периода 0 означает текущий <a href="/ru/constants/chartconstants/enum_timeframes">таймфрейм</a>.</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Функция</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Возвращает значение индикатора</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/iac">iAC</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Accelerator Oscillator</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/iad">iAD</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Accumulation/Distribution</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/iadx">iADX</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Average Directional Index</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/ialligator">iAlligator</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Alligator</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/iao">iAO</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Awesome Oscillator</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/iatr">iATR</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Average True Range</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/ibearspower">iBearsPower</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Bears Power</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/ibands">iBands</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Bollinger Bands®</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/ibandsonarray">iBandsOnArray</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение технического индикатора Bollinger Bands, рассчитанного на данных, хранящихся в массиве</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/ibullspower">iBullsPower</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Bulls Power</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/icci">iCCI</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Commodity Channel Index</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/iccionarray">iCCIOnArray</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение технического индикатора Commodity Channel Index, рассчитанного на данных, хранящихся в массиве</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/icustom">iCustom</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Пользовательский индикатор </span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/idemarker">iDeMarker</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>DeMarker</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/ienvelopes">iEnvelopes</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Envelopes</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/ienvelopesonarray">iEnvelopesOnArray</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение технического индикатора Envelopes, рассчитанного на данных, хранящихся в массиве</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/iforce">iForce</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Force Index</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/ifractals">iFractals</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Fractals</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/igator">iGator</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Gator Oscillator</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/iichimoku">iIchimoku</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Ichimoku Kinko Hyo</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/ibwmfi">iBWMFI</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Market Facilitation Index by Bill Williams</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/imomentum">iMomentum</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Momentum</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/imomentumonarray">iMomentumOnArray</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение технического индикатора Momentum, рассчитанного на данных, хранящихся в массиве</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/imfi">iMFI</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Money Flow Index</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/ima">iMA</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Moving Average</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/imaonarray">iMAOnArray</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение технического индикатора Moving Average, рассчитанного на данных, хранящихся в массиве</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/iosma">iOsMA</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Moving Average of Oscillator (MACD histogram)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/imacd">iMACD</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Moving Averages Convergence-Divergence</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/iobv">iOBV</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>On Balance Volume</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/isar">iSAR</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Parabolic Stop And Reverse System</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/irsi">iRSI</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Relative Strength Index</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/irsionarray">iRSIOnArray</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение технического индикатора Relative Strength Index, рассчитанного на данных, хранящихся в массиве</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/irvi">iRVI</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Relative Vigor Index</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/istddev">iStdDev</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Standard Deviation</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/istddevonarray">iStdDevOnArray</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возвращает значение технического индикатора Standard Deviation, рассчитанного на данных, хранящихся в массиве</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/istochastic">iStochastic</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Stochastic Oscillator</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:126px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/ru/indicators/iwpr">iWPR</a></span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Williams' Percent Range</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

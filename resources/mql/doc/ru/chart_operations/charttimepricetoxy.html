@@ -1,0 +1,29 @@
+<h1>ChartTimePriceToXY</h1> 
+<p><span>Преобразует координаты графика из представления время/цена в координаты по оси X и Y.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ChartTimePriceToXY</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>sub_window</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;номер&nbsp;подокна</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>time</span><span>,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;время&nbsp;на&nbsp;графике</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>price</span><span>,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;цена&nbsp;на&nbsp;графике</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>x</span><span>,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;координата&nbsp;X&nbsp;для&nbsp;времени&nbsp;на&nbsp;графике</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>y&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;координата&nbsp;Y&nbsp;для&nbsp;цены&nbsp;на&nbsp;графике</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>chart_id</span></p> 
+<p><span>[in] &nbsp;Идентификатор графика. 0 означает текущий график.</span></p> 
+<p><span>sub_window</span></p> 
+<p><span>[in] &nbsp;Номер подокна графика. 0 означает главное окно графика.</span></p> 
+<p><span>time</span></p> 
+<p><span>[in] &nbsp;Значение времени на графике, для которого будет получено значение в пикселах на оси X.</span></p> 
+<p><span>price</span></p> 
+<p><span>[in] &nbsp; Значение цены на графике, для которого будет получено значение в пикселах на оси Y.</span></p> 
+<p><span>x</span></p> 
+<p><span>[out] &nbsp;Переменная, в которую будет получено преобразование времени в координату X. Начало координат находится в левом верхнем углу главного окна графика.</span></p> 
+<p><span>y</span></p> 
+<p><span>[out] &nbsp;Переменная, в которую будет получено преобразование цены в координату Y. Начало координат находится в левом верхнем углу главного окна графика.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Возвращает true в случае успешного выполнения, иначе false. Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/chart_operations/chartxytotimeprice">ChartXYToTimePrice()</a></span></p> 
+<br>

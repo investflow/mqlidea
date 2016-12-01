@@ -1,0 +1,31 @@
+<h1>StringConcatenate</h1> 
+<p><span>Возвращает строку, сформированную в </span><span>результате конкатенации </span><span>преобразованных в тип string параметров.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>StringConcatenate</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void</span><span>&nbsp;</span><span>argument1</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;первый&nbsp;параметр&nbsp;любого&nbsp;простого&nbsp;типа&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void</span><span>&nbsp;</span><span>argument2</span><span>,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;второй&nbsp;параметр&nbsp;любого&nbsp;простого&nbsp;типа</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>...</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;следующий&nbsp;параметр&nbsp;любого&nbsp;простого&nbsp;типа</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>argumentN</span></p> 
+<p><span>[in] &nbsp;Любые значения, разделенные запятыми. От 2 до 63 параметров любого простого типа.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Строка, сформированная в </span><span>результате конкатенации </span><span>преобразованных в тип string параметров. Параметры преобразуются в строки по тем же правилам, что и в функциях <a href="/ru/common/print">Print()</a> и <a href="/ru/common/comment">Comment()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Параметры могут иметь любой тип. Количество параметров не может быть меньше 2 и не может превышать 64.</span></p> 
+<p><span>Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;text;</span><br> <span>&nbsp;&nbsp;text=</span><span style="color: #0000ff;">StringConcatenate</span><span>(</span><span style="color: #008080;">"Account&nbsp;free&nbsp;margin&nbsp;is&nbsp;"</span><span>,&nbsp;</span><span style="color: #0000ff;">AccountFreeMargin</span><span>(),&nbsp;</span><span style="color: #008080;">"&nbsp;Current&nbsp;time&nbsp;is&nbsp;"</span><span>,&nbsp;</span><span style="color: #0000ff;">TimeToStr</span><span>(</span><span style="color: #0000ff;">TimeCurrent</span><span>()));</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;text="Account&nbsp;free&nbsp;margin&nbsp;is&nbsp;"&nbsp;+&nbsp;AccountFreeMargin()&nbsp;+&nbsp;"&nbsp;&nbsp;Current&nbsp;time&nbsp;is&nbsp;"&nbsp;+&nbsp;TimeToStr(TimeCurrent())</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(text);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/strings/stringadd">StringAdd()</a></span></p> 
+<br>

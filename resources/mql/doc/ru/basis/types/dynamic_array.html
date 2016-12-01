@@ -1,0 +1,33 @@
+<h1>Объект динамического массива</h1> 
+<h3>Динамические массивы</h3> 
+<p><span>Допускается объявление не более чем 4-мерного <a href="/ru/basis/variables#array_define">массива</a>. При объявлении динамического массива (массива с неуказанным значением в первой паре квадратных скобок) компилятор автоматически создает переменную указанной выше структуры (объект динамического массива) и обеспечивает код для правильной инициализации.</span></p> 
+<p><span>Динамические массивы автоматически освобождаются при выходе за пределы области видимости блока, в котором они объявлены.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">double</span><span>&nbsp;matrix[][</span><span style="color: #008080;">10</span><span>][</span><span style="color: #008080;">20</span><span>];&nbsp;</span><span style="color: #808080;">//&nbsp;3-мерный&nbsp;динамический&nbsp;массив</span><br> <span style="color: #0000ff;">ArrayResize</span><span>(matrix,</span><span style="color: #008080;">5</span><span>);&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;задали&nbsp;размер&nbsp;первого&nbsp;измерения</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<h3>&nbsp;<br> <a id="static_array"></a>Статические массивы</h3> 
+<p><span>При явном указании всех значимых размерностей массива компилятор заранее распределяет необходимый размер памяти. Такой массив называется статическим. Тем не менее, компилятор дополнительно распределяет память под объект динамического массива, который (объект) связан с заранее распределенным статическим буфером (областью памяти для хранения массива). </span></p> 
+<p><span>Создание объекта динамического массива обусловлено возможной необходимостью передавать данный статический массив в качестве параметра в какую-либо функцию.</span></p> 
+<p><span style="font-weight: bold;">Примеры:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">double</span><span>&nbsp;stat_array[</span><span style="color: #008080;">5</span><span>];&nbsp;</span><span style="color: #808080;">//&nbsp;1-мерный&nbsp;статический&nbsp;массив</span><br> <span>some_function(stat_array);</span><br> <span>...</span><br> <span style="color: #0000ff;">bool</span><span>&nbsp;some_function(</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;array[])</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">ArrayResize</span><span>(array,</span><span style="color: #008080;">100</span><span>)&lt;</span><span style="color: #008080;">0</span><span>)&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">true</span><span>);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<h3>&nbsp;<br> Массивы в составе структур</h3> 
+<p><span>При объявлении статического массива в качестве члена структуры объект динамического массива не создается. Это сделано для совместимости структур данных, используемых в Windows API. </span></p> 
+<p><span>Однако статические массивы, объявленные в качестве членов структур, также можно передавать в MQL4-функции. В этом случае при передаче параметра будет создан временный объект динамического массива, связанный со статическим массивом - членом структуры.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/array">Операции с массивами</a>, <a href="/ru/basis/variables/initialization">Инициализация переменных</a>, <a href="/ru/basis/variables/variable_scope">Область видимости и время жизни переменных</a>, <a href="/ru/basis/variables/object_live">Создание и уничтожение объектов</a></span></p> 
+<br>

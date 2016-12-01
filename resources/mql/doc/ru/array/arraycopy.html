@@ -1,0 +1,39 @@
+<h1>ArrayCopy</h1> 
+<p><span>Производит копирование одного массива в другой.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayCopy</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>dst_array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;куда&nbsp;копируем</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;void&amp;</span><span>&nbsp;&nbsp;</span><span>src_array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;откуда&nbsp;копируем</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>dst_start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;с&nbsp;какого&nbsp;индекса&nbsp;пишем&nbsp;в&nbsp;приемник</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>src_start=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;с&nbsp;какого&nbsp;индекса&nbsp;копируем&nbsp;из&nbsp;источника</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>count=WHOLE_ARRAY</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;сколько&nbsp;элементов</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>dst_array[]</span></p> 
+<p><span>[out] &nbsp;Массив-приемник.</span></p> 
+<p><span>src_array[]</span></p> 
+<p><span>[in] &nbsp;Массив-источник.</span></p> 
+<p><span>dst_start=0</span></p> 
+<p><span>[in] &nbsp;Начальный индекс для приемного массива. По умолчанию, стартовый индекс - 0.</span></p> 
+<p><span>src_start=0</span></p> 
+<p><span>[in] &nbsp;Начальный индекс для исходного массива. По умолчанию, стартовый индекс - 0.</span></p> 
+<p><span>count=WHOLE_ARRAY</span></p> 
+<p><span>[in] &nbsp;Количество элементов, которые нужно скопировать. По умолчанию копируется весь массив (count=<a href="/ru/constants/namedconstants/otherconstants">WHOLE_ARRAY</a>).</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Возвращает количество скопированных элементов.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Если count&lt;=0 либо count&gt;src_size-src_start, то копируется весь остаток массива. Массивы копируются слева направо. Для серийных массивов правильно переопределяется стартовая позиция с учетом копирования слева направо. Если копируется массив сам в себя, то результат неопределен. </span></p> 
+<p><span>Если массивы разных типов, то при копировании производится попытка преобразования каждого элемента исходного массива к типу приемного массива. Строковый массив можно скопировать только в строковый массив. Массивы <a href="/ru/basis/types/classes">классов&nbsp;и&nbsp;структур</a>, содержащих объекты, требующие инициализации, не копируются. Массив структур можно скопировать только в массив того же самого типа.</span></p> 
+<p><span>Для динамических и статических (кроме членов классов и структур) массивов производится автоматическое увеличение размера массива-приемника до количества копируемых данных (в случае, если количество копируемых данных превышает его размер).</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;src_data[10];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>&nbsp;(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;</span><span style="color: #0000ff;">ArraySize</span><span>(src_data);&nbsp;i++)&nbsp;src_data[i]=i;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;dst_data[];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;копируем&nbsp;данные&nbsp;из&nbsp;массива&nbsp;src_data[]&nbsp;в&nbsp;массив&nbsp;dst_data[]</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayCopy</span><span>(dst_data,src_data,0,0,</span><span style="color: #0000ff;">WHOLE_ARRAY</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;вывод&nbsp;скопированных&nbsp;данных</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"Copied&nbsp;array&nbsp;size=%d"</span><span>,</span><span style="color: #0000ff;">ArraySize</span><span>(dst_data));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>&nbsp;(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;</span><span style="color: #0000ff;">ArraySize</span><span>(dst_data);&nbsp;i++)&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"index=%d,&nbsp;value=%d"</span><span>,i,dst_data[i]);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

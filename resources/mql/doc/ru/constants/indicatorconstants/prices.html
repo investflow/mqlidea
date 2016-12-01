@@ -1,0 +1,74 @@
+<h1>Ценовые константы</h1> 
+<p><span>Технические индикаторы требуют для своих расчетов указания значений цен и/или значений объемов, на которых они будут считаться. Существуют 7 предопределенных идентификаторов перечисления ENUM_APPLIED_PRICE, для указания нужной ценовой базы расчетов.</span></p> 
+<p><span>Используемая цена для расчета индикаторов может принимать любое из следующих значений:</span></p> 
+<p><a id="enum_applied_price_enum"></a><span style="font-weight: bold;">ENUM_APPLIED_PRICE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:15%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Константа</span></p> </td> 
+    <td style="vertical-align:top; width:15%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Значение</span></p> </td> 
+    <td style="vertical-align:top; width:50%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>PRICE_CLOSE</span></p> </td> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>0</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Цена закрытия</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>PRICE_OPEN</span></p> </td> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>1</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Цена открытия</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>PRICE_HIGH</span></p> </td> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>2</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Максимальная за период цена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>PRICE_LOW</span></p> </td> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>3</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Минимальная за период цена</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>PRICE_MEDIAN</span></p> </td> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>4</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Медианная цена, (high+low)/2</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>PRICE_TYPICAL</span></p> </td> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>5</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Типичная цена, (high+low+close)/3</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>PRICE_WEIGHTED</span></p> </td> 
+    <td style="vertical-align:top; width:15%; padding:5px; border:solid thin #b1c2d6;"><p><span>6</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Взвешенная цена закрытия, (high+low+close+close)/4</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Технический индикатор <a href="/ru/indicators/istochastic">iStochastic()</a> имеет два варианта расчета, которые могут использовать:</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>либо только цены Close;</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>либо цены High и Low.</span></p> 
+<p><span>Для выбора нужного варианта расчета нужно указать одно из значений </span><span>перечисления</span><span> ENUM_STO_PRICE.</span></p> 
+<p><a id="enum_sto_price_enum"></a><span style="font-weight: bold;">ENUM_STO_PRICE</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; width:50%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>STO_LOWHIGH</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Построение по ценам Low/High</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>STO_CLOSECLOSE</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Построение по ценам Close/Close</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

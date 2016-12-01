@@ -1,0 +1,40 @@
+<h1>Арифметические операции</h1> 
+<p><span>К арифметическим относятся аддитивные и мультипликативные операции:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>Сумма&nbsp;величин&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;j&nbsp;+&nbsp;</span><span style="color: #008000;">2</span><span>;</span><br> <span>Вычитание&nbsp;величин&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;j&nbsp;-&nbsp;</span><span style="color: #008000;">3</span><span>;</span><br> <span>Изменение&nbsp;знака&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;=&nbsp;-&nbsp;x;</span><br> <span>Умножение&nbsp;величин&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;=&nbsp;</span><span style="color: #008000;">3</span><span>&nbsp;*&nbsp;x;</span><br> <span>Частное&nbsp;от&nbsp;деления&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;j&nbsp;/&nbsp;</span><span style="color: #008000;">5</span><span>;</span><br> <span>Остаток&nbsp;от&nbsp;деления&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minutes&nbsp;=&nbsp;time&nbsp;%&nbsp;</span><span style="color: #008000;">60</span><span>;</span><br> <span>Добавление&nbsp;</span><span style="color: #008000;">1</span><span>&nbsp;к&nbsp;значению&nbsp;переменной&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;</span><br> <span>Добавление&nbsp;</span><span style="color: #008000;">1</span><span>&nbsp;к&nbsp;значению&nbsp;переменной&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++i;</span><br> <span>Вычитание&nbsp;</span><span style="color: #008000;">1</span><span>&nbsp;от&nbsp;значения&nbsp;переменной&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k--;</span><br> <span>Вычитание&nbsp;</span><span style="color: #008000;">1</span><span>&nbsp;от&nbsp;значения&nbsp;переменной&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--k;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Операция инкремента и декремента применяются только к переменным, к константам не применяются. Префиксныe инкремент (++i) и декремент (--k) применяются к переменной непосредственно перед использованием этой переменной в выражении. </span></p> 
+<p><a id="posfix"></a><span>Постфиксные инкремент (i++) и декремент (k--) применяются к переменной сразу после использования этой переменной в выражении.</span></p> 
+<p><span style="font-weight: bold;">Важное замечание</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;i=5;</span><br> <span style="color: #0000ff;">int</span><span>&nbsp;k&nbsp;=&nbsp;i++&nbsp;+&nbsp;++i;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Могут возникнуть вычислительные проблемы при переносе вышеуказанного выражения из одной среды программирования в другую (например, из Borland C++ в MQL4). В общем случае порядок вычислений зависит от реализации компилятора. На практике существуют два способа реализации постдекремента (постинкремента):</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 20px; margin: 1px 17px 1px 30px;"><span style="font-size:10pt; font-family: 'Trebuchet MS';color:#565656;display:inline-block;width:20px;margin-left:-20px">1.</span><span>постдекремент (постинкремент) применяется к переменной после вычисления всего выражения;</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 20px; margin: 1px 17px 1px 30px;"><span style="font-size:10pt; font-family: 'Trebuchet MS';color:#565656;display:inline-block;width:20px;margin-left:-20px">2.</span><span>постдекремент (постинкремента) применяется к переменной сразу по месту операции.</span></p> 
+<p><span>В MQL4 в данный момент реализован первый способ вычисления постдекремента (постинкремента). Но даже обладая этим знанием лучше не экспериментировать с использованием данной тонкости.</span></p> 
+<p><span style="font-weight: bold;">Примеры:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;a=</span><span style="color: #008000;">3</span><span>;</span><br> <span>a++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;верное&nbsp;выражение</span><br> <span style="color: #0000ff;">int</span><span>&nbsp;b=(a++)*</span><span style="color: #008000;">3</span><span>;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;неверное&nbsp;выражение</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/operations/rules">Приоритеты и &nbsp;порядок операций</a></span></p> 
+<br>

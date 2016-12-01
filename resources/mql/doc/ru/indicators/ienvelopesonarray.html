@@ -1,0 +1,43 @@
+<h1>iEnvelopesOnArray</h1> 
+<p><span>Возвращает </span><span>значение </span><span>технического индикатора Envelopes, рассчитанного на данных, хранящихся в массиве.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>double&nbsp;&nbsp;</span><span>iEnvelopesOnArray</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;массив</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>total</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;количество&nbsp;элементов</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>ma_period</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;период</span><br> <span>&nbsp;&nbsp;&nbsp;int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ma_method</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;метод&nbsp;усреднения</span><br> <span>&nbsp;&nbsp;&nbsp;int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ma_shift</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;сдвиг&nbsp;средней</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>deviation</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;отклонение&nbsp;(в&nbsp;процентах)</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>mode</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;индекс&nbsp;линии</span><br> <span>&nbsp;&nbsp;&nbsp;int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>shift</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;сдвиг</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>array[]</span></p> 
+<p><span>[in] &nbsp;Массив с данными.</span></p> 
+<p><span>total</span></p> 
+<p><span>[in] &nbsp;Количество элементов для вычисления. 0 означает все элементы массива.</span></p> 
+<p><span>ma_period</span></p> 
+<p><span>[in] &nbsp;Период усреднения для вычисления индикатора.</span></p> 
+<p><span>ma_method</span></p> 
+<p><span>[in] &nbsp;Метод усреднения. Может быть любым из значений перечисления <a href="/ru/constants/indicatorconstants/enum_ma_method">ENUM_MA_METHOD</a>.</span></p> 
+<p><span>ma_shift</span></p> 
+<p><span>[in] &nbsp;Сдвиг индикатора относительно ценового графика.</span></p> 
+<p><span>deviation</span></p> 
+<p><span>[in] &nbsp;Отклонение от основной линии в процентах.</span></p> 
+<p><span>mode</span></p> 
+<p><span>[in] &nbsp;Индекс линии индикатора. Может быть любым из значений <a href="/ru/constants/indicatorconstants/lines">идентификаторов линий индикаторов</a> (</span><span>0 - MODE_MAIN, 1 - MODE_UPPER, 2 - MODE_LOWER</span><span>).</span></p> 
+<p><span>shift</span></p> 
+<p><span>[in] &nbsp;Индекс получаемого значения из индикаторного буфера (сдвиг относительно текущего бара на указанное количество периодов назад).</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Значение </span><span>технического индикатора Envelopes, рассчитанного на данных, хранящихся в массиве array[].</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>В отличие от <a href="/ru/indicators/ienvelopes">iEnvelopes(...)</a>, функция iEnvelopesOnArray не выбирает данные на основе названия инструмента, таймфрейма и используемой цены - ценовые данные должны быть подготовлены заранее. Расчет производится слева направо. Для организации доступа к элементам массива, как к таймсерии (то есть справа налево), необходимо использовать функцию <a href="/ru/array/arraysetasseries">ArraySetAsSeries()</a>.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;val=</span><span style="color: #0000ff;">iEnvelopesOnArray</span><span>(ExtBuffer,10,13,</span><span style="color: #0000ff;">MODE_SMA</span><span>,0,0.2,</span><span style="color: #0000ff;">MODE_UPPER</span><span>,0);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

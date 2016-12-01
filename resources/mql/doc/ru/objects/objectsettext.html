@@ -1,0 +1,39 @@
+<h1>ObjectSetText</h1> 
+<p><span>Изменяет описание объекта.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ObjectSetText</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>object_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;объекта</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>text</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;текст&nbsp;описания</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>font_size=0</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;размер&nbsp;шрифта</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>font_name=NULL</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;наименование&nbsp;шрифта</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>color</span><span>&nbsp;&nbsp;&nbsp;</span><span>text_color=clrNONE&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;цвет&nbsp;текста</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>object_name</span></p> 
+<p><span>[in] &nbsp;Имя объекта.</span></p> 
+<p><span>text</span></p> 
+<p><span>[in] &nbsp;Текст описания.</span></p> 
+<p><span>font_size=0</span></p> 
+<p><span>[in] &nbsp;Размер шрифта в пунктах.</span></p> 
+<p><span>font_name=NULL</span></p> 
+<p><span>[in] &nbsp;Наименование шрифта.</span></p> 
+<p><span>text_color=clrNONE</span></p> 
+<p><span>[in] &nbsp;Цвет текста.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Функция возвращает true в случае удачи, иначе false. Чтобы получить дополнительную информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Для объектов OBJ_TEXT и OBJ_LABEL описание объектов отображается на графике в виде текстовой строки. Параметры font_size, font_name и text_color используются только для объектов OBJ_TEXT и OBJ_LABEL. Для объектов других типов эти параметры игнорируются.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectSetText</span><span>(</span><span style="color: #008080;">"text_object"</span><span>,</span><span style="color: #008080;">"Hello&nbsp;world!"</span><span>,10,</span><span style="color: #008080;">"Times&nbsp;New&nbsp;Roman"</span><span>,Green);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/objects/objectdescription">ObjectDescription()</a></span></p> 
+<br>

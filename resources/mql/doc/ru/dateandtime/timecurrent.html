@@ -1,0 +1,32 @@
+<h1>TimeCurrent</h1> 
+<p><span>Возвращает последнее известное время сервера, время прихода последней котировки по одному из выбранных в "Обзоре рынка" символов. В обработчике <a href="/ru/basis/function/events#ontick">OnTick()</a> данная функция вернет время пришедшего обрабатываемого тика. В других случаях (например, вызов в <a href="/ru/basis/function/events">обработчиках</a> OnInit(), OnDeinit(), OnTimer() и так далее) это – время прихода последней котировки по любому символу, доступного в окне "Обзор рынка", то самое время, которое показано в заголовке этого окна. Значение времени формируется на торговом сервере и не зависит от настроек времени на компьютере пользователя. Существует 2 варианта функции.</span></p> 
+<p><span style="font-weight: bold;">Вызов без параметров</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>datetime&nbsp;&nbsp;</span><span>TimeCurrent</span><span>();</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Вызов с параметром типа MqlDateTime</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>datetime&nbsp;&nbsp;</span><span>TimeCurrent</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>MqlDateTime&amp;</span><span>&nbsp;&nbsp;</span><span>dt_struct</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;переменная&nbsp;типа&nbsp;структуры</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>dt_struct</span></p> 
+<p><span>[out] &nbsp;Переменная типа структуры <a href="/ru/constants/structures/mqldatetime">MqlDateTime</a>.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Значение типа <a href="/ru/basis/types/integer/datetime">datetime</a></span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Если в качестве параметра была передана переменная типа структуры </span><span>MqlDateTime</span><span>, то она заполняется соответствующим образом.</span></p> 
+<p><span>Для организации счетчиков и таймеров высокого разрешения нужно использовать функцию <a href="/ru/common/gettickcount">GetTickCount()</a>, которая выдает значения в миллисекундах.</span></p> 
+<p><span>При работе в <a href="/ru/runtime/testing#time">тестере стратегий</a> время последней котировки TimeCurrent() моделируется в соответствии с историческими данными.</span></p> 
+<br>

@@ -1,0 +1,76 @@
+<h1>ResourceCreate</h1> 
+<p><span>Создает ресурс изображения на основе набора данных. Существует два варианта функции:</span><br> <span style="font-weight: bold;">Создание ресурса на основе файла</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ResourceCreate</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>resource_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;ресурса</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>path&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;относительный&nbsp;путь&nbsp;к&nbsp;файлу</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><a id="dynamic_resourcecreate"></a><span style="font-weight: bold;">Динамическое создание ресурса на основе массива пикселей</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ResourceCreate</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>resource_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;ресурса</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;uint&amp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;набор&nbsp;данных&nbsp;в&nbsp;виде&nbsp;массива&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>img_width</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;ширина&nbsp;создаваемой&nbsp;картинки-ресурса</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>img_height</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>//&nbsp;высота&nbsp;создаваемой&nbsp;картинки-ресурса</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data_xoffset</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;смещение&nbsp;левого&nbsp;верхнего&nbsp;угла&nbsp;создаваемой&nbsp;картинки&nbsp;по&nbsp;горизонтали&nbsp;вправо</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data_yoffset</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;смещение&nbsp;левого&nbsp;верхнего&nbsp;угла&nbsp;создаваемой&nbsp;картинки&nbsp;по&nbsp;вертикали&nbsp;вниз</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data_width</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>//&nbsp;общая&nbsp;ширина&nbsp;изображения&nbsp;на&nbsp;основе&nbsp;набора&nbsp;данных</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_COLOR_FORMAT&nbsp;</span><span>color_format&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;способ&nbsp;обработки&nbsp;цвета</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>resource_name</span></p> 
+<p><span>[in] &nbsp;Имя ресурса. </span></p> 
+<p><span>path</span></p> 
+<p><span>[in] &nbsp;Относительный путь к файлу, содержащему данные для ресурса. Если путь начинается с обратной косой черты "\" (пишется "\\"), то файл ищется относительно папки </span><span style="font-weight: bold;">каталог_данных_терминала</span><span>\MQL4\. Если обратной косой черты нет, то ресурс ищется относительно расположения EX4-файла, из которого вызывается функция.</span></p> 
+<p><span>data[][]</span></p> 
+<p><span>[in] &nbsp;Одномерный или двумерный массив для создания полного изображения.</span></p> 
+<p><span>img_width</span></p> 
+<p><span>[in] &nbsp;Ширина прямоугольной области изображения в пикселях для помещения в ресурс в виде картинки. Не может быть больше значения </span><span>data_width.</span></p> 
+<p><span>img_height</span></p> 
+<p><span>[in] &nbsp;Высота прямоугольной области изображения в пикселях для помещения в ресурс &nbsp;в виде картинки. </span></p> 
+<p><span>data_xoffset</span></p> 
+<p><span>[in] &nbsp;Смещение в пикселях прямоугольной области изображения по горизонтали вправо.</span></p> 
+<p><span>data_yoffset</span></p> 
+<p><span>[in] &nbsp;Смещение в пикселях прямоугольной области изображения по вертикали вниз.</span></p> 
+<p><span>data_width</span></p> 
+<p><span>[in] &nbsp;Требуется только для одномерных массивов и означает полную ширину создаваемого изображения из набора данных. Если </span><span style="font-style: italic;">data_width</span><span>=0, то подразумевается равным </span><span style="font-style: italic;">img_width. </span><span>Д</span><span>ля двумерных массивов данный параметр игнорируется и принимается равным второй размерности массива </span><span style="font-style: italic;">data[]</span><span>.</span></p> 
+<p><span>color_format</span></p> 
+<p><span>[in] &nbsp;Способ обработки цвета из перечисления <a href="/ru/common/resourcecreate#enum_color_format">ENUM_COLOR_FORMAT</a>.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>true – в случае успеха, иначе false. Чтобы получить информацию об ошибке, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>. Возможные ошибки:</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4015 – ERR_RESOURCE_NAME_DUPLICATED (совпадение имен динамического и <a href="/ru/runtime/resources">статического</a> ресурсов),</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4016 – ERR_RESOURCE_NOT_FOUND (ресурс не найден),</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4017 – ERR_RESOURCE_UNSUPPORTED_TYPE (тип ресурса не поддерживается),</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 1px 17px 1px 30px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>4018 – ERR_RESOURCE_NAME_IS_TOO_LONG (слишком длинное имя ресурса).</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Если второй вариант функции вызывается для создания одного и того же ресурса с разными параметрами ширины, высоты и сдвига, то новый ресурс не пересоздается, а просто обновляется существующий.</span></p> 
+<p><span>Первый вариант функции позволяет загружать из файлов картинки и звуки, второй вариант предназначен только для динамического создания изображений.</span></p> 
+<p><span>Картинки должны быть в формате BMP с глубиной цвета 24 или 32 бита, звуки могут быть только в формате WAV. Размер ресурса не должен превышать 16 Mb.</span><br> <span>&nbsp;</span></p> 
+<p><a id="enum_color_format"></a><span style="font-weight: bold;">ENUM_COLOR_FORMAT</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>COLOR_FORMAT_XRGB_NOALPHA</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Компонента альфа-канала игнорируется</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>COLOR_FORMAT_ARGB_RAW</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Компоненты цвета не обрабатываются терминалом (должны быть корректно заданы пользователем) </span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>COLOR_FORMAT_ARGB_NORMALIZE</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Компоненты цвета обрабатываются терминалом </span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/runtime/resources">Ресурсы</a>, <a href="/ru/objects/objectcreate">ObjectCreate()</a>, <a href="/ru/objects/objectsetstring">ObjectSetString()</a>, <a href="/ru/constants/objectconstants/enum_object_property#enum_object_property_string">OBJPROP_BMPFILE</a></span></p> 
+<br>

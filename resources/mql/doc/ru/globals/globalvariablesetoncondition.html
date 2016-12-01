@@ -1,0 +1,23 @@
+<h1>GlobalVariableSetOnCondition</h1> 
+<p><span>Устанавливает новое значение существующей глобальной переменной, если текущее значение переменной равно значению третьего параметра check_value. Если переменной не существует, функция сгенерирует ошибку ERR_GLOBALVARIABLE_NOT_FOUND (4501) и вернет false.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>GlobalVariableSetOnCondition</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;</span><span>name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;</span><span>value</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;значение&nbsp;при&nbsp;выполнении&nbsp;условия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;</span><span>check_value</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;проверяемое&nbsp;условие</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>name</span></p> 
+<p><span>[in] &nbsp;Имя глобальной переменной.</span></p> 
+<p><span>value</span></p> 
+<p><span>[in] &nbsp;Новое значение.</span></p> 
+<p><span>check_value</span></p> 
+<p><span>[in] &nbsp; Значение для проверки текущего значения глобальной переменной.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>При успешном выполнении функция возвращает true, иначе false. Для получения информации об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a> необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>. Если текущее значение глобальной переменной отличается от check_value, функция вернет false.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Функция обеспечивает атомарный доступ к глобальной переменной, поэтому она может быть использована для организации мьютекса при взаимодействии нескольких одновременно работающих экспертов в пределах одного клиентского терминала.</span></p> 
+<br>

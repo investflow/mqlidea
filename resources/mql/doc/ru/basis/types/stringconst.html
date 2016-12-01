@@ -1,0 +1,36 @@
+<h1>Тип string</h1> 
+<p><span>Тип string предназначен для хранения текстовых строк. Текстовая строка представляет собой последовательность символов в формате Unicode с завершающим нулем на конце. string-переменной может быть назначена строковая константа. Строковая константа представляет собой последовательность символов Unicode, заключенную в двойные кавычки: "Это строковая константа".</span></p> 
+<p><span>Если необходимо ввести в строку двойную кавычку ("), то перед ней надо поставить символ обратной косой черты (\). В строку могут быть введены любые специальные <a href="/ru/basis/types/integer/symbolconstants">символьные константы</a>, перед которыми стоит символ обратной косой черты (\). </span></p> 
+<p><span style="font-weight: bold;">Примеры:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">string</span><span>&nbsp;svar=</span><span style="color: #008000;">"This&nbsp;is&nbsp;a&nbsp;character&nbsp;string"</span><span>;</span><br> <span style="color: #0000ff;">string</span><span>&nbsp;svar2=</span><span style="color: #0000ff;">StringSubstr</span><span>(svar,</span><span style="color: #008080;">0</span><span>,</span><span style="color: #008080;">4</span><span>);</span><br> <span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008000;">"Символ&nbsp;копирайта\t\x00A9"</span><span>);</span><br> <span style="color: #0000ff;">FileWrite</span><span>(handle,</span><span style="color: #008000;">"эта&nbsp;строка&nbsp;содержит&nbsp;символ&nbsp;перевода&nbsp;строки&nbsp;\n"</span><span>);</span><br> <span style="color: #0000ff;">string</span><span>&nbsp;MT4path=</span><span style="color: #008000;">"C:\\Program&nbsp;Files\\MetaTrader&nbsp;4"</span><span>;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Длинные константные строки для удобства чтения исходного кода можно разбивать на части без операции сложения. Эти части при компиляции автоматически соберутся в одну длинную строку:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;объявим&nbsp;длинную&nbsp;константную&nbsp;строку</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;HTML_head=</span><span style="color: #008080;">"&lt;!DOCTYPE&nbsp;html&nbsp;PUBLIC&nbsp;\"-//W3C//DTD&nbsp;XHTML&nbsp;1.0&nbsp;Transitional//EN\""</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&nbsp;\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"&gt;\n"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&lt;html&nbsp;xmlns=\"http://www.w3.org/1999/xhtml\"&gt;\n"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&lt;head&gt;\n"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&lt;meta&nbsp;http-equiv=\"Content-Type\"&nbsp;content=\"text/html;&nbsp;charset=utf-8\"&nbsp;/&gt;\n"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&lt;title&gt;Trade&nbsp;Operations&nbsp;Report&lt;/title&gt;\n"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&lt;/head&gt;"</span><span>;</span><br> <span style="color: #808080;">//---&nbsp;выведем&nbsp;в&nbsp;журнал&nbsp;константную&nbsp;строку</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(HTML_head);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Внутреннее представление строки - структура размером 12 байт:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #008080;">#pragma&nbsp;pack(push,1)</span><br> <span style="color: #0000ff;">struct</span><span>&nbsp;MqlString</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;32-битное&nbsp;целое,&nbsp;содержит&nbsp;размер&nbsp;распределенного&nbsp;для&nbsp;строки&nbsp;буфера</span><br> <span>&nbsp;&nbsp;&nbsp;LPWSTR&nbsp;&nbsp;&nbsp;buffer;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;32-разрядный&nbsp;адрес&nbsp;буфера,&nbsp;содержащего&nbsp;строку</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reserved;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;32-битное&nbsp;целое,&nbsp;зарезервировано,&nbsp;не&nbsp;использовать</span><br> <span>&nbsp;&nbsp;};</span><br> <span style="color: #008080;">#pragma&nbsp;pack(pop,1)</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/convert">Преобразование данных</a>, <a href="/ru/strings">Строковые функции</a>, <a href="/ru/files/fileopen">FileOpen()</a>, <a href="/ru/files/filereadstring">FileReadString()</a>, <a href="/ru/files/filewritestring">FileWriteString()</a></span></p> 
+<br>

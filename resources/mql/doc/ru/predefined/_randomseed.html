@@ -1,0 +1,15 @@
+<h1>_RandomSeed</h1> 
+<p><span>Переменная для хранения текущего состояния при генерации псевдослучайных целых чисел. </span><span style="color: #0000ff;">_RandomSeed</span><span> меняет своё значение при вызове <a href="/ru/math/mathrand">MathRand()</a>. Для установки нужного начального состояния используйте <a href="/ru/math/mathsrand">MathSrand()</a>. </span></p> 
+<p><span>Случайное число </span><span style="font-style: italic; font-weight: bold;">x</span><span>, получаемое функцией MathRand(), вычисляется при каждом вызове следующим образом:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>x=</span><span style="color: #0000ff;">_RandomSeed</span><span>*214013+2531011;</span><br> <span style="color: #0000ff;">_RandomSeed</span><span>=x;</span><br> <span>x=(x&gt;&gt;16)&amp;0x7FFF;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/math/mathrand">MathRand()</a>, <a href="/ru/math/mathsrand">MathSrand()</a>, <a href="/ru/basis/types/integer">Целые типы</a></span></p> 
+<br>

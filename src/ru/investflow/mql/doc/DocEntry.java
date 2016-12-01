@@ -5,17 +5,21 @@ import org.jetbrains.annotations.NotNull;
 public class DocEntry {
 
     @NotNull
-    public String token;
+    public final String token;
 
     @NotNull
-    public String quickNavigateInfo;
+    public final String quickNavigateInfo;
 
     @NotNull
-    public String mount;
+    public final String link;
 
-    public DocEntry(@NotNull String token, @NotNull String quickNavigateInfo, @NotNull String mount) {
+    @NotNull
+    public final DocEntryType type;
+
+    public DocEntry(@NotNull String token, @NotNull String quickNavigateInfo, @NotNull String link, @NotNull DocEntryType type) {
         this.token = token;
         this.quickNavigateInfo = quickNavigateInfo;
-        this.mount = mount;
+        this.link = link;
+        this.type = type;
     }
 }

@@ -1,0 +1,29 @@
+<h1>ObjectDescription</h1> 
+<p><span>Возвращает описание объекта.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>ObjectDescription</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&nbsp;&nbsp;&nbsp;</span><span>object_name&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;объекта</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>name</span></p> 
+<p><span>[in] &nbsp;Имя объекта.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Текстовое описание объекта. Для объектов типа OBJ_TEXT и OBJ_LABEL возвращается текст, отображаемый этими объектами. Чтобы получить дополнительную информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a>, необходимо вызвать функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;сохранение&nbsp;списка&nbsp;объектов&nbsp;графика&nbsp;в&nbsp;файл</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;handle,&nbsp;total;</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;obj_name,fname;</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;имя&nbsp;файла</span><br> <span>&nbsp;&nbsp;fname=</span><span style="color: #008080;">"objlist_"</span><span>+</span><span style="color: #0000ff;">Symbol</span><span>();</span><br> <span>&nbsp;&nbsp;handle=</span><span style="color: #0000ff;">FileOpen</span><span>(fname,</span><span style="color: #0000ff;">FILE_CSV</span><span>|</span><span style="color: #0000ff;">FILE_WRITE</span><span>);</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(handle&gt;0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total=</span><span style="color: #0000ff;">ObjectsTotal</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=-;i&lt;total;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj_name=</span><span style="color: #0000ff;">ObjectName</span><span>(i);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">FileWrite</span><span>(handle,</span><span style="color: #008080;">"Object&nbsp;"</span><span>+obj_name+</span><span style="color: #008080;">"&nbsp;описание=&nbsp;"</span><span>+</span><span style="color: #0000ff;">ObjectDescription</span><span>(obj_name));</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">FileClose</span><span>(handle);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/objects/objectsettext">ObjectSetText()</a></span></p> 
+<br>

@@ -1,0 +1,19 @@
+<h1>GlobalVariableName</h1> 
+<p><span>Возвращает имя глобальной переменной по порядковому номеру.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>string&nbsp;&nbsp;</span><span>GlobalVariableName</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;</span><span>index</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;номер&nbsp;в&nbsp;списке&nbsp;глобальных&nbsp;переменных</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>index</span></p> 
+<p><span>[in] &nbsp;Порядковый номер в списке глобальных переменных. Должен быть большим или равным 0 и меньшим, чем <a href="/ru/globals/globalvariablestotal">GlobalVariablesTotal()</a> .</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Имя глобальной переменной по порядковому номеру в списке глобальных переменных. Чтобы получить информацию об <a href="/ru/constants/errorswarnings/errorcodes">ошибке</a> необходимо вызвать функцию функцию <a href="/ru/check/getlasterror">GetLastError()</a>.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Глобальные переменные существуют в клиентском терминале 4 недели с момента последнего обращения, после этого автоматически уничтожаются.</span></p> 
+<br>

@@ -1,0 +1,99 @@
+<h1>Символьные константы</h1> 
+<p><span>Символы, как элемент <a href="/ru/basis/types/stringconst">строки</a>, в MQL4 - это индексы в наборе символов Unicode. Они являются 16-разрядными значениями, которые можно преобразовывать в целые числа и с которыми можно манипулировать целочисленными <a href="/ru/basis/operations/mathoperation">операциями</a>, такими как сложение и вычитание.</span></p> 
+<p><span>Любой одиночный символ, заключенный в одинарные кавычки, или шестнадцатеричный ASCII-код символа в виде '\x10' является символьной константой и имеет тип <a href="/ru/basis/types/integer/integertypes#ushort">ushort</a>. Например, запись вида '0' представляет из себя числовое значение 30, соответствующее индексу, по которому в таблице символов располагается символ ноль.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;определим&nbsp;символьные&nbsp;константы</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;symbol_0='0';</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;symbol_9=symbol_0+9;&nbsp;</span><span style="color: #808080;">//&nbsp;получим&nbsp;символ&nbsp;'9'</span><br> <span style="color: #808080;">//---&nbsp;выведем&nbsp;значения&nbsp;констант&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">printf</span><span>(</span><span style="color: #008080;">"В&nbsp;десятичном&nbsp;виде:&nbsp;symbol_0&nbsp;=&nbsp;%d,&nbsp;&nbsp;symbol_9&nbsp;=&nbsp;%d"</span><span>,symbol_0,symbol_9);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">printf</span><span>(</span><span style="color: #008080;">"В&nbsp;шестнадцетеричном&nbsp;виде:&nbsp;symbol_0&nbsp;=&nbsp;0x%x,&nbsp;&nbsp;symbol_9&nbsp;=&nbsp;0x%x"</span><span>,symbol_0,symbol_9);</span><br> <span style="color: #808080;">//---&nbsp;заведем&nbsp;константы&nbsp;в&nbsp;строку</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;test=</span><span style="color: #008080;">""</span><span>;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,symbol_0);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,symbol_9);</span><br> <span style="color: #808080;">//---&nbsp;а&nbsp;вот&nbsp;как&nbsp;они&nbsp;выглядят&nbsp;в&nbsp;строке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Обратная косая черта является управляющим символом для компилятора при разборе константных строк и символьных констант в исходном тексте программы. Некоторые символы, например, одинарные кавычки ('), двойные кавычки ("), обратная косая черта (\) и управляющие символы можно представлять комбинацией символов, начинающейся с обратной косой черты(\), в соответствии с приводимой ниже таблицей:</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Название символа</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Мнемокод или изображение</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Запись в MQL4</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Числовое значение</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>новая строка (перевод строки)</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>LF</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\n'</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>10</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>горизонтальная табуляция </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>HT</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\t'</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>9</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>возврат каретки </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CR </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\r'</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>13</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>обратная косая черта </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>\</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\\'</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>92</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>одинарная кавычка &nbsp; </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\''</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>39</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>двойная кавычка &nbsp; </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>"</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\"'</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>34</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>шестнадцатеричный код </span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>hhhh</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\xhhhh'</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>от 1до 4 шестнадцатеричных знаков</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>десятичный код</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>d</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\d'</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>десятичное число от 0 до 65535</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Если за обратной косой чертой следует символ, отличный от перечисленных, результат не определен.</span></p> 
+<p><span style="font-weight: bold;">Пример</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;объявим&nbsp;символьные&nbsp;константы</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;a='A';</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;b='</span><span style="color: #008000;">$</span><span>';</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;c='©';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;код&nbsp;0xA9</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;d='\xAE';&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;код&nbsp;символа&nbsp;®</span><br> <span style="color: #808080;">//---&nbsp;выведем&nbsp;константы&nbsp;на&nbsp;печать</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(a,b,c,d);</span><br> <span style="color: #808080;">//---&nbsp;добавим&nbsp;символ&nbsp;в&nbsp;строку</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;test=</span><span style="color: #008080;">""</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,a);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;заменим&nbsp;символ&nbsp;в&nbsp;строке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,b);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;заменим&nbsp;символ&nbsp;в&nbsp;строке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,c);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;заменим&nbsp;символ&nbsp;в&nbsp;строке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,d);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;представим&nbsp;символы&nbsp;в&nbsp;виде&nbsp;числа</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;a1=65;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;b1=36;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;c1=169;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;d1=174;</span><br> <span style="color: #808080;">//---&nbsp;добавим&nbsp;символ&nbsp;в&nbsp;строку</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,a1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;заменим&nbsp;символ&nbsp;в&nbsp;строке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,b1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;заменим&nbsp;символ&nbsp;в&nbsp;строке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,c1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;заменим&nbsp;символ&nbsp;в&nbsp;строке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,d1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Как уже говорилось выше, значение символьной константы (или переменной) представляет собой индекс в таблице символов, &nbsp;а так как индекс является целым числом, то допустимо его записывать разными способами.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;a=0xAE;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;код&nbsp;символа&nbsp;®&nbsp;соответствует&nbsp;литералу&nbsp;'\xAE'</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;b=0x24;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;код&nbsp;символа&nbsp;$&nbsp;соответствует&nbsp;литералу&nbsp;'\x24'</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;c=0xA9;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;код&nbsp;символа&nbsp;©&nbsp;соответствует&nbsp;литералу&nbsp;'\xA9'</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;d=0x263A;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;код&nbsp;символа&nbsp;☺&nbsp;соответствует&nbsp;литералу&nbsp;'\x263A'</span><br> <span style="color: #808080;">//---&nbsp;выведем&nbsp;значения</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(a,b,c,d);</span><br> <span style="color: #808080;">//---&nbsp;добавим&nbsp;символ&nbsp;в&nbsp;строку</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;test=</span><span style="color: #008080;">""</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,a);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;заменим&nbsp;символ&nbsp;в&nbsp;строке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,b);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;заменим&nbsp;символ&nbsp;в&nbsp;строке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,c);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;заменим&nbsp;символ&nbsp;в&nbsp;строке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,d);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;коды&nbsp;мастей</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;a1=0x2660;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;b1=0x2661;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;c1=0x2662;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;d1=0x2663;</span><br> <span style="color: #808080;">//---&nbsp;добавим&nbsp;символ&nbsp;пикей</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,a1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;добавим&nbsp;символ&nbsp;червей</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,2,b1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;добавим&nbsp;символ&nbsp;бубей</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,3,c1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;добавим&nbsp;символ&nbsp;треф</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,4,d1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;Пример&nbsp;символьных&nbsp;литералов&nbsp;в&nbsp;строке</span><br> <span>&nbsp;&nbsp;&nbsp;test=</span><span style="color: #008080;">"Дама\x2660Туз\x2662"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">printf</span><span>(</span><span style="color: #008080;">"%s"</span><span>,test);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Внутреннее представление символьного литерала - тип <a href="/ru/basis/types/integer/integertypes#ushort">ushort</a>. Символьные константы могут принимать значения от 0 до 65535.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/strings/stringsetcharacter">StringSetCharacter()</a>, <a href="/ru/strings/stringgetcharacter">StringGetCharacter()</a>, <a href="/ru/convert/shorttostring">ShortToString()</a>, <a href="/ru/convert/shortarraytostring">ShortArrayToString()</a>, <a href="/ru/convert/stringtoshortarray">StringToShortArray()</a></span></p> 
+<br>

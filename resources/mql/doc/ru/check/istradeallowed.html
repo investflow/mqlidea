@@ -1,0 +1,43 @@
+<h1>IsTradeAllowed</h1> 
+<p><span>Возвращает информацию о возможности торговли при помощи экспертов.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>IsTradeAllowed</span><span>();</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Вторая форма вызова возвращает информацию о возможности торговли для заданного символа в указанное время.</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>IsTradeAllowed</span><span>(</span><br> <span>&nbsp;&nbsp;const&nbsp;string&nbsp;</span><span>symbol</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;символ</span><br> <span>&nbsp;&nbsp;</span><span>datetime&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>tested_time</span><span>&nbsp;&nbsp;</span><span>//&nbsp;время</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Параметры</span></p> 
+<p><span>symbol</span></p> 
+<p><span>[in] &nbsp;Символ.</span></p> 
+<p><span>tested_time</span></p> 
+<p><span>[in] &nbsp;Время.</span></p> 
+<p><span>Возвращаемое значение</span></p> 
+<p><span>Возвращает true, если эксперту разрешено торговать и поток для выполнения торговых операций свободен, иначе возвращает false.</span></p> 
+<p><span>Примечание</span></p> 
+<p><span>Торговые функции <a href="/ru/trading/ordersend">OrderSend()</a>, <a href="/ru/trading/orderclose">OrderClose()</a>, <a href="/ru/trading/ordercloseby">OrderCloseBy()</a>, <a href="/ru/trading/ordermodify">OrderModify()</a>, <a href="/ru/trading/orderdelete">OrderDelete()</a>, изменяющие состояние торгового счета, могут быть вызваны только в том случае, если эксперту разрешено торговать (в свойствах соответствующего эксперта или скрипта включена галочка "Разрешить советнику торговать").</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">IsTradeAllowed</span><span>())&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Торговля&nbsp;разрешена"</span><span>);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/check/isdllsallowed">IsDllsAllowed()</a>, <a href="/ru/check/islibrariesallowed">IsLibrariesAllowed()</a>, <a href="/ru/check/istradecontextbusy">IsTradeContextBusy()</a></span></p> 
+<br>

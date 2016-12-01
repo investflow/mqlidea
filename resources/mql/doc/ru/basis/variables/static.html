@@ -1,0 +1,29 @@
+<h1>Статические переменные</h1> 
+<p><span>Класс памяти </span><span style="color: #0000ff;">static</span><span> определяет статическую переменную. Модификатор </span><span>static</span><span> указывается перед типом данных.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;somefunc()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">static</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;flag=</span><span style="color: #008000;">10</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(flag);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Статическая переменная может быть <a href="/ru/basis/variables/initialization">проинициализирована</a> соответствующей ее типу константой или константным выражением, в отличие от простой локальной переменной, которая может быть проинициализирована любым выражением. </span></p> 
+<p><span>Статические переменные существуют с момента выполнения программы и инициализируются однократно сразу после <a href="/ru/runtime/running#load">загрузки программы</a>. Если начальные значения не указаны, то переменные статического класса памяти принимают нулевые начальные значения. <a href="/ru/basis/variables/variable_scope">Время жизни</a> статических переменных такое же, как и у <a href="/ru/basis/variables/global">глобальных</a> переменных: от загрузки до выгрузки mql4-программы. Область их видимости - локальна, в пределах блока, в котором они объявлены.</span></p> 
+<p><span><a href="/ru/basis/variables/local">Локальные&nbsp;переменные</a>, объявленные с ключевым словом static, сохраняют свои значения в течение всего <a href="/ru/basis/variables/variable_scope">времени&nbsp;существования</a> функции. При каждом следующем вызове функции такие локальные переменные содержат те значения, которые они имели при предыдущем вызове.</span></p> 
+<p><span>Любые переменные в блоке, кроме <a href="/ru/basis/variables/formal">формальных&nbsp;параметров</a> функции, могут быть определены как статические. Если переменная, объявленная на локальном уровне не является статической, то распределение памяти под такую переменную производится автоматически.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;Counter()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">static</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;count;</span><br> <span>&nbsp;&nbsp;&nbsp;count++;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(count%100==0)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Функция&nbsp;Counter&nbsp;была&nbsp;вызвана&nbsp;уже&nbsp;"</span><span>,count,</span><span style="color: #008080;">"&nbsp;раз"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>&nbsp;count;</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;c=345;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;1000;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;c=Counter();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"c&nbsp;=&nbsp;"</span><span>,c);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/basis/types">Типы данных</a>, <a href="/ru/basis/oop/incapsulation">Инкапсуляция и расширяемость типов</a>, <a href="/ru/basis/variables/initialization">Инициализация переменных</a>, <a href="/ru/basis/variables/variable_scope">Область видимости и время жизни переменных</a>, <a href="/ru/basis/variables/object_live">Создание и уничтожение объектов</a>, <a href="/ru/basis/oop/staticmembers">Статические члены класса</a></span></p> 
+<br>

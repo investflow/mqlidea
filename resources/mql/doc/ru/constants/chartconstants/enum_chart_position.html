@@ -1,0 +1,36 @@
+<h1>Позиционирование графика</h1> 
+<p><span>Три идентификатора из списка ENUM_CHART_POSITION являются возможными значениями параметра position для функции <a href="/ru/chart_operations/chartnavigate">ChartNavigate()</a>.</span></p> 
+<p><span style="font-weight: bold;">ENUM_CHART_POSITION</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; width:50%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>CHART_BEGIN</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Начало графика (самые старые цены)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>CHART_CURRENT_POS</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Текущая позиция</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>CHART_END</span></p> </td> 
+    <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Конец графика (самые свежие цены)</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">long</span><span>&nbsp;handle=</span><span style="color: #0000ff;">ChartOpen</span><span>(</span><span style="color: #008080;">"EURUSD"</span><span>,</span><span style="color: #0000ff;">PERIOD_H12</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(handle!=0)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartSetInteger</span><span>(handle,</span><span style="color: #0000ff;">CHART_AUTOSCROLL</span><span>,</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartSetInteger</span><span>(handle,</span><span style="color: #0000ff;">CHART_SHIFT</span><span>,</span><span style="color: #0000ff;">true</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartSetInteger</span><span>(handle,</span><span style="color: #0000ff;">CHART_MODE</span><span>,</span><span style="color: #0000ff;">CHART_LINE</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ResetLastError</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;res=</span><span style="color: #0000ff;">ChartNavigate</span><span>(handle,</span><span style="color: #0000ff;">CHART_END</span><span>,150);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!res)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Navigate&nbsp;failed.&nbsp;Error&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartRedraw</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<br>

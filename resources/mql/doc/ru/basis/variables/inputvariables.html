@@ -1,0 +1,81 @@
+<h1>Input переменные</h1> 
+<p><span>Класс памяти </span><span style="color: #0000ff;">input</span><span> определяет внешнюю переменную. Модификатор </span><span>input</span><span> указывается перед типом данных. Изменять значение переменной с модификатором input внутри mql4-программы нельзя, такие переменные доступны только для чтения. Изменять значения input-переменных может только пользователь из окна свойств программы. Внешние переменные всегда переинициализируются непосредственно перед вызовом <a href="/ru/basis/function/events#oninit">OnInit()</a>. &nbsp; </span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;input&nbsp;parameters</span><br> <span>input&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MA_Period=</span><span style="color: #008080;">13</span><span>;</span><br> <span>input&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MA_Shift=</span><span style="color: #008080;">0</span><span>;</span><br> <span>input&nbsp;</span><span style="color: #0000ff;">ENUM_MA_METHOD</span><span>&nbsp;MA_Method=</span><span style="color: #0000ff;">MODE_SMMA</span><span>;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Input переменные определяют входные параметры программы, они доступны из окна свойств программы.</span></p> 
+<p style="text-align: center;"><img alt="Установка значения для input-параметра" title="Установка значения для input-параметра" width="446" height="264" style="margin:0px auto 0px auto;width:446px;height:264px;border:none" src="https://c.mql4.com/i/docs/ru/inputs.png"></p> 
+<p style="text-align: center;"><span>&nbsp;</span></p> 
+<p><span>Существует возможность задать иной способ отображения имен входных параметров на закладке "Inputs". Для этого используется строчный комментарий, который должен располагаться после описания входного параметра в той же строке. Таким образом, входным параметрам можно сопоставить более понятные для пользователя имена.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;input&nbsp;parameters</span><br> <span style="color: #0000ff;">input</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InpMAPeriod=13;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Smoothing&nbsp;period</span><br> <span style="color: #0000ff;">input</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InpMAShift=0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Line&nbsp;horizontal&nbsp;shift</span><br> <span style="color: #0000ff;">input</span><span>&nbsp;</span><span style="color: #0000ff;">ENUM_MA_METHOD</span><span>&nbsp;InpMAMethod=</span><span style="color: #0000ff;">MODE_SMMA</span><span>;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Smoothing&nbsp;method</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p style="text-align: center;"><img alt="Человечный способ отображения входных параметров" title="Человечный способ отображения входных параметров" width="446" height="264" style="margin:0px auto 0px auto;width:446px;height:264px;border:none" src="https://c.mql4.com/i/docs/ru/human_inputs.png"></p> 
+<p style="text-align: left;"><span style="font-weight: bold;">Примечание: </span><span>Массивы и переменные <a href="/ru/basis/types/classes">сложных&nbsp;типов</a> не могут выступать в качестве </span><span>input-</span><span>переменных.</span></p> 
+<p style="text-align: left;"><span style="font-weight: bold;">Примечание: </span><span>Длина строчного комментария для Input переменных не может превышать 63 символа.</span></p> 
+<p style="text-align: left;"><span>&nbsp;</span></p> 
+<h3><a id="icustompassparameters"></a>Передача параметров при вызове пользовательских индикаторов из mql4-программ</h3> 
+<p><span>Пользовательские индикаторы вызываются при помощи функции <a href="/ru/indicators/icustom">iCustom()</a>. При этом после имени пользовательского индикатора должны идти параметры в точном соответствии с объявлением input-переменных данного пользовательского индикатора. Если параметров указывается меньше, чем объявлено input-переменных в вызываемом пользовательском индикаторе, то недостающие параметры заполняются значениями, указанными при объявлении переменных.</span></p> 
+<p><span>Если в пользовательском индикаторе используется функция <a href="/ru/basis/function/events#oncalculate">OnCalculate</a> первого вида (то есть, индикатор считается на одном массиве данных), то в качестве последнего параметра при вызове такого пользовательского индикатора должно выступать одно из значений <a href="/ru/constants/indicatorconstants/prices#enum_applied_price_enum">ENUM_APPLIED_PRICE</a> либо хэндл другого индикатора. При этом все параметры, соответствующие input-переменным, должны быть явно указаны.</span></p> 
+<h3>Перечисления в качестве input-параметра</h3> 
+<p><span>В качестве input-переменных (входных параметров для mql4-программ) можно использовать не только предусмотренные языком MQL4 встроенные перечисления, но и перечисления, заданные пользователем. Например, мы можем создать перечисление dayOfWeek, описывающее дни недели, и использовать input-переменную для указания конкретного дня недели не в виде цифры, а в более привычном для пользователя виде.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">script_show_inputs</span><br> <span style="color: #808080;">//---&nbsp;day&nbsp;of&nbsp;week</span><br> <span style="color: #0000ff;">enum</span><span>&nbsp;dayOfWeek&nbsp;</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;S=0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Sunday</span><br> <span>&nbsp;&nbsp;&nbsp;M=1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Monday</span><br> <span>&nbsp;&nbsp;&nbsp;T=2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Tuesday</span><br> <span>&nbsp;&nbsp;&nbsp;W=3,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Wednesday</span><br> <span>&nbsp;&nbsp;&nbsp;Th=4,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Thursday</span><br> <span>&nbsp;&nbsp;&nbsp;Fr=5,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Friday,</span><br> <span>&nbsp;&nbsp;&nbsp;St=6,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Saturday</span><br> <span>&nbsp;&nbsp;};</span><br> <span style="color: #808080;">//---&nbsp;input&nbsp;parameters</span><br> <span style="color: #0000ff;">input</span><span>&nbsp;dayOfWeek&nbsp;swapday=W;</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Для того чтобы при запуске скрипта пользователь мог выбрать нужное значение из окна свойств, мы используем команду препроцессора #property script_show_inputs. Запускаем скрипт на исполнение и можем выбрать из списка одно из значений перечислений dayOfWeek. Запускаем скрипт EnumInInput и переходим на закладку "Параметры". По умолчанию, значение параметра swapday (день начисления тройного свопа) является среда (W=3), но мы можем задать любое другое значение и использовать это значение для изменения работы программы.</span></p> 
+<p style="text-align: center;"><img alt="Пример пользовательского перечисления в качестве input-параметра" title="Пример пользовательского перечисления в качестве input-параметра" width="619" height="312" style="margin:0px auto 0px auto;width:619px;height:312px;border:none" src="https://c.mql4.com/i/docs/ru/enumasinput.png"></p> 
+<p><span>Количество возможных значений перечисления ограничено. Поэтому для выбора входного значения используется выпадающий список. В качестве значений, показываемых в списке, используются мнемонические имена членов перечисления. Если же мнемоническому имени сопоставлен комментарий, как это показано в нашем примере, то вместо мнемонического имени используется содержимое комментария.</span></p> 
+<p><span>Каждое значение из перечисления dayOfWeek имеет свое значение от 0 до 6, но в списке параметров будут показаны комментарии, указанные для каждого значения. Это дает дополнительную гибкость для написания программ с понятными описаниями входных параметров.</span></p> 
+<p><span>&nbsp;</span></p> 
+<h2><a id="sinput"></a>Переменные с модификатором sinput</h2> 
+<p><span>Переменные с модификатором </span><span style="color: #0000ff;">input</span><span> позволяют не только задавать значения внешних параметров при запуске программ, но также играют большую роль при оптимизации торговых стратегий в тестере. Каждая объявленная в эксперте input-переменная, за исключением типа string, может участвовать в оптимизации. </span></p> 
+<p><span>В некоторых случаях бывает необходимо исключить некоторые внешние параметры программы из формирования области всех возможных проходов в тестере. Специально для таких случаев существует модификатор памяти </span><span style="color: #0000ff;">sinput</span><span>. sinput - это сокращенное написание объявления статической внешней переменной: sinput = static input. То есть такое объявление в коде советника</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">sinput</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;layers=6;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Количество&nbsp;слоев</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>будет эквивалентно &nbsp;полному объявлению</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">static&nbsp;input</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;layers=6;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Количество&nbsp;слоев</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Переменная, объявленная с модификатором sinput, является входным параметром MQL4-программы, значение этого параметра можно изменять при её запуске. Но при этом данная переменная не участвует в процессе оптимизации входных параметров, то есть не производится перебор её значений при поиске наилучшего набора параметров по заданному критерию.</span></p> 
+<p style="text-align: center;"><img alt="Отображение sinput-параметра в тестере стратегий" title="Отображение sinput-параметра в тестере стратегий" width="752" height="208" style="margin:0px auto 0px auto;width:752px;height:208px;border:none" src="https://c.mql4.com/i/docs/ru/sinput.png"></p> 
+<p><span>На рисунке показано, что эксперт имеет 5 внешних параметров, из них параметр "Количество слоев" объявлен как </span><span style="color: #0000ff;">sinput</span><span> и равен 6. Этот параметр не может изменяться в процедуре оптимизации торговой стратегии, для него возможно установить нужное значение, которое и будет использоваться. Поля Старт, Шаг и Стоп для такой переменной не доступны для установки значений.</span></p> 
+<p><span>Таким образом, задав для переменной модификатор sinput, мы запрещаем пользователю оптимизировать данный параметр. Это значит, что в тестере стратегий пользователю терминала становится недоступным задавать для неё начальное и конечное значения для автоматического перебора в указанном диапазоне в процессе оптимизации. </span></p> 
+<p><span>Но при этом есть одно исключение из данного правила – sinput-переменные можно варьировать в задачах оптимизации с помощью функции ParameterSetRange(). Данная функция создана специально для программного управления пространством доступных значений для любых <a href="/ru/basis/variables/inputvariables">input</a>-переменных, в том числе и объявленных как </span><span style="color: #0000ff;">static input</span><span> (sinput). Другая функция ParameterGetInput() позволяет при запуске оптимизации (в обработчике OnTesterInit()) получить значения input-переменных и в случае необходимости переопределить шаг изменения и диапазон, в пределах которого будет перебираться значение оптимизируемого параметра.</span></p> 
+<p><span>Таким образом, сочетание модификатора sinput и двух функций по работе с input-параметрами позволяет создавать гибкие правила для задания интервалов оптимизации одних input-переменных в зависимости от значения других input-переменных. </span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/indicators/icustom">iCustom()</a>, <a href="/ru/basis/types/integer/enumeration">Перечисления</a>, <a href="/ru/basis/preprosessor/compilation">Свойства программ</a></span></p> 
+<br>

@@ -1,0 +1,91 @@
+<h1>Флаги открытия файлов</h1> 
+<p><span>Значения флагов, определяющих режим работы с файлом. Флаги определены следующим образом:</span></p> 
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td> 
+    <td style="vertical-align:top; width:80px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Значение</span></p> </td> 
+    <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_READ</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>1</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл открывается для чтения. Флаг используется при открытии файлов (<a href="/ru/files/fileopen">FileOpen()</a>). При открытии файла обязательно должен быть указан флаг FILE_WRITE и/или флаг FILE_READ</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_WRITE</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>2</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл открывается для записи. Флаг используется при открытии файлов (<a href="/ru/files/fileopen">FileOpen()</a>). При открытии файла обязательно должен быть указан флаг FILE_WRITE и/или флаг FILE_READ</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_BIN</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Двоичный режим чтения-записи (без преобразования из строки и в строку). Флаг используется при открытии файлов (<a href="/ru/files/fileopen">FileOpen()</a>)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_CSV</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>8</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Файл типа csv (все записанные элементы преобразуются к строкам соответствующего типа, unicode или ansi, и разделяются разделителем). Флаг используется при открытии файлов (<a href="/ru/files/fileopen">FileOpen()</a>)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_TXT</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>16</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Простой текстовый файл (тот же csv, однако разделитель не принимается во внимание). Флаг используется при открытии файлов (<a href="/ru/files/fileopen">FileOpen()</a>)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_ANSI</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>32</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Строки типа ANSI (однобайтовые символы). Флаг используется при открытии файлов (<a href="/ru/files/fileopen">FileOpen()</a>)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_UNICODE</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>64</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Строки типа UNICODE (двухбайтовые символы). Флаг используется при открытии файлов (<a href="/ru/files/fileopen">FileOpen()</a>)</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_SHARE_READ</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>128</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Совместный доступ по чтению со стороны нескольких программ. Флаг используется при открытии файлов (<a href="/ru/files/fileopen">FileOpen()</a>), но не заменяет при открытии файла необходимости указать FILE_WRITE и/или флаг FILE_READ</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_SHARE_WRITE</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>256</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Совместный доступ по записи со стороны нескольких программ. Флаг используется при открытии файлов (<a href="/ru/files/fileopen">FileOpen()</a>), но не заменяет при открытии файла необходимости указать FILE_WRITE и/или флаг FILE_READ</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_REWRITE</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>512</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Возможность перезаписывания файла функциями <a href="/ru/files/filecopy">FileCopy()</a> и <a href="/ru/files/filemove">FileMove()</a>. Файл должен существовать или открываться для записи. В противном случае файл открыт не будет</span></p> </td> 
+   </tr> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; width:150px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_COMMON</span></p> </td> 
+    <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4096</span></p> </td> 
+    <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Расположение файла в общей папке всех клиентских терминалов </span><span>\Terminal\Common\Files</span><span>. Флаг используется при открытии файлов (<a href="/ru/files/fileopen">FileOpen()</a>), копировании файлов (<a href="/ru/files/filecopy">FileCopy()</a>, <a href="/ru/files/filemove">FileMove()</a>) и проверке существования файлов (<a href="/ru/files/fileisexist">FileIsExist()</a>)</span></p> </td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>При открытии файла можно указать один или более флагов, такое сочетание называется комбинацией флагов. Комбинация флагов записывается с помощью знака операции логического ИЛИ (|), который ставится между перечисляемыми флагами. Например, чтобы открыть файл в формате CSV одновременно на чтение и на запись, можно указать комбинацию FILE_READ|FILE_WRITE|FILE_CSV.</span></p> 
+<p><span style="font-weight: bold;">Пример:</span></p> 
+<div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
+ <table cellpadding="3" style="border:none; border-spacing:0px;"> 
+  <tbody> 
+   <tr style="text-align:left;vertical-align:top;"> 
+    <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;filehandle=</span><span style="color: #0000ff;">FileOpen</span><span>(filename,</span><span style="color: #0000ff;">FILE_READ</span><span>|</span><span style="color: #0000ff;">FILE_WRITE</span><span>|</span><span style="color: #0000ff;">FILE_CSV</span><span>);</span></p></td> 
+   </tr> 
+  </tbody> 
+ </table> 
+</div> 
+<p><span>Есть некоторые особенности работы при указании флагов чтения и записи:</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>Если указан FILE_READ – делается попытка открытия уже существующего файла. Если файл не существует, то открыть файл не получится, новый файл не создается.</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>Если FILE_READ|FILE_WRITE – создаётся новый файл если файл с таким именем отсутствует.</span></p> 
+<p style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 13px; margin: 2px 17px 3px 17px;"><span style="display:inline-block;width:13px;margin-left:-13px;font-size:10pt;font-family:'Symbol';font-style:normal;color:#565656;text-decoration:none;">•</span><span>Если FILE_WRITE – &nbsp;файл создается заново с нулевым размером.</span></p> 
+<p><span>При открытии файла обязательно должен быть указан флаг FILE_WRITE и/или флаг FILE_READ.</span></p> 
+<p><span>Флаги, определяющие тип чтения открытого файла, имеют приоритет. Самый старший флаг FILE_CSV, затем следует по старшинству флаг FILE_BIN, и наименьший приоритет имеет флаг FILE_TXT. Таким образом, если вдруг будут указаны сразу несколько флагов (FILE_TXT|FILE_CSV или FILE_TXT|FILE_BIN или FILE_BIN|FILE_CSV), то будет использован самый старший по приоритету флаг.</span></p> 
+<p><span>Флаги, определяющие тип кодировки, также имеют приоритет. Флаг FILE_UNICODE имеет более старший приоритет,чем флаг &nbsp;FILE_ANSI. Поэтому при указании комбинации FILE_UNICODE|FILE_ANSI будет использоваться флаг FILE_UNICODE.</span></p> 
+<p><span>Если не указано ни &nbsp;FILE_UNICODE, ни FILE_ANSI, то подразумевается FILE_UNICODE. Если не указано ни FILE_CSV, ни FILE_BIN, ни FILE_TXT, то подразумевается FILE_CSV.</span></p> 
+<p><span>Если файл открыт на чтение как текстовый (FILE_TXT или FILE_CSV), и при этом в начале файла будет обнаружен специальный двухбайтовый признак </span><span style="color: #0000ff;">0xff,0xfe</span><span>, то флаг кодировки будет FILE_UNICODE, даже если указан флаг FILE_ANSI.</span></p> 
+<p><span>Смотри также</span></p> 
+<p><span><a href="/ru/files">Файловые операции</a></span></p> 
+<br>
