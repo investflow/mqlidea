@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>ru.investflow.mql</id>
     <name>MQL Idea</name>
-    <version>0.11</version>
+    <version>0.12</version>
     <vendor email="mike.fursov@gmail.com" url="http://investflow.ru/mqlidea">Investflow.Ru</vendor>
 
     <description><![CDATA[
@@ -23,11 +23,28 @@
         </action>
     </actions>
 
+    <!-- Plugin's application components -->
+    <application-components>
+
+        <!-- MQL4 plugin settings -->
+        <component>
+            <interface-class>ru.investflow.mql.settings.MQL4PluginSettings</interface-class>
+            <implementation-class>ru.investflow.mql.settings.MQL4PluginSettingsImpl</implementation-class>
+        </component>
+    </application-components>
+
     <extensions defaultExtensionNs="com.intellij">
         <fileTypeFactory implementation="ru.investflow.mql.MQL4FileTypeFactory"/>
         <lang.parserDefinition language="MQL4" implementationClass="ru.investflow.mql.MQL4ParserDefinition"/>
         <lang.syntaxHighlighterFactory language="MQL4" implementationClass="ru.investflow.mql.MQL4SyntaxHighlighterFactory"/>
         <lang.commenter language="MQL4" implementationClass="ru.investflow.mql.MQL4Commenter"/>
         <lang.documentationProvider language="MQL4" implementationClass="ru.investflow.mql.doc.MQL4DocumentationProvider"/>
+
+
+        <!--
+        https://confluence.jetbrains.com/display/IDEADEV/Customizing+the+IDEA+Settings+Dialog
+        https://sites.google.com/site/malenkov/java/150403
+        -->
+        <projectConfigurable id="settings.mql4" groupId="language" instance="ru.investflow.mql.settings.MQL4PluginSettingsPanel"/>
     </extensions>
 </idea-plugin>

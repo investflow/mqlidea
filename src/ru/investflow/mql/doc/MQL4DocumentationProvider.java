@@ -12,6 +12,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import ru.investflow.mql.settings.MQL4PluginSettings;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -40,7 +41,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     }
 
     private void loadResource(@NotNull String name, @NotNull DocEntryType type) {
-        String resource = "/mql/doc/" + name + "-" + getDocsLanguage() + ".json";
+        String resource = "/mql/doc/" + name + ".json";
         try (Reader reader = new InputStreamReader(getClass().getResourceAsStream(resource), StandardCharsets.UTF_8)) {
             Gson gson = new GsonBuilder().create();
             JsonArray arr = gson.fromJson(reader, JsonArray.class);
@@ -72,7 +73,6 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     public String generateDoc(PsiElement element, @Nullable PsiElement originalElement) {
         String link = getLinkByElementText(originalElement);
         return link == null ? null : generateDocByLink(link);
-
     }
 
     @NotNull
@@ -138,6 +138,6 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     }
 
     public String getDocsLanguage() {
-        return "ru";
+        return MQL4PluginSettings.getInstance().isUseEnDocs() ? "en" : "ru";
     }
 }

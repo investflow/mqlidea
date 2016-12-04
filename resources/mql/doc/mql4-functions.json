@@ -222,7 +222,7 @@
   [
     "CharArrayToString",
     "Преобразует код символа (ansi) в односимвольную строку",
-    "/convert/chartostring"
+    "/convert/chararraytostring"
   ],
   [
     "ChartApplyTemplate",
@@ -1943,11 +1943,6 @@
     "Symbol",
     "Возвращает имя символа текущего графика",
     "/check/symbol"
-  ],
-  [
-    "Symbol",
-    "Возвращает текстовую строку с именем текущего финансового инструмента",
-    "/chart_operations/chartsymbol"
   ],
   [
     "SymbolInfoDouble",
