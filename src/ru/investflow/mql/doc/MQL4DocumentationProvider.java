@@ -29,31 +29,48 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
 
     public static final String DOC_NOT_FOUND = "";
 
-    private final Map<String, String> docLinkByText = new HashMap<>();
-    private final Map<String, DocEntry> docEntryMapByLink = new HashMap<>();
-    private final ClassLoader loader = MQL4DocumentationProvider.class.getClassLoader();
+    private static final Map<String, String> docLinkByText = new HashMap<>();
+    private static final Map<String, DocEntry> docEntryByLink = new HashMap<>();
+    private static final ClassLoader loader = MQL4DocumentationProvider.class.getClassLoader();
+    private static boolean resourcesLoadedFlag;
+
 
     public MQL4DocumentationProvider() {
+        ensureResourcesAreLoaded();
+    }
+
+    private static void ensureResourcesAreLoaded() {
+        if (resourcesLoadedFlag) {
+            return;
+        }
         loadResource("mql4-constants", DocEntryType.Constant);
         loadResource("mql4-functions", DocEntryType.BuiltInFunction);
         loadResource("mql4-keywords", DocEntryType.Keyword);
         loadResource("mql4-preprocessor", DocEntryType.PreprocessorKeyword);
+        resourcesLoadedFlag = true;
     }
 
-    private void loadResource(@NotNull String name, @NotNull DocEntryType type) {
+    private static void loadResource(@NotNull String name, @NotNull DocEntryType type) {
         String resource = "/mql/doc/" + name + ".json";
-        try (Reader reader = new InputStreamReader(getClass().getResourceAsStream(resource), StandardCharsets.UTF_8)) {
+        try (Reader reader = new InputStreamReader(loader.getResourceAsStream(resource), StandardCharsets.UTF_8)) {
             Gson gson = new GsonBuilder().create();
             JsonArray arr = gson.fromJson(reader, JsonArray.class);
             for (int i = 0; i < arr.size(); i++) {
                 JsonArray doc = arr.get(i).getAsJsonArray();
                 DocEntry entry = new DocEntry(doc.get(0).getAsString(), doc.get(1).getAsString(), type);
-                docEntryMapByLink.put(entry.link, entry);
+                docEntryByLink.put(entry.link, entry);
                 docLinkByText.put(entry.text, entry.link);
             }
         } catch (Exception e) {
             log.error("Error loading resource with docs: " + resource, e);
         }
+    }
+
+    @Nullable
+    public static DocEntry getEntryForElement(@NotNull PsiElement e) {
+        ensureResourcesAreLoaded();
+        String link = docLinkByText.get(e.getText());
+        return link == null ? null : docEntryByLink.get(link);
     }
 
     @Nullable
@@ -79,7 +96,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     private String generateDocByLink(@NotNull String link) {
         String resource = docLinkToResource(link);
         if (loader.getResource(resource) == null) {
-            DocEntry e = docEntryMapByLink.get(link);
+            DocEntry e = docEntryByLink.get(link);
             if (e != null) {
                 log.warn("No docs found for " + link + "!");
                 return "Resource not found: " + link;
@@ -128,7 +145,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
 
     @Override
     public boolean canFetchDocumentationLink(String link) {
-        return docEntryMapByLink.containsKey(link) || loader.getResource(docLinkToResource(link)) != null;
+        return docEntryByLink.containsKey(link) || loader.getResource(docLinkToResource(link)) != null;
     }
 
     @NotNull
