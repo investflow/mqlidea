@@ -7,7 +7,7 @@ import ru.investflow.mql.psi.MQL4Elements;
 @SuppressWarnings({"ALL"})
 %%
 
-%class MQL4Lexer
+%public %class MQL4Lexer
 %implements FlexLexer
 %unicode
 %function advance

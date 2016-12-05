@@ -13,7 +13,7 @@ import ru.investflow.mql.psi.MQL4Elements;
  * <a href="http://www.jflex.de/">JFlex</a> 1.7.0-SNAPSHOT
  * from the specification file <tt>MQL4Lexer.flex</tt>
  */
-class MQL4Lexer implements FlexLexer {
+public class MQL4Lexer implements FlexLexer {
 
   /** This character denotes the end of file */
   public static final int YYEOF = -1;
@@ -616,7 +616,7 @@ class MQL4Lexer implements FlexLexer {
    *
    * @param   in  the java.io.Reader to read input from.
    */
-  MQL4Lexer(java.io.Reader in) {
+  public MQL4Lexer(java.io.Reader in) {
     this.zzReader = in;
   }
 
