@@ -40,6 +40,7 @@
         <lang.commenter language="MQL4" implementationClass="ru.investflow.mql.MQL4Commenter"/>
         <lang.documentationProvider language="MQL4" implementationClass="ru.investflow.mql.doc.MQL4DocumentationProvider"/>
         <lang.braceMatcher language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4BraceMatcher"/>
+        <lang.foldingBuilder language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4FoldingBuilder"/>
 
         <!--
         https://confluence.jetbrains.com/display/IDEADEV/Customizing+the+IDEA+Settings+Dialog
