@@ -1,6 +1,4 @@
-package ru.investflow.mql;
-
-import org.jetbrains.annotations.NotNull;
+package ru.investflow.mql.editor;
 
 import com.intellij.lexer.FlexAdapter;
 import com.intellij.lexer.Lexer;
@@ -9,6 +7,8 @@ import com.intellij.openapi.editor.HighlighterColors;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
 import com.intellij.psi.tree.IElementType;
+import org.jetbrains.annotations.NotNull;
+import ru.investflow.mql.MQL4Lexer;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 
