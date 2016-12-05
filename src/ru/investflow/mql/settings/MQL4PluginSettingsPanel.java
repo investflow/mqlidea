@@ -2,20 +2,23 @@ package ru.investflow.mql.settings;
 
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.ui.ComboBox;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.BoxLayout;
-import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import java.awt.FlowLayout;
 
 //todo: SearchableConfigurable,
 public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
 
     @NotNull
-    private final JCheckBox useEnDocsCheckbox;
+    private final JComboBox<String> langDocsSelector;
 
     @NotNull
     private final MQL4PluginSettings settings;
@@ -24,9 +27,14 @@ public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
         this.settings = settings;
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        useEnDocsCheckbox = new JCheckBox("Show documentation in English");
-        useEnDocsCheckbox.setSelected(settings.isUseEnDocs());
-        add(useEnDocsCheckbox);
+
+        JPanel comboPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        comboPanel.add(new JLabel("Docs language: "));
+        langDocsSelector = new ComboBox<>(new String[]{"Russian", "English"});
+        langDocsSelector.setSelectedIndex(settings.isUseEnDocs() ? 1 : 0);
+        comboPanel.add(langDocsSelector);
+        add(comboPanel);
+
     }
 
     @Nls
@@ -60,7 +68,7 @@ public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
      */
     @Override
     public boolean isModified() {
-        return settings.isUseEnDocs() != useEnDocsCheckbox.isSelected();
+        return langDocsSelector.getSelectedIndex() != (settings.isUseEnDocs() ? 1 : 0);
     }
 
     /**
@@ -68,7 +76,7 @@ public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
      */
     @Override
     public void apply() throws ConfigurationException {
-        settings.setUseEnDocs(useEnDocsCheckbox.isSelected());
+        settings.setUseEnDocs(langDocsSelector.getSelectedIndex() == 1);
     }
 
     /**
@@ -76,7 +84,7 @@ public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
      */
     @Override
     public void reset() {
-        useEnDocsCheckbox.setSelected(settings.isUseEnDocs());
+        langDocsSelector.setSelectedIndex(settings.isUseEnDocs() ? 1 : 0);
     }
 
 }
