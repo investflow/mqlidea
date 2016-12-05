@@ -3,4 +3,6 @@
 Features:
 * Syntax highlighting
 * Inlined documentation (Ctrl+Q)
+* Bracket matching
+* Comments folding
 
