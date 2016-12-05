@@ -47,7 +47,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
             JsonArray arr = gson.fromJson(reader, JsonArray.class);
             for (int i = 0; i < arr.size(); i++) {
                 JsonArray doc = arr.get(i).getAsJsonArray();
-                DocEntry entry = new DocEntry(doc.get(0).getAsString(), doc.get(1).getAsString(), doc.get(2).getAsString(), type);
+                DocEntry entry = new DocEntry(doc.get(0).getAsString(), doc.get(1).getAsString(), type);
                 docEntryMapByLink.put(entry.link, entry);
                 docLinkByText.put(entry.text, entry.link);
             }
@@ -81,8 +81,8 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
         if (loader.getResource(resource) == null) {
             DocEntry e = docEntryMapByLink.get(link);
             if (e != null) {
-                log.warn("No docs found for " + link + ", using quick nav info");
-                return e.quickNavigateInfo;
+                log.warn("No docs found for " + link + "!");
+                return "Resource not found: " + link;
             }
             return DOC_NOT_FOUND;
         }
