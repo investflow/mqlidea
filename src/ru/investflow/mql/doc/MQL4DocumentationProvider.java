@@ -29,7 +29,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
 
     public static final String DOC_NOT_FOUND = "";
 
-    private static final Map<String, String> docLinkByText = new HashMap<>();
+    private static final Map<String, DocEntry> docEntryByText = new HashMap<>();
     private static final Map<String, DocEntry> docEntryByLink = new HashMap<>();
     private static final ClassLoader loader = MQL4DocumentationProvider.class.getClassLoader();
     private static boolean resourcesLoadedFlag;
@@ -43,7 +43,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
         if (resourcesLoadedFlag) {
             return;
         }
-        loadResource("mql4-constants", DocEntryType.Constant);
+        loadResource("mql4-constants", DocEntryType.BuiltInConstant);
         loadResource("mql4-functions", DocEntryType.BuiltInFunction);
         loadResource("mql4-keywords", DocEntryType.Keyword);
         loadResource("mql4-preprocessor", DocEntryType.PreprocessorKeyword);
@@ -59,7 +59,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
                 JsonArray doc = arr.get(i).getAsJsonArray();
                 DocEntry entry = new DocEntry(doc.get(0).getAsString(), doc.get(1).getAsString(), type);
                 docEntryByLink.put(entry.link, entry);
-                docLinkByText.put(entry.text, entry.link);
+                docEntryByText.put(entry.text, entry);
             }
         } catch (Exception e) {
             log.error("Error loading resource with docs: " + resource, e);
@@ -67,10 +67,9 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     }
 
     @Nullable
-    public static DocEntry getEntryForElement(@NotNull PsiElement e) {
+    public static DocEntry getEntryForText(@NotNull String text) {
         ensureResourcesAreLoaded();
-        String link = docLinkByText.get(e.getText());
-        return link == null ? null : docEntryByLink.get(link);
+        return docEntryByText.get(text);
     }
 
     @Nullable
@@ -121,7 +120,8 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
         if (originalElement == null) {
             return null;
         }
-        return docLinkByText.get(originalElement.getText());
+        DocEntry entry = docEntryByText.get(originalElement.getText());
+        return entry == null ? null : entry.link;
     }
 
     @Nullable

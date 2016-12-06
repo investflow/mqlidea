@@ -173,4 +173,7 @@ public interface MQL4Elements {
     IElementType SWITCH_BLOCK = new MQL4ElementType("SWITCH_BLOCK");
     IElementType SWITCH_CASE_BLOCK = new MQL4ElementType("SWITCH_CASE_BLOCK");
 
+    // Special element types for syntax highlighter only
+    IElementType SYNTAX_BUILT_IN_CONSTANT = new MQL4ElementType("SYNTAX_BUILT_IN_CONSTANT");
+    IElementType SYNTAX_BUILT_IN_FUNCTION = new MQL4ElementType("SYNTAX_BUILT_IN_FUNCTION");
 }

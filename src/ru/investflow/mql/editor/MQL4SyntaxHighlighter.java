@@ -1,71 +1,121 @@
 package ru.investflow.mql.editor;
 
 import com.intellij.lexer.FlexAdapter;
+import com.intellij.lexer.FlexLexer;
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 import com.intellij.openapi.editor.HighlighterColors;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
 import com.intellij.psi.tree.IElementType;
+import com.intellij.psi.tree.TokenSet;
 import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.MQL4Lexer;
+import ru.investflow.mql.doc.DocEntry;
+import ru.investflow.mql.doc.MQL4DocumentationProvider;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 
-import static com.intellij.openapi.editor.colors.TextAttributesKey.createTextAttributesKey;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /* Rules to highlight MQL4 Language source code.
  * Each AST element type could be colored.
  */
 public class MQL4SyntaxHighlighter extends SyntaxHighlighterBase {
-    public static final TextAttributesKey IDENTIFIER = createTextAttributesKey("MQL_IDENTIFIER", DefaultLanguageHighlighterColors.IDENTIFIER);
-    public static final TextAttributesKey STRING = createTextAttributesKey("MQL_STRING", DefaultLanguageHighlighterColors.STRING);
-    public static final TextAttributesKey LINE_COMMENT = createTextAttributesKey("MQL_LINE_COMMENT", DefaultLanguageHighlighterColors.LINE_COMMENT);
-    public static final TextAttributesKey BLOCK_COMMENT = createTextAttributesKey("MQL_BLOCK_COMMENT", DefaultLanguageHighlighterColors.BLOCK_COMMENT);
-    public static final TextAttributesKey INTEGER = createTextAttributesKey("MQL_INTEGER", DefaultLanguageHighlighterColors.NUMBER);
-    public static final TextAttributesKey FLOAT = createTextAttributesKey("MQL_FLOAT", DefaultLanguageHighlighterColors.NUMBER);
-    public static final TextAttributesKey PREPROCESSOR_KEYWORD = createTextAttributesKey("PREPROCESSOR_KEYWORD", DefaultLanguageHighlighterColors.METADATA);
-    public static final TextAttributesKey KEYWORD = createTextAttributesKey("MQL_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD);
-    public static final TextAttributesKey OPERATOR = createTextAttributesKey("MQL_OPERATOR", DefaultLanguageHighlighterColors.OPERATION_SIGN);
-    public static final TextAttributesKey BAD_CHARACTER = TextAttributesKey.createTextAttributesKey("MQL_BAD_CHARACTER", HighlighterColors.BAD_CHARACTER);
 
-    private static final TextAttributesKey[] BAD_CHAR_KEYS = new TextAttributesKey[]{BAD_CHARACTER};
-    private static final TextAttributesKey[] PREPROCESSOR_KEYS = new TextAttributesKey[]{PREPROCESSOR_KEYWORD};
-    private static final TextAttributesKey[] COMMENT_KEYS = new TextAttributesKey[]{LINE_COMMENT, BLOCK_COMMENT};
-    private static final TextAttributesKey[] IDENTIFIER_KEYS = new TextAttributesKey[]{IDENTIFIER};
-    private static final TextAttributesKey[] STRING_KEYS = new TextAttributesKey[]{STRING};
-    private static final TextAttributesKey[] NUMBER_KEYS = new TextAttributesKey[]{INTEGER, FLOAT};
-    private static final TextAttributesKey[] KEYWORD_KEYS = new TextAttributesKey[]{KEYWORD};
-    private static final TextAttributesKey[] OPERATOR_KEYS = new TextAttributesKey[]{OPERATOR};
-    private static final TextAttributesKey[] EMPTY_KEYS = new TextAttributesKey[0];
+    private static final Map<IElementType, TextAttributesKey[]> KEYS_BY_TYPE = new HashMap<>();
+
+    static {
+        put(MQL4Elements.BAD_CHARACTER, HighlighterColors.BAD_CHARACTER);
+        put(MQL4Elements.BLOCK_COMMENT, DefaultLanguageHighlighterColors.BLOCK_COMMENT);
+        put(MQL4Elements.IDENTIFIER, DefaultLanguageHighlighterColors.IDENTIFIER);
+        put(MQL4Elements.LINE_COMMENT, DefaultLanguageHighlighterColors.LINE_COMMENT);
+        put(MQL4Elements.SYNTAX_BUILT_IN_CONSTANT, DefaultLanguageHighlighterColors.CONSTANT);
+        put(MQL4Elements.SYNTAX_BUILT_IN_FUNCTION, DefaultLanguageHighlighterColors.STATIC_METHOD);
+        put(MQL4TokenSets.PREPROCESSOR, DefaultLanguageHighlighterColors.METADATA);
+        put(MQL4TokenSets.STRINGS_AND_CHARS, DefaultLanguageHighlighterColors.STRING);
+        put(MQL4TokenSets.NUMBERS, DefaultLanguageHighlighterColors.NUMBER);
+        put(MQL4TokenSets.OPERATORS, DefaultLanguageHighlighterColors.OPERATION_SIGN);
+    }
 
     @NotNull
     @Override
     public Lexer getHighlightingLexer() {
-        return new FlexAdapter(new MQL4Lexer(null));
+        return new FlexAdapter(new MQL4HighlighterLexer(new MQL4Lexer(null)));
     }
 
     @NotNull
     @Override
     public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
-        if (MQL4TokenSets.COMMENTS.contains(tokenType)) {
-            return COMMENT_KEYS;
-        } else if (MQL4TokenSets.PREPROCESSOR.contains(tokenType)) {
-            return PREPROCESSOR_KEYS;
-        } else if (tokenType.equals(MQL4Elements.BAD_CHARACTER)) {
-            return BAD_CHAR_KEYS;
-        } else if (tokenType.equals(MQL4Elements.IDENTIFIER)) {
-            return IDENTIFIER_KEYS;
-        } else if (MQL4TokenSets.STRINGS_AND_CHARS.contains(tokenType)) {
-            return STRING_KEYS;
-        } else if (MQL4TokenSets.NUMBERS.contains(tokenType)) {
-            return NUMBER_KEYS;
-        } else if (MQL4TokenSets.OPERATORS.contains(tokenType)) {
-            return OPERATOR_KEYS;
-        } else if (tokenType.toString().endsWith("_KEYWORD")) {
-            return KEYWORD_KEYS;
-        }
-        return EMPTY_KEYS;
+        return KEYS_BY_TYPE.computeIfAbsent(tokenType,
+                t -> tokenType.toString().endsWith("_KEYWORD")
+                        ? pack(DefaultLanguageHighlighterColors.KEYWORD)
+                        : new TextAttributesKey[0]);
     }
 
+    private static void put(@NotNull IElementType e, @NotNull TextAttributesKey... tokens) {
+        KEYS_BY_TYPE.put(e, tokens);
+    }
+
+    private static void put(@NotNull TokenSet set, @NotNull TextAttributesKey... tokens) {
+        for (IElementType e : set.getTypes()) {
+            KEYS_BY_TYPE.put(e, tokens);
+        }
+    }
+
+    private class MQL4HighlighterLexer implements FlexLexer {
+        @NotNull
+        private final MQL4Lexer lexer;
+
+        public MQL4HighlighterLexer(@NotNull MQL4Lexer lexer) {
+            this.lexer = lexer;
+        }
+
+        @Override
+        public void yybegin(int state) {
+            lexer.yybegin(state);
+        }
+
+        @Override
+        public int yystate() {
+            return lexer.yystate();
+        }
+
+        @Override
+        public int getTokenStart() {
+            return lexer.getTokenStart();
+        }
+
+        @Override
+        public int getTokenEnd() {
+            return lexer.getTokenEnd();
+        }
+
+        @Override
+        public IElementType advance() throws IOException {
+            IElementType originalType = lexer.advance();
+            if (originalType != MQL4Elements.IDENTIFIER) {
+                return originalType;
+            }
+            CharSequence text = lexer.yytext();
+            DocEntry docEntry = MQL4DocumentationProvider.getEntryForText(text.toString());
+            if (docEntry == null) {
+                return originalType;
+            }
+            switch (docEntry.type) {
+                case BuiltInConstant:
+                    return MQL4Elements.SYNTAX_BUILT_IN_CONSTANT;
+                case BuiltInFunction:
+                    return MQL4Elements.SYNTAX_BUILT_IN_FUNCTION;
+            }
+            return originalType;
+        }
+
+        @Override
+        public void reset(CharSequence buf, int start, int end, int initialState) {
+            lexer.reset(buf, start, end, initialState);
+        }
+    }
 }

@@ -1,7 +1,7 @@
 package ru.investflow.mql.doc;
 
 public enum DocEntryType {
-    Constant,
+    BuiltInConstant,
     BuiltInFunction,
     Keyword,
     PreprocessorKeyword
