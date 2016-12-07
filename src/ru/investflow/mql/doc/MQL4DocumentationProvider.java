@@ -18,6 +18,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,6 +71,12 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     public static DocEntry getEntryForText(@NotNull String text) {
         ensureResourcesAreLoaded();
         return docEntryByText.get(text);
+    }
+
+    @NotNull
+    public static Collection<DocEntry> getEntries() {
+        ensureResourcesAreLoaded();
+        return docEntryByText.values();
     }
 
     @Nullable
