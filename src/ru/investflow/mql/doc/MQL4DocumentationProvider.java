@@ -68,7 +68,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     }
 
     @Nullable
-    public static DocEntry getEntryForText(@NotNull String text) {
+    public static DocEntry getEntryByText(@NotNull String text) {
         ensureResourcesAreLoaded();
         return docEntryByText.get(text);
     }

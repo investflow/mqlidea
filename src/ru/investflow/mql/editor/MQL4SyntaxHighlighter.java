@@ -100,7 +100,7 @@ public class MQL4SyntaxHighlighter extends SyntaxHighlighterBase {
                 return originalType;
             }
             CharSequence text = lexer.yytext();
-            DocEntry docEntry = MQL4DocumentationProvider.getEntryForText(text.toString());
+            DocEntry docEntry = MQL4DocumentationProvider.getEntryByText(text.toString());
             if (docEntry == null) {
                 return originalType;
             }
