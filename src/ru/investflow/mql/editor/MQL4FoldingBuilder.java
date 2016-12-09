@@ -17,6 +17,9 @@ import ru.investflow.mql.psi.MQL4TokenSets;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * MQL4 code folding. Supports folding of comments only today.
+ */
 public class MQL4FoldingBuilder implements FoldingBuilder, DumbAware {
     @NotNull
     @Override

@@ -6,7 +6,11 @@ import com.intellij.lexer.Lexer;
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 import com.intellij.openapi.editor.HighlighterColors;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
+import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
+import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
 import org.jetbrains.annotations.NotNull;
@@ -20,8 +24,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-/* Rules to highlight MQL4 Language source code.
- * Each AST element type could be colored.
+/**
+ * Rules to highlight MQL4 Language source code.
  */
 public class MQL4SyntaxHighlighter extends SyntaxHighlighterBase {
 
@@ -116,6 +120,14 @@ public class MQL4SyntaxHighlighter extends SyntaxHighlighterBase {
         @Override
         public void reset(CharSequence buf, int start, int end, int initialState) {
             lexer.reset(buf, start, end, initialState);
+        }
+    }
+
+    public static class MQL4SyntaxHighlighterFactory extends SyntaxHighlighterFactory {
+        @NotNull
+        @Override
+        public SyntaxHighlighter getSyntaxHighlighter(Project project, VirtualFile virtualFile) {
+            return new MQL4SyntaxHighlighter();
         }
     }
 }

@@ -24,6 +24,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Documentation provider for MQL4 language.
+ */
 public class MQL4DocumentationProvider extends DocumentationProviderEx implements ExternalDocumentationHandler {
 
     private static final Logger log = Logger.getInstance(MQL4DocumentationProvider.class);

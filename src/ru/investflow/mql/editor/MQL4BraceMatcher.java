@@ -8,6 +8,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.psi.MQL4Elements;
 
+/**
+ * Brace matcher for MQL4.
+ */
 public class MQL4BraceMatcher implements PairedBraceMatcher {
 
     private static BracePair[] PAIRS = {

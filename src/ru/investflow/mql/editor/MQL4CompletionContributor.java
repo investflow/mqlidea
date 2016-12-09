@@ -22,11 +22,15 @@ import java.util.List;
 
 import static com.intellij.patterns.PlatformPatterns.psiElement;
 
+/**
+ * Code completion for MQL4 files.
+ */
 public class MQL4CompletionContributor extends CompletionContributor {
 
     private static final PsiElementPattern.Capture<PsiElement> IN_COMMENT = psiElement().inside(PsiComment.class);
 
     public MQL4CompletionContributor() {
+        // code completion
         extend(CompletionType.BASIC,
                 psiElement()
                         .withLanguage(MQL4Language.INSTANCE)
@@ -40,6 +44,7 @@ public class MQL4CompletionContributor extends CompletionContributor {
                 new MQL4IdentifiersCompletionProvider()
         );
 
+        // comments completion
         extend(CompletionType.BASIC,
                 psiElement()
                         .withLanguage(MQL4Language.INSTANCE)
@@ -48,6 +53,9 @@ public class MQL4CompletionContributor extends CompletionContributor {
         );
     }
 
+    /**
+     * Cached keyword completions
+     */
     private static final List<LookupElementBuilder> KEYWORD_COMPLETIONS = new ArrayList<>();
 
     private static List<LookupElementBuilder> getKeywordCompletions() {
