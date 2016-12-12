@@ -1,6 +1,9 @@
-package ru.investflow.mql;
+package ru.investflow.mql.action;
 
 import com.intellij.ide.actions.CreateFileAction;
+import ru.investflow.mql.MQL4FileType;
+import ru.investflow.mql.MQL4Icons;
+import ru.investflow.mql.MQL4PluginResources;
 
 /**
  * The "New MQL4 File" action.

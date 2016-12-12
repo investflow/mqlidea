@@ -18,7 +18,7 @@
     <depends>com.intellij.modules.lang</depends>
 
     <actions>
-        <action id="NewMQL4File" class="ru.investflow.mql.CreateMQL4FileAction">
+        <action id="NewMQL4File" class="ru.investflow.mql.action.CreateMQL4FileAction">
             <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
         </action>
     </actions>
@@ -33,15 +33,19 @@
         </component>
     </application-components>
 
+
     <extensions defaultExtensionNs="com.intellij">
         <fileTypeFactory implementation="ru.investflow.mql.MQL4FileTypeFactory"/>
-        <lang.parserDefinition language="MQL4" implementationClass="ru.investflow.mql.MQL4ParserDefinition"/>
+        <lang.parserDefinition language="MQL4" implementationClass="ru.investflow.mql.parser.MQL4ParserDefinition"/>
         <lang.syntaxHighlighterFactory language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4SyntaxHighlighter$MQL4SyntaxHighlighterFactory"/>
-        <lang.commenter language="MQL4" implementationClass="ru.investflow.mql.MQL4Commenter"/>
+        <lang.commenter language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4Commenter"/>
         <lang.documentationProvider language="MQL4" implementationClass="ru.investflow.mql.doc.MQL4DocumentationProvider"/>
         <lang.braceMatcher language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4BraceMatcher"/>
         <lang.foldingBuilder language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4FoldingBuilder"/>
         <completion.contributor language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4CompletionContributor"/>
+
+        <!-- sdk -->
+        <sdkType implementation="ru.investflow.mql.sdk.MQL4SdkType"/>
 
         <!--
         https://confluence.jetbrains.com/display/IDEADEV/Customizing+the+IDEA+Settings+Dialog

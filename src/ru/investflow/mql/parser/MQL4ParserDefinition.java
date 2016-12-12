@@ -1,4 +1,4 @@
-package ru.investflow.mql;
+package ru.investflow.mql.parser;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -14,6 +14,8 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
+import ru.investflow.mql.MQL4Language;
+import ru.investflow.mql.MQL4Lexer;
 import ru.investflow.mql.parser.MQL4Parser;
 import ru.investflow.mql.psi.MQL4ElementsFactory;
 import ru.investflow.mql.psi.MQL4Elements;

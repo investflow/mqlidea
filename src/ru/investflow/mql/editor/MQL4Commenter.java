@@ -1,4 +1,4 @@
-package ru.investflow.mql;
+package ru.investflow.mql.editor;
 
 import org.jetbrains.annotations.Nullable;
 

@@ -1,6 +1,6 @@
 package parser;
 
-import ru.investflow.mql.MQL4ParserDefinition;
+import ru.investflow.mql.parser.MQL4ParserDefinition;
 
 public class PreprocessorTest extends MQL4ParserTestBase {
     public PreprocessorTest() {
