@@ -46,6 +46,10 @@
 
         <!-- sdk -->
         <sdkType implementation="ru.investflow.mql.sdk.MQL4SdkType"/>
+        <!--build runner-->
+        <programRunner implementation="ru.investflow.mql.runconfig.MQL4CompilerRunner"/>
+        <runConfigurationProducer implementation="ru.investflow.mql.runconfig.MQL4RunCompilerConfigurationProducer"/>
+        <configurationType implementation="ru.investflow.mql.runconfig.MQL4RunCompilerConfigurationType"/>
 
         <!--
         https://confluence.jetbrains.com/display/IDEADEV/Customizing+the+IDEA+Settings+Dialog
