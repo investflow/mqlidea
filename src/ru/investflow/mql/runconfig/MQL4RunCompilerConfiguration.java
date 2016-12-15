@@ -15,9 +15,9 @@ import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import ru.investflow.mql.runconfig.ui.MQL4CompilerRunnerEditor;
 
 import javax.swing.JComponent;
-import javax.swing.JLabel;
 
 public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
 
@@ -28,23 +28,7 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
     @NotNull
     @Override
     public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
-        return new SettingsEditor<RunConfiguration>() {
-            @Override
-            protected void resetEditorFrom(@NotNull RunConfiguration runConfiguration) {
-                //todo:
-            }
-
-            @Override
-            protected void applyEditorTo(@NotNull RunConfiguration runConfiguration) throws ConfigurationException {
-                //todo:
-            }
-
-            @NotNull
-            @Override
-            protected JComponent createEditor() {
-                return new JLabel("TODO: Editor");
-            }
-        };
+        return new MQL4CompilerRunnerEditor(this);
     }
 
     @Override
