@@ -10,16 +10,22 @@ import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.runners.ProgramRunner;
-import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.runconfig.ui.MQL4CompilerRunnerEditor;
 
-import javax.swing.JComponent;
-
 public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
+
+    /**
+     * Selected SDK name.
+     * There is a difference between 'null' and empty string values:
+     * null -> the value was never set
+     * empty -> the value was manually set to 'none'
+     */
+    @Nullable
+    public String sdkName;
 
     protected MQL4RunCompilerConfiguration(@NotNull Project project, @NotNull ConfigurationFactory factory, String name) {
         super(project, factory, name);
@@ -28,12 +34,12 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
     @NotNull
     @Override
     public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
-        return new MQL4CompilerRunnerEditor(this);
+        return new MQL4CompilerRunnerEditor();
     }
 
     @Override
     public void checkConfiguration() throws RuntimeConfigurationException {
-        //todo:
+        // nothing to check
     }
 
     @Nullable
