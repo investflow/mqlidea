@@ -27,6 +27,12 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
     @Nullable
     public String sdkName;
 
+    /**
+     * File to compile. Either full path of sub-path in SDK dir.
+     */
+    @NotNull
+    public String fileToCompile = "";
+
     protected MQL4RunCompilerConfiguration(@NotNull Project project, @NotNull ConfigurationFactory factory, String name) {
         super(project, factory, name);
     }
@@ -34,7 +40,7 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
     @NotNull
     @Override
     public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
-        return new MQL4CompilerRunnerEditor();
+        return new MQL4CompilerRunnerEditor(getProject());
     }
 
     @Override
