@@ -53,6 +53,7 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
         }
         sdkComboBox.setSelectedSdk(selectedSdk);
         fileField.setText(configuration.fileToCompile);
+        buildEncodingField.setText(configuration.buildEncoding);
     }
 
     @Override
@@ -60,6 +61,7 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
         String selectedSdkName = sdkComboBox.getSelectedSdkName();
         configuration.sdkName = selectedSdkName == null ? "" : selectedSdkName;
         configuration.fileToCompile = fileField.getText();
+        configuration.buildEncoding = buildEncodingField.getText();
     }
 
     @NotNull
