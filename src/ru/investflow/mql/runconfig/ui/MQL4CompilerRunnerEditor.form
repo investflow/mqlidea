@@ -34,7 +34,7 @@
         <properties>
           <inheritsPopupMenu value="true"/>
           <labelFor value="e87b2"/>
-          <text value="Build dir:"/>
+          <text value="Build Dir:"/>
         </properties>
       </component>
       <component id="b04e6" class="com.intellij.openapi.ui.TextFieldWithBrowseButton" binding="fileField">
@@ -74,7 +74,7 @@
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Build encoding:"/>
+          <text value="Build Encoding:"/>
         </properties>
       </component>
       <component id="e8c01" class="javax.swing.JTextField" binding="buildEncodingField">

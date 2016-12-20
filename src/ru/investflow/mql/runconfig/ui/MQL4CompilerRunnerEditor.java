@@ -24,7 +24,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConfiguration> {
     private JPanel rootPanel;
@@ -35,6 +37,7 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
 
     public MQL4CompilerRunnerEditor(@NotNull Project project) {
         new MQL4FileSelector(project).setField(fileField);
+        new MQL4BuildDirSelector(project).setField(buildDirField);
     }
 
     @Override
@@ -54,6 +57,7 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
         sdkComboBox.setSelectedSdk(selectedSdk);
         fileField.setText(configuration.fileToCompile);
         buildEncodingField.setText(configuration.buildEncoding);
+        buildDirField.setText(configuration.buildDir);
     }
 
     @Override
@@ -62,6 +66,7 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
         configuration.sdkName = selectedSdkName == null ? "" : selectedSdkName;
         configuration.fileToCompile = fileField.getText();
         configuration.buildEncoding = buildEncodingField.getText();
+        configuration.buildDir = buildDirField.getText();
     }
 
     @NotNull
@@ -95,6 +100,43 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
             String resultPath = result.getPresentableUrl();
             if (projectPath != null && resultPath.startsWith(projectPath)) {
                 return resultPath.substring(projectPath.length() + 1);
+            }
+            return resultPath;
+        }
+    }
+
+    private class MQL4BuildDirSelector extends BrowseModuleValueActionListener<JTextField> {
+        private final Project project;
+
+        public MQL4BuildDirSelector(Project project) {
+            super(project);
+            this.project = project;
+        }
+
+        @Nullable
+        @Override
+        protected String showDialog() {
+            FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor()
+                    .withShowHiddenFiles(true);
+            descriptor.setTitle("Select MQL4 File…");
+            Sdk sdk = sdkComboBox.getSelectedSdk();
+            FileChooserDialog chooser = FileChooserFactory.getInstance().createFileChooser(descriptor, project, null);
+
+            // Default dir is ${SDK_ROOT} or ${SDK_ROOT}/MQL4/Experts if exists
+            VirtualFile sdkHomeFile = sdk == null ? null : sdk.getHomeDirectory();
+            VirtualFile mql4Dir = sdkHomeFile == null ? null : sdkHomeFile.findChild("MQL4");
+            VirtualFile expertsDir = mql4Dir == null ? null : mql4Dir.findChild("Experts");
+            VirtualFile defaultDir = Stream.of(expertsDir, mql4Dir, sdkHomeFile).filter(Objects::nonNull).findFirst().orElse(null);
+
+            VirtualFile[] selectedFolders = sdkHomeFile == null ? chooser.choose(project) : chooser.choose(project, defaultDir);
+            if (selectedFolders.length == 0) {
+                return null;
+            }
+            VirtualFile result = selectedFolders[0];
+            String sdkPath = sdkHomeFile == null ? null : sdkHomeFile.getPresentableUrl();
+            String resultPath = result.getPresentableUrl();
+            if (sdkPath != null && resultPath.startsWith(sdkPath)) {
+                return resultPath.substring(sdkPath.length() + 1);
             }
             return resultPath;
         }

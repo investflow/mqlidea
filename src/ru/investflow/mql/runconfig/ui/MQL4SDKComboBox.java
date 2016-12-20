@@ -40,8 +40,13 @@ public class MQL4SDKComboBox extends ComboBox<Sdk> {
 
     @Nullable
     public String getSelectedSdkName() {
-        Sdk sdk = model.getSelectedItem();
+        Sdk sdk = getSelectedSdk();
         return sdk == null ? null : sdk.getName();
+    }
+
+    @Nullable
+    public Sdk getSelectedSdk() {
+        return model.getSelectedItem();
     }
 
     public void setSelectedSdk(@Nullable Sdk sdk) {

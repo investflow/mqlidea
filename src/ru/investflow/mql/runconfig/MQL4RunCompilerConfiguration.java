@@ -42,6 +42,12 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
     public String fileToCompile = "";
 
     /**
+     * Build dir - a dir to copy file to before compilation start..
+     */
+    @NotNull
+    public String buildDir = "";
+
+    /**
      * File encoding to convert MQL4 file before passing it to compiler.
      */
     @SuppressWarnings("InjectedReferences")
@@ -76,6 +82,11 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
             throw new RuntimeConfigurationException("No SDK selected.");
         }
         //todo: check SDK exists
+
+        if (buildDir.isEmpty()) {
+            throw new RuntimeConfigurationException("No 'Build Dir' specified.");
+        }
+        //todo: check build dir exists
     }
 
     @Nullable
@@ -90,6 +101,7 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
         addElementWithValueAttribute(element, "sdk", sdkName);
         addElementWithValueAttribute(element, "file", fileToCompile);
         addElementWithValueAttribute(element, "encoding", buildEncoding);
+        addElementWithValueAttribute(element, "buildDir", buildDir);
     }
 
     @Override
@@ -98,6 +110,7 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
         sdkName = getFirstChildValueAttribute(element, "sdk");
         fileToCompile = Objects.toString(getFirstChildValueAttribute(element, "file"), "");
         buildEncoding = Objects.toString(getFirstChildValueAttribute(element, "encoding"), "");
+        buildDir = Objects.toString(getFirstChildValueAttribute(element, "buildDir"), "");
     }
 
     @Override
