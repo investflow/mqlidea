@@ -47,12 +47,10 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
         sdkComboBox.addItem(null);
         mql4Sdks.forEach(s -> sdkComboBox.addItem(s));
 
-        Sdk selectedSdk;
-        if (configuration.sdkName == null) {
+        Sdk selectedSdk = configuration.getSdk();
+        if (selectedSdk == null) {
             Project project = configuration.getProject();
             selectedSdk = ProjectRootManager.getInstance(project).getProjectSdk();
-        } else {
-            selectedSdk = mql4Sdks.stream().filter(s -> s.getName().equals(configuration.sdkName)).findFirst().orElse(null);
         }
         sdkComboBox.setSelectedSdk(selectedSdk);
         fileField.setText(configuration.fileToCompile);

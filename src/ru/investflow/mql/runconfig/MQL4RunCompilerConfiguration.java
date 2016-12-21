@@ -10,16 +10,23 @@ import com.intellij.execution.configurations.RuntimeConfigurationException;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.projectRoots.ProjectJdkTable;
+import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.runconfig.ui.MQL4CompilerRunnerEditor;
+import ru.investflow.mql.sdk.MQL4SdkType;
 
+import java.io.File;
 import java.nio.charset.Charset;
 import java.nio.charset.UnsupportedCharsetException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import static com.intellij.openapi.util.JDOMExternalizerUtil.addElementWithValueAttribute;
 import static com.intellij.openapi.util.JDOMExternalizerUtil.getFirstChildValueAttribute;
@@ -92,7 +99,7 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
     @Nullable
     @Override
     public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
-        return null;
+        return new MQL4CompilerCommandLineState(this, environment);
     }
 
     @Override
@@ -116,5 +123,47 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
     @Override
     protected boolean isNewSerializationUsed() {
         return super.isNewSerializationUsed();
+    }
+
+    @Nullable
+    public Sdk getSdk() {
+        if (sdkName == null || sdkName.isEmpty()) {
+            return null;
+        }
+        Sdk[] sdks = ProjectJdkTable.getInstance().getAllJdks();
+        List<Sdk> mql4Sdks = Arrays.stream(sdks).filter(s -> s.getSdkType() instanceof MQL4SdkType).collect(Collectors.toList());
+
+        return mql4Sdks.stream()
+                .filter(s -> s.getName().equals(sdkName))
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Nullable
+    public File getBuildDirAsFile() {
+        if (buildDir.isEmpty()) {
+            return null;
+        }
+        File res = new File(buildDir);
+        if (res.isDirectory()) {
+            return res;
+        }
+        Sdk sdk = getSdk();
+        if (sdk == null) {
+            throw new IllegalStateException("SDK not found: " + sdkName);
+        }
+        return new File(sdk.getHomePath() + "/" + buildDir);
+    }
+
+    @Nullable
+    public File getFileToCompileAsFile() {
+        if (fileToCompile.isEmpty()) {
+            return null;
+        }
+        String projectPath = getProject().getPresentableUrl();
+        if (projectPath != null && new File(projectPath, fileToCompile).exists()) {
+            return new File(projectPath, fileToCompile);
+        }
+        return new File(fileToCompile);
     }
 }
