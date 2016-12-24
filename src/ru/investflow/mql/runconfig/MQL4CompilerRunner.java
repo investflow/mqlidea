@@ -2,6 +2,7 @@ package ru.investflow.mql.runconfig;
 
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.ExecutionResult;
+import com.intellij.execution.Executor;
 import com.intellij.execution.RunProfileStarter;
 import com.intellij.execution.configurations.RunProfile;
 import com.intellij.execution.configurations.RunProfileState;
@@ -36,12 +37,12 @@ public class MQL4CompilerRunner extends AsyncGenericProgramRunner {
     @NotNull
     @Override
     protected Promise<RunProfileStarter> prepare(@NotNull ExecutionEnvironment environment, @NotNull RunProfileState state) throws ExecutionException {
+        FileDocumentManager.getInstance().saveAllDocuments();
         AsyncPromise<RunProfileStarter> buildPromise = new AsyncPromise<>();
         buildPromise.setResult(new RunProfileStarter() {
             @Nullable
             @Override
             public RunContentDescriptor execute(@NotNull RunProfileState state, @NotNull ExecutionEnvironment env) throws ExecutionException {
-                FileDocumentManager.getInstance().saveAllDocuments();
                 ExecutionResult executionResult = state.execute(env.getExecutor(), MQL4CompilerRunner.this);
                 return executionResult != null ? new RunContentBuilder(executionResult, env).showRunContent(env.getContentToReuse()) : null;
             }

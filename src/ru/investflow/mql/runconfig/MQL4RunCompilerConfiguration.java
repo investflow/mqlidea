@@ -14,6 +14,7 @@ import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
+import com.intellij.openapi.vfs.VirtualFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -165,5 +166,10 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
             return new File(projectPath, fileToCompile);
         }
         return new File(fileToCompile);
+    }
+
+    @Nullable
+    public VirtualFile getFileToCompileAsVirtualFile() {
+        return getProject().getBaseDir().findFileByRelativePath(fileToCompile);
     }
 }

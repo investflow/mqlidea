@@ -1,15 +1,27 @@
 package ru.investflow.mql.runconfig;
 
+import com.intellij.execution.DefaultExecutionResult;
 import com.intellij.execution.ExecutionException;
+import com.intellij.execution.ExecutionResult;
+import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.CommandLineState;
 import com.intellij.execution.configurations.GeneralCommandLine;
+import com.intellij.execution.filters.Filter;
+import com.intellij.execution.filters.HyperlinkInfo;
+import com.intellij.execution.filters.OpenFileHyperlinkInfo;
 import com.intellij.execution.process.KillableColoredProcessHandler;
 import com.intellij.execution.process.OSProcessHandler;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessTerminatedListener;
 import com.intellij.execution.runners.ExecutionEnvironment;
+import com.intellij.execution.runners.ProgramRunner;
+import com.intellij.execution.ui.ConsoleView;
+import com.intellij.execution.ui.ConsoleViewContentType;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.projectRoots.Sdk;
+import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,12 +35,44 @@ import java.nio.file.StandardOpenOption;
 import static ru.investflow.mql.util.OSUtils.isWindowsOS;
 
 class MQL4CompilerCommandLineState extends CommandLineState {
+
     @NotNull
     private final MQL4RunCompilerConfiguration runConfig;
+
+    @Nullable
+    private ConsoleView console;
 
     MQL4CompilerCommandLineState(@NotNull MQL4RunCompilerConfiguration runConfig, @NotNull ExecutionEnvironment environment) {
         super(environment);
         this.runConfig = runConfig;
+    }
+
+    @NotNull
+    @Override
+    public ExecutionResult execute(@NotNull Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
+        DefaultExecutionResult result = (DefaultExecutionResult) super.execute(executor, runner);
+        console = (ConsoleView) result.getExecutionConsole();
+        console.addMessageFilter((line, entireLength) -> {
+            Project p = MQL4CompilerCommandLineState.this.getEnvironment().getProject();
+            VirtualFile fileToCompile = runConfig.getFileToCompileAsVirtualFile();
+            if (fileToCompile != null) {
+                String fileLocationPrefix = fileToCompile.getName() + "(";
+                int fileLocationEndIdx = line.indexOf(')');
+                if (line.startsWith(fileLocationPrefix) && fileLocationEndIdx > fileLocationPrefix.length()) {
+                    String location = line.substring(fileLocationPrefix.length(), fileLocationEndIdx);
+                    String[] rowAndCol = location.split(",");
+                    if (rowAndCol.length == 2) {
+                        int row = Integer.parseInt(rowAndCol[0]) - 1;
+                        int col = Integer.parseInt(rowAndCol[1]) - 1;
+                        HyperlinkInfo hyperlinkInfo = new OpenFileHyperlinkInfo(p, fileToCompile, row, col);
+                        int startPos = entireLength - line.length();
+                        return new Filter.Result(startPos, startPos + fileLocationEndIdx, hyperlinkInfo);
+                    }
+                }
+            }
+            return null;
+        });
+        return result;
     }
 
     @NotNull
@@ -70,11 +114,28 @@ class MQL4CompilerCommandLineState extends CommandLineState {
 
         cmd.withParentEnvironmentType(GeneralCommandLine.ParentEnvironmentType.CONSOLE);
 
-        OSProcessHandler processHandler = new KillableColoredProcessHandler(cmd);
+        OSProcessHandler processHandler = new KillableColoredProcessHandler(cmd) {
+
+            protected void onOSProcessTerminated(int exitCode) {
+                super.onOSProcessTerminated(exitCode);
+                String logFileName = copiedFileToCompile.getName().replace(".mq4", ".log");
+                File logFile = new File(copiedFileToCompile.getParent(), logFileName);
+                if (!logFile.exists() || console == null) {
+                    return;
+                }
+                try {
+                    String rawLog = new String(Files.readAllBytes(Paths.get(logFile.toURI())), StandardCharsets.UTF_16LE);
+                    console.print(rawLog, ConsoleViewContentType.NORMAL_OUTPUT);
+                } catch (IOException e) {
+                    //todo: log
+                }
+            }
+        };
         ProcessTerminatedListener.attach(processHandler, getEnvironment().getProject());
 
         return processHandler;
     }
+
 
     private static void copyFile(@NotNull File srcFile, @NotNull Charset srcCharset, @NotNull File dstFile, @NotNull Charset dstCharset) throws IOException {
         Path fromPath = Paths.get(srcFile.toURI());
