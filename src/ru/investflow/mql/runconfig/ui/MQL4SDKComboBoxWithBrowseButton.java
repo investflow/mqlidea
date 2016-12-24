@@ -22,20 +22,18 @@ public class MQL4SDKComboBoxWithBrowseButton extends ComboboxWithBrowseButton {
         super(new MQL4SDKComboBox());
         this.comboBox = (MQL4SDKComboBox) getComboBox();
 
-        addActionListener(e -> {
-            SdkConfigurationUtil.selectSdkHome(MQL4SdkType.INSTANCE, sdkHome -> {
-                ProjectSdksModel m = ProjectStructureConfigurable.getInstance(project).getProjectJdksModel();
-                m.addSdk(MQL4SdkType.INSTANCE, sdkHome, sdk -> {
-                    new WriteAction<Void>() {
-                        @Override
-                        protected void run(@NotNull Result result) throws Throwable {
-                            ProjectJdkTable.getInstance().addJdk(sdk);
-                        }
-                    }.execute();
-                    comboBox.addItem(sdk);
-                    comboBox.setSelectedSdk(sdk);
-                });
+        addActionListener(e -> SdkConfigurationUtil.selectSdkHome(MQL4SdkType.INSTANCE, sdkHome -> {
+            ProjectSdksModel m = ProjectStructureConfigurable.getInstance(project).getProjectJdksModel();
+            m.addSdk(MQL4SdkType.INSTANCE, sdkHome, sdk -> {
+                new WriteAction<Void>() {
+                    @Override
+                    protected void run(@NotNull Result result) throws Throwable {
+                        ProjectJdkTable.getInstance().addJdk(sdk);
+                    }
+                }.execute();
+                comboBox.addItem(sdk);
+                comboBox.setSelectedSdk(sdk);
             });
-        });
+        }));
     }
 }

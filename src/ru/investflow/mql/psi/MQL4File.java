@@ -25,9 +25,4 @@ public class MQL4File extends PsiFileBase {
     public String toString() {
         return "MQL4 File";
     }
-
-    @Override
-    public Icon getIcon(int flags) {
-        return super.getIcon(flags);
-    }
 }

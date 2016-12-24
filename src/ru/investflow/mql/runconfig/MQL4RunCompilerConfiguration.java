@@ -121,11 +121,6 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
         buildDir = Objects.toString(getFirstChildValueAttribute(element, "buildDir"), "");
     }
 
-    @Override
-    protected boolean isNewSerializationUsed() {
-        return super.isNewSerializationUsed();
-    }
-
     @Nullable
     public Sdk getSdk() {
         if (sdkName == null || sdkName.isEmpty()) {
