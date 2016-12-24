@@ -17,13 +17,10 @@
           <text value="&amp;SDK:"/>
         </properties>
       </component>
-      <component id="37f0c" class="ru.investflow.mql.runconfig.ui.MQL4SDKComboBox" binding="sdkComboBox">
+      <component id="73ac5" class="ru.investflow.mql.runconfig.ui.MQL4SDKComboBoxWithBrowseButton" binding="sdkComboBox">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties>
-          <toolTipText value="Metatrader SDK to use during compilation process"/>
-        </properties>
       </component>
       <component id="a42dd" class="javax.swing.JLabel">
         <constraints>

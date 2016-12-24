@@ -9,7 +9,6 @@ import com.intellij.psi.tree.IElementType;
 import com.intellij.util.containers.hash.HashMap;
 import ru.investflow.mql.psi.MQL4Elements;
 
-import static com.intellij.lang.java.parser.JavaParserUtil.error;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static ru.investflow.mql.parser.parsing.LiteralParsing.isLiteral;
@@ -28,7 +27,7 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
         b.advanceLexer(); // #property
         try {
             if (b.getTokenType() != IDENTIFIER) {
-                error(b, "Identifier expected");
+                //error(b, "Identifier expected");
                 return true;
             }
             assertNoLineBreaksInRange(b, startOffset, "Line break is not allowed inside #property block");

@@ -21,8 +21,11 @@ public class MQL4SdkType extends SdkType {
 
     public static final String MQL4_SDK_TYPE_ID = "MQL4 SDK";
 
+    public static MQL4SdkType INSTANCE;
+
     public MQL4SdkType() {
         super(MQL4_SDK_TYPE_ID);
+        INSTANCE = this;
     }
 
     @NotNull

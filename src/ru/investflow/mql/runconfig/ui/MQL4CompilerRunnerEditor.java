@@ -31,28 +31,29 @@ import java.util.stream.Stream;
 public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConfiguration> {
     private JPanel rootPanel;
     private TextFieldWithBrowseButton fileField;
-    private MQL4SDKComboBox sdkComboBox;
+    private MQL4SDKComboBoxWithBrowseButton sdkComboBox;
     private JTextField buildEncodingField;
     private TextFieldWithBrowseButton buildDirField;
 
     public MQL4CompilerRunnerEditor(@NotNull Project project) {
         new MQL4FileSelector(project).setField(fileField);
         new MQL4BuildDirSelector(project).setField(buildDirField);
+        sdkComboBox.project = project;
     }
 
     @Override
     protected void resetEditorFrom(@NotNull MQL4RunCompilerConfiguration configuration) {
         Sdk[] sdks = ProjectJdkTable.getInstance().getAllJdks();
         List<Sdk> mql4Sdks = Arrays.stream(sdks).filter(s -> s.getSdkType() instanceof MQL4SdkType).collect(Collectors.toList());
-        sdkComboBox.addItem(null);
-        mql4Sdks.forEach(s -> sdkComboBox.addItem(s));
+        sdkComboBox.comboBox.addItem(null);
+        mql4Sdks.forEach(s -> sdkComboBox.comboBox.addItem(s));
 
         Sdk selectedSdk = configuration.getSdk();
         if (selectedSdk == null) {
             Project project = configuration.getProject();
             selectedSdk = ProjectRootManager.getInstance(project).getProjectSdk();
         }
-        sdkComboBox.setSelectedSdk(selectedSdk);
+        sdkComboBox.comboBox.setSelectedSdk(selectedSdk);
         fileField.setText(configuration.fileToCompile);
         buildEncodingField.setText(configuration.buildEncoding);
         buildDirField.setText(configuration.buildDir);
@@ -60,7 +61,7 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
 
     @Override
     protected void applyEditorTo(@NotNull MQL4RunCompilerConfiguration configuration) throws ConfigurationException {
-        String selectedSdkName = sdkComboBox.getSelectedSdkName();
+        String selectedSdkName = sdkComboBox.comboBox.getSelectedSdkName();
         configuration.sdkName = selectedSdkName == null ? "" : selectedSdkName;
         configuration.fileToCompile = fileField.getText();
         configuration.buildEncoding = buildEncodingField.getText();
@@ -74,9 +75,10 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
     }
 
     private static class MQL4FileSelector extends BrowseModuleValueActionListener<JTextField> {
+        @NotNull
         private final Project project;
 
-        public MQL4FileSelector(Project project) {
+        public MQL4FileSelector(@NotNull Project project) {
             super(project);
             this.project = project;
         }
@@ -104,9 +106,10 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
     }
 
     private class MQL4BuildDirSelector extends BrowseModuleValueActionListener<JTextField> {
+        @NotNull
         private final Project project;
 
-        public MQL4BuildDirSelector(Project project) {
+        public MQL4BuildDirSelector(@NotNull Project project) {
             super(project);
             this.project = project;
         }
@@ -114,10 +117,9 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
         @Nullable
         @Override
         protected String showDialog() {
-            FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor()
-                    .withShowHiddenFiles(true);
+            FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor().withShowHiddenFiles(true);
             descriptor.setTitle("Select MQL4 File…");
-            Sdk sdk = sdkComboBox.getSelectedSdk();
+            Sdk sdk = sdkComboBox.comboBox.getSelectedSdk();
             FileChooserDialog chooser = FileChooserFactory.getInstance().createFileChooser(descriptor, project, null);
 
             // Default dir is ${SDK_ROOT} or ${SDK_ROOT}/MQL4/Experts if exists

@@ -4,7 +4,6 @@ import com.intellij.lang.PsiBuilder;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 
-import static com.intellij.lang.java.parser.JavaParserUtil.error;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
@@ -66,7 +65,7 @@ public class PreprocessorIfDefParsing implements MQL4Elements {
 
     private static boolean parseRequiredIdentifier(PsiBuilder b) {
         if (b.getTokenType() != IDENTIFIER) {
-            error(b, "Identifier expected");
+            //error(b, "Identifier expected");
             if (isLiteral(b)) {
                 b.advanceLexer();
             }

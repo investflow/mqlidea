@@ -15,7 +15,6 @@ public class MQL4SDKComboBox extends ComboBox<Sdk> {
 
     @NotNull
     private final SortedComboBoxModel<Sdk> model;
-    private String selectedSdkName;
 
     @UsedIndirectly
     public MQL4SDKComboBox() {
