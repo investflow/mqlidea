@@ -84,17 +84,26 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
         if (fileToCompile.isEmpty()) {
             throw new RuntimeConfigurationException("No MQL4 file selected.");
         }
-        // todo: check file exists
+        VirtualFile file = getFileToCompileAsVirtualFile();
+        if (file == null || !file.exists()) {
+            throw new RuntimeConfigurationException("File not found: " + fileToCompile);
+        }
 
         if (sdkName == null || sdkName.isEmpty()) {
             throw new RuntimeConfigurationException("No SDK selected.");
         }
-        //todo: check SDK exists
+        Sdk sdk = getSdk();
+        if (sdk == null) {
+            throw new RuntimeConfigurationException("SDK not found: " + sdkName);
+        }
 
         if (buildDir.isEmpty()) {
             throw new RuntimeConfigurationException("No 'Build Dir' specified.");
         }
-        //todo: check build dir exists
+        File buildDirFile = getBuildDirAsFile();
+        if (buildDirFile == null || !buildDirFile.isDirectory()) {
+            throw new RuntimeConfigurationException("'Build Dir' is not a valid directory: " + buildDirFile);
+        }
     }
 
     @Nullable

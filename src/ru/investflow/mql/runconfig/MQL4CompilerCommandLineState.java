@@ -20,8 +20,10 @@ import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.ui.SimpleTextAttributes;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import ru.investflow.mql.util.OSUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,7 +34,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-import static ru.investflow.mql.util.OSUtils.isWindowsOS;
+import static ru.investflow.mql.util.OSUtils.isWine;
 
 class MQL4CompilerCommandLineState extends CommandLineState {
 
@@ -53,21 +55,31 @@ class MQL4CompilerCommandLineState extends CommandLineState {
         DefaultExecutionResult result = (DefaultExecutionResult) super.execute(executor, runner);
         console = (ConsoleView) result.getExecutionConsole();
         console.addMessageFilter((line, entireLength) -> {
+            int startPos = entireLength - line.length();
+            if (OSUtils.isWine() && line.startsWith("fixme:")) {
+                return new Filter.Result(startPos, entireLength, null, SimpleTextAttributes.GRAYED_ITALIC_ATTRIBUTES.toTextAttributes());
+            }
             Project p = MQL4CompilerCommandLineState.this.getEnvironment().getProject();
             VirtualFile fileToCompile = runConfig.getFileToCompileAsVirtualFile();
-            if (fileToCompile != null) {
-                String fileLocationPrefix = fileToCompile.getName() + "(";
-                int fileLocationEndIdx = line.indexOf(')');
-                if (line.startsWith(fileLocationPrefix) && fileLocationEndIdx > fileLocationPrefix.length()) {
-                    String location = line.substring(fileLocationPrefix.length(), fileLocationEndIdx);
-                    String[] rowAndCol = location.split(",");
-                    if (rowAndCol.length == 2) {
-                        int row = Integer.parseInt(rowAndCol[0]) - 1;
-                        int col = Integer.parseInt(rowAndCol[1]) - 1;
-                        HyperlinkInfo hyperlinkInfo = new OpenFileHyperlinkInfo(p, fileToCompile, row, col);
-                        int startPos = entireLength - line.length();
-                        return new Filter.Result(startPos, startPos + fileLocationEndIdx, hyperlinkInfo);
-                    }
+            if (fileToCompile == null) {
+                return null;
+            }
+            if (line.startsWith("Result: ")) {
+                return new Filter.Result(startPos, entireLength, null, SimpleTextAttributes.REGULAR_BOLD_ATTRIBUTES.toTextAttributes());
+            }
+            if (line.startsWith(fileToCompile.getName() + " : information: ")) {
+                return new Filter.Result(startPos, entireLength, null, SimpleTextAttributes.GRAYED_BOLD_ATTRIBUTES.toTextAttributes());
+            }
+            String fileLocationPrefix = fileToCompile.getName() + "(";
+            int fileLocationEndIdx = line.indexOf(')');
+            if (line.startsWith(fileLocationPrefix) && fileLocationEndIdx > fileLocationPrefix.length()) {
+                String location = line.substring(fileLocationPrefix.length(), fileLocationEndIdx);
+                String[] rowAndCol = location.split(",");
+                if (rowAndCol.length == 2) {
+                    int row = Integer.parseInt(rowAndCol[0]) - 1;
+                    int col = Integer.parseInt(rowAndCol[1]) - 1;
+                    HyperlinkInfo hyperlinkInfo = new OpenFileHyperlinkInfo(p, fileToCompile, row, col);
+                    return new Filter.Result(startPos, startPos + fileLocationEndIdx, hyperlinkInfo);
                 }
             }
             return null;
@@ -82,7 +94,6 @@ class MQL4CompilerCommandLineState extends CommandLineState {
         if (sdk == null) {
             throw new ExecutionException("SDK not found: " + runConfig.sdkName);
         }
-        boolean useWine = !isWindowsOS();
         String metaeditorExePath = sdk.getHomePath() + "/metaeditor.exe";
         File buildDir = runConfig.getBuildDirAsFile();
         if (buildDir == null || !buildDir.isDirectory()) {
@@ -94,8 +105,9 @@ class MQL4CompilerCommandLineState extends CommandLineState {
             throw new ExecutionException("File not found: " + runConfig.fileToCompile);
         }
         File copiedFileToCompile = new File(buildDir, fileToCompile.getName());
+        VirtualFile virtualFileToCompile = runConfig.getFileToCompileAsVirtualFile();
         try {
-            Charset fileToCompileCharset = StandardCharsets.UTF_8; //todo: get info from editor
+            Charset fileToCompileCharset = virtualFileToCompile != null ? virtualFileToCompile.getCharset() : StandardCharsets.UTF_8;
             Charset copiedFileCharset = runConfig.buildEncoding.isEmpty() ? fileToCompileCharset : Charset.forName(runConfig.buildEncoding);
             copyFile(fileToCompile, fileToCompileCharset, copiedFileToCompile, copiedFileCharset);
         } catch (Exception e) {
@@ -104,9 +116,9 @@ class MQL4CompilerCommandLineState extends CommandLineState {
 
         // Run MetaEditor compiler
         GeneralCommandLine cmd = new GeneralCommandLine();
-        cmd.setExePath(useWine ? "wine" : metaeditorExePath);
+        cmd.setExePath(isWine() ? "wine" : metaeditorExePath);
         cmd.setWorkDirectory(buildDir);
-        if (useWine) {
+        if (isWine()) {
             cmd.addParameter(metaeditorExePath);
         }
         cmd.addParameter("/compile:" + copiedFileToCompile.getName());
@@ -127,7 +139,7 @@ class MQL4CompilerCommandLineState extends CommandLineState {
                     String rawLog = new String(Files.readAllBytes(Paths.get(logFile.toURI())), StandardCharsets.UTF_16LE);
                     console.print(rawLog, ConsoleViewContentType.NORMAL_OUTPUT);
                 } catch (IOException e) {
-                    //todo: log
+                    throw new RuntimeException("Failed to read log file: " + logFile);
                 }
             }
         };
