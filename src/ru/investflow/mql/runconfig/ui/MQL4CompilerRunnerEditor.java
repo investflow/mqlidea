@@ -63,7 +63,7 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
     protected void applyEditorTo(@NotNull MQL4RunCompilerConfiguration configuration) throws ConfigurationException {
         String selectedSdkName = sdkComboBox.comboBox.getSelectedSdkName();
         configuration.sdkName = selectedSdkName == null ? "" : selectedSdkName;
-        configuration.fileToCompile = fileField.getText();
+        configuration.fileToCompile = fileField.getText().replace('\\', '/'); // convert to presentable path
         configuration.buildEncoding = buildEncodingField.getText();
         configuration.buildDir = buildDirField.getText();
     }

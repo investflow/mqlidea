@@ -44,7 +44,7 @@ public class MQL4SdkType extends SdkType {
     @Override
     public String suggestHomePath() {
         if (OSUtils.isWindowsOS()) {
-            return "c:/Program Files";
+            return "c:\\";
         }
         String home = System.getProperty("user.home");
         if (home == null) {
@@ -64,8 +64,8 @@ public class MQL4SdkType extends SdkType {
             log.debug("terminal.exe not found!");
             return false;
         }
-        if (!new File(path, "/MQL4/Include").exists()) {
-            log.debug("./MQL4/Include not found!");
+        if (!new File(path, "MQL4/Include").exists()) {
+            log.debug("MQL4/Include not found!");
             return false;
         }
         return true;
