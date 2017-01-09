@@ -21,11 +21,14 @@ public class MQL4SdkType extends SdkType {
 
     public static final String MQL4_SDK_TYPE_ID = "MQL4 SDK";
 
-    public static MQL4SdkType INSTANCE;
+    /**
+     * Note: this is not singleton in runtime. Intellij IDEA creates many instance of SdkType
+     */
+    @NotNull
+    public final static MQL4SdkType INSTANCE = new MQL4SdkType();
 
     public MQL4SdkType() {
         super(MQL4_SDK_TYPE_ID);
-        INSTANCE = this;
     }
 
     @NotNull
@@ -44,7 +47,15 @@ public class MQL4SdkType extends SdkType {
     @Override
     public String suggestHomePath() {
         if (OSUtils.isWindowsOS()) {
-            return "c:\\";
+            File res = new File("c:/Program Files (x86)");
+            if (res.isDirectory()) {
+                return res.getAbsolutePath();
+            }
+            res = new File("c:/Program Files");
+            if (res.isDirectory()) {
+                return res.getAbsolutePath();
+            }
+            return new File("C:/").getAbsolutePath();
         }
         String home = System.getProperty("user.home");
         if (home == null) {
@@ -58,14 +69,6 @@ public class MQL4SdkType extends SdkType {
         log.debug("Validating sdk path: " + path);
         if (!new File(path, "metaeditor.exe").exists()) {
             log.debug("metaeditor.exe not found!");
-            return false;
-        }
-        if (!new File(path, "terminal.exe").exists()) {
-            log.debug("terminal.exe not found!");
-            return false;
-        }
-        if (!new File(path, "MQL4/Include").exists()) {
-            log.debug("MQL4/Include not found!");
             return false;
         }
         return true;

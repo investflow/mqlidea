@@ -18,6 +18,7 @@ import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.MQL4FileType;
 import ru.investflow.mql.runconfig.MQL4RunCompilerConfiguration;
 import ru.investflow.mql.sdk.MQL4SdkType;
+import ru.investflow.mql.util.OSUtils;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -118,7 +119,7 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
         @Override
         protected String showDialog() {
             FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor().withShowHiddenFiles(true);
-            descriptor.setTitle("Select MQL4 File…");
+            descriptor.setTitle("Select Build Folder …");
             Sdk sdk = sdkComboBox.comboBox.getSelectedSdk();
             FileChooserDialog chooser = FileChooserFactory.getInstance().createFileChooser(descriptor, project, null);
 
@@ -126,9 +127,18 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
             VirtualFile sdkHomeFile = sdk == null ? null : sdk.getHomeDirectory();
             VirtualFile mql4Dir = sdkHomeFile == null ? null : sdkHomeFile.findChild("MQL4");
             VirtualFile expertsDir = mql4Dir == null ? null : mql4Dir.findChild("Experts");
+            // on Windows try make default build dir in the same location with 'Include' folder (user's AppData)
+            if (OSUtils.isWindowsOS() && sdkHomeFile != null && sdkHomeFile.findChild("MQL4/Include") == null) {
+                VirtualFile appDataSdkHome = OSUtils.findAppDataSDKHome(sdk);
+                if (appDataSdkHome != null) {
+                    mql4Dir = appDataSdkHome.findChild("MQL4");
+                    assert mql4Dir != null;
+                    expertsDir = mql4Dir.findChild("Experts");
+                }
+            }
             VirtualFile defaultDir = Stream.of(expertsDir, mql4Dir, sdkHomeFile).filter(Objects::nonNull).findFirst().orElse(null);
 
-            VirtualFile[] selectedFolders = sdkHomeFile == null ? chooser.choose(project) : chooser.choose(project, defaultDir);
+            VirtualFile[] selectedFolders = sdkHomeFile == null ? chooser.choose(null) : chooser.choose(null, defaultDir);
             if (selectedFolders.length == 0) {
                 return null;
             }
