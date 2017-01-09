@@ -1,6 +1,5 @@
 package ru.investflow.mql.util;
 
-import com.google.common.io.Files;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.vfs.StandardFileSystems;
@@ -12,6 +11,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 
 public class OSUtils {
 
@@ -50,7 +50,10 @@ public class OSUtils {
                 continue;
             }
             try {
-                String origin = Files.readFirstLine(originTxtFile, StandardCharsets.UTF_16);
+                String origin = Files.readAllLines(originTxtFile.toPath(), StandardCharsets.UTF_16).stream().findFirst().orElse("");
+                if (origin.isEmpty()) {
+                    continue;
+                }
                 File originDir = new File(origin);
                 if (!originDir.isDirectory()) {
                     continue;
