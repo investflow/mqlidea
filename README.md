@@ -5,4 +5,5 @@ Features:
 * Inlined documentation (Ctrl+Q)
 * Bracket matching
 * Comments folding
+* Compilation & errors navigation
 
