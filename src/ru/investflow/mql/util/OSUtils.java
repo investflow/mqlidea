@@ -2,9 +2,8 @@ package ru.investflow.mql.util;
 
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.projectRoots.Sdk;
-import com.intellij.openapi.vfs.StandardFileSystems;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,7 +31,7 @@ public class OSUtils {
         if (userHome == null) {
             return null;
         }
-        File terminalDir = new File(userHome, "Application Data/MetaQuotes/Terminal");
+        File terminalDir = new File(userHome, "AppData/Roaming/MetaQuotes/Terminal");
         if (!terminalDir.isDirectory()) {
             return null;
         }
@@ -40,7 +39,7 @@ public class OSUtils {
         if (files == null) {
             return null;
         }
-        VirtualFileSystem localFS = StandardFileSystems.local();
+        LocalFileSystem localFS = LocalFileSystem.getInstance();
         for (File f : files) {
             if (!f.isDirectory()) {
                 continue;
@@ -60,7 +59,7 @@ public class OSUtils {
                 }
                 VirtualFile res = localFS.findFileByPath(originDir.getAbsolutePath());
                 if (res != null && res.equals(sdk.getHomeDirectory())) {
-                    return localFS.findFileByPath(f.getAbsolutePath());
+                    return localFS.refreshAndFindFileByIoFile(f);
                 }
             } catch (IOException e) {
                 log.error("Error reading file: " + originTxtFile);
