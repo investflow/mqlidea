@@ -1,6 +1,6 @@
 ## MQL Idea - support for MQL4 programming language in JetBrains' IDEs.
 
-### Features:
+### Features
 * Syntax highlighting
 * Inlined documentation (Ctrl+Q)
 * Bracket matching
@@ -8,5 +8,5 @@
 * Compilation & errors navigation
 * Support for Windows & Linux
 
-## Setup
+### Setup
 * Check [Wiki](https://github.com/investflow/mqlidea/wiki) for details
