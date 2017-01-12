@@ -91,23 +91,24 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 "ushort"    { return MQL4Elements.USHORT_KEYWORD; }
 "void"      { return MQL4Elements.VOID_KEYWORD; }
 
-//
+
 // Access specificators
 "const"     { return MQL4Elements.CONST_KEYWORD; }
-//"public"    { return MQL4Elements.KW_PUBLIC; }
-//"private"   { return MQL4Elements.KW_PRIVATE; }
-//"virtual"   { return MQL4Elements.KW_VIRTUAL; }
-//"protected" { return MQL4Elements.KW_PROTECTED; }
-//
+"public"    { return MQL4Elements.PUBLIC_KEYWORD; }
+"private"   { return MQL4Elements.PRIVATE_KEYWORD; }
+"virtual"   { return MQL4Elements.VIRTUAL_KEYWORD; }
+"protected" { return MQL4Elements.PROTECTED_KEYWORD; }
+
 // Memory classes
 "extern"    { return MQL4Elements.EXTERN_KEYWORD; }
 "input"     { return MQL4Elements.INPUT_KEYWORD; }
 "static"    { return MQL4Elements.STATIC_KEYWORD; }
-//
+
 // Operators
 "break"     { return MQL4Elements.BREAK_KEYWORD; }
 "continue"  { return MQL4Elements.CONTINUE_KEYWORD; }
-//"delete"    { return MQL4Elements.KW_DELETE; }
+"delete"    { return MQL4Elements.DELETE_KEYWORD; }
+"new"       { return MQL4Elements.NEW_KEYWORD; }
 
 "if"        { return MQL4Elements.IF_KEYWORD; }
 "else"      { return MQL4Elements.ELSE_KEYWORD; }
@@ -120,18 +121,15 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 "case"      { return MQL4Elements.CASE_KEYWORD; }
 "default"   { return MQL4Elements.DEFAULT_KEYWORD; }
 
-
-//"new"       { return MQL4Elements.KW_NEW; }
-//
-//"operator"  { return MQL4Elements.KW_OPERATOR; }
-//"return"    { return MQL4Elements.KW_RETURN; }
+"operator"  { return MQL4Elements.OPERATOR_KEYWORD; }
+"return"    { return MQL4Elements.RETURN_KEYWORD; }
 "sizeof"    { return MQL4Elements.SIZEOF_KEYWORD; }
-//
+
 // Other
 "false"     { return MQL4Elements.FALSE_KEYWORD; }
-//"this"      { return MQL4Elements.KW_THIS; }
 "true"      { return MQL4Elements.TRUE_KEYWORD; }
-//"strict"    { return MQL4Elements.KW_STRICT; }
+"this"      { return MQL4Elements.THIS_KEYWORD; }
+"strict"    { return MQL4Elements.STRICT_KEYWORD; }
 
 "#define"   { return MQL4Elements.DEFINE_KEYWORD; }
 "#undef"    { return MQL4Elements.UNDEF_KEYWORD; }
@@ -139,12 +137,11 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 "#include"  { return MQL4Elements.INCLUDE_KEYWORD; }
 "#property" { return MQL4Elements.PROPERTY_KEYWORD; }
 
-//"template"  { return MQL4Elements.KW_TEMPLATE; }
-//"typename"  { return MQL4Elements.KW_TYPENAME; }
+"template"  { return MQL4Elements.TEMPLATE_KEYWORD; }
+"typename"  { return MQL4Elements.TYPENAME_KEYWORD; }
 
 
 {identifier}    { return MQL4Elements.IDENTIFIER; }
-
 
 // Operators & special characters
 
