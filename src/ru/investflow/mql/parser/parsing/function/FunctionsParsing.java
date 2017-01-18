@@ -29,7 +29,7 @@ public class FunctionsParsing implements MQL4Elements {
         Definition
     }
 
-    public static final TokenSet STOP_TOKENS = TokenSet.create(SEMICOLON, RPARENTH);
+    public static final TokenSet STOP_TOKENS = TokenSet.create(SEMICOLON, R_ROUND_BRACKET);
 
     /**
      * Form: TYPE IDENTIFIER ( ARG* ) (; |  {})
@@ -42,7 +42,7 @@ public class FunctionsParsing implements MQL4Elements {
         if (!matchSequence(b, Arrays.asList(
                 MQL4TokenSets.DATA_TYPES::contains,
                 t -> t == IDENTIFIER,
-                t -> t == LPARENTH
+                t -> t == L_ROUND_BRACKET
         ))) {
             return Failed;
         }
@@ -58,7 +58,7 @@ public class FunctionsParsing implements MQL4Elements {
                 ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE);
                 return result;
             }
-            if (!parseTokenOrFail(b, RPARENTH)) { // ')'
+            if (!parseTokenOrFail(b, R_ROUND_BRACKET)) { // ')'
                 ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE);
                 return result;
             }
@@ -66,7 +66,7 @@ public class FunctionsParsing implements MQL4Elements {
             if (b.getTokenType() == SEMICOLON) {
                 b.advanceLexer();
                 result = Declaration;
-            } else if (b.getTokenType() == LBRACE) {
+            } else if (b.getTokenType() == L_CURLY_BRACKET) {
                 CodeBlockParsing.parseCodeBlock(b, l + 1);
             } else {
                 if (expectedResult == Declaration) {
@@ -89,7 +89,7 @@ public class FunctionsParsing implements MQL4Elements {
         }
         PsiBuilder.Marker m = enter_section_(b);
         try {
-            while (b.getTokenType() != RPARENTH) {
+            while (b.getTokenType() != R_ROUND_BRACKET) {
                 PsiBuilder.Marker m2 = enter_section_(b);
                 try {
                     if (!MQL4TokenSets.DATA_TYPES.contains(b.getTokenType())) {
@@ -102,7 +102,7 @@ public class FunctionsParsing implements MQL4Elements {
                         return false;
                     }
                     b.advanceLexer();
-                    if (b.getTokenType() != RPARENTH && b.getTokenType() != COMMA) {
+                    if (b.getTokenType() != R_ROUND_BRACKET && b.getTokenType() != COMMA) {
                         b.error("Comma expected");
                         return false;
                     }

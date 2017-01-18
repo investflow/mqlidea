@@ -37,13 +37,13 @@ public interface MQL4Elements {
     IElementType COMMA = new MQL4ElementType("COMMA");
     IElementType DOT = new MQL4ElementType("DOT");
     IElementType GT = new MQL4ElementType("GT");
-    IElementType LBRACE = new MQL4ElementType("LBRACE");
-    IElementType LBRACKET = new MQL4ElementType("LBRACKET");
-    IElementType LPARENTH = new MQL4ElementType("LPARENTH");
     IElementType LT = new MQL4ElementType("LT");
-    IElementType RBRACE = new MQL4ElementType("RBRACE");
-    IElementType RBRACKET = new MQL4ElementType("RBRACKET");
-    IElementType RPARENTH = new MQL4ElementType("RPARENTH");
+    IElementType L_CURLY_BRACKET = new MQL4ElementType("L_CURLY_BRACKET");
+    IElementType R_CURLY_BRACKET = new MQL4ElementType("R_CURLY_BRACKET");
+    IElementType L_ROUND_BRACKET = new MQL4ElementType("L_ROUND_BRACKET");
+    IElementType R_ROUND_BRACKET = new MQL4ElementType("R_ROUND_BRACKET");
+    IElementType L_SQUARE_BRACKET = new MQL4ElementType("L_SQUARE_BRACKET");
+    IElementType R_SQUARE_BRACKET = new MQL4ElementType("R_SQUARE_BRACKET");
     IElementType SEMICOLON = new MQL4ElementType("SEMICOLON");
 
     // Preprocessor
@@ -162,6 +162,7 @@ public interface MQL4Elements {
     IElementType FUNCTION_PARAMETERS_LIST = new MQL4ElementType("FUNCTION_PARAMETERS_LIST");
 
     IElementType CODE_BLOCK = new MQL4ElementType("CODE_BLOCK");
+    IElementType BRACKETS_BLOCK = new MQL4ElementType("BRACKETS_BLOCK");
 
     IElementType EMPTY_STATEMENT = new MQL4ElementType("EMPTY_STATEMENT");
     IElementType SINGLE_WORD_STATEMENT = new MQL4ElementType("SINGLE_WORD_STATEMENT");
@@ -184,4 +185,5 @@ public interface MQL4Elements {
     // Special element types for syntax highlighter only
     IElementType SYNTAX_BUILT_IN_CONSTANT = new MQL4ElementType("SYNTAX_BUILT_IN_CONSTANT");
     IElementType SYNTAX_BUILT_IN_FUNCTION = new MQL4ElementType("SYNTAX_BUILT_IN_FUNCTION");
+
 }

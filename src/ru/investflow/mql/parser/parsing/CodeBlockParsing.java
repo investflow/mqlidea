@@ -21,7 +21,7 @@ public class CodeBlockParsing implements MQL4Elements {
     }
 
     public static boolean parseCodeBlock(PsiBuilder b, int l) {
-        if (!ParsingUtils.nextTokenIs(b, l, "parseCodeBlock", LBRACE)) {
+        if (!ParsingUtils.nextTokenIs(b, l, "parseCodeBlock", L_CURLY_BRACKET)) {
             return false;
         }
         PsiBuilder.Marker m = enter_section_(b);
@@ -30,7 +30,7 @@ public class CodeBlockParsing implements MQL4Elements {
 
             while (true) {
                 IElementType t = b.getTokenType();
-                if (t == RBRACE) {
+                if (t == R_CURLY_BRACKET) {
                     b.advanceLexer();
                     break;
                 }
@@ -39,7 +39,7 @@ public class CodeBlockParsing implements MQL4Elements {
                 if (!ok) {
                     b.advanceLexer();
                     b.error("Valid MQL4 statement expected");
-                    ParsingUtils.advanceLexerUntil(b, RBRACE, TokenAdvanceMode.ADVANCE);
+                    ParsingUtils.advanceLexerUntil(b, R_CURLY_BRACKET, TokenAdvanceMode.ADVANCE);
                     break;
                 }
             }

@@ -21,9 +21,9 @@ public class IfElseParsing implements MQL4Elements {
         try {
             while (true) {
                 b.advanceLexer(); // 'if'
-                boolean ok = parseTokenOrFail(b, LPARENTH) // '('
+                boolean ok = parseTokenOrFail(b, L_ROUND_BRACKET) // '('
                         && parseExpressionOrFail(b, l + 1, false)
-                        && parseTokenOrFail(b, RPARENTH) // ')'
+                        && parseTokenOrFail(b, R_ROUND_BRACKET) // ')'
                         && (parseCodeBlock(b, l + 1) || parseStatementOrFail(b, l + 1)); // '{}'
                 if (!ok) {
                     break;

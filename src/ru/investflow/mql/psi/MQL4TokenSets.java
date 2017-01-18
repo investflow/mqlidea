@@ -1,6 +1,10 @@
 package ru.investflow.mql.psi;
 
+import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class MQL4TokenSets implements MQL4Elements {
 
@@ -19,6 +23,9 @@ public class MQL4TokenSets implements MQL4Elements {
     public static final TokenSet STRINGS_AND_CHARS = TokenSet.create(STRING_LITERAL, CHAR_LITERAL, INCLUDE_STRING_LITERAL);
 
     public static final TokenSet NUMBERS = TokenSet.create(INTEGER_LITERAL, DOUBLE_LITERAL);
+
+    public static final TokenSet LEFT_BRACKETS = TokenSet.create(L_CURLY_BRACKET, L_ROUND_BRACKET, L_SQUARE_BRACKET);
+    public static final TokenSet RIGHT_BRACKETS = TokenSet.create(R_CURLY_BRACKET, R_ROUND_BRACKET, R_SQUARE_BRACKET);
 
     public static final TokenSet OPERATORS = TokenSet.create(
             EQ, EQ_EQ, PLUS_EQ, MINUS_EQ, MUL_EQ, DIV_EQ, MOD_EQ, AND_EQ, OR_EQ, XOR_EQ, TILDA_EQ, SH_LEFT_EQ, SH_RIGHT_EQ, USH_RIGHT_EQ,
@@ -63,4 +70,19 @@ public class MQL4TokenSets implements MQL4Elements {
             VOID_KEYWORD
     );
 
+    @NotNull
+    public static IElementType getLeftBracketFor(@NotNull IElementType rightBracket) {
+        IElementType result = rightBracket == R_CURLY_BRACKET ? L_CURLY_BRACKET
+                : rightBracket == R_ROUND_BRACKET ? L_ROUND_BRACKET
+                : rightBracket == R_SQUARE_BRACKET ? L_SQUARE_BRACKET : null;
+        return Objects.requireNonNull(result, "Illegal open bracket: " + rightBracket);
+    }
+
+    @NotNull
+    public static IElementType getRightBracketFor(@NotNull IElementType leftBracket) {
+        IElementType result = leftBracket == L_CURLY_BRACKET ? R_CURLY_BRACKET
+                : leftBracket == L_ROUND_BRACKET ? R_ROUND_BRACKET
+                : leftBracket == L_SQUARE_BRACKET ? R_SQUARE_BRACKET : null;
+        return Objects.requireNonNull(result, "Illegal open bracket: " + leftBracket);
+    }
 }

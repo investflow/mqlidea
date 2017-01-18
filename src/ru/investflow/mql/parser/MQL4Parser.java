@@ -5,18 +5,18 @@ import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiParser;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NotNull;
-import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.adapt_builder_;
+import static ru.investflow.mql.parser.parsing.BracketBlockParsing.parseBracketsBlock;
 import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
-import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 
 public class MQL4Parser implements PsiParser, MQL4Elements {
 
     @NotNull
     public ASTNode parse(@NotNull IElementType root, @NotNull PsiBuilder b0) {
+        ParsingContext ctx = new ParsingContext();
         PsiBuilder b = adapt_builder_(root, b0, this);
         PsiBuilder.Marker rootMarker = b.mark();
         while (!b.eof()) {
@@ -26,14 +26,15 @@ public class MQL4Parser implements PsiParser, MQL4Elements {
 //                    || parseFunction(b, l + 1, Definition) != Failed
 //                    || parseVarDeclaration(b, l + 1)
                     || parseEmptyStatement(b)
-                    || parseComment(b);
+                    || parseComment(b)
+                    || parseBracketsBlock(b, 0, ctx);
 
             //noinspection ConstantConditions
             if (!r) {
                 // Show one error per line positioned on the first token only. Skip other errors until the end of line.
                 b.advanceLexer();
 //                b.error("Unexpected top level statement");
-                ParsingUtils.advanceLexerUntil(b, LINE_TERMINATOR, ADVANCE);
+//                ParsingUtils.advanceLexerUntil(b, LINE_TERMINATOR, ADVANCE);
             }
         }
         rootMarker.done(root);

@@ -15,7 +15,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 
 public class ParsingUtils implements MQL4Elements {
 
-    public static TokenSet STATEMENT_TERMINATORS = TokenSet.create(SEMICOLON, RBRACE, RPARENTH);
+    public static TokenSet STATEMENT_TERMINATORS = TokenSet.create(SEMICOLON, R_CURLY_BRACKET, R_ROUND_BRACKET);
 
     public static boolean containsEndOfLine(@Nullable String text) {
         return text != null && text.contains("\n");
@@ -95,9 +95,9 @@ public class ParsingUtils implements MQL4Elements {
         String error = "Expected: " + type;
         if (type == IDENTIFIER) {
             error = "Identifier expected";
-        } else if (type == LPARENTH) {
+        } else if (type == L_ROUND_BRACKET) {
             error = "Left brace expected";
-        } else if (type == RPARENTH) {
+        } else if (type == R_ROUND_BRACKET) {
             error = "Right brace expected";
         } else if (type == SEMICOLON) {
             error = "Semicolon expected";
@@ -117,5 +117,19 @@ public class ParsingUtils implements MQL4Elements {
 
     public static boolean nextTokenIs(@NotNull PsiBuilder b, int l, @NotNull String recursionGuard, @NotNull IElementType type) {
         return recursion_guard_(b, l, recursionGuard) && b.getTokenType() == type;
+    }
+    public static boolean nextTokenIn(@NotNull PsiBuilder b, int l, @NotNull String recursionGuard, @NotNull TokenSet set) {
+        return recursion_guard_(b, l, recursionGuard) && set.contains(b.getTokenType());
+    }
+
+    /**
+     * Advances current token and sets error message to it.
+     */
+    public static void advanceWithError(@NotNull PsiBuilder b, @NotNull String message) {
+        PsiBuilder.Marker errorStart = b.mark();
+        b.advanceLexer(); // consume this token with error and move forward
+        PsiBuilder.Marker errorEnd = b.mark();
+        errorStart.errorBefore(message, errorEnd);
+        errorEnd.drop();
     }
 }

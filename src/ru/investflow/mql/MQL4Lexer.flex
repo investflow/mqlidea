@@ -191,12 +191,12 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 
 "<"   { return MQL4Elements.LT; }
 ">"   { return MQL4Elements.GT; }
-"("   { return MQL4Elements.LPARENTH; }
-")"   { return MQL4Elements.RPARENTH; }
-"{"   { return MQL4Elements.LBRACE; }
-"}"   { return MQL4Elements.RBRACE; }
-"["   { return MQL4Elements.LBRACKET; }
-"]"   { return MQL4Elements.RBRACKET; }
+"("   { return MQL4Elements.L_ROUND_BRACKET; }
+")"   { return MQL4Elements.R_ROUND_BRACKET; }
+"{"   { return MQL4Elements.L_CURLY_BRACKET; }
+"}"   { return MQL4Elements.R_CURLY_BRACKET; }
+"["   { return MQL4Elements.L_SQUARE_BRACKET; }
+"]"   { return MQL4Elements.R_SQUARE_BRACKET; }
 ";"   { return MQL4Elements.SEMICOLON; }
 ":"   { return MQL4Elements.COLON; }
 ","   { return MQL4Elements.COMMA; }

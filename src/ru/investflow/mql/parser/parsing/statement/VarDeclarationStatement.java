@@ -1,10 +1,10 @@
 package ru.investflow.mql.parser.parsing.statement;
 
-import org.jetbrains.annotations.NotNull;
-
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
+import org.jetbrains.annotations.NotNull;
+import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.parser.parsing.util.TokenAdvanceMode;
 import ru.investflow.mql.psi.MQL4Elements;
@@ -69,7 +69,7 @@ public class VarDeclarationStatement implements MQL4Elements {
                             break;
                         }
                     } else {
-                        b.error("Unexpected token");
+                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
                         ok = false;
                     }
                 } finally {

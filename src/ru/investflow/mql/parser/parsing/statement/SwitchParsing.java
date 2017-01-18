@@ -24,19 +24,19 @@ public class SwitchParsing implements MQL4Elements {
         try {
             b.advanceLexer(); // 'switch'
             //noinspection unused
-            boolean ok = parseTokenOrFail(b, LPARENTH) // '('
+            boolean ok = parseTokenOrFail(b, L_ROUND_BRACKET) // '('
                     && ExpressionParsing.parseExpressionOrFail(b, l, false) // expression
-                    && parseTokenOrFail(b, RPARENTH) // ')'
-                    && parseTokenOrFail(b, LBRACE) // '{'
+                    && parseTokenOrFail(b, R_ROUND_BRACKET) // ')'
+                    && parseTokenOrFail(b, L_CURLY_BRACKET) // '{'
                     && parseSwitchCaseBlock(b, l + 1)
-                    && parseTokenOrFail(b, RBRACE); // '}'
+                    && parseTokenOrFail(b, R_CURLY_BRACKET); // '}'
             return true;
         } finally {
             exit_section_(b, m, SWITCH_BLOCK, true);
         }
     }
 
-    private static TokenSet CASE_BLOCK_TERMINATORS = TokenSet.create(CASE_KEYWORD, DEFAULT_KEYWORD, RBRACE);
+    private static TokenSet CASE_BLOCK_TERMINATORS = TokenSet.create(CASE_KEYWORD, DEFAULT_KEYWORD, R_CURLY_BRACKET);
 
     private static boolean parseSwitchCaseBlock(@NotNull PsiBuilder b, int l) {
         PsiBuilder.Marker m = enter_section_(b);

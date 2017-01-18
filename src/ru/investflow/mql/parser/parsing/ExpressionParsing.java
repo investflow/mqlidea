@@ -38,8 +38,8 @@ public class ExpressionParsing implements MQL4Elements {
             return false;
         }
         b.advanceLexer(); // 'sizeof'
-        return parseTokenOrFail(b, LPARENTH) // '('
+        return parseTokenOrFail(b, L_ROUND_BRACKET) // '('
                 && parseTokenOrFail(b, MQL4Elements.IDENTIFIER)
-                && parseTokenOrFail(b, RPARENTH); // ')'
+                && parseTokenOrFail(b, R_ROUND_BRACKET); // ')'
     }
 }

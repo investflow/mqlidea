@@ -33,13 +33,13 @@ public class LoopStatementParsing implements MQL4Elements {
         PsiBuilder.Marker m = enter_section_(b);
         b.advanceLexer(); // 'for'
         try {
-            boolean ok = parseTokenOrFail(b, LPARENTH) // '('
+            boolean ok = parseTokenOrFail(b, L_ROUND_BRACKET) // '('
                     && parseEmbeddedVarDeclarationOrAssignmentOrFail(b, l + 1, FOR_LOOP_SECTION_1, VAR_ASSIGNMENT_LIST)
                     && parseTokenOrFail(b, SEMICOLON) // ';'
                     && parseExpressionOrFail(b, l + 1, true)
                     && parseTokenOrFail(b, SEMICOLON) // ';'
-                    && parseEmbeddedVarAssignmentsListOrFail(b, l + 1, VAR_ASSIGNMENT_LIST, RPARENTH)
-                    && parseTokenOrFail(b, RPARENTH) // ')'
+                    && parseEmbeddedVarAssignmentsListOrFail(b, l + 1, VAR_ASSIGNMENT_LIST, R_ROUND_BRACKET)
+                    && parseTokenOrFail(b, R_ROUND_BRACKET) // ')'
                     && (parseCodeBlock(b, l + 1) || parseStatementOrFail(b, l + 1)); // '{}'
 
             if (!ok) {
@@ -58,9 +58,9 @@ public class LoopStatementParsing implements MQL4Elements {
         PsiBuilder.Marker m = enter_section_(b);
         b.advanceLexer(); // 'while'
         try {
-            boolean ok = parseTokenOrFail(b, LPARENTH) // '('
+            boolean ok = parseTokenOrFail(b, L_ROUND_BRACKET) // '('
                     && parseExpressionOrFail(b, l + 1)
-                    && parseTokenOrFail(b, RPARENTH) // ')'
+                    && parseTokenOrFail(b, R_ROUND_BRACKET) // ')'
                     && (parseCodeBlock(b, l + 1) || parseStatementOrFail(b, l + 1)); // '{}'
 
             if (!ok) {
@@ -82,9 +82,9 @@ public class LoopStatementParsing implements MQL4Elements {
         try {
             boolean ok = CodeBlockParsing.parseCodeBlockOrFail(b, l + 1)   // '{}'
                     && parseKeywordOrFail(b, WHILE_KEYWORD)  // 'while'
-                    && parseTokenOrFail(b, LPARENTH)  // '('
+                    && parseTokenOrFail(b, L_ROUND_BRACKET)  // '('
                     && parseExpressionOrFail(b, l + 1)
-                    && parseTokenOrFail(b, RPARENTH)  // ')'
+                    && parseTokenOrFail(b, R_ROUND_BRACKET)  // ')'
                     && parseTokenOrFail(b, SEMICOLON); // ';'
             if (!ok) {
                 ParsingUtils.advanceLexerUntil(b, STATEMENT_TERMINATORS, TokenAdvanceMode.ADVANCE);

@@ -14,9 +14,9 @@ import ru.investflow.mql.psi.MQL4Elements;
 public class MQL4BraceMatcher implements PairedBraceMatcher {
 
     private static BracePair[] PAIRS = {
-            new BracePair(MQL4Elements.LBRACE, MQL4Elements.RBRACE, true),
-            new BracePair(MQL4Elements.LPARENTH, MQL4Elements.RPARENTH, true),
-            new BracePair(MQL4Elements.LBRACKET, MQL4Elements.RBRACKET, true)
+            new BracePair(MQL4Elements.L_CURLY_BRACKET, MQL4Elements.R_CURLY_BRACKET, true),
+            new BracePair(MQL4Elements.L_ROUND_BRACKET, MQL4Elements.R_ROUND_BRACKET, true),
+            new BracePair(MQL4Elements.L_SQUARE_BRACKET, MQL4Elements.R_SQUARE_BRACKET, true)
     };
 
     @Override
@@ -25,7 +25,7 @@ public class MQL4BraceMatcher implements PairedBraceMatcher {
     }
 
     @Override
-    public boolean isPairedBracesAllowedBeforeType(@NotNull IElementType lbraceType, @Nullable IElementType contextType) {
+    public boolean isPairedBracesAllowedBeforeType(@NotNull IElementType L_CURLY_BRACKETType, @Nullable IElementType contextType) {
         return true;
     }
 

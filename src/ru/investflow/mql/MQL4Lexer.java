@@ -1054,27 +1054,27 @@ public class MQL4Lexer implements FlexLexer {
             }
           case 132: break;
           case 21: 
-            { return MQL4Elements.LPARENTH;
+            { return MQL4Elements.L_ROUND_BRACKET;
             }
           case 133: break;
           case 22: 
-            { return MQL4Elements.RPARENTH;
+            { return MQL4Elements.R_ROUND_BRACKET;
             }
           case 134: break;
           case 23: 
-            { return MQL4Elements.LBRACE;
+            { return MQL4Elements.L_CURLY_BRACKET;
             }
           case 135: break;
           case 24: 
-            { return MQL4Elements.RBRACE;
+            { return MQL4Elements.R_CURLY_BRACKET;
             }
           case 136: break;
           case 25: 
-            { return MQL4Elements.LBRACKET;
+            { return MQL4Elements.L_SQUARE_BRACKET;
             }
           case 137: break;
           case 26: 
-            { return MQL4Elements.RBRACKET;
+            { return MQL4Elements.R_SQUARE_BRACKET;
             }
           case 138: break;
           case 27: 
