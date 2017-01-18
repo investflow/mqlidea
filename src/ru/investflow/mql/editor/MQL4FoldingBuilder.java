@@ -40,10 +40,31 @@ public class MQL4FoldingBuilder implements FoldingBuilder, DumbAware {
             if (document.getLineNumber(startOffset) != document.getLineNumber(endOffset)) {
                 descriptors.add(new FoldingDescriptor(node, new TextRange(startOffset, endOffset)));
             }
+        } else if (type == MQL4Elements.BRACKETS_BLOCK && node.getFirstChildNode().getElementType() == MQL4Elements.L_CURLY_BRACKET) {
+            boolean isNestedBlock = findTopLevelOfType(node, MQL4Elements.BRACKETS_BLOCK) != null;
+            if (!isNestedBlock) {
+                int startOffset = node.getFirstChildNode().getTextRange().getStartOffset();
+                int endOffset = node.getLastChildNode().getTextRange().getEndOffset() - 1;
+                if (document.getLineNumber(startOffset) != document.getLineNumber(endOffset)) {
+                    descriptors.add(new FoldingDescriptor(node, new TextRange(startOffset, endOffset)));
+                }
+            }
         }
         for (ASTNode child : node.getChildren(null)) {
             collectDescriptorsRecursively(child, document, descriptors);
         }
+    }
+
+    @Nullable
+    private static ASTNode findTopLevelOfType(@NotNull ASTNode node, @NotNull IElementType type) {
+        ASTNode parent = node.getTreeParent();
+        while (parent != null) {
+            if (parent.getElementType() == type) {
+                return parent;
+            }
+            parent = parent.getTreeParent();
+        }
+        return null;
     }
 
     @Nullable
@@ -52,6 +73,8 @@ public class MQL4FoldingBuilder implements FoldingBuilder, DumbAware {
         IElementType type = node.getElementType();
         if (type == MQL4Elements.LINE_COMMENT) {
             return "//...";
+        } else if (type == MQL4Elements.BLOCK_COMMENT) {
+            return "/*...*/";
         } else if (type == MQL4Elements.BLOCK_COMMENT) {
             return "/*...*/";
         }
