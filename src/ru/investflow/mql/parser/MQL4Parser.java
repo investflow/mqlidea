@@ -10,6 +10,7 @@ import ru.investflow.mql.psi.MQL4Elements;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.adapt_builder_;
 import static ru.investflow.mql.parser.parsing.BracketBlockParsing.parseBracketsBlock;
 import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.parsePreprocessorBlock;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
 
 public class MQL4Parser implements PsiParser, MQL4Elements {
@@ -27,7 +28,8 @@ public class MQL4Parser implements PsiParser, MQL4Elements {
 //                    || parseVarDeclaration(b, l + 1)
                     || parseEmptyStatement(b)
                     || parseComment(b)
-                    || parseBracketsBlock(b, 0, ctx);
+                    || parseBracketsBlock(b, 0, ctx)
+                    || parsePreprocessorBlock(b, 0);
 
             //noinspection ConstantConditions
             if (!r) {

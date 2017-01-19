@@ -25,12 +25,12 @@ public class PreprocessorParsing implements MQL4Elements {
 
         PsiBuilder.Marker m = enter_section_(b);
 
-        boolean r = parseProperty(b, l + 1) ||
-                parseDefine(b, l + 1) ||
-                parseUndef(b, l + 1) ||
-                parseIfDef(b, l + 1) ||
-                parseInclude(b, l + 1) ||
-                parseImport(b, l + 1);
+        boolean r = parseInclude(b);
+//                parseProperty(b, l + 1) ||
+//                parseDefine(b, l + 1) ||
+//                parseUndef(b, l + 1) ||
+//                parseIfDef(b, l + 1) ||
+//                parseImport(b, l + 1);
 
         exit_section_(b, m, PREPROCESSOR_BLOCK, r);
         return r;
@@ -42,13 +42,17 @@ public class PreprocessorParsing implements MQL4Elements {
     }
 
     public static boolean assertNoLineBreaksInRange(PsiBuilder b, int startOffset, int endOffset, @NotNull String errorMessage) {
-        String text = b.getOriginalText().subSequence(startOffset, endOffset).toString();
-        boolean hasEol = ParsingUtils.containsEndOfLine(text);
+        boolean hasEol = hasLineBreaks(b, startOffset, endOffset);
         if (hasEol) {
             b.error(errorMessage);
             return false;
         }
         return true;
+    }
+
+    public static boolean hasLineBreaks(PsiBuilder b, int startOffset, int endOffset) {
+        String text = b.getOriginalText().subSequence(startOffset, endOffset).toString();
+        return ParsingUtils.containsEndOfLine(text);
     }
 
 }
