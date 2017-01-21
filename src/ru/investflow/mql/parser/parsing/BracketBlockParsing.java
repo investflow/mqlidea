@@ -11,6 +11,7 @@ import ru.investflow.mql.psi.MQL4TokenSets;
 
 import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.NO_MATCHING_CLOSING_BRACKET;
 
 public class BracketBlockParsing implements MQL4Elements {
 
@@ -18,7 +19,7 @@ public class BracketBlockParsing implements MQL4Elements {
         if (!ParsingUtils.nextTokenIn(b, l, "parseBracketBlock", MQL4TokenSets.LEFT_BRACKETS)) {
             return false;
         }
-        PsiBuilder.Marker m = b.mark(); // starting  new bracket section
+        PsiBuilder.Marker block = b.mark(); // starting  new bracket section
         IElementType openBracket = b.getTokenType();
         assert openBracket != null;
         IElementType topBlockLeftBracket = ctx.bracketsStack.isEmpty() ? null : ctx.bracketsStack.peek();
@@ -31,13 +32,12 @@ public class BracketBlockParsing implements MQL4Elements {
                 assert t != null;
                 if (t == closeBracket) {
                     b.advanceLexer(); // close bracket
-                    m.done(BRACKETS_BLOCK);
                     return true;
                 }
                 if (MQL4TokenSets.RIGHT_BRACKETS.contains(t)) { // different kind of close bracket
                     boolean closeBracketForUpperBlock = topBlockLeftBracket != null && topBlockLeftBracket == MQL4TokenSets.getLeftBracketFor(t);
                     if (closeBracketForUpperBlock) {
-                        m.error("No matching closing brace found");
+                        b.error(NO_MATCHING_CLOSING_BRACKET);
                         return true;
                     }
                     ParsingUtils.advanceWithError(b, ParsingErrors.UNEXPECTED_TOKEN);
@@ -51,10 +51,11 @@ public class BracketBlockParsing implements MQL4Elements {
                     b.advanceLexer();
                 }
             }
-            m.error("No matching closing bracket");
+            b.error(NO_MATCHING_CLOSING_BRACKET);
             return false;
         } finally {
             ctx.bracketsStack.pop();
+            block.done(BRACKETS_BLOCK);
         }
     }
 
