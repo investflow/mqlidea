@@ -17,7 +17,6 @@ public class MQL4Parser implements PsiParser, MQL4Elements {
 
     @NotNull
     public ASTNode parse(@NotNull IElementType root, @NotNull PsiBuilder b0) {
-        ParsingContext ctx = new ParsingContext();
         PsiBuilder b = adapt_builder_(root, b0, this);
         PsiBuilder.Marker rootMarker = b.mark();
         while (!b.eof()) {
@@ -28,7 +27,7 @@ public class MQL4Parser implements PsiParser, MQL4Elements {
 //                    || parseVarDeclaration(b, l + 1)
                     || parseEmptyStatement(b)
                     || parseComment(b)
-                    || parseBracketsBlock(b, 0, ctx)
+                    || parseBracketsBlock(b, 0)
                     || parsePreprocessorBlock(b, 0);
 
             //noinspection ConstantConditions
