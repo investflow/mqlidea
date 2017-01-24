@@ -1,18 +1,13 @@
 package ru.investflow.mql.parser.parsing.preprocessor;
 
-import org.jetbrains.annotations.NotNull;
-
 import com.intellij.lang.PsiBuilder;
+import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseDefine;
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseIfDef;
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseUndef;
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorImportParsing.parseImport;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIncludeParsing.parseInclude;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorPropertyParsing.parseProperty;
 
@@ -25,8 +20,8 @@ public class PreprocessorParsing implements MQL4Elements {
 
         PsiBuilder.Marker m = enter_section_(b);
 
-        boolean r = parseInclude(b);
-//                parseProperty(b, l + 1) ||
+        boolean r = parseInclude(b) ||
+                parseProperty(b);
 //                parseDefine(b, l + 1) ||
 //                parseUndef(b, l + 1) ||
 //                parseIfDef(b, l + 1) ||

@@ -1,58 +1,68 @@
 package ru.investflow.mql.parser.parsing.preprocessor;
 
-import java.util.Map;
-
-import org.jetbrains.annotations.NotNull;
-
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.util.containers.hash.HashMap;
+import org.jetbrains.annotations.NotNull;
+import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.psi.MQL4Elements;
 
-import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
+import java.util.Map;
+
 import static ru.investflow.mql.parser.parsing.LiteralParsing.isLiteral;
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
-import static ru.investflow.mql.parser.parsing.util.ParsingUtils.nextTokenIs;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceUntilNewLine;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceWithError;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.containsEndOfLine;
 import static ru.investflow.mql.psi.MQL4TokenSets.LITERALS;
 
 public class PreprocessorPropertyParsing implements MQL4Elements {
 
-    public static boolean parseProperty(PsiBuilder b, int l) {
-        if (!nextTokenIs(b, l, "parseProperty", PROPERTY_KEYWORD)) {
+    public static boolean parseProperty(PsiBuilder b) {
+        if (b.getTokenType() != PROPERTY_KEYWORD) {
             return false;
         }
-        PsiBuilder.Marker m = enter_section_(b);
-        int startOffset = b.getCurrentOffset();
-        b.advanceLexer(); // #property
+        PsiBuilder.Marker m = b.mark();
+        int offset = b.getCurrentOffset();
+        b.advanceLexer(); // #property -> name
         try {
-            if (b.getTokenType() != IDENTIFIER) {
-                //error(b, "Identifier expected");
+            if (containsEndOfLine(b, offset)) { // new line after #property -> report error
+                b.error(ParsingErrors.IDENTIFIER_EXPECTED);
                 return true;
             }
-            assertNoLineBreaksInRange(b, startOffset, "Line break is not allowed inside #property block");
-            startOffset = b.getCurrentOffset();
-
-            String propertyName = b.getTokenText();
-            PropertyValueValidator valueValidator = VALIDATORS_BY_NAME.get(propertyName);
-            if (valueValidator == null) {
-                b.error("Unknown property: " + propertyName);
+            offset = b.getCurrentOffset();
+            if (b.getTokenType() != IDENTIFIER) { // #property name is not identifier -> report error
+                advanceWithErrorUntilNewLine(b, offset, ParsingErrors.IDENTIFIER_EXPECTED);
+                return true;
             }
-            b.advanceLexer();
-            if (valueValidator != null) {
-                valueValidator.validateValue(b);
+            b.advanceLexer(); // name -> value
+            if (containsEndOfLine(b, offset)) { // line ends after identifier -> end of block
+                return true;
             }
-            if (isLiteral(b)) {
-                assertNoLineBreaksInRange(b, startOffset, "Line break is not allowed inside #property block");
-                b.advanceLexer();
+            offset = b.getCurrentOffset();
+            if (!isLiteral(b)) {
+                advanceWithErrorUntilNewLine(b, offset, "Illegal #property value");
+                return true;
             }
+            b.advanceLexer(); // name -> next token
+            if (!containsEndOfLine(b, offset)) { // line ends after identifier -> end of block
+                advanceWithErrorUntilNewLine(b, offset, ParsingErrors.UNEXPECTED_TOKEN);
+            }
+            return true;
         } finally {
-            exit_section_(b, m, PREPROCESSOR_PROPERTY_BLOCK, true);
+            m.done(PREPROCESSOR_PROPERTY_BLOCK);
         }
-        return true;
+    }
+
+    private static void advanceWithErrorUntilNewLine(PsiBuilder b, int offset, String message) {
+        advanceWithError(b, message);
+        if (!containsEndOfLine(b, offset)) { // line ends after identifier -> end of block
+            advanceUntilNewLine(b);
+        }
     }
 
 
+    //todo: move validators to inspection
+    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
     private static final Map<String, PropertyValueValidator> VALIDATORS_BY_NAME = new HashMap<>();
 
     static {
@@ -89,6 +99,7 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
     }
 
     private interface PropertyValueValidator {
+        @SuppressWarnings("unused")
         void validateValue(PsiBuilder b);
     }
 

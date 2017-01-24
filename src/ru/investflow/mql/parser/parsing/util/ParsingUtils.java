@@ -1,22 +1,23 @@
 package ru.investflow.mql.parser.parsing.util;
 
-import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
 import com.intellij.util.containers.Predicate;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.psi.MQL4Elements;
 
+import java.util.List;
+
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
+import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 
 public class ParsingUtils implements MQL4Elements {
 
     public static TokenSet STATEMENT_TERMINATORS = TokenSet.create(SEMICOLON, R_CURLY_BRACKET, R_ROUND_BRACKET);
 
+    //TODO: optimize this method: pass from & to idx
     public static boolean containsEndOfLine(@Nullable String text) {
         return text != null && text.contains("\n");
     }
@@ -63,6 +64,10 @@ public class ParsingUtils implements MQL4Elements {
      */
     public static boolean advanceLexerUntil(@NotNull PsiBuilder b, @NotNull IElementType type, @NotNull TokenAdvanceMode mode) {
         return advanceLexerUntil(b, TokenSet.create(type), mode);
+    }
+
+    public static boolean advanceUntilNewLine(@NotNull PsiBuilder b) {
+        return ParsingUtils.advanceLexerUntil(b, LINE_TERMINATOR, ADVANCE);
     }
 
     @SuppressWarnings("unchecked")
@@ -118,18 +123,17 @@ public class ParsingUtils implements MQL4Elements {
     public static boolean nextTokenIs(@NotNull PsiBuilder b, int l, @NotNull String recursionGuard, @NotNull IElementType type) {
         return recursion_guard_(b, l, recursionGuard) && b.getTokenType() == type;
     }
+
     public static boolean nextTokenIn(@NotNull PsiBuilder b, int l, @NotNull String recursionGuard, @NotNull TokenSet set) {
         return recursion_guard_(b, l, recursionGuard) && set.contains(b.getTokenType());
     }
 
     /**
-     * Advances current token and sets error message to it.
+     * Advances current token and sets error message on it.
      */
     public static void advanceWithError(@NotNull PsiBuilder b, @NotNull String message) {
-        PsiBuilder.Marker errorStart = b.mark();
-        b.advanceLexer(); // consume this token with error and move forward
-        PsiBuilder.Marker errorEnd = b.mark();
-        errorStart.errorBefore(message, errorEnd);
-        errorEnd.drop();
+        PsiBuilder.Marker errorBlock = b.mark();
+        b.advanceLexer();
+        errorBlock.error(message);
     }
 }

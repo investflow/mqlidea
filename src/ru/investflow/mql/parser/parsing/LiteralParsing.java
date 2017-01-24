@@ -1,21 +1,19 @@
 package ru.investflow.mql.parser.parsing;
 
-import org.jetbrains.annotations.NotNull;
-
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
-
-import static ru.investflow.mql.psi.MQL4TokenSets.LITERALS;
+import org.jetbrains.annotations.NotNull;
+import ru.investflow.mql.psi.MQL4TokenSets;
 
 public class LiteralParsing {
 
     public static boolean isLiteral(@NotNull PsiBuilder b) {
         IElementType t = b.getTokenType();
-        return LITERALS.contains(t);
+        return MQL4TokenSets.LITERALS.contains(t);
     }
 
     public static boolean parseLiteral(@NotNull PsiBuilder b) {
-        if (isLiteral(b)) {
+        if (MQL4TokenSets.LITERALS.contains((IElementType) b)) {
             b.advanceLexer();
             return true;
         }
