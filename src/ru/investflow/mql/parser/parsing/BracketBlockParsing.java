@@ -13,6 +13,7 @@ import java.util.Stack;
 import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
 import static ru.investflow.mql.parser.parsing.util.ParsingErrors.NO_MATCHING_CLOSING_BRACKET;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceWithError;
 
 public class BracketBlockParsing implements MQL4Elements {
 
@@ -25,15 +26,15 @@ public class BracketBlockParsing implements MQL4Elements {
         IElementType lBracket = b.getTokenType();
         assert lBracket != null;
         if (MQL4TokenSets.RIGHT_BRACKETS.contains(lBracket)) {
-            ParsingUtils.advanceWithError(b, ParsingErrors.UNEXPECTED_TOKEN);
+            advanceWithError(b, ParsingErrors.UNEXPECTED_TOKEN);
             return false;
         }
 
         PsiBuilder.Marker block = b.mark(); // starting new bracket section
-        b.advanceLexer(); // left bracket
         if (!hasMatchingClosingBracket(b, lBracket)) { // must check it here to set error on the correct position.
             b.error(NO_MATCHING_CLOSING_BRACKET);
         }
+        b.advanceLexer(); // left bracket
         try {
             IElementType rBracket = MQL4TokenSets.getRightBracketFor(lBracket);
             while (!b.eof()) { // now parse sub-blocks one by one. Stop on closing bracket
@@ -44,7 +45,7 @@ public class BracketBlockParsing implements MQL4Elements {
                     return true;
                 }
                 if (MQL4TokenSets.RIGHT_BRACKETS.contains(t)) { // different kind of right bracket
-                    ParsingUtils.advanceWithError(b, ParsingErrors.UNEXPECTED_TOKEN);
+                    advanceWithError(b, ParsingErrors.UNEXPECTED_TOKEN);
                     continue;
                 }
                 boolean res = parseBracketsBlock(b, l + 1)
@@ -64,7 +65,7 @@ public class BracketBlockParsing implements MQL4Elements {
     private static boolean hasMatchingClosingBracket(@NotNull PsiBuilder b, @NotNull IElementType lBracket) {
         IElementType rBracket = MQL4TokenSets.getRightBracketFor(lBracket);
         Stack<IElementType> lStack = new Stack<>();
-        for (int i = 0; ; i++) {
+        for (int i = 1; ; i++) {
             IElementType e = b.rawLookup(i);
             if (e == null) { // right bracket not found.
                 return false;
