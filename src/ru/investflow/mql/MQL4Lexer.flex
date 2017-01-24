@@ -129,7 +129,6 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 "false"     { return MQL4Elements.FALSE_KEYWORD; }
 "true"      { return MQL4Elements.TRUE_KEYWORD; }
 "this"      { return MQL4Elements.THIS_KEYWORD; }
-"strict"    { return MQL4Elements.STRICT_KEYWORD; }
 
 "#define"   { return MQL4Elements.DEFINE_KEYWORD; }
 "#undef"    { return MQL4Elements.UNDEF_KEYWORD; }

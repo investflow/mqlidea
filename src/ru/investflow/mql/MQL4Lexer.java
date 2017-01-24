@@ -176,16 +176,16 @@ public class MQL4Lexer implements FlexLexer {
     "\1\4\1\102\3\4\1\103\1\104\2\4\1\105\4\4"+
     "\1\106\5\4\1\107\1\110\4\4\1\111\6\4\1\112"+
     "\1\113\5\4\6\0\1\114\1\115\1\116\1\117\4\4"+
-    "\1\120\1\121\7\4\1\122\1\123\1\124\5\4\1\125"+
+    "\1\120\1\121\7\4\1\122\1\123\1\124\4\4\1\125"+
     "\2\4\1\126\3\4\5\0\1\100\1\127\3\4\1\130"+
     "\1\4\1\131\1\4\1\132\2\4\1\133\1\134\1\135"+
-    "\1\136\1\137\1\140\1\141\2\4\1\142\1\143\4\0"+
-    "\2\4\1\144\1\4\1\145\3\4\1\146\1\147\1\0"+
-    "\1\150\1\0\1\151\1\152\1\153\1\154\1\155\1\4"+
-    "\1\156\1\0\1\157\1\160";
+    "\1\136\1\137\1\140\2\4\1\141\1\142\4\0\2\4"+
+    "\1\143\1\4\1\144\3\4\1\145\1\146\1\0\1\147"+
+    "\1\0\1\150\1\151\1\152\1\153\1\154\1\4\1\155"+
+    "\1\0\1\156\1\157";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[327];
+    int [] result = new int[325];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -243,17 +243,17 @@ public class MQL4Lexer implements FlexLexer {
     "\0\u0110\0\u0110\0\u0110\0\u0110\0\u3168\0\u31ac\0\u31f0\0\u3234"+
     "\0\u0110\0\u0110\0\u3278\0\u32bc\0\u3300\0\u3344\0\u3388\0\u33cc"+
     "\0\u3410\0\u0110\0\u0110\0\u0110\0\u3454\0\u3498\0\u34dc\0\u3520"+
-    "\0\u3564\0\u0110\0\u35a8\0\u35ec\0\u0110\0\u3630\0\u3674\0\u36b8"+
-    "\0\u36fc\0\u3740\0\u3784\0\u37c8\0\u380c\0\u0ae4\0\u0110\0\u3850"+
-    "\0\u3894\0\u38d8\0\u0110\0\u391c\0\u0110\0\u3960\0\u0110\0\u39a4"+
-    "\0\u39e8\0\u0110\0\u0110\0\u0110\0\u0110\0\u0110\0\u0110\0\u0110"+
-    "\0\u3a2c\0\u3a70\0\u0110\0\104\0\u3ab4\0\u3af8\0\u3b3c\0\u3b80"+
-    "\0\u3bc4\0\u3c08\0\u0110\0\u3c4c\0\u0110\0\u3c90\0\u3cd4\0\u3d18"+
-    "\0\u0110\0\104\0\u3d5c\0\104\0\u3da0\0\u0110\0\u0110\0\u0110"+
-    "\0\u0110\0\u0110\0\u3de4\0\104\0\u3e28\0\u0110\0\104";
+    "\0\u0110\0\u3564\0\u35a8\0\u0110\0\u35ec\0\u3630\0\u3674\0\u36b8"+
+    "\0\u36fc\0\u3740\0\u3784\0\u37c8\0\u0ae4\0\u0110\0\u380c\0\u3850"+
+    "\0\u3894\0\u0110\0\u38d8\0\u0110\0\u391c\0\u0110\0\u3960\0\u39a4"+
+    "\0\u0110\0\u0110\0\u0110\0\u0110\0\u0110\0\u0110\0\u39e8\0\u3a2c"+
+    "\0\u0110\0\104\0\u3a70\0\u3ab4\0\u3af8\0\u3b3c\0\u3b80\0\u3bc4"+
+    "\0\u0110\0\u3c08\0\u0110\0\u3c4c\0\u3c90\0\u3cd4\0\u0110\0\104"+
+    "\0\u3d18\0\104\0\u3d5c\0\u0110\0\u0110\0\u0110\0\u0110\0\u0110"+
+    "\0\u3da0\0\104\0\u3de4\0\u0110\0\104";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[327];
+    int [] result = new int[325];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -527,92 +527,90 @@ public class MQL4Lexer implements FlexLexer {
     "\3\5\4\0\1\5\7\0\10\5\1\0\10\5\1\0"+
     "\2\5\1\u0107\12\5\1\0\1\5\24\0\3\5\4\0"+
     "\1\5\7\0\4\5\1\u0108\3\5\1\0\10\5\1\0"+
-    "\2\5\1\u0109\12\5\1\0\1\5\24\0\3\5\4\0"+
-    "\1\5\7\0\6\5\1\u010a\1\5\1\0\10\5\1\0"+
     "\15\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
-    "\10\5\1\0\10\5\1\0\1\u010b\14\5\1\0\1\5"+
-    "\24\0\3\5\4\0\1\5\7\0\5\5\1\u010c\2\5"+
-    "\1\0\10\5\1\0\15\5\1\0\1\5\24\0\3\5"+
-    "\4\0\1\5\7\0\6\5\1\u010d\1\5\1\0\10\5"+
+    "\6\5\1\u0109\1\5\1\0\10\5\1\0\15\5\1\0"+
+    "\1\5\24\0\3\5\4\0\1\5\7\0\10\5\1\0"+
+    "\10\5\1\0\1\u010a\14\5\1\0\1\5\24\0\3\5"+
+    "\4\0\1\5\7\0\5\5\1\u010b\2\5\1\0\10\5"+
     "\1\0\15\5\1\0\1\5\24\0\3\5\4\0\1\5"+
-    "\7\0\10\5\1\0\10\5\1\0\5\5\1\u010e\7\5"+
-    "\1\0\1\5\24\0\3\5\4\0\1\5\7\0\1\5"+
-    "\1\u010f\6\5\1\0\10\5\1\0\15\5\1\0\1\5"+
-    "\24\0\3\5\4\0\1\5\7\0\10\5\1\0\10\5"+
-    "\1\0\6\5\1\u0110\6\5\1\0\1\5\72\0\1\u0111"+
-    "\104\0\1\u0112\76\0\1\u0113\102\0\1\u0114\114\0\1\u0115"+
-    "\25\0\7\64\1\u0116\1\360\73\64\4\0\3\5\4\0"+
-    "\1\5\7\0\4\5\1\u0117\3\5\1\0\10\5\1\0"+
-    "\15\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
-    "\1\5\1\u0118\6\5\1\0\10\5\1\0\15\5\1\0"+
-    "\1\5\24\0\3\5\4\0\1\5\7\0\1\5\1\u0119"+
-    "\6\5\1\0\10\5\1\0\15\5\1\0\1\5\24\0"+
-    "\3\5\4\0\1\5\7\0\1\5\1\u011a\6\5\1\0"+
-    "\10\5\1\0\15\5\1\0\1\5\24\0\3\5\4\0"+
-    "\1\5\7\0\6\5\1\u011b\1\5\1\0\10\5\1\0"+
-    "\15\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
-    "\10\5\1\0\10\5\1\0\6\5\1\u011c\6\5\1\0"+
-    "\1\5\24\0\3\5\4\0\1\5\7\0\10\5\1\0"+
-    "\10\5\1\0\5\5\1\u011d\7\5\1\0\1\5\24\0"+
-    "\3\5\4\0\1\5\7\0\10\5\1\0\10\5\1\0"+
-    "\1\5\1\u011e\13\5\1\0\1\5\24\0\3\5\4\0"+
-    "\1\5\7\0\10\5\1\0\10\5\1\0\5\5\1\u011f"+
-    "\7\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
-    "\6\5\1\u0120\1\5\1\0\10\5\1\0\15\5\1\0"+
-    "\1\5\24\0\3\5\4\0\1\5\7\0\4\5\1\u0121"+
-    "\3\5\1\0\10\5\1\0\15\5\1\0\1\5\24\0"+
-    "\3\5\4\0\1\5\7\0\10\5\1\0\10\5\1\0"+
-    "\3\5\1\u0122\11\5\1\0\1\5\24\0\3\5\4\0"+
-    "\1\5\7\0\10\5\1\0\10\5\1\0\2\5\1\u0123"+
-    "\12\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
-    "\6\5\1\u0124\1\5\1\0\10\5\1\0\15\5\1\0"+
-    "\1\5\24\0\3\5\4\0\1\5\7\0\10\5\1\0"+
-    "\10\5\1\0\10\5\1\u0125\4\5\1\0\1\5\24\0"+
-    "\3\5\4\0\1\5\7\0\6\5\1\u0126\1\5\1\0"+
-    "\10\5\1\0\15\5\1\0\1\5\24\0\3\5\4\0"+
-    "\1\5\7\0\3\5\1\u0127\4\5\1\0\10\5\1\0"+
-    "\15\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
-    "\4\5\1\u0128\3\5\1\0\10\5\1\0\15\5\1\0"+
-    "\1\5\24\0\3\5\4\0\1\5\7\0\10\5\1\0"+
-    "\10\5\1\0\2\5\1\u0129\12\5\1\0\1\5\24\0"+
-    "\3\5\4\0\1\5\7\0\6\5\1\u012a\1\5\1\0"+
-    "\10\5\1\0\15\5\1\0\1\5\24\0\3\5\4\0"+
-    "\1\5\7\0\10\5\1\0\10\5\1\0\2\5\1\u012b"+
-    "\12\5\1\0\1\5\46\0\1\u012c\104\0\1\u012d\111\0"+
-    "\1\u012e\76\0\1\u012f\125\0\1\u0130\35\0\3\5\4\0"+
-    "\1\5\7\0\6\5\1\u0131\1\5\1\0\10\5\1\0"+
-    "\15\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
-    "\10\5\1\0\10\5\1\0\7\5\1\u0132\5\5\1\0"+
-    "\1\5\24\0\3\5\4\0\1\5\7\0\10\5\1\0"+
-    "\10\5\1\0\1\5\1\u0133\13\5\1\0\1\5\24\0"+
-    "\3\5\4\0\1\5\7\0\10\5\1\0\10\5\1\0"+
-    "\7\5\1\u0134\5\5\1\0\1\5\24\0\3\5\4\0"+
-    "\1\5\7\0\6\5\1\u0135\1\5\1\0\10\5\1\0"+
-    "\15\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
-    "\10\5\1\0\10\5\1\0\1\u0136\14\5\1\0\1\5"+
-    "\24\0\3\5\4\0\1\5\7\0\10\5\1\0\1\5"+
-    "\1\u0137\6\5\1\0\15\5\1\0\1\5\24\0\3\5"+
-    "\4\0\1\5\7\0\6\5\1\u0138\1\5\1\0\10\5"+
-    "\1\0\15\5\1\0\1\5\24\0\3\5\4\0\1\5"+
-    "\7\0\10\5\1\0\10\5\1\0\5\5\1\u0139\7\5"+
-    "\1\0\1\5\72\0\1\u013a\73\0\1\u013b\72\0\1\u013c"+
-    "\102\0\1\u013d\57\0\3\5\4\0\1\5\7\0\10\5"+
-    "\1\0\10\5\1\0\5\5\1\u013e\7\5\1\0\1\5"+
-    "\24\0\3\5\4\0\1\5\7\0\10\5\1\0\10\5"+
-    "\1\0\5\5\1\u013f\7\5\1\0\1\5\24\0\3\5"+
-    "\4\0\1\5\7\0\10\5\1\0\10\5\1\0\5\5"+
-    "\1\u0140\7\5\1\0\1\5\24\0\3\5\4\0\1\5"+
-    "\7\0\5\5\1\u0141\2\5\1\0\10\5\1\0\15\5"+
+    "\7\0\6\5\1\u010c\1\5\1\0\10\5\1\0\15\5"+
     "\1\0\1\5\24\0\3\5\4\0\1\5\7\0\10\5"+
-    "\1\0\10\5\1\0\5\5\1\u0142\7\5\1\0\1\5"+
+    "\1\0\10\5\1\0\5\5\1\u010d\7\5\1\0\1\5"+
+    "\24\0\3\5\4\0\1\5\7\0\1\5\1\u010e\6\5"+
+    "\1\0\10\5\1\0\15\5\1\0\1\5\24\0\3\5"+
+    "\4\0\1\5\7\0\10\5\1\0\10\5\1\0\6\5"+
+    "\1\u010f\6\5\1\0\1\5\72\0\1\u0110\104\0\1\u0111"+
+    "\76\0\1\u0112\102\0\1\u0113\114\0\1\u0114\25\0\7\64"+
+    "\1\u0115\1\360\73\64\4\0\3\5\4\0\1\5\7\0"+
+    "\4\5\1\u0116\3\5\1\0\10\5\1\0\15\5\1\0"+
+    "\1\5\24\0\3\5\4\0\1\5\7\0\1\5\1\u0117"+
+    "\6\5\1\0\10\5\1\0\15\5\1\0\1\5\24\0"+
+    "\3\5\4\0\1\5\7\0\1\5\1\u0118\6\5\1\0"+
+    "\10\5\1\0\15\5\1\0\1\5\24\0\3\5\4\0"+
+    "\1\5\7\0\1\5\1\u0119\6\5\1\0\10\5\1\0"+
+    "\15\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
+    "\6\5\1\u011a\1\5\1\0\10\5\1\0\15\5\1\0"+
+    "\1\5\24\0\3\5\4\0\1\5\7\0\10\5\1\0"+
+    "\10\5\1\0\6\5\1\u011b\6\5\1\0\1\5\24\0"+
+    "\3\5\4\0\1\5\7\0\10\5\1\0\10\5\1\0"+
+    "\5\5\1\u011c\7\5\1\0\1\5\24\0\3\5\4\0"+
+    "\1\5\7\0\10\5\1\0\10\5\1\0\1\5\1\u011d"+
+    "\13\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
+    "\10\5\1\0\10\5\1\0\5\5\1\u011e\7\5\1\0"+
+    "\1\5\24\0\3\5\4\0\1\5\7\0\6\5\1\u011f"+
+    "\1\5\1\0\10\5\1\0\15\5\1\0\1\5\24\0"+
+    "\3\5\4\0\1\5\7\0\4\5\1\u0120\3\5\1\0"+
+    "\10\5\1\0\15\5\1\0\1\5\24\0\3\5\4\0"+
+    "\1\5\7\0\10\5\1\0\10\5\1\0\3\5\1\u0121"+
+    "\11\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
+    "\10\5\1\0\10\5\1\0\2\5\1\u0122\12\5\1\0"+
+    "\1\5\24\0\3\5\4\0\1\5\7\0\6\5\1\u0123"+
+    "\1\5\1\0\10\5\1\0\15\5\1\0\1\5\24\0"+
+    "\3\5\4\0\1\5\7\0\10\5\1\0\10\5\1\0"+
+    "\10\5\1\u0124\4\5\1\0\1\5\24\0\3\5\4\0"+
+    "\1\5\7\0\3\5\1\u0125\4\5\1\0\10\5\1\0"+
+    "\15\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
+    "\4\5\1\u0126\3\5\1\0\10\5\1\0\15\5\1\0"+
+    "\1\5\24\0\3\5\4\0\1\5\7\0\10\5\1\0"+
+    "\10\5\1\0\2\5\1\u0127\12\5\1\0\1\5\24\0"+
+    "\3\5\4\0\1\5\7\0\6\5\1\u0128\1\5\1\0"+
+    "\10\5\1\0\15\5\1\0\1\5\24\0\3\5\4\0"+
+    "\1\5\7\0\10\5\1\0\10\5\1\0\2\5\1\u0129"+
+    "\12\5\1\0\1\5\46\0\1\u012a\104\0\1\u012b\111\0"+
+    "\1\u012c\76\0\1\u012d\125\0\1\u012e\35\0\3\5\4\0"+
+    "\1\5\7\0\6\5\1\u012f\1\5\1\0\10\5\1\0"+
+    "\15\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
+    "\10\5\1\0\10\5\1\0\7\5\1\u0130\5\5\1\0"+
+    "\1\5\24\0\3\5\4\0\1\5\7\0\10\5\1\0"+
+    "\10\5\1\0\1\5\1\u0131\13\5\1\0\1\5\24\0"+
+    "\3\5\4\0\1\5\7\0\10\5\1\0\10\5\1\0"+
+    "\7\5\1\u0132\5\5\1\0\1\5\24\0\3\5\4\0"+
+    "\1\5\7\0\6\5\1\u0133\1\5\1\0\10\5\1\0"+
+    "\15\5\1\0\1\5\24\0\3\5\4\0\1\5\7\0"+
+    "\10\5\1\0\10\5\1\0\1\u0134\14\5\1\0\1\5"+
+    "\24\0\3\5\4\0\1\5\7\0\10\5\1\0\1\5"+
+    "\1\u0135\6\5\1\0\15\5\1\0\1\5\24\0\3\5"+
+    "\4\0\1\5\7\0\6\5\1\u0136\1\5\1\0\10\5"+
+    "\1\0\15\5\1\0\1\5\24\0\3\5\4\0\1\5"+
+    "\7\0\10\5\1\0\10\5\1\0\5\5\1\u0137\7\5"+
+    "\1\0\1\5\72\0\1\u0138\73\0\1\u0139\72\0\1\u013a"+
+    "\102\0\1\u013b\57\0\3\5\4\0\1\5\7\0\10\5"+
+    "\1\0\10\5\1\0\5\5\1\u013c\7\5\1\0\1\5"+
     "\24\0\3\5\4\0\1\5\7\0\10\5\1\0\10\5"+
-    "\1\0\5\5\1\u0143\7\5\1\0\1\5\72\0\1\u0144"+
-    "\62\0\1\u0145\56\0\3\5\4\0\1\5\7\0\10\5"+
-    "\1\0\6\5\1\u0146\1\5\1\0\15\5\1\0\1\5"+
-    "\103\0\1\u0147\20\0";
+    "\1\0\5\5\1\u013d\7\5\1\0\1\5\24\0\3\5"+
+    "\4\0\1\5\7\0\10\5\1\0\10\5\1\0\5\5"+
+    "\1\u013e\7\5\1\0\1\5\24\0\3\5\4\0\1\5"+
+    "\7\0\5\5\1\u013f\2\5\1\0\10\5\1\0\15\5"+
+    "\1\0\1\5\24\0\3\5\4\0\1\5\7\0\10\5"+
+    "\1\0\10\5\1\0\5\5\1\u0140\7\5\1\0\1\5"+
+    "\24\0\3\5\4\0\1\5\7\0\10\5\1\0\10\5"+
+    "\1\0\5\5\1\u0141\7\5\1\0\1\5\72\0\1\u0142"+
+    "\62\0\1\u0143\56\0\3\5\4\0\1\5\7\0\10\5"+
+    "\1\0\6\5\1\u0144\1\5\1\0\15\5\1\0\1\5"+
+    "\103\0\1\u0145\20\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[15980];
+    int [] result = new int[15912];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -656,11 +654,11 @@ public class MQL4Lexer implements FlexLexer {
     "\25\1\2\11\21\1\4\0\7\11\1\1\2\11\1\1"+
     "\1\11\1\0\1\11\1\1\1\11\1\1\3\11\2\1"+
     "\1\0\51\1\5\0\2\11\1\0\1\1\1\11\50\1"+
-    "\6\0\40\1\5\0\26\1\1\11\4\0\11\1\1\11"+
+    "\6\0\37\1\5\0\25\1\1\11\4\0\11\1\1\11"+
     "\1\0\1\11\1\0\6\1\1\11\1\0\1\1\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[327];
+    int [] result = new int[325];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -976,451 +974,447 @@ public class MQL4Lexer implements FlexLexer {
           case 1: 
             { return MQL4Elements.BAD_CHARACTER;
             }
-          case 113: break;
+          case 112: break;
           case 2: 
             { return MQL4Elements.LINE_TERMINATOR;
             }
-          case 114: break;
+          case 113: break;
           case 3: 
             { return MQL4Elements.WHITE_SPACE;
             }
-          case 115: break;
+          case 114: break;
           case 4: 
             { return MQL4Elements.IDENTIFIER;
             }
-          case 116: break;
+          case 115: break;
           case 5: 
             { return MQL4Elements.DIV;
             }
-          case 117: break;
+          case 116: break;
           case 6: 
             { return MQL4Elements.MUL;
             }
-          case 118: break;
+          case 117: break;
           case 7: 
             { return MQL4Elements.LT;
             }
-          case 119: break;
+          case 118: break;
           case 8: 
             { return MQL4Elements.DOT;
             }
-          case 120: break;
+          case 119: break;
           case 9: 
             { return MQL4Elements.MINUS;
             }
-          case 121: break;
+          case 120: break;
           case 10: 
             { return MQL4Elements.GT;
             }
-          case 122: break;
+          case 121: break;
           case 11: 
             { return MQL4Elements.QUESTION;
             }
-          case 123: break;
+          case 122: break;
           case 12: 
             { return MQL4Elements.INTEGER_LITERAL;
             }
-          case 124: break;
+          case 123: break;
           case 13: 
             { return MQL4Elements.PLUS;
             }
-          case 125: break;
+          case 124: break;
           case 14: 
             { return MQL4Elements.EQ;
             }
-          case 126: break;
+          case 125: break;
           case 15: 
             { return MQL4Elements.MOD;
             }
-          case 127: break;
+          case 126: break;
           case 16: 
             { return MQL4Elements.AND;
             }
-          case 128: break;
+          case 127: break;
           case 17: 
             { return MQL4Elements.OR;
             }
-          case 129: break;
+          case 128: break;
           case 18: 
             { return MQL4Elements.XOR;
             }
-          case 130: break;
+          case 129: break;
           case 19: 
             { return MQL4Elements.TILDA;
             }
-          case 131: break;
+          case 130: break;
           case 20: 
             { return MQL4Elements.NOT;
             }
-          case 132: break;
+          case 131: break;
           case 21: 
             { return MQL4Elements.L_ROUND_BRACKET;
             }
-          case 133: break;
+          case 132: break;
           case 22: 
             { return MQL4Elements.R_ROUND_BRACKET;
             }
-          case 134: break;
+          case 133: break;
           case 23: 
             { return MQL4Elements.L_CURLY_BRACKET;
             }
-          case 135: break;
+          case 134: break;
           case 24: 
             { return MQL4Elements.R_CURLY_BRACKET;
             }
-          case 136: break;
+          case 135: break;
           case 25: 
             { return MQL4Elements.L_SQUARE_BRACKET;
             }
-          case 137: break;
+          case 136: break;
           case 26: 
             { return MQL4Elements.R_SQUARE_BRACKET;
             }
-          case 138: break;
+          case 137: break;
           case 27: 
             { return MQL4Elements.SEMICOLON;
             }
-          case 139: break;
+          case 138: break;
           case 28: 
             { return MQL4Elements.COLON;
             }
-          case 140: break;
+          case 139: break;
           case 29: 
             { return MQL4Elements.COMMA;
             }
-          case 141: break;
+          case 140: break;
           case 30: 
             { return MQL4Elements.LINE_COMMENT;
             }
-          case 142: break;
+          case 141: break;
           case 31: 
             { return MQL4Elements.DIV_EQ;
             }
-          case 143: break;
+          case 142: break;
           case 32: 
             { return MQL4Elements.MUL_EQ;
             }
-          case 144: break;
+          case 143: break;
           case 33: 
             { return MQL4Elements.STRING_LITERAL;
             }
-          case 145: break;
+          case 144: break;
           case 34: 
             { return MQL4Elements.SH_LEFT;
             }
-          case 146: break;
+          case 145: break;
           case 35: 
             { return MQL4Elements.INCLUDE_STRING_LITERAL;
             }
-          case 147: break;
+          case 146: break;
           case 36: 
             { return MQL4Elements.LESS_EQ;
             }
-          case 148: break;
+          case 147: break;
           case 37: 
             { return MQL4Elements.DOUBLE_LITERAL;
             }
-          case 149: break;
+          case 148: break;
           case 38: 
             { return MQL4Elements.MINUS_MINUS;
             }
-          case 150: break;
+          case 149: break;
           case 39: 
             { return MQL4Elements.MINUS_EQ;
             }
-          case 151: break;
+          case 150: break;
           case 40: 
             { return MQL4Elements.SH_RIGHT;
             }
-          case 152: break;
+          case 151: break;
           case 41: 
             { return MQL4Elements.GT_EQ;
             }
-          case 153: break;
+          case 152: break;
           case 42: 
             { return MQL4Elements.DO_KEYWORD;
             }
-          case 154: break;
+          case 153: break;
           case 43: 
             { return MQL4Elements.PLUS_PLUS;
             }
-          case 155: break;
+          case 154: break;
           case 44: 
             { return MQL4Elements.PLUS_EQ;
             }
-          case 156: break;
+          case 155: break;
           case 45: 
             { return MQL4Elements.IF_KEYWORD;
             }
-          case 157: break;
+          case 156: break;
           case 46: 
             { return MQL4Elements.EQ_EQ;
             }
-          case 158: break;
+          case 157: break;
           case 47: 
             { return MQL4Elements.MOD_EQ;
             }
-          case 159: break;
+          case 158: break;
           case 48: 
             { return MQL4Elements.AND_EQ;
             }
-          case 160: break;
+          case 159: break;
           case 49: 
             { return MQL4Elements.BOOL_AND;
             }
-          case 161: break;
+          case 160: break;
           case 50: 
             { return MQL4Elements.OR_EQ;
             }
-          case 162: break;
+          case 161: break;
           case 51: 
             { return MQL4Elements.BOOL_OR;
             }
-          case 163: break;
+          case 162: break;
           case 52: 
             { return MQL4Elements.XOR_EQ;
             }
-          case 164: break;
+          case 163: break;
           case 53: 
             { return MQL4Elements.POW;
             }
-          case 165: break;
+          case 164: break;
           case 54: 
             { return MQL4Elements.TILDA_EQ;
             }
-          case 166: break;
+          case 165: break;
           case 55: 
             { return MQL4Elements.NOT_EQ;
             }
-          case 167: break;
+          case 166: break;
           case 56: 
             { return MQL4Elements.SH_LEFT_EQ;
             }
-          case 168: break;
+          case 167: break;
           case 57: 
             { return MQL4Elements.USH_RIGHT;
             }
-          case 169: break;
+          case 168: break;
           case 58: 
             { return MQL4Elements.SH_RIGHT_EQ;
             }
-          case 170: break;
+          case 169: break;
           case 59: 
             { return MQL4Elements.CHAR_LITERAL;
             }
-          case 171: break;
+          case 170: break;
           case 60: 
             { return MQL4Elements.FOR_KEYWORD;
             }
-          case 172: break;
+          case 171: break;
           case 61: 
             { return MQL4Elements.NEW_KEYWORD;
             }
-          case 173: break;
+          case 172: break;
           case 62: 
             { return MQL4Elements.INT_KEYWORD;
             }
-          case 174: break;
+          case 173: break;
           case 63: 
             { return MQL4Elements.POW_EQ;
             }
-          case 175: break;
+          case 174: break;
           case 64: 
             { return MQL4Elements.BLOCK_COMMENT;
             }
-          case 176: break;
+          case 175: break;
           case 65: 
             { return MQL4Elements.USH_RIGHT_EQ;
             }
-          case 177: break;
+          case 176: break;
           case 66: 
             { return MQL4Elements.BOOL_KEYWORD;
             }
-          case 178: break;
+          case 177: break;
           case 67: 
             { return MQL4Elements.TRUE_KEYWORD;
             }
-          case 179: break;
+          case 178: break;
           case 68: 
             { return MQL4Elements.THIS_KEYWORD;
             }
-          case 180: break;
+          case 179: break;
           case 69: 
             { return MQL4Elements.VOID_KEYWORD;
             }
-          case 181: break;
+          case 180: break;
           case 70: 
             { return MQL4Elements.UINT_KEYWORD;
             }
-          case 182: break;
+          case 181: break;
           case 71: 
             { return MQL4Elements.LONG_KEYWORD;
             }
-          case 183: break;
+          case 182: break;
           case 72: 
             { return MQL4Elements.CASE_KEYWORD;
             }
-          case 184: break;
+          case 183: break;
           case 73: 
             { return MQL4Elements.CHAR_KEYWORD;
             }
-          case 185: break;
+          case 184: break;
           case 74: 
             { return MQL4Elements.ENUM_KEYWORD;
             }
-          case 186: break;
+          case 185: break;
           case 75: 
             { return MQL4Elements.ELSE_KEYWORD;
             }
-          case 187: break;
+          case 186: break;
           case 76: 
             { return MQL4Elements.WHILE_KEYWORD;
             }
-          case 188: break;
+          case 187: break;
           case 77: 
             { return MQL4Elements.BREAK_KEYWORD;
             }
-          case 189: break;
+          case 188: break;
           case 78: 
             { return MQL4Elements.FALSE_KEYWORD;
             }
-          case 190: break;
+          case 189: break;
           case 79: 
             { return MQL4Elements.FLOAT_KEYWORD;
             }
-          case 191: break;
+          case 190: break;
           case 80: 
             { return MQL4Elements.ULONG_KEYWORD;
             }
-          case 192: break;
+          case 191: break;
           case 81: 
             { return MQL4Elements.UCHAR_KEYWORD;
             }
-          case 193: break;
+          case 192: break;
           case 82: 
             { return MQL4Elements.CONST_KEYWORD;
             }
-          case 194: break;
+          case 193: break;
           case 83: 
             { return MQL4Elements.COLOR_KEYWORD;
             }
-          case 195: break;
+          case 194: break;
           case 84: 
             { return MQL4Elements.CLASS_KEYWORD;
             }
-          case 196: break;
+          case 195: break;
           case 85: 
             { return MQL4Elements.SHORT_KEYWORD;
             }
-          case 197: break;
+          case 196: break;
           case 86: 
             { return MQL4Elements.INPUT_KEYWORD;
             }
-          case 198: break;
+          case 197: break;
           case 87: 
             { return MQL4Elements.RETURN_KEYWORD;
             }
-          case 199: break;
+          case 198: break;
           case 88: 
             { return MQL4Elements.USHORT_KEYWORD;
             }
-          case 200: break;
+          case 199: break;
           case 89: 
             { return MQL4Elements.DOUBLE_KEYWORD;
             }
-          case 201: break;
+          case 200: break;
           case 90: 
             { return MQL4Elements.DELETE_KEYWORD;
             }
-          case 202: break;
+          case 201: break;
           case 91: 
             { return MQL4Elements.SWITCH_KEYWORD;
             }
-          case 203: break;
+          case 202: break;
           case 92: 
             { return MQL4Elements.STATIC_KEYWORD;
             }
-          case 204: break;
+          case 203: break;
           case 93: 
             { return MQL4Elements.STRUCT_KEYWORD;
             }
-          case 205: break;
+          case 204: break;
           case 94: 
             { return MQL4Elements.STRING_KEYWORD;
             }
-          case 206: break;
+          case 205: break;
           case 95: 
-            { return MQL4Elements.STRICT_KEYWORD;
-            }
-          case 207: break;
-          case 96: 
             { return MQL4Elements.SIZEOF_KEYWORD;
             }
-          case 208: break;
-          case 97: 
+          case 206: break;
+          case 96: 
             { return MQL4Elements.EXTERN_KEYWORD;
             }
-          case 209: break;
-          case 98: 
+          case 207: break;
+          case 97: 
             { return MQL4Elements.PUBLIC_KEYWORD;
             }
-          case 210: break;
-          case 99: 
+          case 208: break;
+          case 98: 
             { return MQL4Elements.UNDEF_KEYWORD;
             }
-          case 211: break;
-          case 100: 
+          case 209: break;
+          case 99: 
             { return MQL4Elements.VIRTUAL_KEYWORD;
             }
-          case 212: break;
-          case 101: 
+          case 210: break;
+          case 100: 
             { return MQL4Elements.DEFAULT_KEYWORD;
             }
-          case 213: break;
-          case 102: 
+          case 211: break;
+          case 101: 
             { return MQL4Elements.PRIVATE_KEYWORD;
             }
-          case 214: break;
-          case 103: 
+          case 212: break;
+          case 102: 
             { return MQL4Elements.DEFINE_KEYWORD;
             }
-          case 215: break;
-          case 104: 
+          case 213: break;
+          case 103: 
             { return MQL4Elements.IMPORT_KEYWORD;
             }
-          case 216: break;
-          case 105: 
+          case 214: break;
+          case 104: 
             { return MQL4Elements.TEMPLATE_KEYWORD;
             }
-          case 217: break;
-          case 106: 
+          case 215: break;
+          case 105: 
             { return MQL4Elements.TYPENAME_KEYWORD;
             }
-          case 218: break;
-          case 107: 
+          case 216: break;
+          case 106: 
             { return MQL4Elements.DATETIME_KEYWORD;
             }
-          case 219: break;
-          case 108: 
+          case 217: break;
+          case 107: 
             { return MQL4Elements.OPERATOR_KEYWORD;
             }
-          case 220: break;
-          case 109: 
+          case 218: break;
+          case 108: 
             { return MQL4Elements.CONTINUE_KEYWORD;
             }
-          case 221: break;
-          case 110: 
+          case 219: break;
+          case 109: 
             { return MQL4Elements.INCLUDE_KEYWORD;
             }
-          case 222: break;
-          case 111: 
+          case 220: break;
+          case 110: 
             { return MQL4Elements.PROTECTED_KEYWORD;
             }
-          case 223: break;
-          case 112: 
+          case 221: break;
+          case 111: 
             { return MQL4Elements.PROPERTY_KEYWORD;
             }
-          case 224: break;
+          case 222: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }

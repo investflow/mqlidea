@@ -141,7 +141,6 @@ public interface MQL4Elements {
     IElementType NEW_KEYWORD = new MQL4ElementType("NEW_KEYWORD");
     IElementType OPERATOR_KEYWORD = new MQL4ElementType("OPERATOR_KEYWORD");
     IElementType SIZEOF_KEYWORD = new MQL4ElementType("SIZEOF_KEYWORD");
-    IElementType STRICT_KEYWORD = new MQL4ElementType("STRICT_KEYWORD");
     IElementType SWITCH_KEYWORD = new MQL4ElementType("SWITCH_KEYWORD");
     IElementType THIS_KEYWORD = new MQL4ElementType("THIS_KEYWORD");
     IElementType TRUE_KEYWORD = new MQL4ElementType("TRUE_KEYWORD");
