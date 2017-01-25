@@ -57,5 +57,9 @@
         https://sites.google.com/site/malenkov/java/150403
         -->
         <projectConfigurable id="settings.mql4" groupId="language" instance="ru.investflow.mql.settings.MQL4PluginSettingsPanel"/>
+
+        <!--Inspections-->
+        <localInspection language="MQL4" groupName="MQL4 inspections" enabledByDefault="true" level="WARNING" displayName="Preprocessor #property element"
+                         implementationClass="ru.investflow.mql.inspection.PreprocessorPropertyInspection"/>
     </extensions>
 </idea-plugin>

@@ -6,8 +6,9 @@ public interface MQL4Elements {
 
     /**
      * Token type for a sequence of whitespace characters.
+     * Better have it the same with default -> in this case it is the same in during parsing and in built Psi elements tree.
      */
-    IElementType WHITE_SPACE = new MQL4ElementType("WHITE_SPACE");
+    IElementType WHITE_SPACE = com.intellij.psi.TokenType.WHITE_SPACE;
 
     /**
      * Token type for a character which is not valid in the position where it was encountered,
@@ -146,9 +147,7 @@ public interface MQL4Elements {
     IElementType TRUE_KEYWORD = new MQL4ElementType("TRUE_KEYWORD");
     IElementType WHILE_KEYWORD = new MQL4ElementType("WHILE_KEYWORD");
 
-
     // Composite elements: blocks, statements, lists
-    IElementType PREPROCESSOR_BLOCK = new MQL4ElementType("PREPROCESSOR_BLOCK");
     IElementType PREPROCESSOR_DEFINE_BLOCK = new MQL4ElementType("PREPROCESSOR_DEFINE_BLOCK");
     IElementType PREPROCESSOR_IMPORT_BLOCK = new MQL4ElementType("PREPROCESSOR_IMPORT_BLOCK");
     IElementType PREPROCESSOR_INCLUDE_BLOCK = new MQL4ElementType("PREPROCESSOR_INCLUDE_BLOCK");

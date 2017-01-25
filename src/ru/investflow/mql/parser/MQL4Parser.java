@@ -28,7 +28,7 @@ public class MQL4Parser implements PsiParser, MQL4Elements {
                     || parseEmptyStatement(b)
                     || parseComment(b)
                     || parseBracketsBlock(b, 0)
-                    || parsePreprocessorBlock(b, 0);
+                    || parsePreprocessorBlock(b);
 
             //noinspection ConstantConditions
             if (!r) {

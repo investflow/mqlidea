@@ -5,30 +5,19 @@ import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 
-import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIncludeParsing.parseInclude;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorPropertyParsing.parseProperty;
 
 public class PreprocessorParsing implements MQL4Elements {
 
-    public static boolean parsePreprocessorBlock(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "PreprocessorBlock")) {
-            return false;
-        }
+    public static boolean parsePreprocessorBlock(PsiBuilder b) {
+        //parseDefine(b, l + 1)
+        //parseUndef(b, l + 1)
+        //parseIfDef(b, l + 1)
+        //parseImport(b, l + 1)
 
-        PsiBuilder.Marker m = enter_section_(b);
-
-        boolean r = parseInclude(b) ||
+        return parseInclude(b) ||
                 parseProperty(b);
-//                parseDefine(b, l + 1) ||
-//                parseUndef(b, l + 1) ||
-//                parseIfDef(b, l + 1) ||
-//                parseImport(b, l + 1);
-
-        exit_section_(b, m, PREPROCESSOR_BLOCK, r);
-        return r;
     }
 
 
