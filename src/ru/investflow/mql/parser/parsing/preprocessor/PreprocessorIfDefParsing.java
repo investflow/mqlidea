@@ -3,12 +3,12 @@ package ru.investflow.mql.parser.parsing.preprocessor;
 import com.intellij.lang.PsiBuilder;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
+import ru.investflow.mql.psi.MQL4TokenSets;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.ExpressionParsing.parseExpressionOrFail;
-import static ru.investflow.mql.parser.parsing.LiteralParsing.isLiteral;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
 
 public class PreprocessorIfDefParsing implements MQL4Elements {
@@ -66,7 +66,7 @@ public class PreprocessorIfDefParsing implements MQL4Elements {
     private static boolean parseRequiredIdentifier(PsiBuilder b) {
         if (b.getTokenType() != IDENTIFIER) {
             //error(b, "Identifier expected");
-            if (isLiteral(b)) {
+            if (MQL4TokenSets.LITERALS.contains(b.getTokenType())) {
                 b.advanceLexer();
             }
             return false;

@@ -7,11 +7,6 @@ import ru.investflow.mql.psi.MQL4TokenSets;
 
 public class LiteralParsing {
 
-    public static boolean isLiteral(@NotNull PsiBuilder b) {
-        IElementType t = b.getTokenType();
-        return MQL4TokenSets.LITERALS.contains(t);
-    }
-
     public static boolean parseLiteral(@NotNull PsiBuilder b) {
         if (MQL4TokenSets.LITERALS.contains((IElementType) b)) {
             b.advanceLexer();
