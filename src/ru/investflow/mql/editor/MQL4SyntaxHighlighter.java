@@ -42,6 +42,8 @@ public class MQL4SyntaxHighlighter extends SyntaxHighlighterBase {
         put(MQL4TokenSets.STRINGS_AND_CHARS, DefaultLanguageHighlighterColors.STRING);
         put(MQL4TokenSets.NUMBERS, DefaultLanguageHighlighterColors.NUMBER);
         put(MQL4TokenSets.OPERATORS, DefaultLanguageHighlighterColors.OPERATION_SIGN);
+
+        put(MQL4Elements.COLOR_LITERAL, DefaultLanguageHighlighterColors.CONSTANT);
     }
 
     @NotNull

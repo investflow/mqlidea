@@ -26,7 +26,9 @@ import ru.investflow.mql.psi.impl.MQL4PreprocessorPropertyBlock;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
+import static ru.investflow.mql.psi.MQL4Elements.COLOR_LITERAL;
 import static ru.investflow.mql.psi.MQL4Elements.INTEGER_LITERAL;
 import static ru.investflow.mql.psi.MQL4Elements.STRING_LITERAL;
 
@@ -122,12 +124,12 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
         VALIDATORS_BY_NAME.put("indicator_minimum", new RequiredNumericValidator());
         VALIDATORS_BY_NAME.put("indicator_maximum", new RequiredNumericValidator());
         VALIDATORS_BY_NAME.put("indicator_labelN", new RequiredLiteralValidator(STRING_LITERAL));
-        VALIDATORS_BY_NAME.put("indicator_colorN", new RequiredLiteralValidator(INTEGER_LITERAL)); //todo: color
+        VALIDATORS_BY_NAME.put("indicator_colorN", new RequiredLiteralValidator(INTEGER_LITERAL, COLOR_LITERAL)); //todo: C' typed colors
         VALIDATORS_BY_NAME.put("indicator_widthN", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_styleN", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_typeN", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_levelN", new RequiredNumericValidator());
-        VALIDATORS_BY_NAME.put("indicator_levelcolor", new RequiredLiteralValidator(INTEGER_LITERAL)); //todo: color
+        VALIDATORS_BY_NAME.put("indicator_levelcolor", new RequiredLiteralValidator(INTEGER_LITERAL, COLOR_LITERAL)); //todo: C' typed colors
         VALIDATORS_BY_NAME.put("indicator_levelwidth", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_levelstyle", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("script_show_confirm", new OptionalAnyLiteralValidator());
@@ -146,10 +148,10 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
 
     static class RequiredLiteralValidator implements PropertyValueValidator {
         @NotNull
-        private final IElementType type;
+        private final IElementType[] types;
 
-        public RequiredLiteralValidator(@NotNull IElementType type) {
-            this.type = type;
+        public RequiredLiteralValidator(@NotNull IElementType... types) {
+            this.types = types;
         }
 
         @Nullable
@@ -158,7 +160,7 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
             if (valueNode == null) {
                 return createMissedRequiredArhumentDescriptor(manager, keyNode);
             }
-            if (valueNode.getElementType() != type) {
+            if (Stream.of(types).noneMatch(t -> t == valueNode.getElementType())) {
                 return manager.createProblemDescriptor(valueNode.getPsi(), valueNode.getPsi(), ILLEGAL_ARGUMENT_TYPE_WARNING, ProblemHighlightType.GENERIC_ERROR_OR_WARNING, true);
             }
             return null;

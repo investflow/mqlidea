@@ -48,6 +48,22 @@ decimal_float_exponent = [0-9]* \. [0-9_]+ {decimal_exponent}
 decimal_float_no_dot_exponent = [0-9]+ {decimal_exponent}
 decimal_exponent = [eE][\+\-]? [0-9_]+
 
+color_prefix = clr
+color_name= Black | DarkGreen | DarkSlateGray | Olive | Green | Teal | Navy | Purple | Maroon | Indigo | MidnightBlue | DarkBlue | DarkOliveGreen
+             | SaddleBrown | ForestGreen | OliveDrab | SeaGreen | DarkGoldenrod | DarkSlateBlue | Sienna | MediumBlue | Brown | DarkTurquoise | DimGray
+             | LightSeaGreen| DarkViolet | FireBrick | MediumVioletRed | MediumSeaGreen | Chocolate | Crimson | SteelBlue | Goldenrod | MediumSpringGreen
+             | LawnGreen | CadetBlue | DarkOrchid | YellowGreen | LimeGreen | OrangeRed | DarkOrange | Orange | Gold | Yellow | Chartreuse | Lime
+             | SpringGreen | Aqua | DeepSkyBlue | Blue | Magenta | Red | Gray | SlateGray | Peru | BlueViolet | LightSlateGray | DeepPink
+             | MediumTurquoise | DodgerBlue | Turquoise | RoyalBlue | SlateBlue | DarkKhaki | IndianRed | MediumOrchid | GreenYellow | MediumAquamarine
+             | DarkSeaGreen | Tomato | RosyBrown | Orchid | MediumPurple | PaleVioletRed | Coral | CornflowerBlue | DarkGray | SandyBrown | MediumSlateBlue
+             | Tan | DarkSalmon | BurlyWood | HotPink | Salmon | Violet | LightCoral | SkyBlue | LightSalmon | Plum | Khaki | LightGreen | Aquamarine
+             | Silver | LightSkyBlue | LightSteelBlue | LightBlue | PaleGreen | Thistle | PowderBlue | PaleGoldenrod | PaleTurquoise | LightGray | Wheat
+             | NavajoWhite | Moccasin | LightPink | Gainsboro | PeachPuff | Pink | Bisque | LightGoldenrod | BlanchedAlmond | LemonChiffon | Beige 
+             | AntiqueWhite | PapayaWhip | Cornsilk | LightYellow | LightCyan | Linen | Lavender | MistyRose | OldLace | WhiteSmoke | Seashell |  Ivory
+             | Honeydew | AliceBlue | LavenderBlush | MintCream | Snow | White
+
+color_constant = {color_prefix} {color_name}
+
 /*End of rules*/
 
 %%
@@ -65,6 +81,8 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 {float_literal} { return MQL4Elements.DOUBLE_LITERAL; }
 {double_quoted_string} { return MQL4Elements.STRING_LITERAL; }
 {include_quoted_string} { return MQL4Elements.INCLUDE_STRING_LITERAL; }
+{color_constant} { return MQL4Elements.COLOR_LITERAL; }
+
 
 
 // Keywords
@@ -138,7 +156,6 @@ decimal_exponent = [eE][\+\-]? [0-9_]+
 
 "template"  { return MQL4Elements.TEMPLATE_KEYWORD; }
 "typename"  { return MQL4Elements.TYPENAME_KEYWORD; }
-
 
 {identifier}    { return MQL4Elements.IDENTIFIER; }
 
