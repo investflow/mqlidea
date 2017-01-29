@@ -23,7 +23,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.SimpleTextAttributes;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import ru.investflow.mql.util.OSUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,9 +55,6 @@ class MQL4CompilerCommandLineState extends CommandLineState {
         console = (ConsoleView) result.getExecutionConsole();
         console.addMessageFilter((line, entireLength) -> {
             int startPos = entireLength - line.length();
-            if (OSUtils.isWine() && line.startsWith("fixme:")) {
-                return new Filter.Result(startPos, entireLength, null, SimpleTextAttributes.GRAYED_ITALIC_ATTRIBUTES.toTextAttributes());
-            }
             Project p = MQL4CompilerCommandLineState.this.getEnvironment().getProject();
             VirtualFile fileToCompile = runConfig.getFileToCompileAsVirtualFile();
             if (fileToCompile == null) {
@@ -120,6 +116,7 @@ class MQL4CompilerCommandLineState extends CommandLineState {
         cmd.setWorkDirectory(buildDir);
         if (isWine()) {
             cmd.addParameter(metaeditorExePath);
+            cmd.getEnvironment().put("WINEDEBUG", "-all"); // disable wine related warnings and debug logs.
         }
         cmd.addParameter("/compile:" + copiedFileToCompile.getName());
         cmd.addParameter("/log");
