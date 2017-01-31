@@ -32,7 +32,8 @@ public interface MQL4Elements {
     IElementType INCLUDE_STRING_LITERAL = new MQL4ElementType("INCLUDE_STRING_LITERAL");
     IElementType INTEGER_LITERAL = new MQL4ElementType("INTEGER_LITERAL");
     IElementType STRING_LITERAL = new MQL4ElementType("STRING_LITERAL");
-    IElementType COLOR_LITERAL = new MQL4ElementType("COLOR_LITERAL");
+    IElementType COLOR_CONSTANT_LITERAL = new MQL4ElementType("COLOR_CONSTANT_LITERAL");
+    IElementType COLOR_STRING_LITERAL = new MQL4ElementType("COLOR_STRING_LITERAL");
 
     // Braces and separators
     IElementType COLON = new MQL4ElementType("COLON");

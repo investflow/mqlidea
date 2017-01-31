@@ -62,7 +62,8 @@ color_name= Black | DarkGreen | DarkSlateGray | Olive | Green | Teal | Navy | Pu
              | AntiqueWhite | PapayaWhip | Cornsilk | LightYellow | LightCyan | Linen | Lavender | MistyRose | OldLace | WhiteSmoke | Seashell |  Ivory
              | Honeydew | AliceBlue | LavenderBlush | MintCream | Snow | White
 
-color_constant = {color_prefix} {color_name}
+color_constant_literal = {color_prefix} {color_name}
+color_string_literal = C \' ({decimal_integer} | {hexadecimal_integer} | , )* \'
 
 /*End of rules*/
 
@@ -75,13 +76,13 @@ color_constant = {color_prefix} {color_name}
 {block_comment}     { return MQL4Elements.BLOCK_COMMENT; }
 {line_comment}      { return MQL4Elements.LINE_COMMENT; }
 
-
+{color_string_literal}     { return MQL4Elements.COLOR_STRING_LITERAL;}
 {char_literal} { return MQL4Elements.CHAR_LITERAL; }
 {integer_literal} { return MQL4Elements.INTEGER_LITERAL; }
 {float_literal} { return MQL4Elements.DOUBLE_LITERAL; }
 {double_quoted_string} { return MQL4Elements.STRING_LITERAL; }
 {include_quoted_string} { return MQL4Elements.INCLUDE_STRING_LITERAL; }
-{color_constant} { return MQL4Elements.COLOR_LITERAL; }
+{color_constant_literal} { return MQL4Elements.COLOR_CONSTANT_LITERAL; }
 
 
 

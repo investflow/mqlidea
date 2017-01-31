@@ -28,12 +28,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static ru.investflow.mql.psi.MQL4Elements.COLOR_LITERAL;
+import static ru.investflow.mql.psi.MQL4Elements.COLOR_CONSTANT_LITERAL;
+import static ru.investflow.mql.psi.MQL4Elements.COLOR_STRING_LITERAL;
 import static ru.investflow.mql.psi.MQL4Elements.INTEGER_LITERAL;
 import static ru.investflow.mql.psi.MQL4Elements.STRING_LITERAL;
 
 public class PreprocessorPropertyInspection extends LocalInspectionTool implements CustomSuppressableInspectionTool {
 
+    private static final String UNKNOWN_PROPERTY_WARNING = "Unknown property";
     private static final String ARGUMENT_EXPECTED_WARNING = "Argument is expected";
     private static final String ILLEGAL_ARGUMENT_TYPE_WARNING = "Illegal argument type";
     private static final String NUMERIC_ARGUMENT_EXPECTED_WARNING = "Numeric argument is expected";
@@ -54,7 +56,8 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
             String name = block.keyNode.getText();
             PropertyValueValidator validator = VALIDATORS_BY_NAME.get(name);
             if (validator == null) {
-                continue; // todo: show 'unknown keyword warning'
+                descriptors.add(manager.createProblemDescriptor(block.keyNode.getPsi(), block.keyNode.getPsi(), UNKNOWN_PROPERTY_WARNING, ProblemHighlightType.GENERIC_ERROR_OR_WARNING, true));
+                continue;
             }
             ProblemDescriptor d = validator.validateAndReturnProblemDescriptor(manager, block.keyNode, block.valueNode);
             if (d != null) {
@@ -124,12 +127,12 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
         VALIDATORS_BY_NAME.put("indicator_minimum", new RequiredNumericValidator());
         VALIDATORS_BY_NAME.put("indicator_maximum", new RequiredNumericValidator());
         VALIDATORS_BY_NAME.put("indicator_labelN", new RequiredLiteralValidator(STRING_LITERAL));
-        VALIDATORS_BY_NAME.put("indicator_colorN", new RequiredLiteralValidator(INTEGER_LITERAL, COLOR_LITERAL)); //todo: C' typed colors
+        VALIDATORS_BY_NAME.put("indicator_colorN", new RequiredLiteralValidator(INTEGER_LITERAL, COLOR_CONSTANT_LITERAL, COLOR_STRING_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_widthN", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_styleN", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_typeN", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_levelN", new RequiredNumericValidator());
-        VALIDATORS_BY_NAME.put("indicator_levelcolor", new RequiredLiteralValidator(INTEGER_LITERAL, COLOR_LITERAL)); //todo: C' typed colors
+        VALIDATORS_BY_NAME.put("indicator_levelcolor", new RequiredLiteralValidator(INTEGER_LITERAL, COLOR_CONSTANT_LITERAL, COLOR_STRING_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_levelwidth", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_levelstyle", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("script_show_confirm", new OptionalAnyLiteralValidator());
@@ -158,7 +161,7 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
         @Override
         public ProblemDescriptor validateAndReturnProblemDescriptor(@NotNull InspectionManager manager, @NotNull ASTNode keyNode, @Nullable ASTNode valueNode) {
             if (valueNode == null) {
-                return createMissedRequiredArhumentDescriptor(manager, keyNode);
+                return createMissedRequiredArgumentDescriptor(manager, keyNode);
             }
             if (Stream.of(types).noneMatch(t -> t == valueNode.getElementType())) {
                 return manager.createProblemDescriptor(valueNode.getPsi(), valueNode.getPsi(), ILLEGAL_ARGUMENT_TYPE_WARNING, ProblemHighlightType.GENERIC_ERROR_OR_WARNING, true);
@@ -171,7 +174,7 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
         @Nullable
         @Override
         public ProblemDescriptor validateAndReturnProblemDescriptor(@NotNull InspectionManager manager, @NotNull ASTNode keyNode, @Nullable ASTNode valueNode) {
-            return valueNode == null ? createMissedRequiredArhumentDescriptor(manager, keyNode) : null;
+            return valueNode == null ? createMissedRequiredArgumentDescriptor(manager, keyNode) : null;
         }
     }
 
@@ -180,7 +183,7 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
         @Override
         public ProblemDescriptor validateAndReturnProblemDescriptor(@NotNull InspectionManager manager, @NotNull ASTNode keyNode, @Nullable ASTNode valueNode) {
             if (valueNode == null) {
-                return createMissedRequiredArhumentDescriptor(manager, keyNode);
+                return createMissedRequiredArgumentDescriptor(manager, keyNode);
             }
             if (!MQL4TokenSets.NUMBERS.contains(valueNode.getElementType())) {
                 return manager.createProblemDescriptor(valueNode.getPsi(), valueNode.getPsi(), NUMERIC_ARGUMENT_EXPECTED_WARNING, ProblemHighlightType.GENERIC_ERROR_OR_WARNING, true);
@@ -200,7 +203,7 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
     }
 
     @NotNull
-    private static ProblemDescriptor createMissedRequiredArhumentDescriptor(@NotNull InspectionManager manager, @NotNull ASTNode keyNode) {
+    private static ProblemDescriptor createMissedRequiredArgumentDescriptor(@NotNull InspectionManager manager, @NotNull ASTNode keyNode) {
         return manager.createProblemDescriptor(keyNode.getPsi(), keyNode.getPsi(), ARGUMENT_EXPECTED_WARNING, ProblemHighlightType.GENERIC_ERROR_OR_WARNING, true);
     }
 
