@@ -42,7 +42,7 @@
         <lang.documentationProvider language="MQL4" implementationClass="ru.investflow.mql.doc.MQL4DocumentationProvider"/>
         <lang.braceMatcher language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4BraceMatcher"/>
         <lang.foldingBuilder language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4FoldingBuilder"/>
-        <completion.contributor language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4CompletionContributor"/>
+        <completion.contributor language="MQL4" implementationClass="ru.investflow.mql.editor.codecompletion.MQL4CompletionContributor"/>
 
         <!-- sdk -->
         <sdkType implementation="ru.investflow.mql.sdk.MQL4SdkType"/>

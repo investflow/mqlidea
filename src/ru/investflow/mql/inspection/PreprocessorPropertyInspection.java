@@ -109,7 +109,7 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
     }
 
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    private static final Map<String, PropertyValueValidator> VALIDATORS_BY_NAME = new HashMap<>();
+    public static final Map<String, PropertyValueValidator> VALIDATORS_BY_NAME = new HashMap<>();
 
     static {
         VALIDATORS_BY_NAME.put("strict", new OptionalAnyLiteralValidator());

@@ -1,4 +1,4 @@
-package ru.investflow.mql.editor;
+package ru.investflow.mql.editor.codecompletion;
 
 import com.intellij.codeInsight.completion.CompletionContributor;
 import com.intellij.codeInsight.completion.CompletionParameters;
@@ -7,7 +7,6 @@ import com.intellij.codeInsight.completion.CompletionResultSet;
 import com.intellij.codeInsight.completion.CompletionType;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
 import com.intellij.patterns.PsiElementPattern;
-import com.intellij.psi.PsiComment;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiRecursiveElementVisitor;
 import com.intellij.util.ProcessingContext;
@@ -27,30 +26,15 @@ import static com.intellij.patterns.PlatformPatterns.psiElement;
  */
 public class MQL4CompletionContributor extends CompletionContributor {
 
-    private static final PsiElementPattern.Capture<PsiElement> IN_COMMENT = psiElement().inside(PsiComment.class);
-
     public MQL4CompletionContributor() {
-        // code completion
-        extend(CompletionType.BASIC,
-                psiElement()
-                        .withLanguage(MQL4Language.INSTANCE)
-                        .andNot(IN_COMMENT),
-                new MQL4KeywordCompletionProvider()
-        );
-        extend(CompletionType.BASIC,
-                psiElement()
-                        .withLanguage(MQL4Language.INSTANCE)
-                        .andNot(IN_COMMENT),
-                new MQL4IdentifiersCompletionProvider()
-        );
+        PsiElementPattern.Capture<PsiElement> filter = mql4();
 
-        // comments completion
-        extend(CompletionType.BASIC,
-                psiElement()
-                        .withLanguage(MQL4Language.INSTANCE)
-                        .and(IN_COMMENT),
-                new MQL4IdentifiersCompletionProvider()
-        );
+        filter = CommentsCompletions.extend(this, filter);
+        filter = PreprocessorCompletions.extend(this, filter);
+        filter = PreprocessorPropertyCompletions.extend(this, filter);
+
+        extend(CompletionType.BASIC, filter, new MQL4KeywordCompletionProvider());
+        extend(CompletionType.BASIC, filter, new MQL4IdentifiersCompletionProvider());
     }
 
     /**
@@ -71,7 +55,6 @@ public class MQL4CompletionContributor extends CompletionContributor {
      * Adds to completion all MQL4 keywords, built-in constants and function names.
      */
     private static class MQL4KeywordCompletionProvider extends CompletionProvider<CompletionParameters> {
-
         @Override
         protected void addCompletions(@NotNull CompletionParameters parameters, ProcessingContext context, @NotNull CompletionResultSet result) {
             getKeywordCompletions().forEach(result::addElement);
@@ -81,7 +64,7 @@ public class MQL4CompletionContributor extends CompletionContributor {
     /**
      * Adds to completion all named identifiers from file.
      */
-    private static class MQL4IdentifiersCompletionProvider extends CompletionProvider<CompletionParameters> {
+    public static class MQL4IdentifiersCompletionProvider extends CompletionProvider<CompletionParameters> {
         @Override
         protected void addCompletions(@NotNull CompletionParameters parameters, ProcessingContext context, @NotNull CompletionResultSet result) {
             parameters.getOriginalFile().accept(new PsiRecursiveElementVisitor() {
@@ -89,11 +72,23 @@ public class MQL4CompletionContributor extends CompletionContributor {
                 public void visitElement(PsiElement element) {
                     super.visitElement(element);
                     if (element.getNode().getElementType() == MQL4Elements.IDENTIFIER) {
-                        String text = element.getText();
-                        result.addElement(LookupElementBuilder.create(text));
+                        result.addElement(LookupElementBuilder.create(element.getText()));
                     }
                 }
             });
         }
     }
+
+    @Override
+    public void fillCompletionVariants(@NotNull CompletionParameters parameters, @NotNull CompletionResultSet result) {
+        super.fillCompletionVariants(parameters, result);
+    }
+
+    /**
+     * Helper method for all filters.
+     */
+    static PsiElementPattern.Capture<PsiElement> mql4() {
+        return psiElement().withLanguage(MQL4Language.INSTANCE);
+    }
+
 }
