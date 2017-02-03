@@ -16,4 +16,5 @@ public class MQL4PsiElement extends ASTWrapperPsiElement {
     public boolean hasErrorElements() {
         return Stream.of(getChildren()).anyMatch(p -> p instanceof PsiErrorElement);
     }
+
 }

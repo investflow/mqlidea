@@ -12,6 +12,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import ru.investflow.mql.psi.impl.MQL4DocLookupPsiElement;
 import ru.investflow.mql.settings.MQL4PluginSettings;
 
 import java.io.InputStream;
@@ -97,7 +98,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     @Nullable
     @Override
     public String generateDoc(PsiElement element, @Nullable PsiElement originalElement) {
-        String link = getLinkByElementText(originalElement);
+        String link = getLinkByElementText(element != null ? element : originalElement);
         return link == null ? null : generateDocByLink(link);
     }
 
@@ -126,12 +127,20 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     }
 
     @Nullable
-    private String getLinkByElementText(@Nullable PsiElement originalElement) {
-        if (originalElement == null) {
+    private String getLinkByElementText(@Nullable PsiElement element) {
+        if (element == null) {
             return null;
         }
-        DocEntry entry = docEntryByText.get(originalElement.getText());
+        DocEntry entry = docEntryByText.get(element.getText());
+        if (entry == null) {
+            entry = docEntryByText.get("#" + element.getText());
+        }
         return entry == null ? null : entry.link;
+    }
+
+    @Override
+    public PsiElement getDocumentationElementForLookupItem(PsiManager psiManager, Object object, PsiElement context) {
+        return new MQL4DocLookupPsiElement(object.toString(), context.getNode());
     }
 
     @Nullable
