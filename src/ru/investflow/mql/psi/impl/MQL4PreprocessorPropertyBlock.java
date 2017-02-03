@@ -16,14 +16,12 @@ public class MQL4PreprocessorPropertyBlock extends MQL4PsiElement {
 
     public MQL4PreprocessorPropertyBlock(@NotNull ASTNode node) {
         super(node);
-        if (!hasParsingErrors) {
-            init(node);
-        }
     }
 
-    private void init(@NotNull ASTNode node) {
-        keyNode = node.findChildByType(MQL4Elements.IDENTIFIER);
-        valueNode = node.findChildByType(MQL4TokenSets.LITERALS);
+    public void sync() {
+        boolean hasErrors = hasErrorElements();
+        keyNode = hasErrors ? null : getNode().findChildByType(MQL4Elements.IDENTIFIER);
+        valueNode = hasErrors ? null : getNode().findChildByType(MQL4TokenSets.LITERALS);
     }
 
     @Override

@@ -50,7 +50,8 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
                 continue;
             }
             MQL4PreprocessorPropertyBlock block = (MQL4PreprocessorPropertyBlock) e;
-            if (block.hasParsingErrors || block.keyNode == null) {
+            block.sync();
+            if (block.keyNode == null) {
                 continue;
             }
             String name = block.keyNode.getText();
