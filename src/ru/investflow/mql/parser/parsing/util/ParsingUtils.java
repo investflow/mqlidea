@@ -22,6 +22,10 @@ public class ParsingUtils implements MQL4Elements {
         return text != null && text.contains("\n");
     }
 
+    public static boolean containsEndOfLineOrFile(@NotNull PsiBuilder b, int startPos) {
+        return containsEndOfLine(b, startPos) || b.getOriginalText().length() == b.getCurrentOffset();
+    }
+
     public static boolean containsEndOfLine(@NotNull PsiBuilder b, int startPos) {
         String text = b.getOriginalText().subSequence(startPos, b.getCurrentOffset()).toString();
         return containsEndOfLine(text);

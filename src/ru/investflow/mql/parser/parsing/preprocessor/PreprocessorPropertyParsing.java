@@ -8,6 +8,7 @@ import ru.investflow.mql.psi.MQL4TokenSets;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceUntilNewLine;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceWithError;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.containsEndOfLine;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.containsEndOfLineOrFile;
 
 public class PreprocessorPropertyParsing implements MQL4Elements {
 
@@ -19,7 +20,7 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
         int offset = b.getCurrentOffset();
         b.advanceLexer(); // #property -> name
         try {
-            if (containsEndOfLine(b, offset)) { // new line after #property -> report error
+            if (containsEndOfLineOrFile(b, offset)) { // new line after #property -> report error
                 b.error(ParsingErrors.IDENTIFIER_EXPECTED);
                 return true;
             }
@@ -29,7 +30,7 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
                 return true;
             }
             b.advanceLexer(); // name -> value
-            if (containsEndOfLine(b, offset)) { // line ends after identifier -> end of block
+            if (containsEndOfLineOrFile(b, offset)) { // line ends after identifier -> end of block
                 return true;
             }
             offset = b.getCurrentOffset();
@@ -38,7 +39,7 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
                 return true;
             }
             b.advanceLexer(); // name -> next token
-            if (!containsEndOfLine(b, offset)) { // line ends after identifier -> end of block
+            if (!containsEndOfLineOrFile(b, offset)) { // line ends after identifier -> end of block
                 advanceWithErrorUntilNewLine(b, offset, ParsingErrors.UNEXPECTED_TOKEN);
             }
             return true;
@@ -49,7 +50,7 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
 
     private static void advanceWithErrorUntilNewLine(PsiBuilder b, int offset, String message) {
         advanceWithError(b, message);
-        if (!containsEndOfLine(b, offset)) { // line ends after identifier -> end of block
+        if (!containsEndOfLineOrFile(b, offset)) { // line ends after identifier -> end of block
             advanceUntilNewLine(b);
         }
     }

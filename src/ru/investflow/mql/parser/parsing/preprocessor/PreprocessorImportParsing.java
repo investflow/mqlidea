@@ -24,7 +24,7 @@ public class PreprocessorImportParsing implements MQL4Elements {
         int importOffset = b.getCurrentOffset();
         b.advanceLexer();
         try {
-            if (ParsingUtils.containsEndOfLine(b, importOffset)) { // block is finished. Nothing to parse.
+            if (ParsingUtils.containsEndOfLineOrFile(b, importOffset)) { // block is finished. Nothing to parse.
                 return true;
             }
             // the only parameter must be string literal
@@ -38,7 +38,7 @@ public class PreprocessorImportParsing implements MQL4Elements {
             b.advanceLexer();
 
             // check that there are no other tokens till the eol
-            if (!ParsingUtils.containsEndOfLine(b, literalOffset)) {
+            if (!ParsingUtils.containsEndOfLineOrFile(b, literalOffset)) {
                 b.error("New line is expected!");
                 advanceLexerUntil(b, LINE_TERMINATOR, TokenAdvanceMode.DO_NOT_ADVANCE);
                 return true;
