@@ -23,7 +23,7 @@ public class PreprocessorCompletions {
     static final PsiElementPattern.Capture<PsiElement> STARTING_PROPERTIES_BLOCK = mql4().withParent(MQL4File.class).afterLeaf("#");
 
     /**
-     * Adds to completion all named identifiers from file.
+     * Adds to completion all preprocessor keywords.
      */
     static class MQL4PreprocessorKeywordsCompletion extends CompletionProvider<CompletionParameters> {
         @Override
