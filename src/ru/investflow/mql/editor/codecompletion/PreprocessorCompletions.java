@@ -20,7 +20,7 @@ import static ru.investflow.mql.editor.codecompletion.MQL4CompletionContributor.
  */
 public class PreprocessorCompletions {
 
-    static final PsiElementPattern.Capture<PsiElement> STARTING_PROPERTIES_BLOCK = mql4().withParent(MQL4File.class).afterLeaf("#");
+    static final PsiElementPattern.Capture<PsiElement> STARTING_PREPROCESSOR_BLOCK = mql4().withParent(MQL4File.class).afterLeaf("#");
 
     /**
      * Adds to completion all preprocessor keywords.
@@ -34,8 +34,8 @@ public class PreprocessorCompletions {
     }
 
     public static PsiElementPattern.Capture<PsiElement> extend(MQL4CompletionContributor contributor, PsiElementPattern.Capture<PsiElement> filter) {
-        contributor.extend(CompletionType.BASIC, STARTING_PROPERTIES_BLOCK, new MQL4PreprocessorKeywordsCompletion());
-        return filter.andNot(STARTING_PROPERTIES_BLOCK);
+        contributor.extend(CompletionType.BASIC, STARTING_PREPROCESSOR_BLOCK, new MQL4PreprocessorKeywordsCompletion());
+        return filter.andNot(STARTING_PREPROCESSOR_BLOCK);
     }
 
 }

@@ -1,16 +1,18 @@
 package ru.investflow.mql;
 
-import javax.swing.Icon;
-
+import com.intellij.openapi.fileTypes.LanguageFileType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import com.intellij.openapi.fileTypes.LanguageFileType;
+import javax.swing.Icon;
 
 /* Each file in IDEA has type. This is type for MQL4 Language sources. */
 public class MQL4FileType extends LanguageFileType {
+
     public static final MQL4FileType INSTANCE = new MQL4FileType();
-    public static final String DEFAULT_EXTENSION = "mq4";
+
+    public static final String SOURCE_FILE_EXTENSION = "mq4";
+    public static final String HEADER_FILE_EXTENSION = "mqh";
 
     private MQL4FileType() {
         super(MQL4Language.INSTANCE);
@@ -31,7 +33,7 @@ public class MQL4FileType extends LanguageFileType {
     @NotNull
     @Override
     public String getDefaultExtension() {
-        return DEFAULT_EXTENSION;
+        return SOURCE_FILE_EXTENSION;
     }
 
     @Nullable

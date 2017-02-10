@@ -1,12 +1,9 @@
 package ru.investflow.mql.psi;
 
-import javax.swing.Icon;
-
-import org.jetbrains.annotations.NotNull;
-
 import com.intellij.extapi.psi.PsiFileBase;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.psi.FileViewProvider;
+import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.MQL4FileType;
 import ru.investflow.mql.MQL4Language;
 

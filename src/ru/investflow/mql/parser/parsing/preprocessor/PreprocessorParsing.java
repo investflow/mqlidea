@@ -7,6 +7,9 @@ import ru.investflow.mql.psi.MQL4Elements;
 
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIncludeParsing.parseInclude;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorPropertyParsing.parseProperty;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceUntilNewLine;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceWithError;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.containsEndOfLineOrFile;
 
 public class PreprocessorParsing implements MQL4Elements {
 
@@ -39,4 +42,10 @@ public class PreprocessorParsing implements MQL4Elements {
         return ParsingUtils.containsEndOfLine(text);
     }
 
+    public static void advanceWithErrorUntilNewLine(PsiBuilder b, int offset, String message) {
+        advanceWithError(b, message);
+        if (!containsEndOfLineOrFile(b, offset)) { // line ends after identifier -> end of block
+            advanceUntilNewLine(b);
+        }
+    }
 }

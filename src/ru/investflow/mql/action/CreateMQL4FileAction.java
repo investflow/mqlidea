@@ -15,6 +15,6 @@ public class CreateMQL4FileAction extends CreateFileAction {
 
     @Override
     protected String getDefaultExtension() {
-        return MQL4FileType.DEFAULT_EXTENSION;
+        return MQL4FileType.SOURCE_FILE_EXTENSION;
     }
 }

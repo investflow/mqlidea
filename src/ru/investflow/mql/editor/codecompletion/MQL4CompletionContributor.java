@@ -32,6 +32,7 @@ public class MQL4CompletionContributor extends CompletionContributor {
         filter = CommentsCompletions.extend(this, filter);
         filter = PreprocessorCompletions.extend(this, filter);
         filter = PreprocessorPropertyCompletions.extend(this, filter);
+        filter = PreprocessorIncludeCompletions.extend(this, filter);
 
         extend(CompletionType.BASIC, filter, new MQL4KeywordCompletionProvider());
         extend(CompletionType.BASIC, filter, new MQL4IdentifiersCompletionProvider());

@@ -5,6 +5,7 @@ import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.advanceWithErrorUntilNewLine;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceUntilNewLine;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceWithError;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.containsEndOfLine;
@@ -48,10 +49,4 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
         }
     }
 
-    private static void advanceWithErrorUntilNewLine(PsiBuilder b, int offset, String message) {
-        advanceWithError(b, message);
-        if (!containsEndOfLineOrFile(b, offset)) { // line ends after identifier -> end of block
-            advanceUntilNewLine(b);
-        }
-    }
 }
