@@ -1,14 +1,22 @@
 package parser;
 
-import org.jetbrains.annotations.NotNull;
-
 import com.intellij.core.CoreApplicationEnvironment;
 import com.intellij.lang.LanguageExtensionPoint;
 import com.intellij.lang.ParserDefinition;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.testFramework.ParsingTestCase;
+import com.intellij.testFramework.UsefulTestCase;
+import org.jetbrains.annotations.NotNull;
+import ru.investflow.mql.parser.MQL4ParserDefinition;
+
+import java.io.File;
+import java.io.IOException;
 
 public abstract class MQL4ParserTestBase extends ParsingTestCase {
+
+    public MQL4ParserTestBase(String dataPath) {
+        this(dataPath, "mq4", new MQL4ParserDefinition());
+    }
 
     public MQL4ParserTestBase(String dataPath, String fileExt, ParserDefinition... definitions) {
         super("parser/" + dataPath, fileExt, definitions);
@@ -22,24 +30,21 @@ public abstract class MQL4ParserTestBase extends ParsingTestCase {
 
     @Override
     protected boolean skipSpaces() {
-        return true;
+        return false;
     }
 
     @Override
-    protected void doTest(boolean checkErrors) {
+    protected boolean includeRanges() {
+        return true;
+    }
+
+    protected void doTest() {
         super.doTest(true);
-        if (checkErrors) {
-            assertFalse(
-                    "PsiFile contains error elements",
-                    toParseTreeText(myFile, skipSpaces(), includeRanges()).contains("PsiErrorElement")
-            );
-        }
     }
 
     @Override
     protected void setUp() throws Exception {
         super.setUp();
-        CoreApplicationEnvironment.registerExtensionPoint(
-                Extensions.getRootArea(), "com.intellij.lang.braceMatcher", LanguageExtensionPoint.class);
+        CoreApplicationEnvironment.registerExtensionPoint(Extensions.getRootArea(), "com.intellij.lang.braceMatcher", LanguageExtensionPoint.class);
     }
 }

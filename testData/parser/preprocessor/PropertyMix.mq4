@@ -19,5 +19,3 @@ stacksize 20
 
 #property /*some comment 1 */ stacksize /* some comment 2*/
 10
-
-

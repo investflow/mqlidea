@@ -1,18 +1,17 @@
 package parser;
 
-import ru.investflow.mql.parser.MQL4ParserDefinition;
-
 public class CommentsTest extends MQL4ParserTestBase {
+
     public CommentsTest() {
-        super("comments", "mq4", new MQL4ParserDefinition());
+        super("comments");
     }
 
     public void testLineComments() {
-        doTest(true);
+        doTest();
     }
 
     public void testBlockComments() {
-        doTest(true);
+        doTest();
     }
 
 }

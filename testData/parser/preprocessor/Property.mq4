@@ -29,4 +29,3 @@
 #property indicator_minimum 1
 #property indicator_minimum "1.1"
 #property indicator_minimum 1.1
-
