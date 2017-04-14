@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>ru.investflow.mql</id>
     <name>MQL Idea</name>
-    <version>0.26</version>
+    <version>171.1.0</version>
     <vendor email="mike.fursov@gmail.com" url="http://investflow.ru/mqlidea">Investflow.Ru</vendor>
 
     <description><![CDATA[
@@ -13,7 +13,7 @@
     ]]>
     </change-notes>
 
-    <idea-version since-build="171.0"/>
+    <idea-version since-build="171"/>
 
     <depends>com.intellij.modules.lang</depends>
 

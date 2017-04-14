@@ -1,3 +1,4 @@
+
 ## MQL Idea - support for MQL4 programming language in JetBrains' IDEs.
 
 ### Features
@@ -10,3 +11,6 @@
 
 ### Setup
 * Check [Wiki](https://github.com/investflow/mqlidea/wiki) for details
+
+### EAP (Early Access Program) builds
+* Add ```https://plugins.jetbrains.com/plugins/testing/9291``` to "File » Settings » Plugins » Browse Repositories » Manage Repositories" and "Help » Check for Updates".
