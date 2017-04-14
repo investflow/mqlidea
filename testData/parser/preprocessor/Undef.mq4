@@ -1,19 +1,20 @@
-// classic form of undef
-#undef A
+// ------ ERRORS ------
 
-// error: parameter is required
+// Missing parameter
 #undef
 #undef
 B
-
-// multiple statements on the same line
-#undef X #undef Y
-
-// error: parameter must be an identifier
+// Parameter must be an identifier
 #undef 1
 #undef 'A'
 #undef "B"
 #undef #undef
 
-// check that parsing is restored
-#undef B
+// Multiple parameters
+#undef X Y
+
+// ------ VALID ------
+
+#undef A
+#undef A;
+#undef X; #undef Y

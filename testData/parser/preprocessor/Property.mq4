@@ -1,31 +1,29 @@
-// OptionalAnyLiteralValidator
+// ------ ERRORS ------
+
+// Illegal property name
+#property not-valid-name
+
+// Illegal property parameters
+#property icon ''
+#property icon '
+#property icon x
+
+// Wrong number of parameters
+#property version 1 2
+#property version "1" 2 3
+
+// Multiple properties on the same line
+#property icon #property icon
+#property description #if
+
+// ------ VALID ------
+
 #property strict
-#property strict "some value"
-
-// Not supported property
-#property not-allowed-value
-
-// RequiredLiteralValidator
+#property unknown
+#property indicator_colorN clrAliceBlue
 #property icon "url"
-#property icon 1
-
-// RequiredLiteralValidator -> Integer
-#property stacksize
-#property stacksize 11
-#property stacksize 1.1
-
-// RequiredAnyLiteralValidator
+#property icon ""
+#property version '1'
 #property version 1
-#property version
-#property version 1.1
-#property version "1.1"
-
-// RequiredLiteralValidator -> String
-#property description 1
-#property description ""
-#property description "some string"
-
-// RequiredNumericValidator
-#property indicator_minimum 1
-#property indicator_minimum "1.1"
-#property indicator_minimum 1.1
+#property version 1;#property version 2;#property version 3
+#property version1 1; #property version2
