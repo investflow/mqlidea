@@ -1,83 +1,38 @@
 package ru.investflow.mql.parser.parsing.preprocessor;
 
 import com.intellij.lang.PsiBuilder;
-import ru.investflow.mql.parser.parsing.util.ParsingUtils;
+import com.intellij.psi.tree.IElementType;
+import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.psi.MQL4Elements;
-import ru.investflow.mql.psi.MQL4TokenSets;
 
-import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.ExpressionParsing.parseExpressionOrFail;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.completePPStatement;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.IDENTIFIER_EXPECTED;
 
 public class PreprocessorIfDefParsing implements MQL4Elements {
-    // #define identifier expression                   // parameter-free form
-    // #define identifier(par1,... par8) expression    // parametric form
-    //TODO: line breaks?
 
-    public static boolean parseDefine(PsiBuilder b, int l) {
-        if (!ParsingUtils.nextTokenIs(b, l, "parseDefine", DEFINE_KEYWORD)) {
+    public static boolean parseUndef(PsiBuilder b) {
+        if (b.getTokenType() != UNDEF_KEYWORD) {
             return false;
         }
         PsiBuilder.Marker m = b.mark();
-        b.advanceLexer(); // #define
-        try {
-            if (!parseRequiredIdentifier(b)) {
-                return true;
-            }
-            parseDefineParams(b);
-            parseExpressionOrFail(b, l + 1);
-        } finally {
-            m.done(PREPROCESSOR_DEFINE_BLOCK);
-        }
-        return true;
-    }
-
-
-    public static boolean parseUndef(PsiBuilder b, int l) {
-        if (!ParsingUtils.nextTokenIs(b, l, "parseUndef", UNDEF_KEYWORD)) {
-            return false;
-        }
-        PsiBuilder.Marker m = enter_section_(b);
         int startOffset = b.getCurrentOffset();
-        b.advanceLexer(); // #undef
+        b.advanceLexer(); // '#undef' keyword
         try {
-            if (!assertNoLineBreaksInRange(b, startOffset, "Identifier expected")) {
+            if (!assertNoLineBreaksInRange(b, startOffset, ParsingErrors.IDENTIFIER_EXPECTED)) {
                 return true;
             }
-            if (!parseRequiredIdentifier(b)) {
-                return true;
+            IElementType tt = b.getTokenType();
+            if (tt != IDENTIFIER) {
+                b.error(IDENTIFIER_EXPECTED);
             }
+            int statementEnd = b.getCurrentOffset();
+            b.advanceLexer(); // identifier
+            completePPStatement(b, statementEnd);
         } finally {
-            exit_section_(b, m, PREPROCESSOR_UNDEF_BLOCK, true);
+            m.done(PREPROCESSOR_UNDEF_BLOCK);
         }
         return true;
-    }
-
-    public static boolean parseIfDef(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "parseIfDef")) {
-            return false;
-        }
-        //todo:
-        return false;
-    }
-
-    private static boolean parseRequiredIdentifier(PsiBuilder b) {
-        if (b.getTokenType() != IDENTIFIER) {
-            //error(b, "Identifier expected");
-            if (MQL4TokenSets.LITERALS.contains(b.getTokenType())) {
-                b.advanceLexer();
-            }
-            return false;
-        }
-        b.advanceLexer();
-        return true;
-    }
-
-    private static boolean parseDefineParams(PsiBuilder b) {
-        //todo:
-        return false;
     }
 
 }

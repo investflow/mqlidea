@@ -11,7 +11,6 @@ import ru.investflow.mql.psi.MQL4Elements;
 import java.util.List;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 
 public class ParsingUtils implements MQL4Elements {
 
@@ -22,11 +21,17 @@ public class ParsingUtils implements MQL4Elements {
         return text != null && text.contains("\n");
     }
 
+    /**
+     * @return true if there is new line between startPos and currentPos or currentPos is EOF.
+     */
     public static boolean containsEndOfLineOrFile(@NotNull PsiBuilder b, int startPos) {
         return containsEndOfLine(b, startPos) || b.getOriginalText().length() == b.getCurrentOffset();
     }
 
-    public static boolean containsEndOfLine(@NotNull PsiBuilder b, int startPos) {
+    /**
+     * @return true if there is new line between startPos and currentPos.
+     */
+    private static boolean containsEndOfLine(@NotNull PsiBuilder b, int startPos) {
         String text = b.getOriginalText().subSequence(startPos, b.getCurrentOffset()).toString();
         return containsEndOfLine(text);
     }
@@ -68,10 +73,6 @@ public class ParsingUtils implements MQL4Elements {
      */
     public static boolean advanceLexerUntil(@NotNull PsiBuilder b, @NotNull IElementType type, @NotNull TokenAdvanceMode mode) {
         return advanceLexerUntil(b, TokenSet.create(type), mode);
-    }
-
-    public static boolean advanceUntilNewLine(@NotNull PsiBuilder b) {
-        return ParsingUtils.advanceLexerUntil(b, LINE_TERMINATOR, ADVANCE);
     }
 
     @SuppressWarnings("unchecked")
