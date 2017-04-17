@@ -3,12 +3,12 @@ package ru.investflow.mql.psi.impl;
 import com.intellij.lang.ASTNode;
 import org.jetbrains.annotations.NotNull;
 
-public class MQL4DocLookupPsiElement extends MQL4PsiElement {
+public class MQL4DocLookupElement extends MQL4PsiElement {
 
     @NotNull
     public final String text;
 
-    public MQL4DocLookupPsiElement(@NotNull String text, @NotNull ASTNode node) {
+    public MQL4DocLookupElement(@NotNull String text, @NotNull ASTNode node) {
         super(node);
         this.text = text;
     }

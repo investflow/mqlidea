@@ -158,8 +158,8 @@ public interface MQL4Elements {
 
     IElementType FUNCTION_DECLARATION = new MQL4ElementType("FUNCTION_DECLARATION");
     IElementType FUNCTION_DEFINITION = new MQL4ElementType("FUNCTION_DEFINITION");
-    IElementType FUNCTION_PARAMETER = new MQL4ElementType("FUNCTION_PARAMETER");
-    IElementType FUNCTION_PARAMETERS_LIST = new MQL4ElementType("FUNCTION_PARAMETERS_LIST");
+    IElementType FUNCTION_ARG = new MQL4ElementType("FUNCTION_ARG");
+    IElementType FUNCTION_ARGS_LIST = new MQL4ElementType("FUNCTION_ARGS_LIST");
 
     IElementType CODE_BLOCK = new MQL4ElementType("CODE_BLOCK");
     IElementType BRACKETS_BLOCK = new MQL4ElementType("BRACKETS_BLOCK");

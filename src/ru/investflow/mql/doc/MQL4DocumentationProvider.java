@@ -12,7 +12,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import ru.investflow.mql.psi.impl.MQL4DocLookupPsiElement;
+import ru.investflow.mql.psi.impl.MQL4DocLookupElement;
 import ru.investflow.mql.settings.MQL4PluginSettings;
 
 import java.io.InputStream;
@@ -140,7 +140,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
 
     @Override
     public PsiElement getDocumentationElementForLookupItem(PsiManager psiManager, Object object, PsiElement context) {
-        return new MQL4DocLookupPsiElement(object.toString(), context.getNode());
+        return new MQL4DocLookupElement(object.toString(), context.getNode());
     }
 
     @Nullable

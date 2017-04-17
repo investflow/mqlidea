@@ -61,5 +61,10 @@
         <!--Inspections-->
         <localInspection language="MQL4" groupName="MQL4 inspections" enabledByDefault="true" level="WARNING" displayName="Preprocessor #property element"
                          implementationClass="ru.investflow.mql.inspection.PreprocessorPropertyInspection"/>
+
+        <!--Structure view-->
+        <lang.psiStructureViewFactory language="MQL4"
+                                      implementationClass="ru.investflow.mql.structure.MQL4StructureViewBuilderFactory"/>
+
     </extensions>
 </idea-plugin>

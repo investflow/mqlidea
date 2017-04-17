@@ -8,6 +8,7 @@ import ru.investflow.mql.MQL4FileType;
 import ru.investflow.mql.MQL4Language;
 
 public class MQL4File extends PsiFileBase {
+
     public MQL4File(@NotNull FileViewProvider viewProvider) {
         super(viewProvider, MQL4Language.INSTANCE);
     }

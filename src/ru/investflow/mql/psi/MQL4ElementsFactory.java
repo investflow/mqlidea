@@ -4,6 +4,7 @@ import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NotNull;
+import ru.investflow.mql.psi.impl.MQL4FunctionElement;
 import ru.investflow.mql.psi.impl.MQL4PreprocessorIncludeBlock;
 import ru.investflow.mql.psi.impl.MQL4PreprocessorPropertyBlock;
 import ru.investflow.mql.psi.impl.MQL4PsiElement;
@@ -24,6 +25,9 @@ public class MQL4ElementsFactory implements MQL4Elements {
             }
             if (type == PREPROCESSOR_INCLUDE_BLOCK) {
                 return MQL4PreprocessorIncludeBlock::new;
+            }
+            if (type == FUNCTION_DECLARATION || type == FUNCTION_DEFINITION) {
+                return MQL4FunctionElement::new;
             }
             return MQL4PsiElement::new;
         }).apply(node);
