@@ -4,6 +4,8 @@ import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
 import com.intellij.util.containers.Predicate;
+import ru.investflow.mql.parser.parsing.ExpressionParsing;
+import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
@@ -12,7 +14,6 @@ import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.BracketBlockParsing.parseBracketsBlock;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Declaration;
@@ -91,6 +92,9 @@ public class FunctionsParsing implements MQL4Elements {
         return actualResult;
     }
 
+    /**
+     * Form: (TYPE [IDENTIFIER [= (literal|identifier)]])
+     */
     private static boolean parseFunctionArgs(PsiBuilder b, int l) {
         if (!recursion_guard_(b, l, "parseFunctionArgs")) {
             return false;
@@ -98,25 +102,62 @@ public class FunctionsParsing implements MQL4Elements {
         PsiBuilder.Marker m = b.mark();
         try {
             while (b.getTokenType() != R_ROUND_BRACKET) {
-                PsiBuilder.Marker m2 = enter_section_(b);
+                PsiBuilder.Marker m2 = b.mark();
                 try {
-                    if (!MQL4TokenSets.DATA_TYPES.contains(b.getTokenType())) {
-                        b.error("Argument type or right brace is expected");
+                    //  === First element ===
+                    IElementType t1 = b.getTokenType();
+                    if (!MQL4TokenSets.DATA_TYPES.contains(t1)) {
+                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
                         return false;
                     }
-                    b.advanceLexer();
-                    if (b.getTokenType() != IDENTIFIER) {
-                        b.error("Identifier expected");
+                    b.advanceLexer(); // type
+
+                    // === Second element ===
+                    IElementType t2 = b.getTokenType();
+                    if (t2 == COMMA) {
+                        b.advanceLexer(); // COMMA
+                        continue; // end of argument
+                    }
+                    if (t2 == R_ROUND_BRACKET) {
+                        break; // end of all parameters
+                    }
+                    if (t2 != IDENTIFIER) {
+                        b.error(ParsingErrors.IDENTIFIER_EXPECTED);
                         return false;
                     }
-                    b.advanceLexer();
-                    if (b.getTokenType() != R_ROUND_BRACKET && b.getTokenType() != COMMA) {
-                        b.error("Comma expected");
+                    b.advanceLexer(); // identifier
+
+                    //  === Third element ===
+                    IElementType t3 = b.getTokenType();
+                    if (t3 == COMMA) {
+                        b.advanceLexer(); // COMMA
+                        continue; // end of argument
+                    }
+                    if (t3 == R_ROUND_BRACKET) {
+                        break; // end of all parameters
+                    }
+                    if (t3 != EQ) { //
+                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
                         return false;
                     }
-                    if (b.getTokenType() == COMMA) {
-                        b.advanceLexer();
+                    b.advanceLexer(); // EQ
+
+                    // default arg value
+                    if (!ExpressionParsing.parseExpression(b, l + 1)) {
+                        return false;
                     }
+
+                    //  === End of arg ===
+                    IElementType t4 = b.getTokenType();
+                    if (t4 == COMMA) {
+                        b.advanceLexer(); // COMMA
+                        continue; // end of argument
+                    }
+                    if (t4 == R_ROUND_BRACKET) {
+                        break; // end of all parameters
+                    }
+                    b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                    return false;
                 } finally {
                     m2.done(FUNCTION_ARG);
                 }

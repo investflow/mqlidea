@@ -1,5 +1,6 @@
 package ru.investflow.mql.structure;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.ide.structureView.StructureViewTreeElement;
 import com.intellij.navigation.ColoredItemPresentation;
 import com.intellij.navigation.ItemPresentation;
@@ -58,7 +59,7 @@ public class MQL4StructureViewElement implements StructureViewTreeElement {
             }
 
             public Icon getIcon(boolean open) {
-                return null;
+                return AllIcons.Nodes.Method;
             }
         };
     }
