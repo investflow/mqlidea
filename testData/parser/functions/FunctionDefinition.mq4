@@ -1,14 +1,15 @@
 // ------ ERRORS ------
 
 //TODO: void static e1() {}
-void e2(int a b){}
-void e3(int,,) {}
-void e4("val"){}
-void e5(1){}
-void e5(a){}
-void e6(int z 1){}
-void e7(int z, 1){}
-void e8(x
+void z2(int a b){}
+void z3(int,,) {}
+void z4("val"){}
+void z5(1){}
+void z5(a){}
+void z6(int z 1){}
+void z7(int z, 1){}
+void z8(const bool const y){}
+void z100(x
 
 
 // ------ VALID ------
@@ -39,3 +40,7 @@ void d2(int, string){}
 void d3(bool, char c){}
 void d4(bool b, char){}
 void d5(long b,){}
+
+// const & other modifiers
+void e1(const int x){}
+void e2(bool const y){}

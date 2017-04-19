@@ -90,6 +90,7 @@ public class FunctionsParsing implements MQL4Elements {
                 } else {
                     b.error("Function body or semicolon expected");
                 }
+                actualResult = Definition;
             }
         } finally {
             m.done(actualResult == Declaration ? FUNCTION_DECLARATION : FUNCTION_DEFINITION);
@@ -108,9 +109,15 @@ public class FunctionsParsing implements MQL4Elements {
         try {
             while (b.getTokenType() != R_ROUND_BRACKET) {
                 PsiBuilder.Marker m2 = b.mark();
+                boolean hasConst = false;
                 try {
                     //  === First element ===
                     IElementType t1 = b.getTokenType();
+                    if (t1 == CONST_KEYWORD) {
+                        hasConst = true;
+                        b.advanceLexer(); // const
+                        t1 = b.getTokenType();
+                    }
                     if (!MQL4TokenSets.DATA_TYPES.contains(t1)) {
                         b.error(ParsingErrors.UNEXPECTED_TOKEN);
                         return false;
@@ -119,6 +126,14 @@ public class FunctionsParsing implements MQL4Elements {
 
                     // === Second element ===
                     IElementType t2 = b.getTokenType();
+                    if (t2 == CONST_KEYWORD) {
+                        if (hasConst) {
+                            b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                            return false;
+                        }
+                        b.advanceLexer(); // const
+                        t2 = b.getTokenType();
+                    }
                     if (t2 == COMMA) {
                         b.advanceLexer(); // COMMA
                         continue; // end of argument
