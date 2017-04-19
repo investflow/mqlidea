@@ -4,11 +4,12 @@ import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
 import com.intellij.util.containers.Predicate;
+import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.parser.parsing.ExpressionParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
-import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
+import ru.investflow.mql.util.ObjectUtils;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -18,6 +19,8 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.BracketBlockParsing.parseBracketsBlock;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Declaration;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Definition;
+import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.NotMatched;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.matchSequence;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.parseTokenOrFail;
 import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
@@ -25,6 +28,7 @@ import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 public class FunctionsParsing implements MQL4Elements {
 
     public enum FunctionParsingResult {
+        NotMatched,
         Declaration,
         Definition
     }
@@ -35,22 +39,23 @@ public class FunctionsParsing implements MQL4Elements {
             t -> t == L_ROUND_BRACKET
     );
 
-    public static final TokenSet STOP_TOKENS = TokenSet.create(SEMICOLON, R_ROUND_BRACKET);
+    public static final TokenSet ON_ERROR_STOP_TOKENS = TokenSet.create(SEMICOLON, R_ROUND_BRACKET, LINE_TERMINATOR);
 
     public static boolean parseFunction(PsiBuilder b) {
-        return parseFunction(b, 0, null) != null;
+        return parseFunction(b, 0, null) != NotMatched;
     }
 
     /**
      * Form: TYPE IDENTIFIER ( ARG* ) (; |  {})
      */
-    @Nullable
+    @NotNull
     public static FunctionParsingResult parseFunction(PsiBuilder b, int l, @Nullable FunctionParsingResult expectedResult) {
+        assert expectedResult != NotMatched;
         if (!recursion_guard_(b, l, "parseFunction")) {
-            return null;
+            return NotMatched;
         }
         if (!matchSequence(b, FUNCTION_START_MATCHER)) {
-            return null;
+            return NotMatched;
         }
 
         PsiBuilder.Marker m = b.mark();
@@ -62,13 +67,13 @@ public class FunctionsParsing implements MQL4Elements {
 
             boolean argsParsed = parseFunctionArgs(b, l + 1);
             if (!argsParsed) {
-                ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE);
-                return expectedResult;
+                advanceLexerUntil(b, ON_ERROR_STOP_TOKENS, ADVANCE);
+                return ObjectUtils.firstNonNull(expectedResult, Declaration);
             }
 
             if (!parseTokenOrFail(b, R_ROUND_BRACKET)) { // ')'
-                ParsingUtils.advanceLexerUntil(b, STOP_TOKENS, ADVANCE);
-                return expectedResult;
+                advanceLexerUntil(b, ON_ERROR_STOP_TOKENS, ADVANCE);
+                return ObjectUtils.firstNonNull(expectedResult, Declaration);
             }
 
             if (b.getTokenType() == SEMICOLON) {
