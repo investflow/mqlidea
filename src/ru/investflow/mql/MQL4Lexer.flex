@@ -62,7 +62,7 @@ color_name= Black | DarkGreen | DarkSlateGray | Olive | Green | Teal | Navy | Pu
              | AntiqueWhite | PapayaWhip | Cornsilk | LightYellow | LightCyan | Linen | Lavender | MistyRose | OldLace | WhiteSmoke | Seashell |  Ivory
              | Honeydew | AliceBlue | LavenderBlush | MintCream | Snow | White
 
-color_constant_literal = {color_prefix} {color_name}
+color_constant_literal = {color_prefix} {color_name} | {color_name}
 color_string_literal = C \' ({decimal_integer} | {hexadecimal_integer} | , )* \'
 
 /*End of rules*/

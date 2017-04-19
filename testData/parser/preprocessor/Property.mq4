@@ -20,7 +20,8 @@
 
 #property strict
 #property unknown
-#property indicator_colorN clrAliceBlue
+#property indicator_color1 clrAliceBlue
+#property indicator_color2 MidnightBlue
 #property icon "url"
 #property icon ""
 #property version '1'
