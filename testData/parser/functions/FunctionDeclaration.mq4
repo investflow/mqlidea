@@ -42,3 +42,11 @@ void d5(long b,);
 // const & other modifiers
 void e1(const int x);
 void e2(bool const y);
+void e3(double &);
+void e4(const float &);
+void e5(double& x);
+void e6(double & y);
+void e7(double &z);
+void e8(bool const &a);
+
+

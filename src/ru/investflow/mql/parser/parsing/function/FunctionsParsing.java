@@ -39,7 +39,7 @@ public class FunctionsParsing implements MQL4Elements {
             t -> t == L_ROUND_BRACKET
     );
 
-    public static final TokenSet ON_ERROR_STOP_TOKENS = TokenSet.create(SEMICOLON, R_ROUND_BRACKET, LINE_TERMINATOR);
+    public static final TokenSet ON_ERROR_STOP_TOKENS = TokenSet.create(SEMICOLON, R_ROUND_BRACKET, R_CURLY_BRACKET);
 
     public static boolean parseFunction(PsiBuilder b) {
         return parseFunction(b, 0, null) != NotMatched;
@@ -132,6 +132,10 @@ public class FunctionsParsing implements MQL4Elements {
                             return false;
                         }
                         b.advanceLexer(); // const
+                        t2 = b.getTokenType();
+                    }
+                    if (t2 == AND) {
+                        b.advanceLexer(); // &
                         t2 = b.getTokenType();
                     }
                     if (t2 == COMMA) {
