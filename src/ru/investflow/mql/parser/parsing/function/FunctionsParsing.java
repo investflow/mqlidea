@@ -101,6 +101,7 @@ public class FunctionsParsing implements MQL4Elements {
     /**
      * Form: (TYPE [IDENTIFIER [= (literal|identifier)]])
      */
+    @SuppressWarnings("ConstantConditions")
     private static boolean parseFunctionArgs(PsiBuilder b, int l) {
         if (!recursion_guard_(b, l, "parseFunctionArgs")) {
             return false;
@@ -145,11 +146,28 @@ public class FunctionsParsing implements MQL4Elements {
                     if (t2 == R_ROUND_BRACKET) {
                         break; // end of all parameters
                     }
-                    if (t2 != IDENTIFIER) {
+                    if (t2 != IDENTIFIER && t2 != L_SQUARE_BRACKET) {
                         b.error(ParsingErrors.IDENTIFIER_EXPECTED);
                         return false;
                     }
-                    b.advanceLexer(); // identifier
+                    if (t2 == IDENTIFIER) {
+                        b.advanceLexer(); // identifier
+                    }
+
+                    if (b.getTokenType() == L_SQUARE_BRACKET) {
+                        b.advanceLexer(); // '['
+                        t2 = b.getTokenType();
+                        if (t2 == INTEGER_LITERAL || t2 == IDENTIFIER) {
+                            b.advanceLexer(); // array size
+                            t2 = b.getTokenType();
+                        }
+                        if (t2 == R_SQUARE_BRACKET) {
+                            b.advanceLexer(); //']'
+                        } else {
+                            b.error(ParsingErrors.NO_MATCHING_CLOSING_BRACKET);
+                            return false;
+                        }
+                    }
 
                     //  === Third element ===
                     IElementType t3 = b.getTokenType();

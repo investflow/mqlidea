@@ -9,6 +9,8 @@ void z5(a);
 void z6(int z 1);
 void z7(int z, 1);
 void z8(const bool const y);
+void z9(const bool y&);
+void z10(const int []y);
 void z100(x
 
 
@@ -48,5 +50,10 @@ void e5(double& x);
 void e6(double & y);
 void e7(double &z);
 void e8(bool const &a);
+void e9(bool& []);
+void e10(bool& x[]);
+void e10(bool& x[10]);
+#define ARRAY_SIZE 10
+void e11(bool& x[ARRAY_SIZE]);
 
 
