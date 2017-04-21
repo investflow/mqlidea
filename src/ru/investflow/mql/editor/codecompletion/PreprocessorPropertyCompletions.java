@@ -26,7 +26,7 @@ import static ru.investflow.mql.inspection.PreprocessorPropertyInspection.VALIDA
 public class PreprocessorPropertyCompletions {
 
     static final PsiElementPattern.Capture<PsiElement> IN_PROPERTIES_BLOCK_P1 = mql4().inside(MQL4PreprocessorPropertyBlock.class).afterLeaf(psiElement(MQL4Elements.PROPERTY_KEYWORD));
-    static final PsiElementPattern.Capture<PsiElement> IN_PROPERTIES_BLOCK_COLOR1 = mql4().inside(MQL4PreprocessorPropertyBlock.class).afterLeaf("indicator_colorN");
+    static final PsiElementPattern.Capture<PsiElement> IN_PROPERTIES_BLOCK_COLOR1 = mql4().inside(MQL4PreprocessorPropertyBlock.class).afterLeaf("indicator_color1", "indicator_color2", "indicator_color3", "indicator_color4", "indicator_color5", "indicator_color6", "indicator_color7", "indicator_color8", "indicator_color9");
     static final PsiElementPattern.Capture<PsiElement> IN_PROPERTIES_BLOCK_COLOR2 = mql4().inside(MQL4PreprocessorPropertyBlock.class).afterLeaf("indicator_levelcolor");
 
     /**

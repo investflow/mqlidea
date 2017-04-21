@@ -18,6 +18,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.util.SmartList;
 import com.intellij.util.containers.hash.HashMap;
+import org.apache.commons.lang.math.NumberUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.psi.MQL4Elements;
@@ -55,7 +56,8 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
                 continue;
             }
             String name = block.keyNode.getText();
-            PropertyValueValidator validator = VALIDATORS_BY_NAME.get(name);
+            String validatorName = getValidatorName(name);
+            PropertyValueValidator validator = VALIDATORS_BY_NAME.get(validatorName);
             if (validator == null) {
                 descriptors.add(manager.createProblemDescriptor(block.keyNode.getPsi(), block.keyNode.getPsi(), UNKNOWN_PROPERTY_WARNING, ProblemHighlightType.GENERIC_ERROR_OR_WARNING, true));
                 continue;
@@ -66,6 +68,20 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
             }
         }
         return descriptors.toArray(new ProblemDescriptor[0]);
+    }
+
+    @NotNull
+    private static String getValidatorName(String name) {
+        char lastChar = name.charAt(name.length() - 1);
+        if (lastChar < '0' || lastChar > '9') {
+            return name;
+        }
+        for (String cn : COUNTING_NAMES) {
+            if (name.startsWith(cn) && NumberUtils.isDigits(name.substring(cn.length()))) {
+                return cn + "N";
+            }
+        }
+        return name;
     }
 
     @Nullable
@@ -142,8 +158,9 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
         VALIDATORS_BY_NAME.put("script_show_inputs", new RequiredLiteralValidator(STRING_LITERAL));
         VALIDATORS_BY_NAME.put("tester_indicator", new RequiredLiteralValidator(STRING_LITERAL));
         VALIDATORS_BY_NAME.put("tester_library", new RequiredLiteralValidator(STRING_LITERAL));
-
     }
+
+    public static final String[] COUNTING_NAMES = {"indicator_label", "indicator_color", "indicator_width", "indicator_style", "indicator_type", "indicator_level"};
 
     interface PropertyValueValidator {
         @Nullable
