@@ -12,9 +12,12 @@ public class MQL4TokenSets implements MQL4Elements {
 
     public static final TokenSet PREPROCESSOR = TokenSet.create(
             DEFINE_KEYWORD,
+            ENDIF_KEYWORD,
+            IFDEF_KEYWORD,
             IMPORT_KEYWORD,
             INCLUDE_KEYWORD,
             PROPERTY_KEYWORD,
+            RESOURCE_KEYWORD,
             UNDEF_KEYWORD
     );
 

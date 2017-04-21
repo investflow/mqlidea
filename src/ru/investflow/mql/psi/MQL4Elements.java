@@ -51,9 +51,12 @@ public interface MQL4Elements {
 
     // Preprocessor
     IElementType DEFINE_KEYWORD = new MQL4ElementType("DEFINE_KEYWORD");
+    IElementType ENDIF_KEYWORD = new MQL4ElementType("ENDIF_KEYWORD");
+    IElementType IFDEF_KEYWORD = new MQL4ElementType("IFDEF_KEYWORD");
     IElementType IMPORT_KEYWORD = new MQL4ElementType("IMPORT_KEYWORD");
     IElementType INCLUDE_KEYWORD = new MQL4ElementType("INCLUDE_KEYWORD");
     IElementType PROPERTY_KEYWORD = new MQL4ElementType("PROPERTY_KEYWORD");
+    IElementType RESOURCE_KEYWORD = new MQL4ElementType("RESOURCE_KEYWORD");
     IElementType UNDEF_KEYWORD = new MQL4ElementType("UNDEF_KEYWORD");
 
     // Data types

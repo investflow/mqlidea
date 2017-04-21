@@ -151,9 +151,12 @@ color_string_literal = C \' ({decimal_integer} | {hexadecimal_integer} | , )* \'
 
 "#define"   { return MQL4Elements.DEFINE_KEYWORD; }
 "#undef"    { return MQL4Elements.UNDEF_KEYWORD; }
+"#ifdef"    { return MQL4Elements.IFDEF_KEYWORD; }
+"#endif"    { return MQL4Elements.ENDIF_KEYWORD; }
 "#import"   { return MQL4Elements.IMPORT_KEYWORD; }
 "#include"  { return MQL4Elements.INCLUDE_KEYWORD; }
 "#property" { return MQL4Elements.PROPERTY_KEYWORD; }
+"#resource" { return MQL4Elements.RESOURCE_KEYWORD; }
 
 "template"  { return MQL4Elements.TEMPLATE_KEYWORD; }
 "typename"  { return MQL4Elements.TYPENAME_KEYWORD; }
