@@ -158,6 +158,7 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
         VALIDATORS_BY_NAME.put("script_show_inputs", new OptionalAnyLiteralValidator());
         VALIDATORS_BY_NAME.put("tester_file", new OptionalAnyLiteralValidator());
         VALIDATORS_BY_NAME.put("script_show_inputs", new RequiredLiteralValidator(STRING_LITERAL));
+        VALIDATORS_BY_NAME.put("show_inputs", new OptionalAnyLiteralValidator());
         VALIDATORS_BY_NAME.put("tester_indicator", new RequiredLiteralValidator(STRING_LITERAL));
         VALIDATORS_BY_NAME.put("tester_library", new RequiredLiteralValidator(STRING_LITERAL));
     }
