@@ -119,7 +119,7 @@ public class FunctionsParsing implements MQL4Elements {
                         b.advanceLexer(); // const
                         t1 = b.getTokenType();
                     }
-                    if (!MQL4TokenSets.DATA_TYPES.contains(t1)) {
+                    if (t1 != IDENTIFIER && !MQL4TokenSets.DATA_TYPES.contains(t1)) { // not custom type name or known type
                         b.error(ParsingErrors.UNEXPECTED_TOKEN);
                         return false;
                     }
