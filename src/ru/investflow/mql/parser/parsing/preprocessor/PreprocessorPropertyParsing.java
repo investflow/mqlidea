@@ -1,6 +1,7 @@
 package ru.investflow.mql.parser.parsing.preprocessor;
 
 import com.intellij.lang.PsiBuilder;
+import com.intellij.psi.tree.IElementType;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
@@ -32,7 +33,8 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
                 return true;
             }
             offset = b.getCurrentOffset();
-            if (!MQL4TokenSets.LITERALS.contains(b.getTokenType())) {
+            IElementType valueType = b.getTokenType();
+            if (valueType != IDENTIFIER && !MQL4TokenSets.LITERALS.contains(valueType)) {
                 completePPStatement(b, offset, "Illegal #property value");
                 return true;
             }

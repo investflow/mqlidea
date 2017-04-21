@@ -31,6 +31,7 @@ import java.util.stream.Stream;
 
 import static ru.investflow.mql.psi.MQL4Elements.COLOR_CONSTANT_LITERAL;
 import static ru.investflow.mql.psi.MQL4Elements.COLOR_STRING_LITERAL;
+import static ru.investflow.mql.psi.MQL4Elements.IDENTIFIER;
 import static ru.investflow.mql.psi.MQL4Elements.INTEGER_LITERAL;
 import static ru.investflow.mql.psi.MQL4Elements.STRING_LITERAL;
 
@@ -141,6 +142,7 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
         VALIDATORS_BY_NAME.put("indicator_separate_window", new OptionalAnyLiteralValidator());
         VALIDATORS_BY_NAME.put("indicator_height", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_buffers", new RequiredLiteralValidator(INTEGER_LITERAL));
+        VALIDATORS_BY_NAME.put("indicator_plots", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_minimum", new RequiredNumericValidator());
         VALIDATORS_BY_NAME.put("indicator_maximum", new RequiredNumericValidator());
         VALIDATORS_BY_NAME.put("indicator_labelN", new RequiredLiteralValidator(STRING_LITERAL));
@@ -181,7 +183,9 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
             if (valueNode == null) {
                 return createMissedRequiredArgumentDescriptor(manager, keyNode);
             }
-            if (Stream.of(types).noneMatch(t -> t == valueNode.getElementType())) {
+            IElementType valueType = valueNode.getElementType();
+            // allow IDENTIFIER -> value can be a result of #define block.
+            if (valueType != IDENTIFIER && Stream.of(types).noneMatch(t -> t == valueType)) {
                 return manager.createProblemDescriptor(valueNode.getPsi(), valueNode.getPsi(), ILLEGAL_ARGUMENT_TYPE_WARNING, ProblemHighlightType.GENERIC_ERROR_OR_WARNING, true);
             }
             return null;
