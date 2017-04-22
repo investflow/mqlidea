@@ -57,4 +57,8 @@ void e10(bool& x[]){}
 void e10(bool& x[10]){}
 #define ARRAY_SIZE 10
 void e11(bool& x[ARRAY_SIZE]){}
-void e2(CustomType x){}
+void e12(CustomType x){}
+const int e13(){}
+const CustomType e14(){}
+int const e15(){}
+CustomType const e16(){}

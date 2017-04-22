@@ -3,15 +3,16 @@ package ru.investflow.mql.parser.parsing.function;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
-import com.intellij.util.containers.Predicate;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.parser.parsing.ExpressionParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
+import ru.investflow.mql.parser.parsing.util.ParsingUtils;
+import ru.investflow.mql.parser.parsing.util.PatternMatcher;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 import ru.investflow.mql.util.ObjectUtils;
 
-import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,7 +22,7 @@ import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.Functio
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Definition;
 import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.NotMatched;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
-import static ru.investflow.mql.parser.parsing.util.ParsingUtils.matchSequence;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.matchSequenceN;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.parseTokenOrFail;
 import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 
@@ -33,10 +34,23 @@ public class FunctionsParsing implements MQL4Elements {
         Definition
     }
 
-    private static final List<Predicate<IElementType>> FUNCTION_START_MATCHER = Arrays.asList(
-            MQL4TokenSets.DATA_TYPES::contains,
-            t -> t == IDENTIFIER,
-            t -> t == L_ROUND_BRACKET
+    private static final List<PatternMatcher> FUNCTION_START_MATCHER = Arrays.asList(
+            (b, ahead) -> { // return type: custom type or data type
+                IElementType t = b.lookAhead(ahead);
+                int da = 0;
+                if (t == CONST_KEYWORD) {
+                    da++;
+                    t = b.lookAhead(ahead + da);
+                }
+                boolean ok = t == IDENTIFIER || MQL4TokenSets.DATA_TYPES.contains(t);
+                if (ok) {
+                    t = b.lookAhead(ahead + da + 1);
+                    da += t == CONST_KEYWORD ? 1 : 0;
+                }
+                return ok ? 1 + da : -1;
+            },
+            (b, ahead) -> b.lookAhead(ahead) == IDENTIFIER ? 1 : -1,// function name
+            (b, ahead) -> b.lookAhead(ahead) == L_ROUND_BRACKET ? 1 : -1 // opening bracket
     );
 
     public static final TokenSet ON_ERROR_STOP_TOKENS = TokenSet.create(SEMICOLON, R_ROUND_BRACKET, R_CURLY_BRACKET);
@@ -54,16 +68,15 @@ public class FunctionsParsing implements MQL4Elements {
         if (!recursion_guard_(b, l, "parseFunction")) {
             return NotMatched;
         }
-        if (!matchSequence(b, FUNCTION_START_MATCHER)) {
+        int matchedPrefixLen = matchSequenceN(b, FUNCTION_START_MATCHER, 0);
+        if (matchedPrefixLen < 0) {
             return NotMatched;
         }
 
         PsiBuilder.Marker m = b.mark();
         FunctionParsingResult actualResult = null;
         try {
-            b.advanceLexer(); // data type
-            b.advanceLexer(); // identifier
-            b.advanceLexer(); // '('
+            ParsingUtils.advanceLexer(b, matchedPrefixLen); // data type, identifier, left round brace.
 
             boolean argsParsed = parseFunctionArgs(b, l + 1);
             if (!argsParsed) {

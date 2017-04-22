@@ -3,7 +3,6 @@ package ru.investflow.mql.parser.parsing.util;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
-import com.intellij.util.containers.Predicate;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.psi.MQL4Elements;
@@ -15,6 +14,16 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 public class ParsingUtils implements MQL4Elements {
 
     public static TokenSet STATEMENT_TERMINATORS = TokenSet.create(SEMICOLON, R_CURLY_BRACKET, R_ROUND_BRACKET);
+
+    public static void repeat(int n, Runnable r) {
+        for (int i = 1; i <= n; i++) {
+            r.run();
+        }
+    }
+
+    public static void advanceLexer(PsiBuilder b, int n) {
+        repeat(n, b::advanceLexer);
+    }
 
     //TODO: optimize this method: pass from & to idx
     public static boolean containsEndOfLine(@Nullable String text) {
@@ -75,16 +84,20 @@ public class ParsingUtils implements MQL4Elements {
         return advanceLexerUntil(b, TokenSet.create(type), mode);
     }
 
-    @SuppressWarnings("unchecked")
-    public static boolean matchSequence(@NotNull PsiBuilder b, @NotNull List<Predicate<IElementType>> predicates) {
-        for (int i = 0; i < predicates.size(); i++) {
-            Predicate<IElementType> p = predicates.get(i);
-            IElementType t = b.lookAhead(i);
-            if (!p.apply(t)) {
-                return false;
+    public static boolean matchSequence(@NotNull PsiBuilder b, @NotNull List<PatternMatcher> matchers, int nAhead) {
+        return matchSequenceN(b, matchers, nAhead) >= 0;
+    }
+
+    public static int matchSequenceN(@NotNull PsiBuilder b, @NotNull List<PatternMatcher> matchers, int nAhead) {
+        int a = nAhead;
+        for (PatternMatcher m : matchers) {
+            int da = m.match(b, a);
+            if (da < 0) {
+                return -1;
             }
+            a += da;
         }
-        return true;
+        return a - nAhead;
     }
 
     public static boolean checkTokenOrFail(@NotNull PsiBuilder b, @NotNull IElementType type) {

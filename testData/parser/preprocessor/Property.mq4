@@ -28,3 +28,4 @@
 #property version 1
 #property version 1;#property version 2;#property version 3
 #property version1 1; #property version2
+#property indicator_level1    -100.0
