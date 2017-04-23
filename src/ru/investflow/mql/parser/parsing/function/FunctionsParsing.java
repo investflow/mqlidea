@@ -129,8 +129,7 @@ public class FunctionsParsing implements MQL4Elements {
                     IElementType t1 = b.getTokenType();
                     if (t1 == CONST_KEYWORD) {
                         hasConst = true;
-                        b.advanceLexer(); // const
-                        t1 = b.getTokenType();
+                        t1 = ParsingUtils.advanceLexer(b); // const
                     }
                     if (t1 != IDENTIFIER && !MQL4TokenSets.DATA_TYPES.contains(t1)) { // not custom type name or known type
                         b.error(ParsingErrors.UNEXPECTED_TOKEN);
@@ -149,8 +148,7 @@ public class FunctionsParsing implements MQL4Elements {
                         t2 = b.getTokenType();
                     }
                     if (t2 == AND) {
-                        b.advanceLexer(); // &
-                        t2 = b.getTokenType();
+                        t2 = ParsingUtils.advanceLexer(b); // '&'
                     }
                     if (t2 == COMMA) {
                         b.advanceLexer(); // COMMA
@@ -168,11 +166,9 @@ public class FunctionsParsing implements MQL4Elements {
                     }
 
                     if (b.getTokenType() == L_SQUARE_BRACKET) {
-                        b.advanceLexer(); // '['
-                        t2 = b.getTokenType();
+                        t2 = ParsingUtils.advanceLexer(b); // '['
                         if (t2 == INTEGER_LITERAL || t2 == IDENTIFIER) {
-                            b.advanceLexer(); // array size
-                            t2 = b.getTokenType();
+                            t2 = ParsingUtils.advanceLexer(b); // array size
                         }
                         if (t2 == R_SQUARE_BRACKET) {
                             b.advanceLexer(); //']'

@@ -21,8 +21,14 @@ public class ParsingUtils implements MQL4Elements {
         }
     }
 
-    public static void advanceLexer(PsiBuilder b, int n) {
+    public static IElementType advanceLexer(@NotNull PsiBuilder b, int n) {
         repeat(n, b::advanceLexer);
+        return b.getTokenType();
+    }
+
+    public static IElementType advanceLexer(@NotNull PsiBuilder b) {
+        b.advanceLexer();
+        return b.getTokenType();
     }
 
     //TODO: optimize this method: pass from & to idx

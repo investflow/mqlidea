@@ -7,6 +7,7 @@ import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.completePPStatement;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexer;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.containsEndOfLineOrFile;
 
 public class PreprocessorPropertyParsing implements MQL4Elements {
@@ -34,7 +35,10 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
             }
             offset = b.getCurrentOffset();
             IElementType valueType = b.getTokenType();
-            if (valueType != IDENTIFIER && !MQL4TokenSets.LITERALS.contains(valueType)) {
+            if (valueType == MINUS) {
+                valueType = advanceLexer(b); // minus
+            }
+            if (!(valueType == IDENTIFIER || MQL4TokenSets.LITERALS.contains(valueType))) {
                 completePPStatement(b, offset, "Illegal #property value");
                 return true;
             }
