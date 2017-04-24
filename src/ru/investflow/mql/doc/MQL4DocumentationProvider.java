@@ -12,6 +12,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.impl.MQL4DocLookupElement;
 import ru.investflow.mql.settings.MQL4PluginSettings;
 
@@ -131,9 +132,17 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
         if (element == null) {
             return null;
         }
-        DocEntry entry = docEntryByText.get(element.getText());
+        String text = element.getText();
+        if (element.getNode().getElementType() == MQL4Elements.L_ROUND_BRACKET) { // when positioned on '(' show doc for function name
+            PsiElement bracketBlock = element.getParent();
+            PsiElement functionNameEl = bracketBlock == null ? null : bracketBlock.getPrevSibling();
+            if (functionNameEl != null) {
+                text = functionNameEl.getText();
+            }
+        }
+        DocEntry entry = docEntryByText.get(text);
         if (entry == null) {
-            entry = docEntryByText.get("#" + element.getText());
+            entry = docEntryByText.get("#" + text);
         }
         return entry == null ? null : entry.link;
     }
