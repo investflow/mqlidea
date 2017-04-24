@@ -21,7 +21,7 @@ public class MQL4StructureViewElement implements StructureViewTreeElement {
     }
 
     public Object getValue() {
-        return element.getFunctionName();
+        return element;
     }
 
     public void navigate(boolean requestFocus) {
@@ -59,7 +59,7 @@ public class MQL4StructureViewElement implements StructureViewTreeElement {
             }
 
             public Icon getIcon(boolean open) {
-                return AllIcons.Nodes.Method;
+                return AllIcons.Nodes.Function;
             }
         };
     }
