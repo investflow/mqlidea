@@ -57,7 +57,20 @@ public class ParsingUtils implements MQL4Elements {
      * @return returns true if stopToken was found.
      */
     public static boolean advanceLexerUntil(@NotNull PsiBuilder b, @NotNull TokenSet stopTypes, TokenAdvanceMode advanceStopTokens) {
-        b.setTokenTypeRemapper((source, start, end, text) -> stopTypes.contains(source) ? ParsingMarker.forType(source) : source);
+        if (advanceStopTokens == TokenAdvanceMode.ADVANCE) {
+            return advanceLexerUntil(b, stopTypes, TokenSet.EMPTY);
+        } else {
+            return advanceLexerUntil(b, TokenSet.EMPTY, stopTypes);
+        }
+    }
+
+    /**
+     * Safe to use with any kind of tokens that are hidden by PSI-Builder by default (like whitespaces)
+     *
+     * @return returns true if stopToken was found.
+     */
+    public static boolean advanceLexerUntil(@NotNull PsiBuilder b, @NotNull TokenSet stopTypesAdvance, TokenSet stopTypesDoNotAdvance) {
+        b.setTokenTypeRemapper((t, start, end, text) -> stopTypesAdvance.contains(t) || stopTypesDoNotAdvance.contains(t) ? ParsingMarker.forType(t) : t);
         try {
             // find the token
             while (!(b.getTokenType() instanceof ParsingMarker)) {
@@ -70,7 +83,7 @@ public class ParsingUtils implements MQL4Elements {
             do {
                 ParsingMarker m = (ParsingMarker) b.getTokenType();
                 b.remapCurrentToken(m.originalToken);
-                if (advanceStopTokens == TokenAdvanceMode.DO_NOT_ADVANCE) {
+                if (stopTypesDoNotAdvance.contains(m.originalToken)) {
                     break;
                 }
                 b.advanceLexer();
@@ -81,6 +94,7 @@ public class ParsingUtils implements MQL4Elements {
         }
     }
 
+
     /**
      * Safe to use with any kind of tokens that are hidden by PSI-Builder by default (like whitespaces)
      *
@@ -90,6 +104,7 @@ public class ParsingUtils implements MQL4Elements {
         return advanceLexerUntil(b, TokenSet.create(type), mode);
     }
 
+    @SuppressWarnings("unused")
     public static boolean matchSequence(@NotNull PsiBuilder b, @NotNull List<PatternMatcher> matchers, int nAhead) {
         return matchSequenceN(b, matchers, nAhead) >= 0;
     }

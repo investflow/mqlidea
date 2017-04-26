@@ -11,6 +11,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import ru.investflow.mql.editor.folding.EnumFoldingDescriptor;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 
@@ -41,18 +42,26 @@ public class MQL4FoldingBuilder implements FoldingBuilder, DumbAware {
                 descriptors.add(new FoldingDescriptor(node, new TextRange(startOffset, endOffset)));
             }
         } else if (type == MQL4Elements.BRACKETS_BLOCK && node.getFirstChildNode().getElementType() == MQL4Elements.L_CURLY_BRACKET) {
-            boolean isNestedBlock = findTopLevelOfType(node, MQL4Elements.BRACKETS_BLOCK) != null;
-            if (!isNestedBlock) {
+            if (!isNestedBlock(node)) {
                 int startOffset = node.getFirstChildNode().getTextRange().getStartOffset();
                 int endOffset = node.getLastChildNode().getTextRange().getEndOffset() - 1;
                 if (document.getLineNumber(startOffset) != document.getLineNumber(endOffset)) {
                     descriptors.add(new FoldingDescriptor(node, new TextRange(startOffset, endOffset)));
                 }
             }
+        } else if (type == MQL4Elements.ENUM_TYPE) {
+            if (!isNestedBlock(node)) {
+                //todo: do not fold if contains errors?
+                descriptors.add(new EnumFoldingDescriptor(node));
+            }
         }
         for (ASTNode child : node.getChildren(null)) {
             collectDescriptorsRecursively(child, document, descriptors);
         }
+    }
+
+    private static boolean isNestedBlock(@NotNull ASTNode node) {
+        return findTopLevelOfType(node, MQL4Elements.BRACKETS_BLOCK) != null;
     }
 
     @Nullable
