@@ -180,17 +180,13 @@ color_string_literal = C \' ({decimal_integer} | {hexadecimal_integer} | , )* \'
 "~="     { return MQL4Elements.TILDA_EQ; }
 "<<="    { return MQL4Elements.SH_LEFT_EQ; }
 ">>="    { return MQL4Elements.SH_RIGHT_EQ; }
-">>>="   { return MQL4Elements.USH_RIGHT_EQ; }
-"^^="    { return MQL4Elements.POW_EQ; }
 
 "++"    { return MQL4Elements.PLUS_PLUS; }
 "--"    { return MQL4Elements.MINUS_MINUS; }
 "||"    { return MQL4Elements.BOOL_OR; }
 "&&"    { return MQL4Elements.BOOL_AND; }
-">>>"   { return MQL4Elements.USH_RIGHT; }
 ">>"    { return MQL4Elements.SH_RIGHT; }
 "<<"    { return MQL4Elements.SH_LEFT; }
-"^^"    { return MQL4Elements.POW; }
 "=="    { return MQL4Elements.EQ_EQ; }
 "="     { return MQL4Elements.EQ; }
 "<="    { return MQL4Elements.LESS_EQ; }

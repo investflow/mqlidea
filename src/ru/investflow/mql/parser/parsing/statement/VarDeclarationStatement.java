@@ -13,7 +13,6 @@ import ru.investflow.mql.psi.MQL4TokenSets;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.ExpressionParsing.parseExpressionOrFail;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.checkTokenOrFail;
 
 public class VarDeclarationStatement implements MQL4Elements {
@@ -63,7 +62,7 @@ public class VarDeclarationStatement implements MQL4Elements {
                     }
                     if (b.getTokenType() == EQ) {
                         b.advanceLexer();
-                        ok = parseExpressionOrFail(b, l + 1);
+                        ok = false;//TODO: parseExpressionOrFail(b, l + 1);
                         if (ok && b.getTokenType() == SEMICOLON) {
                             b.advanceLexer();
                             break;
@@ -117,7 +116,8 @@ public class VarDeclarationStatement implements MQL4Elements {
             while (true) {
                 boolean ok = ParsingUtils.parseTokenOrFail(b, IDENTIFIER)
                         && ParsingUtils.parseTokenOrFail(b, EQ)
-                        && parseExpressionOrFail(b, l + 1);
+                        //TODO: && parseExpressionOrFail(b, l + 1)
+                ;
                 if (!ok) {
                     return false;
                 }

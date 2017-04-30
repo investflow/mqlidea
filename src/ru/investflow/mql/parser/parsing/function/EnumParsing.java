@@ -4,6 +4,7 @@ import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
+import ru.investflow.mql.parser.parsing.ExpressionParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.psi.MQL4Elements;
 
@@ -11,13 +12,13 @@ import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUnt
 
 public class EnumParsing implements MQL4Elements {
 
-    public static final TokenSet ON_ERROR_ADVANCE_TOKENS = TokenSet.create(R_CURLY_BRACKET);
-    public static final TokenSet ON_ERROR_DO_NOT_ADVANCE_TOKENS = TokenSet.create(SEMICOLON, R_ROUND_BRACKET);
+    public static final TokenSet ON_ERROR_ENUM_ADVANCE_TOKENS = TokenSet.create(R_CURLY_BRACKET);
+    public static final TokenSet ON_ERROR_ENUM_DO_NOT_ADVANCE_TOKENS = TokenSet.create(SEMICOLON, R_ROUND_BRACKET);
 
     /**
      * Form: enum [TYPE] { v1, v2=1, v3=SOME_CONST }
      */
-    public static boolean parseEnum(PsiBuilder b) {
+    public static boolean parseEnum(PsiBuilder b, int l) {
         if (b.getTokenType() != ENUM_KEYWORD) {
             return false;
         }
@@ -29,12 +30,12 @@ public class EnumParsing implements MQL4Elements {
             }
             if (b.getTokenType() != L_CURLY_BRACKET) {
                 b.error("Enum block is expected");
-                advanceLexerUntil(b, ON_ERROR_ADVANCE_TOKENS, ON_ERROR_DO_NOT_ADVANCE_TOKENS);
+                advanceLexerUntil(b, ON_ERROR_ENUM_ADVANCE_TOKENS, ON_ERROR_ENUM_DO_NOT_ADVANCE_TOKENS);
                 return false;
             }
             b.advanceLexer(); // '{'
-            if (!parseEnumFields(b)) {
-                advanceLexerUntil(b, ON_ERROR_ADVANCE_TOKENS, ON_ERROR_DO_NOT_ADVANCE_TOKENS);
+            if (!parseEnumFields(b, l)) {
+                advanceLexerUntil(b, ON_ERROR_ENUM_ADVANCE_TOKENS, ON_ERROR_ENUM_DO_NOT_ADVANCE_TOKENS);
                 return true;
             }
             b.advanceLexer(); // '}'
@@ -47,11 +48,11 @@ public class EnumParsing implements MQL4Elements {
     /**
      * Form: name [=[IDENTIFIER | CONSTANT]]
      */
-    private static boolean parseEnumFields(PsiBuilder b) {
-        Marker m = b.mark();
+    private static boolean parseEnumFields(PsiBuilder b, int l) {
+        Marker fieldList = b.mark();
         try {
             while (b.getTokenType() != R_CURLY_BRACKET) {
-                Marker m2 = b.mark();
+                Marker field = b.mark();
                 try {
                     //  === First element ===
                     IElementType t1 = b.getTokenType();
@@ -61,7 +62,7 @@ public class EnumParsing implements MQL4Elements {
                     }
                     b.advanceLexer(); // field name
 
-                    // === Second element ===
+                    // === End of element or '=' ===
                     IElementType t2 = b.getTokenType();
                     if (t2 == R_CURLY_BRACKET) {
                         break;
@@ -74,12 +75,12 @@ public class EnumParsing implements MQL4Elements {
                     } else {
                         return false;
                     }
-                    IElementType t3 = b.getTokenType();
-                    if (t3 != IDENTIFIER && t3 != MQL4Elements.INTEGER_LITERAL && t3 != MQL4Elements.CHAR_LITERAL) {
-                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
+
+                    // === Value ===
+                    boolean v = ExpressionParsing.parseExpression(b, l, false, ExpressionParsing.COMPILE_TIME_INTEGER);
+                    if (!v) {
                         return false;
                     }
-                    b.advanceLexer(); // value
                     IElementType t4 = b.getTokenType();
                     if (t4 == R_CURLY_BRACKET) {
                         break;
@@ -91,12 +92,14 @@ public class EnumParsing implements MQL4Elements {
                     b.error(ParsingErrors.UNEXPECTED_TOKEN);
                     return false;
                 } finally {
-                    m2.done(ENUM_FIELD);
+                    field.done(ENUM_FIELD);
                 }
             }
         } finally {
-            m.done(ENUM_FIELDS_LIST);
+            fieldList.done(ENUM_FIELDS_LIST);
         }
         return true;
     }
+
+
 }

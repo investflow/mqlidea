@@ -49,7 +49,7 @@ public class BracketBlockParsing implements MQL4Elements {
                     advanceWithError(b, ParsingErrors.UNEXPECTED_TOKEN);
                     continue;
                 }
-                boolean res = parseEnum(b)
+                boolean res = parseEnum(b, l + 1)
                         || parseBracketsBlock(b, l + 1)
                         || parseEmptyStatement(b)
                         || parseComment(b);

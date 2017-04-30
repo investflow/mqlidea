@@ -8,9 +8,6 @@ import ru.investflow.mql.parser.parsing.util.TokenAdvanceMode;
 import ru.investflow.mql.psi.MQL4Elements;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
-import static ru.investflow.mql.parser.parsing.statement.IfElseParsing.parseIfElse;
-import static ru.investflow.mql.parser.parsing.statement.LoopStatementParsing.parseLoop;
-import static ru.investflow.mql.parser.parsing.statement.SwitchParsing.parseSwitch;
 import static ru.investflow.mql.parser.parsing.statement.VarDeclarationStatement.parseVarDeclaration;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.parseTokenOrFail;
 
@@ -21,14 +18,6 @@ public class StatementParsing implements MQL4Elements {
             CONTINUE_KEYWORD
     );
 
-    public static boolean parseStatementOrFail(PsiBuilder b, int l) {
-        if (parseStatement(b, l)) {
-            return true;
-        }
-        b.error("Statement expected");
-        return false;
-    }
-
     public static boolean parseStatement(PsiBuilder b, int l) {
         //noinspection SimplifiableIfStatement
         if (!recursion_guard_(b, l, "parseStatement")) {
@@ -37,10 +26,7 @@ public class StatementParsing implements MQL4Elements {
 
         return parseEmptyStatement(b)
                 || parseVarDeclaration(b, l)
-                || parseIfElse(b, l)
-                || parseSwitch(b, l)
-                || parseSingleWordStatement(b)
-                || parseLoop(b, l);
+                || parseSingleWordStatement(b);
     }
 
     private static boolean parseSingleWordStatement(PsiBuilder b) {

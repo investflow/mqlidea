@@ -24,13 +24,12 @@ public class MQL4Parser implements PsiParser, MQL4Elements {
         while (!b.eof()) {
             //noinspection PointlessBooleanExpression
             boolean r = false
-//                    || parseFunction(b, l + 1, Definition) != Failed
 //                    || parseVarDeclaration(b, l + 1)
                     || parseEmptyStatement(b)
                     || parseComment(b)
                     || parsePreprocessorBlock(b)
                     || parseFunction(b)
-                    || parseEnum(b)
+                    || parseEnum(b, 0)
                     || parseBracketsBlock(b, 0);
 
 
