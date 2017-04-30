@@ -39,7 +39,7 @@ public class EnumParsing implements MQL4Elements {
             }
             b.advanceLexer(); // '}'
         } finally {
-            m.done(ENUM_TYPE);
+            m.done(ENUM_STATEMENT);
         }
         return true;
     }

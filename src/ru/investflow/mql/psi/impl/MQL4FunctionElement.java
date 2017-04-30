@@ -12,13 +12,13 @@ public class MQL4FunctionElement extends MQL4PsiElement {
 
     @NotNull
     public String getFunctionName() {
-        return getFunctionNameElement().getText();
+        return getFunctionNameNode().getText();
     }
 
     @NotNull
-    public ASTNode getFunctionNameElement() {
-        ASTNode nameElement = getNode().findChildByType(MQL4Elements.IDENTIFIER);
-        assert nameElement != null;
-        return nameElement;
+    public ASTNode getFunctionNameNode() {
+        ASTNode nameNode = getNode().findChildByType(MQL4Elements.IDENTIFIER);
+        assert nameNode != null;
+        return nameNode;
     }
 }

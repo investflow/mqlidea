@@ -49,7 +49,7 @@ public class MQL4FoldingBuilder implements FoldingBuilder, DumbAware {
                     descriptors.add(new FoldingDescriptor(node, new TextRange(startOffset, endOffset)));
                 }
             }
-        } else if (type == MQL4Elements.ENUM_TYPE) {
+        } else if (type == MQL4Elements.ENUM_STATEMENT) {
             if (!isNestedBlock(node)) {
                 //todo: do not fold if contains errors?
                 descriptors.add(new EnumFoldingDescriptor(node));

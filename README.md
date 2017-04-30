@@ -6,6 +6,7 @@
 * Inlined documentation (Ctrl+Q)
 * Bracket matching
 * Comments folding
+* Structure view (functions & enums)
 * Compilation & errors navigation
 * Support for Windows & Linux
 

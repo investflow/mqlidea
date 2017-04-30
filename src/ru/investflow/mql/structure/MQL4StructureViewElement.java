@@ -1,22 +1,15 @@
 package ru.investflow.mql.structure;
 
-import com.intellij.icons.AllIcons;
 import com.intellij.ide.structureView.StructureViewTreeElement;
-import com.intellij.navigation.ColoredItemPresentation;
-import com.intellij.navigation.ItemPresentation;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import ru.investflow.mql.psi.impl.MQL4FunctionElement;
+import ru.investflow.mql.psi.impl.MQL4PsiElement;
 
-import javax.swing.Icon;
-
-public class MQL4StructureViewElement implements StructureViewTreeElement {
+public abstract class MQL4StructureViewElement<T extends MQL4PsiElement> implements StructureViewTreeElement {
 
     @NotNull
-    private final MQL4FunctionElement element;
+    protected final T element;
 
-    public MQL4StructureViewElement(@NotNull MQL4FunctionElement element) {
+    public MQL4StructureViewElement(@NotNull T element) {
         this.element = element;
     }
 
@@ -39,28 +32,5 @@ public class MQL4StructureViewElement implements StructureViewTreeElement {
     @NotNull
     public StructureViewTreeElement[] getChildren() {
         return EMPTY_ARRAY;
-    }
-
-    @NotNull
-    public ItemPresentation getPresentation() {
-        return new ColoredItemPresentation() {
-            @Nullable
-            @Override
-            public TextAttributesKey getTextAttributesKey() {
-                return null;
-            }
-
-            public String getPresentableText() {
-                return element.getFunctionName();
-            }
-
-            public String getLocationString() {
-                return null;
-            }
-
-            public Icon getIcon(boolean open) {
-                return AllIcons.Nodes.Function;
-            }
-        };
     }
 }

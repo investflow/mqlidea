@@ -164,7 +164,7 @@ public interface MQL4Elements {
     IElementType FUNCTION_ARG = new MQL4ElementType("FUNCTION_ARG");
     IElementType FUNCTION_ARGS_LIST = new MQL4ElementType("FUNCTION_ARGS_LIST");
 
-    IElementType ENUM_TYPE = new MQL4ElementType("ENUM_TYPE");
+    IElementType ENUM_STATEMENT = new MQL4ElementType("ENUM_STATEMENT");
     IElementType ENUM_FIELDS_LIST = new MQL4ElementType("ENUM_FIELDS_LIST");
     IElementType ENUM_FIELD = new MQL4ElementType("ENUM_FIELD");
 
