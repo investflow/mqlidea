@@ -13,7 +13,7 @@ import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUnt
 public class EnumParsing implements MQL4Elements {
 
     public static final TokenSet ON_ERROR_ENUM_ADVANCE_TOKENS = TokenSet.create(R_CURLY_BRACKET);
-    public static final TokenSet ON_ERROR_ENUM_DO_NOT_ADVANCE_TOKENS = TokenSet.create(SEMICOLON, R_ROUND_BRACKET);
+    public static final TokenSet ON_ERROR_ENUM_DO_NOT_ADVANCE_TOKENS = TokenSet.create(SEMICOLON);
 
     /**
      * Form: enum [TYPE] { v1, v2=1, v3=SOME_CONST }
@@ -77,7 +77,7 @@ public class EnumParsing implements MQL4Elements {
                     }
 
                     // === Value ===
-                    boolean v = ExpressionParsing.parseExpression(b, l, false, ExpressionParsing.COMPILE_TIME_INTEGER);
+                    boolean v = ExpressionParsing.parseCompileTimeEvalExpression(b, l, false, ExpressionParsing.COMPILE_TIME_NUMBER, R_CURLY_BRACKET);
                     if (!v) {
                         return false;
                     }

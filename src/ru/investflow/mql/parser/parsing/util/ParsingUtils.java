@@ -16,7 +16,7 @@ public class ParsingUtils implements MQL4Elements {
     public static TokenSet STATEMENT_TERMINATORS = TokenSet.create(SEMICOLON, R_CURLY_BRACKET, R_ROUND_BRACKET);
 
     public static void repeat(int n, Runnable r) {
-        for (int i = 1; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             r.run();
         }
     }
@@ -174,5 +174,13 @@ public class ParsingUtils implements MQL4Elements {
         PsiBuilder.Marker errorBlock = b.mark();
         b.advanceLexer();
         errorBlock.error(message);
+    }
+
+    public static boolean parseType(@NotNull PsiBuilder b, @NotNull TokenSet typeSet) {
+        if (typeSet.contains(b.getTokenType())) {
+            b.advanceLexer();
+            return true;
+        }
+        return false;
     }
 }

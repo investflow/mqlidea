@@ -170,6 +170,7 @@ public interface MQL4Elements {
 
     IElementType CODE_BLOCK = new MQL4ElementType("CODE_BLOCK");
     IElementType BRACKETS_BLOCK = new MQL4ElementType("BRACKETS_BLOCK");
+    IElementType CAST_BLOCK = new MQL4ElementType("CAST_BLOCK");
 
     IElementType EMPTY_STATEMENT = new MQL4ElementType("EMPTY_STATEMENT");
     IElementType SINGLE_WORD_STATEMENT = new MQL4ElementType("SINGLE_WORD_STATEMENT");

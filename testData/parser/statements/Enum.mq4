@@ -18,6 +18,7 @@ enum X {};
 enum {A};
 enum X{A};
 enum X{A=1};
+enum X{A=true};
 enum X{A=2, B};
 enum X{A=3, B,};
 enum X{A='0'};
@@ -48,6 +49,9 @@ enum EVALS {
    U=-'A',
    V=+'A',
    W=clrBlue,
-   X=C'128,128,128'
+   X=C'128,128,128',
+   Y=(int)1.1,
+   Z=1+(short)1.2,
+   a=-(short)1.9
 };
 

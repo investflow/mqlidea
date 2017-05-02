@@ -5,7 +5,6 @@ void z2(int a b){}
 void z3(int,,) {}
 void z4("val"){}
 void z5(1){}
-void z5(a){}
 void z6(int z 1){}
 void z7(int z, 1){}
 void z8(const bool const y){}

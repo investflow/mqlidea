@@ -7,15 +7,15 @@ import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
+import ru.investflow.mql.psi.MQL4TokenSets;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 
 public class ExpressionParsing implements MQL4Elements {
 
-    public static final TokenSet COMPILE_TIME_INTEGER = TokenSet.create(IDENTIFIER, INTEGER_LITERAL, CHAR_LITERAL, COLOR_CONSTANT_LITERAL, COLOR_STRING_LITERAL);
-    public static final TokenSet COMPILE_TIME_NUMBER = TokenSet.orSet(COMPILE_TIME_INTEGER, TokenSet.create(DOUBLE_LITERAL));
-    public static final TokenSet COMPILE_TIME_VALUE = TokenSet.orSet(COMPILE_TIME_NUMBER, TokenSet.create(STRING_LITERAL));
+    public static final TokenSet COMPILE_TIME_NUMBER = TokenSet.create(IDENTIFIER, INTEGER_LITERAL, CHAR_LITERAL, COLOR_CONSTANT_LITERAL, COLOR_STRING_LITERAL, DOUBLE_LITERAL);
+    public static final TokenSet COMPILE_TIME_VALUE = TokenSet.orSet(COMPILE_TIME_NUMBER, TokenSet.create(STRING_LITERAL, TRUE_KEYWORD, FALSE_KEYWORD));
 
     public static final TokenSet SIZEOF_TYPES = TokenSet.create(
             BOOL_KEYWORD,
@@ -48,8 +48,7 @@ public class ExpressionParsing implements MQL4Elements {
             if (SIZEOF_TYPES.contains(b.getTokenType())) {
                 b.advanceLexer(); // type
             } else {
-                boolean ok = parseCompileTimeNumber(b, COMPILE_TIME_VALUE, l + 1);
-                if (!ok) {
+                if (!parseCompileTimeEvalExpression(b, l + 1, false, COMPILE_TIME_VALUE, R_ROUND_BRACKET)) {
                     return true;
                 }
             }
@@ -75,63 +74,71 @@ public class ExpressionParsing implements MQL4Elements {
     }
 
 
-    public static boolean parseCompileTimeNumber(PsiBuilder b, TokenSet typeSet, int l) {
-        int offset = b.getTokenType() == PLUS || b.getTokenType() == MINUS ? 1 : 0;
-        if (typeSet.contains(b.lookAhead(offset))) {
-            ParsingUtils.advanceLexer(b, 1 + offset);
-            return true;
-        }
-        return parseSizeOf(b, l);
-    }
-
-
     public static final TokenSet ON_ERROR_PARSE_EXPRESSION_DO_NOT_ADVANCE_TOKENS = TokenSet.create(SEMICOLON, R_CURLY_BRACKET, COMMA);
+    public static final TokenSet SIGN = TokenSet.create(PLUS, MINUS);
 
-    public static boolean parseExpression(PsiBuilder b, int l, boolean nested, TokenSet valueTypes) {
-        if (!recursion_guard_(b, l, "parseExpression")) {
+
+    public static boolean parseCompileTimeEvalExpression(PsiBuilder b, int l, boolean nested, @NotNull TokenSet valueTypes, IElementType closingBracket) {
+        if (!recursion_guard_(b, l, "parseCompileTimeEvalExpression")) {
             return false;
         }
         while (!b.eof()) {
-            if (b.getTokenType() == L_ROUND_BRACKET) {
-                PsiBuilder.Marker bracketBlock = b.mark();
-                try {
-                    b.advanceLexer(); // '('
-                    if (!parseExpression(b, l + 1, true, valueTypes)) {
-                        return false;
-                    }
-                    if (b.getTokenType() != R_ROUND_BRACKET) {
-                        b.error(ParsingErrors.NO_MATCHING_CLOSING_BRACKET);
-                        advanceLexerUntil(b, TokenSet.EMPTY, ON_ERROR_PARSE_EXPRESSION_DO_NOT_ADVANCE_TOKENS);
-                        return false;
-                    }
-                    b.advanceLexer(); // ')'
-                    IElementType t = b.getTokenType();
-                    if (t == COMMA || t == R_CURLY_BRACKET || (nested && t == R_ROUND_BRACKET)) {
-                        return true;
-                    }
-                    boolean ok = ExpressionParsing.parseOperator(b);
-                    if (!ok) {
-                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
-                        return false;
-                    }
-                } finally {
-                    bracketBlock.done(MQL4Elements.BRACKETS_BLOCK);
-                }
+            boolean validPrefixOp = ParsingUtils.parseType(b, SIGN)
+                    || parseCast(b);
+            if (validPrefixOp) {
+                continue;
             }
-            boolean ok = ExpressionParsing.parseCompileTimeNumber(b, valueTypes, l);
-            if (!ok) {
+            boolean validValue = parseCompileTimeEvalExpressionInBraces(b, l, nested, valueTypes, closingBracket)
+                    || ParsingUtils.parseType(b, valueTypes)
+                    || parseSizeOf(b, l);
+            if (!validValue) {
                 b.error(ParsingErrors.UNEXPECTED_TOKEN);
                 return false;
             }
             IElementType t = b.getTokenType();
-            if (t == COMMA || t == R_CURLY_BRACKET || (nested && t == R_ROUND_BRACKET)) {
+            if (t == COMMA || (!nested && t == closingBracket) || (nested && t == R_ROUND_BRACKET)) {
                 return true;
             }
-            ok = ExpressionParsing.parseOperator(b);
-            if (!ok) {
+            if (!ExpressionParsing.parseOperator(b)) {
                 b.error(ParsingErrors.UNEXPECTED_TOKEN);
                 return false;
             }
+        }
+        return false;
+    }
+
+    private static boolean parseCompileTimeEvalExpressionInBraces(PsiBuilder b, int l, boolean nested, @NotNull TokenSet valueTypes, IElementType closingBracket) {
+        if (b.getTokenType() != L_ROUND_BRACKET) {
+            return false;
+        }
+        PsiBuilder.Marker bracketBlock = b.mark();
+        try {
+            b.advanceLexer(); // '('
+            if (!parseCompileTimeEvalExpression(b, l + 1, true, valueTypes, closingBracket)) {
+                return false;
+            }
+            if (b.getTokenType() != R_ROUND_BRACKET) {
+                b.error(ParsingErrors.NO_MATCHING_CLOSING_BRACKET);
+                advanceLexerUntil(b, TokenSet.EMPTY, ON_ERROR_PARSE_EXPRESSION_DO_NOT_ADVANCE_TOKENS);
+                return false;
+            }
+            b.advanceLexer(); // ')'
+            IElementType t = b.getTokenType();
+            if (t == COMMA || (!nested && t == R_CURLY_BRACKET) || (nested && t == R_ROUND_BRACKET)) {
+                return true;
+            }
+        } finally {
+            bracketBlock.done(MQL4Elements.BRACKETS_BLOCK);
+        }
+        return true;
+    }
+
+    private static boolean parseCast(@NotNull PsiBuilder b) {
+        if (b.lookAhead(0) == L_ROUND_BRACKET && MQL4TokenSets.DATA_TYPES.contains(b.lookAhead(1)) && b.lookAhead(2) == R_ROUND_BRACKET) {
+            PsiBuilder.Marker castBlock = b.mark();
+            ParsingUtils.advanceLexer(b, 3);
+            castBlock.done(CAST_BLOCK);
+            return true;
         }
         return false;
     }

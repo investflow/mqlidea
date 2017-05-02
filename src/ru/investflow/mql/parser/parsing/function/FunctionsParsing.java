@@ -194,7 +194,7 @@ public class FunctionsParsing implements MQL4Elements {
                     b.advanceLexer(); // EQ
 
                     // default arg value
-                    if (!ExpressionParsing.parseExpression(b, l + 1, false, ExpressionParsing.COMPILE_TIME_VALUE)) {
+                    if (!ExpressionParsing.parseCompileTimeEvalExpression(b, l + 1, false, ExpressionParsing.COMPILE_TIME_VALUE, R_ROUND_BRACKET)) {
                         return false;
                     }
 
