@@ -1,11 +1,10 @@
-package ru.investflow.mql.parser.parsing.function;
+package ru.investflow.mql.parser.parsing;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import ru.investflow.mql.parser.parsing.ExpressionParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.parser.parsing.util.PatternMatcher;
@@ -18,9 +17,9 @@ import java.util.List;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.BracketBlockParsing.parseBracketsBlock;
-import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Declaration;
-import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Definition;
-import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.NotMatched;
+import static ru.investflow.mql.parser.parsing.FunctionsParsing.FunctionParsingResult.Declaration;
+import static ru.investflow.mql.parser.parsing.FunctionsParsing.FunctionParsingResult.Definition;
+import static ru.investflow.mql.parser.parsing.FunctionsParsing.FunctionParsingResult.NotMatched;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.matchSequenceN;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.parseTokenOrFail;
@@ -87,6 +86,10 @@ public class FunctionsParsing implements MQL4Elements {
             if (!parseTokenOrFail(b, R_ROUND_BRACKET)) { // ')'
                 advanceLexerUntil(b, ON_ERROR_STOP_TOKENS, ADVANCE);
                 return ObjectUtils.firstNonNull(expectedResult, Declaration);
+            }
+
+            if (b.getTokenType() == CONST_KEYWORD) {
+                b.advanceLexer(); // 'const'
             }
 
             if (b.getTokenType() == SEMICOLON) {

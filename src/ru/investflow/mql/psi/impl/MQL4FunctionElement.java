@@ -21,4 +21,8 @@ public class MQL4FunctionElement extends MQL4PsiElement {
         assert nameNode != null;
         return nameNode;
     }
+
+    public boolean isDeclaration() {
+        return getNode().getElementType() == MQL4Elements.FUNCTION_DECLARATION;
+    }
 }

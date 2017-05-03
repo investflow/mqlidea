@@ -69,6 +69,7 @@ public interface MQL4Elements {
     IElementType ENUM_KEYWORD = new MQL4ElementType("ENUM_KEYWORD");
     IElementType FLOAT_KEYWORD = new MQL4ElementType("FLOAT_KEYWORD");
     IElementType INT_KEYWORD = new MQL4ElementType("INT_KEYWORD");
+    IElementType INTERFACE_KEYWORD = new MQL4ElementType("INTERFACE_KEYWORD");
     IElementType LONG_KEYWORD = new MQL4ElementType("LONG_KEYWORD");
     IElementType RETURN_KEYWORD = new MQL4ElementType("RETURN_KEYWORD");
     IElementType SHORT_KEYWORD = new MQL4ElementType("SHORT_KEYWORD");
@@ -167,6 +168,9 @@ public interface MQL4Elements {
     IElementType ENUM_STATEMENT = new MQL4ElementType("ENUM_STATEMENT");
     IElementType ENUM_FIELDS_LIST = new MQL4ElementType("ENUM_FIELDS_LIST");
     IElementType ENUM_FIELD = new MQL4ElementType("ENUM_FIELD");
+
+    IElementType CLASS_DEFINITION = new MQL4ElementType("CLASS_DEFINITION");
+    IElementType CLASS_INNER_BLOCK = new MQL4ElementType("CLASS_INNER_BLOCK");
 
     IElementType CODE_BLOCK = new MQL4ElementType("CODE_BLOCK");
     IElementType BRACKETS_BLOCK = new MQL4ElementType("BRACKETS_BLOCK");

@@ -9,8 +9,8 @@ import ru.investflow.mql.psi.MQL4Elements;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
-import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.FunctionParsingResult.Declaration;
-import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.parseFunction;
+import static ru.investflow.mql.parser.parsing.FunctionsParsing.FunctionParsingResult.Declaration;
+import static ru.investflow.mql.parser.parsing.FunctionsParsing.parseFunction;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 

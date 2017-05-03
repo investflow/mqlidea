@@ -1,0 +1,4 @@
+// ------ ERRORS ------
+
+// ------ VALID ------
+interface A {}

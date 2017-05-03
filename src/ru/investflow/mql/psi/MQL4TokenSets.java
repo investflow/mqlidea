@@ -48,6 +48,7 @@ public class MQL4TokenSets implements MQL4Elements {
             ENUM_KEYWORD,
             FLOAT_KEYWORD,
             INT_KEYWORD,
+            INTERFACE_KEYWORD,
             LONG_KEYWORD,
             SHORT_KEYWORD,
             STRING_KEYWORD,

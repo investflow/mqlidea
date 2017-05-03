@@ -100,6 +100,7 @@ color_string_literal = C \' ({decimal_integer} | {hexadecimal_integer} | , )* \'
 "enum"      { return MQL4Elements.ENUM_KEYWORD; }
 "float"     { return MQL4Elements.FLOAT_KEYWORD; }
 "int"       { return MQL4Elements.INT_KEYWORD; }
+"interface" { return MQL4Elements.INTERFACE_KEYWORD; }
 "long"      { return MQL4Elements.LONG_KEYWORD; }
 "short"     { return MQL4Elements.SHORT_KEYWORD; }
 "string"    { return MQL4Elements.STRING_KEYWORD; }

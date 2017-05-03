@@ -1,4 +1,4 @@
-package ru.investflow.mql.parser.parsing.function;
+package ru.investflow.mql.parser.parsing.statement;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
@@ -30,7 +30,6 @@ public class EnumParsing implements MQL4Elements {
             }
             if (b.getTokenType() != L_CURLY_BRACKET) {
                 b.error("Enum block is expected");
-                advanceLexerUntil(b, ON_ERROR_ENUM_ADVANCE_TOKENS, ON_ERROR_ENUM_DO_NOT_ADVANCE_TOKENS);
                 return false;
             }
             b.advanceLexer(); // '{'
@@ -51,7 +50,7 @@ public class EnumParsing implements MQL4Elements {
     private static boolean parseEnumFields(PsiBuilder b, int l) {
         Marker fieldList = b.mark();
         try {
-            while (b.getTokenType() != R_CURLY_BRACKET) {
+            while (b.getTokenType() != R_CURLY_BRACKET && !b.eof()) {
                 Marker field = b.mark();
                 try {
                     //  === First element ===
@@ -95,10 +94,10 @@ public class EnumParsing implements MQL4Elements {
                     field.done(ENUM_FIELD);
                 }
             }
+            return !b.eof();
         } finally {
             fieldList.done(ENUM_FIELDS_LIST);
         }
-        return true;
     }
 
 

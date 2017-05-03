@@ -11,7 +11,7 @@ import ru.investflow.mql.psi.MQL4TokenSets;
 import java.util.Stack;
 
 import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;
-import static ru.investflow.mql.parser.parsing.function.EnumParsing.parseEnum;
+import static ru.investflow.mql.parser.parsing.statement.EnumParsing.parseEnum;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
 import static ru.investflow.mql.parser.parsing.util.ParsingErrors.NO_MATCHING_CLOSING_BRACKET;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceWithError;

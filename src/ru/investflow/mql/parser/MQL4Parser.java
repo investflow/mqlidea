@@ -9,27 +9,25 @@ import ru.investflow.mql.psi.MQL4Elements;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.adapt_builder_;
 import static ru.investflow.mql.parser.parsing.BracketBlockParsing.parseBracketsBlock;
+import static ru.investflow.mql.parser.parsing.ClassParsing.parseClassOrStruct;
 import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;
-import static ru.investflow.mql.parser.parsing.function.EnumParsing.parseEnum;
-import static ru.investflow.mql.parser.parsing.function.FunctionsParsing.parseFunction;
+import static ru.investflow.mql.parser.parsing.FunctionsParsing.parseFunction;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.parsePreprocessorBlock;
-import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
+import static ru.investflow.mql.parser.parsing.statement.EnumParsing.parseEnum;
 
 public class MQL4Parser implements PsiParser, MQL4Elements {
 
     @NotNull
     public ASTNode parse(@NotNull IElementType root, @NotNull PsiBuilder b0) {
         PsiBuilder b = adapt_builder_(root, b0, this);
-        PsiBuilder.Marker rootMarker = b.mark();
+        PsiBuilder.Marker fileBlock = b.mark();
         while (!b.eof()) {
             //noinspection PointlessBooleanExpression
-            boolean r = false
-//                    || parseVarDeclaration(b, l + 1)
-                    || parseEmptyStatement(b)
-                    || parseComment(b)
+            boolean r = parseComment(b)
                     || parsePreprocessorBlock(b)
                     || parseFunction(b)
                     || parseEnum(b, 0)
+                    || parseClassOrStruct(b, 0)
                     || parseBracketsBlock(b, 0);
 
 
@@ -41,7 +39,7 @@ public class MQL4Parser implements PsiParser, MQL4Elements {
 //                ParsingUtils.advanceLexerUntil(b, LINE_TERMINATOR, ADVANCE);
             }
         }
-        rootMarker.done(root);
+        fileBlock.done(root);
         return b.getTreeBuilt();
     }
 
