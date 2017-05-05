@@ -150,8 +150,8 @@ public class FunctionsParsing implements MQL4Elements {
                         b.advanceLexer(); // const
                         t2 = b.getTokenType();
                     }
-                    if (t2 == AND) {
-                        t2 = ParsingUtils.advanceLexer(b); // '&'
+                    if (t2 == AND || t2 == MUL) {
+                        t2 = ParsingUtils.advanceLexer(b); // '&' || '*'
                     }
                     if (t2 == COMMA) {
                         b.advanceLexer(); // COMMA
