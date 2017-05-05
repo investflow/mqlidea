@@ -28,17 +28,28 @@ public class ClassParsing implements MQL4Elements {
         if (t1 != CLASS_KEYWORD && t1 != STRUCT_KEYWORD && t1 != INTERFACE_KEYWORD) {
             return false;
         }
-        boolean isClass = t1 == CLASS_KEYWORD;
         Marker m = b.mark();
         try {
             b.advanceLexer(); // 'class|struct'
-            if (b.getTokenType() != IDENTIFIER) {
-                b.error(isClass ? "Class name is expected" : "Struct name is expected");
+            IElementType t2 = b.getTokenType();
+            if (t2 != IDENTIFIER) {
+                b.error((t1 == CLASS_KEYWORD ? "Class" : t1 == STRUCT_KEYWORD ? "Struct" : "Interface") + " name is expected");
                 b.mark().done(MQL4Elements.CLASS_INNER_BLOCK);
                 return true;
             }
             b.advanceLexer(); // name
 
+            IElementType t3 = b.getTokenType();
+            if (t3 == SEMICOLON) {
+                return true; // class declaration;
+            }
+            if (t3 == COLON) {
+                b.advanceLexer(); // ':'
+                if (!parseInheritanceList(b)) {
+                    advanceLexerUntil(b, ON_ERROR_CLASS_ADVANCE_TOKENS, ON_ERROR_CLASS_DO_NOT_ADVANCE_TOKENS);
+                    return true;
+                }
+            }
             if (b.getTokenType() != L_CURLY_BRACKET) {
                 b.error(ParsingErrors.UNEXPECTED_TOKEN);
                 b.mark().done(MQL4Elements.CLASS_INNER_BLOCK);
@@ -52,6 +63,52 @@ public class ClassParsing implements MQL4Elements {
             b.advanceLexer(); // '}'
         } finally {
             m.done(CLASS_DEFINITION);
+        }
+        return true;
+    }
+
+    /**
+     * List = [Element]* {
+     * Element = [Access] Identifier [,]
+     */
+    private static boolean parseInheritanceList(PsiBuilder b) {
+        int nItems = 0;
+        PsiBuilder.Marker list = b.mark();
+        try {
+            while (true) {
+                PsiBuilder.Marker inArg = b.mark();
+                try {
+                    IElementType t1 = b.getTokenType();
+                    if (t1 == PRIVATE_KEYWORD || t1 == PROTECTED_KEYWORD || t1 == PUBLIC_KEYWORD) {
+                        b.advanceLexer(); // 'private'
+                    }
+                    IElementType t2 = b.getTokenType();
+                    if (t2 != IDENTIFIER) {
+                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                        return false;
+                    }
+                    b.advanceLexer(); // class name
+                    nItems++;
+
+                    IElementType t3 = b.getTokenType();
+                    if (t3 == L_CURLY_BRACKET) {
+                        break;
+                    }
+                    if (t3 != COMMA) {
+                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                        return false;
+                    }
+                } finally {
+                    inArg.done(MQL4Elements.CLASS_INHERITANCE_ITEM);
+                }
+                b.advanceLexer(); // ','
+            }
+        } finally {
+            list.done(MQL4Elements.CLASS_INHERITANCE_LIST);
+        }
+        if (nItems == 0) {
+            b.error(ParsingErrors.UNEXPECTED_TOKEN);
+            return false;
         }
         return true;
     }
