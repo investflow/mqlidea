@@ -2,6 +2,7 @@ package ru.investflow.mql.psi.impl;
 
 import com.intellij.lang.ASTNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.psi.MQL4Elements;
 
 public class MQL4ClassElement extends MQL4PsiElement {
@@ -28,10 +29,12 @@ public class MQL4ClassElement extends MQL4PsiElement {
         return fieldNameNode == null ? "<unknown>" : fieldNameNode.getText();
     }
 
-    @NotNull
+    public boolean isDeclaration() {
+        return getInnerBlockNode() == null;
+    }
+
+    @Nullable
     public ASTNode getInnerBlockNode() {
-        ASTNode node = getNode().findChildByType(MQL4Elements.CLASS_INNER_BLOCK);
-        assert node != null;
-        return node;
+        return getNode().findChildByType(MQL4Elements.CLASS_INNER_BLOCK);
     }
 }

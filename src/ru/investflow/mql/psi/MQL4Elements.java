@@ -36,6 +36,7 @@ public interface MQL4Elements {
     IElementType COLOR_STRING_LITERAL = new MQL4ElementType("COLOR_STRING_LITERAL");
 
     // Braces and separators
+    IElementType COLON_COLON = new MQL4ElementType("COLON_COLON");
     IElementType COLON = new MQL4ElementType("COLON");
     IElementType COMMA = new MQL4ElementType("COMMA");
     IElementType DOT = new MQL4ElementType("DOT");

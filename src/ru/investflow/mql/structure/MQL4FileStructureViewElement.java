@@ -49,9 +49,11 @@ public class MQL4FileStructureViewElement extends PsiTreeElementBase<MQL4File> {
             if (!StringUtils.isEmpty(enumElement.getTypeName())) {
                 res.add(new MQL4StructureViewEnumElement(enumElement));
             }
-
         } else if (t == MQL4Elements.CLASS_DEFINITION) {
-            res.add(new MQL4StructureViewClassElement((MQL4ClassElement) e));
+            MQL4ClassElement classElement = (MQL4ClassElement) e;
+            if (!classElement.isDeclaration()) {
+                res.add(new MQL4StructureViewClassElement((MQL4ClassElement) e));
+            }
         }
     }
 

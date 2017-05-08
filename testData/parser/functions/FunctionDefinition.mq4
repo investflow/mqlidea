@@ -61,3 +61,6 @@ const int e13(){}
 const CustomType e14(){}
 int const e15(){}
 CustomType const e16(){}
+
+// classes
+int SomeClass::m1(){}

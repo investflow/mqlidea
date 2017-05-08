@@ -48,7 +48,16 @@ public class FunctionsParsing implements MQL4Elements {
                 }
                 return ok ? 1 + da : -1;
             },
-            (b, ahead) -> b.lookAhead(ahead) == IDENTIFIER ? 1 : -1,// function name
+            (b, ahead) -> { // function name
+                if (b.lookAhead(ahead) != IDENTIFIER) {
+                    return -1;
+                }
+                int res = 1;
+                if (b.lookAhead(ahead + 1) == COLON_COLON && b.lookAhead(ahead + 2) == IDENTIFIER) { // class::method
+                    res += 2;
+                }
+                return res;
+            },
             (b, ahead) -> b.lookAhead(ahead) == L_ROUND_BRACKET ? 1 : -1 // opening bracket
     );
 
@@ -75,7 +84,7 @@ public class FunctionsParsing implements MQL4Elements {
         PsiBuilder.Marker m = b.mark();
         FunctionParsingResult actualResult = null;
         try {
-            ParsingUtils.advanceLexer(b, matchedPrefixLen); // data type, identifier, left round brace.
+            ParsingUtils.advanceLexer(b, matchedPrefixLen); // data type, identifier(::identifier), left round brace.
 
             boolean argsParsed = parseFunctionArgs(b, l + 1);
             if (!argsParsed) {

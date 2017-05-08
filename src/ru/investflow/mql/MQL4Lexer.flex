@@ -215,6 +215,7 @@ color_string_literal = C \' ({decimal_integer} | {hexadecimal_integer} | , )* \'
 "["   { return MQL4Elements.L_SQUARE_BRACKET; }
 "]"   { return MQL4Elements.R_SQUARE_BRACKET; }
 ";"   { return MQL4Elements.SEMICOLON; }
+"::"   { return MQL4Elements.COLON_COLON; }
 ":"   { return MQL4Elements.COLON; }
 ","   { return MQL4Elements.COMMA; }
 "."   { return MQL4Elements.DOT; }

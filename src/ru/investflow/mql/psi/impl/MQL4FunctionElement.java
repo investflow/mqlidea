@@ -3,6 +3,7 @@ package ru.investflow.mql.psi.impl;
 import com.intellij.lang.ASTNode;
 import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.psi.MQL4Elements;
+import ru.investflow.mql.util.ASTUtils;
 
 public class MQL4FunctionElement extends MQL4PsiElement {
 
@@ -17,7 +18,10 @@ public class MQL4FunctionElement extends MQL4PsiElement {
 
     @NotNull
     public ASTNode getFunctionNameNode() {
-        ASTNode nameNode = getNode().findChildByType(MQL4Elements.IDENTIFIER);
+        ASTNode node = getNode();
+        ASTNode argsListStartNode = node.findChildByType(MQL4Elements.L_ROUND_BRACKET);
+        assert argsListStartNode != null;
+        ASTNode nameNode = ASTUtils.findLastPrevByType(argsListStartNode, MQL4Elements.IDENTIFIER);
         assert nameNode != null;
         return nameNode;
     }
