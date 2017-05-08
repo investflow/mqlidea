@@ -11,6 +11,7 @@ enum {A=1+(};
 enum {A=1++1};
 enum {A=*1};
 enum {A=()};
+enum X{A=true};
 
 // ------ VALID ------
 enum {};
@@ -18,7 +19,6 @@ enum X {};
 enum {A};
 enum X{A};
 enum X{A=1};
-enum X{A=true};
 enum X{A=2, B};
 enum X{A=3, B,};
 enum X{A='0'};

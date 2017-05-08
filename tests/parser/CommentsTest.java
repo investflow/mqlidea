@@ -3,7 +3,7 @@ package parser;
 public class CommentsTest extends MQL4ParserTestBase {
 
     public CommentsTest() {
-        super("comments");
+        super("parser/comments");
     }
 
     public void testLineComments() {
