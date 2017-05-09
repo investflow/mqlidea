@@ -8,6 +8,7 @@ import org.junit.Assert;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -18,6 +19,14 @@ public class SamplesTest extends MQL4ParserTestBase {
         super("samples");
     }
 
+    public static final List<String> IGNORED_FILES = Arrays.asList("Array.mqh", "ChartObjectPanel.mqh", "Canvas.mqh",
+            "BillWilliams.mqh", "Volumes.mqh", "Trend.mqh", "Series.mqh", "Oscilators.mqh", "Custom.mqh", "String.mqh",
+            "Tree.mqh", "ArrayObj.mqh", "TreeNode.mqh", "ArrayDouble.mqh", "ArrayFloat.mqh", "List.mqh", "Object.mqh",
+            "Chart.mqh", "ListView.mqh", "DatePicker.mqh", "Edit.mqh", "Panel.mqh", "Dialog.mqh", "CheckBox.mqh", "Wnd.mqh",
+            "ComboBox.mqh", "TimePicker.mqh", "WndClient.mqh", "CheckGroup.mqh", "Picture.mqh", "WndObj.mqh", "BmpButton.mqh",
+            "Scrolls.mqh", "RadioGroup.mqh", "File.mqh");
+
+
     public void testSamples() throws IOException {
         File samplesDir = new File(myFullDataPath).getAbsoluteFile();
         List<Path> files = ParserTestUtils.getFilesRecursively(samplesDir);
@@ -25,7 +34,11 @@ public class SamplesTest extends MQL4ParserTestBase {
 
         int samplesDirPathLen = samplesDir.getAbsolutePath().length();
         for (Path p : files) {
-            String subPath = p.toFile().getAbsolutePath().substring(samplesDirPathLen);
+            String absolutePath = p.toFile().getAbsolutePath();
+            if (IGNORED_FILES.stream().anyMatch(absolutePath::contains)) {
+                continue; // file is ignored
+            }
+            String subPath = absolutePath.substring(samplesDirPathLen);
             testFile(subPath);
         }
     }

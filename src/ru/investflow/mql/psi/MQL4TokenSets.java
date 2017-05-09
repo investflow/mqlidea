@@ -9,6 +9,7 @@ import java.util.Objects;
 public class MQL4TokenSets implements MQL4Elements {
 
     public static final TokenSet COMMENTS = TokenSet.create(LINE_COMMENT, BLOCK_COMMENT);
+    public static final TokenSet COMMENTS_OR_WS = TokenSet.create(LINE_COMMENT, BLOCK_COMMENT, WHITE_SPACE, LINE_TERMINATOR);
 
     public static final TokenSet PREPROCESSOR = TokenSet.create(
             DEFINE_KEYWORD,

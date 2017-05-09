@@ -4,6 +4,7 @@ import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
+import ru.investflow.mql.parser.parsing.util.ParsingScope;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
@@ -36,6 +37,11 @@ public class BracketBlockParsing implements MQL4Elements {
             b.error(NO_MATCHING_CLOSING_BRACKET);
         }
         b.advanceLexer(); // left bracket
+
+        boolean codeBlock = lBracket == L_CURLY_BRACKET;
+        if (codeBlock) {
+            ParsingScope.pushScope(b, ParsingScope.CODE_BLOCK);
+        }
         try {
             IElementType rBracket = MQL4TokenSets.getRightBracketFor(lBracket);
             while (!b.eof()) { // now parse sub-blocks one by one. Stop on closing bracket
@@ -60,6 +66,9 @@ public class BracketBlockParsing implements MQL4Elements {
             }
             return true;
         } finally {
+            if (codeBlock) {
+                ParsingScope.popScope(b);
+            }
             block.done(BRACKETS_BLOCK);
         }
     }

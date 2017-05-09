@@ -64,4 +64,5 @@ CustomType const e16(){}
 
 // classes
 int SomeClass::m1(){}
-int SomeClass::~Destructor(){}
+SomeClass::~Destructor(){}
+SomeClass::SomeClass(){}

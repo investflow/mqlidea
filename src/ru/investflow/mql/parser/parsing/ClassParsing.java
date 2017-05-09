@@ -5,6 +5,7 @@ import com.intellij.lang.PsiBuilder.Marker;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
+import ru.investflow.mql.parser.parsing.util.ParsingScope;
 import ru.investflow.mql.psi.MQL4Elements;
 
 import static ru.investflow.mql.parser.parsing.BracketBlockParsing.parseBracketsBlock;
@@ -118,6 +119,7 @@ public class ClassParsing implements MQL4Elements {
      */
     private static boolean parseClassInnerBlock(PsiBuilder b, int l) {
         Marker classInnerBlock = b.mark();
+        ParsingScope.pushScope(b, ParsingScope.CLASS);
         try {
             while (b.getTokenType() != R_CURLY_BRACKET && !b.eof()) {
                 boolean r = parseEmptyStatement(b)
@@ -134,6 +136,7 @@ public class ClassParsing implements MQL4Elements {
             return !b.eof();
         } finally {
             classInnerBlock.done(CLASS_INNER_BLOCK);
+            ParsingScope.popScope(b);
         }
     }
 

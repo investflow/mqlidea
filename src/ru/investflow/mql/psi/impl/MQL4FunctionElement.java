@@ -13,7 +13,9 @@ public class MQL4FunctionElement extends MQL4PsiElement {
 
     @NotNull
     public String getFunctionName() {
-        return getFunctionNameNode().getText();
+        ASTNode nameNode = getFunctionNameNode();
+        ASTNode prevNode = ASTUtils.getPrevIgnoreCommentsAndWs(nameNode);
+        return (prevNode != null && prevNode.getElementType() == MQL4Elements.TILDA ? "~" : "") + nameNode.getText();
     }
 
     @NotNull

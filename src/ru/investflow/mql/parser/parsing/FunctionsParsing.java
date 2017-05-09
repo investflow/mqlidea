@@ -6,6 +6,7 @@ import com.intellij.psi.tree.TokenSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
+import ru.investflow.mql.parser.parsing.util.ParsingScope;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.parser.parsing.util.PatternMatcher;
 import ru.investflow.mql.psi.MQL4Elements;
@@ -33,30 +34,60 @@ public class FunctionsParsing implements MQL4Elements {
         Definition
     }
 
-    private static final List<PatternMatcher> FUNCTION_START_MATCHER = Arrays.asList(
+    private static final List<PatternMatcher> FUNCTION_MATCHER = Arrays.asList(
             (b, ahead) -> { // return type: custom type or data type
                 IElementType t = b.lookAhead(ahead);
-                int da = 0;
+                int pos = 0;
                 if (t == CONST_KEYWORD) {
-                    da++;
-                    t = b.lookAhead(ahead + da);
+                    pos++; // 'const'
+                    t = b.lookAhead(ahead + pos);
                 }
                 boolean ok = t == IDENTIFIER || MQL4TokenSets.DATA_TYPES.contains(t);
-                if (ok) {
-                    t = b.lookAhead(ahead + da + 1);
-                    da += t == CONST_KEYWORD ? 1 : 0;
+                if (!ok) {
+                    return -1;
                 }
-                return ok ? 1 + da : -1;
+                pos++; // 'type'
+                t = b.lookAhead(ahead + pos);
+                pos += t == CONST_KEYWORD ? 1 : 0; // 'const'
+                return pos;
             },
-            (b, ahead) -> { // function name
+            (b, ahead) -> { // name or ClassName::name
+                ParsingScope scope = ParsingScope.getScope(b);
+                int pos = 0;
+                if (scope == ParsingScope.TOP_LEVEL && b.lookAhead(ahead) == IDENTIFIER && b.lookAhead(ahead + 1) == COLON_COLON) {
+                    pos += 2; // 'ClassName' + '::'
+                }
+                return b.lookAhead(ahead + pos) != IDENTIFIER ? -1 : pos + 1; // function name
+            },
+            (b, ahead) -> b.lookAhead(ahead) == L_ROUND_BRACKET ? 1 : -1 // opening bracket
+    );
+
+    private static final List<PatternMatcher> CONSTRUCTOR_DESTRUCTOR_MATCHER = Arrays.asList(
+            (b, ahead) -> { // ClassName or ClassName::ClassName
+                ParsingScope scope = ParsingScope.getScope(b);
+                if (scope == ParsingScope.CODE_BLOCK) {
+                    return -1;
+                }
+                int pos = 0;
+                if (scope == ParsingScope.CLASS) {
+                    if (b.lookAhead(ahead) == TILDA) { // '~'
+                        pos++; // '~'
+                    }
+                    return b.lookAhead(ahead + pos) == IDENTIFIER ? pos + 1 : -1;
+                }
+                assert scope == ParsingScope.TOP_LEVEL;
                 if (b.lookAhead(ahead) != IDENTIFIER) {
                     return -1;
                 }
-                int res = 1;
-                if (b.lookAhead(ahead + 1) == COLON_COLON && b.lookAhead(ahead + 2) == IDENTIFIER) { // class::method
-                    res += 2;
+                pos++; // class name
+                if (b.lookAhead(ahead + pos) != COLON_COLON) {
+                    return -1;
                 }
-                return res;
+                pos++; // '::'
+                if (b.lookAhead(ahead + pos) == TILDA) {
+                    pos++; // '~'
+                }
+                return b.lookAhead(ahead + pos) == IDENTIFIER ? pos + 1 : -1; // method name
             },
             (b, ahead) -> b.lookAhead(ahead) == L_ROUND_BRACKET ? 1 : -1 // opening bracket
     );
@@ -76,9 +107,12 @@ public class FunctionsParsing implements MQL4Elements {
         if (!recursion_guard_(b, l, "parseFunction")) {
             return NotMatched;
         }
-        int matchedPrefixLen = matchSequenceN(b, FUNCTION_START_MATCHER, 0);
+        int matchedPrefixLen = matchSequenceN(b, FUNCTION_MATCHER, 0);
         if (matchedPrefixLen < 0) {
-            return NotMatched;
+            matchedPrefixLen = matchSequenceN(b, CONSTRUCTOR_DESTRUCTOR_MATCHER, 0);
+            if (matchedPrefixLen < 0) {
+                return NotMatched;
+            }
         }
 
         PsiBuilder.Marker m = b.mark();
