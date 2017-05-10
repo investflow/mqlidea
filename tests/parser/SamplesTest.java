@@ -8,23 +8,19 @@ import org.junit.Assert;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Ensures that there is no parsing errors in sample files
  */
 public class SamplesTest extends MQL4ParserTestBase {
+
     public SamplesTest() {
         super("samples");
     }
 
-    public static final List<String> IGNORED_FILES = Arrays.asList("Array.mqh", "ChartObjectPanel.mqh", "Canvas.mqh",
-            "BillWilliams.mqh", "Volumes.mqh", "Trend.mqh", "Series.mqh", "Oscilators.mqh", "Custom.mqh", "String.mqh",
-            "Tree.mqh", "ArrayObj.mqh", "TreeNode.mqh", "ArrayDouble.mqh", "ArrayFloat.mqh", "List.mqh", "Object.mqh",
-            "Chart.mqh", "ListView.mqh", "DatePicker.mqh", "Edit.mqh", "Panel.mqh", "Dialog.mqh", "CheckBox.mqh", "Wnd.mqh",
-            "ComboBox.mqh", "TimePicker.mqh", "WndClient.mqh", "CheckGroup.mqh", "Picture.mqh", "WndObj.mqh", "BmpButton.mqh",
-            "Scrolls.mqh", "RadioGroup.mqh", "File.mqh");
+    public static final List<String> IGNORED_FILES = Collections.emptyList();
 
 
     public void testSamples() throws IOException {

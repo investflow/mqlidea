@@ -183,4 +183,17 @@ public class ParsingUtils implements MQL4Elements {
         }
         return false;
     }
+
+    public static boolean hasElementInRange(PsiBuilder b, int range, IElementType e) {
+        for (int i = 0; i < range; i++) {
+            IElementType t = b.lookAhead(i);
+            if (t == null) {
+                break;
+            }
+            if (t == e) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

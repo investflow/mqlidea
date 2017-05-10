@@ -22,6 +22,7 @@ import static ru.investflow.mql.parser.parsing.FunctionsParsing.FunctionParsingR
 import static ru.investflow.mql.parser.parsing.FunctionsParsing.FunctionParsingResult.Definition;
 import static ru.investflow.mql.parser.parsing.FunctionsParsing.FunctionParsingResult.NotMatched;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
+import static ru.investflow.mql.parser.parsing.util.ParsingUtils.hasElementInRange;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.matchSequenceN;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.parseTokenOrFail;
 import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
@@ -114,13 +115,17 @@ public class FunctionsParsing implements MQL4Elements {
                 return NotMatched;
             }
         }
+        ParsingScope scope = ParsingScope.getScope(b);
+        // Note: FUNCTION_MATCHER can also match constructors in case if constructor has 'void' prefix
+        boolean canBeConstructorDefinition = (scope == ParsingScope.CLASS || hasElementInRange(b, matchedPrefixLen, MQL4Elements.COLON_COLON))
+                && !hasElementInRange(b, matchedPrefixLen, MQL4Elements.TILDA);
 
         PsiBuilder.Marker m = b.mark();
         FunctionParsingResult actualResult = null;
         try {
             ParsingUtils.advanceLexer(b, matchedPrefixLen); // data type, identifier(::identifier), left round brace.
 
-            boolean argsParsed = parseFunctionArgs(b, l + 1);
+            boolean argsParsed = parseFunctionArgs(b, l);
             if (!argsParsed) {
                 advanceLexerUntil(b, ON_ERROR_STOP_TOKENS, ADVANCE);
                 return ObjectUtils.firstNonNull(expectedResult, Declaration);
@@ -135,16 +140,25 @@ public class FunctionsParsing implements MQL4Elements {
                 b.advanceLexer(); // 'const'
             }
 
-            if (b.getTokenType() == SEMICOLON) {
+            boolean hasFieldsInitBlock = false;
+            if (b.getTokenType() == COLON && canBeConstructorDefinition) {
+                b.advanceLexer(); // ':'
+                if (!parseConstructorFieldsInitBlock(b, l)) {
+                    advanceLexerUntil(b, ON_ERROR_STOP_TOKENS, ADVANCE);
+                    return Definition;
+                }
+                hasFieldsInitBlock = true;
+            }
+            if (!hasFieldsInitBlock && b.getTokenType() == SEMICOLON) {
                 actualResult = Declaration;
-                b.advanceLexer();
+                b.advanceLexer(); // ';'
             } else if (b.getTokenType() == L_CURLY_BRACKET) {
                 actualResult = Definition;
-                parseBracketsBlock(b, l + 1);
+                parseBracketsBlock(b, l);
             } else {
-                if (expectedResult == Declaration) {
+                if (!hasFieldsInitBlock && expectedResult == Declaration) {
                     b.error("Semicolon expected");
-                } else if (expectedResult == Definition) {
+                } else if (hasFieldsInitBlock || expectedResult == Definition) {
                     b.error("Function body expected");
                 } else {
                     b.error("Function body or semicolon expected");
@@ -157,14 +171,54 @@ public class FunctionsParsing implements MQL4Elements {
         return actualResult;
     }
 
+    private static boolean parseConstructorFieldsInitBlock(PsiBuilder b, int l) {
+        PsiBuilder.Marker m = b.mark();
+        try {
+            while (b.getTokenType() != L_CURLY_BRACKET) {
+                // field name
+                if (b.getTokenType() != IDENTIFIER) {
+                    b.error(ParsingErrors.IDENTIFIER_EXPECTED);
+                    return false;
+                }
+                b.advanceLexer(); // field name
+
+                // open bracket
+                if (b.getTokenType() != L_ROUND_BRACKET) {
+                    b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                    return false;
+                }
+                b.advanceLexer(); //'('
+
+                if (!ExpressionParsing.parseCompileTimeEvalExpression(b, l, false, ExpressionParsing.COMPILE_TIME_VALUE, R_ROUND_BRACKET)) {
+                    return false;
+                }
+                if (b.getTokenType() != R_ROUND_BRACKET) {
+                    b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                    return false;
+                }
+                b.advanceLexer(); // ')'
+
+                if (b.getTokenType() == COMMA) {
+                    b.advanceLexer(); // ','
+                    continue; // end of field
+                }
+                if (b.getTokenType() == L_CURLY_BRACKET) {
+                    break;
+                }
+                b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                return false;
+            }
+            return true;
+        } finally {
+            m.done(CLASS_INIT_BLOCK);
+        }
+    }
+
     /**
      * Form: (TYPE [IDENTIFIER [= (literal|identifier)]])
      */
     @SuppressWarnings("ConstantConditions")
     private static boolean parseFunctionArgs(PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "parseFunctionArgs")) {
-            return false;
-        }
         PsiBuilder.Marker m = b.mark();
         try {
             while (b.getTokenType() != R_ROUND_BRACKET) {
@@ -240,7 +294,7 @@ public class FunctionsParsing implements MQL4Elements {
                     b.advanceLexer(); // EQ
 
                     // default arg value
-                    if (!ExpressionParsing.parseCompileTimeEvalExpression(b, l + 1, false, ExpressionParsing.COMPILE_TIME_VALUE, R_ROUND_BRACKET)) {
+                    if (!ExpressionParsing.parseCompileTimeEvalExpression(b, l, false, ExpressionParsing.COMPILE_TIME_VALUE, R_ROUND_BRACKET)) {
                         return false;
                     }
 
