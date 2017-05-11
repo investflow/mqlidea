@@ -66,7 +66,7 @@ int e17(CustomType* x){}
 //templates
 void e18(const X<T>& x);
 void e19(const X<T1,T2,T3>& x);
-void e20(const X<T1<E1,E2>>,T2,T3>& x);
+void e20(const X<T1<E1,E2>,T2,T3> & x);
 
 // classes
 int SomeClass::m1(){}

@@ -163,6 +163,7 @@ public class ClassParsing implements MQL4Elements {
         return true;
     }
 
+    //TODO: handle SH_LEFT, SH_RIGHT correctly
     private static int parseTemplateList(@NotNull PsiBuilder b, int offset, int depth) {
         if (depth > 10) {
             return -1;
@@ -171,19 +172,19 @@ public class ClassParsing implements MQL4Elements {
         if (b.lookAhead(pos) != LT) {
             return -1;
         }
-        pos++;
+        pos++; // '<'
         while (true) {
             if (b.lookAhead(pos) == GT) {
-                pos++;
+                pos++; // '>'
                 return pos - offset;
             }
-            if (b.lookAhead(pos) != IDENTIFIER && !MQL4TokenSets.DATA_TYPES.contains(b.lookAhead(pos))) {
+            IElementType typeName = b.lookAhead(pos);
+            if (typeName != IDENTIFIER && !MQL4TokenSets.DATA_TYPES.contains(typeName)) {
                 return -1;
             }
             pos++; // identifier or raw type
-            if (b.lookAhead(pos) == COMMA) {
-                pos++;
-                continue;
+            if (b.lookAhead(pos) == MUL) {
+                pos++; // pointer type
             }
             if (b.lookAhead(pos) == LT) {
                 int dPos = parseTemplateList(b, pos, depth + 1);
@@ -191,6 +192,9 @@ public class ClassParsing implements MQL4Elements {
                     return -1;
                 }
                 pos += dPos;
+            }
+            if (b.lookAhead(pos) == COMMA) {
+                pos++; // ','
             }
         }
     }

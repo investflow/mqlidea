@@ -63,7 +63,7 @@ public:
    // fuzzy conjunction
    double            intersect(const FuzzySet<T>&set,T x) const {return MathMin(membership(x),set.membership(x));}
    // fuzzy implication
-   double            include(const FuzzySet<T>&set,T x) consot {return MathMin(1.0,1.0+set.membership(x)-membership(x));}
+   double            include(const FuzzySet<T>&set,T x) const {return MathMin(1.0,1.0+set.membership(x)-membership(x));}
   };
 //+------------------------------------------------------------------+
 //|                                                                  |

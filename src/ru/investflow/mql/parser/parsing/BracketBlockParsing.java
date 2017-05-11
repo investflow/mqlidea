@@ -23,6 +23,10 @@ public class BracketBlockParsing implements MQL4Elements {
     //TODO: Bracket blocks do not support #ifdef / #define parsing -> need global solution to fix this problem
 
     public static boolean parseBracketsBlock(PsiBuilder b, int l) {
+        return parseBracketsBlock(b, l, false);
+    }
+
+    public static boolean parseBracketsBlock(PsiBuilder b, int l, boolean doNotParseContent) {
         if (!ParsingUtils.nextTokenIn(b, l, "parseBracketBlock", MQL4TokenSets.BRACKETS)) {
             return false;
         }
@@ -59,12 +63,16 @@ public class BracketBlockParsing implements MQL4Elements {
                     advanceWithError(b, ParsingErrors.UNEXPECTED_TOKEN);
                     continue;
                 }
-                boolean res = parseEnum(b, l + 1)
-                        || parseBracketsBlock(b, l + 1)
-                        || parseEmptyStatement(b)
-                        || parseComment(b);
-
-                if (!res) { // if was not parsed -> just consume this element
+                boolean res;
+                if (doNotParseContent) {
+                    res = parseBracketsBlock(b, l + 1, true);
+                } else {
+                    res = parseEnum(b, l + 1)
+                            || parseBracketsBlock(b, l + 1, false)
+                            || parseEmptyStatement(b)
+                            || parseComment(b);
+                }
+                if (!res) { // if not parsed -> consume the element
                     b.advanceLexer();
                 }
             }

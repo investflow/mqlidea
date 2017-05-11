@@ -29,7 +29,7 @@ C(void) {}
 
 class D :public A {
     D():A(1, 2, 3) {};
-    D(T x):A(t.get(), 2, 3) {};
+    D(T x):A(x.get(), 2, 3) {};
     virtual void X() = 0;
 }
 
