@@ -35,21 +35,18 @@ public class FunctionsParsing implements MQL4Elements {
         Definition
     }
 
+    private static final TokenSet FUNCTION_DESCRIPTION_TOKENS = TokenSet.create(MQL4Elements.VIRTUAL_KEYWORD, MQL4Elements.CONST_KEYWORD);
+
     private static final List<PatternMatcher> FUNCTION_MATCHER = Arrays.asList(
             (b, ahead) -> { // return type: custom type or data type
                 IElementType t = b.lookAhead(ahead);
-                int pos = 0;
-                if (t == CONST_KEYWORD) {
-                    pos++; // 'const'
-                    t = b.lookAhead(ahead + pos);
-                }
+                int pos = ParsingUtils.countLookAhead(b, 0, FUNCTION_DESCRIPTION_TOKENS);
                 boolean ok = t == IDENTIFIER || MQL4TokenSets.DATA_TYPES.contains(t);
                 if (!ok) {
                     return -1;
                 }
                 pos++; // 'type'
-                t = b.lookAhead(ahead + pos);
-                pos += t == CONST_KEYWORD ? 1 : 0; // 'const'
+                pos += ParsingUtils.countLookAhead(b, pos, FUNCTION_DESCRIPTION_TOKENS);
                 return pos;
             },
             (b, ahead) -> { // name or ClassName::name
@@ -141,17 +138,30 @@ public class FunctionsParsing implements MQL4Elements {
             }
 
             boolean hasFieldsInitBlock = false;
-            if (b.getTokenType() == COLON && canBeConstructorDefinition) {
+            if (b.getTokenType() == COLON && canBeConstructorDefinition) { // constructor in-place init
                 b.advanceLexer(); // ':'
                 if (!parseConstructorFieldsInitBlock(b, l)) {
                     advanceLexerUntil(b, ON_ERROR_STOP_TOKENS, ADVANCE);
                     return Definition;
                 }
                 hasFieldsInitBlock = true;
+            } else if (b.getTokenType() == EQ) { // pure virtual function
+                b.advanceLexer(); // '='
+                String tt = b.getTokenText();
+                if ("0".equals(tt) || "NULL".equals(tt)) {
+                    b.advanceLexer(); // '=0'
+                } else {
+                    String err = "0 or NULL is expected";
+                    if (b.getTokenType() != L_CURLY_BRACKET && b.getTokenType() != SEMICOLON) {
+                        ParsingUtils.advanceWithError(b, err);
+                    } else {
+                        b.error(err);
+                    }
+                }
             }
+
             if (!hasFieldsInitBlock && b.getTokenType() == SEMICOLON) {
                 actualResult = Declaration;
-                b.advanceLexer(); // ';'
             } else if (b.getTokenType() == L_CURLY_BRACKET) {
                 actualResult = Definition;
                 parseBracketsBlock(b, l);
@@ -202,6 +212,9 @@ public class FunctionsParsing implements MQL4Elements {
                     b.advanceLexer(); // ','
                     continue; // end of field
                 }
+                if (b.getTokenType() == CONST_KEYWORD) {
+                    b.advanceLexer(); // 'const'
+                }
                 if (b.getTokenType() == L_CURLY_BRACKET) {
                     break;
                 }
@@ -231,11 +244,14 @@ public class FunctionsParsing implements MQL4Elements {
                         hasConst = true;
                         t1 = ParsingUtils.advanceLexer(b); // const
                     }
-                    if (t1 != IDENTIFIER && !MQL4TokenSets.DATA_TYPES.contains(t1)) { // not custom type name or known type
-                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
-                        return false;
+                    boolean customType = ClassParsing.parseCustomTypeName(b, l);
+                    if (!customType) {
+                        if (!MQL4TokenSets.DATA_TYPES.contains(t1)) { // not custom type name or known type
+                            b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                            return false;
+                        }
+                        b.advanceLexer(); // type
                     }
-                    b.advanceLexer(); // type
 
                     // === Second element ===
                     IElementType t2 = b.getTokenType();

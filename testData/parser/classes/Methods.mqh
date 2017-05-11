@@ -26,3 +26,17 @@ C::
 ~
 /*comment*/
 C(void) {}
+
+class D :public A {
+    D():A(1, 2, 3) {};
+    D(T x):A(t.get(), 2, 3) {};
+    virtual void X() = 0;
+}
+
+class E {
+    int x() const;
+}
+
+int E::x() const {
+
+}

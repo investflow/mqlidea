@@ -29,7 +29,6 @@ line_comment = "/""/"[^\r\n]* {line_terminator}?
 
 double_quoted_string = \" ( [^\\\"] |{escape_sequence})* \" {string_postfix}?
 string_postfix = [cwd]
-include_quoted_string = "<" ({letter} | {digit} | "." | "/" | "\\" | "-" | "_" | "$")* ">"
 
 escape_sequence = {escape_sequence_spec_char}
 escape_sequence_spec_char = "\\\'" | "\\\"" | "\\\?" | "\\\\" | "\\0" | "\\a" | "\\b"  | "\\f"  | "\\n"  | "\\r"  | "\\t" | "\\v"
@@ -81,7 +80,6 @@ color_string_literal = C \' ({decimal_integer} | {hexadecimal_integer} | , )* \'
 {integer_literal} { return MQL4Elements.INTEGER_LITERAL; }
 {float_literal} { return MQL4Elements.DOUBLE_LITERAL; }
 {double_quoted_string} { return MQL4Elements.STRING_LITERAL; }
-{include_quoted_string} { return MQL4Elements.INCLUDE_STRING_LITERAL; }
 {color_constant_literal} { return MQL4Elements.COLOR_CONSTANT_LITERAL; }
 
 

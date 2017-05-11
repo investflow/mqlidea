@@ -60,3 +60,8 @@ const CustomType e14();
 int const e15();
 CustomType const e16();
 int e17(CustomType* x);
+
+//templates
+void e18(const X<T>& x);
+void e19(const X<T1,T2,T3>& x);
+void e20(const X<T1<E1,E2>>,T2,T3>& x);

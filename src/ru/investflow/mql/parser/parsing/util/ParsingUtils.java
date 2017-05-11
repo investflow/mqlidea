@@ -104,9 +104,13 @@ public class ParsingUtils implements MQL4Elements {
         return advanceLexerUntil(b, TokenSet.create(type), mode);
     }
 
-    @SuppressWarnings("unused")
-    public static boolean matchSequence(@NotNull PsiBuilder b, @NotNull List<PatternMatcher> matchers, int nAhead) {
-        return matchSequenceN(b, matchers, nAhead) >= 0;
+    public static boolean matchSequenceOfElements(@NotNull PsiBuilder b, @NotNull List<IElementType> types, int nAhead) {
+        for (int i = 0; i < types.size(); i++) {
+            if (b.lookAhead(nAhead + i) != types.get(i)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static int matchSequenceN(@NotNull PsiBuilder b, @NotNull List<PatternMatcher> matchers, int nAhead) {
@@ -195,5 +199,17 @@ public class ParsingUtils implements MQL4Elements {
             }
         }
         return false;
+    }
+
+    public static int countLookAhead(@NotNull PsiBuilder b, int pos, @NotNull TokenSet tokens) {
+        int res = 0;
+        while (!b.eof()) {
+            IElementType t = b.lookAhead(res);
+            if (!tokens.contains(t)) {
+                break;
+            }
+            res++;
+        }
+        return res;
     }
 }

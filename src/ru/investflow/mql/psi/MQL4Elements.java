@@ -175,6 +175,7 @@ public interface MQL4Elements {
     IElementType CLASS_INHERITANCE_ITEM = new MQL4ElementType("CLASS_INHERITANCE_ITEM");
     IElementType CLASS_INNER_BLOCK = new MQL4ElementType("CLASS_INNER_BLOCK");
     IElementType CLASS_INIT_BLOCK = new MQL4ElementType("CLASS_INIT_BLOCK");
+    IElementType TYPE_TEMPLATE_BLOCK = new MQL4ElementType("TYPE_TEMPLATE_BLOCK");
 
     IElementType CODE_BLOCK = new MQL4ElementType("CODE_BLOCK");
     IElementType BRACKETS_BLOCK = new MQL4ElementType("BRACKETS_BLOCK");

@@ -11,6 +11,7 @@ import ru.investflow.mql.psi.MQL4TokenSets;
 
 import java.util.Stack;
 
+import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;
 import static ru.investflow.mql.parser.parsing.statement.EnumParsing.parseEnum;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
@@ -23,6 +24,9 @@ public class BracketBlockParsing implements MQL4Elements {
 
     public static boolean parseBracketsBlock(PsiBuilder b, int l) {
         if (!ParsingUtils.nextTokenIn(b, l, "parseBracketBlock", MQL4TokenSets.BRACKETS)) {
+            return false;
+        }
+        if (!recursion_guard_(b, l, "parseBracketsBlock")) {
             return false;
         }
         IElementType lBracket = b.getTokenType();

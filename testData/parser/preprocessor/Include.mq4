@@ -16,6 +16,7 @@
 
 // No separator
 #include "a" #include "b"
+#include <a> #include "b"
 
 // ------ VALID ------
 

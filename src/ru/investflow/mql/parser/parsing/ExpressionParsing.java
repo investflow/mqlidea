@@ -88,11 +88,11 @@ public class ExpressionParsing implements MQL4Elements {
             if (validPrefixOp) {
                 continue;
             }
-            boolean validValue = parseCompileTimeEvalExpressionInBraces(b, l, nested, valueTypes, closingBracket)
-                    || ParsingUtils.parseType(b, valueTypes)
-                    || parseSizeOf(b, l);
+            boolean validValue =
+                    parseCompileTimeEvalExpressionInBraces(b, l, nested, valueTypes, closingBracket)
+                            || ParsingUtils.parseType(b, valueTypes)
+                            || parseSizeOf(b, l);
             if (!validValue) {
-                b.error(ParsingErrors.UNEXPECTED_TOKEN);
                 return false;
             }
             IElementType t = b.getTokenType();
