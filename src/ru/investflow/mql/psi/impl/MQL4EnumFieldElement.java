@@ -12,14 +12,8 @@ public class MQL4EnumFieldElement extends MQL4PsiElement {
 
     @NotNull
     public String getFieldName() {
-        ASTNode fieldNameElement = getFieldNameNode();
-        return fieldNameElement.getText();
+        ASTNode fieldNameElement = getNode().findChildByType(MQL4Elements.IDENTIFIER);
+        return fieldNameElement == null ? "???" : fieldNameElement.getText();
     }
 
-    @NotNull
-    public ASTNode getFieldNameNode() {
-        ASTNode fieldNameNode = getNode().findChildByType(MQL4Elements.IDENTIFIER);
-        assert fieldNameNode != null;
-        return fieldNameNode;
-    }
 }

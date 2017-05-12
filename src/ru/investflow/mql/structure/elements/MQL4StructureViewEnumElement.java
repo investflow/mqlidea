@@ -20,11 +20,7 @@ public class MQL4StructureViewEnumElement extends MQL4StructureViewElement<MQL4E
 
     @NotNull
     public StructureViewTreeElement[] getChildren() {
-        if (element.hasErrorElements()) {
-            return new StructureViewTreeElement[0];
-        }
         return element.getFields().stream()
-                .filter(fe -> !fe.hasErrorElements())
                 .map(MQL4StructureViewEnumFieldElement::new)
                 .toArray(StructureViewTreeElement[]::new);
     }

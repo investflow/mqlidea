@@ -40,10 +40,9 @@ public class MQL4PreprocessorPropertyBlock extends MQL4PsiElement {
     }
 
     public void sync() {
-        boolean hasErrors = hasErrorElements();
         ASTNode node = getNode();
-        keyNode = hasErrors ? null : node.findChildByType(MQL4Elements.IDENTIFIER);
-        valueNode = hasErrors || keyNode == null ? null : node.findChildByType(VALUE_NODE_TYPE, keyNode.getTreeNext());
+        keyNode = node.findChildByType(MQL4Elements.IDENTIFIER);
+        valueNode = keyNode == null ? null : node.findChildByType(VALUE_NODE_TYPE, keyNode.getTreeNext());
     }
 
     @Override

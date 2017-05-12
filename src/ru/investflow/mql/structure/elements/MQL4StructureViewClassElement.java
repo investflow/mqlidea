@@ -25,9 +25,6 @@ public class MQL4StructureViewClassElement extends MQL4StructureViewElement<MQL4
 
     @NotNull
     public StructureViewTreeElement[] getChildren() {
-        if (element.hasErrorElements()) {
-            return new StructureViewTreeElement[0];
-        }
         ASTNode innerBlockNode = element.getInnerBlockNode();
         if (innerBlockNode == null) {
             return new StructureViewTreeElement[0];
