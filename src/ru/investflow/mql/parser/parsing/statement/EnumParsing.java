@@ -8,6 +8,7 @@ import ru.investflow.mql.parser.parsing.ExpressionParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.psi.MQL4Elements;
 
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 
 public class EnumParsing implements MQL4Elements {
@@ -29,7 +30,7 @@ public class EnumParsing implements MQL4Elements {
                 b.advanceLexer(); // type
             }
             if (b.getTokenType() != L_CURLY_BRACKET) {
-                b.error("Enum block is expected");
+                error(b, "Enum block is expected");
                 return false;
             }
             b.advanceLexer(); // '{'
@@ -56,7 +57,7 @@ public class EnumParsing implements MQL4Elements {
                     //  === First element ===
                     IElementType t1 = b.getTokenType();
                     if (t1 != IDENTIFIER) {  // field name
-                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                        error(b, ParsingErrors.UNEXPECTED_TOKEN);
                         return false;
                     }
                     b.advanceLexer(); // field name
@@ -88,7 +89,7 @@ public class EnumParsing implements MQL4Elements {
                         b.advanceLexer(); // ','
                         continue;
                     }
-                    b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                    error(b, ParsingErrors.UNEXPECTED_TOKEN);
                     return false;
                 } finally {
                     field.done(ENUM_FIELD);

@@ -22,6 +22,7 @@ import static ru.investflow.mql.parser.parsing.FunctionsParsing.FunctionParsingR
 import static ru.investflow.mql.parser.parsing.FunctionsParsing.FunctionParsingResult.Definition;
 import static ru.investflow.mql.parser.parsing.FunctionsParsing.FunctionParsingResult.NotMatched;
 import static ru.investflow.mql.parser.parsing.util.ParsingErrors.UNEXPECTED_TOKEN;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.hasElementInRange;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.matchSequenceN;
@@ -154,9 +155,9 @@ public class FunctionsParsing implements MQL4Elements {
                 } else {
                     String err = "0 or NULL is expected";
                     if (b.getTokenType() != L_CURLY_BRACKET && b.getTokenType() != SEMICOLON) {
-                        ParsingUtils.advanceWithError(b, err);
+                        ParsingErrors.advanceWithError(b, err);
                     } else {
-                        b.error(err);
+                        error(b, err);
                     }
                 }
             }
@@ -168,11 +169,11 @@ public class FunctionsParsing implements MQL4Elements {
                 parseBracketsBlock(b, l);
             } else {
                 if (!hasFieldsInitBlock && expectedResult == Declaration) {
-                    b.error("Semicolon expected");
+                    error(b, "Semicolon expected");
                 } else if (hasFieldsInitBlock || expectedResult == Definition) {
-                    b.error("Function body expected");
+                    error(b, "Function body expected");
                 } else {
-                    b.error("Function body or semicolon expected");
+                    error(b, "Function body or semicolon expected");
                 }
                 actualResult = Definition;
             }
@@ -189,11 +190,11 @@ public class FunctionsParsing implements MQL4Elements {
             while (b.getTokenType() != L_CURLY_BRACKET) {
                 // field name
                 if (!ClassParsing.parseCustomTypeName(b, l)) {
-                    b.error(ParsingErrors.IDENTIFIER_EXPECTED);
+                    error(b, ParsingErrors.IDENTIFIER_EXPECTED);
                     return false;
                 }
                 if (!BracketBlockParsing.parseBracketsBlock(b, l, true)) {
-                    ParsingUtils.advanceWithError(b, UNEXPECTED_TOKEN);
+                    ParsingErrors.advanceWithError(b, UNEXPECTED_TOKEN);
                     return false;
                 }
                 if (b.getTokenType() == COMMA) {
@@ -206,7 +207,7 @@ public class FunctionsParsing implements MQL4Elements {
                 if (b.getTokenType() == L_CURLY_BRACKET) {
                     break;
                 }
-                b.error(UNEXPECTED_TOKEN);
+                error(b, UNEXPECTED_TOKEN);
                 return false;
             }
             return true;
@@ -235,7 +236,7 @@ public class FunctionsParsing implements MQL4Elements {
                     boolean customType = ClassParsing.parseCustomTypeName(b, l);
                     if (!customType) {
                         if (!MQL4TokenSets.DATA_TYPES.contains(t1)) { // not custom type name or known type
-                            b.error(UNEXPECTED_TOKEN);
+                            error(b, UNEXPECTED_TOKEN);
                             return false;
                         }
                         b.advanceLexer(); // type
@@ -245,7 +246,7 @@ public class FunctionsParsing implements MQL4Elements {
                     IElementType t2 = b.getTokenType();
                     if (t2 == CONST_KEYWORD) {
                         if (hasConst) {
-                            b.error(UNEXPECTED_TOKEN);
+                            error(b, UNEXPECTED_TOKEN);
                             return false;
                         }
                         b.advanceLexer(); // const
@@ -262,7 +263,7 @@ public class FunctionsParsing implements MQL4Elements {
                         break; // end of all parameters
                     }
                     if (t2 != IDENTIFIER && t2 != L_SQUARE_BRACKET) {
-                        b.error(ParsingErrors.IDENTIFIER_EXPECTED);
+                        error(b, ParsingErrors.IDENTIFIER_EXPECTED);
                         return false;
                     }
                     if (t2 == IDENTIFIER) {
@@ -277,7 +278,7 @@ public class FunctionsParsing implements MQL4Elements {
                         if (t2 == R_SQUARE_BRACKET) {
                             b.advanceLexer(); //']'
                         } else {
-                            b.error(ParsingErrors.NO_MATCHING_CLOSING_BRACKET);
+                            error(b, ParsingErrors.NO_MATCHING_CLOSING_BRACKET);
                             return false;
                         }
                     }
@@ -292,7 +293,7 @@ public class FunctionsParsing implements MQL4Elements {
                         break; // end of all parameters
                     }
                     if (t3 != EQ) { //
-                        b.error(UNEXPECTED_TOKEN);
+                        error(b, UNEXPECTED_TOKEN);
                         return false;
                     }
                     b.advanceLexer(); // EQ
@@ -311,7 +312,7 @@ public class FunctionsParsing implements MQL4Elements {
                     if (t4 == R_ROUND_BRACKET) {
                         break; // end of all parameters
                     }
-                    b.error(UNEXPECTED_TOKEN);
+                    error(b, UNEXPECTED_TOKEN);
                     return false;
                 } finally {
                     m2.done(FUNCTION_ARG);

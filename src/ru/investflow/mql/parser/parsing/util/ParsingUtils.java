@@ -10,10 +10,9 @@ import ru.investflow.mql.psi.MQL4Elements;
 import java.util.List;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 
 public class ParsingUtils implements MQL4Elements {
-
-    public static TokenSet STATEMENT_TERMINATORS = TokenSet.create(SEMICOLON, R_CURLY_BRACKET, R_ROUND_BRACKET);
 
     public static void repeat(int n, Runnable r) {
         for (int i = 0; i < n; i++) {
@@ -104,15 +103,6 @@ public class ParsingUtils implements MQL4Elements {
         return advanceLexerUntil(b, TokenSet.create(type), mode);
     }
 
-    public static boolean matchSequenceOfElements(@NotNull PsiBuilder b, @NotNull List<IElementType> types, int nAhead) {
-        for (int i = 0; i < types.size(); i++) {
-            if (b.lookAhead(nAhead + i) != types.get(i)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     public static int matchSequenceN(@NotNull PsiBuilder b, @NotNull List<PatternMatcher> matchers, int nAhead) {
         int a = nAhead;
         for (PatternMatcher m : matchers) {
@@ -150,16 +140,7 @@ public class ParsingUtils implements MQL4Elements {
         } else if (type == SEMICOLON) {
             error = "Semicolon expected";
         }
-        b.error(error);
-        return false;
-    }
-
-    public static boolean parseKeywordOrFail(@NotNull PsiBuilder b, @NotNull IElementType type) {
-        if (b.getTokenType() == type) {
-            b.advanceLexer();
-            return true;
-        }
-        b.error("'" + type.toString().replace("_KEYWORD", "").toLowerCase() + "' expected");
+        error(b, error);
         return false;
     }
 
@@ -169,15 +150,6 @@ public class ParsingUtils implements MQL4Elements {
 
     public static boolean nextTokenIn(@NotNull PsiBuilder b, int l, @NotNull String recursionGuard, @NotNull TokenSet set) {
         return recursion_guard_(b, l, recursionGuard) && set.contains(b.getTokenType());
-    }
-
-    /**
-     * Advances current token and sets error message on it.
-     */
-    public static void advanceWithError(@NotNull PsiBuilder b, @NotNull String message) {
-        PsiBuilder.Marker errorBlock = b.mark();
-        b.advanceLexer();
-        errorBlock.error(message);
     }
 
     public static boolean parseType(@NotNull PsiBuilder b, @NotNull TokenSet typeSet) {
@@ -201,11 +173,11 @@ public class ParsingUtils implements MQL4Elements {
         return false;
     }
 
-    public static int countLookAhead(@NotNull PsiBuilder b, int pos, @NotNull TokenSet tokens) {
+    public static int countLookAhead(@NotNull PsiBuilder b, int offset, @NotNull TokenSet tokens) {
         int res = 0;
-        while (!b.eof()) {
-            IElementType t = b.lookAhead(res);
-            if (!tokens.contains(t)) {
+        while (true) {
+            IElementType t = b.lookAhead(offset + res);
+            if (t == null || !tokens.contains(t)) {
                 break;
             }
             res++;

@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 public class MQL4PluginSettingsImpl implements MQL4PluginSettings, PersistentStateComponent<MQL4PluginSettingsImpl>, ApplicationComponent {
 
     public boolean enDocs;
+    public boolean errorAnalysis = true;
 
     @Override
     public boolean isUseEnDocs() {
@@ -21,6 +22,16 @@ public class MQL4PluginSettingsImpl implements MQL4PluginSettings, PersistentSta
     @Override
     public void setUseEnDocs(boolean v) {
         enDocs = v;
+    }
+
+    @Override
+    public boolean performErrorAnalysis() {
+        return errorAnalysis;
+    }
+
+    @Override
+    public void setPerformErrorAnalysis(boolean v) {
+        errorAnalysis = v;
     }
 
     @Override

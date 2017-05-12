@@ -7,6 +7,7 @@ import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.completePPStatement;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexer;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.containsEndOfLineOrFile;
 
@@ -21,7 +22,7 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
         b.advanceLexer(); // #property -> name
         try {
             if (containsEndOfLineOrFile(b, offset)) { // new line or EOF after #property -> report error
-                b.error(ParsingErrors.IDENTIFIER_EXPECTED);
+                error(b, ParsingErrors.IDENTIFIER_EXPECTED);
                 return true;
             }
             offset = b.getCurrentOffset();

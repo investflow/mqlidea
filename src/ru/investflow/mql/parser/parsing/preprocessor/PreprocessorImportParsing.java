@@ -11,6 +11,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.nextTokenIs;
 import static ru.investflow.mql.parser.parsing.FunctionsParsing.FunctionParsingResult.Declaration;
 import static ru.investflow.mql.parser.parsing.FunctionsParsing.parseFunction;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 
@@ -31,7 +32,7 @@ public class PreprocessorImportParsing implements MQL4Elements {
             int literalOffset = b.getCurrentOffset();
             IElementType tt = b.getTokenType();
             if (tt != STRING_LITERAL) {
-                b.error("String literal is expected!");
+                error(b, "String literal is expected!");
                 advanceLexerUntil(b, LINE_TERMINATOR, TokenAdvanceMode.DO_NOT_ADVANCE);
                 return true;
             }
@@ -39,7 +40,7 @@ public class PreprocessorImportParsing implements MQL4Elements {
 
             // check that there are no other tokens till the eol
             if (!ParsingUtils.containsEndOfLineOrFile(b, literalOffset)) {
-                b.error("New line is expected!");
+                error(b, "New line is expected!");
                 advanceLexerUntil(b, LINE_TERMINATOR, TokenAdvanceMode.DO_NOT_ADVANCE);
                 return true;
             }
@@ -58,7 +59,7 @@ public class PreprocessorImportParsing implements MQL4Elements {
             return true;
         }
         PsiBuilder.Marker m = enter_section_(b);
-        b.error("Function declaration expected!");
+        error(b, "Function declaration expected!");
         advanceLexerUntil(b, SEMICOLON, ADVANCE);
         exit_section_(b, m, FUNCTION_DECLARATION, true);
         return false;

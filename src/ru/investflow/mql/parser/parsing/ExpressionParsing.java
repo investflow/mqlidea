@@ -10,6 +10,7 @@ import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 
 public class ExpressionParsing implements MQL4Elements {
@@ -39,7 +40,7 @@ public class ExpressionParsing implements MQL4Elements {
         }
         b.advanceLexer(); // 'sizeof'
         if (b.getTokenType() != L_ROUND_BRACKET) {
-            b.error(ParsingErrors.UNEXPECTED_TOKEN);
+            error(b, ParsingErrors.UNEXPECTED_TOKEN);
             return true;
         }
         PsiBuilder.Marker brackets = b.mark();
@@ -53,7 +54,7 @@ public class ExpressionParsing implements MQL4Elements {
                 }
             }
             if (b.getTokenType() != R_ROUND_BRACKET) {
-                b.error(ParsingErrors.NO_MATCHING_CLOSING_BRACKET);
+                error(b, ParsingErrors.NO_MATCHING_CLOSING_BRACKET);
                 return true;
             }
             b.advanceLexer(); // ')'
@@ -100,7 +101,7 @@ public class ExpressionParsing implements MQL4Elements {
                 return true;
             }
             if (!ExpressionParsing.parseOperator(b)) {
-                b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                error(b, ParsingErrors.UNEXPECTED_TOKEN);
                 return false;
             }
         }
@@ -118,7 +119,7 @@ public class ExpressionParsing implements MQL4Elements {
                 return false;
             }
             if (b.getTokenType() != R_ROUND_BRACKET) {
-                b.error(ParsingErrors.NO_MATCHING_CLOSING_BRACKET);
+                error(b, ParsingErrors.NO_MATCHING_CLOSING_BRACKET);
                 advanceLexerUntil(b, TokenSet.EMPTY, ON_ERROR_PARSE_EXPRESSION_DO_NOT_ADVANCE_TOKENS);
                 return false;
             }

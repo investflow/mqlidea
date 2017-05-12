@@ -16,7 +16,8 @@ import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;
 import static ru.investflow.mql.parser.parsing.statement.EnumParsing.parseEnum;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
 import static ru.investflow.mql.parser.parsing.util.ParsingErrors.NO_MATCHING_CLOSING_BRACKET;
-import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceWithError;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.advanceWithError;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 
 public class BracketBlockParsing implements MQL4Elements {
 
@@ -42,7 +43,7 @@ public class BracketBlockParsing implements MQL4Elements {
 
         PsiBuilder.Marker block = b.mark(); // starting new bracket section
         if (!hasMatchingClosingBracket(b, lBracket)) { // must check it here to set error on the correct position.
-            b.error(NO_MATCHING_CLOSING_BRACKET);
+            error(b, NO_MATCHING_CLOSING_BRACKET);
         }
         b.advanceLexer(); // left bracket
 

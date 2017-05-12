@@ -8,6 +8,7 @@ import ru.investflow.mql.psi.MQL4Elements;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.completePPStatement;
 import static ru.investflow.mql.parser.parsing.util.ParsingErrors.IDENTIFIER_EXPECTED;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 
 public class PreprocessorIfDefParsing implements MQL4Elements {
 
@@ -24,7 +25,7 @@ public class PreprocessorIfDefParsing implements MQL4Elements {
             }
             IElementType tt = b.getTokenType();
             if (tt != IDENTIFIER) {
-                b.error(IDENTIFIER_EXPECTED);
+                error(b, IDENTIFIER_EXPECTED);
             }
             int statementEnd = b.getCurrentOffset();
             b.advanceLexer(); // identifier

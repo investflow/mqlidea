@@ -13,6 +13,7 @@ import ru.investflow.mql.psi.MQL4TokenSets;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.enter_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.exit_section_;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.checkTokenOrFail;
 
 public class VarDeclarationStatement implements MQL4Elements {
@@ -68,7 +69,7 @@ public class VarDeclarationStatement implements MQL4Elements {
                             break;
                         }
                     } else {
-                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                        error(b, ParsingErrors.UNEXPECTED_TOKEN);
                         ok = false;
                     }
                 } finally {
@@ -117,7 +118,7 @@ public class VarDeclarationStatement implements MQL4Elements {
                 boolean ok = ParsingUtils.parseTokenOrFail(b, IDENTIFIER)
                         && ParsingUtils.parseTokenOrFail(b, EQ)
                         //TODO: && parseExpressionOrFail(b, l + 1)
-                ;
+                        ;
                 if (!ok) {
                     return false;
                 }

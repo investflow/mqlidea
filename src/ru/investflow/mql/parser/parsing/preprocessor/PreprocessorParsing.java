@@ -10,8 +10,9 @@ import ru.investflow.mql.psi.MQL4Elements;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseUndef;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIncludeParsing.parseInclude;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorPropertyParsing.parseProperty;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
-import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceWithError;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.advanceWithError;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.containsEndOfLineOrFile;
 import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 
@@ -47,7 +48,7 @@ public class PreprocessorParsing implements MQL4Elements {
     public static boolean assertNoLineBreaksInRange(PsiBuilder b, int startOffset, int endOffset, @NotNull String errorMessage) {
         boolean hasEol = hasLineBreaks(b, startOffset, endOffset);
         if (hasEol) {
-            b.error(errorMessage);
+            error(b, errorMessage);
             return false;
         }
         return true;
@@ -78,7 +79,7 @@ public class PreprocessorParsing implements MQL4Elements {
         }
         boolean hasEol = hasLineBreaks(b, statementEnd, b.getCurrentOffset());
         if (!hasEol) {
-            b.error(ParsingErrors.UNEXPECTED_TOKEN);
+            error(b, ParsingErrors.UNEXPECTED_TOKEN);
         }
     }
 }

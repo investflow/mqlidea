@@ -8,6 +8,10 @@ public interface MQL4PluginSettings {
 
     void setUseEnDocs(boolean v);
 
+    boolean performErrorAnalysis();
+
+    void setPerformErrorAnalysis(boolean v);
+
     static MQL4PluginSettings getInstance() {
         return ApplicationManager.getApplication().getComponent(MQL4PluginSettings.class);
     }

@@ -18,6 +18,7 @@ import static ru.investflow.mql.parser.parsing.FunctionsParsing.parseFunction;
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.parsePreprocessorBlock;
 import static ru.investflow.mql.parser.parsing.statement.EnumParsing.parseEnum;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
+import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
 
 public class ClassParsing implements MQL4Elements {
@@ -38,7 +39,7 @@ public class ClassParsing implements MQL4Elements {
             b.advanceLexer(); // 'class|struct'
             IElementType t2 = b.getTokenType();
             if (t2 != IDENTIFIER) {
-                b.error((t1 == CLASS_KEYWORD ? "Class" : t1 == STRUCT_KEYWORD ? "Struct" : "Interface") + " name is expected");
+                error(b, (t1 == CLASS_KEYWORD ? "Class" : t1 == STRUCT_KEYWORD ? "Struct" : "Interface") + " name is expected");
                 b.mark().done(MQL4Elements.CLASS_INNER_BLOCK);
                 return true;
             }
@@ -56,7 +57,7 @@ public class ClassParsing implements MQL4Elements {
                 }
             }
             if (b.getTokenType() != L_CURLY_BRACKET) {
-                b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                error(b, ParsingErrors.UNEXPECTED_TOKEN);
                 b.mark().done(MQL4Elements.CLASS_INNER_BLOCK);
                 return true;
             }
@@ -88,7 +89,7 @@ public class ClassParsing implements MQL4Elements {
                         b.advanceLexer(); // 'private'
                     }
                     if (!parseCustomTypeName(b, l)) {
-                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                        error(b, ParsingErrors.UNEXPECTED_TOKEN);
                         return false;
                     }
                     nItems++;
@@ -98,7 +99,7 @@ public class ClassParsing implements MQL4Elements {
                         break;
                     }
                     if (t3 != COMMA) {
-                        b.error(ParsingErrors.UNEXPECTED_TOKEN);
+                        error(b, ParsingErrors.UNEXPECTED_TOKEN);
                         return false;
                     }
                 } finally {
@@ -110,7 +111,7 @@ public class ClassParsing implements MQL4Elements {
             list.done(MQL4Elements.CLASS_INHERITANCE_LIST);
         }
         if (nItems == 0) {
-            b.error(ParsingErrors.UNEXPECTED_TOKEN);
+            error(b, ParsingErrors.UNEXPECTED_TOKEN);
             return false;
         }
         return true;

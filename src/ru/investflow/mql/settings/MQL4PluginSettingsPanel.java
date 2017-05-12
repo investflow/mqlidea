@@ -3,22 +3,28 @@ package ru.investflow.mql.settings;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.ui.ComboBox;
+import com.intellij.util.FileContentUtil;
+import com.intellij.util.ui.JBUI;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.BoxLayout;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
 //todo: SearchableConfigurable,
 public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
 
     @NotNull
-    private final JComboBox<String> langDocsSelector;
+    private final JComboBox<String> docsLangCombo;
+
+    @NotNull
+    private final JComboBox<String> errorAnalysisCombo;
 
     @NotNull
     private final MQL4PluginSettings settings;
@@ -26,15 +32,36 @@ public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
     public MQL4PluginSettingsPanel(@NotNull MQL4PluginSettings settings) {
         this.settings = settings;
 
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        JPanel comboPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        comboPanel.add(new JLabel("Docs language: "));
-        langDocsSelector = new ComboBox<>(new String[]{"Russian", "English"});
-        langDocsSelector.setSelectedIndex(settings.isUseEnDocs() ? 1 : 0);
-        comboPanel.add(langDocsSelector);
-        add(comboPanel);
+        JPanel form = new JPanel(new GridBagLayout());
+        form.setLayout(new GridBagLayout());
+        add(form);
 
+
+        GridBagConstraints gc = new GridBagConstraints();
+        gc.fill = GridBagConstraints.HORIZONTAL;
+        gc.insets = JBUI.insets(10);
+
+        gc.gridx = 0;
+        gc.gridy = 0;
+        form.add(new JLabel("Docs language: "), gc);
+
+        gc.gridx = 1;
+        gc.gridy = 0;
+        docsLangCombo = new ComboBox<>(new String[]{"Russian", "English"});
+        docsLangCombo.setSelectedIndex(settings.isUseEnDocs() ? 1 : 0);
+        form.add(docsLangCombo, gc);
+
+        gc.gridx = 0;
+        gc.gridy = 1;
+        form.add(new JLabel("Error analysis: "), gc);
+
+        gc.gridx = 1;
+        gc.gridy = 1;
+        errorAnalysisCombo = new ComboBox<>(new String[]{"On", "Off"});
+        errorAnalysisCombo.setSelectedIndex(settings.performErrorAnalysis() ? 0 : 1);
+        form.add(errorAnalysisCombo, gc);
     }
 
     @Nls
@@ -68,7 +95,12 @@ public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
      */
     @Override
     public boolean isModified() {
-        return langDocsSelector.getSelectedIndex() != (settings.isUseEnDocs() ? 1 : 0);
+        return docsLangCombo.getSelectedIndex() != (settings.isUseEnDocs() ? 1 : 0)
+                || isErrorAnalysisFlagChanged();
+    }
+
+    private boolean isErrorAnalysisFlagChanged() {
+        return errorAnalysisCombo.getSelectedIndex() != (settings.performErrorAnalysis() ? 0 : 1);
     }
 
     /**
@@ -76,7 +108,11 @@ public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
      */
     @Override
     public void apply() throws ConfigurationException {
-        settings.setUseEnDocs(langDocsSelector.getSelectedIndex() == 1);
+        settings.setUseEnDocs(docsLangCombo.getSelectedIndex() == 1);
+        if (isErrorAnalysisFlagChanged()) {
+            FileContentUtil.reparseOpenedFiles();
+        }
+        settings.setPerformErrorAnalysis(errorAnalysisCombo.getSelectedIndex() == 0);
     }
 
     /**
@@ -84,7 +120,8 @@ public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
      */
     @Override
     public void reset() {
-        langDocsSelector.setSelectedIndex(settings.isUseEnDocs() ? 1 : 0);
+        docsLangCombo.setSelectedIndex(settings.isUseEnDocs() ? 1 : 0);
+        errorAnalysisCombo.setSelectedIndex(settings.performErrorAnalysis() ? 0 : 1);
     }
 
 }
