@@ -13,6 +13,9 @@ import ru.investflow.mql.structure.MQL4StructureViewElement;
 
 import javax.swing.Icon;
 
+import static ru.investflow.mql.util.TextUtils.abbreviate;
+import static ru.investflow.mql.util.TextUtils.simplify;
+
 
 public class MQL4StructureViewFunctionElement extends MQL4StructureViewElement<MQL4FunctionElement> {
 
@@ -31,7 +34,7 @@ public class MQL4StructureViewFunctionElement extends MQL4StructureViewElement<M
             }
 
             public String getPresentableText() {
-                return element.getFunctionName();
+                return element.getFunctionName() + "(" + abbreviate(simplify(element.getSignature()), 140) + ")";
             }
 
             public String getLocationString() {

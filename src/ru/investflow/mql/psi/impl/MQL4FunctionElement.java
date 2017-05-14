@@ -20,8 +20,7 @@ public class MQL4FunctionElement extends MQL4PsiElement {
 
     @NotNull
     public ASTNode getFunctionNameNode() {
-        ASTNode node = getNode();
-        ASTNode argsListStartNode = node.findChildByType(MQL4Elements.L_ROUND_BRACKET);
+        ASTNode argsListStartNode = getNode().findChildByType(MQL4Elements.L_ROUND_BRACKET);
         assert argsListStartNode != null;
         ASTNode nameNode = ASTUtils.findLastPrevByType(argsListStartNode, MQL4Elements.IDENTIFIER);
         assert nameNode != null;
@@ -30,5 +29,11 @@ public class MQL4FunctionElement extends MQL4PsiElement {
 
     public boolean isDeclaration() {
         return getNode().getElementType() == MQL4Elements.FUNCTION_DECLARATION;
+    }
+
+    @NotNull
+    public String getSignature() {
+        ASTNode argsList = getNode().findChildByType(MQL4Elements.FUNCTION_ARGS_LIST);
+        return argsList == null ? "" : argsList.getText();
     }
 }
