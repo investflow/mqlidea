@@ -1,6 +1,5 @@
 package ru.investflow.mql.structure.elements;
 
-import com.intellij.icons.AllIcons;
 import com.intellij.ide.structureView.StructureViewTreeElement;
 import com.intellij.lang.ASTNode;
 import com.intellij.navigation.ColoredItemPresentation;
@@ -50,7 +49,7 @@ public class MQL4StructureViewClassElement extends MQL4StructureViewElement<MQL4
             }
 
             public Icon getIcon(boolean open) {
-                return element.isInterface() ? AllIcons.Nodes.Interface : AllIcons.Nodes.Class; // todo: custom icon for structs!
+                return element.getPresentation().getIcon(false);
             }
         };
     }

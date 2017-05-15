@@ -16,7 +16,7 @@ public class MQL4RunCompilerConfigurationType extends ConfigurationTypeBase {
     private static final String CONFIGURATION_TYPE_ID = "MQL4RunCompilerConfigurationTypeId";
 
     public MQL4RunCompilerConfigurationType() {
-        super(CONFIGURATION_TYPE_ID, "MQL4 Build", "Build single MQL4 file", MQL4Icons.FILE);
+        super(CONFIGURATION_TYPE_ID, "MQL4 Build", "Build single MQL4 file", MQL4Icons.File);
         addFactory(new ConfigurationFactory(this) {
             @NotNull
             @Override

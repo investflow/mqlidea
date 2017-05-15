@@ -10,7 +10,7 @@ import ru.investflow.mql.MQL4PluginResources;
  */
 public class CreateMQL4FileAction extends CreateFileAction {
     public CreateMQL4FileAction() {
-        super(MQL4PluginResources.message("action.New-MQL-File.text"), MQL4PluginResources.message("action.New-MQL-File.text"), MQL4Icons.FILE);
+        super(MQL4PluginResources.message("action.New-MQL-File.text"), MQL4PluginResources.message("action.New-MQL-File.text"), MQL4Icons.File);
     }
 
     @Override

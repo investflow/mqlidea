@@ -5,6 +5,7 @@ import com.intellij.lang.ASTNode;
 import com.intellij.navigation.ItemPresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import ru.investflow.mql.MQL4Icons;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.stub.MQL4ClassElementStub;
 import ru.investflow.mql.psi.stub.MQL4StubElementTypes;
@@ -49,6 +50,7 @@ public class MQL4ClassElement extends StubBasedPsiElementBase<MQL4ClassElementSt
         return getNode().findChildByType(MQL4Elements.CLASS_INNER_BLOCK);
     }
 
+    @NotNull
     public ItemPresentation getPresentation() {
         return new ItemPresentation() {
             public String getPresentableText() {
@@ -60,7 +62,7 @@ public class MQL4ClassElement extends StubBasedPsiElementBase<MQL4ClassElementSt
             }
 
             public Icon getIcon(boolean open) {
-                return null;
+                return isInterface() ? MQL4Icons.Interface : isStruct() ? MQL4Icons.Struct : MQL4Icons.Class;
             }
         };
     }

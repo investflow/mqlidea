@@ -35,4 +35,9 @@ public class MQL4ClassNameIndex extends StringStubIndexExtension<MQL4ClassElemen
     public Collection<String> getAllKeys(Project project) {
         return StubIndex.getInstance().getAllKeys(getKey(), project);
     }
+
+    @Override
+    public int getVersion() {
+        return 1;
+    }
 }

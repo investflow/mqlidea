@@ -34,7 +34,7 @@ public class MQL4SdkType extends SdkType {
     @NotNull
     @Override
     public Icon getIcon() {
-        return MQL4Icons.FILE;
+        return MQL4Icons.File;
     }
 
     @NotNull

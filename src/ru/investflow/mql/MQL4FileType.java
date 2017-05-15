@@ -39,6 +39,6 @@ public class MQL4FileType extends LanguageFileType {
     @Nullable
     @Override
     public Icon getIcon() {
-        return MQL4Icons.FILE;
+        return MQL4Icons.File;
     }
 }
