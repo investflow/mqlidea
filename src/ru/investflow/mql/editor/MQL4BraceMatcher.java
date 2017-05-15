@@ -13,7 +13,7 @@ import ru.investflow.mql.psi.MQL4Elements;
  */
 public class MQL4BraceMatcher implements PairedBraceMatcher {
 
-    private static BracePair[] PAIRS = {
+    private static final BracePair[] PAIRS = {
             new BracePair(MQL4Elements.L_CURLY_BRACKET, MQL4Elements.R_CURLY_BRACKET, true),
             new BracePair(MQL4Elements.L_ROUND_BRACKET, MQL4Elements.R_ROUND_BRACKET, true),
             new BracePair(MQL4Elements.L_SQUARE_BRACKET, MQL4Elements.R_SQUARE_BRACKET, true)

@@ -80,11 +80,6 @@ public class MQL4CompletionContributor extends CompletionContributor {
         }
     }
 
-    @Override
-    public void fillCompletionVariants(@NotNull CompletionParameters parameters, @NotNull CompletionResultSet result) {
-        super.fillCompletionVariants(parameters, result);
-    }
-
     /**
      * Helper method for all filters.
      */
