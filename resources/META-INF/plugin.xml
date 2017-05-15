@@ -61,5 +61,10 @@
         <lang.psiStructureViewFactory language="MQL4"
                                       implementationClass="ru.investflow.mql.structure.MQL4StructureViewBuilderFactory"/>
 
+        <!--Indexing -->
+        <stubElementTypeHolder class="ru.investflow.mql.psi.stub.MQL4StubElementTypes"/>
+        <stubIndex implementation="ru.investflow.mql.index.MQL4ClassNameIndex"/>
+        <gotoClassContributor implementation="ru.investflow.mql.index.MQL4GotoClassContributor"/>
+
     </extensions>
 </idea-plugin>

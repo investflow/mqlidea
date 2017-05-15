@@ -1,6 +1,7 @@
 package ru.investflow.mql.psi;
 
 import com.intellij.psi.tree.IElementType;
+import ru.investflow.mql.psi.stub.MQL4StubElementTypes;
 
 public interface MQL4Elements {
 
@@ -170,7 +171,7 @@ public interface MQL4Elements {
     IElementType ENUM_FIELDS_LIST = new MQL4ElementType("ENUM_FIELDS_LIST");
     IElementType ENUM_FIELD = new MQL4ElementType("ENUM_FIELD");
 
-    IElementType CLASS_DEFINITION = new MQL4ElementType("CLASS_DEFINITION");
+    IElementType CLASS_DEFINITION = MQL4StubElementTypes.CLASS;
     IElementType CLASS_INHERITANCE_LIST = new MQL4ElementType("CLASS_INHERITANCE_LIST");
     IElementType CLASS_INHERITANCE_ITEM = new MQL4ElementType("CLASS_INHERITANCE_ITEM");
     IElementType CLASS_INNER_BLOCK = new MQL4ElementType("CLASS_INNER_BLOCK");

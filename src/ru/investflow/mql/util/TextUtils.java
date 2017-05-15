@@ -1,5 +1,6 @@
 package ru.investflow.mql.util;
 
+import com.intellij.xml.util.XmlUtil;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,5 +49,9 @@ public class TextUtils {
         }
         Matcher matcher = WS_PATTERN.matcher(s);
         return matcher.replaceAll(" ");
+    }
+
+    public static String unescape(String val) {
+        return XmlUtil.unescape(val);
     }
 }

@@ -1,14 +1,25 @@
 package ru.investflow.mql.psi.impl;
 
+import com.intellij.extapi.psi.StubBasedPsiElementBase;
 import com.intellij.lang.ASTNode;
+import com.intellij.navigation.ItemPresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.psi.MQL4Elements;
+import ru.investflow.mql.psi.stub.MQL4ClassElementStub;
+import ru.investflow.mql.psi.stub.MQL4StubElementTypes;
 
-public class MQL4ClassElement extends MQL4PsiElement {
+import javax.swing.Icon;
+
+public class MQL4ClassElement extends StubBasedPsiElementBase<MQL4ClassElementStub> {
+
 
     public MQL4ClassElement(@NotNull ASTNode node) {
         super(node);
+    }
+
+    public MQL4ClassElement(@NotNull MQL4ClassElementStub stub) {
+        super(stub, MQL4StubElementTypes.CLASS);
     }
 
     public boolean isStruct() {
@@ -36,5 +47,26 @@ public class MQL4ClassElement extends MQL4PsiElement {
     @Nullable
     public ASTNode getInnerBlockNode() {
         return getNode().findChildByType(MQL4Elements.CLASS_INNER_BLOCK);
+    }
+
+    public ItemPresentation getPresentation() {
+        return new ItemPresentation() {
+            public String getPresentableText() {
+                return getTypeName();
+            }
+
+            public String getLocationString() {
+                return getContainingFile().getName();
+            }
+
+            public Icon getIcon(boolean open) {
+                return null;
+            }
+        };
+    }
+
+    @Override
+    public String getName() {
+        return getTypeName();
     }
 }

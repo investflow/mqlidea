@@ -1,10 +1,10 @@
 package ru.investflow.mql.structure;
 
 import com.intellij.ide.structureView.StructureViewTreeElement;
+import com.intellij.pom.Navigatable;
 import org.jetbrains.annotations.NotNull;
-import ru.investflow.mql.psi.impl.MQL4PsiElement;
 
-public abstract class MQL4StructureViewElement<T extends MQL4PsiElement> implements StructureViewTreeElement {
+public abstract class MQL4StructureViewElement<T extends Navigatable> implements StructureViewTreeElement {
 
     @NotNull
     protected final T element;
