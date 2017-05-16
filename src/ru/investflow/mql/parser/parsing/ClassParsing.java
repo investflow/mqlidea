@@ -4,14 +4,10 @@ import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
-import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.parser.parsing.util.ParsingScope;
-import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
-import ru.investflow.mql.psi.MQL4TokenSets;
 
-import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.BracketBlockParsing.parseBracketsBlock;
 import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;
 import static ru.investflow.mql.parser.parsing.FunctionsParsing.parseFunction;
@@ -88,7 +84,7 @@ public class ClassParsing implements MQL4Elements {
                     if (t1 == PRIVATE_KEYWORD || t1 == PROTECTED_KEYWORD || t1 == PUBLIC_KEYWORD) {
                         b.advanceLexer(); // 'private'
                     }
-                    if (!parseCustomTypeName(b, l)) {
+                    if (!TypesParsing.parseCustomTypeName(b, l)) {
                         error(b, ParsingErrors.UNEXPECTED_TOKEN);
                         return false;
                     }
@@ -143,60 +139,4 @@ public class ClassParsing implements MQL4Elements {
         }
     }
 
-    public static boolean parseCustomTypeName(@NotNull PsiBuilder b, int l) {
-        if (!recursion_guard_(b, l, "parseBracketsBlock")) {
-            return false;
-        }
-        if (b.getTokenType() != IDENTIFIER) {
-            return false;
-        }
-        b.advanceLexer(); // name
-
-        int templateParamSize = parseTemplateList(b, 0, 0);
-        if (templateParamSize > 0) {
-            PsiBuilder.Marker m = b.mark();
-            try {
-                ParsingUtils.advanceLexer(b, templateParamSize);
-            } finally {
-                m.done(TYPE_TEMPLATE_BLOCK);
-            }
-        }
-        return true;
-    }
-
-    //TODO: handle SH_LEFT, SH_RIGHT correctly
-    private static int parseTemplateList(@NotNull PsiBuilder b, int offset, int depth) {
-        if (depth > 10) {
-            return -1;
-        }
-        int pos = offset;
-        if (b.lookAhead(pos) != LT) {
-            return -1;
-        }
-        pos++; // '<'
-        while (true) {
-            if (b.lookAhead(pos) == GT) {
-                pos++; // '>'
-                return pos - offset;
-            }
-            IElementType typeName = b.lookAhead(pos);
-            if (typeName != IDENTIFIER && !MQL4TokenSets.DATA_TYPES.contains(typeName)) {
-                return -1;
-            }
-            pos++; // identifier or raw type
-            if (b.lookAhead(pos) == MUL) {
-                pos++; // pointer type
-            }
-            if (b.lookAhead(pos) == LT) {
-                int dPos = parseTemplateList(b, pos, depth + 1);
-                if (dPos <= 0) {
-                    return -1;
-                }
-                pos += dPos;
-            }
-            if (b.lookAhead(pos) == COMMA) {
-                pos++; // ','
-            }
-        }
-    }
 }

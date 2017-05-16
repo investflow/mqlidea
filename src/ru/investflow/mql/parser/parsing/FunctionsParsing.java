@@ -189,7 +189,7 @@ public class FunctionsParsing implements MQL4Elements {
         try {
             while (b.getTokenType() != L_CURLY_BRACKET) {
                 // field name
-                if (!ClassParsing.parseCustomTypeName(b, l)) {
+                if (!TypesParsing.parseCustomTypeName(b, l)) {
                     error(b, ParsingErrors.IDENTIFIER_EXPECTED);
                     return false;
                 }
@@ -233,7 +233,7 @@ public class FunctionsParsing implements MQL4Elements {
                         hasConst = true;
                         t1 = ParsingUtils.advanceLexer(b); // const
                     }
-                    boolean customType = ClassParsing.parseCustomTypeName(b, l);
+                    boolean customType = TypesParsing.parseCustomTypeName(b, l);
                     if (!customType) {
                         if (!MQL4TokenSets.DATA_TYPES.contains(t1)) { // not custom type name or known type
                             error(b, UNEXPECTED_TOKEN);
