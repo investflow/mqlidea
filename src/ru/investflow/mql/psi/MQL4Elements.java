@@ -27,6 +27,9 @@ public interface MQL4Elements {
     // Line terminators
     IElementType LINE_TERMINATOR = new MQL4ElementType("LINE_TERMINATOR");
 
+    // Escape character
+    IElementType ESCAPE = new MQL4ElementType("ESCAPE");
+
     // Literals
     IElementType CHAR_LITERAL = new MQL4ElementType("CHAR_LITERAL");
     IElementType DOUBLE_LITERAL = new MQL4ElementType("DOUBLE_LITERAL");

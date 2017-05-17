@@ -6,7 +6,7 @@ import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 
 import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.assertNoLineBreaksInRange;
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.completePPStatement;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.completePPLineStatement;
 
 public class PreprocessorIncludeParsing implements MQL4Elements {
 
@@ -26,13 +26,13 @@ public class PreprocessorIncludeParsing implements MQL4Elements {
             IElementType tt = b.getTokenType();
             int paramOffset = b.getCurrentOffset();
             if (tt != STRING_LITERAL && !parseIncludeStringLiteral(b)) {
-                completePPStatement(b, b.getCurrentOffset(), errorMessage);
+                completePPLineStatement(b, b.getCurrentOffset(), errorMessage);
                 return true;
             }
             if (tt == STRING_LITERAL) {
                 b.advanceLexer(); // include parameter
             }
-            completePPStatement(b, paramOffset);
+            completePPLineStatement(b, paramOffset);
         } finally {
             m.done(PREPROCESSOR_INCLUDE_BLOCK);
         }

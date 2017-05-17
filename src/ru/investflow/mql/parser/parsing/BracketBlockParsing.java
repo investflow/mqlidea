@@ -3,6 +3,7 @@ package ru.investflow.mql.parser.parsing;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NotNull;
+import ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.parser.parsing.util.ParsingScope;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
@@ -13,6 +14,8 @@ import java.util.Stack;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseDefine;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorIfDefParsing.parseUndef;
 import static ru.investflow.mql.parser.parsing.statement.EnumParsing.parseEnum;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
 import static ru.investflow.mql.parser.parsing.util.ParsingErrors.NO_MATCHING_CLOSING_BRACKET;
@@ -69,6 +72,8 @@ public class BracketBlockParsing implements MQL4Elements {
                     res = parseBracketsBlock(b, l + 1, true);
                 } else {
                     res = parseEnum(b, l + 1)
+                            || parseDefine(b)
+                            || parseUndef(b)
                             || parseBracketsBlock(b, l + 1, false)
                             || parseEmptyStatement(b)
                             || parseComment(b);

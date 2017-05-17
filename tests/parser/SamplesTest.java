@@ -8,7 +8,7 @@ import org.junit.Assert;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -20,10 +20,7 @@ public class SamplesTest extends MQL4ParserTestBase {
         super("samples");
     }
 
-    public static final List<String> IGNORED_FILES = Arrays.asList(
-            //todo: multiline preprocessor
-            "Lang/Mql.mqh", "Lang/App.mqh", "Lang/Indicator.mqh", "Lang/EventApp.mqh"
-    );
+    public static final List<String> IGNORED_FILES = Collections.emptyList();
 
 
     public void testSamples() throws IOException {

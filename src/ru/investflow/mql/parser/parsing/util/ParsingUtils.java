@@ -35,6 +35,7 @@ public class ParsingUtils implements MQL4Elements {
         return text != null && text.contains("\n");
     }
 
+
     /**
      * @return true if there is new line between startPos and currentPos or currentPos is EOF.
      */

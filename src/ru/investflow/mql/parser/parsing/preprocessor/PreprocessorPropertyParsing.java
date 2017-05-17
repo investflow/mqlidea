@@ -6,7 +6,7 @@ import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 
-import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.completePPStatement;
+import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.completePPLineStatement;
 import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexer;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.containsEndOfLineOrFile;
@@ -27,7 +27,7 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
             }
             offset = b.getCurrentOffset();
             if (b.getTokenType() != IDENTIFIER) { // #property name is not identifier -> report error
-                completePPStatement(b, offset, ParsingErrors.IDENTIFIER_EXPECTED);
+                completePPLineStatement(b, offset, ParsingErrors.IDENTIFIER_EXPECTED);
                 return true;
             }
             b.advanceLexer(); // name -> value
@@ -40,11 +40,11 @@ public class PreprocessorPropertyParsing implements MQL4Elements {
                 valueType = advanceLexer(b); // minus
             }
             if (!(valueType == IDENTIFIER || MQL4TokenSets.LITERALS.contains(valueType))) {
-                completePPStatement(b, offset, "Illegal #property value");
+                completePPLineStatement(b, offset, "Illegal #property value");
                 return true;
             }
             b.advanceLexer(); // name -> next token
-            completePPStatement(b, offset);
+            completePPLineStatement(b, offset);
             return true;
         } finally {
             m.done(PREPROCESSOR_PROPERTY_BLOCK);
