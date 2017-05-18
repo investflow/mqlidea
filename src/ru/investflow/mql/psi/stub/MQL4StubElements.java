@@ -14,7 +14,7 @@ import com.intellij.util.diff.FlyweightCapableTreeStructure;
 import ru.investflow.mql.MQL4Language;
 import ru.investflow.mql.parser.MQL4Parser;
 
-public interface MQL4StubElementTypes {
+public interface MQL4StubElements {
 
     ILightStubFileElementType FILE = new ILightStubFileElementType(MQL4Language.INSTANCE) {
         public FlyweightCapableTreeStructure<LighterASTNode> parseContentsLight(ASTNode chameleon) {

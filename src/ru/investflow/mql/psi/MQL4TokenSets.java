@@ -77,6 +77,8 @@ public class MQL4TokenSets implements MQL4Elements {
             VOID_KEYWORD
     );
 
+    public static final TokenSet CLASS_STRUCT_INTERFACE = TokenSet.create(CLASS_KEYWORD, STRUCT_KEYWORD, INTERFACE_KEYWORD);
+
     @NotNull
     public static IElementType getLeftBracketFor(@NotNull IElementType rightBracket) {
         IElementType result = rightBracket == R_CURLY_BRACKET ? L_CURLY_BRACKET

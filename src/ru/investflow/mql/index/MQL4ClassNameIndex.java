@@ -12,6 +12,7 @@ import java.util.Collection;
 
 public class MQL4ClassNameIndex extends StringStubIndexExtension<MQL4ClassElement> {
 
+
     public static final StubIndexKey<String, MQL4ClassElement> KEY = StubIndexKey.createIndexKey("mql4.className.index");
 
     private static final MQL4ClassNameIndex INSTANCE = new MQL4ClassNameIndex();
@@ -19,6 +20,11 @@ public class MQL4ClassNameIndex extends StringStubIndexExtension<MQL4ClassElemen
 
     public static MQL4ClassNameIndex getInstance() {
         return INSTANCE;
+    }
+
+    @Override
+    public int getVersion() {
+        return 2;
     }
 
     @NotNull
@@ -34,10 +40,5 @@ public class MQL4ClassNameIndex extends StringStubIndexExtension<MQL4ClassElemen
 
     public Collection<String> getAllKeys(Project project) {
         return StubIndex.getInstance().getAllKeys(getKey(), project);
-    }
-
-    @Override
-    public int getVersion() {
-        return 1;
     }
 }

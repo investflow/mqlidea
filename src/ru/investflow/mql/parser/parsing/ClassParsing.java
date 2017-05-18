@@ -16,6 +16,7 @@ import static ru.investflow.mql.parser.parsing.statement.EnumParsing.parseEnum;
 import static ru.investflow.mql.parser.parsing.statement.StatementParsing.parseEmptyStatement;
 import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 import static ru.investflow.mql.parser.parsing.util.ParsingUtils.advanceLexerUntil;
+import static ru.investflow.mql.psi.MQL4TokenSets.CLASS_STRUCT_INTERFACE;
 
 public class ClassParsing implements MQL4Elements {
 
@@ -27,7 +28,7 @@ public class ClassParsing implements MQL4Elements {
      */
     public static boolean parseClassOrStruct(PsiBuilder b, int l) {
         IElementType t1 = b.getTokenType();
-        if (t1 != CLASS_KEYWORD && t1 != STRUCT_KEYWORD && t1 != INTERFACE_KEYWORD) {
+        if (!CLASS_STRUCT_INTERFACE.contains(t1)) {
             return false;
         }
         Marker m = b.mark();
@@ -64,7 +65,7 @@ public class ClassParsing implements MQL4Elements {
             }
             b.advanceLexer(); // '}'
         } finally {
-            m.done(CLASS_DEFINITION);
+            m.done(MQL4Elements.CLASS);
         }
         return true;
     }

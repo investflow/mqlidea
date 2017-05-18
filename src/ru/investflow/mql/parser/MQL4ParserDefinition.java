@@ -16,7 +16,7 @@ import ru.investflow.mql.MQL4Lexer;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4ElementsFactory;
 import ru.investflow.mql.psi.MQL4File;
-import ru.investflow.mql.psi.stub.MQL4StubElementTypes;
+import ru.investflow.mql.psi.stub.MQL4StubElements;
 
 /* Parser definition used by IntelliJ Platform to parse MQL4 Language sources. */
 public class MQL4ParserDefinition implements ParserDefinition, MQL4Elements {
@@ -58,7 +58,7 @@ public class MQL4ParserDefinition implements ParserDefinition, MQL4Elements {
     @NotNull
     @Override
     public IFileElementType getFileNodeType() {
-        return MQL4StubElementTypes.FILE;
+        return MQL4StubElements.FILE;
     }
 
     @NotNull

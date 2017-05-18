@@ -5,22 +5,24 @@ import com.intellij.lang.LighterASTNode;
 import com.intellij.lang.LighterASTTokenNode;
 import com.intellij.psi.impl.source.tree.LightTreeUtil;
 import com.intellij.psi.stubs.ILightStubElementType;
-import com.intellij.psi.stubs.IStubElementType;
 import com.intellij.psi.stubs.IndexSink;
 import com.intellij.psi.stubs.StubElement;
 import com.intellij.psi.stubs.StubInputStream;
 import com.intellij.psi.stubs.StubOutputStream;
-import com.intellij.util.CharTable;
 import com.intellij.util.io.StringRef;
 import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.MQL4Language;
 import ru.investflow.mql.index.MQL4ClassNameIndex;
 import ru.investflow.mql.psi.MQL4Elements;
+import ru.investflow.mql.psi.MQL4TokenSets;
 import ru.investflow.mql.psi.impl.MQL4ClassElement;
+import ru.investflow.mql.psi.impl.MQL4ClassElement.ClassType;
 import ru.investflow.mql.psi.stub.impl.MQL4ClassElementStubImpl;
 import ru.investflow.mql.util.TextUtils;
 
 import java.io.IOException;
+
+import static ru.investflow.mql.psi.impl.MQL4ClassElement.UNKNOWN_NAME;
 
 public class MQL4ClassElementStubType extends ILightStubElementType<MQL4ClassElementStub, MQL4ClassElement> {
 
@@ -31,13 +33,15 @@ public class MQL4ClassElementStubType extends ILightStubElementType<MQL4ClassEle
     @Override
     public MQL4ClassElementStub createStub(LighterAST tree, LighterASTNode node, StubElement parentStub) {
         LighterASTNode keyNode = LightTreeUtil.firstChildOfType(tree, node, MQL4Elements.IDENTIFIER);
-        String key = intern(tree.getCharTable(), keyNode);
-        return new MQL4ClassElementStubImpl(parentStub, key);
-    }
+        if (keyNode == null) {
+            return null;
+        }
+        String key = ((LighterASTTokenNode) keyNode).getText().toString();
 
-    public static String intern(@NotNull CharTable table, @NotNull LighterASTNode node) {
-        assert node instanceof LighterASTTokenNode : node;
-        return table.intern(((LighterASTTokenNode) node).getText()).toString();
+        LighterASTNode typeNode = LightTreeUtil.firstChildOfType(tree, node, MQL4TokenSets.CLASS_STRUCT_INTERFACE);
+        ClassType classType = ClassType.fromTokenType(typeNode == null ? MQL4Elements.CLASS_KEYWORD : typeNode.getTokenType());
+
+        return new MQL4ClassElementStubImpl(parentStub, key, classType);
     }
 
     @Override
@@ -48,7 +52,7 @@ public class MQL4ClassElementStubType extends ILightStubElementType<MQL4ClassEle
     @NotNull
     @Override
     public MQL4ClassElementStub createStub(@NotNull MQL4ClassElement psi, StubElement parentStub) {
-        return new MQL4ClassElementStubImpl(parentStub, psi.getTypeName());
+        return new MQL4ClassElementStubImpl(parentStub, psi.getTypeName(), psi.getClassType());
     }
 
     @NotNull
@@ -60,13 +64,17 @@ public class MQL4ClassElementStubType extends ILightStubElementType<MQL4ClassEle
     @Override
     public void serialize(@NotNull MQL4ClassElementStub stub, @NotNull StubOutputStream dataStream) throws IOException {
         dataStream.writeName(stub.getKey());
+        dataStream.writeName(stub.getClassType().serialize());
     }
 
     @NotNull
     @Override
     public MQL4ClassElementStub deserialize(@NotNull StubInputStream dataStream, StubElement parentStub) throws IOException {
         StringRef ref = dataStream.readName();
-        return new MQL4ClassElementStubImpl(parentStub, ref == null ? "???" : ref.getString());
+        StringRef classTypeRef = dataStream.readName();
+        String name = ref == null ? UNKNOWN_NAME : ref.getString();
+        ClassType classType = classTypeRef == null ? ClassType.Class : ClassType.deserialize(classTypeRef.getString());
+        return new MQL4ClassElementStubImpl(parentStub, name, classType);
     }
 
     @Override

@@ -38,7 +38,7 @@ public class MQL4ElementsFactory implements MQL4Elements {
             if (type == ENUM_FIELD) {
                 return MQL4EnumFieldElement::new;
             }
-            if (type == CLASS_DEFINITION) {
+            if (type == MQL4Elements.CLASS) {
                 return MQL4ClassElement::new;
             }
 

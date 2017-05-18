@@ -5,7 +5,10 @@ import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.psi.impl.MQL4ClassElement;
 
 public interface MQL4ClassElementStub extends StubElement<MQL4ClassElement> {
+
     @NotNull
     String getKey();
+
+    MQL4ClassElement.ClassType getClassType();
 }
 
