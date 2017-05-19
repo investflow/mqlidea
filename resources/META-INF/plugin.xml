@@ -64,7 +64,9 @@
         <!--Indexing -->
         <stubElementTypeHolder class="ru.investflow.mql.psi.stub.MQL4StubElements"/>
         <stubIndex implementation="ru.investflow.mql.index.MQL4ClassNameIndex"/>
+
         <gotoClassContributor implementation="ru.investflow.mql.index.MQL4GotoClassContributor"/>
+        <gotoSymbolContributor implementation="ru.investflow.mql.index.MQL4GotoSymbolContributor"/>
 
     </extensions>
 </idea-plugin>

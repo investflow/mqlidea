@@ -13,6 +13,7 @@ import com.intellij.util.io.StringRef;
 import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.MQL4Language;
 import ru.investflow.mql.index.MQL4ClassNameIndex;
+import ru.investflow.mql.index.MQL4IndexKeys;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 import ru.investflow.mql.psi.impl.MQL4ClassElement;
@@ -79,6 +80,6 @@ public class MQL4ClassElementStubType extends ILightStubElementType<MQL4ClassEle
 
     @Override
     public void indexStub(@NotNull MQL4ClassElementStub stub, @NotNull IndexSink sink) {
-        sink.occurrence(MQL4ClassNameIndex.KEY, TextUtils.unescape(stub.getKey()));
+        sink.occurrence(MQL4IndexKeys.CLASS_NAME_INDEX_KEY, TextUtils.unescape(stub.getKey()));
     }
 }

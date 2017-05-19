@@ -10,10 +10,11 @@ import ru.investflow.mql.psi.impl.MQL4ClassElement;
 
 import java.util.Collection;
 
+import static ru.investflow.mql.index.MQL4IndexKeys.CLASS_NAME_INDEX_KEY;
+import static ru.investflow.mql.psi.stub.MQL4StubElements.STUB_SCHEMA_VERSION;
+
 public class MQL4ClassNameIndex extends StringStubIndexExtension<MQL4ClassElement> {
 
-
-    public static final StubIndexKey<String, MQL4ClassElement> KEY = StubIndexKey.createIndexKey("mql4.className.index");
 
     private static final MQL4ClassNameIndex INSTANCE = new MQL4ClassNameIndex();
 
@@ -24,13 +25,13 @@ public class MQL4ClassNameIndex extends StringStubIndexExtension<MQL4ClassElemen
 
     @Override
     public int getVersion() {
-        return 2;
+        return STUB_SCHEMA_VERSION;
     }
 
     @NotNull
     @Override
     public StubIndexKey<String, MQL4ClassElement> getKey() {
-        return KEY;
+        return CLASS_NAME_INDEX_KEY;
     }
 
     @Override

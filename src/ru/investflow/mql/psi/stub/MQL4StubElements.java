@@ -16,6 +16,9 @@ import ru.investflow.mql.parser.MQL4Parser;
 
 public interface MQL4StubElements {
 
+    int STUB_SCHEMA_VERSION = 14;
+
+
     ILightStubFileElementType FILE = new ILightStubFileElementType(MQL4Language.INSTANCE) {
         public FlyweightCapableTreeStructure<LighterASTNode> parseContentsLight(ASTNode chameleon) {
             PsiElement psi = chameleon.getPsi();
