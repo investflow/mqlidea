@@ -42,7 +42,7 @@ public class MQL4FileStructureViewElement extends PsiTreeElementBase<MQL4File> {
 
     public static void toStructureViewElement(Collection<StructureViewTreeElement> res, PsiElement e) {
         IElementType t = e.getNode().getElementType();
-        if (t == MQL4Elements.FUNCTION_DEFINITION || t == MQL4Elements.FUNCTION_DECLARATION) {
+        if (t == MQL4Elements.FUNCTION || t == MQL4Elements.FUNCTION_DECLARATION) {
             res.add(new MQL4StructureViewFunctionElement((MQL4FunctionElement) e));
         } else if (t == MQL4Elements.ENUM_STATEMENT) {
             MQL4EnumElement enumElement = (MQL4EnumElement) e;

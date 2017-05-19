@@ -1,4 +1,4 @@
-package ru.investflow.mql.psi.stub;
+package ru.investflow.mql.psi.stub.type;
 
 import com.intellij.lang.LighterAST;
 import com.intellij.lang.LighterASTNode;
@@ -12,18 +12,16 @@ import com.intellij.psi.stubs.StubOutputStream;
 import com.intellij.util.io.StringRef;
 import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.MQL4Language;
-import ru.investflow.mql.index.MQL4ClassNameIndex;
 import ru.investflow.mql.index.MQL4IndexKeys;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 import ru.investflow.mql.psi.impl.MQL4ClassElement;
 import ru.investflow.mql.psi.impl.MQL4ClassElement.ClassType;
+import ru.investflow.mql.psi.stub.MQL4ClassElementStub;
 import ru.investflow.mql.psi.stub.impl.MQL4ClassElementStubImpl;
 import ru.investflow.mql.util.TextUtils;
 
 import java.io.IOException;
-
-import static ru.investflow.mql.psi.impl.MQL4ClassElement.UNKNOWN_NAME;
 
 public class MQL4ClassElementStubType extends ILightStubElementType<MQL4ClassElementStub, MQL4ClassElement> {
 
@@ -64,7 +62,7 @@ public class MQL4ClassElementStubType extends ILightStubElementType<MQL4ClassEle
 
     @Override
     public void serialize(@NotNull MQL4ClassElementStub stub, @NotNull StubOutputStream dataStream) throws IOException {
-        dataStream.writeName(stub.getKey());
+        dataStream.writeName(stub.getName());
         dataStream.writeName(stub.getClassType().serialize());
     }
 
@@ -73,13 +71,16 @@ public class MQL4ClassElementStubType extends ILightStubElementType<MQL4ClassEle
     public MQL4ClassElementStub deserialize(@NotNull StubInputStream dataStream, StubElement parentStub) throws IOException {
         StringRef ref = dataStream.readName();
         StringRef classTypeRef = dataStream.readName();
-        String name = ref == null ? UNKNOWN_NAME : ref.getString();
+        String name = ref == null ? MQL4ClassElement.UNKNOWN_NAME : ref.getString();
         ClassType classType = classTypeRef == null ? ClassType.Class : ClassType.deserialize(classTypeRef.getString());
         return new MQL4ClassElementStubImpl(parentStub, name, classType);
     }
 
     @Override
     public void indexStub(@NotNull MQL4ClassElementStub stub, @NotNull IndexSink sink) {
-        sink.occurrence(MQL4IndexKeys.CLASS_NAME_INDEX_KEY, TextUtils.unescape(stub.getKey()));
+        String name = stub.getName();
+        if (!MQL4ClassElement.UNKNOWN_NAME.equals(name)) {
+            sink.occurrence(MQL4IndexKeys.CLASS_NAME_INDEX_KEY, TextUtils.unescape(stub.getName()));
+        }
     }
 }

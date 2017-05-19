@@ -28,7 +28,7 @@ public class MQL4ClassElement extends StubBasedPsiElementBase<MQL4ClassElementSt
     public String getTypeName() {
         MQL4ClassElementStub stub = getStub();
         if (stub != null) {
-            return stub.getKey();
+            return stub.getName();
         }
         ASTNode fieldNameNode = getNode().findChildByType(MQL4Elements.IDENTIFIER);
         return fieldNameNode == null ? UNKNOWN_NAME : fieldNameNode.getText();

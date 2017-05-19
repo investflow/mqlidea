@@ -13,11 +13,12 @@ import com.intellij.psi.tree.ILightStubFileElementType;
 import com.intellij.util.diff.FlyweightCapableTreeStructure;
 import ru.investflow.mql.MQL4Language;
 import ru.investflow.mql.parser.MQL4Parser;
+import ru.investflow.mql.psi.stub.type.MQL4ClassElementStubType;
+import ru.investflow.mql.psi.stub.type.MQL4FunctionElementStubType;
 
 public interface MQL4StubElements {
 
-    int STUB_SCHEMA_VERSION = 14;
-
+    int STUB_SCHEMA_VERSION = 19;
 
     ILightStubFileElementType FILE = new ILightStubFileElementType(MQL4Language.INSTANCE) {
         public FlyweightCapableTreeStructure<LighterASTNode> parseContentsLight(ASTNode chameleon) {
@@ -35,4 +36,8 @@ public interface MQL4StubElements {
     };
 
     IStubElementType CLASS = new MQL4ClassElementStubType();
+
+    IStubElementType FUNCTION = new MQL4FunctionElementStubType(false);
+
+    IStubElementType FUNCTION_DECLARATION = new MQL4FunctionElementStubType(true);
 }

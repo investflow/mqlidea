@@ -178,7 +178,7 @@ public class FunctionsParsing implements MQL4Elements {
                 actualResult = Definition;
             }
         } finally {
-            m.done(actualResult == Declaration ? FUNCTION_DECLARATION : FUNCTION_DEFINITION);
+            m.done(actualResult == Declaration ? FUNCTION_DECLARATION : FUNCTION);
         }
         return actualResult;
     }

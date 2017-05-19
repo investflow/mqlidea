@@ -12,8 +12,6 @@ public interface MQL4Elements extends MQL4StubElements, MQL4LexerElements {
     IElementType PREPROCESSOR_PROPERTY_BLOCK = new MQL4ElementType("PREPROCESSOR_PROPERTY_BLOCK");
     IElementType PREPROCESSOR_UNDEF_BLOCK = new MQL4ElementType("PREPROCESSOR_UNDEF_BLOCK");
 
-    IElementType FUNCTION_DECLARATION = new MQL4ElementType("FUNCTION_DECLARATION");
-    IElementType FUNCTION_DEFINITION = new MQL4ElementType("FUNCTION_DEFINITION");
     IElementType FUNCTION_ARG = new MQL4ElementType("FUNCTION_ARG");
     IElementType FUNCTION_ARGS_LIST = new MQL4ElementType("FUNCTION_ARGS_LIST");
 

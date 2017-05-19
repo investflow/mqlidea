@@ -29,7 +29,7 @@ public class MQL4ElementsFactory implements MQL4Elements {
             if (type == PREPROCESSOR_INCLUDE_BLOCK) {
                 return MQL4PreprocessorIncludeBlock::new;
             }
-            if (type == FUNCTION_DECLARATION || type == FUNCTION_DEFINITION) {
+            if (type == FUNCTION_DECLARATION || type == FUNCTION) {
                 return MQL4FunctionElement::new;
             }
             if (type == ENUM_STATEMENT) {
