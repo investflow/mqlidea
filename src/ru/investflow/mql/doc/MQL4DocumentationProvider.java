@@ -10,6 +10,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
+import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.psi.MQL4Elements;
@@ -133,11 +134,22 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
             return null;
         }
         String text = element.getText();
-        if (element.getNode().getElementType() == MQL4Elements.L_ROUND_BRACKET) { // when positioned on '(' show doc for function name
+        IElementType tt = element.getNode().getElementType();
+        if (tt == MQL4Elements.L_ROUND_BRACKET) { // when positioned on '(' show doc for function name
             PsiElement bracketBlock = element.getParent();
             PsiElement functionNameEl = bracketBlock == null ? null : bracketBlock.getPrevSibling();
             if (functionNameEl != null) {
                 text = functionNameEl.getText();
+            }
+        } else if (tt == MQL4Elements.WHITE_SPACE || tt == MQL4Elements.SEMICOLON) { // end of statement -> show docs for the statement itself.
+            PsiElement prev = element.getPrevSibling();
+            if (prev != null) {
+                text = prev.getText();
+            } else if (element.getParent().getNode().getElementType() == MQL4Elements.EMPTY_STATEMENT) {
+                prev = element.getParent().getPrevSibling();
+                if (prev != null) {
+                    text = prev.getText();
+                }
             }
         }
         DocEntry entry = docEntryByText.get(text);
