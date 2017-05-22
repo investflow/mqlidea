@@ -23,6 +23,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.SimpleTextAttributes;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import ru.investflow.mql.util.TextUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -133,7 +134,16 @@ class MQL4CompilerCommandLineState extends CommandLineState {
                     return;
                 }
                 try {
-                    String rawLog = new String(Files.readAllBytes(Paths.get(logFile.toURI())), StandardCharsets.UTF_16LE);
+                    byte[] outputBytes = Files.readAllBytes(Paths.get(logFile.toURI()));
+                    String rawLogInCp1252 = new String(outputBytes, StandardCharsets.UTF_16);
+                    String rawLog = rawLogInCp1252;
+                    if (!TextUtils.isEmpty(runConfig.buildLogEncoding)) {
+                        try {
+                            rawLog = new String(rawLogInCp1252.getBytes("Cp1252"), runConfig.buildLogEncoding);
+                        } catch (Exception ignored) {
+                            //todo: use logger
+                        }
+                    }
                     console.print(rawLog, ConsoleViewContentType.NORMAL_OUTPUT);
                 } catch (IOException e) {
                     throw new RuntimeException("Failed to read log file: " + logFile);

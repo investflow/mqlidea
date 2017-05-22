@@ -23,7 +23,6 @@ import ru.investflow.mql.sdk.MQL4SdkType;
 
 import java.io.File;
 import java.nio.charset.Charset;
-import java.nio.charset.UnsupportedCharsetException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -61,6 +60,12 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
     @SuppressWarnings("InjectedReferences")
     @NotNull
     public String buildEncoding = "";
+
+    /**
+     * Encoding of to convert metaeditor output before showing to user.
+     */
+    @NotNull
+    public String buildLogEncoding = "";
 
     protected MQL4RunCompilerConfiguration(@NotNull Project project, @NotNull ConfigurationFactory factory, String name) {
         super(project, factory, name);
@@ -104,6 +109,13 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
         if (buildDirFile == null || !buildDirFile.isDirectory()) {
             throw new RuntimeConfigurationException("'Build Dir' is not a valid directory: " + buildDirFile);
         }
+        if (!buildLogEncoding.isEmpty()) {
+            try {
+                Charset.forName(buildLogEncoding);
+            } catch (Exception ignored) {
+                throw new RuntimeConfigurationException("Log encoding is not supported: " + buildLogEncoding);
+            }
+        }
     }
 
     @Nullable
@@ -119,6 +131,7 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
         addElementWithValueAttribute(element, "file", fileToCompile);
         addElementWithValueAttribute(element, "encoding", buildEncoding);
         addElementWithValueAttribute(element, "buildDir", buildDir);
+        addElementWithValueAttribute(element, "buildLogEncoding", buildLogEncoding);
     }
 
     @Override
@@ -128,6 +141,7 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
         fileToCompile = Objects.toString(getFirstChildValueAttribute(element, "file"), "");
         buildEncoding = Objects.toString(getFirstChildValueAttribute(element, "encoding"), "");
         buildDir = Objects.toString(getFirstChildValueAttribute(element, "buildDir"), "");
+        buildLogEncoding = Objects.toString(getFirstChildValueAttribute(element, "buildLogEncoding"), "");
     }
 
     @Nullable

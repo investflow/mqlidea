@@ -35,6 +35,7 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
     private MQL4SDKComboBoxWithBrowseButton sdkComboBox;
     private JTextField buildEncodingField;
     private TextFieldWithBrowseButton buildDirField;
+    private JTextField buildLogEncodingField;
 
     public MQL4CompilerRunnerEditor(@NotNull Project project) {
         new MQL4FileSelector(project).setField(fileField);
@@ -58,6 +59,7 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
         fileField.setText(configuration.fileToCompile);
         buildEncodingField.setText(configuration.buildEncoding);
         buildDirField.setText(configuration.buildDir);
+        buildLogEncodingField.setText(configuration.buildLogEncoding);
     }
 
     @Override
@@ -67,6 +69,7 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
         configuration.fileToCompile = fileField.getText().replace('\\', '/'); // convert to presentable path
         configuration.buildEncoding = buildEncodingField.getText();
         configuration.buildDir = buildDirField.getText();
+        configuration.buildLogEncoding = buildLogEncodingField.getText();
     }
 
     @NotNull
