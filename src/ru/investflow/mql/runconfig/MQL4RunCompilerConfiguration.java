@@ -77,7 +77,7 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase {
         if (!buildEncoding.isEmpty()) {
             try {
                 Charset.forName(buildEncoding);
-            } catch (UnsupportedCharsetException ignored) {
+            } catch (Exception ignored) {
                 throw new RuntimeConfigurationException("Encoding is not supported: " + buildEncoding);
             }
         }
