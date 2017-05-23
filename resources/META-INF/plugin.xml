@@ -68,6 +68,7 @@
 
         <gotoClassContributor implementation="ru.investflow.mql.index.MQL4GotoClassContributor"/>
         <gotoSymbolContributor implementation="ru.investflow.mql.index.MQL4GotoSymbolContributor"/>
+        <gotoDeclarationHandler implementation="ru.investflow.mql.index.MQL4GotoDeclarationHandler"/>
 
     </extensions>
 </idea-plugin>
