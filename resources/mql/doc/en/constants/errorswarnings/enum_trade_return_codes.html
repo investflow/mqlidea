@@ -4,7 +4,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#include</span><span>&nbsp;&lt;stderror.mqh&gt;</span><br> <span style="color: #0000ff;">#include</span><span>&nbsp;&lt;stdlib.mqh&gt;</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;SendMyMessage(</span><span style="color: #0000ff;">string</span><span>&nbsp;text)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;check;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">SendMail</span><span>(</span><span style="color: #008080;">"Test"</span><span>,&nbsp;text);</span><br> <span>&nbsp;&nbsp;&nbsp;check=</span><span style="color: #0000ff;">GetLastError</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(check!=ERR_NO_ERROR)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Message&nbsp;not&nbsp;sent.&nbsp;Error:&nbsp;"</span><span>,ErrorDescription(check));</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>
@@ -13,167 +13,167 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Code</span></p> </td> 
     <td style="vertical-align:top; width:255px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>ID</span></p> </td> 
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>0</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_ERROR</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No error returned</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>1</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_RESULT</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No error returned, but the result is unknown</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>2</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_COMMON_ERROR</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Common error</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>3</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_TRADE_PARAMETERS</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid trade parameters</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>4</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_SERVER_BUSY</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade server is busy</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>5</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OLD_VERSION</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Old version of the client terminal</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>6</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NO_CONNECTION</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>No connection with trade server</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>7</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_ENOUGH_RIGHTS</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not enough rights</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>8</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_FREQUENT_REQUESTS</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Too frequent requests</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>9</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_MALFUNCTIONAL_TRADE</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Malfunctional trade operation</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>64</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ACCOUNT_DISABLED</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Account disabled</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>65</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_ACCOUNT</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid account</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>128</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_TIMEOUT</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade timeout</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>129</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_PRICE</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid price</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>130</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_STOPS</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid stops</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>131</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_INVALID_TRADE_VOLUME</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Invalid trade volume</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>132</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_MARKET_CLOSED</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Market is closed</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>133</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_DISABLED</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade is disabled</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>134</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_NOT_ENOUGH_MONEY</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Not enough money</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>135</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_PRICE_CHANGED</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Price changed</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>136</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_OFF_QUOTES</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Off quotes</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>137</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_BROKER_BUSY</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Broker is busy</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>138</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_REQUOTE</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Requote</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>139</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_ORDER_LOCKED</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Order is locked</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>140</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_LONG_POSITIONS_ONLY_ALLOWED</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Buy orders only allowed</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>141</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TOO_MANY_REQUESTS</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Too many requests</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>145</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_MODIFY_DENIED</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Modification denied because order is too close to market</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>146</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_CONTEXT_BUSY</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Trade context is busy</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>147</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_EXPIRATION_DENIED</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Expirations are denied by broker</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>148</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_TOO_MANY_ORDERS</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The amount of open and pending orders has reached the limit set by the broker</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>149</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_HEDGE_PROHIBITED</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>An attempt to open an order opposite to the existing one when hedging is disabled</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:52px; padding:5px; border:solid thin #b1c2d6;"><p style="text-align: center;"><span>150</span></p> </td> 
     <td style="vertical-align:top; width:255px; padding:5px; border:solid thin #b1c2d6;"><p><span>ERR_TRADE_PROHIBITED_BY_FIFO</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>An attempt to close an order contravening the FIFO rule</span></p> </td> 

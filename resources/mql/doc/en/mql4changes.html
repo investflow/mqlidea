@@ -24,7 +24,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(condition1&nbsp;&amp;&amp;&nbsp;condition2)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;some&nbsp;block&nbsp;of&nbsp;statements</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>
@@ -36,7 +36,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;Structure&nbsp;that&nbsp;stores&nbsp;information&nbsp;about&nbsp;the&nbsp;prices,&nbsp;volumes&nbsp;and&nbsp;spread.</span><br> <span style="color: #0000ff;">struct&nbsp;</span><span style="font-weight: bold;">MqlRates</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;</span><span>time</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Period&nbsp;start&nbsp;time</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;&nbsp;&nbsp;</span><span>open</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Open&nbsp;price</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;&nbsp;&nbsp;</span><span>high</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;The&nbsp;highest&nbsp;price&nbsp;of&nbsp;the&nbsp;period</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;&nbsp;&nbsp;</span><span>low</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;The&nbsp;lowest&nbsp;price&nbsp;of&nbsp;the&nbsp;period</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;&nbsp;&nbsp;</span><span>close</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Close&nbsp;price</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>tick_volume</span><span>;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Tick&nbsp;volume</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>spread</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Spread</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>real_volume</span><span>;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Trade&nbsp;volume</span><br> <span>&nbsp;&nbsp;};</span></p></td> 
    </tr> 
   </tbody>
@@ -46,7 +46,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayCopyRates</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>MqlRates&amp;</span><span>&nbsp;&nbsp;</span><span>rates_array[]</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;MqlRates&nbsp;array,&nbsp;passed&nbsp;by&nbsp;reference</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span>symbol=NULL</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;symbol</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe=0&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;timeframe</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody>
@@ -56,7 +56,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayCopyRates</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>dest_array[][]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;destination&nbsp;array,&nbsp;passed&nbsp;by&nbsp;reference</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span>symbol=NULL</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;symbol</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe=0&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;timeframe</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody>
@@ -68,7 +68,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>struct</span><span>&nbsp;</span><span style="font-weight: bold;">RateInfo</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>unsigned</span><span>&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ctm</span><span>;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;bar&nbsp;open&nbsp;date</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>open</span><span>;&nbsp;&nbsp;</span><span>//&nbsp;Open&nbsp;price</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>low</span><span>;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Low&nbsp;price</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>high</span><span>;&nbsp;</span><span>&nbsp;//&nbsp;High&nbsp;price</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>close</span><span>;&nbsp;</span><span>//&nbsp;Close&nbsp;price</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>vol</span><span>;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;volume</span><br> <span>&nbsp;&nbsp;};</span></p></td> 
    </tr> 
   </tbody>
@@ -78,7 +78,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>//---&nbsp;Standard&nbsp;quote&nbsp;presentation&nbsp;in&nbsp;the&nbsp;new&nbsp;terminal&nbsp;version</span><br> <span>struct</span><span>&nbsp;</span><span style="font-weight: bold;">RateInfo</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>INT64</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ctm</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;open&nbsp;date&nbsp;and&nbsp;time</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>open</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Open&nbsp;price&nbsp;(absolute&nbsp;value)</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>high</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Low&nbsp;price</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>low</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;High&nbsp;price</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>close</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Close&nbsp;price</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>UINT64</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>vol</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;tick&nbsp;volume</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>INT32</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>spread</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;spread</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>UINT64</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>real</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;trade&nbsp;volume</span><br> <span>&nbsp;&nbsp;};</span></p></td> 
    </tr> 
   </tbody>
@@ -88,7 +88,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="font-weight: bold;">Old EX4 applications and DLLs based on old RateInfo format will not work in the new terminal. Conversion to the new format is required.</span></p> </td> 
    </tr> 
   </tbody>
@@ -102,7 +102,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;date=D'2014.03.05&nbsp;15:46:58';</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;str=</span><span style="color: #008080;">"mydate="</span><span>+date;</span><br> <span style="color: #808080;">//---&nbsp;str="mydate=1394034418"&nbsp;-&nbsp;old&nbsp;compiler/new&nbsp;compiler&nbsp;without&nbsp;#property&nbsp;strict</span><br> <span style="color: #808080;">//---&nbsp;str="mydate=2014.03.05&nbsp;15:46:58"&nbsp;-&nbsp;new&nbsp;compiler&nbsp;with&nbsp;#property&nbsp;strict</span></p></td> 
    </tr> 
   </tbody>
@@ -112,7 +112,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#property</span><span> </span><span style="color: #0000ff;">strict</span></p> </td> 
    </tr> 
   </tbody>
@@ -123,77 +123,77 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Old MQL4 compiler</span></p> </td> 
     <td style="vertical-align:top; width:345px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">New MQL4 compiler</span></p> </td> 
     <td style="vertical-align:top; width:400px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">New MQL4 with #property strict</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>init(), start() and deinit() entry points may have any parameters and any return type </span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>init(), start() and deinit() have been remained intact for compatibility,</span></p> <p><span>while new <a href="/basis/function/events#oninit">OnInit()</a>, <a href="/basis/function/events#onstart">OnStart()</a>, <a href="/basis/function/events#oncalculate">OnCalculate()</a>, <a href="/basis/function/events#ontick">OnTick()</a>, <a href="/basis/function/events#ontimer">OnTimer()</a>, <a href="/basis/function/events#onchartevent">OnChartEvent()</a>, <a href="/basis/function/events#ontester">OnTester()</a> and <a href="/basis/function/events#ondeinit">OnDeinit()</a> should strictly correspond to their signatures</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ditto</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>The result of the return from init() function is not analyzed by the runtime subsystem</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>The result of the return from init() and OnInit() functions is not analyzed by the runtime subsystem</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>If a non-zero value is returned from OnInit(), the operation of an Expert Advisor or an indicator is stopped, the program is unloaded</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Virtually any variable names (except for the reserved words) are possible, including special characters and points</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Variable names cannot have special characters and points.</span></p> <p><span>The list of the <a href="/basis/syntax/reserved">reserved words</a> has been expanded. Thus, such widespread words as short, long, const, etc. cannot be used as names</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ditto</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Variable scope is from declaration (even in the nested block) to the function end</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ditto</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Variable scope is from declaration to the end of the block, in which the variable is declared</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Implicit initialization of all the variables (both global and local ones) by zero</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ditto</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Only global variables are initialized. In local variables, only strings are initialized implicitly</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Local arrays are not released when exiting the function</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Local arrays are released when exiting the function</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Local arrays are released when exiting {} block</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">"Array out of range"</span><span> does not cause a critical error</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ditto, except for the arrays of structures and classes, for which this error is critical one</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">"Array out of range"</span><span> is a critical error causing the program to stop</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>No structures and classes</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/classes">Structures and classes</a> are present. Additional data types are implemented</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ditto</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Strings are single-byte.</span></p> <p><span>datetime is a 32-bit integer</span></p> <p><span>Predefined Volume variable is of double type</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Strings are unicode ones.</span></p> <p><span>datetime is a 64-bit integer</span></p> <p><span>Predefined <a href="/predefined/volume">Volume</a> variable is of long type</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ditto</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraycopyrates">ArrayCopyRates()</a> performs virtual copying to double[][6] array </span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraycopyrates">ArrayCopyRates()</a> performs virtual copying to MqlRates[] array. Copying to double[][6] array has remained intact for the sake of compatibility, however, that copying is real, not virtual.</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ditto</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>The functions may not return values even if they have a type. To do this, return(0) is automatically inserted by the compiler in the function end</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ditto</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Functions of any type should return a value</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>The number of simultaneously opened files is 32</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>The number of simultaneously opened files is 64</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ditto</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>The files are always opened in FILE_SHARE_READ, FILE_SHARE_WRITE mode **</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>FILE_SHARE_READ and/or FILE_SHARE_WRITE should be specified explicitly</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ditto</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>The names of <a href="/basis/variables/externvariables">extern</a> variables are displayed for scripts in the input parameters window</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>The names of <a href="/basis/variables/externvariables">extern</a> and <a href="/basis/variables/inputvariables">input</a> variables are displayed for scripts in show_inputs mode in the input parameters window</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>String comments instead of <a href="/basis/variables/externvariables">extern</a> and <a href="/basis/variables/inputvariables">input</a> variable names are displayed for scripts in show_inputs mode in the input parameters window </span></p> </td> 
@@ -228,7 +228,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="font-weight: bold;">No files or folders are deleted during the update!</span><span> All file copy operations including used file paths are fixed in the terminal Journal during the update.</span></p> </td> 
    </tr> 
   </tbody>

@@ -396,6 +396,10 @@
     "/convert/enumtostring"
   ],
   [
+    "ErrorDescription",
+    "/check/errordescription"
+  ],
+  [
     "EventChartCustom",
     "/eventfunctions/eventchartcustom"
   ],

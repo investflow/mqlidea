@@ -4,7 +4,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">int</span><span>&nbsp;somefunc()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;ret_code=0;</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(ret_code);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>
@@ -16,7 +16,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;i=5;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;local&nbsp;variable&nbsp;of&nbsp;the&nbsp;function</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;i=10;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;function&nbsp;variable</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Inside&nbsp;block&nbsp;i&nbsp;=&nbsp;"</span><span>,i);&nbsp;</span><span style="color: #808080;">//&nbsp;result&nbsp;is&nbsp;&nbsp;i=10;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Outside&nbsp;block&nbsp;i&nbsp;=&nbsp;"</span><span>,i);&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;result&nbsp;is&nbsp;&nbsp;i=5;</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>
@@ -27,7 +27,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;i=5;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;local&nbsp;variable&nbsp;of&nbsp;the&nbsp;function</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;3;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Inside&nbsp;for&nbsp;i&nbsp;=&nbsp;"</span><span>,i);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Outside&nbsp;the&nbsp;block&nbsp;i&nbsp;=&nbsp;"</span><span>,i);</span><br> <span>&nbsp;&nbsp;}</span><br> <span>/*&nbsp;Execution&nbsp;result</span><br> <span>Inside&nbsp;</span><span style="color: #0000ff;">for</span><span>&nbsp;i&nbsp;=&nbsp;0</span><br> <span>Inside&nbsp;</span><span style="color: #0000ff;">for</span><span>&nbsp;i&nbsp;=&nbsp;1</span><br> <span>Inside&nbsp;</span><span style="color: #0000ff;">for</span><span>&nbsp;i&nbsp;=&nbsp;2</span><br> <span>Outside&nbsp;block&nbsp;i&nbsp;=&nbsp;5</span><br> <span>*/</span></p></td> 
    </tr> 
   </tbody>

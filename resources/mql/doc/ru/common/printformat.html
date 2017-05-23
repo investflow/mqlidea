@@ -3,7 +3,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>PrintFormat</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;</span><span>format_string</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;форматная&nbsp;строка</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;значения&nbsp;простых&nbsp;типов</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -28,42 +28,42 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 4px 30px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Флаг</span></p> </td> 
     <td style="vertical-align:top; width:517px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
     <td style="vertical-align:top; width:305px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Поведение по умолчанию</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>– (минус)</span></p> </td> 
     <td style="vertical-align:top; width:517px; padding:5px; border:solid thin #b1c2d6;"><p><span>Выравнивание по левому краю в пределах заданной ширины</span></p> </td> 
     <td style="vertical-align:top; width:305px; padding:5px; border:solid thin #b1c2d6;"><p><span>Выравнивание по правому краю</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>+ (плюс)</span></p> </td> 
     <td style="vertical-align:top; width:517px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вывод знака + или - для значений знаковых типов</span></p> </td> 
     <td style="vertical-align:top; width:305px; padding:5px; border:solid thin #b1c2d6;"><p><span>Знак выводится только если значение отрицательное</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>0 (ноль)</span></p> </td> 
     <td style="vertical-align:top; width:517px; padding:5px; border:solid thin #b1c2d6;"><p><span>Перед выводимом значением добавляются нули в пределах заданной <a href="/common/printformat#width">ширины</a>. Если указан флаг </span><span style="font-weight: bold;">0</span><span> с целочисленным форматом (</span><span style="font-weight: bold;">i</span><span>, </span><span style="font-weight: bold;">u</span><span>, </span><span style="font-weight: bold;">x</span><span>, </span><span style="font-weight: bold;">X</span><span>, </span><span style="font-weight: bold;">o</span><span>, </span><span style="font-weight: bold;">d</span><span>) и задана спецификация точности (например, %04.d), то 0 игнорируется.</span></p> </td>
     <td style="vertical-align:top; width:305px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ничего не вставляется</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>пробел</span></p> </td> 
     <td style="vertical-align:top; width:517px; padding:5px; border:solid thin #b1c2d6;"><p><span>Перед выводимым значением ставится пробел, если значение является знаковым и положительным</span></p> </td> 
     <td style="vertical-align:top; width:305px; padding:5px; border:solid thin #b1c2d6;"><p><span>Пробелы не вставляются</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>#</span></p> </td> 
     <td style="vertical-align:top; width:517px; padding:5px; border:solid thin #b1c2d6;"><p><span>Если используется совместно с форматом </span><span style="font-weight: bold;">o</span><span>, </span><span style="font-weight: bold;">x</span><span> или </span><span style="font-weight: bold;">X</span><span>, то перед выводимым значением добавляется 0, 0x или 0X соответственно.</span></p> </td> 
     <td style="vertical-align:top; width:305px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ничего не вставляется</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
     <td style="vertical-align:top; width:517px; padding:5px; border:solid thin #b1c2d6;"><p><span>Если используется совместно с форматом </span><span style="font-weight: bold;">e</span><span>, </span><span style="font-weight: bold;">E</span><span>, </span><span style="font-weight: bold;">a</span><span> или </span><span style="font-weight: bold;">A</span><span>, то значение всегда выводится с десятичной точкой.</span></p> </td> 
     <td style="vertical-align:top; width:305px; padding:5px; border:solid thin #b1c2d6;"><p><span>Десятичная точка выводится только если есть ненулевая дробная часть.</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
     <td style="vertical-align:top; width:517px; padding:5px; border:solid thin #b1c2d6;"><p><span>Если используется совместно с форматом </span><span style="font-weight: bold;">g</span><span> или </span><span style="font-weight: bold;">G</span><span>, флаг определяет наличие десятичной точки в выводимом значении и &nbsp;препятствует отсечению ведущих нулей. </span></p> <p><span>Флаг # игнорируется при совместном использовании с форматами </span><span style="font-weight: bold;">c</span><span>, </span><span style="font-weight: bold;">d</span><span>, </span><span style="font-weight: bold;">i</span><span>, </span><span style="font-weight: bold;">u</span><span>, </span><span style="font-weight: bold;">s</span><span>.</span></p> </td> 
     <td style="vertical-align:top; width:305px; padding:5px; border:solid thin #b1c2d6;"><p><span>Десятичная точка выводится только если есть ненулевая дробная часть. Ведущие нули отсекаются</span></p> </td> 
@@ -81,37 +81,37 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 4px 30px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Типы</span></p> </td> 
     <td style="vertical-align:top; width:514px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td> 
     <td style="vertical-align:top; width:308px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Поведение по умолчанию</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">a, A</span></p> </td> 
     <td style="vertical-align:top; width:514px; padding:5px; border:solid thin #b1c2d6;"><p><span>Спецификация точности указывает количество знаков после десятичной точки </span></p> </td> 
     <td style="vertical-align:top; width:308px; padding:5px; border:solid thin #b1c2d6;"><p><span>Точность по умолчанию – 6.</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">c, C</span></p> </td> 
     <td style="vertical-align:top; width:514px; padding:5px; border:solid thin #b1c2d6;"><p><span>Не применяется</span></p> </td> 
     <td style="vertical-align:top; width:308px; padding:5px; border:solid thin #b1c2d6;"><p><span>&nbsp;</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">d, i, u, o, x, X</span></p> </td> 
     <td style="vertical-align:top; width:514px; padding:5px; border:solid thin #b1c2d6;"><p><span>Указывает минимальное число выводимых цифр. Если количество цифр в соответствующем параметре меньше указанной точности, то выводимое значение дополняется слева нулями. Выводимое значение не обрезается, если количество выводимых цифр больше указанной точности</span></p> </td> 
     <td style="vertical-align:top; width:308px; padding:5px; border:solid thin #b1c2d6;"><p><span> Точность по умолчанию – 1.</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">e, E, f</span></p> </td> 
     <td style="vertical-align:top; width:514px; padding:5px; border:solid thin #b1c2d6;"><p><span>Указывает число выводимых цифр после десятичной точки. Последняя выводимая цифра округляется</span></p> </td> 
     <td style="vertical-align:top; width:308px; padding:5px; border:solid thin #b1c2d6;"><p><span>Точность по умолчанию – 6. Если указана точность 0 или дробная часть отсутствует, то десятичная точка не выводится.</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">g, G</span></p> </td> 
     <td style="vertical-align:top; width:514px; padding:5px; border:solid thin #b1c2d6;"><p><span>Указывает максимальное число значимых цифр</span></p> </td> 
     <td style="vertical-align:top; width:308px; padding:5px; border:solid thin #b1c2d6;"><p><span>Выводится 6 значимых цифр.</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">s, S</span></p> </td> 
     <td style="vertical-align:top; width:514px; padding:5px; border:solid thin #b1c2d6;"><p><span>Указывает количество выводимых символов строки. Если длина строки превышает значение точности, то строка усекается на выводе</span></p> </td> 
     <td style="vertical-align:top; width:308px; padding:5px; border:solid thin #b1c2d6;"><p><span>Выводится вся строка</span></p> </td> 
@@ -125,52 +125,52 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 4px 30px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип параметра</span></p> </td> 
     <td style="vertical-align:top; width:205px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Используемый префикс</span></p> </td> 
     <td style="vertical-align:top; width:617px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Совместный спецификатор типа</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
     <td style="vertical-align:top; width:205px; padding:5px; border:solid thin #b1c2d6;"><p><span>l (маленькая L)</span></p> </td> 
     <td style="vertical-align:top; width:617px; padding:5px; border:solid thin #b1c2d6;"><p><span>d, i, o, x, or X</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>uint</span></p> </td> 
     <td style="vertical-align:top; width:205px; padding:5px; border:solid thin #b1c2d6;"><p><span>l (маленькая L)</span></p> </td> 
     <td style="vertical-align:top; width:617px; padding:5px; border:solid thin #b1c2d6;"><p><span>o, u, x, or X</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
     <td style="vertical-align:top; width:205px; padding:5px; border:solid thin #b1c2d6;"><p><span>ll (две маленькие L)</span></p> </td> 
     <td style="vertical-align:top; width:617px; padding:5px; border:solid thin #b1c2d6;"><p><span>d, i, o, x, or X</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>short</span></p> </td> 
     <td style="vertical-align:top; width:205px; padding:5px; border:solid thin #b1c2d6;"><p><span>h</span></p> </td> 
     <td style="vertical-align:top; width:617px; padding:5px; border:solid thin #b1c2d6;"><p><span>d, i, o, x, or X</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>ushort</span></p> </td> 
     <td style="vertical-align:top; width:205px; padding:5px; border:solid thin #b1c2d6;"><p><span>h</span></p> </td> 
     <td style="vertical-align:top; width:617px; padding:5px; border:solid thin #b1c2d6;"><p><span>o, u, x, or X</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
     <td style="vertical-align:top; width:205px; padding:5px; border:solid thin #b1c2d6;"><p><span>I32</span></p> </td> 
     <td style="vertical-align:top; width:617px; padding:5px; border:solid thin #b1c2d6;"><p><span>d, i, o, x, or X</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>uint</span></p> </td> 
     <td style="vertical-align:top; width:205px; padding:5px; border:solid thin #b1c2d6;"><p><span>I32</span></p> </td> 
     <td style="vertical-align:top; width:617px; padding:5px; border:solid thin #b1c2d6;"><p><span>o, u, x, or X</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>long</span></p> </td> 
     <td style="vertical-align:top; width:205px; padding:5px; border:solid thin #b1c2d6;"><p><span>I64</span></p> </td> 
     <td style="vertical-align:top; width:617px; padding:5px; border:solid thin #b1c2d6;"><p><span>d, i, o, x, or X</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:80px; padding:5px; border:solid thin #b1c2d6;"><p><span>ulong</span></p> </td> 
     <td style="vertical-align:top; width:205px; padding:5px; border:solid thin #b1c2d6;"><p><span>I64</span></p> </td> 
     <td style="vertical-align:top; width:617px; padding:5px; border:solid thin #b1c2d6;"><p><span>o, u, x, or X</span></p> </td> 
@@ -184,87 +184,87 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 4px 30px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Символ</span></p> </td> 
     <td style="vertical-align:top; width:68px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Тип</span></p> </td> 
     <td style="vertical-align:top; width:755px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Выводной формат</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>c</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Символ типа short (Unicode)</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>C</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Символ типа char (ANSI)</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>d</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Знаковое десятичное целое</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>i</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Знаковое десятичное целое</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>o</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Беззнаковое восьмеричное целое</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>u</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Беззнаковое десятичное целое</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>x</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Беззнаковое шестнадцатиричное целое с использованием "abcdef"</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>X</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>int</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Беззнаковое шестнадцатиричное целое с использованием "ABCDEF"</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>e</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вещественное значение в формате [ – ]d.dddd </span><span style="font-weight: bold;">e</span><span> [sign]ddd, где d – одна десятичная цифра, dddd – одна или больше десятичных цифр, ddd – трехзначное число, определяющее размер экспоненты, sign – знак плюс или минус</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>E</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентично формату e, за исключением того, что знак экспоненты вывоится большой буквой (</span><span style="font-weight: bold;">E</span><span> вместо e)</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>f</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вещественное значение в формате [ – ]dddd.dddd, где dddd – одна или больше десятичных цифр. Количество выводимых знаков перед десятичной точкой зависит от величины значения числа. Количество знаков после десятичной точки зависит от требуемой точности.</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>g</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вещественное значение, выводимое в формате </span><span style="font-weight: bold;">f</span><span> или </span><span style="font-weight: bold;">e</span><span>, в зависимости от того какой вывод будет компактнее.</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>G</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вещественное значение, выводимое в формате </span><span style="font-weight: bold;">f</span><span> или </span><span style="font-weight: bold;">E</span><span>, в зависимости от того какой вывод будет компактнее.</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>a</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вещественное значение в формате [−]0xh.hhhh </span><span style="font-weight: bold;">p</span><span>±dd, где h.hhhh – мантисса в виде шестнадцатиричных цифр с использованием "abcdef", dd – одна или более цифр экспоненты. Количество знаков после запятой определяется <a href="/common/printformat#precision">спецификацией&nbsp;точности</a></span></p> </td>
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; height:40px; padding:5px; border:solid thin #b1c2d6;"><p><span>A</span></p> </td> 
     <td style="vertical-align:top; width:68px; height:40px; padding:5px; border:solid thin #b1c2d6;"><p><span>double</span></p> </td> 
     <td style="vertical-align:top; width:755px; height:40px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вещественное значение в формате [−]0xh.hhhh </span><span style="font-weight: bold;">P</span><span>±dd, где h.hhhh – мантисса в виде шестнадцатиричных цифр с использованием "ABCDEF", dd – одна или более цифр экспоненты. Количество знаков после запятой определяется <a href="/common/printformat#precision">спецификацией&nbsp;точности</a></span></p> </td>
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:79px; padding:5px; border:solid thin #b1c2d6;"><p><span>s</span></p> </td> 
     <td style="vertical-align:top; width:68px; padding:5px; border:solid thin #b1c2d6;"><p><span>string</span></p> </td> 
     <td style="vertical-align:top; width:755px; padding:5px; border:solid thin #b1c2d6;"><p><span>Вывод строки</span></p> </td> 
@@ -277,7 +277,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span style="color: #ffffff;">&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;</span><span>{</span><br> <span style="color: #808080;">//---&nbsp;имя&nbsp;торгового&nbsp;сервера</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span style="color: #ffffff;">&nbsp;</span><span>server=</span><span style="color: #0000ff;">AccountInfoString</span><span>(</span><span style="color: #0000ff;">ACCOUNT_SERVER</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;номер&nbsp;торговго&nbsp;счета</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span style="color: #ffffff;">&nbsp;</span><span>login=(</span><span style="color: #0000ff;">int</span><span>)</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LOGIN</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;вывод&nbsp;значения&nbsp;long</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">long</span><span style="color: #ffffff;">&nbsp;</span><span>leverage=</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LEVERAGE</span><span>);</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"%s&nbsp;%d:&nbsp;плечо&nbsp;=&nbsp;1:%I64d"</span><span>,</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>server,login,leverage);</span><br> <span style="color: #808080;">//---&nbsp;валюта&nbsp;депозита</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span style="color: #ffffff;">&nbsp;</span><span>currency=</span><span style="color: #0000ff;">AccountInfoString</span><span>(</span><span style="color: #0000ff;">ACCOUNT_CURRENCY</span><span>);</span><span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;вывод&nbsp;значения&nbsp;double&nbsp;с&nbsp;2&nbsp;цифрами&nbsp;после&nbsp;десятичной&nbsp;точки</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span style="color: #ffffff;">&nbsp;</span><span>equity=</span><span style="color: #0000ff;">AccountInfoDouble</span><span>(</span><span style="color: #0000ff;">ACCOUNT_EQUITY</span><span>);</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"%s&nbsp;%d:&nbsp;размер&nbsp;собственных&nbsp;средств&nbsp;на&nbsp;счете&nbsp;=&nbsp;%.2f&nbsp;%s"</span><span>,</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>server,login,equity,currency);</span><br> <span style="color: #808080;">//---&nbsp;вывод&nbsp;значения&nbsp;double&nbsp;с&nbsp;обязательным&nbsp;выводом&nbsp;знака&nbsp;+/-</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span style="color: #ffffff;">&nbsp;</span><span>profit=</span><span style="color: #0000ff;">AccountInfoDouble</span><span>(</span><span style="color: #0000ff;">ACCOUNT_PROFIT</span><span>);</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"%s&nbsp;%d:&nbsp;текущий&nbsp;результат&nbsp;по&nbsp;открытым&nbsp;ордерам&nbsp;=&nbsp;%+.2f&nbsp;%s"</span><span>,</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>server,login,profit,currency);</span><br> <span style="color: #808080;">//---&nbsp;вывод&nbsp;значения&nbsp;double&nbsp;с&nbsp;переменным&nbsp;количеством&nbsp;цифр&nbsp;после&nbsp;десятичной&nbsp;точки</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span style="color: #ffffff;">&nbsp;</span><span>point_value=</span><span style="color: #0000ff;">SymbolInfoDouble</span><span>(</span><span style="color: #0000ff;">_Symbol</span><span>,</span><span style="color: #0000ff;">SYMBOL_POINT</span><span>);</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span style="color: #ffffff;">&nbsp;</span><span>format_string=</span><span style="color: #0000ff;">StringFormat</span><span>(</span><span style="color: #008080;">"%%s:&nbsp;значение&nbsp;одного&nbsp;пункта&nbsp;&nbsp;=&nbsp;%%.%df"</span><span>,</span><span style="color: #0000ff;">_Digits</span><span>);</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(format_string,</span><span style="color: #0000ff;">_Symbol</span><span>,point_value);</span><br> <span style="color: #808080;">//---&nbsp;вывод&nbsp;значения&nbsp;int</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span style="color: #ffffff;">&nbsp;</span><span>spread=(</span><span style="color: #0000ff;">int</span><span>)</span><span style="color: #0000ff;">SymbolInfoInteger</span><span>(</span><span style="color: #0000ff;">_Symbol</span><span>,</span><span style="color: #0000ff;">SYMBOL_SPREAD</span><span>);</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"%s:&nbsp;текущий&nbsp;спред&nbsp;в&nbsp;пунктах&nbsp;=&nbsp;%d&nbsp;"</span><span>,</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">_Symbol</span><span>,spread);</span><br> <span style="color: #808080;">//---&nbsp;вывод&nbsp;значения&nbsp;double&nbsp;в&nbsp;научном&nbsp;формате&nbsp;с&nbsp;плавающей&nbsp;запятой&nbsp;и&nbsp;точностью&nbsp;17&nbsp;значащих&nbsp;цифр</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"DBL_MAX&nbsp;=&nbsp;%.17e"</span><span>,</span><span style="color: #0000ff;">DBL_MAX</span><span>);</span><span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;вывод&nbsp;значения&nbsp;double&nbsp;в&nbsp;научном&nbsp;формате&nbsp;с&nbsp;плавающей&nbsp;запятой&nbsp;и&nbsp;точностью&nbsp;17&nbsp;значащих&nbsp;цифр</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"EMPTY_VALUE&nbsp;=&nbsp;%.17e"</span><span>,</span><span style="color: #0000ff;">EMPTY_VALUE</span><span>);</span><span style="color: #ffffff;">&nbsp;&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;вывод&nbsp;через&nbsp;PrintFormat()&nbsp;с&nbsp;точностью&nbsp;по&nbsp;умолчанию</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">PrintFormat</span><span>(</span><span style="color: #008080;">"PrintFormat(EMPTY_VALUE)&nbsp;=&nbsp;%e"</span><span>,</span><span style="color: #0000ff;">EMPTY_VALUE</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;простой&nbsp;вывод&nbsp;через&nbsp;Print()</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Print(EMPTY_VALUE)&nbsp;=&nbsp;"</span><span>,</span><span style="color: #0000ff;">EMPTY_VALUE</span><span>);</span><br> <span style="color: #808080;">/*&nbsp;результат&nbsp;выполнения</span><br> <span style="color: #808080;">&nbsp;&nbsp;&nbsp;MetaQuotes-Demo&nbsp;4236774:&nbsp;плечо&nbsp;=&nbsp;1:100</span><br> <span style="color: #808080;">&nbsp;&nbsp;&nbsp;MetaQuotes-Demo&nbsp;4236774:&nbsp;размер&nbsp;собственных&nbsp;средств&nbsp;на&nbsp;счете&nbsp;=&nbsp;9998.49&nbsp;USD</span><br> <span style="color: #808080;">&nbsp;&nbsp;&nbsp;MetaQuotes-Demo&nbsp;4236774:&nbsp;текущий&nbsp;результат&nbsp;по&nbsp;открытым&nbsp;ордерам&nbsp;=&nbsp;-1.51&nbsp;USD</span><br> <span style="color: #808080;">&nbsp;&nbsp;&nbsp;EURJPY:&nbsp;значение&nbsp;одного&nbsp;пункта&nbsp;&nbsp;=&nbsp;0.001</span><br> <span style="color: #808080;">&nbsp;&nbsp;&nbsp;EURJPY:&nbsp;текущий&nbsp;спред&nbsp;в&nbsp;пунктах&nbsp;=&nbsp;15&nbsp;</span><br> <span style="color: #808080;">&nbsp;&nbsp;&nbsp;DBL_MAX&nbsp;=&nbsp;1.79769313486231570e+308</span><br> <span style="color: #808080;">&nbsp;&nbsp;&nbsp;EMPTY_VALUE&nbsp;=&nbsp;2.14748364700000000e+009</span><br> <span style="color: #808080;">&nbsp;&nbsp;&nbsp;PrintFormat(EMPTY_VALUE)&nbsp;=&nbsp;2.147484e+009</span><br> <span style="color: #808080;">&nbsp;&nbsp;&nbsp;Print(EMPTY_VALUE)&nbsp;=&nbsp;2147483647</span><br> <span style="color: #808080;">*/&nbsp;&nbsp;</span><span style="color: #ffffff;">&nbsp;</span><br> <span style="color: #ffffff;">&nbsp;&nbsp;</span><span>}</span></p></td> 
    </tr> 
   </tbody> 

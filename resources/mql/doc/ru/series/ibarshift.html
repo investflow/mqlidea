@@ -3,7 +3,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>iBarShift</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;символ</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;период</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>time</span><span>,</span><span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;время</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>bool</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>exact=false&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;режим</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -24,7 +24,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;some_time=D'2004.03.21&nbsp;12:00';</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shift=</span><span style="color: #0000ff;">iBarShift</span><span>(</span><span style="color: #008080;">"EURUSD"</span><span>,</span><span style="color: #0000ff;">PERIOD_M1</span><span>,some_time);</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"index&nbsp;of&nbsp;the&nbsp;bar&nbsp;for&nbsp;the&nbsp;time&nbsp;"</span><span>,</span><span style="color: #0000ff;">TimeToStr</span><span>(some_time),</span><span style="color: #008080;">"&nbsp;is&nbsp;"</span><span>,shift);</span></p></td> 
    </tr> 
   </tbody> 

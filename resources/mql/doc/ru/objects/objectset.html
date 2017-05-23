@@ -3,7 +3,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ObjectSet</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string&nbsp;&nbsp;&nbsp;</span><span>object_name</span><span>,&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;объекта</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>index</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;свойства</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;</span><span>value</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;значение</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -22,7 +22,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;перемещение&nbsp;первой&nbsp;координаты&nbsp;в&nbsp;конец&nbsp;графика</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectSet</span><span>(</span><span style="color: #008080;">"MyTrend"</span><span>,&nbsp;OBJPROP_TIME1,&nbsp;</span><span style="color: #0000ff;">Time</span><span>[0]);</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;изменение&nbsp;значения&nbsp;второго&nbsp;уровеня&nbsp;объекта&nbsp;fibo</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectSet</span><span>(</span><span style="color: #008080;">"MyFibo"</span><span>,&nbsp;OBJPROP_FIRSTLEVEL+1,&nbsp;1.234);</span><br> <span>&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;установка&nbsp;флага&nbsp;видимости&nbsp;объекта.&nbsp;Объект&nbsp;будет&nbsp;отрисован&nbsp;только&nbsp;на&nbsp;15-минутном&nbsp;и&nbsp;1-часовом&nbsp;периодах&nbsp;графика</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">ObjectSet</span><span>(</span><span style="color: #008080;">"MyObject"</span><span>,&nbsp;</span><span style="color: #0000ff;">OBJPROP_TIMEFRAMES</span><span>,&nbsp;</span><span style="color: #0000ff;">OBJ_PERIOD_M15</span><span>&nbsp;|&nbsp;</span><span style="color: #0000ff;">OBJ_PERIOD_H1</span><span>);</span></p></td> 
    </tr> 
   </tbody> 

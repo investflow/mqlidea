@@ -5,7 +5,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;define&nbsp;character&nbsp;constants</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;symbol_0='0';</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;symbol_9=symbol_0+9;&nbsp;</span><span style="color: #808080;">//&nbsp;get&nbsp;symbol&nbsp;'9'</span><br> <span style="color: #808080;">//---&nbsp;output&nbsp;values&nbsp;of&nbsp;constants&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">printf</span><span>(</span><span style="color: #008080;">"In&nbsp;a&nbsp;decimal&nbsp;form:&nbsp;symbol_0&nbsp;=&nbsp;%d,&nbsp;&nbsp;symbol_9&nbsp;=&nbsp;%d"</span><span>,symbol_0,symbol_9);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">printf</span><span>(</span><span style="color: #008080;">"In&nbsp;a&nbsp;hexadecimal&nbsp;form:&nbsp;symbol_0&nbsp;=&nbsp;0x%x,&nbsp;&nbsp;symbol_9&nbsp;=&nbsp;0x%x"</span><span>,symbol_0,symbol_9);</span><br> <span style="color: #808080;">//---&nbsp;enter&nbsp;constants&nbsp;into&nbsp;a&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;test=</span><span style="color: #008080;">""</span><span>;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,symbol_0);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,symbol_9);</span><br> <span style="color: #808080;">//---&nbsp;this&nbsp;is&nbsp;what&nbsp;they&nbsp;look&nbsp;like&nbsp;in&nbsp;a&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>
@@ -15,55 +15,55 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Character name</span></p> </td> 
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Mnemonic code or image</span></p> </td> 
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Record in MQL4</span></p> </td> 
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Numeric value</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>new line (line feed)</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>LF</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\n'</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>10</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>horizontal tab </span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>HT</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\t'</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>9</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>carriage return </span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>CR</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\r'</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>13</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>backslash </span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>\</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\\'</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>92</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>single quote &nbsp; </span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\''</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>39</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>double quote &nbsp; </span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>"</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\"'</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>34</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>hexadecimal code </span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>hhhh</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\xhhhh'</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>1 to 4 hexadecimal characters</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>decimal code</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>d</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>'\d'</span></p> </td> 
@@ -77,7 +77,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;declare&nbsp;character&nbsp;constants</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;a='A';</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;b='</span><span style="color: #008000;">$</span><span>';</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;c='©';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;code&nbsp;0xA9</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;d='\xAE';&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;code&nbsp;of&nbsp;the&nbsp;symbol&nbsp;®</span><br> <span style="color: #808080;">//---&nbsp;output&nbsp;print&nbsp;constants</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(a,b,c,d);</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;a&nbsp;character&nbsp;to&nbsp;the&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;test=</span><span style="color: #008080;">""</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,a);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;replace&nbsp;a&nbsp;character&nbsp;in&nbsp;a&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,b);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;replace&nbsp;a&nbsp;character&nbsp;in&nbsp;a&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,c);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;replace&nbsp;a&nbsp;character&nbsp;in&nbsp;a&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,d);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;represent&nbsp;characters&nbsp;as&nbsp;a&nbsp;number</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;a1=65;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;b1=36;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;c1=169;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;d1=174;</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;a&nbsp;character&nbsp;to&nbsp;the&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,a1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;a&nbsp;character&nbsp;to&nbsp;the&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,b1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;a&nbsp;character&nbsp;to&nbsp;the&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,c1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;a&nbsp;character&nbsp;to&nbsp;the&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,d1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>
@@ -87,7 +87,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;a=0xAE;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;the&nbsp;code&nbsp;of&nbsp;®&nbsp;corresponds&nbsp;to&nbsp;the&nbsp;'\xAE'&nbsp;literal</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;b=0x24;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;the&nbsp;code&nbsp;of&nbsp;$&nbsp;corresponds&nbsp;to&nbsp;the&nbsp;'\x24'&nbsp;literal</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;c=0xA9;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;the&nbsp;code&nbsp;of&nbsp;©&nbsp;corresponds&nbsp;to&nbsp;the&nbsp;'\xA9'&nbsp;literal</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;d=0x263A;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;the&nbsp;code&nbsp;of&nbsp;☺&nbsp;corresponds&nbsp;to&nbsp;the&nbsp;'\x263A'&nbsp;literal</span><br> <span style="color: #808080;">//---&nbsp;show&nbsp;values</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(a,b,c,d);</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;a&nbsp;character&nbsp;to&nbsp;the&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;test=</span><span style="color: #008080;">""</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,a);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;replace&nbsp;a&nbsp;character&nbsp;in&nbsp;a&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,b);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;replace&nbsp;a&nbsp;character&nbsp;in&nbsp;a&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,c);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;replace&nbsp;a&nbsp;character&nbsp;in&nbsp;a&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,0,d);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;codes&nbsp;of&nbsp;suits</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;a1=0x2660;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;b1=0x2661;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;c1=0x2662;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;d1=0x2663;</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;a&nbsp;character&nbsp;of&nbsp;spades</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,1,a1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;a&nbsp;character&nbsp;of&nbsp;hearts</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,2,b1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;a&nbsp;character&nbsp;of&nbsp;diamonds</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,3,c1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;add&nbsp;a&nbsp;character&nbsp;of&nbsp;clubs</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">StringSetCharacter</span><span>(test,4,d1);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(test);</span><br> <span style="color: #808080;">//---&nbsp;Example&nbsp;of&nbsp;character&nbsp;literals&nbsp;in&nbsp;a&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;test=</span><span style="color: #008080;">"Queen\x2660Ace\x2662"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">printf</span><span>(</span><span style="color: #008080;">"%s"</span><span>,test);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>

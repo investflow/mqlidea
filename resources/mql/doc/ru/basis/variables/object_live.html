@@ -23,49 +23,49 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><br> </td> 
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Глобальная автоматическая переменная</span></p> </td> 
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Локальная автоматическая переменная</span></p> </td> 
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Динамически создаваемый объект</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Инициализация</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>сразу после загрузки mql4-программы</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>при достижении в ходе выполнения строки кода, где она объявлена</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>при выполнении оператора </span><span style="font-weight: bold;">new</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Порядок инициализации</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>в порядке объявления</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>в порядке объявления</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>не зависит от порядка объявления</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Деинициализация</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>перед выгрузкой mql4-программы</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>при выходе выполнения из блока объявления</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>при выполнении оператора </span><span style="font-weight: bold;">delete</span><span> или перед выгрузкой mql4-программы</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Порядок деинициализации</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>в порядке, обратном инициализации</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>в порядке, обратном инициализации</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>не зависит от порядка инициализации</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Вызов конструктора</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>при загрузке mql4-программы</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>при инициализации</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>при выполнении оператора </span><span style="font-style: italic;">new</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Вызов деструктора</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>при выгрузке mql4-программы</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>при выходе из блока, в котором переменная была инициализирована</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>при выполнении оператора </span><span style="font-style: italic;">delete</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Сообщения об ошибках</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>сообщение в журнал "Эксперты" о попытке удаления автоматически созданного объекта</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>сообщение в журнал "Эксперты" о попытке удаления автоматически созданного объекта</span></p> </td> 

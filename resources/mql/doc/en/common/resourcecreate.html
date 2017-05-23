@@ -3,7 +3,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ResourceCreate</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>resource_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Resource&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>path&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;A&nbsp;relative&nbsp;path&nbsp;to&nbsp;the&nbsp;file</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody>
@@ -13,7 +13,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ResourceCreate</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>resource_name</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Resource&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;uint&amp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Data&nbsp;set&nbsp;as&nbsp;an&nbsp;array</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>img_width</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;The&nbsp;width&nbsp;of&nbsp;the&nbsp;image&nbsp;resource</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>img_height</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>//&nbsp;The&nbsp;height&nbsp;of&nbsp;the&nbsp;image&nbsp;resource</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data_xoffset</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;The&nbsp;horizontal&nbsp;rightward&nbsp;offset&nbsp;of&nbsp;the&nbsp;upper&nbsp;left&nbsp;corner&nbsp;of&nbsp;the&nbsp;image</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data_yoffset</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;The&nbsp;vertical&nbsp;downward&nbsp;offset&nbsp;of&nbsp;the&nbsp;upper&nbsp;left&nbsp;corner&nbsp;of&nbsp;the&nbsp;image</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>uint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>data_width</span><span>,</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span><span>//&nbsp;The&nbsp;total&nbsp;width&nbsp;of&nbsp;the&nbsp;image&nbsp;based&nbsp;on&nbsp;the&nbsp;data&nbsp;set</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>ENUM_COLOR_FORMAT&nbsp;</span><span>color_format&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Color&nbsp;processing&nbsp;method</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody>
@@ -54,19 +54,19 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Identifier</span></p> </td> 
     <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>COLOR_FORMAT_XRGB_NOALPHA</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>The component of the alpha channel is ignored</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>COLOR_FORMAT_ARGB_RAW</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Color components are not handled by the terminal (must be correctly set by the user)</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>COLOR_FORMAT_ARGB_NORMALIZE</span></p> </td> 
     <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Color components are handled by the terminal</span></p> </td> 
    </tr> 

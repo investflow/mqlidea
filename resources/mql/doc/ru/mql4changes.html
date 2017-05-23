@@ -22,7 +22,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(condition1&nbsp;&amp;&amp;&nbsp;condition2)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;некоторый&nbsp;блок&nbsp;операций</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody> 
@@ -34,7 +34,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;Структура&nbsp;для&nbsp;хранения&nbsp;информации&nbsp;о&nbsp;ценах,&nbsp;объемах&nbsp;и&nbsp;спреде.</span><br> <span>struct</span><span>&nbsp;</span><span style="font-weight: bold;">MqlRates</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>datetime</span><span>&nbsp;</span><span>time</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;время&nbsp;начала&nbsp;периода</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;</span><span>open</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;цена&nbsp;открытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;</span><span>high</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;наивысшая&nbsp;цена&nbsp;за&nbsp;период</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;</span><span>low</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;наименьшая&nbsp;цена&nbsp;за&nbsp;период</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;</span><span>close</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;цена&nbsp;закрытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>tick_volume</span><span>;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;тиковый&nbsp;объем</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>spread</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;спред</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>real_volume</span><span>;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;биржевой&nbsp;объем</span><br> <span>&nbsp;&nbsp;};</span></p></td> 
    </tr> 
   </tbody> 
@@ -44,7 +44,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;</span><span>ArrayCopyRates</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>MqlRates&amp;</span><span>&nbsp;&nbsp;</span><span>rates_array[]</span><span>,&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;массив&nbsp;MqlRates,&nbsp;переданный&nbsp;по&nbsp;ссылке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol=NULL</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;инструмент</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe=0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;таймфрейм</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -54,7 +54,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArrayCopyRates</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void&amp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>dest_array[][]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;массив,&nbsp;переданный&nbsp;по&nbsp;ссылке</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>string</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>symbol=NULL</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;инструмент</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>timeframe=0&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;таймфрейм</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -66,7 +66,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>struct</span><span>&nbsp;</span><span style="font-weight: bold;">RateInfo</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>unsigned</span><span>&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ctm</span><span>;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;дата&nbsp;открытия&nbsp;бара</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>open</span><span>;&nbsp;&nbsp;</span><span>//&nbsp;цена&nbsp;открытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>low</span><span>;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;минимальная&nbsp;цена&nbsp;бара</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>high</span><span>;&nbsp;</span><span>&nbsp;//&nbsp;максимальная&nbsp;цена&nbsp;бара</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>close</span><span>;&nbsp;</span><span>//&nbsp;цена&nbsp;закрытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>vol</span><span>;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;объем</span><br> <span>&nbsp;&nbsp;};</span></p></td> 
    </tr> 
   </tbody> 
@@ -76,7 +76,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>//---&nbsp;Стандартное&nbsp;представление&nbsp;котировки&nbsp;в&nbsp;новой&nbsp;версии&nbsp;терминала</span><br> <span>struct</span><span>&nbsp;</span><span style="font-weight: bold;">RateInfo</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>INT64</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>ctm</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;дата&nbsp;и&nbsp;время&nbsp;открытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>open</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;цена&nbsp;открытия&nbsp;(абсолютное&nbsp;значение)</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>high</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;минимальная&nbsp;цена&nbsp;бара</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>low</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;максимальная&nbsp;цена&nbsp;бара</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>double</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>close</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;цена&nbsp;закрытия</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>UINT64</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>vol</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;тиковый&nbsp;объём</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>INT32</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>spread</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;спред</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>UINT64</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>real</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;торговый&nbsp;объём</span><br> <span>&nbsp;&nbsp;};</span></p></td> 
    </tr> 
   </tbody> 
@@ -86,7 +86,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="font-weight: bold;">Старые EX4 программы и DLL, основанные на старом формате RateInfo, работать в новом терминале не будут. Требуется приведение к новому формату.</span></p> </td> 
    </tr> 
   </tbody> 
@@ -100,7 +100,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;</span><span style="color: #0000ff;">datetime</span><span>&nbsp;date=D'2014.03.05&nbsp;15:46:58';</span><br> <span>&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;str=</span><span style="color: #008080;">"mydate="</span><span>+date;</span><br> <span style="color: #808080;">//---&nbsp;str="mydate=1394034418"&nbsp;-&nbsp;старый&nbsp;компилятор,&nbsp;новый&nbsp;компилятор&nbsp;без&nbsp;директивы&nbsp;#property&nbsp;strict</span><br> <span style="color: #808080;">//---&nbsp;str="mydate=2014.03.05&nbsp;15:46:58"&nbsp;-&nbsp;новый&nbsp;компилятор&nbsp;с&nbsp;директивой&nbsp;#property&nbsp;strict</span></p></td> 
    </tr> 
   </tbody> 
@@ -110,7 +110,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#property</span><span> </span><span style="color: #0000ff;">strict</span></p> </td> 
    </tr> 
   </tbody> 
@@ -121,77 +121,77 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;"> 
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Старый компилятор MQL4</span></p> </td> 
     <td style="vertical-align:top; width:345px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Новый компилятор MQL4</span></p> </td> 
     <td style="vertical-align:top; width:400px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">Новый компилятор MQL4 с #property strict</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Точки входа init(), start(), deinit() могут иметь любые параметры и любой тип возврата</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>init(), start(), deinit(), оставленные для совместимости,</span></p> <p><span>и новые <a href="/basis/function/events#oninit">OnInit()</a>, <a href="/basis/function/events#onstart">OnStart()</a>, <a href="/basis/function/events#oncalculate">OnCalculate()</a>, <a href="/basis/function/events#ontick">OnTick()</a>, <a href="/basis/function/events#ontimer">OnTimer()</a>, <a href="/basis/function/events#onchartevent">OnChartEvent()</a>, <a href="/basis/function/events#ontester">OnTester()</a>, <a href="/basis/function/events#ondeinit">OnDeinit()</a> должны точно соответствовать своим сигнатурам</span></p> </td>
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Результат возврата из функции init() никак не анализируется исполняющей подсистемой</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Результат возврата из функций init() и OnInit() никак не анализируется исполняющей подсистемой</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>При возврате из OnInit() ненулевого значения выполнение эксперта или индикатора прекращается, программа выгружается</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Имена переменных практически любые (кроме зарезервированных слов), включая спецсимволы и точки</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Имена переменных не могут иметь спецсимволы и точки.</span></p> <p><span>Список <a href="/basis/syntax/reserved">зарезервированных слов</a> расширен, поэтому именами не могут быть такие широко распространенные слова, как short, long, const и т.д.</span></p> </td>
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Область видимости переменной - от объявления (даже во вложенном блоке) до конца функции</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Область видимости переменной - от объявления до конца блока, в котором переменная объявлена</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Неявная инициализация всех переменных (и глобальных и локальных) нулями</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Инициализация только глобальных переменных. Из локальных переменных неявно инициализируются только строки</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Локальные массивы при выходе из функции не освобождаются</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Локальные массивы освобождаются при выходе из функции</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Локальные массивы освобождаются при выходе из блока {}</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Ошибка </span><span style="font-weight: bold;">"Array out of range"</span><span> (индекс за пределами массива) не приводит к критической ошибке*</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же. Кроме массивов структур и классов, для которых эта ошибка является критической</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span style="font-weight: bold;">"Array out of range"</span><span> - критическая ошибка и приводит к остановке программы</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Структур и классов нет</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/basis/types/classes">Структуры и классы</a> есть. Появились дополнительные типы данных</span></p> </td>
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Строки - однобайтовые.</span></p> <p><span>datetime - 32-битное целое</span></p> <p><span>Предопределенная переменная Volume имеет тип double</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Строки - юникодные.</span></p> <p><span>datetime - 64-битное целое</span></p> <p><span>Предопределенная переменная <a href="/predefined/volume">Volume</a> имеет тип long</span></p> </td>
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraycopyrates">ArrayCopyRates()</a> производит виртуальное копирование в массив double[][6]</span></p> </td>
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span><a href="/array/arraycopyrates">ArrayCopyRates()</a> производит виртуальное копирование в массив MqlRates[]. Для совместимости осталось копирование в массив double[][6], но это копирование не виртуальное, а реальное.</span></p> </td>
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Функции могут не возвращать значения, даже если они имеют тип. Для этого в конце функции компилятором автоматически проставляется return(0)</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Функции любого типа всегда должны возвращать значение</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Количество одновременно открытых файлов - 32</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Количество одновременно открытых файлов - 64</span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Файлы всегда открываются в режиме совместного использования **</span></p> </td> 
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Режим совместного использования нужно указывать явно с помощью FILE_SHARE_READ и/или FILE_SHARE_WRITE </span></p> </td> 
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>То же</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:339px; padding:5px; border:solid thin #b1c2d6;"><p><span>Для скриптов в окне входных параметров показываются имена <a href="/basis/variables/externvariables">extern </a>переменных</span></p> </td>
     <td style="vertical-align:top; width:345px; padding:5px; border:solid thin #b1c2d6;"><p><span>Для скриптов в режиме show_inputs в окне входных параметров показываются имена <a href="/basis/variables/externvariables">extern</a> и <a href="/basis/variables/inputvariables">input-</a>переменных</span></p> </td>
     <td style="vertical-align:top; width:400px; padding:5px; border:solid thin #b1c2d6;"><p><span>Для скриптов в режиме show_inputs в окне входных параметров показываются строчные комментарии вместо имен <a href="/basis/variables/externvariables">extern</a>- и <a href="/basis/variables/inputvariables">input</a>-переменных </span></p> </td>
@@ -222,7 +222,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="font-weight: bold;">Никакие файлы или папки при обновлении не удаляются!</span><span> Все операции по копированию файлов при обновлении записываются в Журнал терминала с указанием подробных путей.</span></p> </td> 
    </tr> 
   </tbody> 

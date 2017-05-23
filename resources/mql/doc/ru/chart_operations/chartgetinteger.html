@@ -4,7 +4,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>long&nbsp;&nbsp;</span><span>ChartGetInteger</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>prop_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;свойства</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;</span><span>sub_window=0&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;номер&nbsp;подокна,&nbsp;если&nbsp;требуется</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -14,7 +14,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ChartGetInteger</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>prop_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;свойства</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>sub_window</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;номер&nbsp;подокна</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long&amp;</span><span>&nbsp;&nbsp;&nbsp;</span><span>long_var&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;сюда&nbsp;примем&nbsp;значение&nbsp;свойства</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -36,7 +36,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;height=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_HEIGHT_IN_PIXELS</span><span>,0);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;width=</span><span style="color: #0000ff;">ChartGetInteger</span><span>(0,</span><span style="color: #0000ff;">CHART_WIDTH_IN_PIXELS</span><span>,0);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_HEIGHT_IN_PIXELS&nbsp;=&nbsp;"</span><span>,height,</span><span style="color: #008080;">"&nbsp;pixels"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"CHART_WIDTH_IN_PIXELS&nbsp;=&nbsp;"</span><span>,width,</span><span style="color: #008080;">"&nbsp;pixels"</span><span>);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody> 

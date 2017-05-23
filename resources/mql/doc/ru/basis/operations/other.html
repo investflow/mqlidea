@@ -5,7 +5,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>array[i]&nbsp;=&nbsp;</span><span style="color: #008080;">3</span><span>;&nbsp;</span><span style="color: #808080;">//&nbsp;Присвоить&nbsp;значение&nbsp;3&nbsp;i-му&nbsp;элементу&nbsp;массива&nbsp;array.</span></p></td> 
    </tr> 
   </tbody> 
@@ -21,7 +21,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;length=1000000;&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;a=</span><span style="color: #008080;">"a"</span><span>,b=</span><span style="color: #008080;">"b"</span><span>,c;</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;start=</span><span style="color: #0000ff;">GetTickCount</span><span>(),stop;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">long</span><span>&nbsp;i;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(i=0;i&lt;length;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c=a+b;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;stop=</span><span style="color: #0000ff;">GetTickCount</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"time&nbsp;for&nbsp;'c&nbsp;=&nbsp;a&nbsp;+&nbsp;b'&nbsp;=&nbsp;"</span><span>,(stop-start),</span><span style="color: #008080;">"&nbsp;milliseconds,&nbsp;i&nbsp;=&nbsp;"</span><span>,i);</span></p></td> 
    </tr> 
   </tbody> 
@@ -33,7 +33,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">for</span><span>(i=</span><span style="color: #008000;">0</span><span>,j=</span><span style="color: #008000;">99</span><span>;&nbsp;i&lt;</span><span style="color: #008000;">100</span><span>;&nbsp;i++,j--)&nbsp;</span><span style="color: #0000ff;">Print</span><span>(array[i][j]);</span></p></td> 
    </tr> 
   </tbody> 
@@ -44,7 +44,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>Имя_переменной_типа_структуры.Имя_члена</span></p></td> 
    </tr> 
   </tbody> 
@@ -54,7 +54,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">struct</span><span>&nbsp;SessionTime</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;sessionName;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;startHour;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;startMinutes;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;endHour;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;endMinutes;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;st;</span><br> <span>&nbsp;&nbsp;&nbsp;st.sessionName=</span><span style="color: #008080;">"Asian"</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;st.startHour=0;</span><br> <span>&nbsp;&nbsp;&nbsp;st.startMinutes=0;</span><br> <span>&nbsp;&nbsp;&nbsp;st.endHour=9;</span><br> <span>&nbsp;&nbsp;&nbsp;st.endMinutes=0;</span></p></td> 
    </tr> 
   </tbody> 
@@ -65,7 +65,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>[Имя_контекста]::Имя_функции(параметры)</span></p></td> 
    </tr> 
   </tbody> 
@@ -76,7 +76,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>тип&nbsp;Имя_класса::Имя_функции(описание_параметров)</span><br> <span>&nbsp;&nbsp;&nbsp;{</span><br> <span>//&nbsp;тело&nbsp;функции</span><br> <span>&nbsp;&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody> 
@@ -93,7 +93,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#property</span><span>&nbsp;</span><span style="color: #0000ff;">script_show_inputs</span><br> <span style="color: #0000ff;">#import</span><span style="color: #008080;">"kernel32.dll"</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;</span><span style="color: #0000ff;">GetLastError</span><span>(</span><span style="color: #0000ff;">void</span><span>);</span><br> <span style="color: #0000ff;">#import</span><br> <span style="color: #0000ff;">&nbsp;</span><br> <span style="color: #0000ff;">class</span><span>&nbsp;CCheckContext</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_id;</span><br> <span style="color: #0000ff;">public</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CCheckContext()&nbsp;{&nbsp;m_id=1234;&nbsp;}</span><br> <span style="color: #0000ff;">protected</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">GetLastError</span><span>()&nbsp;{&nbsp;</span><span style="color: #0000ff;">return</span><span>(m_id);&nbsp;}</span><br> <span>&nbsp;&nbsp;};</span><br> <span style="color: #0000ff;">class</span><span>&nbsp;CCheckContext2&nbsp;:&nbsp;</span><span style="color: #0000ff;">public</span><span>&nbsp;CCheckContext</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_id2;</span><br> <span style="color: #0000ff;">public</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CCheckContext2()&nbsp;{&nbsp;m_id2=5678;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">void</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>();</span><br> <span style="color: #0000ff;">protected</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">GetLastError</span><span>()&nbsp;{&nbsp;</span><span style="color: #0000ff;">return</span><span>(m_id2);&nbsp;}</span><br> <span>&nbsp;&nbsp;};</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;CCheckContext2::</span><span style="color: #0000ff;">Print</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Terminal&nbsp;GetLastError"</span><span>,::</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"kernel32&nbsp;GetLastError"</span><span>,kernel32::</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"parent&nbsp;GetLastError"</span><span>,CCheckContext::</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;::</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"our&nbsp;GetLastError"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;}&nbsp;&nbsp;</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;CCheckContext2&nbsp;test;</span><br> <span>&nbsp;&nbsp;&nbsp;test.</span><span style="color: #0000ff;">Print</span><span>();</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span></p></td> 
    </tr> 
   </tbody> 
@@ -105,7 +105,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">sizeof</span><span>(выражение)</span></p></td> 
    </tr> 
   </tbody> 
@@ -118,7 +118,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">struct</span><span>&nbsp;myStruct</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">char</span><span>&nbsp;&nbsp;&nbsp;h;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;b;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;f;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;str;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"sizeof(str)&nbsp;="</span><span>,</span><span style="color: #0000ff;">sizeof</span><span>(str));</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"sizeof(myStruct)&nbsp;="</span><span>,</span><span style="color: #0000ff;">sizeof</span><span>(myStruct));&nbsp;&nbsp;&nbsp;</span></p></td> 
    </tr> 
   </tbody> 

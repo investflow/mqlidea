@@ -19,7 +19,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">char</span><span style="color: #ffffff;">&nbsp;&nbsp;</span><span>ch=</span><span style="color: #008000;">12</span><span>;</span><br> <span style="color: #0000ff;">short</span><span style="color: #ffffff;">&nbsp;</span><span>sh=-</span><span style="color: #008000;">5000</span><span>;</span><br> <span style="color: #0000ff;">int</span><span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><span>in=</span><span style="color: #008000;">2445777</span><span>;</span></p></td> 
    </tr> 
   </tbody> 
@@ -29,7 +29,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;бесконечный&nbsp;цикл</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uchar</span><span>&nbsp;&nbsp;u_ch;</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">char</span><span>&nbsp;ch=-128;ch&lt;128;ch++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u_ch=ch;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ch&nbsp;=&nbsp;"</span><span>,ch,</span><span style="color: #008080;">"&nbsp;u_ch&nbsp;=&nbsp;"</span><span>,u_ch);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody> 
@@ -39,7 +39,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;правильный&nbsp;вариант</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uchar</span><span>&nbsp;&nbsp;u_ch;</span><br> <span>&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">char</span><span>&nbsp;ch=-128;ch&lt;=127;ch++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u_ch=ch;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ch&nbsp;=&nbsp;"</span><span>,ch,</span><span style="color: #008080;">"&nbsp;u_ch&nbsp;=&nbsp;"</span><span>,u_ch);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(ch==127)&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody> 
@@ -49,7 +49,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-128&nbsp;&nbsp;u_ch=&nbsp;128</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-127&nbsp;&nbsp;u_ch=&nbsp;129</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-126&nbsp;&nbsp;u_ch=&nbsp;130</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-125&nbsp;&nbsp;u_ch=&nbsp;131</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-124&nbsp;&nbsp;u_ch=&nbsp;132</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-123&nbsp;&nbsp;u_ch=&nbsp;133</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-122&nbsp;&nbsp;u_ch=&nbsp;134</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-121&nbsp;&nbsp;u_ch=&nbsp;135</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-120&nbsp;&nbsp;u_ch=&nbsp;136</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-119&nbsp;&nbsp;u_ch=&nbsp;137</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-118&nbsp;&nbsp;u_ch=&nbsp;138</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-117&nbsp;&nbsp;u_ch=&nbsp;139</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-116&nbsp;&nbsp;u_ch=&nbsp;140</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-115&nbsp;&nbsp;u_ch=&nbsp;141</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-114&nbsp;&nbsp;u_ch=&nbsp;142</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-113&nbsp;&nbsp;u_ch=&nbsp;143</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-112&nbsp;&nbsp;u_ch=&nbsp;144</span><br> <span>&nbsp;&nbsp;&nbsp;ch=&nbsp;-111&nbsp;&nbsp;u_ch=&nbsp;145</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;</span></p></td> 
    </tr> 
   </tbody> 
@@ -59,7 +59,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;отрицательные&nbsp;значения&nbsp;нельзя&nbsp;хранить&nbsp;в&nbsp;беззнаковых&nbsp;типах</span><br> <span style="color: #0000ff;">uchar</span><span>&nbsp;&nbsp;u_ch=-120;</span><br> <span style="color: #0000ff;">ushort</span><span>&nbsp;u_sh=-5000;</span><br> <span style="color: #0000ff;">uint</span><span>&nbsp;&nbsp;&nbsp;u_in=-401280;</span></p></td> 
    </tr> 
   </tbody> 
@@ -71,7 +71,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #008080;">0x0A</span><span>,&nbsp;</span><span style="color: #008080;">0x12</span><span>,&nbsp;</span><span style="color: #008080;">0X12</span><span>,&nbsp;</span><span style="color: #008080;">0x2f</span><span>,&nbsp;</span><span style="color: #008080;">0xA3</span><span>,&nbsp;</span><span style="color: #008080;">0Xa3</span><span>,&nbsp;</span><span style="color: #008080;">0X7C7</span></p></td> 
    </tr> 
   </tbody> 

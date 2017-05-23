@@ -3,7 +3,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>void&nbsp;&nbsp;</span><span>ArrayFill</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void&amp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;массив</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>start</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;индекс&nbsp;начального&nbsp;элемента</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>count</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;количество&nbsp;элементов</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void</span><span>&nbsp;&nbsp;&nbsp;</span><span>value</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;значение,&nbsp;которым&nbsp;заполняется&nbsp;массив</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -27,7 +27,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;объявляем&nbsp;динамический&nbsp;массив</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;a[];</span><br> <span style="color: #808080;">//---&nbsp;устанавливаем&nbsp;размер</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayResize</span><span>(a,10);</span><br> <span style="color: #808080;">//---&nbsp;заполняем&nbsp;начальные&nbsp;5&nbsp;элементов&nbsp;значением&nbsp;123</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayFill</span><span>(a,0,5,123);</span><br> <span style="color: #808080;">//---&nbsp;заполняем&nbsp;5&nbsp;элементов&nbsp;(начиная&nbsp;с&nbsp;5-го)&nbsp;значением&nbsp;456</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayFill</span><span>(a,5,5,456);</span><br> <span style="color: #808080;">//---&nbsp;выводим&nbsp;значения&nbsp;всех&nbsp;элементов</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;</span><span style="color: #0000ff;">ArraySize(a)</span><span>;i++)&nbsp;</span><span style="color: #0000ff;">printf</span><span>(</span><span style="color: #008080;">"a[%d]&nbsp;=&nbsp;%d"</span><span>,i,a[i]);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody> 

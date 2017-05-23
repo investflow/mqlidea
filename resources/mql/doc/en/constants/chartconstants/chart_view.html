@@ -10,19 +10,19 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:50%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>ID</span></p> </td> 
     <td style="vertical-align:top; width:50%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>CHART_BARS</span></p> </td> 
     <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Display as a sequence of bars</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>CHART_CANDLES</span></p> </td> 
     <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Display as Japanese candlesticks</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>CHART_LINE</span></p> </td> 
     <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Display as a line drawn by Close prices</span></p> </td> 
    </tr> 
@@ -34,15 +34,15 @@
 <div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:50%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>ID</span></p> </td> 
     <td style="vertical-align:top; width:50%; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Description</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>CHART_VOLUME_HIDE</span></p> </td> 
     <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Volumes are not shown</span></p> </td> 
    </tr> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>CHART_VOLUME_TICK</span></p> </td> 
     <td style="vertical-align:top; width:50%; padding:5px; border:solid thin #b1c2d6;"><p><span>Tick volumes</span></p> </td> 
    </tr> 
@@ -53,7 +53,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;Get&nbsp;the&nbsp;handle&nbsp;of&nbsp;the&nbsp;current&nbsp;chart</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">long</span><span>&nbsp;handle=</span><span style="color: #0000ff;">ChartID</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(handle&gt;0)&nbsp;</span><span style="color: #808080;">//&nbsp;If&nbsp;it&nbsp;succeeded,&nbsp;additionally&nbsp;customize</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Disable&nbsp;autoscroll</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartSetInteger</span><span>(handle,</span><span style="color: #0000ff;">CHART_AUTOSCROLL</span><span>,</span><span style="color: #0000ff;">false</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Set&nbsp;the&nbsp;indent&nbsp;of&nbsp;the&nbsp;right&nbsp;border&nbsp;of&nbsp;the&nbsp;chart</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartSetInteger</span><span>(handle,</span><span style="color: #0000ff;">CHART_SHIFT</span><span>,</span><span style="color: #0000ff;">true</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Display&nbsp;as&nbsp;candlesticks</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartSetInteger</span><span>(handle,</span><span style="color: #0000ff;">CHART_MODE</span><span>,</span><span style="color: #0000ff;">CHART_CANDLES</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Scroll&nbsp;by&nbsp;100&nbsp;bars&nbsp;from&nbsp;the&nbsp;beginning&nbsp;of&nbsp;history</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartNavigate</span><span>(handle,</span><span style="color: #0000ff;">CHART_CURRENT_POS</span><span>,100);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;Set&nbsp;the&nbsp;tick&nbsp;volume&nbsp;display&nbsp;mode</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ChartSetInteger</span><span>(handle,</span><span style="color: #0000ff;">CHART_SHOW_VOLUMES</span><span>,</span><span style="color: #0000ff;">CHART_VOLUME_TICK</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>

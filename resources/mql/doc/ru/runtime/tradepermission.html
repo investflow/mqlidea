@@ -15,7 +15,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">if</span><span>&nbsp;(!</span><span style="color: #0000ff;">TerminalInfoInteger</span><span>(</span><span style="color: #0000ff;">TERMINAL_TRADE_ALLOWED</span><span>))&nbsp;</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;Alert</span><span>(</span><span style="color: #008080;">"Проверьте&nbsp;в&nbsp;настройках&nbsp;терминала&nbsp;разрешение&nbsp;на&nbsp;автоматическую&nbsp;торговлю!"</span><span>);</span></p></td> 
    </tr> 
   </tbody> 
@@ -29,7 +29,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">TerminalInfoInteger</span><span>(</span><span style="color: #0000ff;">TERMINAL_TRADE_ALLOWED</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Alert</span><span>(</span><span style="color: #008080;">"Проверьте&nbsp;в&nbsp;настройках&nbsp;терминала&nbsp;разрешение&nbsp;на&nbsp;автоматическую&nbsp;торговлю!"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">MQLInfoInteger</span><span>(</span><span style="color: #0000ff;">MQL_TRADE_ALLOWED</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Alert</span><span>(</span><span style="color: #008080;">"Автоматическая&nbsp;торговля&nbsp;запрещена&nbsp;в&nbsp;свойствах&nbsp;программы&nbsp;для&nbsp;"</span><span>,</span><span style="color: #0000ff;">__FILE__</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody> 
@@ -41,7 +41,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_TRADE_EXPERT</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Alert</span><span>(</span><span style="color: #008080;">"Автоматическая&nbsp;торговля&nbsp;запрещена&nbsp;для&nbsp;счета&nbsp;"</span><span>,</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LOGIN</span><span>),</span><br> <span style="color: #008080;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;на&nbsp;стороне&nbsp;торгового&nbsp;сервера"</span><span>);</span></p></td> 
    </tr> 
   </tbody> 
@@ -53,7 +53,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(!</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_TRADE_ALLOWED</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Comment</span><span>(</span><span style="color: #008080;">"Торговля&nbsp;запрещена&nbsp;для&nbsp;счета&nbsp;"</span><span>,</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LOGIN</span><span>),</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">".\n&nbsp;Возможно,&nbsp;подключение&nbsp;к&nbsp;торговому&nbsp;счету&nbsp;произведено&nbsp;по&nbsp;инвест&nbsp;паролю."</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"\n&nbsp;Проверьте&nbsp;журнал&nbsp;терминала,&nbsp;есть&nbsp;ли&nbsp;там&nbsp;такая&nbsp;запись:"</span><span>,</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"\n\'"</span><span>,</span><span style="color: #0000ff;">AccountInfoInteger</span><span>(</span><span style="color: #0000ff;">ACCOUNT_LOGIN</span><span>),</span><span style="color: #008080;">"\':&nbsp;trading&nbsp;has&nbsp;been&nbsp;disabled&nbsp;-&nbsp;investor&nbsp;mode."</span><span>);</span></p></td> 
    </tr> 
   </tbody> 

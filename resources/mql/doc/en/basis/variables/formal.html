@@ -4,7 +4,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;func(</span><span style="color: #0000ff;">const</span><span>&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&amp;&nbsp;x[],&nbsp;</span><span style="color: #0000ff;">double&nbsp;</span><span>y,&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;z)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(y&gt;0.0&nbsp;&amp;&amp;&nbsp;!z)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(x[0]);</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>
@@ -15,7 +15,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;func(</span><span style="color: #0000ff;">int</span><span>&nbsp;x,&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;y&nbsp;=&nbsp;0.0,&nbsp;</span><span style="color: #0000ff;">bool</span><span>&nbsp;z&nbsp;=&nbsp;</span><span style="color: #0000ff;">true</span><span>)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>
@@ -26,7 +26,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>func(</span><span style="color: #008080;">123</span><span>,&nbsp;</span><span style="color: #008080;">0</span><span>.</span><span style="color: #008080;">5</span><span>);</span></p></td> 
    </tr> 
   </tbody>
@@ -38,7 +38,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">void</span><span>&nbsp;func(</span><span style="color: #0000ff;">int</span><span>&amp;&nbsp;x,&nbsp;</span><span style="color: #0000ff;">double</span><span>&amp;&nbsp;y,&nbsp;</span><span style="color: #0000ff;">double&nbsp;</span><span>&amp;&nbsp;z[])</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;calculated_tp;</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;&nbsp;i&lt;</span><span style="color: #0000ff;">OrdersTotal</span><span>();&nbsp;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(i==</span><span style="color: #0000ff;">ArraySize</span><span>(z))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(OrderSelect(i)==</span><span style="color: #0000ff;">false</span><span>)&nbsp;</span><span style="color: #0000ff;">break</span><span>;</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z[i]=OrderOpenPrice();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;x=i;</span><br> <span>&nbsp;&nbsp;&nbsp;y=calculated_tp;</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>

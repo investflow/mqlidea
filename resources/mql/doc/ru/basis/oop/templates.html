@@ -3,7 +3,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArraySize</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>void&amp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;проверяемый&nbsp;массив</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -13,7 +13,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArraySize</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>int&amp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;массив&nbsp;с&nbsp;элементами&nbsp;типа&nbsp;int</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -23,7 +23,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>int&nbsp;&nbsp;</span><span>ArraySize</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>MqlRates&amp;</span><span>&nbsp;&nbsp;</span><span>array[]</span><span>&nbsp;</span><span>//&nbsp;массив,&nbsp;заполненный&nbsp;значениями&nbsp;типа&nbsp;MqlRates</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -41,7 +41,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">template</span><span>&lt;</span><span style="color: #0000ff;">typename</span><span>&nbsp;T&gt;</span><br> <span>T&nbsp;ArrayMax(T&nbsp;&amp;arr[])</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uint</span><span>&nbsp;size=</span><span style="color: #0000ff;">ArraySize</span><span>(arr);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(size==0)&nbsp;</span><span style="color: #0000ff;">return</span><span>(0);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;T&nbsp;max=arr[0];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">uint</span><span>&nbsp;n=1;n&lt;size;n++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(max&lt;arr[n])&nbsp;max=arr[n];</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(max);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody> 
@@ -51,7 +51,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;создадим&nbsp;массив</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;array[];</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;size=50;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">ArrayResize</span><span>(array,size);</span><br> <span style="color: #808080;">//---&nbsp;&nbsp;заполним&nbsp;случайными&nbsp;значениями</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">for</span><span>(</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0;i&lt;size;i++)</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[i]=</span><span style="color: #0000ff;">MathRand</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;найдем&nbsp;позицию&nbsp;максимального&nbsp;элемента&nbsp;в&nbsp;массиве</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;max_position=</span><span style="color: #0000ff;">ArrayMaximum</span><span>(array);</span><br> <span style="color: #808080;">//---&nbsp;теперь&nbsp;получим&nbsp;само&nbsp;максимальное&nbsp;значение&nbsp;в&nbsp;массиве</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;max=array[max_position];</span><br> <span style="color: #808080;">//---&nbsp;вывод&nbsp;найденного&nbsp;значения</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Max&nbsp;value&nbsp;=&nbsp;"</span><span>,max);</span></p></td> 
    </tr> 
   </tbody> 
@@ -61,7 +61,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;найдем&nbsp;позицию&nbsp;максимального&nbsp;элемента&nbsp;в&nbsp;массиве</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;max_position=</span><span style="color: #0000ff;">ArrayMaximum</span><span>(array);</span><br> <span style="color: #808080;">//---&nbsp;теперь&nbsp;получим&nbsp;само&nbsp;максимальное&nbsp;значение&nbsp;в&nbsp;массиве</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;max=array[max_position];</span></p></td> 
    </tr> 
   </tbody> 
@@ -71,7 +71,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;найдем&nbsp;максимальное&nbsp;значение</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">double</span><span>&nbsp;max=ArrayMax(array);</span></p></td> 
    </tr> 
   </tbody> 
@@ -83,7 +83,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">#include</span><span>&nbsp;&lt;Trade\Trade.mqh&gt;</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;</span><br> <span>&nbsp;&nbsp;&nbsp;CTrade&nbsp;trade;&nbsp;&nbsp;&nbsp;</span><br> <span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;double</span><span>&nbsp;d_value=M_PI;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;i_value=INT_MAX;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"d_value:&nbsp;type="</span><span>,GetTypeName(d_value),&nbsp;</span><span style="color: #008080;">",&nbsp;&nbsp;&nbsp;value="</span><span>,&nbsp;d_value);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"i_value:&nbsp;type="</span><span>,GetTypeName(i_value),&nbsp;</span><span style="color: #008080;">",&nbsp;&nbsp;&nbsp;value="</span><span>,&nbsp;i_value);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"trade:&nbsp;type="</span><span>,GetTypeName(trade));</span><br> <span style="color: #808080;">//---&nbsp;</span><br> <span>&nbsp;&nbsp;}</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Возвращает&nbsp;в&nbsp;строковом&nbsp;виде&nbsp;тип&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">template</span><span>&lt;</span><span style="color: #0000ff;">typename</span><span>&nbsp;T&gt;</span><br> <span style="color: #0000ff;">string</span><span>&nbsp;GetTypeName(</span><span style="color: #0000ff;">const</span><span>&nbsp;T&nbsp;</span><span style="color: #0000ff;">&amp;</span><span>t)</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;вернем&nbsp;тип&nbsp;в&nbsp;виде&nbsp;строки</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">typename</span><span>(T));</span><br> <span style="color: #808080;">//---</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody> 
@@ -94,7 +94,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">class</span><span>&nbsp;CFile</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span style="color: #0000ff;">public</span><span>:</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">template</span><span>&lt;</span><span style="color: #0000ff;">typename</span><span>&nbsp;T&gt;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">uint</span><span>&nbsp;WriteStruct(T&nbsp;&amp;data);</span><br> <span>&nbsp;&nbsp;};</span><br> <span>&nbsp;</span><br> <span style="color: #0000ff;">template</span><span>&lt;</span><span style="color: #0000ff;">typename</span><span>&nbsp;T&gt;</span><br> <span style="color: #0000ff;">uint</span><span>&nbsp;CFile::WriteStruct(T&nbsp;&amp;data)</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;...</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">return</span><span>(</span><span style="color: #0000ff;">FileWriteStruct</span><span>(m_handle,data));</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody> 

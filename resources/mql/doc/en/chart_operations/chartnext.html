@@ -3,7 +3,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>long&nbsp;&nbsp;</span><span>ChartNext</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;</span><span>chart_id</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Chart&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody>
@@ -18,7 +18,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;variables&nbsp;for&nbsp;chart&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">long</span><span>&nbsp;currChart,prevChart=</span><span style="color: #0000ff;">ChartFirst</span><span>();</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;i=0,limit=100;</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"ChartFirst&nbsp;="</span><span>,</span><span style="color: #0000ff;">ChartSymbol</span><span>(prevChart),</span><span style="color: #008080;">"&nbsp;ID&nbsp;="</span><span>,prevChart);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">while</span><span>(i&lt;limit)</span><span style="color: #808080;">//&nbsp;We&nbsp;have&nbsp;certainly&nbsp;not&nbsp;more&nbsp;than&nbsp;100&nbsp;open&nbsp;charts</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currChart=</span><span style="color: #0000ff;">ChartNext</span><span>(prevChart);&nbsp;</span><span style="color: #808080;">//&nbsp;Get&nbsp;the&nbsp;new&nbsp;chart&nbsp;ID&nbsp;by&nbsp;using&nbsp;the&nbsp;previous&nbsp;chart&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(currChart&lt;0)&nbsp;</span><span style="color: #0000ff;">break</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;Have&nbsp;reached&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;chart&nbsp;list</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(i,</span><span style="color: #0000ff;">ChartSymbol</span><span>(currChart),</span><span style="color: #008080;">"&nbsp;ID&nbsp;="</span><span>,currChart);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prevChart=currChart;</span><span style="color: #808080;">//&nbsp;let's&nbsp;save&nbsp;the&nbsp;current&nbsp;chart&nbsp;ID&nbsp;for&nbsp;the&nbsp;ChartNext()</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;</span><span style="color: #808080;">//&nbsp;Do&nbsp;not&nbsp;forget&nbsp;to&nbsp;increase&nbsp;the&nbsp;counter</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>

@@ -3,7 +3,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ChartApplyTemplate</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Chart&nbsp;ID</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;</span><span>filename</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;Template&nbsp;file&nbsp;name</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody>
@@ -29,7 +29,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="font-weight: bold;">Live trading and DLL imports permissions cannot be extended for the Expert Advisors launched by applying the template using ChartApplyTemplate() function.</span></p> </td> 
    </tr> 
   </tbody>
@@ -66,7 +66,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;directory&nbsp;from&nbsp;which&nbsp;the&nbsp;terminal&nbsp;is&nbsp;started</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;terminal_path=</span><span style="color: #0000ff;">TerminalInfoString</span><span>(</span><span style="color: #0000ff;">TERMINAL_PATH</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Terminal&nbsp;directory:"</span><span>,</span><span style="color: #0000ff;">terminal_path</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;terminal&nbsp;data&nbsp;directory,&nbsp;in&nbsp;which&nbsp;the&nbsp;MQL4&nbsp;folder&nbsp;with&nbsp;EAs&nbsp;and&nbsp;indicators&nbsp;is&nbsp;located</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;terminal_data_path=</span><span style="color: #0000ff;">TerminalInfoString</span><span>(</span><span style="color: #0000ff;">TERMINAL_DATA_PATH</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Terminal&nbsp;data&nbsp;directory:"</span><span>,</span><span style="color: #0000ff;">terminal_data_path</span><span>);</span></p></td> 
    </tr> 
   </tbody>
@@ -76,7 +76,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;search&nbsp;for&nbsp;a&nbsp;template&nbsp;in&nbsp;terminal_data_directory\MQL4\</span><br> <span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"\\first_template.tpl"</span><span>))</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;search&nbsp;for&nbsp;a&nbsp;template&nbsp;in&nbsp;directory_of_EX4_file\,&nbsp;then&nbsp;in&nbsp;folder&nbsp;terminal_data_directory\Profiles\Templates\</span><br> <span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"second_template.tpl"</span><span>))</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;search&nbsp;for&nbsp;a&nbsp;template&nbsp;in&nbsp;directory_of_EX4_file\My_templates\,&nbsp;then&nbsp;in&nbsp;folder&nbsp;terminal_directory\Profiles\Templates\My_templates\</span><br> <span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"My_templates\\third_template.tpl"</span><span>))</span></p></td> 
    </tr> 
   </tbody>
@@ -87,7 +87,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;example&nbsp;of&nbsp;applying&nbsp;template,&nbsp;located&nbsp;in&nbsp;\MQL4\Files</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">FileIsExist</span><span>(</span><span style="color: #008080;">"my_template.tpl"</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;file&nbsp;my_template.tpl&nbsp;found&nbsp;in&nbsp;\Files'"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;apply&nbsp;template</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"\\Files\\my_template.tpl"</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"The&nbsp;template&nbsp;'my_template.tpl'&nbsp;applied&nbsp;successfully"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Failed&nbsp;to&nbsp;apply&nbsp;'my_template.tpl',&nbsp;error&nbsp;code&nbsp;"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"File&nbsp;'my_template.tpl'&nbsp;not&nbsp;found&nbsp;in&nbsp;"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span><span style="color: #0000ff;">TerminalInfoString</span><span>(</span><span style="color: #0000ff;">TERMINAL_PATH</span><span>)+</span><span style="color: #008080;">"\\MQL4\\Files"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>

@@ -3,7 +3,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span>bool&nbsp;&nbsp;</span><span>ChartApplyTemplate</span><span>(</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>long</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>chart_id</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;идентификатор&nbsp;графика</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span>const&nbsp;string</span><span>&nbsp;&nbsp;</span><span>filename</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>//&nbsp;имя&nbsp;файла&nbsp;с&nbsp;шаблоном</span><br> <span>&nbsp;&nbsp;&nbsp;);</span></p></td> 
    </tr> 
   </tbody> 
@@ -28,7 +28,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="font-weight: bold;">Права на торговлю и использование DLL не могут быть повышены при запуске советника путем применения шаблона с помощью функции ChartApplyTemplate().</span></p> </td> 
    </tr> 
   </tbody> 
@@ -61,7 +61,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;каталог&nbsp;из&nbsp;которой&nbsp;запущен&nbsp;терминал</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;terminal_path=</span><span style="color: #0000ff;">TerminalInfoString</span><span>(</span><span style="color: #0000ff;">TERMINAL_PATH</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Каталог&nbsp;терминала:"</span><span>,</span><span style="color: #0000ff;">terminal_path</span><span>);</span><br> <span style="color: #808080;">//---&nbsp;каталог&nbsp;данных&nbsp;терминала,&nbsp;в&nbsp;котором&nbsp;находится&nbsp;папка&nbsp;MQL4&nbsp;с&nbsp;советниками&nbsp;и&nbsp;индикаторами</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;terminal_data_path=</span><span style="color: #0000ff;">TerminalInfoString</span><span>(</span><span style="color: #0000ff;">TERMINAL_DATA_PATH</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Каталог&nbsp;данных&nbsp;терминала:"</span><span>,</span><span style="color: #0000ff;">terminal_data_path</span><span>);</span></p></td> 
    </tr> 
   </tbody> 
@@ -71,7 +71,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;шаблон&nbsp;ищем&nbsp;в&nbsp;папке&nbsp;каталог_данных_терминала\MQL4\</span><br> <span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"\\first_template.tpl"</span><span>))</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;шаблон&nbsp;ищем&nbsp;в&nbsp;папке&nbsp;каталог_исполняемого_EX4_файла\,&nbsp;затем&nbsp;в&nbsp;папке&nbsp;каталог_данных&nbsp;терминала\Profiles\Templates\</span><br> <span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"second_template.tpl"</span><span>))</span><br> <span>&nbsp;</span><br> <span style="color: #808080;">//---&nbsp;шаблон&nbsp;ищем&nbsp;в&nbsp;папке&nbsp;каталог_исполняемого_EX4_файла\My_templates\,&nbsp;затем&nbsp;в&nbsp;папке&nbsp;каталог_терминала\Profiles\Templates\My_templates\</span><br> <span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"My_templates\\third_template.tpl"</span><span>))</span></p></td> 
    </tr> 
   </tbody> 
@@ -82,7 +82,7 @@
 <div style="text-align: left; text-indent: 0px; page-break-inside: avoid; border-color: #d8dfea; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;"> 
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody> 
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #808080;">//|&nbsp;Script&nbsp;program&nbsp;start&nbsp;function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span><br> <span style="color: #808080;">//+------------------------------------------------------------------+</span><br> <span style="color: #0000ff;">void</span><span>&nbsp;</span><span style="color: #0000ff;">OnStart</span><span>()</span><br> <span>&nbsp;&nbsp;{</span><br> <span style="color: #808080;">//---&nbsp;пример&nbsp;применения&nbsp;шаблона,&nbsp;расположенного&nbsp;в&nbsp;каталоге&nbsp;\MQL4\Files</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">FileIsExist</span><span>(</span><span style="color: #008080;">"my_template.tpl"</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Шаблон&nbsp;my_template.tpl&nbsp;найден&nbsp;в&nbsp;каталоге&nbsp;\Files'"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//---&nbsp;применим&nbsp;найденный&nbsp;шаблон</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">if</span><span>(</span><span style="color: #0000ff;">ChartApplyTemplate</span><span>(0,</span><span style="color: #008080;">"\\Files\\my_template.tpl"</span><span>))</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Применили&nbsp;успешно&nbsp;шаблон&nbsp;'my_template.tpl'"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Не&nbsp;удалось&nbsp;применить&nbsp;шаблон&nbsp;'my_template.tpl',&nbsp;ошибка&nbsp;"</span><span>,</span><span style="color: #0000ff;">GetLastError</span><span>());</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">else</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Файл&nbsp;'my_template.tpl'&nbsp;не&nbsp;найден&nbsp;в&nbsp;папке&nbsp;"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span><span style="color: #0000ff;">TerminalInfoString</span><span>(</span><span style="color: #0000ff;">TERMINAL_PATH</span><span>)+</span><span style="color: #008080;">"\\MQL4\\Files"</span><span>);</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody> 

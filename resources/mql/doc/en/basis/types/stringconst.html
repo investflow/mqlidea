@@ -5,7 +5,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #0000ff;">string</span><span>&nbsp;svar=</span><span style="color: #008080;">"This&nbsp;is&nbsp;a&nbsp;character&nbsp;string"</span><span>;</span><br> <span style="color: #0000ff;">string</span><span>&nbsp;svar2=</span><span style="color: #0000ff;">StringSubstr</span><span>(svar,0,4);</span><br> <span style="color: #0000ff;">Print</span><span>(</span><span style="color: #008080;">"Copyright&nbsp;symbol\t\x00A9"</span><span>);</span><br> <span style="color: #0000ff;">FileWrite</span><span>(handle,</span><span style="color: #008080;">"This&nbsp;string&nbsp;contains&nbsp;a&nbsp;new&nbsp;line&nbsp;symbols&nbsp;\n"</span><span>);</span><br> <span style="color: #0000ff;">string</span><span>&nbsp;MT4path=</span><span style="color: #008080;">"C:\\Program&nbsp;Files\\MetaTrader&nbsp;4"</span><span>;</span></p></td> 
    </tr> 
   </tbody>
@@ -15,7 +15,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #808080;">//---&nbsp;Declare&nbsp;a&nbsp;long&nbsp;constant&nbsp;string</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">string</span><span>&nbsp;HTML_head=</span><span style="color: #008080;">"&lt;!DOCTYPE&nbsp;html&nbsp;PUBLIC&nbsp;\"-//W3C//DTD&nbsp;XHTML&nbsp;1.0&nbsp;Transitional//EN\""</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&nbsp;\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"&gt;\n"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&lt;html&nbsp;xmlns=\"http://www.w3.org/1999/xhtml\"&gt;\n"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&lt;head&gt;\n"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&lt;meta&nbsp;http-equiv=\"Content-Type\"&nbsp;content=\"text/html;&nbsp;charset=utf-8\"&nbsp;/&gt;\n"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&lt;title&gt;Trade&nbsp;Operations&nbsp;Report&lt;/title&gt;\n"</span><br> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008080;">"&lt;/head&gt;"</span><span>;</span><br> <span style="color: #808080;">//---&nbsp;Output&nbsp;the&nbsp;constant&nbsp;string&nbsp;into&nbsp;log</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">Print</span><span>(HTML_head);</span><br> <span>&nbsp;&nbsp;}</span></p></td> 
    </tr> 
   </tbody>
@@ -25,7 +25,7 @@
 <div style="text-align: left; text-indent: 0px; line-height: 1.0; page-break-inside: avoid; border-color: #b3b3b3; border-style: solid; border-width: thin; background: #fbf9f5; padding: 0px 0px 0px 0px; margin: 2px 17px 2px 17px;">
  <table cellpadding="3" style="border:none; border-spacing:0px;"> 
   <tbody>
-   <tr style="text-align:left;vertical-align:top;"> 
+   <tr>
     <td style="vertical-align:top; padding:3px;"><p><span style="color: #008080;">#pragma&nbsp;pack(push,1)</span><br> <span style="color: #0000ff;">struct</span><span>&nbsp;MqlString</span><br> <span>&nbsp;&nbsp;{</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;32-bit&nbsp;integer,&nbsp;contains&nbsp;size&nbsp;of&nbsp;the&nbsp;buffer,&nbsp;allocated&nbsp;for&nbsp;the&nbsp;string.</span><br> <span>&nbsp;&nbsp;&nbsp;LPWSTR&nbsp;&nbsp;&nbsp;buffer;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;32-bit&nbsp;address&nbsp;of&nbsp;the&nbsp;buffer,&nbsp;containing&nbsp;the&nbsp;string.</span><br> <span>&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">int</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reserved;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">//&nbsp;32-bit&nbsp;integer,&nbsp;reserved.</span><br> <span>&nbsp;&nbsp;};</span><br> <span style="color: #008080;">#pragma&nbsp;pack(pop,1)</span></p></td> 
    </tr> 
   </tbody>
