@@ -2473,7 +2473,7 @@
   ],
   [
     "FRIDAY",
-    "/marketinformation/symbolinfosessionquote"
+    "/constants/environment_state/marketinfoconstants-enum_day_of_week"
   ],
   [
     "GANN_DOWN_TREND",
@@ -2717,11 +2717,11 @@
   ],
   [
     "MODE_ASK",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_BID",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_CHIKOUSPAN",
@@ -2732,8 +2732,12 @@
     "/constants/indicatorconstants/seriesconst"
   ],
   [
+    "MODE_CLOSEBY_ALLOWED",
+    "/constants/indicatorconstants/seriesconst"
+  ],
+  [
     "MODE_DIGITS",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_EMA",
@@ -2741,11 +2745,11 @@
   ],
   [
     "MODE_EXPIRATION",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_FREEZELEVEL",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_GATORJAW",
@@ -2761,7 +2765,7 @@
   ],
   [
     "MODE_HIGH",
-    "/constants/indicatorconstants/seriesconst"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_HISTORY",
@@ -2773,15 +2777,15 @@
   ],
   [
     "MODE_LOTSIZE",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_LOTSTEP",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_LOW",
-    "/constants/indicatorconstants/seriesconst"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_LOWER",
@@ -2797,31 +2801,31 @@
   ],
   [
     "MODE_MARGINCALCMODE",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_MARGINHEDGED",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_MARGININIT",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_MARGINMAINTENANCE",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_MARGINREQUIRED",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_MAXLOT",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_MINLOT",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_MINUSDI",
@@ -2837,11 +2841,11 @@
   ],
   [
     "MODE_POINT",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_PROFITCALCMODE",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_SENKOUSPANA",
@@ -2865,19 +2869,19 @@
   ],
   [
     "MODE_SPREAD",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_STARTING",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_STOPLEVEL",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_SWAPLONG",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_SWAPSHORT",
@@ -2885,7 +2889,7 @@
   ],
   [
     "MODE_SWAPTYPE",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_TENKANSEN",
@@ -2893,19 +2897,19 @@
   ],
   [
     "MODE_TICKSIZE",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_TICKVALUE",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_TIME",
-    "/constants/indicatorconstants/seriesconst"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_TRADEALLOWED",
-    "/marketinformation/marketinfo"
+    "/constants/environment_state/marketinfoconstants"
   ],
   [
     "MODE_TRADES",
@@ -2921,7 +2925,7 @@
   ],
   [
     "MONDAY",
-    "/marketinformation/symbolinfosessionquote"
+    "/constants/environment_state/marketinfoconstants-enum_day_of_week"
   ],
   [
     "MQL_CODEPAGE",
@@ -3601,7 +3605,7 @@
   ],
   [
     "SATURDAY",
-    "/marketinformation/symbolinfosessionquote"
+    "/constants/environment_state/marketinfoconstants-enum_day_of_week"
   ],
   [
     "SEEK_CUR",
@@ -3961,7 +3965,7 @@
   ],
   [
     "SUNDAY",
-    "/marketinformation/symbolinfosessionquote"
+    "/constants/environment_state/marketinfoconstants-enum_day_of_week"
   ],
   [
     "SYMBOL_ARROWDOWN",
@@ -3973,27 +3977,27 @@
   ],
   [
     "SYMBOL_ASK",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_ASKHIGH",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_ASKLOW",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_BID",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_BIDHIGH",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_BIDLOW",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_CHECKSIGN",
@@ -4001,47 +4005,47 @@
   ],
   [
     "SYMBOL_CURRENCY_BASE",
-    "/marketinformation/symbolinfostring"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_string"
   ],
   [
     "SYMBOL_CURRENCY_MARGIN",
-    "/marketinformation/symbolinfostring"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_string"
   ],
   [
     "SYMBOL_CURRENCY_PROFIT",
-    "/marketinformation/symbolinfostring"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_string"
   ],
   [
     "SYMBOL_DESCRIPTION",
-    "/marketinformation/symbolinfostring"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_string"
   ],
   [
     "SYMBOL_DIGITS",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_EXPIRATION_MODE",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_EXPIRATION_TIME",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_FILLING_MODE",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_LAST",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_LASTHIGH",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_LASTLOW",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_LEFTPRICE",
@@ -4049,43 +4053,43 @@
   ],
   [
     "SYMBOL_MARGIN_INITIAL",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_MARGIN_LIMIT",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_MARGIN_LONG",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_MARGIN_MAINTENANCE",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_MARGIN_SHORT",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_MARGIN_STOP",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_MARGIN_STOPLIMIT",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_ORDER_MODE",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_PATH",
-    "/marketinformation/symbolinfostring"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_string"
   ],
   [
     "SYMBOL_POINT",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_RIGHTPRICE",
@@ -4093,75 +4097,75 @@
   ],
   [
     "SYMBOL_SELECT",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_SESSION_AW",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SESSION_BUY_ORDERS",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_SESSION_BUY_ORDERS_VOLUME",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SESSION_CLOSE",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SESSION_DEALS",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_SESSION_INTEREST",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SESSION_OPEN",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SESSION_PRICE_LIMIT_MAX",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SESSION_PRICE_LIMIT_MIN",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SESSION_PRICE_SETTLEMENT",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SESSION_SELL_ORDERS",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_SESSION_SELL_ORDERS_VOLUME",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SESSION_TURNOVER",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SESSION_VOLUME",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SPREAD",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_SPREAD_FLOAT",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_START_TIME",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_STOPSIGN",
@@ -4169,19 +4173,19 @@
   ],
   [
     "SYMBOL_SWAP_LONG",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_SWAP_MODE",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_SWAP_ROLLOVER3DAYS",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_SWAP_SHORT",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_THUMBSDOWN",
@@ -4193,111 +4197,111 @@
   ],
   [
     "SYMBOL_TIME",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_TRADE_CALC_MODE",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_TRADE_CONTRACT_SIZE",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_TRADE_EXECUTION_EXCHANGE",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_trade_execution"
   ],
   [
     "SYMBOL_TRADE_EXECUTION_INSTANT",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_trade_execution"
   ],
   [
     "SYMBOL_TRADE_EXECUTION_MARKET",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_trade_execution"
   ],
   [
     "SYMBOL_TRADE_EXECUTION_REQUEST",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_trade_execution"
   ],
   [
     "SYMBOL_TRADE_EXEMODE",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_TRADE_FREEZE_LEVEL",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_TRADE_MODE",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_TRADE_MODE_CLOSEONLY",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_trade_mode"
   ],
   [
     "SYMBOL_TRADE_MODE_DISABLED",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_trade_mode"
   ],
   [
     "SYMBOL_TRADE_MODE_FULL",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_trade_mode"
   ],
   [
     "SYMBOL_TRADE_MODE_LONGONLY",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_trade_mode"
   ],
   [
     "SYMBOL_TRADE_MODE_SHORTONLY",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_trade_mode"
   ],
   [
     "SYMBOL_TRADE_STOPS_LEVEL",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_TRADE_TICK_SIZE",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_TRADE_TICK_VALUE",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_TRADE_TICK_VALUE_LOSS",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_TRADE_TICK_VALUE_PROFIT",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_VOLUME",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_VOLUME_LIMIT",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_VOLUME_MAX",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_VOLUME_MIN",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_VOLUME_STEP",
-    "/marketinformation/symbolinfodouble"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_double"
   ],
   [
     "SYMBOL_VOLUMEHIGH",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "SYMBOL_VOLUMELOW",
-    "/marketinformation/symbolinfointeger"
+    "/constants/environment_state/marketinfoconstants-enum_symbol_info_integer"
   ],
   [
     "TERMINAL_BUILD",
@@ -4409,11 +4413,11 @@
   ],
   [
     "THURSDAY",
-    "/marketinformation/symbolinfosessionquote"
+    "/constants/environment_state/marketinfoconstants-enum_day_of_week"
   ],
   [
     "TUESDAY",
-    "/marketinformation/symbolinfosessionquote"
+    "/constants/environment_state/marketinfoconstants-enum_day_of_week"
   ],
   [
     "UCHAR_MAX",
@@ -4437,7 +4441,7 @@
   ],
   [
     "WEDNESDAY",
-    "/marketinformation/symbolinfosessionquote"
+    "/constants/environment_state/marketinfoconstants-enum_day_of_week"
   ],
   [
     "WHOLE_ARRAY",
