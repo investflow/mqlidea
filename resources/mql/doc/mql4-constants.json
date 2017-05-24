@@ -3413,27 +3413,27 @@
   ],
   [
     "OP_BUY",
-    "/trading/ordersend"
+    "/constants/tradingconstants/orderproperties"
   ],
   [
     "OP_BUYLIMIT",
-    "/trading/ordersend"
+    "/constants/tradingconstants/orderproperties"
   ],
   [
     "OP_BUYSTOP",
-    "/trading/ordersend"
+    "/constants/tradingconstants/orderproperties"
   ],
   [
     "OP_SELL",
-    "/trading/ordersend"
+    "/constants/tradingconstants/orderproperties"
   ],
   [
     "OP_SELLLIMIT",
-    "/trading/ordersend"
+    "/constants/tradingconstants/orderproperties"
   ],
   [
     "OP_SELLSTOP",
-    "/trading/ordersend"
+    "/constants/tradingconstants/orderproperties"
   ],
   [
     "PERIOD_CURRENT",
