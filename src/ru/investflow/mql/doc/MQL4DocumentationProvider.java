@@ -106,7 +106,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
 
     @NotNull
     private String generateDocByLink(@NotNull String link) {
-        String resource = docLinkToResource(link);
+        String resource = docLinkToResourcePath(link);
         if (loader.getResource(resource) == null) {
             DocEntry e = docEntryByLink.get(link);
             if (e != null) {
@@ -123,9 +123,17 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
         }
     }
 
+    /**
+     * Returns file name for the given link.
+     */
     @NotNull
-    private String docLinkToResource(@Nullable String link) {
-        return "/mql/doc/" + getDocsLanguage() + "/" + link + ".html";
+    private String docLinkToResourcePath(@NotNull String link) {
+        int anchorIdx = link.indexOf('#');
+        String lang = getDocsLanguage();
+        if (anchorIdx == -1) {
+            return "/mql/doc/" + lang + "/" + link + ".html";
+        }
+        return "/mql/doc/" + lang + "/" + link.substring(0, anchorIdx) + ".html";
     }
 
     @Nullable
@@ -185,7 +193,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
 
     @Override
     public boolean canFetchDocumentationLink(String link) {
-        return docEntryByLink.containsKey(link) || loader.getResource(docLinkToResource(link)) != null;
+        return docEntryByLink.containsKey(link) || loader.getResource(docLinkToResourcePath(link)) != null;
     }
 
     @NotNull

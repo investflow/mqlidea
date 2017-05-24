@@ -465,51 +465,51 @@
   ],
   [
     "CHARTEVENT_CHART_CHANGE",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTEVENT_CLICK",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTEVENT_CUSTOM",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTEVENT_CUSTOM_LAST",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTEVENT_KEYDOWN",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTEVENT_MOUSE_MOVE",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTEVENT_OBJECT_CHANGE",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTEVENT_OBJECT_CLICK",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTEVENT_OBJECT_CREATE",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTEVENT_OBJECT_DELETE",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTEVENT_OBJECT_DRAG",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTEVENT_OBJECT_ENDEDIT",
-    "/basis/function/events#onchartevent"
+    "/constants/chartconstants/enum_chartevents"
   ],
   [
     "CHARTS_MAX",
@@ -2562,6 +2562,18 @@
   [
     "INDICATOR_SHORTNAME",
     "/constants/indicatorconstants/customindicatorproperties"
+  ],
+  [
+    "INIT_FAILED",
+    "/basis/function/events-enum_init_retcode"
+  ],
+  [
+    "INIT_PARAMETERS_INCORRECT",
+    "/basis/function/events-enum_init_retcode"
+  ],
+  [
+    "INIT_SUCCEEDED",
+    "/basic/function/events-enum_init_retcode"
   ],
   [
     "INT_MAX",

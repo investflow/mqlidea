@@ -1,0 +1,25 @@
+<p><a id="enum_init_retcode"></a><span style="font-weight: bold;">ENUM_INIT_RETCODE</span></p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 8px 17px 7px 17px;">
+    <table cellpadding="5" border="1" style="border:solid 2px #b1c2d6; border-spacing:0px; border-collapse:collapse;">
+        <tbody>
+        <tr>
+            <td style="vertical-align:top; width:200px; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Идентификатор</span></p> </td>
+            <td style="vertical-align:top; background-color:#dbe9f9; padding:5px; border:solid thin #b1c2d6;"><p><span>Описание</span></p> </td>
+        </tr>
+        <tr>
+            <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>INIT_SUCCEEDED</span></p> </td>
+            <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Инициализация прошла успешно, тестирование эксперта можно продолжать.</span></p> <p><span>Этот код означает то же самое, что и нулевое значение – инициализация эксперта в тестере прошла успешно.</span></p> </td>
+        </tr>
+        <tr>
+            <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>INIT_FAILED</span></p> </td>
+            <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Неудачная инициализация, тестирование нет смысла продолжать из-за неустранимых ошибок. Например, не удалось создать индикатор, необходимый для работы эксперта.</span></p> <p><span>Возврат этого значения означает то же самое, что и возврат значения, отличного от нуля – инициализация эксперта в тестере прошла неудачно.</span></p> </td>
+        </tr>
+        <tr>
+            <td style="vertical-align:top; width:200px; padding:5px; border:solid thin #b1c2d6;"><p><span>INIT_PARAMETERS_INCORRECT</span></p> </td>
+            <td style="vertical-align:top; padding:5px; border:solid thin #b1c2d6;"><p><span>Предназначен для обозначения программистом некорректного набора входных параметров, в общей таблице оптимизации строка результата с таким кодом возврата будет подсвечена красным цветом.</span></p> <p><span>Тестирование для данного набора параметров эксперта не будет выполняться.</span></p> </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<p><span>Смотри также</span></p>
+<p><a href="/basis/function/events#enum_init_retcode">Функции обработки событий</a></p>
