@@ -102,13 +102,16 @@ class MQL4CompilerCommandLineState extends CommandLineState {
             throw new ExecutionException("File not found: " + runConfig.fileToCompile);
         }
         File copiedFileToCompile = new File(buildDir, fileToCompile.getName());
-        VirtualFile virtualFileToCompile = runConfig.getFileToCompileAsVirtualFile();
-        try {
-            Charset fileToCompileCharset = virtualFileToCompile != null ? virtualFileToCompile.getCharset() : StandardCharsets.UTF_8;
-            Charset copiedFileCharset = runConfig.buildEncoding.isEmpty() ? fileToCompileCharset : Charset.forName(runConfig.buildEncoding);
-            copyFile(fileToCompile, fileToCompileCharset, copiedFileToCompile, copiedFileCharset);
-        } catch (Exception e) {
-            throw new ExecutionException("Failed to copy file [" + fileToCompile + "] to Build Dir: [" + buildDir + "]");
+
+        if (!fileToCompile.toPath().equals(copiedFileToCompile.toPath())) { // copy file only if build dir is different from current dir.
+            VirtualFile virtualFileToCompile = runConfig.getFileToCompileAsVirtualFile();
+            try {
+                Charset fileToCompileCharset = virtualFileToCompile != null ? virtualFileToCompile.getCharset() : StandardCharsets.UTF_8;
+                Charset copiedFileCharset = runConfig.buildEncoding.isEmpty() ? fileToCompileCharset : Charset.forName(runConfig.buildEncoding);
+                copyFile(fileToCompile, fileToCompileCharset, copiedFileToCompile, copiedFileCharset);
+            } catch (Exception e) {
+                throw new ExecutionException("Failed to copy file [" + fileToCompile + "] to Build Dir: [" + buildDir + "]");
+            }
         }
 
         // Run MetaEditor compiler

@@ -74,6 +74,7 @@
         <properties>
           <labelFor value="e8c01"/>
           <text value="Build Encoding:"/>
+          <toolTipText value="Used only if Build Dir specified and is different from the current file dir"/>
         </properties>
       </component>
       <component id="e8c01" class="javax.swing.JTextField" binding="buildEncodingField">
