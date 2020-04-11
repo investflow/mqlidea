@@ -13,21 +13,20 @@ import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import com.intellij.openapi.vfs.VirtualFile;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.MQL4FileType;
 import ru.investflow.mql.runconfig.MQL4RunCompilerConfiguration;
 import ru.investflow.mql.sdk.MQL4SdkType;
 import ru.investflow.mql.util.OSUtils;
-
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConfiguration> {
     private JPanel rootPanel;
@@ -128,18 +127,26 @@ public class MQL4CompilerRunnerEditor extends SettingsEditor<MQL4RunCompilerConf
 
             // Default dir is ${SDK_ROOT} or ${SDK_ROOT}/MQL4/Experts if exists
             VirtualFile sdkHomeFile = sdk == null ? null : sdk.getHomeDirectory();
-            VirtualFile mql4Dir = sdkHomeFile == null ? null : sdkHomeFile.findChild("MQL4");
-            VirtualFile expertsDir = mql4Dir == null ? null : mql4Dir.findChild("Experts");
-            // on Windows try make default build dir in the same location with 'Include' folder (user's AppData)
-            if (OSUtils.isWindowsOS() && sdkHomeFile != null && sdkHomeFile.findChild("MQL4/Include") == null) {
-                VirtualFile appDataSdkHome = OSUtils.findAppDataSDKHome(sdk);
-                if (appDataSdkHome != null) {
-                    mql4Dir = appDataSdkHome.findChild("MQL4");
-                    assert mql4Dir != null;
-                    expertsDir = mql4Dir.findChild("Experts");
+            String mqlDirName = "MQL4";
+            VirtualFile mqlDir = sdkHomeFile == null ? null : sdkHomeFile.findChild(mqlDirName);
+            if (mqlDir == null && sdkHomeFile != null) {
+                mqlDir = sdkHomeFile.findChild("MQL5");
+                if (mqlDir != null) {
+                    mqlDirName = "MQL5";
                 }
             }
-            VirtualFile defaultDir = Stream.of(expertsDir, mql4Dir, sdkHomeFile).filter(Objects::nonNull).findFirst().orElse(null);
+
+            VirtualFile expertsDir = mqlDir == null ? null : mqlDir.findChild("Experts");
+            // on Windows try make default build dir in the same location with 'Include' folder (user's AppData)
+            if (OSUtils.isWindowsOS() && sdkHomeFile != null && sdkHomeFile.findChild(mqlDirName + "/Include") == null) {
+                VirtualFile appDataSdkHome = OSUtils.findAppDataSDKHome(sdk);
+                if (appDataSdkHome != null) {
+                    mqlDir = appDataSdkHome.findChild(mqlDirName);
+                    assert mqlDir != null;
+                    expertsDir = mqlDir.findChild("Experts");
+                }
+            }
+            VirtualFile defaultDir = Stream.of(expertsDir, mqlDir, sdkHomeFile).filter(Objects::nonNull).findFirst().orElse(null);
 
             VirtualFile[] selectedFolders = sdkHomeFile == null ? chooser.choose(null) : chooser.choose(null, defaultDir);
             if (selectedFolders.length == 0) {

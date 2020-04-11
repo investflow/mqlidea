@@ -21,10 +21,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.SimpleTextAttributes;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import ru.investflow.mql.util.TextUtils;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -33,6 +29,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import ru.investflow.mql.util.TextUtils;
 
 import static ru.investflow.mql.util.OSUtils.isWine;
 
@@ -91,7 +90,10 @@ class MQL4CompilerCommandLineState extends CommandLineState {
         if (sdk == null) {
             throw new ExecutionException("SDK not found: " + runConfig.sdkName);
         }
-        String metaeditorExePath = sdk.getHomePath() + "/metaeditor.exe";
+        String metaeditorExePath = sdk.getHomePath() + "/metaeditor64.exe";
+        if (!new File(metaeditorExePath).exists()) {
+            metaeditorExePath = sdk.getHomePath() + "/metaeditor.exe";
+        }
         File buildDir = runConfig.getBuildDirAsFile();
         if (buildDir == null || !buildDir.isDirectory()) {
             throw new ExecutionException("Build Dir not found: " + runConfig.buildDir);

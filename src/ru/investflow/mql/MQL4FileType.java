@@ -21,7 +21,7 @@ public class MQL4FileType extends LanguageFileType {
     @NotNull
     @Override
     public String getName() {
-        return "MQL4 file";
+        return "MQL4 File";
     }
 
     @NotNull

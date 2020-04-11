@@ -1,14 +1,14 @@
 <idea-plugin>
     <id>ru.investflow.mql</id>
     <name>MQL Idea</name>
-    <version>171.1.16</version>
+    <version>201.1.1</version>
     <vendor email="mike.fursov@gmail.com" url="http://investflow.ru/mqlidea">Investflow.Ru</vendor>
 
-    <description><![CDATA[
-      MQL4 language support.
-    ]]></description>
+    <description>
+        MQL4 language support for Intellij IDEA.
+    </description>
 
-    <idea-version since-build="171"/>
+    <idea-version since-build="201"/>
 
     <depends>com.intellij.modules.lang</depends>
 
@@ -30,14 +30,23 @@
 
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileTypeFactory implementation="ru.investflow.mql.MQL4FileTypeFactory"/>
+        <fileType name="MQL4"
+                  implementationClass="ru.investflow.mql.MQL4FileType"
+                  fieldName="INSTANCE"
+                  language="MQL4"
+                  extensions="mq4;mqh"
+        />
+
         <lang.parserDefinition language="MQL4" implementationClass="ru.investflow.mql.parser.MQL4ParserDefinition"/>
-        <lang.syntaxHighlighterFactory language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4SyntaxHighlighter$MQL4SyntaxHighlighterFactory"/>
+        <lang.syntaxHighlighterFactory language="MQL4"
+                                       implementationClass="ru.investflow.mql.editor.MQL4SyntaxHighlighter$MQL4SyntaxHighlighterFactory"/>
         <lang.commenter language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4Commenter"/>
-        <lang.documentationProvider language="MQL4" implementationClass="ru.investflow.mql.doc.MQL4DocumentationProvider"/>
+        <lang.documentationProvider language="MQL4"
+                                    implementationClass="ru.investflow.mql.doc.MQL4DocumentationProvider"/>
         <lang.braceMatcher language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4BraceMatcher"/>
         <lang.foldingBuilder language="MQL4" implementationClass="ru.investflow.mql.editor.MQL4FoldingBuilder"/>
-        <completion.contributor language="MQL4" implementationClass="ru.investflow.mql.editor.codecompletion.MQL4CompletionContributor"/>
+        <completion.contributor language="MQL4"
+                                implementationClass="ru.investflow.mql.editor.codecompletion.MQL4CompletionContributor"/>
 
         <!-- sdk -->
         <sdkType implementation="ru.investflow.mql.sdk.MQL4SdkType"/>
@@ -51,10 +60,12 @@
         https://confluence.jetbrains.com/display/IDEADEV/Customizing+the+IDEA+Settings+Dialog
         https://sites.google.com/site/malenkov/java/150403
         -->
-        <projectConfigurable id="settings.mql4" groupId="language" instance="ru.investflow.mql.settings.MQL4PluginSettingsPanel"/>
+        <projectConfigurable id="settings.mql4" groupId="language"
+                             instance="ru.investflow.mql.settings.MQL4PluginSettingsPanel"/>
 
         <!--Inspections-->
-        <localInspection language="MQL4" groupName="MQL4 inspections" enabledByDefault="true" level="WARNING" displayName="Preprocessor #property element"
+        <localInspection language="MQL4" groupName="MQL4 inspections" enabledByDefault="true" level="WARNING"
+                         displayName="Preprocessor #property element"
                          implementationClass="ru.investflow.mql.inspection.PreprocessorPropertyInspection"/>
 
         <!--Structure view-->

@@ -6,14 +6,13 @@ import com.intellij.openapi.projectRoots.SdkAdditionalData;
 import com.intellij.openapi.projectRoots.SdkModel;
 import com.intellij.openapi.projectRoots.SdkModificator;
 import com.intellij.openapi.projectRoots.SdkType;
+import java.io.File;
+import javax.swing.Icon;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.MQL4Icons;
 import ru.investflow.mql.util.OSUtils;
-
-import javax.swing.Icon;
-import java.io.File;
 
 public class MQL4SdkType extends SdkType {
 
@@ -67,8 +66,10 @@ public class MQL4SdkType extends SdkType {
     @Override
     public boolean isValidSdkHome(@NotNull String path) {
         log.debug("Validating sdk path: " + path);
-        if (!new File(path, "metaeditor.exe").exists()) {
-            log.debug("metaeditor.exe not found!");
+        File editor32BitFile = new File(path, "metaeditor.exe");
+        File editor64BitFile = new File(path, "metaeditor64.exe");
+        if (!editor32BitFile.exists() && !editor64BitFile.exists()) {
+            log.debug("metaeditor.exe/metaeditor64.exe not found!");
             return false;
         }
         return true;
