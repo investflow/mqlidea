@@ -30,7 +30,7 @@
 
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileType name="MQL4"
+        <fileType name="MQL4 File"
                   implementationClass="ru.investflow.mql.MQL4FileType"
                   fieldName="INSTANCE"
                   language="MQL4"
