@@ -18,10 +18,7 @@
         </action>
     </actions>
 
-    <!-- Plugin's application components -->
     <application-components>
-
-        <!-- MQL4 plugin settings -->
         <component>
             <interface-class>ru.investflow.mql.settings.MQL4PluginSettings</interface-class>
             <implementation-class>ru.investflow.mql.settings.MQL4PluginSettingsImpl</implementation-class>

@@ -18,7 +18,7 @@ import ru.investflow.mql.psi.MQL4ElementsFactory;
 import ru.investflow.mql.psi.MQL4File;
 import ru.investflow.mql.psi.stub.MQL4StubElements;
 
-/* Parser definition used by IntelliJ Platform to parse MQL4 Language sources. */
+/* Parser definition used by Intellij Platform to parse MQL4 Language sources. */
 public class MQL4ParserDefinition implements ParserDefinition, MQL4Elements {
 
     public static final TokenSet WHITE_SPACES = TokenSet.create(WHITE_SPACE, LINE_TERMINATOR);
@@ -69,7 +69,7 @@ public class MQL4ParserDefinition implements ParserDefinition, MQL4Elements {
 
     @NotNull
     @Override
-    public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right) {
+    public SpaceRequirements spaceExistenceTypeBetweenTokens(ASTNode left, ASTNode right) {
         return SpaceRequirements.MAY;
     }
 

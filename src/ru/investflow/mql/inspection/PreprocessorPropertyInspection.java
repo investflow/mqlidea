@@ -17,17 +17,16 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.util.SmartList;
-import com.intellij.util.containers.hash.HashMap;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 import org.apache.commons.lang.math.NumberUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
 import ru.investflow.mql.psi.impl.MQL4PreprocessorPropertyBlock;
-
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Stream;
 
 import static ru.investflow.mql.psi.MQL4Elements.COLOR_CONSTANT_LITERAL;
 import static ru.investflow.mql.psi.MQL4Elements.COLOR_STRING_LITERAL;
@@ -60,7 +59,9 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
             String validatorName = getValidatorName(name);
             PropertyValueValidator validator = VALIDATORS_BY_NAME.get(validatorName);
             if (validator == null) {
-                descriptors.add(manager.createProblemDescriptor(block.keyNode.getPsi(), block.keyNode.getPsi(), UNKNOWN_PROPERTY_WARNING, ProblemHighlightType.GENERIC_ERROR_OR_WARNING, true));
+                var psi = block.keyNode.getPsi();
+                var descriptor = manager.createProblemDescriptor(psi, psi, UNKNOWN_PROPERTY_WARNING, ProblemHighlightType.GENERIC_ERROR_OR_WARNING, true);
+                descriptors.add(descriptor);
                 continue;
             }
             ProblemDescriptor d = validator.validateAndReturnProblemDescriptor(manager, block.keyNode, block.valueNode);
@@ -155,7 +156,6 @@ public class PreprocessorPropertyInspection extends LocalInspectionTool implemen
         VALIDATORS_BY_NAME.put("indicator_levelwidth", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("indicator_levelstyle", new RequiredLiteralValidator(INTEGER_LITERAL));
         VALIDATORS_BY_NAME.put("script_show_confirm", new OptionalAnyLiteralValidator());
-        VALIDATORS_BY_NAME.put("script_show_inputs", new OptionalAnyLiteralValidator());
         VALIDATORS_BY_NAME.put("tester_file", new OptionalAnyLiteralValidator());
         VALIDATORS_BY_NAME.put("script_show_inputs", new RequiredLiteralValidator(STRING_LITERAL));
         VALIDATORS_BY_NAME.put("show_inputs", new OptionalAnyLiteralValidator());
