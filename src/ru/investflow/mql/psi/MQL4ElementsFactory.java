@@ -3,6 +3,10 @@ package ru.investflow.mql.psi;
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.tree.IElementType;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
 import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.psi.impl.MQL4ClassElement;
 import ru.investflow.mql.psi.impl.MQL4EnumElement;
@@ -12,16 +16,12 @@ import ru.investflow.mql.psi.impl.MQL4PreprocessorIncludeBlock;
 import ru.investflow.mql.psi.impl.MQL4PreprocessorPropertyBlock;
 import ru.investflow.mql.psi.impl.MQL4PsiElement;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Function;
-
 public class MQL4ElementsFactory implements MQL4Elements {
 
-    private final static Map<ASTNode, Function<ASTNode, PsiElement>> elementFactory = new HashMap<>();
+    private final static Map<ASTNode, Function<ASTNode, PsiElement>> ELEMENT_FACTORY = Collections.synchronizedMap(new HashMap<>());
 
     public static PsiElement createElement(@NotNull ASTNode node) {
-        return elementFactory.computeIfAbsent(node, n -> {
+        Function<ASTNode, PsiElement> psiFunction = ELEMENT_FACTORY.computeIfAbsent(node, n -> {
             IElementType type = n.getElementType();
             if (type == PREPROCESSOR_PROPERTY_BLOCK) {
                 return MQL4PreprocessorPropertyBlock::new;
@@ -43,6 +43,7 @@ public class MQL4ElementsFactory implements MQL4Elements {
             }
 
             return MQL4PsiElement::new;
-        }).apply(node);
+        });
+        return psiFunction.apply(node);
     }
 }
