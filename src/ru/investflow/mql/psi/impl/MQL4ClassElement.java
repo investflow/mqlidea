@@ -74,7 +74,7 @@ public class MQL4ClassElement extends StubBasedPsiElementBase<MQL4ClassElementSt
         IElementType t = getNode().getFirstChildNode().getElementType();
         if (t == MQL4Elements.STRUCT_KEYWORD) {
             return ClassType.Struct;
-        } else if (t == MQL4Elements.INCLUDE_KEYWORD) {
+        } else if (t == MQL4Elements.INCLUDE_PP_KEYWORD) {
             return ClassType.Struct;
         }
         return ClassType.Class;

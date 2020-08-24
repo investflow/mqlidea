@@ -26,7 +26,7 @@ public class SamplesTest extends MQL4ParserTestBase {
     public void testSamples() throws IOException {
         File samplesDir = new File(myFullDataPath).getAbsoluteFile();
         List<Path> files = ParserTestUtils.getFilesRecursively(samplesDir);
-        Assert.assertTrue(!files.isEmpty());
+        Assert.assertFalse(files.isEmpty());
 
         int samplesDirPathLen = samplesDir.getAbsolutePath().length();
         for (Path p : files) {

@@ -2,24 +2,26 @@ package ru.investflow.mql.psi;
 
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Objects;
+import org.jetbrains.annotations.NotNull;
 
 public class MQL4TokenSets implements MQL4Elements {
 
     public static final TokenSet COMMENTS = TokenSet.create(LINE_COMMENT, BLOCK_COMMENT);
+
     public static final TokenSet COMMENTS_OR_WS = TokenSet.create(LINE_COMMENT, BLOCK_COMMENT, WHITE_SPACE, LINE_TERMINATOR);
 
     public static final TokenSet PREPROCESSOR = TokenSet.create(
-            DEFINE_KEYWORD,
-            ENDIF_KEYWORD,
-            IFDEF_KEYWORD,
-            IMPORT_KEYWORD,
-            INCLUDE_KEYWORD,
-            PROPERTY_KEYWORD,
-            RESOURCE_KEYWORD,
-            UNDEF_KEYWORD
+            DEFINE_PP_KEYWORD,
+            ELSE_PP_KEYWORD,
+            ENDIF_PP_KEYWORD,
+            IFDEF_PP_KEYWORD,
+            IFNDEF_PP_KEYWORD,
+            IMPORT_PP_KEYWORD,
+            INCLUDE_PP_KEYWORD,
+            PROPERTY_PP_KEYWORD,
+            RESOURCE_PP_KEYWORD,
+            UNDEF_PP_KEYWORD
     );
 
     public static final TokenSet LITERALS = TokenSet.create(STRING_LITERAL, CHAR_LITERAL, INTEGER_LITERAL, DOUBLE_LITERAL,

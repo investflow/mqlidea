@@ -11,7 +11,7 @@ import static ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing.
 public class PreprocessorIncludeParsing implements MQL4Elements {
 
     public static boolean parseInclude(PsiBuilder b) {
-        if (b.getTokenType() != INCLUDE_KEYWORD) {
+        if (b.getTokenType() != INCLUDE_PP_KEYWORD) {
             return false;
         }
         PsiBuilder.Marker m = b.mark();

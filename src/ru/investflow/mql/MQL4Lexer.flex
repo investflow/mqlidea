@@ -148,14 +148,16 @@ color_string_literal = C \' ({decimal_integer} | {hexadecimal_integer} | , )* \'
 "true"      { return MQL4Elements.TRUE_KEYWORD; }
 "this"      { return MQL4Elements.THIS_KEYWORD; }
 
-"#define"   { return MQL4Elements.DEFINE_KEYWORD; }
-"#undef"    { return MQL4Elements.UNDEF_KEYWORD; }
-"#ifdef"    { return MQL4Elements.IFDEF_KEYWORD; }
-"#endif"    { return MQL4Elements.ENDIF_KEYWORD; }
-"#import"   { return MQL4Elements.IMPORT_KEYWORD; }
-"#include"  { return MQL4Elements.INCLUDE_KEYWORD; }
-"#property" { return MQL4Elements.PROPERTY_KEYWORD; }
-"#resource" { return MQL4Elements.RESOURCE_KEYWORD; }
+"#define"   { return MQL4Elements.DEFINE_PP_KEYWORD; }
+"#else"    { return MQL4Elements.ELSE_PP_KEYWORD; }
+"#endif"    { return MQL4Elements.ENDIF_PP_KEYWORD; }
+"#ifdef"    { return MQL4Elements.IFDEF_PP_KEYWORD; }
+"#ifndef"    { return MQL4Elements.IFNDEF_PP_KEYWORD; }
+"#import"   { return MQL4Elements.IMPORT_PP_KEYWORD; }
+"#include"  { return MQL4Elements.INCLUDE_PP_KEYWORD; }
+"#property" { return MQL4Elements.PROPERTY_PP_KEYWORD; }
+"#resource" { return MQL4Elements.RESOURCE_PP_KEYWORD; }
+"#undef"    { return MQL4Elements.UNDEF_PP_KEYWORD; }
 
 "template"  { return MQL4Elements.TEMPLATE_KEYWORD; }
 "typename"  { return MQL4Elements.TYPENAME_KEYWORD; }

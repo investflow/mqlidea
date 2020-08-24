@@ -14,7 +14,7 @@ import static ru.investflow.mql.parser.parsing.util.ParsingErrors.error;
 public class PreprocessorIfDefParsing implements MQL4Elements {
 
     public static boolean parseUndef(PsiBuilder b) {
-        if (b.getTokenType() != UNDEF_KEYWORD) {
+        if (b.getTokenType() != UNDEF_PP_KEYWORD) {
             return false;
         }
         PsiBuilder.Marker m = b.mark();
@@ -40,7 +40,7 @@ public class PreprocessorIfDefParsing implements MQL4Elements {
     private static final TokenSet VALID_DEFINE_KEY_TYPES = TokenSet.create(IDENTIFIER, COLOR_CONSTANT_LITERAL);
 
     public static boolean parseDefine(PsiBuilder b) {
-        if (b.getTokenType() != DEFINE_KEYWORD) {
+        if (b.getTokenType() != DEFINE_PP_KEYWORD) {
             return false;
         }
         PsiBuilder.Marker m = b.mark();

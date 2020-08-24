@@ -25,7 +25,7 @@ import static ru.investflow.mql.inspection.PreprocessorPropertyInspection.VALIDA
  */
 public class PreprocessorPropertyCompletions {
 
-    static final PsiElementPattern.Capture<PsiElement> IN_PROPERTIES_BLOCK_P1 = mql4().inside(MQL4PreprocessorPropertyBlock.class).afterLeaf(psiElement(MQL4Elements.PROPERTY_KEYWORD));
+    static final PsiElementPattern.Capture<PsiElement> IN_PROPERTIES_BLOCK_P1 = mql4().inside(MQL4PreprocessorPropertyBlock.class).afterLeaf(psiElement(MQL4Elements.PROPERTY_PP_KEYWORD));
     static final PsiElementPattern.Capture<PsiElement> IN_PROPERTIES_BLOCK_COLOR1 = mql4().inside(MQL4PreprocessorPropertyBlock.class).afterLeaf("indicator_color1", "indicator_color2", "indicator_color3", "indicator_color4", "indicator_color5", "indicator_color6", "indicator_color7", "indicator_color8", "indicator_color9");
     static final PsiElementPattern.Capture<PsiElement> IN_PROPERTIES_BLOCK_COLOR2 = mql4().inside(MQL4PreprocessorPropertyBlock.class).afterLeaf("indicator_levelcolor");
 
@@ -34,7 +34,7 @@ public class PreprocessorPropertyCompletions {
      */
     static class MQL4PropertiesBlockKeyCompletionProvider extends CompletionProvider<CompletionParameters> {
         @Override
-        protected void addCompletions(@NotNull CompletionParameters parameters, ProcessingContext context, @NotNull CompletionResultSet result) {
+        protected void addCompletions(@NotNull CompletionParameters parameters, @NotNull ProcessingContext context, @NotNull CompletionResultSet result) {
             VALIDATORS_BY_NAME.keySet().forEach(k -> result.addElement(LookupElementBuilder.create(k)));
         }
     }
@@ -46,7 +46,7 @@ public class PreprocessorPropertyCompletions {
         private static final List<LookupElementBuilder> COLOR_COMPLETIONS = new ArrayList<>();
 
         @Override
-        protected void addCompletions(@NotNull CompletionParameters parameters, ProcessingContext context, @NotNull CompletionResultSet result) {
+        protected void addCompletions(@NotNull CompletionParameters parameters, @NotNull ProcessingContext context, @NotNull CompletionResultSet result) {
             if (COLOR_COMPLETIONS.isEmpty()) {
                 MQL4DocumentationProvider.getEntries().stream().filter(e -> e.text.startsWith("clr")).map(e -> LookupElementBuilder.create(e.text)).forEach(COLOR_COMPLETIONS::add);
             }

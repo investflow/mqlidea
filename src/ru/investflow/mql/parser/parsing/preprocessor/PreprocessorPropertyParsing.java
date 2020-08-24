@@ -14,7 +14,7 @@ import static ru.investflow.mql.parser.parsing.util.ParsingUtils.containsEndOfLi
 public class PreprocessorPropertyParsing implements MQL4Elements {
 
     public static boolean parseProperty(PsiBuilder b) {
-        if (b.getTokenType() != PROPERTY_KEYWORD) {
+        if (b.getTokenType() != PROPERTY_PP_KEYWORD) {
             return false;
         }
         PsiBuilder.Marker m = b.mark();

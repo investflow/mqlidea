@@ -18,7 +18,7 @@ import static ru.investflow.mql.parser.parsing.util.TokenAdvanceMode.ADVANCE;
 public class PreprocessorImportParsing implements MQL4Elements {
 
     public static boolean parseImport(PsiBuilder b, int l) {
-        if (!ParsingUtils.nextTokenIs(b, l, "parseImport", IMPORT_KEYWORD)) {
+        if (!ParsingUtils.nextTokenIs(b, l, "parseImport", IMPORT_PP_KEYWORD)) {
             return false;
         }
         PsiBuilder.Marker m = enter_section_(b);
@@ -45,7 +45,7 @@ public class PreprocessorImportParsing implements MQL4Elements {
                 return true;
             }
             // now parse function declaration until the next import block
-            while (!nextTokenIs(b, IMPORT_KEYWORD)) {
+            while (!nextTokenIs(b, IMPORT_PP_KEYWORD)) {
                 forceParseDeclaration(b, l + 1);
             }
         } finally {

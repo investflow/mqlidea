@@ -36,7 +36,7 @@ public class PreprocessorIncludeCompletions {
     static class PreprocessorIncludeCompletionProvider extends CompletionProvider<CompletionParameters> {
 
         @Override
-        protected void addCompletions(@NotNull CompletionParameters parameters, ProcessingContext context, @NotNull CompletionResultSet result) {
+        protected void addCompletions(@NotNull CompletionParameters parameters, @NotNull ProcessingContext context, @NotNull CompletionResultSet result) {
             VirtualFile vFile = parameters.getOriginalFile().getVirtualFile();
             String path = vFile == null ? null : vFile.getCanonicalPath();
             if (path == null) {
@@ -53,7 +53,7 @@ public class PreprocessorIncludeCompletions {
             PsiElement pos = parameters.getPosition();
             PsiElement prevElement = pos.getPrevSibling();
             boolean hasQuote = prevElement != null && prevElement.getText().equals("\"");
-            boolean rightAfterInclude = !hasQuote && pos.getParent().getPrevSibling().getNode().getElementType() == MQL4Elements.INCLUDE_KEYWORD;
+            boolean rightAfterInclude = !hasQuote && pos.getParent().getPrevSibling().getNode().getElementType() == MQL4Elements.INCLUDE_PP_KEYWORD;
             String completionPrefix = (rightAfterInclude ? " " : "") + (hasQuote ? "" : "\"");
             List<String> completions = localFiles.stream()
                     .filter(f -> !f.getAbsolutePath().equals(path)) // filter out current file

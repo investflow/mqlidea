@@ -18,6 +18,10 @@ public class PreprocessorTest extends MQL4ParserTestBase {
         doTest();
     }
 
+    public void testIfdef() {
+        doTest();
+    }
+
     public void testDefine() {
         doTest();
     }

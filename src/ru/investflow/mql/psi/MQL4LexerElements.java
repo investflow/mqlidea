@@ -52,15 +52,17 @@ public interface MQL4LexerElements {
     IElementType R_SQUARE_BRACKET = new MQL4ElementType("R_SQUARE_BRACKET");
     IElementType SEMICOLON = new MQL4ElementType("SEMICOLON");
 
-    // Preprocessor
-    IElementType DEFINE_KEYWORD = new MQL4ElementType("DEFINE_KEYWORD");
-    IElementType ENDIF_KEYWORD = new MQL4ElementType("ENDIF_KEYWORD");
-    IElementType IFDEF_KEYWORD = new MQL4ElementType("IFDEF_KEYWORD");
-    IElementType IMPORT_KEYWORD = new MQL4ElementType("IMPORT_KEYWORD");
-    IElementType INCLUDE_KEYWORD = new MQL4ElementType("INCLUDE_KEYWORD");
-    IElementType PROPERTY_KEYWORD = new MQL4ElementType("PROPERTY_KEYWORD");
-    IElementType RESOURCE_KEYWORD = new MQL4ElementType("RESOURCE_KEYWORD");
-    IElementType UNDEF_KEYWORD = new MQL4ElementType("UNDEF_KEYWORD");
+    // Preprocessor  macros
+    IElementType DEFINE_PP_KEYWORD = new MQL4ElementType("DEFINE_PP_KEYWORD");
+    IElementType ENDIF_PP_KEYWORD = new MQL4ElementType("ENDIF_PP_KEYWORD");
+    IElementType ELSE_PP_KEYWORD = new MQL4ElementType("ELSE_PP_KEYWORD");
+    IElementType IFDEF_PP_KEYWORD = new MQL4ElementType("IFDEF_PP_KEYWORD");
+    IElementType IFNDEF_PP_KEYWORD = new MQL4ElementType("IFNDEF_PP_KEYWORD");
+    IElementType IMPORT_PP_KEYWORD = new MQL4ElementType("IMPORT_PP_KEYWORD");
+    IElementType INCLUDE_PP_KEYWORD = new MQL4ElementType("INCLUDE_PP_KEYWORD");
+    IElementType PROPERTY_PP_KEYWORD = new MQL4ElementType("PROPERTY_PP_KEYWORD");
+    IElementType RESOURCE_PP_KEYWORD = new MQL4ElementType("RESOURCE_PP_KEYWORD");
+    IElementType UNDEF_PP_KEYWORD = new MQL4ElementType("UNDEF_PP_KEYWORD");
 
     // Data types
     IElementType BOOL_KEYWORD = new MQL4ElementType("BOOL_KEYWORD");
