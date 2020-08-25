@@ -24,6 +24,6 @@ public class MQL4GotoClassContributor implements ChooseByNameContributor {
     public NavigationItem[] getItemsByName(String name, String pattern, Project project, boolean includeNonProjectItems) {
         MQL4ClassNameIndex index = MQL4ClassNameIndex.getInstance();
         Collection<MQL4ClassElement> classes = index.get(name, project, GlobalSearchScope.allScope(project));
-        return classes.toArray(new NavigationItem[classes.size()]);
+        return classes.toArray(new NavigationItem[0]);
     }
 }

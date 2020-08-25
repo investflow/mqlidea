@@ -19,6 +19,7 @@ public class MQL4BraceMatcher implements PairedBraceMatcher {
             new BracePair(MQL4Elements.L_SQUARE_BRACKET, MQL4Elements.R_SQUARE_BRACKET, true)
     };
 
+    @NotNull
     @Override
     public BracePair[] getPairs() {
         return PAIRS;

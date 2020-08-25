@@ -13,6 +13,8 @@ import com.intellij.psi.tree.ILightStubFileElementType;
 import com.intellij.util.diff.FlyweightCapableTreeStructure;
 import ru.investflow.mql.MQL4Language;
 import ru.investflow.mql.parser.MQL4Parser;
+import ru.investflow.mql.psi.impl.MQL4ClassElement;
+import ru.investflow.mql.psi.impl.MQL4FunctionElement;
 import ru.investflow.mql.psi.stub.type.MQL4ClassElementStubType;
 import ru.investflow.mql.psi.stub.type.MQL4FunctionElementStubType;
 
@@ -35,9 +37,9 @@ public interface MQL4StubElements {
         }
     };
 
-    IStubElementType CLASS = new MQL4ClassElementStubType();
+    IStubElementType<MQL4ClassElementStub, MQL4ClassElement> CLASS = new MQL4ClassElementStubType();
 
-    IStubElementType FUNCTION = new MQL4FunctionElementStubType(false);
+    IStubElementType<MQL4FunctionElementStub, MQL4FunctionElement> FUNCTION = new MQL4FunctionElementStubType(false);
 
-    IStubElementType FUNCTION_DECLARATION = new MQL4FunctionElementStubType(true);
+    IStubElementType<MQL4FunctionElementStub, MQL4FunctionElement> FUNCTION_DECLARATION = new MQL4FunctionElementStubType(true);
 }

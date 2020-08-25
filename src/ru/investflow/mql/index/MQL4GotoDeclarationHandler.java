@@ -6,6 +6,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.search.GlobalSearchScope;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.psi.impl.MQL4FunctionElement;
 
@@ -33,7 +34,7 @@ public class MQL4GotoDeclarationHandler implements GotoDeclarationHandler {
 
     @Nullable
     @Override
-    public String getActionText(DataContext context) {
+    public String getActionText(@NotNull DataContext context) {
         return null;
     }
 }

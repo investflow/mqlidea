@@ -24,7 +24,7 @@ public class ValidBlocksTest extends MQL4ParserTestBase {
     public void testValidBlocks() throws IOException {
         File dir = new File(myFullDataPath).getAbsoluteFile();
         List<Path> files = getFilesRecursively(dir);
-        Assert.assertTrue(!files.isEmpty());
+        Assert.assertFalse(files.isEmpty());
 
         int samplesDirPathLen = dir.getAbsolutePath().length();
         for (Path p : files) {

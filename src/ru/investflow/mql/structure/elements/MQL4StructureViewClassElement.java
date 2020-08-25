@@ -27,7 +27,7 @@ public class MQL4StructureViewClassElement extends MQL4StructureViewElement<MQL4
         }
         PsiElement[] children = innerBlockNode.getPsi().getChildren();
         Collection<StructureViewTreeElement> els = toStructureViewElements(children);
-        return els.toArray(new StructureViewTreeElement[els.size()]);
+        return els.toArray(new StructureViewTreeElement[0]);
     }
 
     @NotNull

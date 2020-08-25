@@ -67,10 +67,10 @@ public class MQL4CompletionContributor extends CompletionContributor {
      */
     public static class MQL4IdentifiersCompletionProvider extends CompletionProvider<CompletionParameters> {
         @Override
-        protected void addCompletions(@NotNull CompletionParameters parameters, ProcessingContext context, @NotNull CompletionResultSet result) {
+        protected void addCompletions(@NotNull CompletionParameters parameters, @NotNull ProcessingContext context, @NotNull CompletionResultSet result) {
             parameters.getOriginalFile().accept(new PsiRecursiveElementVisitor() {
                 @Override
-                public void visitElement(PsiElement element) {
+                public void visitElement(@NotNull PsiElement element) {
                     super.visitElement(element);
                     if (element.getNode().getElementType() == MQL4Elements.IDENTIFIER) {
                         result.addElement(LookupElementBuilder.create(element.getText()));

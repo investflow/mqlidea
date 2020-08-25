@@ -4,12 +4,11 @@ import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.ui.ListCellRendererWrapper;
 import com.intellij.ui.SortedComboBoxModel;
+import javax.swing.JList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.annotation.UsedIndirectly;
 import ru.investflow.mql.util.SdkByNameComparator;
-
-import javax.swing.JList;
 
 public class MQL4SDKComboBox extends ComboBox<Sdk> {
 
@@ -24,7 +23,7 @@ public class MQL4SDKComboBox extends ComboBox<Sdk> {
     public MQL4SDKComboBox(@NotNull SortedComboBoxModel<Sdk> model) {
         super(model);
         this.model = model;
-        setRenderer(new ListCellRendererWrapper<Sdk>() {
+        setRenderer(new ListCellRendererWrapper<>() {
             @Override
             public void customize(JList list, Sdk sdk, int index, boolean selected, boolean hasFocus) {
                 setText(sdk == null ? "[none]" : sdk.getName());

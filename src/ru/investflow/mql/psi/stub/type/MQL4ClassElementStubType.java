@@ -29,10 +29,12 @@ public class MQL4ClassElementStubType extends ILightStubElementType<MQL4ClassEle
         super("CLASS", MQL4Language.INSTANCE);
     }
 
+    @NotNull
     @Override
-    public MQL4ClassElementStub createStub(LighterAST tree, LighterASTNode node, StubElement parentStub) {
+    public MQL4ClassElementStub createStub(@NotNull LighterAST tree, @NotNull LighterASTNode node, @NotNull StubElement parentStub) {
         LighterASTNode keyNode = LightTreeUtil.firstChildOfType(tree, node, MQL4Elements.IDENTIFIER);
         if (keyNode == null) {
+            //TODO: fix
             return null;
         }
         String key = ((LighterASTTokenNode) keyNode).getText().toString();

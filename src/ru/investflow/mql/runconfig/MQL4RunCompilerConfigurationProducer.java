@@ -5,6 +5,7 @@ import com.intellij.execution.actions.ConfigurationContext;
 import com.intellij.execution.actions.RunConfigurationProducer;
 import com.intellij.openapi.util.Ref;
 import com.intellij.psi.PsiElement;
+import org.jetbrains.annotations.NotNull;
 
 public class MQL4RunCompilerConfigurationProducer extends RunConfigurationProducer<MQL4RunCompilerConfiguration> {
 
@@ -13,12 +14,12 @@ public class MQL4RunCompilerConfigurationProducer extends RunConfigurationProduc
     }
 
     @Override
-    protected boolean setupConfigurationFromContext(MQL4RunCompilerConfiguration configuration, ConfigurationContext context, Ref<PsiElement> sourceElement) {
+    protected boolean setupConfigurationFromContext(@NotNull MQL4RunCompilerConfiguration configuration, @NotNull ConfigurationContext context, @NotNull Ref<PsiElement> sourceElement) {
         return false;
     }
 
     @Override
-    public boolean isConfigurationFromContext(MQL4RunCompilerConfiguration configuration, ConfigurationContext context) {
+    public boolean isConfigurationFromContext(@NotNull MQL4RunCompilerConfiguration configuration, @NotNull ConfigurationContext context) {
         return false;
     }
 }

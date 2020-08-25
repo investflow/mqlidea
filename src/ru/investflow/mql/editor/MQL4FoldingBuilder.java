@@ -9,14 +9,13 @@ import com.intellij.openapi.util.Couple;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.tree.IElementType;
+import java.util.ArrayList;
+import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.editor.folding.EnumFoldingDescriptor;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * MQL4 code folding. Supports folding of comments only today.
@@ -27,7 +26,7 @@ public class MQL4FoldingBuilder implements FoldingBuilder, DumbAware {
     public FoldingDescriptor[] buildFoldRegions(@NotNull ASTNode node, @NotNull Document document) {
         final List<FoldingDescriptor> descriptors = new ArrayList<>();
         collectDescriptorsRecursively(node, document, descriptors);
-        return descriptors.toArray(new FoldingDescriptor[descriptors.size()]);
+        return descriptors.toArray(new FoldingDescriptor[0]);
     }
 
     private static void collectDescriptorsRecursively(@NotNull ASTNode node, @NotNull Document document, @NotNull List<FoldingDescriptor> descriptors) {
@@ -82,8 +81,6 @@ public class MQL4FoldingBuilder implements FoldingBuilder, DumbAware {
         IElementType type = node.getElementType();
         if (type == MQL4Elements.LINE_COMMENT) {
             return "//...";
-        } else if (type == MQL4Elements.BLOCK_COMMENT) {
-            return "/*...*/";
         } else if (type == MQL4Elements.BLOCK_COMMENT) {
             return "/*...*/";
         }

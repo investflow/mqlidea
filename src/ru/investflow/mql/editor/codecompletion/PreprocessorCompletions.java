@@ -27,7 +27,7 @@ public class PreprocessorCompletions {
      */
     static class MQL4PreprocessorKeywordsCompletion extends CompletionProvider<CompletionParameters> {
         @Override
-        protected void addCompletions(@NotNull CompletionParameters parameters, ProcessingContext context, @NotNull CompletionResultSet result) {
+        protected void addCompletions(@NotNull CompletionParameters parameters, @NotNull ProcessingContext context, @NotNull CompletionResultSet result) {
             Stream.of("define", "undef", "import", "include", "property")
                     .forEach(k -> result.addElement(LookupElementBuilder.create(k)));
         }

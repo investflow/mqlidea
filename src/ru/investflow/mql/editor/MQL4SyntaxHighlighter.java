@@ -73,7 +73,7 @@ public class MQL4SyntaxHighlighter extends SyntaxHighlighterBase {
         }
     }
 
-    private class MQL4HighlighterLexer implements FlexLexer {
+    private static class MQL4HighlighterLexer implements FlexLexer {
         @NotNull
         private final MQL4Lexer lexer;
 

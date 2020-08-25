@@ -1,21 +1,19 @@
 package ru.investflow.mql.settings;
 
 import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.util.FileContentUtil;
 import com.intellij.util.ui.JBUI;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 //todo: SearchableConfigurable,
 public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
@@ -107,7 +105,7 @@ public class MQL4PluginSettingsPanel extends JPanel implements Configurable {
      * Store the settings from configurable to other components.
      */
     @Override
-    public void apply() throws ConfigurationException {
+    public void apply() {
         settings.setUseEnDocs(docsLangCombo.getSelectedIndex() == 1);
         if (isErrorAnalysisFlagChanged()) {
             FileContentUtil.reparseOpenedFiles();
