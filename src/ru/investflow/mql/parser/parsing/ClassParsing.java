@@ -85,7 +85,7 @@ public class ClassParsing implements MQL4Elements {
                     if (t1 == PRIVATE_KEYWORD || t1 == PROTECTED_KEYWORD || t1 == PUBLIC_KEYWORD) {
                         b.advanceLexer(); // 'private'
                     }
-                    if (!TypesParsing.parseCustomTypeName(b, l)) {
+                    if (!TypesParsing.parseUserDataType(b, l)) {
                         error(b, ParsingErrors.UNEXPECTED_TOKEN);
                         return false;
                     }

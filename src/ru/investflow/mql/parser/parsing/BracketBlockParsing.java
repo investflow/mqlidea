@@ -2,15 +2,13 @@ package ru.investflow.mql.parser.parsing;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
+import java.util.Stack;
 import org.jetbrains.annotations.NotNull;
-import ru.investflow.mql.parser.parsing.preprocessor.PreprocessorParsing;
 import ru.investflow.mql.parser.parsing.util.ParsingErrors;
 import ru.investflow.mql.parser.parsing.util.ParsingScope;
 import ru.investflow.mql.parser.parsing.util.ParsingUtils;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.MQL4TokenSets;
-
-import java.util.Stack;
 
 import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 import static ru.investflow.mql.parser.parsing.CommentParsing.parseComment;

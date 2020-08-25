@@ -12,7 +12,7 @@ import static com.intellij.lang.parser.GeneratedParserUtilBase.recursion_guard_;
 public class TypesParsing implements MQL4Elements {
 
 
-    public static boolean parseCustomTypeName(@NotNull PsiBuilder b, int l) {
+    public static boolean parseUserDataType(@NotNull PsiBuilder b, int l) {
         if (!recursion_guard_(b, l, "parseCustomTypeName")) {
             return false;
         }

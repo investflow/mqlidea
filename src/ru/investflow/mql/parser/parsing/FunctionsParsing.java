@@ -189,7 +189,7 @@ public class FunctionsParsing implements MQL4Elements {
         try {
             while (b.getTokenType() != L_CURLY_BRACKET) {
                 // field name
-                if (!TypesParsing.parseCustomTypeName(b, l)) {
+                if (!TypesParsing.parseUserDataType(b, l)) {
                     error(b, ParsingErrors.IDENTIFIER_EXPECTED);
                     return false;
                 }
@@ -219,98 +219,109 @@ public class FunctionsParsing implements MQL4Elements {
     /**
      * Form: (TYPE [IDENTIFIER [= (literal|identifier)]])
      */
-    @SuppressWarnings("ConstantConditions")
     private static boolean parseFunctionArgs(PsiBuilder b, int l) {
         PsiBuilder.Marker m = b.mark();
         try {
+            boolean isFirstArg = true;
             while (b.getTokenType() != R_ROUND_BRACKET) {
                 PsiBuilder.Marker m2 = b.mark();
                 boolean hasConst = false;
                 try {
-                    //  === First element ===
-                    IElementType t1 = b.getTokenType();
-                    if (t1 == CONST_KEYWORD) {
-                        hasConst = true;
-                        t1 = ParsingUtils.advanceLexer(b); // const
-                    }
-                    boolean customType = TypesParsing.parseCustomTypeName(b, l);
-                    if (!customType) {
-                        if (!MQL4TokenSets.DATA_TYPES.contains(t1)) { // not custom type name or known type
+                    try {
+                        //  === First element ===
+                        IElementType t1 = b.getTokenType();
+                        if (t1 == CONST_KEYWORD) {
+                            hasConst = true;
+                            t1 = ParsingUtils.advanceLexer(b); // const
+                        }
+                        boolean isUserDataType = TypesParsing.parseUserDataType(b, l);
+                        if (!isUserDataType) {
+                            if (!MQL4TokenSets.DATA_TYPES.contains(t1)) { // not custom type name or known type
+                                // ClassName cls(1, 2, 3) is a valid class variable declaration considered as a function call by the plugin.
+                                // If the first argument is parsed with no errors -> this is a function, but not a class variable and errors must be reported.
+                                if (!isFirstArg) {
+                                    error(b, UNEXPECTED_TOKEN);
+                                }
+                                return false;
+                            }
+                            b.advanceLexer(); // built-in type
+                        }
+
+                        // === Second element ===
+                        IElementType t2 = b.getTokenType();
+                        if (t2 == CONST_KEYWORD) {
+                            if (hasConst) {
+                                error(b, UNEXPECTED_TOKEN);
+                                return false;
+                            }
+                            b.advanceLexer(); // const
+                            t2 = b.getTokenType();
+                        }
+                        if (t2 == AND || t2 == MUL) {
+                            t2 = ParsingUtils.advanceLexer(b); // '&' || '*'
+                        }
+                        if (t2 == COMMA) {
+                            b.advanceLexer(); // COMMA
+                            continue; // end of argument
+                        }
+                        if (t2 == R_ROUND_BRACKET) {
+                            break; // end of all parameters
+                        }
+                        if (t2 != IDENTIFIER && t2 != L_SQUARE_BRACKET) {
+                            // See comment above about ClassName cls(1, 2, 3).
+                            if (!isFirstArg) {
+                                error(b, ParsingErrors.IDENTIFIER_EXPECTED);
+                            }
+                            return false;
+                        }
+                        if (t2 == IDENTIFIER) {
+                            b.advanceLexer(); // identifier
+                        }
+
+                        if (b.getTokenType() == L_SQUARE_BRACKET) {
+                            t2 = ParsingUtils.advanceLexer(b); // '['
+                            if (t2 == INTEGER_LITERAL || t2 == IDENTIFIER) {
+                                t2 = ParsingUtils.advanceLexer(b); // array size
+                            }
+                            if (t2 == R_SQUARE_BRACKET) {
+                                b.advanceLexer(); //']'
+                            } else {
+                                error(b, ParsingErrors.NO_MATCHING_CLOSING_BRACKET);
+                                return false;
+                            }
+                        }
+
+                        //  === Third element ===
+                        IElementType t3 = b.getTokenType();
+                        if (t3 == COMMA) {
+                            b.advanceLexer(); // COMMA
+                            continue; // end of argument
+                        }
+                        if (t3 == R_ROUND_BRACKET) {
+                            break; // end of all parameters
+                        }
+                        if (t3 != EQ) { //
                             error(b, UNEXPECTED_TOKEN);
                             return false;
                         }
-                        b.advanceLexer(); // type
-                    }
+                        b.advanceLexer(); // EQ
 
-                    // === Second element ===
-                    IElementType t2 = b.getTokenType();
-                    if (t2 == CONST_KEYWORD) {
-                        if (hasConst) {
-                            error(b, UNEXPECTED_TOKEN);
+                        // default arg value
+                        if (!ExpressionParsing.parseCompileTimeEvalExpression(b, l, false, ExpressionParsing.COMPILE_TIME_VALUE, R_ROUND_BRACKET)) {
                             return false;
                         }
-                        b.advanceLexer(); // const
-                        t2 = b.getTokenType();
-                    }
-                    if (t2 == AND || t2 == MUL) {
-                        t2 = ParsingUtils.advanceLexer(b); // '&' || '*'
-                    }
-                    if (t2 == COMMA) {
-                        b.advanceLexer(); // COMMA
-                        continue; // end of argument
-                    }
-                    if (t2 == R_ROUND_BRACKET) {
-                        break; // end of all parameters
-                    }
-                    if (t2 != IDENTIFIER && t2 != L_SQUARE_BRACKET) {
-                        error(b, ParsingErrors.IDENTIFIER_EXPECTED);
-                        return false;
-                    }
-                    if (t2 == IDENTIFIER) {
-                        b.advanceLexer(); // identifier
-                    }
 
-                    if (b.getTokenType() == L_SQUARE_BRACKET) {
-                        t2 = ParsingUtils.advanceLexer(b); // '['
-                        if (t2 == INTEGER_LITERAL || t2 == IDENTIFIER) {
-                            t2 = ParsingUtils.advanceLexer(b); // array size
+                        //  === End of arg ===
+                        IElementType t4 = b.getTokenType();
+                        if (t4 == COMMA) {
+                            b.advanceLexer(); // COMMA
+                            continue; // end of argument
                         }
-                        if (t2 == R_SQUARE_BRACKET) {
-                            b.advanceLexer(); //']'
-                        } else {
-                            error(b, ParsingErrors.NO_MATCHING_CLOSING_BRACKET);
-                            return false;
+                        if (t4 == R_ROUND_BRACKET) {
+                            break; // end of all parameters
                         }
-                    }
-
-                    //  === Third element ===
-                    IElementType t3 = b.getTokenType();
-                    if (t3 == COMMA) {
-                        b.advanceLexer(); // COMMA
-                        continue; // end of argument
-                    }
-                    if (t3 == R_ROUND_BRACKET) {
-                        break; // end of all parameters
-                    }
-                    if (t3 != EQ) { //
-                        error(b, UNEXPECTED_TOKEN);
-                        return false;
-                    }
-                    b.advanceLexer(); // EQ
-
-                    // default arg value
-                    if (!ExpressionParsing.parseCompileTimeEvalExpression(b, l, false, ExpressionParsing.COMPILE_TIME_VALUE, R_ROUND_BRACKET)) {
-                        return false;
-                    }
-
-                    //  === End of arg ===
-                    IElementType t4 = b.getTokenType();
-                    if (t4 == COMMA) {
-                        b.advanceLexer(); // COMMA
-                        continue; // end of argument
-                    }
-                    if (t4 == R_ROUND_BRACKET) {
-                        break; // end of all parameters
+                    } finally {
+                        isFirstArg = false;
                     }
                     error(b, UNEXPECTED_TOKEN);
                     return false;
