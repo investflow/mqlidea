@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 @State(name = "MQL4.PluginSettings", storages = {@Storage("mql4-plugin.xml")})
 public class MQL4PluginSettingsImpl implements MQL4PluginSettings, PersistentStateComponent<MQL4PluginSettingsImpl> {
 
-    public boolean enDocs;
+    public boolean enDocs = true;
     public boolean errorAnalysis = true;
 
     @Override
