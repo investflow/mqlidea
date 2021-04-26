@@ -1,8 +1,9 @@
-.idea/misc.xml
 .idea/codeStyleSettings.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/dictionaries
+.idea/misc.xml
 .idea/uiDesigner.xml
 .idea/workspace.xml
-.idea/dictionaries
 out/
 gen
 idea-flex.skeleton

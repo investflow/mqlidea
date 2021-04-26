@@ -10,14 +10,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.patterns.PsiElementPattern;
 import com.intellij.psi.PsiElement;
 import com.intellij.util.ProcessingContext;
-import org.jetbrains.annotations.NotNull;
-import ru.investflow.mql.psi.MQL4Elements;
-import ru.investflow.mql.psi.impl.MQL4PreprocessorIncludeBlock;
-
 import java.io.File;
 import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import org.jetbrains.annotations.NotNull;
+import ru.investflow.mql.psi.MQL4Elements;
+import ru.investflow.mql.psi.impl.MQL4PreprocessorIncludeBlock;
 
 import static ru.investflow.mql.editor.codecompletion.MQL4CompletionContributor.mql4;
 
@@ -56,8 +55,8 @@ public class PreprocessorIncludeCompletions {
             boolean rightAfterInclude = !hasQuote && pos.getParent().getPrevSibling().getNode().getElementType() == MQL4Elements.INCLUDE_PP_KEYWORD;
             String completionPrefix = (rightAfterInclude ? " " : "") + (hasQuote ? "" : "\"");
             List<String> completions = localFiles.stream()
-                    .filter(f -> !f.getAbsolutePath().equals(path)) // filter out current file
-                    .map(File::getAbsolutePath)
+                    .map(File::getAbsolutePath) // filter out current file
+                    .filter(absolutePath -> !absolutePath.equals(path))
                     .map(p -> completionPrefix + p.substring(filteredPrefix.length()) + "\"") // full name completion
                     .collect(Collectors.toList());
 

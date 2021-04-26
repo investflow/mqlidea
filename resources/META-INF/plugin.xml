@@ -1,8 +1,8 @@
 <idea-plugin>
     <id>ru.investflow.mql</id>
     <name>MQL Idea</name>
-    <version>201.1.4</version>
-    <vendor email="mike.fursov@gmail.com" url="http://investflow.ru/mqlidea">Investflow.Ru</vendor>
+    <version>211.1.0</version>
+    <vendor email="mike.fursov@gmail.com" url="https://investflow.ru/mqlidea">Investflow.Ru</vendor>
 
     <description>
         MQL4 language support for Intellij IDEA.
@@ -31,7 +31,7 @@
                   implementationClass="ru.investflow.mql.MQL4FileType"
                   fieldName="INSTANCE"
                   language="MQL4"
-                  extensions="mq4;mqh"
+                  extensions="mq4;mqh;mql4"
         />
 
         <lang.parserDefinition language="MQL4" implementationClass="ru.investflow.mql.parser.MQL4ParserDefinition"/>

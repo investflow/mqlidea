@@ -10,14 +10,13 @@ import com.intellij.patterns.PsiElementPattern;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiRecursiveElementVisitor;
 import com.intellij.util.ProcessingContext;
+import java.util.ArrayList;
+import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.MQL4Language;
 import ru.investflow.mql.doc.DocEntry;
 import ru.investflow.mql.doc.MQL4DocumentationProvider;
 import ru.investflow.mql.psi.MQL4Elements;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.intellij.patterns.PlatformPatterns.psiElement;
 
@@ -57,7 +56,7 @@ public class MQL4CompletionContributor extends CompletionContributor {
      */
     private static class MQL4KeywordCompletionProvider extends CompletionProvider<CompletionParameters> {
         @Override
-        protected void addCompletions(@NotNull CompletionParameters parameters, ProcessingContext context, @NotNull CompletionResultSet result) {
+        protected void addCompletions(@NotNull CompletionParameters parameters, @NotNull ProcessingContext context, @NotNull CompletionResultSet result) {
             getKeywordCompletions().forEach(result::addElement);
         }
     }

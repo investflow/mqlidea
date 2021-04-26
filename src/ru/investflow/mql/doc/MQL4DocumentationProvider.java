@@ -11,12 +11,6 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.tree.IElementType;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import ru.investflow.mql.psi.MQL4Elements;
-import ru.investflow.mql.psi.impl.MQL4DocLookupElement;
-import ru.investflow.mql.settings.MQL4PluginSettings;
-
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -26,6 +20,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import ru.investflow.mql.psi.MQL4Elements;
+import ru.investflow.mql.psi.impl.MQL4DocLookupElement;
+import ru.investflow.mql.settings.MQL4PluginSettings;
 
 /**
  * Documentation provider for MQL4 language.
@@ -116,7 +115,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
             return DOC_NOT_FOUND;
         }
         try (InputStream is = loader.getResourceAsStream(resource)) {
-            return new Scanner(is, "UTF-8").useDelimiter("\\A").next();
+            return new Scanner(is, StandardCharsets.UTF_8).useDelimiter("\\A").next();
         } catch (Exception e) {
             log.error("Error loading resource with docs: " + link, e);
             return DOC_NOT_FOUND;

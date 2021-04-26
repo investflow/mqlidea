@@ -63,7 +63,7 @@ public class MQL4RunCompilerConfiguration extends RunConfigurationBase<RunProfil
      * Encoding of to convert metaeditor output before showing to user.
      */
     @NotNull
-    public String buildLogEncoding = "";
+    public String buildLogEncoding = "UTF-8";
 
     protected MQL4RunCompilerConfiguration(@NotNull Project project, @NotNull ConfigurationFactory factory, String name) {
         super(project, factory, name);

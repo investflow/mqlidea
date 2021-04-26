@@ -4,12 +4,16 @@ import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.util.FileContentUtil;
 import com.intellij.util.ui.JBUI;
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import javax.swing.*;
-import java.awt.*;
 
 //todo: SearchableConfigurable,
 public class MQL4PluginSettingsPanel extends JPanel implements Configurable {

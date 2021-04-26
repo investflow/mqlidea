@@ -6,13 +6,10 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.search.GlobalSearchScope;
+import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.psi.impl.MQL4FunctionElement;
-
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class MQL4GotoDeclarationHandler implements GotoDeclarationHandler {
 
@@ -28,8 +25,7 @@ public class MQL4GotoDeclarationHandler implements GotoDeclarationHandler {
             return null;
         }
         Collection<MQL4FunctionElement> functions = MQL4FunctionNameIndex.getInstance().get(text, project, GlobalSearchScope.allScope(project));
-        List<MQL4FunctionElement> result = functions.stream().filter(f -> f.getFunctionName().equals(text)).collect(Collectors.toList());
-        return result.toArray(new PsiElement[0]);
+        return functions.stream().filter(f -> f.getFunctionName().equals(text)).toArray(PsiElement[]::new);
     }
 
     @Nullable
