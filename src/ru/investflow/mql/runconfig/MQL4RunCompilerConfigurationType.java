@@ -3,7 +3,6 @@ package ru.investflow.mql.runconfig;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationTypeBase;
 import com.intellij.execution.configurations.RunConfiguration;
-import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import ru.investflow.mql.MQL4Icons;
@@ -23,11 +22,17 @@ public class MQL4RunCompilerConfigurationType extends ConfigurationTypeBase {
             public RunConfiguration createTemplateConfiguration(@NotNull Project project) {
                 return new MQL4RunCompilerConfiguration(project, this, "MQL4 Build");
             }
+
+            @Override
+            @NotNull
+            public String getId() {
+                return getName(); // We do not use localized values, so getName() is safe.
+            }
         });
     }
 
     @NotNull
     public static MQL4RunCompilerConfigurationType getInstance() {
-        return Extensions.findExtension(CONFIGURATION_TYPE_EP, MQL4RunCompilerConfigurationType.class);
+        return CONFIGURATION_TYPE_EP.findExtensionOrFail(MQL4RunCompilerConfigurationType.class);
     }
 }

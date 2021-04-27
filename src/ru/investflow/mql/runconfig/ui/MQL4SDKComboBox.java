@@ -2,7 +2,7 @@ package ru.investflow.mql.runconfig.ui;
 
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.ui.ComboBox;
-import com.intellij.ui.ListCellRendererWrapper;
+import com.intellij.ui.SimpleListCellRenderer;
 import com.intellij.ui.SortedComboBoxModel;
 import javax.swing.JList;
 import org.jetbrains.annotations.NotNull;
@@ -23,10 +23,10 @@ public class MQL4SDKComboBox extends ComboBox<Sdk> {
     public MQL4SDKComboBox(@NotNull SortedComboBoxModel<Sdk> model) {
         super(model);
         this.model = model;
-        setRenderer(new ListCellRendererWrapper<>() {
+        setRenderer(new SimpleListCellRenderer<>() {
             @Override
-            public void customize(JList list, Sdk sdk, int index, boolean selected, boolean hasFocus) {
-                setText(sdk == null ? "[none]" : sdk.getName());
+            public void customize(@NotNull JList<? extends Sdk> list, Sdk value, int index, boolean selected, boolean hasFocus) {
+                setText(value == null ? "[none]" : value.getName());
             }
         });
     }
