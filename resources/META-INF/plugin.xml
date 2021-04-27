@@ -8,7 +8,7 @@
         MQL4 language support for Intellij IDEA.
     </description>
 
-    <idea-version since-build="201"/>
+    <idea-version since-build="203"/>
 
     <depends>com.intellij.modules.lang</depends>
 
