@@ -31,7 +31,7 @@
                   implementationClass="ru.investflow.mql.MQL4FileType"
                   fieldName="INSTANCE"
                   language="MQL4"
-                  extensions="mq4;mqh;mql4"
+                  extensions="mq4;mqh;mql4;mq5;mql5"
         />
 
         <lang.parserDefinition language="MQL4" implementationClass="ru.investflow.mql.parser.MQL4ParserDefinition"/>
