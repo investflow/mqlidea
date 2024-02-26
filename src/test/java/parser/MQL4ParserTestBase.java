@@ -24,11 +24,6 @@ public abstract class MQL4ParserTestBase extends ParsingTestCase {
     }
 
     @Override
-    protected boolean skipSpaces() {
-        return false;
-    }
-
-    @Override
     protected boolean includeRanges() {
         return true;
     }

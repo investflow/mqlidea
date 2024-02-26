@@ -10,3 +10,5 @@ idea-flex.skeleton
 /*.jar
 docs/
 local
+build
+.gradle
