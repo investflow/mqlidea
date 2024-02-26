@@ -1,9 +1,3 @@
-.idea/codeStyleSettings.xml
-.idea/codeStyles/codeStyleConfig.xml
-.idea/dictionaries
-.idea/misc.xml
-.idea/uiDesigner.xml
-.idea/workspace.xml
 out/
 gen
 idea-flex.skeleton
@@ -12,3 +6,4 @@ docs/
 local
 build
 .gradle
+.idea
