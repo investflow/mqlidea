@@ -15,16 +15,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.investflow.mql.psi.MQL4Elements;
 import ru.investflow.mql.psi.impl.MQL4DocLookupElement;
 import ru.investflow.mql.settings.MQL4PluginSettings;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * Documentation provider for MQL4 language.
@@ -57,8 +56,8 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
     }
 
     private static void loadResource(@NotNull String name, @NotNull DocEntryType type) {
-        String resource = "/mql/doc/" + name + ".json";
-        try (Reader reader = new InputStreamReader(loader.getResourceAsStream(resource), StandardCharsets.UTF_8)) {
+        String resource = "mql/doc/" + name + ".json";
+        try (Reader reader = new InputStreamReader(Objects.requireNonNull(loader.getResourceAsStream(resource)), UTF_8)) {
             Gson gson = new GsonBuilder().create();
             JsonArray arr = gson.fromJson(reader, JsonArray.class);
             for (int i = 0; i < arr.size(); i++) {
@@ -115,7 +114,7 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
             return DOC_NOT_FOUND;
         }
         try (InputStream is = loader.getResourceAsStream(resource)) {
-            return new Scanner(is, StandardCharsets.UTF_8).useDelimiter("\\A").next();
+            return new Scanner(is, UTF_8).useDelimiter("\\A").next();
         } catch (Exception e) {
             log.error("Error loading resource with docs: " + link, e);
             return DOC_NOT_FOUND;
@@ -130,9 +129,9 @@ public class MQL4DocumentationProvider extends DocumentationProviderEx implement
         int anchorIdx = link.indexOf('#');
         String lang = getDocsLanguage();
         if (anchorIdx == -1) {
-            return "/mql/doc/" + lang + "/" + link + ".html";
+            return "mql/doc/" + lang + "/" + link + ".html";
         }
-        return "/mql/doc/" + lang + "/" + link.substring(0, anchorIdx) + ".html";
+        return "mql/doc/" + lang + "/" + link.substring(0, anchorIdx) + ".html";
     }
 
     @Nullable
